@@ -28,6 +28,7 @@ namespace ServiceCatalog
 namespace ServiceCatalogErrorMapper
 {
 
+static const int OPERATION_NOT_SUPPORTED_HASH = HashingUtils::HashString("OperationNotSupportedException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_PARAMETERS_HASH = HashingUtils::HashString("InvalidParametersException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
@@ -40,7 +41,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == RESOURCE_IN_USE_HASH)
+  if (hashCode == OPERATION_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::OPERATION_NOT_SUPPORTED), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceCatalogErrors::RESOURCE_IN_USE), false);
   }

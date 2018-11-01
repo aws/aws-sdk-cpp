@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/model/PortfolioShareType.h>
 #include <utility>
 
 namespace Aws
@@ -129,6 +130,67 @@ namespace Model
      */
     inline AcceptPortfolioShareRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
 
+
+    /**
+     * <p>The type of shared portfolios to accept. The default is to accept imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Accept imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline const PortfolioShareType& GetPortfolioShareType() const{ return m_portfolioShareType; }
+
+    /**
+     * <p>The type of shared portfolios to accept. The default is to accept imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Accept imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline void SetPortfolioShareType(const PortfolioShareType& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = value; }
+
+    /**
+     * <p>The type of shared portfolios to accept. The default is to accept imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Accept imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline void SetPortfolioShareType(PortfolioShareType&& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = std::move(value); }
+
+    /**
+     * <p>The type of shared portfolios to accept. The default is to accept imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Accept imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline AcceptPortfolioShareRequest& WithPortfolioShareType(const PortfolioShareType& value) { SetPortfolioShareType(value); return *this;}
+
+    /**
+     * <p>The type of shared portfolios to accept. The default is to accept imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Accept portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Accept imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline AcceptPortfolioShareRequest& WithPortfolioShareType(PortfolioShareType&& value) { SetPortfolioShareType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -136,6 +198,9 @@ namespace Model
 
     Aws::String m_portfolioId;
     bool m_portfolioIdHasBeenSet;
+
+    PortfolioShareType m_portfolioShareType;
+    bool m_portfolioShareTypeHasBeenSet;
   };
 
 } // namespace Model

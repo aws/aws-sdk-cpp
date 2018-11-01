@@ -17,6 +17,7 @@
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicecatalog/model/OrganizationNode.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,32 @@ namespace Model
      */
     inline DeletePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline const OrganizationNode& GetOrganizationNode() const{ return m_organizationNode; }
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline void SetOrganizationNode(const OrganizationNode& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = value; }
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline void SetOrganizationNode(OrganizationNode&& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = std::move(value); }
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline DeletePortfolioShareRequest& WithOrganizationNode(const OrganizationNode& value) { SetOrganizationNode(value); return *this;}
+
+    /**
+     * <p>The organization node to whom you are going to stop sharing.</p>
+     */
+    inline DeletePortfolioShareRequest& WithOrganizationNode(OrganizationNode&& value) { SetOrganizationNode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_acceptLanguage;
@@ -175,6 +202,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
+    OrganizationNode m_organizationNode;
+    bool m_organizationNodeHasBeenSet;
   };
 
 } // namespace Model

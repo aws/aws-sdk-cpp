@@ -156,41 +156,46 @@ namespace Model
 
     /**
      * <p>The type of shared portfolios to list. The default is to list imported
-     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
-     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
-     * portfolios</p> </li> </ul>
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios
+     * shared by the master account of your organization</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p>
+     * <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>
      */
     inline const PortfolioShareType& GetPortfolioShareType() const{ return m_portfolioShareType; }
 
     /**
      * <p>The type of shared portfolios to list. The default is to list imported
-     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
-     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
-     * portfolios</p> </li> </ul>
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios
+     * shared by the master account of your organization</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p>
+     * <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>
      */
     inline void SetPortfolioShareType(const PortfolioShareType& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = value; }
 
     /**
      * <p>The type of shared portfolios to list. The default is to list imported
-     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
-     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
-     * portfolios</p> </li> </ul>
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios
+     * shared by the master account of your organization</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p>
+     * <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>
      */
     inline void SetPortfolioShareType(PortfolioShareType&& value) { m_portfolioShareTypeHasBeenSet = true; m_portfolioShareType = std::move(value); }
 
     /**
      * <p>The type of shared portfolios to list. The default is to list imported
-     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
-     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
-     * portfolios</p> </li> </ul>
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios
+     * shared by the master account of your organization</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p>
+     * <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>
      */
     inline ListAcceptedPortfolioSharesRequest& WithPortfolioShareType(const PortfolioShareType& value) { SetPortfolioShareType(value); return *this;}
 
     /**
      * <p>The type of shared portfolios to list. The default is to list imported
-     * portfolios.</p> <ul> <li> <p> <code>AWS_SERVICECATALOG</code> - List default
-     * portfolios</p> </li> <li> <p> <code>IMPORTED</code> - List imported
-     * portfolios</p> </li> </ul>
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - List portfolios
+     * shared by the master account of your organization</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - List default portfolios</p> </li> <li> <p>
+     * <code>IMPORTED</code> - List imported portfolios</p> </li> </ul>
      */
     inline ListAcceptedPortfolioSharesRequest& WithPortfolioShareType(PortfolioShareType&& value) { SetPortfolioShareType(std::move(value)); return *this;}
 

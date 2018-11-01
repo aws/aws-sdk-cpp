@@ -32,6 +32,7 @@ namespace Aws
 
         static const int IMPORTED_HASH = HashingUtils::HashString("IMPORTED");
         static const int AWS_SERVICECATALOG_HASH = HashingUtils::HashString("AWS_SERVICECATALOG");
+        static const int AWS_ORGANIZATIONS_HASH = HashingUtils::HashString("AWS_ORGANIZATIONS");
 
 
         PortfolioShareType GetPortfolioShareTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == AWS_SERVICECATALOG_HASH)
           {
             return PortfolioShareType::AWS_SERVICECATALOG;
+          }
+          else if (hashCode == AWS_ORGANIZATIONS_HASH)
+          {
+            return PortfolioShareType::AWS_ORGANIZATIONS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "IMPORTED";
           case PortfolioShareType::AWS_SERVICECATALOG:
             return "AWS_SERVICECATALOG";
+          case PortfolioShareType::AWS_ORGANIZATIONS:
+            return "AWS_ORGANIZATIONS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

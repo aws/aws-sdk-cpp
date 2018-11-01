@@ -184,37 +184,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the provisioned product.</p>
+     * <p>The identifier of the product.</p>
      */
     inline UpdateProvisionedProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
 

@@ -48,6 +48,7 @@
 #include <aws/servicecatalog/model/DescribeConstraintResult.h>
 #include <aws/servicecatalog/model/DescribeCopyProductStatusResult.h>
 #include <aws/servicecatalog/model/DescribePortfolioResult.h>
+#include <aws/servicecatalog/model/DescribePortfolioShareStatusResult.h>
 #include <aws/servicecatalog/model/DescribeProductResult.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminResult.h>
 #include <aws/servicecatalog/model/DescribeProductViewResult.h>
@@ -58,15 +59,19 @@
 #include <aws/servicecatalog/model/DescribeRecordResult.h>
 #include <aws/servicecatalog/model/DescribeServiceActionResult.h>
 #include <aws/servicecatalog/model/DescribeTagOptionResult.h>
+#include <aws/servicecatalog/model/DisableAWSOrganizationsAccessResult.h>
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioResult.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioResult.h>
 #include <aws/servicecatalog/model/DisassociateServiceActionFromProvisioningArtifactResult.h>
 #include <aws/servicecatalog/model/DisassociateTagOptionFromResourceResult.h>
+#include <aws/servicecatalog/model/EnableAWSOrganizationsAccessResult.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductPlanResult.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionResult.h>
+#include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusResult.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesResult.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioResult.h>
 #include <aws/servicecatalog/model/ListLaunchPathsResult.h>
+#include <aws/servicecatalog/model/ListOrganizationPortfolioAccessResult.h>
 #include <aws/servicecatalog/model/ListPortfolioAccessResult.h>
 #include <aws/servicecatalog/model/ListPortfoliosResult.h>
 #include <aws/servicecatalog/model/ListPortfoliosForProductResult.h>
@@ -160,6 +165,7 @@ namespace Model
         class DescribeConstraintRequest;
         class DescribeCopyProductStatusRequest;
         class DescribePortfolioRequest;
+        class DescribePortfolioShareStatusRequest;
         class DescribeProductRequest;
         class DescribeProductAsAdminRequest;
         class DescribeProductViewRequest;
@@ -170,15 +176,19 @@ namespace Model
         class DescribeRecordRequest;
         class DescribeServiceActionRequest;
         class DescribeTagOptionRequest;
+        class DisableAWSOrganizationsAccessRequest;
         class DisassociatePrincipalFromPortfolioRequest;
         class DisassociateProductFromPortfolioRequest;
         class DisassociateServiceActionFromProvisioningArtifactRequest;
         class DisassociateTagOptionFromResourceRequest;
+        class EnableAWSOrganizationsAccessRequest;
         class ExecuteProvisionedProductPlanRequest;
         class ExecuteProvisionedProductServiceActionRequest;
+        class GetAWSOrganizationsAccessStatusRequest;
         class ListAcceptedPortfolioSharesRequest;
         class ListConstraintsForPortfolioRequest;
         class ListLaunchPathsRequest;
+        class ListOrganizationPortfolioAccessRequest;
         class ListPortfolioAccessRequest;
         class ListPortfoliosRequest;
         class ListPortfoliosForProductRequest;
@@ -233,6 +243,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConstraintResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeConstraintOutcome;
         typedef Aws::Utils::Outcome<DescribeCopyProductStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeCopyProductStatusOutcome;
         typedef Aws::Utils::Outcome<DescribePortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribePortfolioOutcome;
+        typedef Aws::Utils::Outcome<DescribePortfolioShareStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribePortfolioShareStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductOutcome;
         typedef Aws::Utils::Outcome<DescribeProductAsAdminResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductAsAdminOutcome;
         typedef Aws::Utils::Outcome<DescribeProductViewResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeProductViewOutcome;
@@ -243,15 +254,19 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRecordResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeRecordOutcome;
         typedef Aws::Utils::Outcome<DescribeServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeServiceActionOutcome;
         typedef Aws::Utils::Outcome<DescribeTagOptionResult, Aws::Client::AWSError<ServiceCatalogErrors>> DescribeTagOptionOutcome;
+        typedef Aws::Utils::Outcome<DisableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisableAWSOrganizationsAccessOutcome;
         typedef Aws::Utils::Outcome<DisassociatePrincipalFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociatePrincipalFromPortfolioOutcome;
         typedef Aws::Utils::Outcome<DisassociateProductFromPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateProductFromPortfolioOutcome;
         typedef Aws::Utils::Outcome<DisassociateServiceActionFromProvisioningArtifactResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateServiceActionFromProvisioningArtifactOutcome;
         typedef Aws::Utils::Outcome<DisassociateTagOptionFromResourceResult, Aws::Client::AWSError<ServiceCatalogErrors>> DisassociateTagOptionFromResourceOutcome;
+        typedef Aws::Utils::Outcome<EnableAWSOrganizationsAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> EnableAWSOrganizationsAccessOutcome;
         typedef Aws::Utils::Outcome<ExecuteProvisionedProductPlanResult, Aws::Client::AWSError<ServiceCatalogErrors>> ExecuteProvisionedProductPlanOutcome;
         typedef Aws::Utils::Outcome<ExecuteProvisionedProductServiceActionResult, Aws::Client::AWSError<ServiceCatalogErrors>> ExecuteProvisionedProductServiceActionOutcome;
+        typedef Aws::Utils::Outcome<GetAWSOrganizationsAccessStatusResult, Aws::Client::AWSError<ServiceCatalogErrors>> GetAWSOrganizationsAccessStatusOutcome;
         typedef Aws::Utils::Outcome<ListAcceptedPortfolioSharesResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListAcceptedPortfolioSharesOutcome;
         typedef Aws::Utils::Outcome<ListConstraintsForPortfolioResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListConstraintsForPortfolioOutcome;
         typedef Aws::Utils::Outcome<ListLaunchPathsResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListLaunchPathsOutcome;
+        typedef Aws::Utils::Outcome<ListOrganizationPortfolioAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListOrganizationPortfolioAccessOutcome;
         typedef Aws::Utils::Outcome<ListPortfolioAccessResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfolioAccessOutcome;
         typedef Aws::Utils::Outcome<ListPortfoliosResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfoliosOutcome;
         typedef Aws::Utils::Outcome<ListPortfoliosForProductResult, Aws::Client::AWSError<ServiceCatalogErrors>> ListPortfoliosForProductOutcome;
@@ -306,6 +321,7 @@ namespace Model
         typedef std::future<DescribeConstraintOutcome> DescribeConstraintOutcomeCallable;
         typedef std::future<DescribeCopyProductStatusOutcome> DescribeCopyProductStatusOutcomeCallable;
         typedef std::future<DescribePortfolioOutcome> DescribePortfolioOutcomeCallable;
+        typedef std::future<DescribePortfolioShareStatusOutcome> DescribePortfolioShareStatusOutcomeCallable;
         typedef std::future<DescribeProductOutcome> DescribeProductOutcomeCallable;
         typedef std::future<DescribeProductAsAdminOutcome> DescribeProductAsAdminOutcomeCallable;
         typedef std::future<DescribeProductViewOutcome> DescribeProductViewOutcomeCallable;
@@ -316,15 +332,19 @@ namespace Model
         typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
         typedef std::future<DescribeServiceActionOutcome> DescribeServiceActionOutcomeCallable;
         typedef std::future<DescribeTagOptionOutcome> DescribeTagOptionOutcomeCallable;
+        typedef std::future<DisableAWSOrganizationsAccessOutcome> DisableAWSOrganizationsAccessOutcomeCallable;
         typedef std::future<DisassociatePrincipalFromPortfolioOutcome> DisassociatePrincipalFromPortfolioOutcomeCallable;
         typedef std::future<DisassociateProductFromPortfolioOutcome> DisassociateProductFromPortfolioOutcomeCallable;
         typedef std::future<DisassociateServiceActionFromProvisioningArtifactOutcome> DisassociateServiceActionFromProvisioningArtifactOutcomeCallable;
         typedef std::future<DisassociateTagOptionFromResourceOutcome> DisassociateTagOptionFromResourceOutcomeCallable;
+        typedef std::future<EnableAWSOrganizationsAccessOutcome> EnableAWSOrganizationsAccessOutcomeCallable;
         typedef std::future<ExecuteProvisionedProductPlanOutcome> ExecuteProvisionedProductPlanOutcomeCallable;
         typedef std::future<ExecuteProvisionedProductServiceActionOutcome> ExecuteProvisionedProductServiceActionOutcomeCallable;
+        typedef std::future<GetAWSOrganizationsAccessStatusOutcome> GetAWSOrganizationsAccessStatusOutcomeCallable;
         typedef std::future<ListAcceptedPortfolioSharesOutcome> ListAcceptedPortfolioSharesOutcomeCallable;
         typedef std::future<ListConstraintsForPortfolioOutcome> ListConstraintsForPortfolioOutcomeCallable;
         typedef std::future<ListLaunchPathsOutcome> ListLaunchPathsOutcomeCallable;
+        typedef std::future<ListOrganizationPortfolioAccessOutcome> ListOrganizationPortfolioAccessOutcomeCallable;
         typedef std::future<ListPortfolioAccessOutcome> ListPortfolioAccessOutcomeCallable;
         typedef std::future<ListPortfoliosOutcome> ListPortfoliosOutcomeCallable;
         typedef std::future<ListPortfoliosForProductOutcome> ListPortfoliosForProductOutcomeCallable;
@@ -382,6 +402,7 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeConstraintRequest&, const Model::DescribeConstraintOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConstraintResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeCopyProductStatusRequest&, const Model::DescribeCopyProductStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCopyProductStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioRequest&, const Model::DescribePortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DescribePortfolioShareStatusRequest&, const Model::DescribePortfolioShareStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePortfolioShareStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductRequest&, const Model::DescribeProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductAsAdminRequest&, const Model::DescribeProductAsAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductAsAdminResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeProductViewRequest&, const Model::DescribeProductViewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductViewResponseReceivedHandler;
@@ -392,15 +413,19 @@ namespace Model
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeRecordRequest&, const Model::DescribeRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecordResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeServiceActionRequest&, const Model::DescribeServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceActionResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DescribeTagOptionRequest&, const Model::DescribeTagOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagOptionResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::DisableAWSOrganizationsAccessRequest&, const Model::DisableAWSOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableAWSOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociatePrincipalFromPortfolioRequest&, const Model::DisassociatePrincipalFromPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePrincipalFromPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateProductFromPortfolioRequest&, const Model::DisassociateProductFromPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateProductFromPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateServiceActionFromProvisioningArtifactRequest&, const Model::DisassociateServiceActionFromProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::DisassociateTagOptionFromResourceRequest&, const Model::DisassociateTagOptionFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTagOptionFromResourceResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::EnableAWSOrganizationsAccessRequest&, const Model::EnableAWSOrganizationsAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableAWSOrganizationsAccessResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductPlanRequest&, const Model::ExecuteProvisionedProductPlanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductPlanResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ExecuteProvisionedProductServiceActionRequest&, const Model::ExecuteProvisionedProductServiceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteProvisionedProductServiceActionResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::GetAWSOrganizationsAccessStatusRequest&, const Model::GetAWSOrganizationsAccessStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAWSOrganizationsAccessStatusResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListAcceptedPortfolioSharesRequest&, const Model::ListAcceptedPortfolioSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAcceptedPortfolioSharesResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListConstraintsForPortfolioRequest&, const Model::ListConstraintsForPortfolioOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConstraintsForPortfolioResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListLaunchPathsRequest&, const Model::ListLaunchPathsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLaunchPathsResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::ListOrganizationPortfolioAccessRequest&, const Model::ListOrganizationPortfolioAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationPortfolioAccessResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListPortfolioAccessRequest&, const Model::ListPortfolioAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortfolioAccessResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListPortfoliosRequest&, const Model::ListPortfoliosOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortfoliosResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListPortfoliosForProductRequest&, const Model::ListPortfoliosForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPortfoliosForProductResponseReceivedHandler;
@@ -750,16 +775,20 @@ namespace Model
         virtual void CreatePortfolioAsync(const Model::CreatePortfolioRequest& request, const CreatePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Shares the specified portfolio with the specified account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Shares the specified portfolio with the specified account or organization
+         * node. Shares to an organization node can only be created by the master account
+         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
+         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePortfolioShareOutcome CreatePortfolioShare(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Shares the specified portfolio with the specified account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Shares the specified portfolio with the specified account or organization
+         * node. Shares to an organization node can only be created by the master account
+         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
+         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -768,8 +797,10 @@ namespace Model
         virtual Model::CreatePortfolioShareOutcomeCallable CreatePortfolioShareCallable(const Model::CreatePortfolioShareRequest& request) const;
 
         /**
-         * <p>Shares the specified portfolio with the specified account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Shares the specified portfolio with the specified account or organization
+         * node. Shares to an organization node can only be created by the master account
+         * of an Organization. AWSOrganizationsAccess must be enabled in order to create a
+         * portfolio share to an organization node.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/CreatePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -986,16 +1017,18 @@ namespace Model
         virtual void DeletePortfolioAsync(const Model::DeletePortfolioRequest& request, const DeletePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops sharing the specified portfolio with the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops sharing the specified portfolio with the specified account or
+         * organization node. Shares to an organization node can only be deleted by the
+         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePortfolioShareOutcome DeletePortfolioShare(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Stops sharing the specified portfolio with the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops sharing the specified portfolio with the specified account or
+         * organization node. Shares to an organization node can only be deleted by the
+         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -1004,8 +1037,9 @@ namespace Model
         virtual Model::DeletePortfolioShareOutcomeCallable DeletePortfolioShareCallable(const Model::DeletePortfolioShareRequest& request) const;
 
         /**
-         * <p>Stops sharing the specified portfolio with the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops sharing the specified portfolio with the specified account or
+         * organization node. Shares to an organization node can only be deleted by the
+         * master account of an Organization.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DeletePortfolioShare">AWS
          * API Reference</a></p>
          *
@@ -1236,6 +1270,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribePortfolioAsync(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the status of the specified portfolio share operation. This API can only
+         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePortfolioShareStatusOutcome DescribePortfolioShareStatus(const Model::DescribePortfolioShareStatusRequest& request) const;
+
+        /**
+         * <p>Gets the status of the specified portfolio share operation. This API can only
+         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePortfolioShareStatusOutcomeCallable DescribePortfolioShareStatusCallable(const Model::DescribePortfolioShareStatusRequest& request) const;
+
+        /**
+         * <p>Gets the status of the specified portfolio share operation. This API can only
+         * be called by the master account in the organization.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShareStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePortfolioShareStatusAsync(const Model::DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the specified product.</p><p><h3>See Also:</h3>   <a
@@ -1536,6 +1601,46 @@ namespace Model
         virtual void DescribeTagOptionAsync(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disable portfolio sharing through AWS Organizations feature. This feature
+         * will not delete your current shares but it will prevent you from creating new
+         * shares throughout your organization. Current shares will not be in sync with
+         * your organization structure if it changes after calling this API. This API can
+         * only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableAWSOrganizationsAccessOutcome DisableAWSOrganizationsAccess(const Model::DisableAWSOrganizationsAccessRequest& request) const;
+
+        /**
+         * <p>Disable portfolio sharing through AWS Organizations feature. This feature
+         * will not delete your current shares but it will prevent you from creating new
+         * shares throughout your organization. Current shares will not be in sync with
+         * your organization structure if it changes after calling this API. This API can
+         * only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableAWSOrganizationsAccessOutcomeCallable DisableAWSOrganizationsAccessCallable(const Model::DisableAWSOrganizationsAccessRequest& request) const;
+
+        /**
+         * <p>Disable portfolio sharing through AWS Organizations feature. This feature
+         * will not delete your current shares but it will prevent you from creating new
+         * shares throughout your organization. Current shares will not be in sync with
+         * your organization structure if it changes after calling this API. This API can
+         * only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableAWSOrganizationsAccessAsync(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a previously associated principal ARN from a specified
          * portfolio.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DisassociatePrincipalFromPortfolio">AWS
@@ -1648,6 +1753,49 @@ namespace Model
         virtual void DisassociateTagOptionFromResourceAsync(const Model::DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enable portfolio sharing feature through AWS Organizations. This API will
+         * allow Service Catalog to receive updates on your organization in order to sync
+         * your shares with the current structure. This API can only be called by the
+         * master account in the organization.</p> <p>By calling this API Service Catalog
+         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
+         * your shares can be in sync with any changes in your AWS
+         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableAWSOrganizationsAccessOutcome EnableAWSOrganizationsAccess(const Model::EnableAWSOrganizationsAccessRequest& request) const;
+
+        /**
+         * <p>Enable portfolio sharing feature through AWS Organizations. This API will
+         * allow Service Catalog to receive updates on your organization in order to sync
+         * your shares with the current structure. This API can only be called by the
+         * master account in the organization.</p> <p>By calling this API Service Catalog
+         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
+         * your shares can be in sync with any changes in your AWS
+         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableAWSOrganizationsAccessOutcomeCallable EnableAWSOrganizationsAccessCallable(const Model::EnableAWSOrganizationsAccessRequest& request) const;
+
+        /**
+         * <p>Enable portfolio sharing feature through AWS Organizations. This API will
+         * allow Service Catalog to receive updates on your organization in order to sync
+         * your shares with the current structure. This API can only be called by the
+         * master account in the organization.</p> <p>By calling this API Service Catalog
+         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
+         * your shares can be in sync with any changes in your AWS
+         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableAWSOrganizationsAccessAsync(const Model::EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provisions or modifies a product based on the resource changes for the
          * specified plan.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ExecuteProvisionedProductPlan">AWS
@@ -1702,6 +1850,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ExecuteProvisionedProductServiceActionAsync(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get the Access Status for AWS Organization portfolio share feature. This API
+         * can only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAWSOrganizationsAccessStatusOutcome GetAWSOrganizationsAccessStatus(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
+
+        /**
+         * <p>Get the Access Status for AWS Organization portfolio share feature. This API
+         * can only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAWSOrganizationsAccessStatusOutcomeCallable GetAWSOrganizationsAccessStatusCallable(const Model::GetAWSOrganizationsAccessStatusRequest& request) const;
+
+        /**
+         * <p>Get the Access Status for AWS Organization portfolio share feature. This API
+         * can only be called by the master account in the organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetAWSOrganizationsAccessStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAWSOrganizationsAccessStatusAsync(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists all portfolios for which sharing was accepted by this
@@ -1792,6 +1971,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListLaunchPathsAsync(const Model::ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the organization nodes that have access to the specified portfolio.
+         * This API can only be called by the master account in the
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListOrganizationPortfolioAccessOutcome ListOrganizationPortfolioAccess(const Model::ListOrganizationPortfolioAccessRequest& request) const;
+
+        /**
+         * <p>Lists the organization nodes that have access to the specified portfolio.
+         * This API can only be called by the master account in the
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListOrganizationPortfolioAccessOutcomeCallable ListOrganizationPortfolioAccessCallable(const Model::ListOrganizationPortfolioAccessRequest& request) const;
+
+        /**
+         * <p>Lists the organization nodes that have access to the specified portfolio.
+         * This API can only be called by the master account in the
+         * organization.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ListOrganizationPortfolioAccess">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListOrganizationPortfolioAccessAsync(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the account IDs that have access to the specified
@@ -2580,6 +2790,7 @@ namespace Model
         void DescribeConstraintAsyncHelper(const Model::DescribeConstraintRequest& request, const DescribeConstraintResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCopyProductStatusAsyncHelper(const Model::DescribeCopyProductStatusRequest& request, const DescribeCopyProductStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribePortfolioAsyncHelper(const Model::DescribePortfolioRequest& request, const DescribePortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePortfolioShareStatusAsyncHelper(const Model::DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductAsyncHelper(const Model::DescribeProductRequest& request, const DescribeProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductAsAdminAsyncHelper(const Model::DescribeProductAsAdminRequest& request, const DescribeProductAsAdminResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductViewAsyncHelper(const Model::DescribeProductViewRequest& request, const DescribeProductViewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2590,15 +2801,19 @@ namespace Model
         void DescribeRecordAsyncHelper(const Model::DescribeRecordRequest& request, const DescribeRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServiceActionAsyncHelper(const Model::DescribeServiceActionRequest& request, const DescribeServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagOptionAsyncHelper(const Model::DescribeTagOptionRequest& request, const DescribeTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableAWSOrganizationsAccessAsyncHelper(const Model::DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociatePrincipalFromPortfolioAsyncHelper(const Model::DisassociatePrincipalFromPortfolioRequest& request, const DisassociatePrincipalFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateProductFromPortfolioAsyncHelper(const Model::DisassociateProductFromPortfolioRequest& request, const DisassociateProductFromPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateServiceActionFromProvisioningArtifactAsyncHelper(const Model::DisassociateServiceActionFromProvisioningArtifactRequest& request, const DisassociateServiceActionFromProvisioningArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTagOptionFromResourceAsyncHelper(const Model::DisassociateTagOptionFromResourceRequest& request, const DisassociateTagOptionFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableAWSOrganizationsAccessAsyncHelper(const Model::EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecuteProvisionedProductPlanAsyncHelper(const Model::ExecuteProvisionedProductPlanRequest& request, const ExecuteProvisionedProductPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecuteProvisionedProductServiceActionAsyncHelper(const Model::ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAWSOrganizationsAccessStatusAsyncHelper(const Model::GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAcceptedPortfolioSharesAsyncHelper(const Model::ListAcceptedPortfolioSharesRequest& request, const ListAcceptedPortfolioSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConstraintsForPortfolioAsyncHelper(const Model::ListConstraintsForPortfolioRequest& request, const ListConstraintsForPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLaunchPathsAsyncHelper(const Model::ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListOrganizationPortfolioAccessAsyncHelper(const Model::ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPortfolioAccessAsyncHelper(const Model::ListPortfolioAccessRequest& request, const ListPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPortfoliosAsyncHelper(const Model::ListPortfoliosRequest& request, const ListPortfoliosResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPortfoliosForProductAsyncHelper(const Model::ListPortfoliosForProductRequest& request, const ListPortfoliosForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

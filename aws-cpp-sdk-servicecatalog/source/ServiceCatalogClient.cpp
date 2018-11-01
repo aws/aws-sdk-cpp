@@ -54,6 +54,7 @@
 #include <aws/servicecatalog/model/DescribeConstraintRequest.h>
 #include <aws/servicecatalog/model/DescribeCopyProductStatusRequest.h>
 #include <aws/servicecatalog/model/DescribePortfolioRequest.h>
+#include <aws/servicecatalog/model/DescribePortfolioShareStatusRequest.h>
 #include <aws/servicecatalog/model/DescribeProductRequest.h>
 #include <aws/servicecatalog/model/DescribeProductAsAdminRequest.h>
 #include <aws/servicecatalog/model/DescribeProductViewRequest.h>
@@ -64,15 +65,19 @@
 #include <aws/servicecatalog/model/DescribeRecordRequest.h>
 #include <aws/servicecatalog/model/DescribeServiceActionRequest.h>
 #include <aws/servicecatalog/model/DescribeTagOptionRequest.h>
+#include <aws/servicecatalog/model/DisableAWSOrganizationsAccessRequest.h>
 #include <aws/servicecatalog/model/DisassociatePrincipalFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateProductFromPortfolioRequest.h>
 #include <aws/servicecatalog/model/DisassociateServiceActionFromProvisioningArtifactRequest.h>
 #include <aws/servicecatalog/model/DisassociateTagOptionFromResourceRequest.h>
+#include <aws/servicecatalog/model/EnableAWSOrganizationsAccessRequest.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductPlanRequest.h>
 #include <aws/servicecatalog/model/ExecuteProvisionedProductServiceActionRequest.h>
+#include <aws/servicecatalog/model/GetAWSOrganizationsAccessStatusRequest.h>
 #include <aws/servicecatalog/model/ListAcceptedPortfolioSharesRequest.h>
 #include <aws/servicecatalog/model/ListConstraintsForPortfolioRequest.h>
 #include <aws/servicecatalog/model/ListLaunchPathsRequest.h>
+#include <aws/servicecatalog/model/ListOrganizationPortfolioAccessRequest.h>
 #include <aws/servicecatalog/model/ListPortfolioAccessRequest.h>
 #include <aws/servicecatalog/model/ListPortfoliosRequest.h>
 #include <aws/servicecatalog/model/ListPortfoliosForProductRequest.h>
@@ -1109,6 +1114,41 @@ void ServiceCatalogClient::DescribePortfolioAsyncHelper(const DescribePortfolioR
   handler(this, request, DescribePortfolio(request), context);
 }
 
+DescribePortfolioShareStatusOutcome ServiceCatalogClient::DescribePortfolioShareStatus(const DescribePortfolioShareStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribePortfolioShareStatusOutcome(DescribePortfolioShareStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribePortfolioShareStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribePortfolioShareStatusOutcomeCallable ServiceCatalogClient::DescribePortfolioShareStatusCallable(const DescribePortfolioShareStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribePortfolioShareStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribePortfolioShareStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DescribePortfolioShareStatusAsync(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribePortfolioShareStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DescribePortfolioShareStatusAsyncHelper(const DescribePortfolioShareStatusRequest& request, const DescribePortfolioShareStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribePortfolioShareStatus(request), context);
+}
+
 DescribeProductOutcome ServiceCatalogClient::DescribeProduct(const DescribeProductRequest& request) const
 {
   Aws::StringStream ss;
@@ -1459,6 +1499,41 @@ void ServiceCatalogClient::DescribeTagOptionAsyncHelper(const DescribeTagOptionR
   handler(this, request, DescribeTagOption(request), context);
 }
 
+DisableAWSOrganizationsAccessOutcome ServiceCatalogClient::DisableAWSOrganizationsAccess(const DisableAWSOrganizationsAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisableAWSOrganizationsAccessOutcome(DisableAWSOrganizationsAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableAWSOrganizationsAccessOutcome(outcome.GetError());
+  }
+}
+
+DisableAWSOrganizationsAccessOutcomeCallable ServiceCatalogClient::DisableAWSOrganizationsAccessCallable(const DisableAWSOrganizationsAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableAWSOrganizationsAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableAWSOrganizationsAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::DisableAWSOrganizationsAccessAsync(const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableAWSOrganizationsAccessAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::DisableAWSOrganizationsAccessAsyncHelper(const DisableAWSOrganizationsAccessRequest& request, const DisableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableAWSOrganizationsAccess(request), context);
+}
+
 DisassociatePrincipalFromPortfolioOutcome ServiceCatalogClient::DisassociatePrincipalFromPortfolio(const DisassociatePrincipalFromPortfolioRequest& request) const
 {
   Aws::StringStream ss;
@@ -1599,6 +1674,41 @@ void ServiceCatalogClient::DisassociateTagOptionFromResourceAsyncHelper(const Di
   handler(this, request, DisassociateTagOptionFromResource(request), context);
 }
 
+EnableAWSOrganizationsAccessOutcome ServiceCatalogClient::EnableAWSOrganizationsAccess(const EnableAWSOrganizationsAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EnableAWSOrganizationsAccessOutcome(EnableAWSOrganizationsAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableAWSOrganizationsAccessOutcome(outcome.GetError());
+  }
+}
+
+EnableAWSOrganizationsAccessOutcomeCallable ServiceCatalogClient::EnableAWSOrganizationsAccessCallable(const EnableAWSOrganizationsAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableAWSOrganizationsAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableAWSOrganizationsAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::EnableAWSOrganizationsAccessAsync(const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableAWSOrganizationsAccessAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::EnableAWSOrganizationsAccessAsyncHelper(const EnableAWSOrganizationsAccessRequest& request, const EnableAWSOrganizationsAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableAWSOrganizationsAccess(request), context);
+}
+
 ExecuteProvisionedProductPlanOutcome ServiceCatalogClient::ExecuteProvisionedProductPlan(const ExecuteProvisionedProductPlanRequest& request) const
 {
   Aws::StringStream ss;
@@ -1667,6 +1777,41 @@ void ServiceCatalogClient::ExecuteProvisionedProductServiceActionAsync(const Exe
 void ServiceCatalogClient::ExecuteProvisionedProductServiceActionAsyncHelper(const ExecuteProvisionedProductServiceActionRequest& request, const ExecuteProvisionedProductServiceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExecuteProvisionedProductServiceAction(request), context);
+}
+
+GetAWSOrganizationsAccessStatusOutcome ServiceCatalogClient::GetAWSOrganizationsAccessStatus(const GetAWSOrganizationsAccessStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAWSOrganizationsAccessStatusOutcome(GetAWSOrganizationsAccessStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAWSOrganizationsAccessStatusOutcome(outcome.GetError());
+  }
+}
+
+GetAWSOrganizationsAccessStatusOutcomeCallable ServiceCatalogClient::GetAWSOrganizationsAccessStatusCallable(const GetAWSOrganizationsAccessStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAWSOrganizationsAccessStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAWSOrganizationsAccessStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsync(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAWSOrganizationsAccessStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::GetAWSOrganizationsAccessStatusAsyncHelper(const GetAWSOrganizationsAccessStatusRequest& request, const GetAWSOrganizationsAccessStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAWSOrganizationsAccessStatus(request), context);
 }
 
 ListAcceptedPortfolioSharesOutcome ServiceCatalogClient::ListAcceptedPortfolioShares(const ListAcceptedPortfolioSharesRequest& request) const
@@ -1772,6 +1917,41 @@ void ServiceCatalogClient::ListLaunchPathsAsync(const ListLaunchPathsRequest& re
 void ServiceCatalogClient::ListLaunchPathsAsyncHelper(const ListLaunchPathsRequest& request, const ListLaunchPathsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListLaunchPaths(request), context);
+}
+
+ListOrganizationPortfolioAccessOutcome ServiceCatalogClient::ListOrganizationPortfolioAccess(const ListOrganizationPortfolioAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListOrganizationPortfolioAccessOutcome(ListOrganizationPortfolioAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListOrganizationPortfolioAccessOutcome(outcome.GetError());
+  }
+}
+
+ListOrganizationPortfolioAccessOutcomeCallable ServiceCatalogClient::ListOrganizationPortfolioAccessCallable(const ListOrganizationPortfolioAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListOrganizationPortfolioAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListOrganizationPortfolioAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServiceCatalogClient::ListOrganizationPortfolioAccessAsync(const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListOrganizationPortfolioAccessAsyncHelper( request, handler, context ); } );
+}
+
+void ServiceCatalogClient::ListOrganizationPortfolioAccessAsyncHelper(const ListOrganizationPortfolioAccessRequest& request, const ListOrganizationPortfolioAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListOrganizationPortfolioAccess(request), context);
 }
 
 ListPortfolioAccessOutcome ServiceCatalogClient::ListPortfolioAccess(const ListPortfolioAccessRequest& request) const

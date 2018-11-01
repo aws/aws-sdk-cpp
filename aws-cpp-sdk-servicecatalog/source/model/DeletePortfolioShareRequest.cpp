@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 DeletePortfolioShareRequest::DeletePortfolioShareRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_portfolioIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
+    m_accountIdHasBeenSet(false),
+    m_organizationNodeHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String DeletePortfolioShareRequest::SerializePayload() const
   if(m_accountIdHasBeenSet)
   {
    payload.WithString("AccountId", m_accountId);
+
+  }
+
+  if(m_organizationNodeHasBeenSet)
+  {
+   payload.WithObject("OrganizationNode", m_organizationNode.Jsonize());
 
   }
 

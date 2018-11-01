@@ -37,7 +37,13 @@ DeletePortfolioShareResult::DeletePortfolioShareResult(const Aws::AmazonWebServi
 
 DeletePortfolioShareResult& DeletePortfolioShareResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("PortfolioShareToken"))
+  {
+    m_portfolioShareToken = jsonValue.GetString("PortfolioShareToken");
+
+  }
+
 
 
   return *this;

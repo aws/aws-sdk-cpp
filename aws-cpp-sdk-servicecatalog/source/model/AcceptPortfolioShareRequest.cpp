@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 AcceptPortfolioShareRequest::AcceptPortfolioShareRequest() : 
     m_acceptLanguageHasBeenSet(false),
-    m_portfolioIdHasBeenSet(false)
+    m_portfolioIdHasBeenSet(false),
+    m_portfolioShareType(PortfolioShareType::NOT_SET),
+    m_portfolioShareTypeHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,11 @@ Aws::String AcceptPortfolioShareRequest::SerializePayload() const
   {
    payload.WithString("PortfolioId", m_portfolioId);
 
+  }
+
+  if(m_portfolioShareTypeHasBeenSet)
+  {
+   payload.WithString("PortfolioShareType", PortfolioShareTypeMapper::GetNameForPortfolioShareType(m_portfolioShareType));
   }
 
   return payload.View().WriteReadable();

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     IMPORTED,
-    AWS_SERVICECATALOG
+    AWS_SERVICECATALOG,
+    AWS_ORGANIZATIONS
   };
 
 namespace PortfolioShareTypeMapper
