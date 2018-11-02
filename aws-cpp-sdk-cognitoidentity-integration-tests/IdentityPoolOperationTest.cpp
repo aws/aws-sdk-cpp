@@ -252,6 +252,7 @@ TEST_F(IdentityPoolOperationTest, TestIdentityActions)
 
     ASSERT_TRUE(createIdentityPoolOutcome.IsSuccess());
     Aws::String identityPoolId = createIdentityPoolOutcome.GetResult().GetIdentityPoolId();
+    EXPECT_TRUE(WaitForIdentitiesToBeActive(identityPoolId, client));
 
     GetIdRequest getIdRequest;
     getIdRequest.WithIdentityPoolId(identityPoolId);
