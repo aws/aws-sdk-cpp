@@ -17,6 +17,8 @@
 #include <aws/clouddirectory/CloudDirectory_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/clouddirectory/model/ObjectIdentifierAndLinkNameTuple.h>
 #include <utility>
 
 namespace Aws
@@ -151,11 +153,49 @@ namespace Model
      */
     inline ListObjectParentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& GetParentLinks() const{ return m_parentLinks; }
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline void SetParentLinks(const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& value) { m_parentLinks = value; }
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline void SetParentLinks(Aws::Vector<ObjectIdentifierAndLinkNameTuple>&& value) { m_parentLinks = std::move(value); }
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline ListObjectParentsResult& WithParentLinks(const Aws::Vector<ObjectIdentifierAndLinkNameTuple>& value) { SetParentLinks(value); return *this;}
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline ListObjectParentsResult& WithParentLinks(Aws::Vector<ObjectIdentifierAndLinkNameTuple>&& value) { SetParentLinks(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline ListObjectParentsResult& AddParentLinks(const ObjectIdentifierAndLinkNameTuple& value) { m_parentLinks.push_back(value); return *this; }
+
+    /**
+     * <p>Returns a list of parent reference and LinkName Tuples.</p>
+     */
+    inline ListObjectParentsResult& AddParentLinks(ObjectIdentifierAndLinkNameTuple&& value) { m_parentLinks.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_parents;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<ObjectIdentifierAndLinkNameTuple> m_parentLinks;
   };
 
 } // namespace Model

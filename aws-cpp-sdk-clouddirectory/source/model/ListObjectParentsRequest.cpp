@@ -30,7 +30,9 @@ ListObjectParentsRequest::ListObjectParentsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_consistencyLevel(ConsistencyLevel::NOT_SET),
-    m_consistencyLevelHasBeenSet(false)
+    m_consistencyLevelHasBeenSet(false),
+    m_includeAllLinksToEachParent(false),
+    m_includeAllLinksToEachParentHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,12 @@ Aws::String ListObjectParentsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_includeAllLinksToEachParentHasBeenSet)
+  {
+   payload.WithBool("IncludeAllLinksToEachParent", m_includeAllLinksToEachParent);
 
   }
 

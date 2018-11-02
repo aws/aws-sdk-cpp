@@ -16,6 +16,9 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Instance.h>
+#include <aws/rekognition/model/Parent.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +37,13 @@ namespace Model
 {
 
   /**
-   * <p>Structure containing details about the detected label, including name, and
-   * level of confidence.</p><p><h3>See Also:</h3>   <a
+   * <p>Structure containing details about the detected label, including the name,
+   * and level of confidence.</p> <p>The Amazon Rekognition Image operation operation
+   * returns a hierarchical taxonomy (<code>Parents</code>) for detected labels and
+   * also bounding box information (<code>Instances</code>) for detected labels.
+   * Amazon Rekognition Video doesn't return this information and returns
+   * <code>null</code> for the <code>Parents</code> and <code>Instances</code>
+   * attributes. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Label">AWS
    * API Reference</a></p>
    */
@@ -49,37 +57,37 @@ namespace Model
 
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline Label& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline Label& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name (label) of the object.</p>
+     * <p>The name (label) of the object or scene.</p>
      */
     inline Label& WithName(const char* value) { SetName(value); return *this;}
 
@@ -99,6 +107,134 @@ namespace Model
      */
     inline Label& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline void SetInstances(const Aws::Vector<Instance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline void SetInstances(Aws::Vector<Instance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& AddInstances(const Instance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /**
+     * <p>If <code>Label</code> represents an object, <code>Instances</code> contains
+     * the bounding boxes for each instance of the detected object. Bounding boxes are
+     * returned for common object labels such as people, cars, furniture, apparel or
+     * pets.</p> <note> <p>Amazon Rekognition Video does not support bounding box
+     * information for detected labels. The value of <code>Instances</code> is returned
+     * as <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& AddInstances(Instance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline const Aws::Vector<Parent>& GetParents() const{ return m_parents; }
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline void SetParents(const Aws::Vector<Parent>& value) { m_parentsHasBeenSet = true; m_parents = value; }
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline void SetParents(Aws::Vector<Parent>&& value) { m_parentsHasBeenSet = true; m_parents = std::move(value); }
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& WithParents(const Aws::Vector<Parent>& value) { SetParents(value); return *this;}
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& WithParents(Aws::Vector<Parent>&& value) { SetParents(std::move(value)); return *this;}
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& AddParents(const Parent& value) { m_parentsHasBeenSet = true; m_parents.push_back(value); return *this; }
+
+    /**
+     * <p>The parent labels for a label. The response includes all ancestor labels.</p>
+     * <note> <p>Amazon Rekognition Video does not support a hierarchical taxonomy of
+     * detected labels. The value of <code>Parents</code> is returned as
+     * <code>null</code> by <code>GetLabelDetection</code>.</p> </note>
+     */
+    inline Label& AddParents(Parent&& value) { m_parentsHasBeenSet = true; m_parents.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -106,6 +242,12 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet;
+
+    Aws::Vector<Instance> m_instances;
+    bool m_instancesHasBeenSet;
+
+    Aws::Vector<Parent> m_parents;
+    bool m_parentsHasBeenSet;
   };
 
 } // namespace Model

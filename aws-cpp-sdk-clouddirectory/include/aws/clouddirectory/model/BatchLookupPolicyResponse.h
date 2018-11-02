@@ -54,7 +54,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline const Aws::Vector<PolicyToPath>& GetPolicyToPathList() const{ return m_policyToPathList; }
 
@@ -62,7 +62,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline void SetPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = value; }
 
@@ -70,7 +70,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline void SetPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = std::move(value); }
 
@@ -78,7 +78,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchLookupPolicyResponse& WithPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { SetPolicyToPathList(value); return *this;}
 
@@ -86,7 +86,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchLookupPolicyResponse& WithPolicyToPathList(Aws::Vector<PolicyToPath>&& value) { SetPolicyToPathList(std::move(value)); return *this;}
 
@@ -94,7 +94,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchLookupPolicyResponse& AddPolicyToPathList(const PolicyToPath& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.push_back(value); return *this; }
 
@@ -102,7 +102,7 @@ namespace Model
      * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
      * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchLookupPolicyResponse& AddPolicyToPathList(PolicyToPath&& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList.push_back(std::move(value)); return *this; }
 

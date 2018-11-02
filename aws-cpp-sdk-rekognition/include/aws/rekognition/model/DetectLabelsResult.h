@@ -17,6 +17,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/OrientationCorrection.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/Label.h>
 #include <utility>
 
@@ -81,65 +82,130 @@ namespace Model
 
 
     /**
-     * <p> The orientation of the input image (counter-clockwise direction). If your
-     * application displays the image, you can use this value to correct the
-     * orientation. If Amazon Rekognition detects that the input image was rotated (for
-     * example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels. </p> <note> <p>If the input image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be null.</p> </note>
+     * <p>The value of <code>OrientationCorrection</code> is always null.</p> <p>If the
+     * input image is in .jpeg format, it might contain exchangeable image (Exif)
+     * metadata that includes the image's orientation. Amazon Rekognition uses this
+     * orientation information to perform image correction - the bounding box
+     * coordinates are translated to represent object locations after the orientation
+     * information in the Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.</p> <p>Amazon Rekognition
+     * doesn’t perform image correction for images in .png format and .jpeg images
+     * without orientation information in the image Exif metadata. The bounding box
+     * coordinates are not translated and represent the object locations before the
+     * image is rotated. </p>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
     /**
-     * <p> The orientation of the input image (counter-clockwise direction). If your
-     * application displays the image, you can use this value to correct the
-     * orientation. If Amazon Rekognition detects that the input image was rotated (for
-     * example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels. </p> <note> <p>If the input image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be null.</p> </note>
+     * <p>The value of <code>OrientationCorrection</code> is always null.</p> <p>If the
+     * input image is in .jpeg format, it might contain exchangeable image (Exif)
+     * metadata that includes the image's orientation. Amazon Rekognition uses this
+     * orientation information to perform image correction - the bounding box
+     * coordinates are translated to represent object locations after the orientation
+     * information in the Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.</p> <p>Amazon Rekognition
+     * doesn’t perform image correction for images in .png format and .jpeg images
+     * without orientation information in the image Exif metadata. The bounding box
+     * coordinates are not translated and represent the object locations before the
+     * image is rotated. </p>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
     /**
-     * <p> The orientation of the input image (counter-clockwise direction). If your
-     * application displays the image, you can use this value to correct the
-     * orientation. If Amazon Rekognition detects that the input image was rotated (for
-     * example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels. </p> <note> <p>If the input image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be null.</p> </note>
+     * <p>The value of <code>OrientationCorrection</code> is always null.</p> <p>If the
+     * input image is in .jpeg format, it might contain exchangeable image (Exif)
+     * metadata that includes the image's orientation. Amazon Rekognition uses this
+     * orientation information to perform image correction - the bounding box
+     * coordinates are translated to represent object locations after the orientation
+     * information in the Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.</p> <p>Amazon Rekognition
+     * doesn’t perform image correction for images in .png format and .jpeg images
+     * without orientation information in the image Exif metadata. The bounding box
+     * coordinates are not translated and represent the object locations before the
+     * image is rotated. </p>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
     /**
-     * <p> The orientation of the input image (counter-clockwise direction). If your
-     * application displays the image, you can use this value to correct the
-     * orientation. If Amazon Rekognition detects that the input image was rotated (for
-     * example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels. </p> <note> <p>If the input image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be null.</p> </note>
+     * <p>The value of <code>OrientationCorrection</code> is always null.</p> <p>If the
+     * input image is in .jpeg format, it might contain exchangeable image (Exif)
+     * metadata that includes the image's orientation. Amazon Rekognition uses this
+     * orientation information to perform image correction - the bounding box
+     * coordinates are translated to represent object locations after the orientation
+     * information in the Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.</p> <p>Amazon Rekognition
+     * doesn’t perform image correction for images in .png format and .jpeg images
+     * without orientation information in the image Exif metadata. The bounding box
+     * coordinates are not translated and represent the object locations before the
+     * image is rotated. </p>
      */
     inline DetectLabelsResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
     /**
-     * <p> The orientation of the input image (counter-clockwise direction). If your
-     * application displays the image, you can use this value to correct the
-     * orientation. If Amazon Rekognition detects that the input image was rotated (for
-     * example, by 90 degrees), it first corrects the orientation before detecting the
-     * labels. </p> <note> <p>If the input image Exif metadata populates the
-     * orientation field, Amazon Rekognition does not perform orientation correction
-     * and the value of OrientationCorrection will be null.</p> </note>
+     * <p>The value of <code>OrientationCorrection</code> is always null.</p> <p>If the
+     * input image is in .jpeg format, it might contain exchangeable image (Exif)
+     * metadata that includes the image's orientation. Amazon Rekognition uses this
+     * orientation information to perform image correction - the bounding box
+     * coordinates are translated to represent object locations after the orientation
+     * information in the Exif metadata is used to correct the image orientation.
+     * Images in .png format don't contain Exif metadata.</p> <p>Amazon Rekognition
+     * doesn’t perform image correction for images in .png format and .jpeg images
+     * without orientation information in the image Exif metadata. The bounding box
+     * coordinates are not translated and represent the object locations before the
+     * image is rotated. </p>
      */
     inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline const Aws::String& GetLabelModelVersion() const{ return m_labelModelVersion; }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(const Aws::String& value) { m_labelModelVersion = value; }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(Aws::String&& value) { m_labelModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(const char* value) { m_labelModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline DetectLabelsResult& WithLabelModelVersion(const Aws::String& value) { SetLabelModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline DetectLabelsResult& WithLabelModelVersion(Aws::String&& value) { SetLabelModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline DetectLabelsResult& WithLabelModelVersion(const char* value) { SetLabelModelVersion(value); return *this;}
 
   private:
 
     Aws::Vector<Label> m_labels;
 
     OrientationCorrection m_orientationCorrection;
+
+    Aws::String m_labelModelVersion;
   };
 
 } // namespace Model

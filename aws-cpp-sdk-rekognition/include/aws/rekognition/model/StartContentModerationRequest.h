@@ -83,7 +83,9 @@ namespace Model
      * Rekognition is that the moderated content is correctly identified. 0 is the
      * lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't
      * return any moderated content labels with a confidence level lower than this
-     * specified value.</p>
+     * specified value. If you don't specify <code>MinConfidence</code>,
+     * <code>GetContentModeration</code> returns labels with confidence values greater
+     * than or equal to 50 percent.</p>
      */
     inline double GetMinConfidence() const{ return m_minConfidence; }
 
@@ -93,7 +95,9 @@ namespace Model
      * Rekognition is that the moderated content is correctly identified. 0 is the
      * lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't
      * return any moderated content labels with a confidence level lower than this
-     * specified value.</p>
+     * specified value. If you don't specify <code>MinConfidence</code>,
+     * <code>GetContentModeration</code> returns labels with confidence values greater
+     * than or equal to 50 percent.</p>
      */
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
 
@@ -103,7 +107,9 @@ namespace Model
      * Rekognition is that the moderated content is correctly identified. 0 is the
      * lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't
      * return any moderated content labels with a confidence level lower than this
-     * specified value.</p>
+     * specified value. If you don't specify <code>MinConfidence</code>,
+     * <code>GetContentModeration</code> returns labels with confidence values greater
+     * than or equal to 50 percent.</p>
      */
     inline StartContentModerationRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 

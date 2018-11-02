@@ -765,8 +765,19 @@ namespace Model
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
          * <note> <p>If the object detected is a person, the operation doesn't provide the
          * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> <p>This operation requires permissions to perform the
+         * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
+         * object labels in an array of objects. An <code>Instance</code> object contains a
+         * object, for the location of the label on the image. It also includes the
+         * confidence by which the bounding box was detected.</p> <p>
+         * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected
+         * labels. For example, a detected car might be assigned the label <i>car</i>. The
+         * label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent) and
+         * <i>Transportation</i> (its grandparent). The response returns the entire list of
+         * ancestors for a label. Each ancestor is a unique label in the response. In the
+         * previous example, <i>Car</i>, <i>Vehicle</i>, and <i>Transportation</i> are
+         * returned as unique labels in the response. </p> <p>This is a stateless API
+         * operation. That is, the operation does not persist any data.</p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:DetectLabels</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
@@ -806,8 +817,19 @@ namespace Model
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
          * <note> <p>If the object detected is a person, the operation doesn't provide the
          * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> <p>This operation requires permissions to perform the
+         * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
+         * object labels in an array of objects. An <code>Instance</code> object contains a
+         * object, for the location of the label on the image. It also includes the
+         * confidence by which the bounding box was detected.</p> <p>
+         * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected
+         * labels. For example, a detected car might be assigned the label <i>car</i>. The
+         * label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent) and
+         * <i>Transportation</i> (its grandparent). The response returns the entire list of
+         * ancestors for a label. Each ancestor is a unique label in the response. In the
+         * previous example, <i>Car</i>, <i>Vehicle</i>, and <i>Transportation</i> are
+         * returned as unique labels in the response. </p> <p>This is a stateless API
+         * operation. That is, the operation does not persist any data.</p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:DetectLabels</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
@@ -849,8 +871,19 @@ namespace Model
          * <code>MaxLabels</code> parameter to limit the number of labels returned. </p>
          * <note> <p>If the object detected is a person, the operation doesn't provide the
          * same facial details that the <a>DetectFaces</a> operation provides.</p> </note>
-         * <p>This is a stateless API operation. That is, the operation does not persist
-         * any data.</p> <p>This operation requires permissions to perform the
+         * <p> <code>DetectLabels</code> returns bounding boxes for instances of common
+         * object labels in an array of objects. An <code>Instance</code> object contains a
+         * object, for the location of the label on the image. It also includes the
+         * confidence by which the bounding box was detected.</p> <p>
+         * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected
+         * labels. For example, a detected car might be assigned the label <i>car</i>. The
+         * label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent) and
+         * <i>Transportation</i> (its grandparent). The response returns the entire list of
+         * ancestors for a label. Each ancestor is a unique label in the response. In the
+         * previous example, <i>Car</i>, <i>Vehicle</i>, and <i>Transportation</i> are
+         * returned as unique labels in the response. </p> <p>This is a stateless API
+         * operation. That is, the operation does not persist any data.</p> <p>This
+         * operation requires permissions to perform the
          * <code>rekognition:DetectLabels</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
@@ -1497,7 +1530,12 @@ namespace Model
          * getting the next set of results. To get the next page of results, call
          * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
-         * <code>GetLabelDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>GetLabelDetection</code>.</p> <note> <p> <code>GetLabelDetection</code>
+         * doesn't return a hierarchical taxonomy, or bounding box information, for
+         * detected labels. <code>GetLabelDetection</code> returns <code>null</code> for
+         * the <code>Parents</code> and <code>Instances</code> attributes of the object
+         * which is returned in the <code>Labels</code> array. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">AWS
          * API Reference</a></p>
          */
@@ -1525,7 +1563,12 @@ namespace Model
          * getting the next set of results. To get the next page of results, call
          * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
-         * <code>GetLabelDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>GetLabelDetection</code>.</p> <note> <p> <code>GetLabelDetection</code>
+         * doesn't return a hierarchical taxonomy, or bounding box information, for
+         * detected labels. <code>GetLabelDetection</code> returns <code>null</code> for
+         * the <code>Parents</code> and <code>Instances</code> attributes of the object
+         * which is returned in the <code>Labels</code> array. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">AWS
          * API Reference</a></p>
          *
@@ -1555,7 +1598,12 @@ namespace Model
          * getting the next set of results. To get the next page of results, call
          * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request
          * parameter with the token value returned from the previous call to
-         * <code>GetLabelDetection</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>GetLabelDetection</code>.</p> <note> <p> <code>GetLabelDetection</code>
+         * doesn't return a hierarchical taxonomy, or bounding box information, for
+         * detected labels. <code>GetLabelDetection</code> returns <code>null</code> for
+         * the <code>Parents</code> and <code>Instances</code> attributes of the object
+         * which is returned in the <code>Labels</code> array. </p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetLabelDetection">AWS
          * API Reference</a></p>
          *
@@ -1564,26 +1612,25 @@ namespace Model
         virtual void GetLabelDetectionAsync(const Model::GetLabelDetectionRequest& request, const GetLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets the person tracking results of a Amazon Rekognition Video analysis
-         * started by .</p> <p>The person detection operation is started by a call to
+         * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
+         * by .</p> <p>The person path tracking operation is started by a call to
          * <code>StartPersonTracking</code> which returns a job identifier
-         * (<code>JobId</code>). When the person detection operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
-         * Notification Service topic registered in the initial call to
-         * <code>StartPersonTracking</code>.</p> <p>To get the results of the person
-         * tracking operation, first check that the status value published to the Amazon
-         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
-         * (<code>JobId</code>) from the initial call to
+         * (<code>JobId</code>). When the operation finishes, Amazon Rekognition Video
+         * publishes a completion status to the Amazon Simple Notification Service topic
+         * registered in the initial call to <code>StartPersonTracking</code>.</p> <p>To
+         * get the results of the person path tracking operation, first check that the
+         * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+         * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
-         * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
+         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person is
-         * tracked in the video. You can sort by tracked persons by specifying
+         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
          * there are more results than specified in <code>MaxResults</code>, the value of
@@ -1598,26 +1645,25 @@ namespace Model
         virtual Model::GetPersonTrackingOutcome GetPersonTracking(const Model::GetPersonTrackingRequest& request) const;
 
         /**
-         * <p>Gets the person tracking results of a Amazon Rekognition Video analysis
-         * started by .</p> <p>The person detection operation is started by a call to
+         * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
+         * by .</p> <p>The person path tracking operation is started by a call to
          * <code>StartPersonTracking</code> which returns a job identifier
-         * (<code>JobId</code>). When the person detection operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
-         * Notification Service topic registered in the initial call to
-         * <code>StartPersonTracking</code>.</p> <p>To get the results of the person
-         * tracking operation, first check that the status value published to the Amazon
-         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
-         * (<code>JobId</code>) from the initial call to
+         * (<code>JobId</code>). When the operation finishes, Amazon Rekognition Video
+         * publishes a completion status to the Amazon Simple Notification Service topic
+         * registered in the initial call to <code>StartPersonTracking</code>.</p> <p>To
+         * get the results of the person path tracking operation, first check that the
+         * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+         * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
-         * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
+         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person is
-         * tracked in the video. You can sort by tracked persons by specifying
+         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
          * there are more results than specified in <code>MaxResults</code>, the value of
@@ -1634,26 +1680,25 @@ namespace Model
         virtual Model::GetPersonTrackingOutcomeCallable GetPersonTrackingCallable(const Model::GetPersonTrackingRequest& request) const;
 
         /**
-         * <p>Gets the person tracking results of a Amazon Rekognition Video analysis
-         * started by .</p> <p>The person detection operation is started by a call to
+         * <p>Gets the path tracking results of a Amazon Rekognition Video analysis started
+         * by .</p> <p>The person path tracking operation is started by a call to
          * <code>StartPersonTracking</code> which returns a job identifier
-         * (<code>JobId</code>). When the person detection operation finishes, Amazon
-         * Rekognition Video publishes a completion status to the Amazon Simple
-         * Notification Service topic registered in the initial call to
-         * <code>StartPersonTracking</code>.</p> <p>To get the results of the person
-         * tracking operation, first check that the status value published to the Amazon
-         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
-         * (<code>JobId</code>) from the initial call to
+         * (<code>JobId</code>). When the operation finishes, Amazon Rekognition Video
+         * publishes a completion status to the Amazon Simple Notification Service topic
+         * registered in the initial call to <code>StartPersonTracking</code>.</p> <p>To
+         * get the results of the person path tracking operation, first check that the
+         * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+         * call and pass the job identifier (<code>JobId</code>) from the initial call to
          * <code>StartPersonTracking</code>.</p> <p> <code>GetPersonTracking</code> returns
-         * an array, <code>Persons</code>, of tracked persons and the time(s) they were
-         * tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
+         * an array, <code>Persons</code>, of tracked persons and the time(s) their paths
+         * were tracked in the video. </p> <note> <p> <code>GetPersonTracking</code> only
          * returns the default facial attributes (<code>BoundingBox</code>,
          * <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and
          * <code>Quality</code>). The other facial attributes listed in the
          * <code>Face</code> object of the following response syntax are not returned. </p>
          * <p>For more information, see FaceDetail in the Amazon Rekognition Developer
-         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person is
-         * tracked in the video. You can sort by tracked persons by specifying
+         * Guide.</p> </note> <p>By default, the array is sorted by the time(s) a person's
+         * path is tracked in the video. You can sort by tracked persons by specifying
          * <code>INDEX</code> for the <code>SortBy</code> input parameter.</p> <p>Use the
          * <code>MaxResults</code> parameter to limit the number of items returned. If
          * there are more results than specified in <code>MaxResults</code>, the value of
@@ -2358,7 +2403,7 @@ namespace Model
          * that you use to get the results of the operation. When face detection is
          * finished, Amazon Rekognition Video publishes a completion status to the Amazon
          * Simple Notification Service topic that you specify in
-         * <code>NotificationChannel</code>. To get the results of the label detection
+         * <code>NotificationChannel</code>. To get the results of the face detection
          * operation, first check that the status value published to the Amazon SNS topic
          * is <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to
@@ -2378,7 +2423,7 @@ namespace Model
          * that you use to get the results of the operation. When face detection is
          * finished, Amazon Rekognition Video publishes a completion status to the Amazon
          * Simple Notification Service topic that you specify in
-         * <code>NotificationChannel</code>. To get the results of the label detection
+         * <code>NotificationChannel</code>. To get the results of the face detection
          * operation, first check that the status value published to the Amazon SNS topic
          * is <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to
@@ -2400,7 +2445,7 @@ namespace Model
          * that you use to get the results of the operation. When face detection is
          * finished, Amazon Rekognition Video publishes a completion status to the Amazon
          * Simple Notification Service topic that you specify in
-         * <code>NotificationChannel</code>. To get the results of the label detection
+         * <code>NotificationChannel</code>. To get the results of the face detection
          * operation, first check that the status value published to the Amazon SNS topic
          * is <code>SUCCEEDED</code>. If so, call and pass the job identifier
          * (<code>JobId</code>) from the initial call to
@@ -2546,34 +2591,36 @@ namespace Model
         virtual void StartLabelDetectionAsync(const Model::StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts the asynchronous tracking of persons in a stored video.</p> <p>Amazon
-         * Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
-         * Use <a>Video</a> to specify the bucket name and the filename of the video.
-         * <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>)
-         * which you use to get the results of the operation. When label detection is
-         * finished, Amazon Rekognition publishes a completion status to the Amazon Simple
-         * Notification Service topic that you specify in <code>NotificationChannel</code>.
-         * </p> <p>To get the results of the person detection operation, first check that
-         * the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If
-         * so, call and pass the job identifier (<code>JobId</code>) from the initial call
-         * to <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
+         * <p>Amazon Rekognition Video can track the path of people in a video stored in an
+         * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
+         * of the video. <code>StartPersonTracking</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * label detection is finished, Amazon Rekognition publishes a completion status to
+         * the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>. </p> <p>To get the results of the person
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">AWS
          * API Reference</a></p>
          */
         virtual Model::StartPersonTrackingOutcome StartPersonTracking(const Model::StartPersonTrackingRequest& request) const;
 
         /**
-         * <p>Starts the asynchronous tracking of persons in a stored video.</p> <p>Amazon
-         * Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
-         * Use <a>Video</a> to specify the bucket name and the filename of the video.
-         * <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>)
-         * which you use to get the results of the operation. When label detection is
-         * finished, Amazon Rekognition publishes a completion status to the Amazon Simple
-         * Notification Service topic that you specify in <code>NotificationChannel</code>.
-         * </p> <p>To get the results of the person detection operation, first check that
-         * the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If
-         * so, call and pass the job identifier (<code>JobId</code>) from the initial call
-         * to <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
+         * <p>Amazon Rekognition Video can track the path of people in a video stored in an
+         * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
+         * of the video. <code>StartPersonTracking</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * label detection is finished, Amazon Rekognition publishes a completion status to
+         * the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>. </p> <p>To get the results of the person
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">AWS
          * API Reference</a></p>
          *
@@ -2582,17 +2629,18 @@ namespace Model
         virtual Model::StartPersonTrackingOutcomeCallable StartPersonTrackingCallable(const Model::StartPersonTrackingRequest& request) const;
 
         /**
-         * <p>Starts the asynchronous tracking of persons in a stored video.</p> <p>Amazon
-         * Rekognition Video can track persons in a video stored in an Amazon S3 bucket.
-         * Use <a>Video</a> to specify the bucket name and the filename of the video.
-         * <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>)
-         * which you use to get the results of the operation. When label detection is
-         * finished, Amazon Rekognition publishes a completion status to the Amazon Simple
-         * Notification Service topic that you specify in <code>NotificationChannel</code>.
-         * </p> <p>To get the results of the person detection operation, first check that
-         * the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If
-         * so, call and pass the job identifier (<code>JobId</code>) from the initial call
-         * to <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts the asynchronous tracking of a person's path in a stored video.</p>
+         * <p>Amazon Rekognition Video can track the path of people in a video stored in an
+         * Amazon S3 bucket. Use <a>Video</a> to specify the bucket name and the filename
+         * of the video. <code>StartPersonTracking</code> returns a job identifier
+         * (<code>JobId</code>) which you use to get the results of the operation. When
+         * label detection is finished, Amazon Rekognition publishes a completion status to
+         * the Amazon Simple Notification Service topic that you specify in
+         * <code>NotificationChannel</code>. </p> <p>To get the results of the person
+         * detection operation, first check that the status value published to the Amazon
+         * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
+         * (<code>JobId</code>) from the initial call to
+         * <code>StartPersonTracking</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartPersonTracking">AWS
          * API Reference</a></p>
          *

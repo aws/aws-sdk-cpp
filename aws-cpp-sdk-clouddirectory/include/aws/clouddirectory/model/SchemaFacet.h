@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline SchemaFacet& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline SchemaFacet& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The ARN of the schema that contains the facet with no minor component. See
      * <a>arns</a> and <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html">In-Place
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
     inline SchemaFacet& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}

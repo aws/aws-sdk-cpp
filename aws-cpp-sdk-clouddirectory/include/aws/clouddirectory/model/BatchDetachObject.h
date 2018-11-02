@@ -118,50 +118,50 @@ namespace Model
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline const Aws::String& GetBatchReferenceName() const{ return m_batchReferenceName; }
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline void SetBatchReferenceName(const Aws::String& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = value; }
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = std::move(value); }
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline void SetBatchReferenceName(const char* value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName.assign(value); }
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline BatchDetachObject& WithBatchReferenceName(const Aws::String& value) { SetBatchReferenceName(value); return *this;}
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline BatchDetachObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(std::move(value)); return *this;}
 
     /**
      * <p>The batch reference name. See <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#batches">Batches</a>
-     * for more information.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
      */
     inline BatchDetachObject& WithBatchReferenceName(const char* value) { SetBatchReferenceName(value); return *this;}
 

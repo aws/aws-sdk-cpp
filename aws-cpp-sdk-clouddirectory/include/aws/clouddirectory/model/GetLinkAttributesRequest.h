@@ -50,56 +50,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline GetLinkAttributesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline GetLinkAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
      * the typed link resides. For more information, see <a>arns</a> or <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline GetLinkAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
 

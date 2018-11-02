@@ -55,6 +55,12 @@ DetectLabelsResult& DetectLabelsResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("LabelModelVersion"))
+  {
+    m_labelModelVersion = jsonValue.GetString("LabelModelVersion");
+
+  }
+
 
 
   return *this;

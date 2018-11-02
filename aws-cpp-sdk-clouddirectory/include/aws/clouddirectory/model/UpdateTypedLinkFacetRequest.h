@@ -170,8 +170,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentityAttributeOrder() const{ return m_identityAttributeOrder; }
 
@@ -184,8 +184,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = value; }
 
@@ -198,8 +198,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder = std::move(value); }
 
@@ -212,8 +212,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(const Aws::Vector<Aws::String>& value) { SetIdentityAttributeOrder(value); return *this;}
 
@@ -226,8 +226,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& WithIdentityAttributeOrder(Aws::Vector<Aws::String>&& value) { SetIdentityAttributeOrder(std::move(value)); return *this;}
 
@@ -240,8 +240,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const Aws::String& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 
@@ -254,8 +254,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(Aws::String&& value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(std::move(value)); return *this; }
 
@@ -268,8 +268,8 @@ namespace Model
      * range. Filters are interpreted in the order of the attributes on the typed link
      * facet, not the order in which they are supplied to any API calls. For more
      * information about identity attributes, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline UpdateTypedLinkFacetRequest& AddIdentityAttributeOrder(const char* value) { m_identityAttributeOrderHasBeenSet = true; m_identityAttributeOrder.push_back(value); return *this; }
 

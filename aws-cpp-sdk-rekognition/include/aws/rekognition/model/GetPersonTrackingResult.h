@@ -202,51 +202,51 @@ namespace Model
 
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline const Aws::Vector<PersonDetection>& GetPersons() const{ return m_persons; }
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline void SetPersons(const Aws::Vector<PersonDetection>& value) { m_persons = value; }
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline void SetPersons(Aws::Vector<PersonDetection>&& value) { m_persons = std::move(value); }
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline GetPersonTrackingResult& WithPersons(const Aws::Vector<PersonDetection>& value) { SetPersons(value); return *this;}
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline GetPersonTrackingResult& WithPersons(Aws::Vector<PersonDetection>&& value) { SetPersons(std::move(value)); return *this;}
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline GetPersonTrackingResult& AddPersons(const PersonDetection& value) { m_persons.push_back(value); return *this; }
 
     /**
-     * <p>An array of the persons detected in the video and the times they are tracked
-     * throughout the video. An array element will exist for each time the person is
-     * tracked. </p>
+     * <p>An array of the persons detected in the video and the time(s) their path was
+     * tracked throughout the video. An array element will exist for each time a
+     * person's path is tracked. </p>
      */
     inline GetPersonTrackingResult& AddPersons(PersonDetection&& value) { m_persons.push_back(std::move(value)); return *this; }
 

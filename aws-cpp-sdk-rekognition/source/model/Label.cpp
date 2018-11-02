@@ -31,14 +31,18 @@ namespace Model
 Label::Label() : 
     m_nameHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_instancesHasBeenSet(false),
+    m_parentsHasBeenSet(false)
 {
 }
 
 Label::Label(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_instancesHasBeenSet(false),
+    m_parentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,26 @@ Label& Label::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Instances"))
+  {
+    Array<JsonView> instancesJsonList = jsonValue.GetArray("Instances");
+    for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+    {
+      m_instances.push_back(instancesJsonList[instancesIndex].AsObject());
+    }
+    m_instancesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Parents"))
+  {
+    Array<JsonView> parentsJsonList = jsonValue.GetArray("Parents");
+    for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
+    {
+      m_parents.push_back(parentsJsonList[parentsIndex].AsObject());
+    }
+    m_parentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +99,28 @@ JsonValue Label::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_instancesHasBeenSet)
+  {
+   Array<JsonValue> instancesJsonList(m_instances.size());
+   for(unsigned instancesIndex = 0; instancesIndex < instancesJsonList.GetLength(); ++instancesIndex)
+   {
+     instancesJsonList[instancesIndex].AsObject(m_instances[instancesIndex].Jsonize());
+   }
+   payload.WithArray("Instances", std::move(instancesJsonList));
+
+  }
+
+  if(m_parentsHasBeenSet)
+  {
+   Array<JsonValue> parentsJsonList(m_parents.size());
+   for(unsigned parentsIndex = 0; parentsIndex < parentsJsonList.GetLength(); ++parentsIndex)
+   {
+     parentsJsonList[parentsIndex].AsObject(m_parents[parentsIndex].Jsonize());
+   }
+   payload.WithArray("Parents", std::move(parentsJsonList));
 
   }
 

@@ -39,7 +39,7 @@ namespace Model
 
   /**
    * <p>A facet attribute definition. See <a
-   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_advanced.html#attributereferences">Attribute
+   * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
    * References</a> for more information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/FacetAttributeDefinition">AWS
    * API Reference</a></p>

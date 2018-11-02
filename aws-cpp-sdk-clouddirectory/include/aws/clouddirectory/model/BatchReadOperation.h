@@ -21,6 +21,7 @@
 #include <aws/clouddirectory/model/BatchListObjectParentPaths.h>
 #include <aws/clouddirectory/model/BatchGetObjectInformation.h>
 #include <aws/clouddirectory/model/BatchGetObjectAttributes.h>
+#include <aws/clouddirectory/model/BatchListObjectParents.h>
 #include <aws/clouddirectory/model/BatchListObjectPolicies.h>
 #include <aws/clouddirectory/model/BatchListPolicyAttachments.h>
 #include <aws/clouddirectory/model/BatchLookupPolicy.h>
@@ -147,7 +148,7 @@ namespace Model
      * <p>Retrieves all available parent paths for any object type such as node, leaf
      * node, policy node, and index node objects. For more information about objects,
      * see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
     inline const BatchListObjectParentPaths& GetListObjectParentPaths() const{ return m_listObjectParentPaths; }
@@ -156,7 +157,7 @@ namespace Model
      * <p>Retrieves all available parent paths for any object type such as node, leaf
      * node, policy node, and index node objects. For more information about objects,
      * see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
     inline void SetListObjectParentPaths(const BatchListObjectParentPaths& value) { m_listObjectParentPathsHasBeenSet = true; m_listObjectParentPaths = value; }
@@ -165,7 +166,7 @@ namespace Model
      * <p>Retrieves all available parent paths for any object type such as node, leaf
      * node, policy node, and index node objects. For more information about objects,
      * see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
     inline void SetListObjectParentPaths(BatchListObjectParentPaths&& value) { m_listObjectParentPathsHasBeenSet = true; m_listObjectParentPaths = std::move(value); }
@@ -174,7 +175,7 @@ namespace Model
      * <p>Retrieves all available parent paths for any object type such as node, leaf
      * node, policy node, and index node objects. For more information about objects,
      * see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
     inline BatchReadOperation& WithListObjectParentPaths(const BatchListObjectParentPaths& value) { SetListObjectParentPaths(value); return *this;}
@@ -183,7 +184,7 @@ namespace Model
      * <p>Retrieves all available parent paths for any object type such as node, leaf
      * node, policy node, and index node objects. For more information about objects,
      * see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#dirstructure">Directory
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
     inline BatchReadOperation& WithListObjectParentPaths(BatchListObjectParentPaths&& value) { SetListObjectParentPaths(std::move(value)); return *this;}
@@ -239,6 +240,22 @@ namespace Model
      * <p>Retrieves attributes within a facet that are associated with an object.</p>
      */
     inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
+
+
+    
+    inline const BatchListObjectParents& GetListObjectParents() const{ return m_listObjectParents; }
+
+    
+    inline void SetListObjectParents(const BatchListObjectParents& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
+
+    
+    inline void SetListObjectParents(BatchListObjectParents&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::move(value); }
+
+    
+    inline BatchReadOperation& WithListObjectParents(const BatchListObjectParents& value) { SetListObjectParents(value); return *this;}
+
+    
+    inline BatchReadOperation& WithListObjectParents(BatchListObjectParents&& value) { SetListObjectParents(std::move(value)); return *this;}
 
 
     /**
@@ -306,7 +323,7 @@ namespace Model
      * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
      * <code>policyType</code>. Paths that don't lead to the root from the target
      * object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline const BatchLookupPolicy& GetLookupPolicy() const{ return m_lookupPolicy; }
 
@@ -318,7 +335,7 @@ namespace Model
      * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
      * <code>policyType</code>. Paths that don't lead to the root from the target
      * object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline void SetLookupPolicy(const BatchLookupPolicy& value) { m_lookupPolicyHasBeenSet = true; m_lookupPolicy = value; }
 
@@ -330,7 +347,7 @@ namespace Model
      * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
      * <code>policyType</code>. Paths that don't lead to the root from the target
      * object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline void SetLookupPolicy(BatchLookupPolicy&& value) { m_lookupPolicyHasBeenSet = true; m_lookupPolicy = std::move(value); }
 
@@ -342,7 +359,7 @@ namespace Model
      * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
      * <code>policyType</code>. Paths that don't lead to the root from the target
      * object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchReadOperation& WithLookupPolicy(const BatchLookupPolicy& value) { SetLookupPolicy(value); return *this;}
 
@@ -354,7 +371,7 @@ namespace Model
      * present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and
      * <code>policyType</code>. Paths that don't lead to the root from the target
      * object are ignored. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#policies">Policies</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
     inline BatchReadOperation& WithLookupPolicy(BatchLookupPolicy&& value) { SetLookupPolicy(std::move(value)); return *this;}
 
@@ -389,8 +406,8 @@ namespace Model
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline const BatchListOutgoingTypedLinks& GetListOutgoingTypedLinks() const{ return m_listOutgoingTypedLinks; }
 
@@ -398,8 +415,8 @@ namespace Model
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetListOutgoingTypedLinks(const BatchListOutgoingTypedLinks& value) { m_listOutgoingTypedLinksHasBeenSet = true; m_listOutgoingTypedLinks = value; }
 
@@ -407,8 +424,8 @@ namespace Model
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetListOutgoingTypedLinks(BatchListOutgoingTypedLinks&& value) { m_listOutgoingTypedLinksHasBeenSet = true; m_listOutgoingTypedLinks = std::move(value); }
 
@@ -416,8 +433,8 @@ namespace Model
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline BatchReadOperation& WithListOutgoingTypedLinks(const BatchListOutgoingTypedLinks& value) { SetListOutgoingTypedLinks(value); return *this;}
 
@@ -425,8 +442,8 @@ namespace Model
      * <p>Returns a paginated list of all the outgoing <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline BatchReadOperation& WithListOutgoingTypedLinks(BatchListOutgoingTypedLinks&& value) { SetListOutgoingTypedLinks(std::move(value)); return *this;}
 
@@ -435,8 +452,8 @@ namespace Model
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline const BatchListIncomingTypedLinks& GetListIncomingTypedLinks() const{ return m_listIncomingTypedLinks; }
 
@@ -444,8 +461,8 @@ namespace Model
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetListIncomingTypedLinks(const BatchListIncomingTypedLinks& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = value; }
 
@@ -453,8 +470,8 @@ namespace Model
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline void SetListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = std::move(value); }
 
@@ -462,8 +479,8 @@ namespace Model
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline BatchReadOperation& WithListIncomingTypedLinks(const BatchListIncomingTypedLinks& value) { SetListIncomingTypedLinks(value); return *this;}
 
@@ -471,8 +488,8 @@ namespace Model
      * <p>Returns a paginated list of all the incoming <a>TypedLinkSpecifier</a>
      * information for an object. It also supports filtering by typed link facet and
      * identity attributes. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink">Typed
-     * link</a>.</p>
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
      */
     inline BatchReadOperation& WithListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
 
@@ -521,6 +538,9 @@ namespace Model
 
     BatchGetObjectAttributes m_getObjectAttributes;
     bool m_getObjectAttributesHasBeenSet;
+
+    BatchListObjectParents m_listObjectParents;
+    bool m_listObjectParentsHasBeenSet;
 
     BatchListObjectPolicies m_listObjectPolicies;
     bool m_listObjectPoliciesHasBeenSet;

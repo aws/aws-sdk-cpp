@@ -149,24 +149,24 @@ namespace Model
     /**
      * <p>The maximum number of objects in a single page to retrieve from the index
      * during a request. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS
-     * Directory Service Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon
+     * Cloud Directory Limits</a>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of objects in a single page to retrieve from the index
      * during a request. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS
-     * Directory Service Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon
+     * Cloud Directory Limits</a>.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of objects in a single page to retrieve from the index
      * during a request. For more information, see <a
-     * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/limits.html#limits_cd">AWS
-     * Directory Service Limits</a>.</p>
+     * href="http://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon
+     * Cloud Directory Limits</a>.</p>
      */
     inline ListIndexRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -205,6 +205,25 @@ namespace Model
      */
     inline ListObjectParentsRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>.
+     * There could be multiple links between a parent-child pair.</p>
+     */
+    inline bool GetIncludeAllLinksToEachParent() const{ return m_includeAllLinksToEachParent; }
+
+    /**
+     * <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>.
+     * There could be multiple links between a parent-child pair.</p>
+     */
+    inline void SetIncludeAllLinksToEachParent(bool value) { m_includeAllLinksToEachParentHasBeenSet = true; m_includeAllLinksToEachParent = value; }
+
+    /**
+     * <p>When set to True, returns all <a>ListObjectParentsResponse$ParentLinks</a>.
+     * There could be multiple links between a parent-child pair.</p>
+     */
+    inline ListObjectParentsRequest& WithIncludeAllLinksToEachParent(bool value) { SetIncludeAllLinksToEachParent(value); return *this;}
+
   private:
 
     Aws::String m_directoryArn;
@@ -221,6 +240,9 @@ namespace Model
 
     ConsistencyLevel m_consistencyLevel;
     bool m_consistencyLevelHasBeenSet;
+
+    bool m_includeAllLinksToEachParent;
+    bool m_includeAllLinksToEachParentHasBeenSet;
   };
 
 } // namespace Model

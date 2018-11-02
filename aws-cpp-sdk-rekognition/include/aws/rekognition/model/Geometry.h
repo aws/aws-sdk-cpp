@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about where text detected by is located on an
+   * <p>Information about where the text detected by is located on an
    * image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Geometry">AWS
    * API Reference</a></p>

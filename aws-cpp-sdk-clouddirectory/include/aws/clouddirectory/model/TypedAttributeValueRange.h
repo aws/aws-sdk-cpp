@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>A range of attribute values. For more information, see <a
-   * href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#rangefilters">Range
+   * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_range_filters.html">Range
    * Filters</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/TypedAttributeValueRange">AWS
    * API Reference</a></p>
