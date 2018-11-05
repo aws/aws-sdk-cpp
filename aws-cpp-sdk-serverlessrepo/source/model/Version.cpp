@@ -32,6 +32,9 @@ Version::Version() :
     m_applicationIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_parameterDefinitionsHasBeenSet(false),
+    m_requiredCapabilitiesHasBeenSet(false),
+    m_resourcesSupported(false),
+    m_resourcesSupportedHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
     m_sourceCodeUrlHasBeenSet(false),
     m_templateUrlHasBeenSet(false)
@@ -42,6 +45,9 @@ Version::Version(JsonView jsonValue) :
     m_applicationIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_parameterDefinitionsHasBeenSet(false),
+    m_requiredCapabilitiesHasBeenSet(false),
+    m_resourcesSupported(false),
+    m_resourcesSupportedHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
     m_sourceCodeUrlHasBeenSet(false),
     m_templateUrlHasBeenSet(false)
@@ -73,6 +79,23 @@ Version& Version::operator =(JsonView jsonValue)
       m_parameterDefinitions.push_back(parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject());
     }
     m_parameterDefinitionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("requiredCapabilities"))
+  {
+    Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
+    for(unsigned requiredCapabilitiesIndex = 0; requiredCapabilitiesIndex < requiredCapabilitiesJsonList.GetLength(); ++requiredCapabilitiesIndex)
+    {
+      m_requiredCapabilities.push_back(CapabilityMapper::GetCapabilityForName(requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString()));
+    }
+    m_requiredCapabilitiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourcesSupported"))
+  {
+    m_resourcesSupported = jsonValue.GetBool("resourcesSupported");
+
+    m_resourcesSupportedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("semanticVersion"))
@@ -123,6 +146,23 @@ JsonValue Version::Jsonize() const
      parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject(m_parameterDefinitions[parameterDefinitionsIndex].Jsonize());
    }
    payload.WithArray("parameterDefinitions", std::move(parameterDefinitionsJsonList));
+
+  }
+
+  if(m_requiredCapabilitiesHasBeenSet)
+  {
+   Array<JsonValue> requiredCapabilitiesJsonList(m_requiredCapabilities.size());
+   for(unsigned requiredCapabilitiesIndex = 0; requiredCapabilitiesIndex < requiredCapabilitiesJsonList.GetLength(); ++requiredCapabilitiesIndex)
+   {
+     requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString(CapabilityMapper::GetNameForCapability(m_requiredCapabilities[requiredCapabilitiesIndex]));
+   }
+   payload.WithArray("requiredCapabilities", std::move(requiredCapabilitiesJsonList));
+
+  }
+
+  if(m_resourcesSupportedHasBeenSet)
+  {
+   payload.WithBool("resourcesSupported", m_resourcesSupported);
 
   }
 

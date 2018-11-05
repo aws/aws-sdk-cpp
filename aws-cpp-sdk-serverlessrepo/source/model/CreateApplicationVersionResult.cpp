@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateApplicationVersionResult::CreateApplicationVersionResult()
+CreateApplicationVersionResult::CreateApplicationVersionResult() : 
+    m_resourcesSupported(false)
 {
 }
 
-CreateApplicationVersionResult::CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateApplicationVersionResult::CreateApplicationVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_resourcesSupported(false)
 {
   *this = result;
 }
@@ -57,6 +59,21 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
     {
       m_parameterDefinitions.push_back(parameterDefinitionsJsonList[parameterDefinitionsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("requiredCapabilities"))
+  {
+    Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
+    for(unsigned requiredCapabilitiesIndex = 0; requiredCapabilitiesIndex < requiredCapabilitiesJsonList.GetLength(); ++requiredCapabilitiesIndex)
+    {
+      m_requiredCapabilities.push_back(CapabilityMapper::GetCapabilityForName(requiredCapabilitiesJsonList[requiredCapabilitiesIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("resourcesSupported"))
+  {
+    m_resourcesSupported = jsonValue.GetBool("resourcesSupported");
+
   }
 
   if(jsonValue.ValueExists("semanticVersion"))

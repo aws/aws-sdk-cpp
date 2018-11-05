@@ -24,15 +24,64 @@ using namespace Aws::Utils;
 
 CreateCloudFormationChangeSetRequest::CreateCloudFormationChangeSetRequest() : 
     m_applicationIdHasBeenSet(false),
+    m_capabilitiesHasBeenSet(false),
+    m_changeSetNameHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_notificationArnsHasBeenSet(false),
     m_parameterOverridesHasBeenSet(false),
+    m_resourceTypesHasBeenSet(false),
+    m_rollbackConfigurationHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
-    m_stackNameHasBeenSet(false)
+    m_stackNameHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
 Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_capabilitiesHasBeenSet)
+  {
+   Array<JsonValue> capabilitiesJsonList(m_capabilities.size());
+   for(unsigned capabilitiesIndex = 0; capabilitiesIndex < capabilitiesJsonList.GetLength(); ++capabilitiesIndex)
+   {
+     capabilitiesJsonList[capabilitiesIndex].AsString(m_capabilities[capabilitiesIndex]);
+   }
+   payload.WithArray("capabilities", std::move(capabilitiesJsonList));
+
+  }
+
+  if(m_changeSetNameHasBeenSet)
+  {
+   payload.WithString("changeSetName", m_changeSetName);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
+  }
+
+  if(m_notificationArnsHasBeenSet)
+  {
+   Array<JsonValue> notificationArnsJsonList(m_notificationArns.size());
+   for(unsigned notificationArnsIndex = 0; notificationArnsIndex < notificationArnsJsonList.GetLength(); ++notificationArnsIndex)
+   {
+     notificationArnsJsonList[notificationArnsIndex].AsString(m_notificationArns[notificationArnsIndex]);
+   }
+   payload.WithArray("notificationArns", std::move(notificationArnsJsonList));
+
+  }
 
   if(m_parameterOverridesHasBeenSet)
   {
@@ -45,6 +94,23 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
 
   }
 
+  if(m_resourceTypesHasBeenSet)
+  {
+   Array<JsonValue> resourceTypesJsonList(m_resourceTypes.size());
+   for(unsigned resourceTypesIndex = 0; resourceTypesIndex < resourceTypesJsonList.GetLength(); ++resourceTypesIndex)
+   {
+     resourceTypesJsonList[resourceTypesIndex].AsString(m_resourceTypes[resourceTypesIndex]);
+   }
+   payload.WithArray("resourceTypes", std::move(resourceTypesJsonList));
+
+  }
+
+  if(m_rollbackConfigurationHasBeenSet)
+  {
+   payload.WithObject("rollbackConfiguration", m_rollbackConfiguration.Jsonize());
+
+  }
+
   if(m_semanticVersionHasBeenSet)
   {
    payload.WithString("semanticVersion", m_semanticVersion);
@@ -54,6 +120,23 @@ Aws::String CreateCloudFormationChangeSetRequest::SerializePayload() const
   if(m_stackNameHasBeenSet)
   {
    payload.WithString("stackName", m_stackName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_templateIdHasBeenSet)
+  {
+   payload.WithString("templateId", m_templateId);
 
   }
 

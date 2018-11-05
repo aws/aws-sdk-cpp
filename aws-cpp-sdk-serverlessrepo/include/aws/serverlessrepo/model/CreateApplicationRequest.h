@@ -239,120 +239,113 @@ namespace Model
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline const Aws::String& GetLicenseBody() const{ return m_licenseBody; }
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseBody(const Aws::String& value) { m_licenseBodyHasBeenSet = true; m_licenseBody = value; }
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseBody(Aws::String&& value) { m_licenseBodyHasBeenSet = true; m_licenseBody = std::move(value); }
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseBody(const char* value) { m_licenseBodyHasBeenSet = true; m_licenseBody.assign(value); }
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseBody(const Aws::String& value) { SetLicenseBody(value); return *this;}
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseBody(Aws::String&& value) { SetLicenseBody(std::move(value)); return *this;}
 
     /**
      * <p>A local text file that contains the license of the app that matches the
      * spdxLicenseID value of your application.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * licenseBody and licenseUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseBody(const char* value) { SetLicenseBody(value); return *this;}
 
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline const Aws::String& GetLicenseUrl() const{ return m_licenseUrl; }
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseUrl(const Aws::String& value) { m_licenseUrlHasBeenSet = true; m_licenseUrl = value; }
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseUrl(Aws::String&& value) { m_licenseUrlHasBeenSet = true; m_licenseUrl = std::move(value); }
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline void SetLicenseUrl(const char* value) { m_licenseUrlHasBeenSet = true; m_licenseUrl.assign(value); }
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseUrl(const Aws::String& value) { SetLicenseUrl(value); return *this;}
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseUrl(Aws::String&& value) { SetLicenseUrl(std::move(value)); return *this;}
 
     /**
      * <p>A link to the S3 object that contains the license of the app that matches the
-     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>Note:
-     * Only one of licenseBody and licenseUrl can be specified, otherwise an error will
-     * result.</p>
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithLicenseUrl(const char* value) { SetLicenseUrl(value); return *this;}
 
@@ -403,63 +396,63 @@ namespace Model
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline const Aws::String& GetReadmeBody() const{ return m_readmeBody; }
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline void SetReadmeBody(const Aws::String& value) { m_readmeBodyHasBeenSet = true; m_readmeBody = value; }
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline void SetReadmeBody(Aws::String&& value) { m_readmeBodyHasBeenSet = true; m_readmeBody = std::move(value); }
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline void SetReadmeBody(const char* value) { m_readmeBodyHasBeenSet = true; m_readmeBody.assign(value); }
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeBody(const Aws::String& value) { SetReadmeBody(value); return *this;}
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeBody(Aws::String&& value) { SetReadmeBody(std::move(value)); return *this;}
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.
- The file is of the format
-     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>Note: Only one of
-     * readmeBody and readmeUrl can be specified, otherwise an error will result.</p>
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeBody(const char* value) { SetReadmeBody(value); return *this;}
 
@@ -467,56 +460,56 @@ namespace Model
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline const Aws::String& GetReadmeUrl() const{ return m_readmeUrl; }
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline void SetReadmeUrl(const Aws::String& value) { m_readmeUrlHasBeenSet = true; m_readmeUrl = value; }
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline void SetReadmeUrl(Aws::String&& value) { m_readmeUrlHasBeenSet = true; m_readmeUrl = std::move(value); }
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline void SetReadmeUrl(const char* value) { m_readmeUrlHasBeenSet = true; m_readmeUrl.assign(value); }
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeUrl(const Aws::String& value) { SetReadmeUrl(value); return *this;}
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeUrl(Aws::String&& value) { SetReadmeUrl(std::move(value)); return *this;}
 
     /**
      * <p>A link to the S3 object in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5
-     * MB</p><p>Note: Only one of readmeBody and readmeUrl can be specified, otherwise
-     * an error will result.</p>
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
      */
     inline CreateApplicationRequest& WithReadmeUrl(const char* value) { SetReadmeUrl(value); return *this;}
 
@@ -660,113 +653,106 @@ namespace Model
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
  The file
-     * is of the format file://&lt;path>/&lt;filename>.</p><p>Note: Only one of
-     * templateBody and templateUrl can be specified, otherwise an error will
-     * result.</p>
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline void SetTemplateUrl(const Aws::String& value) { m_templateUrlHasBeenSet = true; m_templateUrl = value; }
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline void SetTemplateUrl(Aws::String&& value) { m_templateUrlHasBeenSet = true; m_templateUrl = std::move(value); }
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline void SetTemplateUrl(const char* value) { m_templateUrlHasBeenSet = true; m_templateUrl.assign(value); }
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateUrl(const Aws::String& value) { SetTemplateUrl(value); return *this;}
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateUrl(Aws::String&& value) { SetTemplateUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to the S3 object cotaining the packaged AWS SAM template of your
-     * application.</p><p>Note: Only one of templateBody and templateUrl can be
-     * specified, otherwise an error will result.</p>
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
      */
     inline CreateApplicationRequest& WithTemplateUrl(const char* value) { SetTemplateUrl(value); return *this;}
 

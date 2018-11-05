@@ -30,9 +30,11 @@
 #include <aws/serverlessrepo/model/CreateApplicationRequest.h>
 #include <aws/serverlessrepo/model/CreateApplicationVersionRequest.h>
 #include <aws/serverlessrepo/model/CreateCloudFormationChangeSetRequest.h>
+#include <aws/serverlessrepo/model/CreateCloudFormationTemplateRequest.h>
 #include <aws/serverlessrepo/model/DeleteApplicationRequest.h>
 #include <aws/serverlessrepo/model/GetApplicationRequest.h>
 #include <aws/serverlessrepo/model/GetApplicationPolicyRequest.h>
+#include <aws/serverlessrepo/model/GetCloudFormationTemplateRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationVersionsRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationsRequest.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyRequest.h>
@@ -212,6 +214,43 @@ void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsyncHe
   handler(this, request, CreateCloudFormationChangeSet(request), context);
 }
 
+CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationTemplate(const CreateCloudFormationTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/templates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateCloudFormationTemplateOutcome(CreateCloudFormationTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateCloudFormationTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateCallable(const CreateCloudFormationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCloudFormationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCloudFormationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsync(const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFormationTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsyncHelper(const CreateCloudFormationTemplateRequest& request, const CreateCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCloudFormationTemplate(request), context);
+}
+
 DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
   Aws::StringStream ss;
@@ -319,6 +358,44 @@ void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsync(const GetA
 void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsyncHelper(const GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetApplicationPolicy(request), context);
+}
+
+GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloudFormationTemplate(const GetCloudFormationTemplateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/templates/";
+  ss << request.GetTemplateId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCloudFormationTemplateOutcome(GetCloudFormationTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCloudFormationTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetCloudFormationTemplateOutcomeCallable ServerlessApplicationRepositoryClient::GetCloudFormationTemplateCallable(const GetCloudFormationTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCloudFormationTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFormationTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsync(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFormationTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsyncHelper(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCloudFormationTemplate(request), context);
 }
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const

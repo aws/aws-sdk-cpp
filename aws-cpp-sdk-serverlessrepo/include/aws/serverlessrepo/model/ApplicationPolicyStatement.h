@@ -49,58 +49,66 @@ namespace Model
 
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline ApplicationPolicyStatement& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline ApplicationPolicyStatement& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline ApplicationPolicyStatement& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>See <a
+     * <p>For the list of actions supported for this operation, see <a
      * href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application
-     * Permissions</a> for the list of supported actions.</p>
+     * 
+ Permissions</a>.</p>
      */
     inline ApplicationPolicyStatement& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
