@@ -105,6 +105,7 @@ public class CppViewHelperTest {
     @Test
     public void testComputeCppType() {
         Shape shape = new Shape();
+        assertEquals(false, shape.isSensitive());
         shape.setType("string");
         assertEquals("Aws::String", CppViewHelper.computeCppType(shape));
         shape.setType("long");
@@ -121,6 +122,9 @@ public class CppViewHelperTest {
         assertEquals("Aws::Utils::DateTime", CppViewHelper.computeCppType(shape));
         shape.setType("blob");
         assertEquals("Aws::Utils::ByteBuffer", CppViewHelper.computeCppType(shape));
+        shape.setSensitive(true);
+        assertEquals("Aws::Utils::CryptoBuffer", CppViewHelper.computeCppType(shape));
+        shape.setSensitive(false);
 
         shape.setName("ShapeName");
         shape.setType("structure");

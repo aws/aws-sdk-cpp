@@ -44,6 +44,7 @@ public class CppViewHelper {
         CORAL_TO_CPP_TYPE_MAPPING.put("double", "double");
         CORAL_TO_CPP_TYPE_MAPPING.put("float", "double");
         CORAL_TO_CPP_TYPE_MAPPING.put("blob", "Aws::Utils::ByteBuffer");
+        CORAL_TO_CPP_TYPE_MAPPING.put("sensitive_blob", "Aws::Utils::CryptoBuffer");
 
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("long", "Int64");
         CORAL_TO_JSON_CPP_TYPE_MAPPING.put("integer", "Integer");
@@ -140,7 +141,8 @@ public class CppViewHelper {
     }
 
     public static String computeCppType(Shape shape) {
-        String cppType =  CORAL_TO_CPP_TYPE_MAPPING.get(shape.getType());
+        String sensitivePrefix = shape.isSensitive() ? "sensitive_" : "";
+        String cppType =  CORAL_TO_CPP_TYPE_MAPPING.get(sensitivePrefix + shape.getType());
 
         //enum types show up as string
         if(cppType != null && !shape.isEnum()) {

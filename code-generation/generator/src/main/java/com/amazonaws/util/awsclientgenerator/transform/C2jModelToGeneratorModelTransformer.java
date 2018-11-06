@@ -203,6 +203,7 @@ public class C2jModelToGeneratorModelTransformer {
         shape.setLocationName(c2jShape.getLocationName());
         shape.setPayload(c2jShape.getPayload());
         shape.setFlattened(c2jShape.isFlattened());
+        shape.setSensitive(c2jShape.isSensitive());
         if("timestamp".equalsIgnoreCase(shape.getType())) {
             // shape's specific timestampFormat overrides the timestampFormat specified in metadata (if any)
             shape.setTimestampFormat(c2jShape.getTimestampFormat() != null ?

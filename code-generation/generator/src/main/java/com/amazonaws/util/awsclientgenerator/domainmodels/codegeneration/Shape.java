@@ -49,6 +49,7 @@ public class Shape {
     private boolean signBody;
     private String signerName;
     private String timestampFormat;
+    private boolean sensitive;
 
     public boolean isMap() {
         return "map".equals(type.toLowerCase());

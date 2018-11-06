@@ -42,4 +42,5 @@ public class C2jShape {
     private String timestampFormat;
     private boolean eventstream;
     private boolean event;
+    private boolean sensitive;
 }
