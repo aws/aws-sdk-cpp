@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Put Events request<p><h3>See Also:</h3>   <a
+   * A set of events to process.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsRequest">AWS
    * API Reference</a></p>
    */
@@ -50,79 +50,68 @@ namespace Model
 
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline const Aws::Map<Aws::String, EventsBatch>& GetBatchItem() const{ return m_batchItem; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline void SetBatchItem(const Aws::Map<Aws::String, EventsBatch>& value) { m_batchItemHasBeenSet = true; m_batchItem = value; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline void SetBatchItem(Aws::Map<Aws::String, EventsBatch>&& value) { m_batchItemHasBeenSet = true; m_batchItem = std::move(value); }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& WithBatchItem(const Aws::Map<Aws::String, EventsBatch>& value) { SetBatchItem(value); return *this;}
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& WithBatchItem(Aws::Map<Aws::String, EventsBatch>&& value) { SetBatchItem(std::move(value)); return *this;}
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(const Aws::String& key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, value); return *this; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(Aws::String&& key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(std::move(key), value); return *this; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(const Aws::String& key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(Aws::String&& key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(const char* key, EventsBatch&& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Batch of events with endpoint id as the key and an object of EventsBatch as
-     * value. The EventsBatch object has the PublicEndpoint and a map of event Id's to
-     * events
+     * A batch of events to process. Each BatchItem consists of an endpoint ID as the
+     * key, and an EventsBatch object as the value.
      */
     inline EventsRequest& AddBatchItem(const char* key, const EventsBatch& value) { m_batchItemHasBeenSet = true; m_batchItem.emplace(key, value); return *this; }
 

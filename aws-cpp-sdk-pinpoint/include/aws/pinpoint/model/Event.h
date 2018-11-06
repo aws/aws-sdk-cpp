@@ -183,68 +183,68 @@ namespace Model
 
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline void SetMetrics(const Aws::Map<Aws::String, double>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline void SetMetrics(Aws::Map<Aws::String, double>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline Event& WithMetrics(const Aws::Map<Aws::String, double>& value) { SetMetrics(value); return *this;}
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline Event& WithMetrics(Aws::Map<Aws::String, double>&& value) { SetMetrics(std::move(value)); return *this;}
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline Event& AddMetrics(const Aws::String& key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline Event& AddMetrics(Aws::String&& key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(std::move(key), value); return *this; }
 
     /**
-     * Event metrics
+     * Custom metrics related to the event.
      */
     inline Event& AddMetrics(const char* key, double value) { m_metricsHasBeenSet = true; m_metrics.emplace(key, value); return *this; }
 
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      */
     inline const Session& GetSession() const{ return m_session; }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      */
     inline void SetSession(const Session& value) { m_sessionHasBeenSet = true; m_session = value; }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      */
     inline void SetSession(Session&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      */
     inline Event& WithSession(const Session& value) { SetSession(value); return *this;}
 
     /**
-     * The session
+     * Information about the session in which the event occurred.
      */
     inline Event& WithSession(Session&& value) { SetSession(std::move(value)); return *this;}
 

@@ -51,6 +51,7 @@ namespace Model
     /**
      * The length of time during which users have been active or inactive with your
      * app.
+
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline const Duration& GetDuration() const{ return m_duration; }
@@ -58,6 +59,7 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
     /**
      * The length of time during which users have been active or inactive with your
      * app.
+
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline void SetDuration(const Duration& value) { m_durationHasBeenSet = true; m_duration = value; }
@@ -65,6 +67,7 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
     /**
      * The length of time during which users have been active or inactive with your
      * app.
+
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline void SetDuration(Duration&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
@@ -72,6 +75,7 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
     /**
      * The length of time during which users have been active or inactive with your
      * app.
+
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline RecencyDimension& WithDuration(const Duration& value) { SetDuration(value); return *this;}
@@ -79,6 +83,7 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
     /**
      * The length of time during which users have been active or inactive with your
      * app.
+
 Valid values: HR_24, DAY_7, DAY_14, DAY_30
      */
     inline RecencyDimension& WithDuration(Duration&& value) { SetDuration(std::move(value)); return *this;}
@@ -86,8 +91,10 @@ Valid values: HR_24, DAY_7, DAY_14, DAY_30
 
     /**
      * The recency dimension type:
+
 ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
+
 INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
@@ -95,8 +102,10 @@ INACTIVE - Users who have not
 
     /**
      * The recency dimension type:
+
 ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
+
 INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
@@ -104,8 +113,10 @@ INACTIVE - Users who have not
 
     /**
      * The recency dimension type:
+
 ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
+
 INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
@@ -113,8 +124,10 @@ INACTIVE - Users who have not
 
     /**
      * The recency dimension type:
+
 ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
+
 INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */
@@ -122,8 +135,10 @@ INACTIVE - Users who have not
 
     /**
      * The recency dimension type:
+
 ACTIVE - Users who have used your app within the
      * specified duration are included in the segment.
+
 INACTIVE - Users who have not
      * used your app within the specified duration are included in the segment.
      */

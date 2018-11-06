@@ -17,6 +17,7 @@
 #include <aws/waf-regional/WAFRegional_EXPORTS.h>
 #include <aws/waf-regional/WAFRegionalRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/waf-regional/model/ResourceType.h>
 #include <utility>
 
 namespace Aws
@@ -86,10 +87,44 @@ namespace Model
      */
     inline ListResourcesForWebACLRequest& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
 
+
+    /**
+     * <p>The type of resource to list, either and application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of resource to list, either and application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>The type of resource to list, either and application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p>The type of resource to list, either and application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>The type of resource to list, either and application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet;
+
+    ResourceType m_resourceType;
+    bool m_resourceTypeHasBeenSet;
   };
 
 } // namespace Model

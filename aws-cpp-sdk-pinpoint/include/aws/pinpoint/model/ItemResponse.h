@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * The endpoint and events combined response definition<p><h3>See Also:</h3>   <a
+   * The response that's provided after registering the endpoint.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ItemResponse">AWS
    * API Reference</a></p>
    */
@@ -51,94 +52,105 @@ namespace Model
 
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      */
     inline const EndpointItemResponse& GetEndpointItemResponse() const{ return m_endpointItemResponse; }
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      */
     inline void SetEndpointItemResponse(const EndpointItemResponse& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = value; }
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      */
     inline void SetEndpointItemResponse(EndpointItemResponse&& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = std::move(value); }
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      */
     inline ItemResponse& WithEndpointItemResponse(const EndpointItemResponse& value) { SetEndpointItemResponse(value); return *this;}
 
     /**
-     * Endpoint item response after endpoint registration
+     * The response received after the endpoint was accepted.
      */
     inline ItemResponse& WithEndpointItemResponse(EndpointItemResponse&& value) { SetEndpointItemResponse(std::move(value)); return *this;}
 
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline const Aws::Map<Aws::String, EventItemResponse>& GetEventsItemResponse() const{ return m_eventsItemResponse; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline void SetEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = value; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline void SetEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = std::move(value); }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& WithEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { SetEventsItemResponse(value); return *this;}
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& WithEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { SetEventsItemResponse(std::move(value)); return *this;}
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(const Aws::String& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(Aws::String&& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), value); return *this; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(const Aws::String& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(Aws::String&& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(const char* key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Events item response is a multipart response object per event Id, with eventId
-     * as the key and EventItemResponse object as the value
+     * A multipart response object that contains a key and value for each event ID in
+     * the request. In each object, the event ID is the key, and an EventItemResponse
+     * object is the value.
      */
     inline ItemResponse& AddEventsItemResponse(const char* key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
 

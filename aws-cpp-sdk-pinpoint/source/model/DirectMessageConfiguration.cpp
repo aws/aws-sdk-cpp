@@ -34,6 +34,7 @@ DirectMessageConfiguration::DirectMessageConfiguration() :
     m_baiduMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_defaultPushNotificationMessageHasBeenSet(false),
+    m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
     m_sMSMessageHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue) :
     m_baiduMessageHasBeenSet(false),
     m_defaultMessageHasBeenSet(false),
     m_defaultPushNotificationMessageHasBeenSet(false),
+    m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
     m_sMSMessageHasBeenSet(false)
 {
@@ -86,6 +88,13 @@ DirectMessageConfiguration& DirectMessageConfiguration::operator =(JsonView json
     m_defaultPushNotificationMessage = jsonValue.GetObject("DefaultPushNotificationMessage");
 
     m_defaultPushNotificationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EmailMessage"))
+  {
+    m_emailMessage = jsonValue.GetObject("EmailMessage");
+
+    m_emailMessageHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("GCMMessage"))
@@ -136,6 +145,12 @@ JsonValue DirectMessageConfiguration::Jsonize() const
   if(m_defaultPushNotificationMessageHasBeenSet)
   {
    payload.WithObject("DefaultPushNotificationMessage", m_defaultPushNotificationMessage.Jsonize());
+
+  }
+
+  if(m_emailMessageHasBeenSet)
+  {
+   payload.WithObject("EmailMessage", m_emailMessage.Jsonize());
 
   }
 

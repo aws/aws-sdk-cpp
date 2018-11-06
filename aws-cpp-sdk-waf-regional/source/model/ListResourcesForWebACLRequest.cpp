@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListResourcesForWebACLRequest::ListResourcesForWebACLRequest() : 
-    m_webACLIdHasBeenSet(false)
+    m_webACLIdHasBeenSet(false),
+    m_resourceType(ResourceType::NOT_SET),
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String ListResourcesForWebACLRequest::SerializePayload() const
   {
    payload.WithString("WebACLId", m_webACLId);
 
+  }
+
+  if(m_resourceTypeHasBeenSet)
+  {
+   payload.WithString("ResourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
   return payload.View().WriteReadable();

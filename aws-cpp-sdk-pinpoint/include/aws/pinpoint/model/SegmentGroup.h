@@ -93,6 +93,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline const Aws::Vector<SegmentReference>& GetSourceSegments() const{ return m_sourceSegments; }
 
@@ -102,6 +106,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline void SetSourceSegments(const Aws::Vector<SegmentReference>& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = value; }
 
@@ -111,6 +119,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline void SetSourceSegments(Aws::Vector<SegmentReference>&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::move(value); }
 
@@ -120,6 +132,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline SegmentGroup& WithSourceSegments(const Aws::Vector<SegmentReference>& value) { SetSourceSegments(value); return *this;}
 
@@ -129,6 +145,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline SegmentGroup& WithSourceSegments(Aws::Vector<SegmentReference>&& value) { SetSourceSegments(std::move(value)); return *this;}
 
@@ -138,6 +158,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline SegmentGroup& AddSourceSegments(const SegmentReference& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(value); return *this; }
 
@@ -147,6 +171,10 @@ namespace Model
      * filters the source segment based on the dimensions that you specify. You can
      * specify more than one dimensional segment. You can only specify one imported
      * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
      */
     inline SegmentGroup& AddSourceSegments(SegmentReference&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(std::move(value)); return *this; }
 

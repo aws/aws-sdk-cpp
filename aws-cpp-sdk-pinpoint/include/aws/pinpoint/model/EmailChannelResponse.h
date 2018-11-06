@@ -84,6 +84,49 @@ namespace Model
 
 
     /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelResponse& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelResponse& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelResponse& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
+
+
+    /**
      * The date that the settings were last updated in ISO 8601 format.
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
@@ -461,6 +504,9 @@ namespace Model
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    Aws::String m_configurationSet;
+    bool m_configurationSetHasBeenSet;
 
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;

@@ -130,6 +130,12 @@ UpdateStageResult& UpdateStageResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("webAclArn"))
+  {
+    m_webAclArn = jsonValue.GetString("webAclArn");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

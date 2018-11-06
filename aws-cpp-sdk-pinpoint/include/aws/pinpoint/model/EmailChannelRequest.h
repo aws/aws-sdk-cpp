@@ -48,6 +48,49 @@ namespace Model
 
 
     /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelRequest& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelRequest& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
+    inline EmailChannelRequest& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
+
+
+    /**
      * If the channel is enabled for sending messages.
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -178,6 +221,9 @@ namespace Model
     inline EmailChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
   private:
+
+    Aws::String m_configurationSet;
+    bool m_configurationSetHasBeenSet;
 
     bool m_enabled;
     bool m_enabledHasBeenSet;

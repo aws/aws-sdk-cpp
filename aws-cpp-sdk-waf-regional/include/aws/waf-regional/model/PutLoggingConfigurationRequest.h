@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected
-     * traffic information, the redacted fields details, and the Amazon Resource Name
-     * (ARN) of the web ACL to monitor.</p>
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
      */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected
-     * traffic information, the redacted fields details, and the Amazon Resource Name
-     * (ARN) of the web ACL to monitor.</p>
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
      */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected
-     * traffic information, the redacted fields details, and the Amazon Resource Name
-     * (ARN) of the web ACL to monitor.</p>
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
      */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected
-     * traffic information, the redacted fields details, and the Amazon Resource Name
-     * (ARN) of the web ACL to monitor.</p>
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
      */
     inline PutLoggingConfigurationRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>The Amazon Kinesis Data Firehose delivery streams that contains the inspected
-     * traffic information, the redacted fields details, and the Amazon Resource Name
-     * (ARN) of the web ACL to monitor.</p>
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
      */
     inline PutLoggingConfigurationRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

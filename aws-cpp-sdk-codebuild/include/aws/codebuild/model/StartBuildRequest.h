@@ -617,21 +617,21 @@ namespace Model
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * an invalidInputException is thrown. </p>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p>
      */
     inline bool GetReportBuildStatusOverride() const{ return m_reportBuildStatusOverride; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * an invalidInputException is thrown. </p>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p>
      */
     inline void SetReportBuildStatusOverride(bool value) { m_reportBuildStatusOverrideHasBeenSet = true; m_reportBuildStatusOverride = value; }
 
     /**
      * <p> Set to true to report to your source provider the status of a build's start
      * and completion. If you use this option with a source provider other than GitHub,
-     * an invalidInputException is thrown. </p>
+     * GitHub Enterprise, or Bitbucket, an invalidInputException is thrown. </p>
      */
     inline StartBuildRequest& WithReportBuildStatusOverride(bool value) { SetReportBuildStatusOverride(value); return *this;}
 

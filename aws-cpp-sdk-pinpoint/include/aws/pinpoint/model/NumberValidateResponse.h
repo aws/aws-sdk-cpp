@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Phone Number Information response.<p><h3>See Also:</h3>   <a
+   * Phone Number Validate response.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/NumberValidateResponse">AWS
    * API Reference</a></p>
    */
@@ -357,44 +357,44 @@ namespace Model
 
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline const Aws::String& GetOriginalCountryCodeIso2() const{ return m_originalCountryCodeIso2; }
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline void SetOriginalCountryCodeIso2(const Aws::String& value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2 = value; }
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline void SetOriginalCountryCodeIso2(Aws::String&& value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2 = std::move(value); }
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline void SetOriginalCountryCodeIso2(const char* value) { m_originalCountryCodeIso2HasBeenSet = true; m_originalCountryCodeIso2.assign(value); }
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(const Aws::String& value) { SetOriginalCountryCodeIso2(value); return *this;}
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(Aws::String&& value) { SetOriginalCountryCodeIso2(std::move(value)); return *this;}
 
     /**
-     * The two-character ISO code for the country or region that you included in the
-     * request body.
+     * The two-character code (in ISO 3166-1 alpha-2 format) for the country or region
+     * in the request body.
      */
     inline NumberValidateResponse& WithOriginalCountryCodeIso2(const char* value) { SetOriginalCountryCodeIso2(value); return *this;}
 

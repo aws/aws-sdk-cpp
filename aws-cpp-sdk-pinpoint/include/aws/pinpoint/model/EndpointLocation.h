@@ -85,43 +85,43 @@ namespace Model
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
      * The two-letter code for the country or region of the endpoint. Specified as an
-     * ISO 3166-1 Alpha-2 code, such as "US" for the United States.
+     * ISO 3166-1 alpha-2 code, such as "US" for the United States.
      */
     inline EndpointLocation& WithCountry(const char* value) { SetCountry(value); return *this;}
 

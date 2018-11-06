@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * Campaign Limits are used to limit the number of messages that can be sent to a
-   * user.<p><h3>See Also:</h3>   <a
+   * single endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits">AWS
    * API Reference</a></p>
    */
@@ -47,17 +47,20 @@ namespace Model
 
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * The maximum number of messages that each campaign can send to a single endpoint
+     * in a 24-hour period.
      */
     inline int GetDaily() const{ return m_daily; }
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * The maximum number of messages that each campaign can send to a single endpoint
+     * in a 24-hour period.
      */
     inline void SetDaily(int value) { m_dailyHasBeenSet = true; m_daily = value; }
 
     /**
-     * The maximum number of messages that the campaign can send daily.
+     * The maximum number of messages that each campaign can send to a single endpoint
+     * in a 24-hour period.
      */
     inline CampaignLimits& WithDaily(int value) { SetDaily(value); return *this;}
 
@@ -104,17 +107,20 @@ namespace Model
 
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * The maximum number of messages that an individual campaign can send to a single
+     * endpoint over the course of the campaign.
      */
     inline int GetTotal() const{ return m_total; }
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * The maximum number of messages that an individual campaign can send to a single
+     * endpoint over the course of the campaign.
      */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
-     * The maximum total number of messages that the campaign can send.
+     * The maximum number of messages that an individual campaign can send to a single
+     * endpoint over the course of the campaign.
      */
     inline CampaignLimits& WithTotal(int value) { SetTotal(value); return *this;}
 

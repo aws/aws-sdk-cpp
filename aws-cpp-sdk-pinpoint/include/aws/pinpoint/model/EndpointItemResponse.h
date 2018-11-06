@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * The responses that are returned after you create or update an endpoint and
-   * record an event.<p><h3>See Also:</h3>   <a
+   * A complex object that holds the status code and message as a result of
+   * processing an endpoint.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointItemResponse">AWS
    * API Reference</a></p>
    */
@@ -92,20 +92,20 @@ namespace Model
 
 
     /**
-     * The status code to respond with for a particular endpoint id after endpoint
-     * registration
+     * The status code associated with the merging of an endpoint when issuing a
+     * response.
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * The status code to respond with for a particular endpoint id after endpoint
-     * registration
+     * The status code associated with the merging of an endpoint when issuing a
+     * response.
      */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * The status code to respond with for a particular endpoint id after endpoint
-     * registration
+     * The status code associated with the merging of an endpoint when issuing a
+     * response.
      */
     inline EndpointItemResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 

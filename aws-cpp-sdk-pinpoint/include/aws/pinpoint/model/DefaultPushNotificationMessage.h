@@ -216,20 +216,23 @@ namespace Model
 
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use
+     * silent pushes for remote configuration or to deliver messages to in-app
+     * notification centers.
      */
     inline bool GetSilentPush() const{ return m_silentPush; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use
+     * silent pushes for remote configuration or to deliver messages to in-app
+     * notification centers.
      */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
-     * Indicates if the message should display on the users device. Silent pushes can
-     * be used for Remote Configuration and Phone Home use cases.
+     * Indicates if the message should display on the recipient's device. You can use
+     * silent pushes for remote configuration or to deliver messages to in-app
+     * notification centers.
      */
     inline DefaultPushNotificationMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
 

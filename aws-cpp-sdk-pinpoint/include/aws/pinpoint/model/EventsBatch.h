@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * Events batch definition<p><h3>See Also:</h3>   <a
+   * A batch of PublicEndpoints and Events to process.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventsBatch">AWS
    * API Reference</a></p>
    */
@@ -51,83 +51,83 @@ namespace Model
 
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      */
     inline const PublicEndpoint& GetEndpoint() const{ return m_endpoint; }
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      */
     inline void SetEndpoint(const PublicEndpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      */
     inline void SetEndpoint(PublicEndpoint&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      */
     inline EventsBatch& WithEndpoint(const PublicEndpoint& value) { SetEndpoint(value); return *this;}
 
     /**
-     * Endpoint information
+     * The PublicEndpoint attached to the EndpointId from the request.
      */
     inline EventsBatch& WithEndpoint(PublicEndpoint&& value) { SetEndpoint(std::move(value)); return *this;}
 
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline const Aws::Map<Aws::String, Event>& GetEvents() const{ return m_events; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline void SetEvents(const Aws::Map<Aws::String, Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline void SetEvents(Aws::Map<Aws::String, Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& WithEvents(const Aws::Map<Aws::String, Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& WithEvents(Aws::Map<Aws::String, Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(const Aws::String& key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(Aws::String&& key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(const Aws::String& key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(Aws::String&& key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(const char* key, Event&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
 
     /**
-     * Events
+     * An object that contains a set of events associated with the endpoint.
      */
     inline EventsBatch& AddEvents(const char* key, const Event& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 

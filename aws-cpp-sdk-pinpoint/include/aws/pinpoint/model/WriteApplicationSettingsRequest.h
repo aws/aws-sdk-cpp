@@ -92,32 +92,32 @@ namespace Model
 
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can
+     * also have their own limits, which override the settings at the project level.
      */
     inline const CampaignLimits& GetLimits() const{ return m_limits; }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can
+     * also have their own limits, which override the settings at the project level.
      */
     inline void SetLimits(const CampaignLimits& value) { m_limitsHasBeenSet = true; m_limits = value; }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can
+     * also have their own limits, which override the settings at the project level.
      */
     inline void SetLimits(CampaignLimits&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can
+     * also have their own limits, which override the settings at the project level.
      */
     inline WriteApplicationSettingsRequest& WithLimits(const CampaignLimits& value) { SetLimits(value); return *this;}
 
     /**
-     * The default campaign limits for the app. These limits apply to each campaign for
-     * the app, unless the campaign overrides the default with limits of its own.
+     * The limits that apply to each campaign in the project by default. Campaigns can
+     * also have their own limits, which override the settings at the project level.
      */
     inline WriteApplicationSettingsRequest& WithLimits(CampaignLimits&& value) { SetLimits(std::move(value)); return *this;}
 

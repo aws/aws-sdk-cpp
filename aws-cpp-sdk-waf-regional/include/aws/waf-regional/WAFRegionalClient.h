@@ -3348,16 +3348,13 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
-         * delivery stream. For more information, see <a
-         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
-         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
-         * <p>Associate that delivery stream to your web ACL using a
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
-         * For more information, see <a
+         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3369,16 +3366,13 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
-         * delivery stream. For more information, see <a
-         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
-         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
-         * <p>Associate that delivery stream to your web ACL using a
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
-         * For more information, see <a
+         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -3392,16 +3386,13 @@ namespace Model
         /**
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
-         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose
-         * delivery stream. For more information, see <a
-         * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating
-         * an Amazon Kinesis Data Firehose Delivery Stream</a>. </p> </li> <li>
-         * <p>Associate that delivery stream to your web ACL using a
+         * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
+         * </li> <li> <p>Associate that firehose to your web ACL using a
          * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
          * successfully enable logging using a <code>PutLoggingConfiguration</code>
          * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose delivery stream.
-         * For more information, see <a
+         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

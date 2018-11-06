@@ -572,32 +572,32 @@ namespace Model
 
 
     /**
-     * <p>Information about a webhook in GitHub that connects repository events to a
-     * build project in AWS CodeBuild.</p>
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
      */
     inline const Webhook& GetWebhook() const{ return m_webhook; }
 
     /**
-     * <p>Information about a webhook in GitHub that connects repository events to a
-     * build project in AWS CodeBuild.</p>
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
      */
     inline void SetWebhook(const Webhook& value) { m_webhookHasBeenSet = true; m_webhook = value; }
 
     /**
-     * <p>Information about a webhook in GitHub that connects repository events to a
-     * build project in AWS CodeBuild.</p>
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
      */
     inline void SetWebhook(Webhook&& value) { m_webhookHasBeenSet = true; m_webhook = std::move(value); }
 
     /**
-     * <p>Information about a webhook in GitHub that connects repository events to a
-     * build project in AWS CodeBuild.</p>
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
      */
     inline Project& WithWebhook(const Webhook& value) { SetWebhook(value); return *this;}
 
     /**
-     * <p>Information about a webhook in GitHub that connects repository events to a
-     * build project in AWS CodeBuild.</p>
+     * <p>Information about a webhook that connects repository events to a build
+     * project in AWS CodeBuild.</p>
      */
     inline Project& WithWebhook(Webhook&& value) { SetWebhook(std::move(value)); return *this;}
 

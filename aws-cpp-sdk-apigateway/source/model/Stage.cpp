@@ -46,6 +46,7 @@ Stage::Stage() :
     m_canarySettingsHasBeenSet(false),
     m_tracingEnabled(false),
     m_tracingEnabledHasBeenSet(false),
+    m_webAclArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
@@ -70,6 +71,7 @@ Stage::Stage(JsonView jsonValue) :
     m_canarySettingsHasBeenSet(false),
     m_tracingEnabled(false),
     m_tracingEnabledHasBeenSet(false),
+    m_webAclArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false)
@@ -174,6 +176,13 @@ Stage& Stage::operator =(JsonView jsonValue)
     m_tracingEnabled = jsonValue.GetBool("tracingEnabled");
 
     m_tracingEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("webAclArn"))
+  {
+    m_webAclArn = jsonValue.GetString("webAclArn");
+
+    m_webAclArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -290,6 +299,12 @@ JsonValue Stage::Jsonize() const
   if(m_tracingEnabledHasBeenSet)
   {
    payload.WithBool("tracingEnabled", m_tracingEnabled);
+
+  }
+
+  if(m_webAclArnHasBeenSet)
+  {
+   payload.WithString("webAclArn", m_webAclArn);
 
   }
 

@@ -55,43 +55,43 @@ namespace Model
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline PublicEndpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline PublicEndpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
     /**
      * The unique identifier for the recipient. For example, an address could be a
-     * device token or an endpoint ID.
+     * device token, email address, or mobile phone number.
      */
     inline PublicEndpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
@@ -226,37 +226,37 @@ Valid values: APNS, GCM
 
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline void SetEffectiveDate(const Aws::String& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = value; }
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline void SetEffectiveDate(Aws::String&& value) { m_effectiveDateHasBeenSet = true; m_effectiveDate = std::move(value); }
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline void SetEffectiveDate(const char* value) { m_effectiveDateHasBeenSet = true; m_effectiveDate.assign(value); }
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline PublicEndpoint& WithEffectiveDate(const Aws::String& value) { SetEffectiveDate(value); return *this;}
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline PublicEndpoint& WithEffectiveDate(Aws::String&& value) { SetEffectiveDate(std::move(value)); return *this;}
 
     /**
-     * The date and time when the endpoint was last updated.
+     * The date and time when the endpoint was last updated, in  ISO 8601 format.
      */
     inline PublicEndpoint& WithEffectiveDate(const char* value) { SetEffectiveDate(value); return *this;}
 

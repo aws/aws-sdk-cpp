@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Endpoint update request<p><h3>See Also:</h3>   <a
+   * An endpoint update request.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EndpointRequest">AWS
    * API Reference</a></p>
    */

@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      */
     inline const SetDimension& GetCountry() const{ return m_country; }
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      */
     inline void SetCountry(const SetDimension& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      */
     inline void SetCountry(SetDimension&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      */
     inline SegmentLocation& WithCountry(const SetDimension& value) { SetCountry(value); return *this;}
 
     /**
-     * The country filter according to ISO 3166-1 Alpha-2 codes.
+     * The country or region, in ISO 3166-1 alpha-2 format.
      */
     inline SegmentLocation& WithCountry(SetDimension&& value) { SetCountry(std::move(value)); return *this;}
 

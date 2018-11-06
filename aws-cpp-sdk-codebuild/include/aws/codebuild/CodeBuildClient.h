@@ -170,20 +170,21 @@ namespace Model
    * to help manage your resources and costs.</p> </li> <li> <p>
    * <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
    * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
-   * its source code stored in a GitHub repository, enables AWS CodeBuild to begin
-   * automatically rebuilding the source code every time a code change is pushed to
-   * the repository.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes the
-   * settings of an existing webhook.</p> </li> <li> <p> <code>DeleteProject</code>:
-   * Deletes a build project.</p> </li> <li> <p> <code>DeleteWebhook</code>: For an
-   * existing AWS CodeBuild build project that has its source code stored in a GitHub
-   * repository, stops AWS CodeBuild from automatically rebuilding the source code
-   * every time a code change is pushed to the repository.</p> </li> <li> <p>
-   * <code>ListProjects</code>: Gets a list of build project names, with each build
-   * project name representing a single build project.</p> </li> <li> <p>
-   * <code>UpdateProject</code>: Changes the settings of an existing build
-   * project.</p> </li> <li> <p> <code>BatchGetBuilds</code>: Gets information about
-   * one or more builds.</p> </li> <li> <p> <code>ListBuilds</code>: Gets a list of
-   * build IDs, with each build ID representing a single build.</p> </li> <li> <p>
+   * its source code stored in a GitHub or Bitbucket repository, enables AWS
+   * CodeBuild to begin automatically rebuilding the source code every time a code
+   * change is pushed to the repository.</p> </li> <li> <p>
+   * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.</p>
+   * </li> <li> <p> <code>DeleteProject</code>: Deletes a build project.</p> </li>
+   * <li> <p> <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project
+   * that has its source code stored in a GitHub or Bitbucket repository, stops AWS
+   * CodeBuild from automatically rebuilding the source code every time a code change
+   * is pushed to the repository.</p> </li> <li> <p> <code>ListProjects</code>: Gets
+   * a list of build project names, with each build project name representing a
+   * single build project.</p> </li> <li> <p> <code>UpdateProject</code>: Changes the
+   * settings of an existing build project.</p> </li> <li> <p>
+   * <code>BatchGetBuilds</code>: Gets information about one or more builds.</p>
+   * </li> <li> <p> <code>ListBuilds</code>: Gets a list of build IDs, with each
+   * build ID representing a single build.</p> </li> <li> <p>
    * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified
    * build project, with each build ID representing a single build.</p> </li> <li>
    * <p> <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
@@ -322,15 +323,15 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * will be created for each commit. One build is triggered through webhooks, and
-         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
-         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
-         * clear the Webhook box. For more information, see step 5 in <a
+         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to begin
+         * automatically rebuilding the source code every time a code change is pushed to
+         * the repository.</p> <important> <p>If you enable webhooks for an AWS CodeBuild
+         * project, and the project is used as a build step in AWS CodePipeline, then two
+         * identical builds will be created for each commit. One build is triggered through
+         * webhooks, and one through AWS CodePipeline. Because billing is on a per-build
+         * basis, you will be billed for both builds. Therefore, if you are using AWS
+         * CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS
+         * CodeBuild console, clear the Webhook box. For more information, see step 5 in <a
          * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -340,15 +341,15 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * will be created for each commit. One build is triggered through webhooks, and
-         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
-         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
-         * clear the Webhook box. For more information, see step 5 in <a
+         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to begin
+         * automatically rebuilding the source code every time a code change is pushed to
+         * the repository.</p> <important> <p>If you enable webhooks for an AWS CodeBuild
+         * project, and the project is used as a build step in AWS CodePipeline, then two
+         * identical builds will be created for each commit. One build is triggered through
+         * webhooks, and one through AWS CodePipeline. Because billing is on a per-build
+         * basis, you will be billed for both builds. Therefore, if you are using AWS
+         * CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS
+         * CodeBuild console, clear the Webhook box. For more information, see step 5 in <a
          * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -360,15 +361,15 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding
-         * the source code every time a code change is pushed to the repository.</p>
-         * <important> <p>If you enable webhooks for an AWS CodeBuild project, and the
-         * project is used as a build step in AWS CodePipeline, then two identical builds
-         * will be created for each commit. One build is triggered through webhooks, and
-         * one through AWS CodePipeline. Because billing is on a per-build basis, you will
-         * be billed for both builds. Therefore, if you are using AWS CodePipeline, we
-         * recommend that you disable webhooks in CodeBuild. In the AWS CodeBuild console,
-         * clear the Webhook box. For more information, see step 5 in <a
+         * in a GitHub or Bitbucket repository, enables AWS CodeBuild to begin
+         * automatically rebuilding the source code every time a code change is pushed to
+         * the repository.</p> <important> <p>If you enable webhooks for an AWS CodeBuild
+         * project, and the project is used as a build step in AWS CodePipeline, then two
+         * identical builds will be created for each commit. One build is triggered through
+         * webhooks, and one through AWS CodePipeline. Because billing is on a per-build
+         * basis, you will be billed for both builds. Therefore, if you are using AWS
+         * CodePipeline, we recommend that you disable webhooks in CodeBuild. In the AWS
+         * CodeBuild console, clear the Webhook box. For more information, see step 5 in <a
          * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
@@ -405,9 +406,9 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from automatically
+         * rebuilding the source code every time a code change is pushed to the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          */
@@ -415,9 +416,9 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from automatically
+         * rebuilding the source code every time a code change is pushed to the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          *
@@ -427,9 +428,9 @@ namespace Model
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
-         * in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the
-         * source code every time a code change is pushed to the repository.</p><p><h3>See
-         * Also:</h3>   <a
+         * in a GitHub or Bitbucket repository, stops AWS CodeBuild from automatically
+         * rebuilding the source code every time a code change is pushed to the
+         * repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteWebhook">AWS
          * API Reference</a></p>
          *
@@ -650,16 +651,18 @@ namespace Model
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
+         * <note> <p> If you use Bitbucket for your repository then
+         * <code>rotateSecret</code> is ignored. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateWebhookOutcome UpdateWebhook(const Model::UpdateWebhookRequest& request) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
+         * <note> <p> If you use Bitbucket for your repository then
+         * <code>rotateSecret</code> is ignored. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          *
@@ -668,8 +671,9 @@ namespace Model
         virtual Model::UpdateWebhookOutcomeCallable UpdateWebhookCallable(const Model::UpdateWebhookRequest& request) const;
 
         /**
-         * <p> Updates the webhook associated with an AWS CodeBuild build project.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
+         * <note> <p> If you use Bitbucket for your repository then
+         * <code>rotateSecret</code> is ignored. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook">AWS
          * API Reference</a></p>
          *

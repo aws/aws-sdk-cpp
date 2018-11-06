@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * The responses that are returned after you record an event.<p><h3>See Also:</h3> 
-   * <a
+   * A complex object that holds the status code and message as a result of
+   * processing an event.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/EventItemResponse">AWS
    * API Reference</a></p>
    */
@@ -85,17 +85,29 @@ namespace Model
 
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the
+     * event.
+
+Possible values: 400 (for invalid events) and 202 (for events that were
+     * accepted).
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the
+     * event.
+
+Possible values: 400 (for invalid events) and 202 (for events that were
+     * accepted).
      */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
-     * The status code to respond with for a particular event id
+     * The status returned in the response as a result of processing the
+     * event.
+
+Possible values: 400 (for invalid events) and 202 (for events that were
+     * accepted).
      */
     inline EventItemResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 

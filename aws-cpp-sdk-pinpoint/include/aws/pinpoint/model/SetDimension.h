@@ -51,8 +51,10 @@ namespace Model
 
     /**
      * The type of dimension:
+
 INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
+
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
@@ -60,8 +62,10 @@ EXCLUSIVE - Endpoints that match the criteria are
 
     /**
      * The type of dimension:
+
 INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
+
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
@@ -69,8 +73,10 @@ EXCLUSIVE - Endpoints that match the criteria are
 
     /**
      * The type of dimension:
+
 INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
+
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
@@ -78,8 +84,10 @@ EXCLUSIVE - Endpoints that match the criteria are
 
     /**
      * The type of dimension:
+
 INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
+
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
@@ -87,8 +95,10 @@ EXCLUSIVE - Endpoints that match the criteria are
 
     /**
      * The type of dimension:
+
 INCLUSIVE - Endpoints that match the criteria are
      * included in the segment.
+
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */

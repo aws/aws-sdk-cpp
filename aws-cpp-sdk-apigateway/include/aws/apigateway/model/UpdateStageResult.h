@@ -558,6 +558,42 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline const Aws::String& GetWebAclArn() const{ return m_webAclArn; }
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline void SetWebAclArn(const Aws::String& value) { m_webAclArn = value; }
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline void SetWebAclArn(Aws::String&& value) { m_webAclArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline void SetWebAclArn(const char* value) { m_webAclArn.assign(value); }
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline UpdateStageResult& WithWebAclArn(const Aws::String& value) { SetWebAclArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline UpdateStageResult& WithWebAclArn(Aws::String&& value) { SetWebAclArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline UpdateStageResult& WithWebAclArn(const char* value) { SetWebAclArn(value); return *this;}
+
+
+    /**
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
@@ -708,6 +744,8 @@ namespace Model
     CanarySettings m_canarySettings;
 
     bool m_tracingEnabled;
+
+    Aws::String m_webAclArn;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

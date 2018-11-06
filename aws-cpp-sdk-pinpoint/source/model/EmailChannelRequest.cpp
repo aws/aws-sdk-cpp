@@ -29,6 +29,7 @@ namespace Model
 {
 
 EmailChannelRequest::EmailChannelRequest() : 
+    m_configurationSetHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
@@ -38,6 +39,7 @@ EmailChannelRequest::EmailChannelRequest() :
 }
 
 EmailChannelRequest::EmailChannelRequest(JsonView jsonValue) : 
+    m_configurationSetHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_fromAddressHasBeenSet(false),
@@ -49,6 +51,13 @@ EmailChannelRequest::EmailChannelRequest(JsonView jsonValue) :
 
 EmailChannelRequest& EmailChannelRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ConfigurationSet"))
+  {
+    m_configurationSet = jsonValue.GetString("ConfigurationSet");
+
+    m_configurationSetHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
@@ -83,6 +92,12 @@ EmailChannelRequest& EmailChannelRequest::operator =(JsonView jsonValue)
 JsonValue EmailChannelRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_configurationSetHasBeenSet)
+  {
+   payload.WithString("ConfigurationSet", m_configurationSet);
+
+  }
 
   if(m_enabledHasBeenSet)
   {

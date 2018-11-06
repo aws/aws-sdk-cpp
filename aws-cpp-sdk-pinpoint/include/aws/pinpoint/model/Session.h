@@ -48,17 +48,17 @@ namespace Model
 
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * Session duration in millis
+     * The duration of the session, in milliseconds.
      */
     inline Session& WithDuration(int value) { SetDuration(value); return *this;}
 
