@@ -50,6 +50,8 @@ namespace Aws
         static const int DATABASE_ENGINE_HASH = HashingUtils::HashString("DATABASE_ENGINE");
         static const int CACHE_ENGINE_HASH = HashingUtils::HashString("CACHE_ENGINE");
         static const int INSTANCE_TYPE_FAMILY_HASH = HashingUtils::HashString("INSTANCE_TYPE_FAMILY");
+        static const int BILLING_ENTITY_HASH = HashingUtils::HashString("BILLING_ENTITY");
+        static const int RESERVATION_ID_HASH = HashingUtils::HashString("RESERVATION_ID");
 
 
         Dimension GetDimensionForName(const Aws::String& name)
@@ -135,6 +137,14 @@ namespace Aws
           {
             return Dimension::INSTANCE_TYPE_FAMILY;
           }
+          else if (hashCode == BILLING_ENTITY_HASH)
+          {
+            return Dimension::BILLING_ENTITY;
+          }
+          else if (hashCode == RESERVATION_ID_HASH)
+          {
+            return Dimension::RESERVATION_ID;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -189,6 +199,10 @@ namespace Aws
             return "CACHE_ENGINE";
           case Dimension::INSTANCE_TYPE_FAMILY:
             return "INSTANCE_TYPE_FAMILY";
+          case Dimension::BILLING_ENTITY:
+            return "BILLING_ENTITY";
+          case Dimension::RESERVATION_ID:
+            return "RESERVATION_ID";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

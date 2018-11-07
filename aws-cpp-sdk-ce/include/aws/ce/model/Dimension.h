@@ -45,7 +45,9 @@ namespace Model
     DEPLOYMENT_OPTION,
     DATABASE_ENGINE,
     CACHE_ENGINE,
-    INSTANCE_TYPE_FAMILY
+    INSTANCE_TYPE_FAMILY,
+    BILLING_ENTITY,
+    RESERVATION_ID
   };
 
 namespace DimensionMapper

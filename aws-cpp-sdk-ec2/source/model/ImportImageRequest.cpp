@@ -28,7 +28,10 @@ ImportImageRequest::ImportImageRequest() :
     m_diskContainersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
     m_hypervisorHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_roleNameHasBeenSet(false)
@@ -74,9 +77,19 @@ Aws::String ImportImageRequest::SerializePayload() const
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }
 
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
   if(m_hypervisorHasBeenSet)
   {
     ss << "Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   if(m_licenseTypeHasBeenSet)

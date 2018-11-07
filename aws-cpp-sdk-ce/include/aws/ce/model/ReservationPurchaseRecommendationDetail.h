@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/ce/CostExplorer_EXPORTS.h>
-#include <aws/ce/model/InstanceDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ce/model/InstanceDetails.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +47,28 @@ namespace Model
     ReservationPurchaseRecommendationDetail(Aws::Utils::Json::JsonView jsonValue);
     ReservationPurchaseRecommendationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    
+    inline ReservationPurchaseRecommendationDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    
+    inline ReservationPurchaseRecommendationDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    
+    inline ReservationPurchaseRecommendationDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
@@ -799,6 +821,9 @@ namespace Model
     inline ReservationPurchaseRecommendationDetail& WithRecurringStandardMonthlyCost(const char* value) { SetRecurringStandardMonthlyCost(value); return *this;}
 
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
 
     InstanceDetails m_instanceDetails;
     bool m_instanceDetailsHasBeenSet;

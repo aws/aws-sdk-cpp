@@ -27,11 +27,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportImageResponse::ImportImageResponse()
+ImportImageResponse::ImportImageResponse() : 
+    m_encrypted(false)
 {
 }
 
-ImportImageResponse::ImportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+ImportImageResponse::ImportImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+    m_encrypted(false)
 {
   *this = result;
 }
@@ -58,6 +60,11 @@ ImportImageResponse& ImportImageResponse::operator =(const Aws::AmazonWebService
     {
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
     }
+    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+    }
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
@@ -72,6 +79,11 @@ ImportImageResponse& ImportImageResponse::operator =(const Aws::AmazonWebService
     if(!importTaskIdNode.IsNull())
     {
       m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
+    }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
     }
     XmlNode licenseTypeNode = resultNode.FirstChild("licenseType");
     if(!licenseTypeNode.IsNull())

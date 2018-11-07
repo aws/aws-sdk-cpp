@@ -123,6 +123,22 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether the AMI is encypted.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether the AMI is encypted.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether the AMI is encypted.</p>
+     */
+    inline ImportImageResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
+
+    /**
      * <p>The target hypervisor of the import task.</p>
      */
     inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
@@ -228,6 +244,49 @@ namespace Model
      * <p>The task ID of the import image task.</p>
      */
     inline ImportImageResponse& WithImportTaskId(const char* value) { SetImportTaskId(value); return *this;}
+
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline ImportImageResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline ImportImageResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted AMI.</p>
+     */
+    inline ImportImageResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
@@ -467,11 +526,15 @@ namespace Model
 
     Aws::String m_description;
 
+    bool m_encrypted;
+
     Aws::String m_hypervisor;
 
     Aws::String m_imageId;
 
     Aws::String m_importTaskId;
+
+    Aws::String m_kmsKeyId;
 
     Aws::String m_licenseType;
 

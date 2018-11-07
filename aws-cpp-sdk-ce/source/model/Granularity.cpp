@@ -32,6 +32,7 @@ namespace Aws
 
         static const int DAILY_HASH = HashingUtils::HashString("DAILY");
         static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
+        static const int HOURLY_HASH = HashingUtils::HashString("HOURLY");
 
 
         Granularity GetGranularityForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == MONTHLY_HASH)
           {
             return Granularity::MONTHLY;
+          }
+          else if (hashCode == HOURLY_HASH)
+          {
+            return Granularity::HOURLY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "DAILY";
           case Granularity::MONTHLY:
             return "MONTHLY";
+          case Granularity::HOURLY:
+            return "HOURLY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

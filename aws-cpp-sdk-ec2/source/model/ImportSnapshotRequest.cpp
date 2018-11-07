@@ -27,6 +27,9 @@ ImportSnapshotRequest::ImportSnapshotRequest() :
     m_diskContainerHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_roleNameHasBeenSet(false)
 {
 }
@@ -58,6 +61,16 @@ Aws::String ImportSnapshotRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+    ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+    ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   if(m_roleNameHasBeenSet)

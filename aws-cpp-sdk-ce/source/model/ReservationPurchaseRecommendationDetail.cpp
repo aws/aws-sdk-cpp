@@ -29,6 +29,7 @@ namespace Model
 {
 
 ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail() : 
+    m_accountIdHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_recommendedNumberOfInstancesToPurchaseHasBeenSet(false),
     m_recommendedNormalizedUnitsToPurchaseHasBeenSet(false),
@@ -51,6 +52,7 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
 }
 
 ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(JsonView jsonValue) : 
+    m_accountIdHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
     m_recommendedNumberOfInstancesToPurchaseHasBeenSet(false),
     m_recommendedNormalizedUnitsToPurchaseHasBeenSet(false),
@@ -75,6 +77,13 @@ ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail
 
 ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AccountId"))
+  {
+    m_accountId = jsonValue.GetString("AccountId");
+
+    m_accountIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("InstanceDetails"))
   {
     m_instanceDetails = jsonValue.GetObject("InstanceDetails");
@@ -207,6 +216,12 @@ ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail
 JsonValue ReservationPurchaseRecommendationDetail::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accountIdHasBeenSet)
+  {
+   payload.WithString("AccountId", m_accountId);
+
+  }
 
   if(m_instanceDetailsHasBeenSet)
   {

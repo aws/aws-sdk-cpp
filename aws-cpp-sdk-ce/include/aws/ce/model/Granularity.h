@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     DAILY,
-    MONTHLY
+    MONTHLY,
+    HOURLY
   };
 
 namespace GranularityMapper

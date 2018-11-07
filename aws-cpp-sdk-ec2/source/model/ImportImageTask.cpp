@@ -33,9 +33,12 @@ namespace Model
 ImportImageTask::ImportImageTask() : 
     m_architectureHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
     m_hypervisorHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_importTaskIdHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_progressHasBeenSet(false),
@@ -48,9 +51,12 @@ ImportImageTask::ImportImageTask() :
 ImportImageTask::ImportImageTask(const XmlNode& xmlNode) : 
     m_architectureHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
     m_hypervisorHasBeenSet(false),
     m_imageIdHasBeenSet(false),
     m_importTaskIdHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
     m_progressHasBeenSet(false),
@@ -79,6 +85,12 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode encryptedNode = resultNode.FirstChild("encrypted");
+    if(!encryptedNode.IsNull())
+    {
+      m_encrypted = StringUtils::ConvertToBool(StringUtils::Trim(encryptedNode.GetText().c_str()).c_str());
+      m_encryptedHasBeenSet = true;
+    }
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
@@ -96,6 +108,12 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
     {
       m_importTaskId = StringUtils::Trim(importTaskIdNode.GetText().c_str());
       m_importTaskIdHasBeenSet = true;
+    }
+    XmlNode kmsKeyIdNode = resultNode.FirstChild("kmsKeyId");
+    if(!kmsKeyIdNode.IsNull())
+    {
+      m_kmsKeyId = StringUtils::Trim(kmsKeyIdNode.GetText().c_str());
+      m_kmsKeyIdHasBeenSet = true;
     }
     XmlNode licenseTypeNode = resultNode.FirstChild("licenseType");
     if(!licenseTypeNode.IsNull())
@@ -156,6 +174,11 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
+
   if(m_hypervisorHasBeenSet)
   {
       oStream << location << index << locationValue << ".Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
@@ -169,6 +192,11 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_importTaskIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
   if(m_licenseTypeHasBeenSet)
@@ -219,6 +247,10 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
+  if(m_encryptedHasBeenSet)
+  {
+      oStream << location << ".Encrypted=" << std::boolalpha << m_encrypted << "&";
+  }
   if(m_hypervisorHasBeenSet)
   {
       oStream << location << ".Hypervisor=" << StringUtils::URLEncode(m_hypervisor.c_str()) << "&";
@@ -230,6 +262,10 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_importTaskIdHasBeenSet)
   {
       oStream << location << ".ImportTaskId=" << StringUtils::URLEncode(m_importTaskId.c_str()) << "&";
+  }
+  if(m_kmsKeyIdHasBeenSet)
+  {
+      oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
   if(m_licenseTypeHasBeenSet)
   {
