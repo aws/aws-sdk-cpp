@@ -164,7 +164,7 @@ namespace Model
      * interpret whatever you store in the <code>SecretString</code> or
      * <code>SecretBinary</code> fields.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetSecretBinary() const{ return m_secretBinary; }
+    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
     /**
      * <p>The decrypted part of the protected secret information that was originally
@@ -177,7 +177,7 @@ namespace Model
      * interpret whatever you store in the <code>SecretString</code> or
      * <code>SecretBinary</code> fields.</p>
      */
-    inline void SetSecretBinary(const Aws::Utils::ByteBuffer& value) { m_secretBinary = value; }
+    inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinary = value; }
 
     /**
      * <p>The decrypted part of the protected secret information that was originally
@@ -190,7 +190,7 @@ namespace Model
      * interpret whatever you store in the <code>SecretString</code> or
      * <code>SecretBinary</code> fields.</p>
      */
-    inline void SetSecretBinary(Aws::Utils::ByteBuffer&& value) { m_secretBinary = std::move(value); }
+    inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinary = std::move(value); }
 
     /**
      * <p>The decrypted part of the protected secret information that was originally
@@ -203,7 +203,7 @@ namespace Model
      * interpret whatever you store in the <code>SecretString</code> or
      * <code>SecretBinary</code> fields.</p>
      */
-    inline GetSecretValueResult& WithSecretBinary(const Aws::Utils::ByteBuffer& value) { SetSecretBinary(value); return *this;}
+    inline GetSecretValueResult& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
 
     /**
      * <p>The decrypted part of the protected secret information that was originally
@@ -216,7 +216,7 @@ namespace Model
      * interpret whatever you store in the <code>SecretString</code> or
      * <code>SecretBinary</code> fields.</p>
      */
-    inline GetSecretValueResult& WithSecretBinary(Aws::Utils::ByteBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
+    inline GetSecretValueResult& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 
 
     /**
@@ -393,7 +393,7 @@ namespace Model
 
     Aws::String m_versionId;
 
-    Aws::Utils::ByteBuffer m_secretBinary;
+    Aws::Utils::CryptoBuffer m_secretBinary;
 
     Aws::String m_secretString;
 

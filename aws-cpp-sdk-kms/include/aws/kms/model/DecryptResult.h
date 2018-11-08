@@ -90,37 +90,37 @@ namespace Model
      * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
      * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
+    inline const Aws::Utils::CryptoBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
      * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
      * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
-    inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintext = value; }
+    inline void SetPlaintext(const Aws::Utils::CryptoBuffer& value) { m_plaintext = value; }
 
     /**
      * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
      * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
-    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintext = std::move(value); }
+    inline void SetPlaintext(Aws::Utils::CryptoBuffer&& value) { m_plaintext = std::move(value); }
 
     /**
      * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
      * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
-    inline DecryptResult& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+    inline DecryptResult& WithPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
      * <p>Decrypted plaintext data. When you use the HTTP API or the AWS CLI, the value
      * is Base64-encoded. Otherwise, it is not encoded.</p>
      */
-    inline DecryptResult& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
+    inline DecryptResult& WithPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_keyId;
 
-    Aws::Utils::ByteBuffer m_plaintext;
+    Aws::Utils::CryptoBuffer m_plaintext;
   };
 
 } // namespace Model

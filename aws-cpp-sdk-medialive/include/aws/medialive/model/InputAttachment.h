@@ -49,6 +49,49 @@ namespace Model
 
 
     /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline const Aws::String& GetInputAttachmentName() const{ return m_inputAttachmentName; }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline void SetInputAttachmentName(const Aws::String& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = value; }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline void SetInputAttachmentName(Aws::String&& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = std::move(value); }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline void SetInputAttachmentName(const char* value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName.assign(value); }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline InputAttachment& WithInputAttachmentName(const Aws::String& value) { SetInputAttachmentName(value); return *this;}
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline InputAttachment& WithInputAttachmentName(Aws::String&& value) { SetInputAttachmentName(std::move(value)); return *this;}
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
+    inline InputAttachment& WithInputAttachmentName(const char* value) { SetInputAttachmentName(value); return *this;}
+
+
+    /**
      * The ID of the input
      */
     inline const Aws::String& GetInputId() const{ return m_inputId; }
@@ -110,6 +153,9 @@ namespace Model
     inline InputAttachment& WithInputSettings(InputSettings&& value) { SetInputSettings(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_inputAttachmentName;
+    bool m_inputAttachmentNameHasBeenSet;
 
     Aws::String m_inputId;
     bool m_inputIdHasBeenSet;

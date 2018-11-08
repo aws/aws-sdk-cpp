@@ -29,12 +29,14 @@ namespace Model
 {
 
 InputAttachment::InputAttachment() : 
+    m_inputAttachmentNameHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSettingsHasBeenSet(false)
 {
 }
 
 InputAttachment::InputAttachment(JsonView jsonValue) : 
+    m_inputAttachmentNameHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSettingsHasBeenSet(false)
 {
@@ -43,6 +45,13 @@ InputAttachment::InputAttachment(JsonView jsonValue) :
 
 InputAttachment& InputAttachment::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("inputAttachmentName"))
+  {
+    m_inputAttachmentName = jsonValue.GetString("inputAttachmentName");
+
+    m_inputAttachmentNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputId"))
   {
     m_inputId = jsonValue.GetString("inputId");
@@ -63,6 +72,12 @@ InputAttachment& InputAttachment::operator =(JsonView jsonValue)
 JsonValue InputAttachment::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_inputAttachmentNameHasBeenSet)
+  {
+   payload.WithString("inputAttachmentName", m_inputAttachmentName);
+
+  }
 
   if(m_inputIdHasBeenSet)
   {

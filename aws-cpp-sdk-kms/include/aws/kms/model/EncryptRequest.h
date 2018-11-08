@@ -163,27 +163,27 @@ namespace Model
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPlaintext() const{ return m_plaintext; }
+    inline const Aws::Utils::CryptoBuffer& GetPlaintext() const{ return m_plaintext; }
 
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline void SetPlaintext(const Aws::Utils::ByteBuffer& value) { m_plaintextHasBeenSet = true; m_plaintext = value; }
+    inline void SetPlaintext(const Aws::Utils::CryptoBuffer& value) { m_plaintextHasBeenSet = true; m_plaintext = value; }
 
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline void SetPlaintext(Aws::Utils::ByteBuffer&& value) { m_plaintextHasBeenSet = true; m_plaintext = std::move(value); }
+    inline void SetPlaintext(Aws::Utils::CryptoBuffer&& value) { m_plaintextHasBeenSet = true; m_plaintext = std::move(value); }
 
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline EncryptRequest& WithPlaintext(const Aws::Utils::ByteBuffer& value) { SetPlaintext(value); return *this;}
+    inline EncryptRequest& WithPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPlaintext(value); return *this;}
 
     /**
      * <p>Data to be encrypted.</p>
      */
-    inline EncryptRequest& WithPlaintext(Aws::Utils::ByteBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
+    inline EncryptRequest& WithPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPlaintext(std::move(value)); return *this;}
 
 
     /**
@@ -356,7 +356,7 @@ namespace Model
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_plaintext;
+    Aws::Utils::CryptoBuffer m_plaintext;
     bool m_plaintextHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_encryptionContext;

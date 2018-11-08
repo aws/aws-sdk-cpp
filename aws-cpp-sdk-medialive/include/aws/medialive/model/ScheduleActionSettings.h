@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35TimeSignalScheduleActionSettings.h>
@@ -49,6 +50,32 @@ namespace Model
     ScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     ScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Settings to switch an input
+     */
+    inline const InputSwitchScheduleActionSettings& GetInputSwitchSettings() const{ return m_inputSwitchSettings; }
+
+    /**
+     * Settings to switch an input
+     */
+    inline void SetInputSwitchSettings(const InputSwitchScheduleActionSettings& value) { m_inputSwitchSettingsHasBeenSet = true; m_inputSwitchSettings = value; }
+
+    /**
+     * Settings to switch an input
+     */
+    inline void SetInputSwitchSettings(InputSwitchScheduleActionSettings&& value) { m_inputSwitchSettingsHasBeenSet = true; m_inputSwitchSettings = std::move(value); }
+
+    /**
+     * Settings to switch an input
+     */
+    inline ScheduleActionSettings& WithInputSwitchSettings(const InputSwitchScheduleActionSettings& value) { SetInputSwitchSettings(value); return *this;}
+
+    /**
+     * Settings to switch an input
+     */
+    inline ScheduleActionSettings& WithInputSwitchSettings(InputSwitchScheduleActionSettings&& value) { SetInputSwitchSettings(std::move(value)); return *this;}
 
 
     /**
@@ -181,6 +208,9 @@ namespace Model
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { SetStaticImageDeactivateSettings(std::move(value)); return *this;}
 
   private:
+
+    InputSwitchScheduleActionSettings m_inputSwitchSettings;
+    bool m_inputSwitchSettingsHasBeenSet;
 
     Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
     bool m_scte35ReturnToNetworkSettingsHasBeenSet;

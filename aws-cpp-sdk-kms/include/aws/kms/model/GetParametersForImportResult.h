@@ -129,31 +129,31 @@ namespace Model
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::Utils::CryptoBuffer& GetPublicKey() const{ return m_publicKey; }
 
     /**
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
      */
-    inline void SetPublicKey(const Aws::Utils::ByteBuffer& value) { m_publicKey = value; }
+    inline void SetPublicKey(const Aws::Utils::CryptoBuffer& value) { m_publicKey = value; }
 
     /**
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
      */
-    inline void SetPublicKey(Aws::Utils::ByteBuffer&& value) { m_publicKey = std::move(value); }
+    inline void SetPublicKey(Aws::Utils::CryptoBuffer&& value) { m_publicKey = std::move(value); }
 
     /**
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
      */
-    inline GetParametersForImportResult& WithPublicKey(const Aws::Utils::ByteBuffer& value) { SetPublicKey(value); return *this;}
+    inline GetParametersForImportResult& WithPublicKey(const Aws::Utils::CryptoBuffer& value) { SetPublicKey(value); return *this;}
 
     /**
      * <p>The public key to use to encrypt the key material before importing it with
      * <a>ImportKeyMaterial</a>.</p>
      */
-    inline GetParametersForImportResult& WithPublicKey(Aws::Utils::ByteBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
+    inline GetParametersForImportResult& WithPublicKey(Aws::Utils::CryptoBuffer&& value) { SetPublicKey(std::move(value)); return *this;}
 
 
     /**
@@ -202,7 +202,7 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_importToken;
 
-    Aws::Utils::ByteBuffer m_publicKey;
+    Aws::Utils::CryptoBuffer m_publicKey;
 
     Aws::Utils::DateTime m_parametersValidTo;
   };

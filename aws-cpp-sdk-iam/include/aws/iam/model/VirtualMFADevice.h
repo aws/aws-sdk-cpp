@@ -94,35 +94,35 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
+    inline const Aws::Utils::CryptoBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
-    inline void SetBase32StringSeed(const Aws::Utils::ByteBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
+    inline void SetBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
      * <p> The Base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
-    inline void SetBase32StringSeed(Aws::Utils::ByteBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = std::move(value); }
+    inline void SetBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = std::move(value); }
 
     /**
      * <p> The Base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
-    inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::ByteBuffer& value) { SetBase32StringSeed(value); return *this;}
+    inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { SetBase32StringSeed(value); return *this;}
 
     /**
      * <p> The Base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
      * <code>Base32StringSeed</code> is Base64-encoded. </p>
      */
-    inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::ByteBuffer&& value) { SetBase32StringSeed(std::move(value)); return *this;}
+    inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { SetBase32StringSeed(std::move(value)); return *this;}
 
 
     /**
@@ -133,7 +133,7 @@ namespace Model
      * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetQRCodePNG() const{ return m_qRCodePNG; }
+    inline const Aws::Utils::CryptoBuffer& GetQRCodePNG() const{ return m_qRCodePNG; }
 
     /**
      * <p> A QR code PNG image that encodes
@@ -143,7 +143,7 @@ namespace Model
      * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded. </p>
      */
-    inline void SetQRCodePNG(const Aws::Utils::ByteBuffer& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = value; }
+    inline void SetQRCodePNG(const Aws::Utils::CryptoBuffer& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = value; }
 
     /**
      * <p> A QR code PNG image that encodes
@@ -153,7 +153,7 @@ namespace Model
      * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded. </p>
      */
-    inline void SetQRCodePNG(Aws::Utils::ByteBuffer&& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = std::move(value); }
+    inline void SetQRCodePNG(Aws::Utils::CryptoBuffer&& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = std::move(value); }
 
     /**
      * <p> A QR code PNG image that encodes
@@ -163,7 +163,7 @@ namespace Model
      * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded. </p>
      */
-    inline VirtualMFADevice& WithQRCodePNG(const Aws::Utils::ByteBuffer& value) { SetQRCodePNG(value); return *this;}
+    inline VirtualMFADevice& WithQRCodePNG(const Aws::Utils::CryptoBuffer& value) { SetQRCodePNG(value); return *this;}
 
     /**
      * <p> A QR code PNG image that encodes
@@ -173,7 +173,7 @@ namespace Model
      * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
      * <code>Base32String</code> value is Base64-encoded. </p>
      */
-    inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::ByteBuffer&& value) { SetQRCodePNG(std::move(value)); return *this;}
+    inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::CryptoBuffer&& value) { SetQRCodePNG(std::move(value)); return *this;}
 
 
     /**
@@ -232,10 +232,10 @@ namespace Model
     Aws::String m_serialNumber;
     bool m_serialNumberHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_base32StringSeed;
+    Aws::Utils::CryptoBuffer m_base32StringSeed;
     bool m_base32StringSeedHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_qRCodePNG;
+    Aws::Utils::CryptoBuffer m_qRCodePNG;
     bool m_qRCodePNGHasBeenSet;
 
     User m_user;

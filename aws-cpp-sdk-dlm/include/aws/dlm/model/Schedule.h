@@ -87,6 +87,16 @@ namespace Model
     inline Schedule& WithName(const char* value) { SetName(value); return *this;}
 
 
+    
+    inline bool GetCopyTags() const{ return m_copyTags; }
+
+    
+    inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
+
+    
+    inline Schedule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
+
+
     /**
      * <p>The tags to apply to policy-created resources. These user-defined tags are in
      * addition to the AWS-added lifecycle tags.</p>
@@ -185,6 +195,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_copyTags;
+    bool m_copyTagsHasBeenSet;
 
     Aws::Vector<Tag> m_tagsToAdd;
     bool m_tagsToAddHasBeenSet;

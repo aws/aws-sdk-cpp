@@ -108,7 +108,7 @@ namespace Model
      * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
      * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPassphrase() const{ return m_passphrase; }
+    inline const Aws::Utils::CryptoBuffer& GetPassphrase() const{ return m_passphrase; }
 
     /**
      * <p>Passphrase to associate with the encrypted exported private key. If you want
@@ -116,7 +116,7 @@ namespace Model
      * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
      * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline void SetPassphrase(const Aws::Utils::ByteBuffer& value) { m_passphraseHasBeenSet = true; m_passphrase = value; }
+    inline void SetPassphrase(const Aws::Utils::CryptoBuffer& value) { m_passphraseHasBeenSet = true; m_passphrase = value; }
 
     /**
      * <p>Passphrase to associate with the encrypted exported private key. If you want
@@ -124,7 +124,7 @@ namespace Model
      * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
      * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline void SetPassphrase(Aws::Utils::ByteBuffer&& value) { m_passphraseHasBeenSet = true; m_passphrase = std::move(value); }
+    inline void SetPassphrase(Aws::Utils::CryptoBuffer&& value) { m_passphraseHasBeenSet = true; m_passphrase = std::move(value); }
 
     /**
      * <p>Passphrase to associate with the encrypted exported private key. If you want
@@ -132,7 +132,7 @@ namespace Model
      * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
      * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline ExportCertificateRequest& WithPassphrase(const Aws::Utils::ByteBuffer& value) { SetPassphrase(value); return *this;}
+    inline ExportCertificateRequest& WithPassphrase(const Aws::Utils::CryptoBuffer& value) { SetPassphrase(value); return *this;}
 
     /**
      * <p>Passphrase to associate with the encrypted exported private key. If you want
@@ -140,14 +140,14 @@ namespace Model
      * following OpenSSL command to decrypt a private key: </p> <p> <code>openssl rsa
      * -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline ExportCertificateRequest& WithPassphrase(Aws::Utils::ByteBuffer&& value) { SetPassphrase(std::move(value)); return *this;}
+    inline ExportCertificateRequest& WithPassphrase(Aws::Utils::CryptoBuffer&& value) { SetPassphrase(std::move(value)); return *this;}
 
   private:
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_passphrase;
+    Aws::Utils::CryptoBuffer m_passphrase;
     bool m_passphraseHasBeenSet;
   };
 

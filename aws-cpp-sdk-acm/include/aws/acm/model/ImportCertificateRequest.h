@@ -131,27 +131,27 @@ namespace Model
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPrivateKey() const{ return m_privateKey; }
+    inline const Aws::Utils::CryptoBuffer& GetPrivateKey() const{ return m_privateKey; }
 
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
-    inline void SetPrivateKey(const Aws::Utils::ByteBuffer& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
+    inline void SetPrivateKey(const Aws::Utils::CryptoBuffer& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
-    inline void SetPrivateKey(Aws::Utils::ByteBuffer&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
+    inline void SetPrivateKey(Aws::Utils::CryptoBuffer&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
-    inline ImportCertificateRequest& WithPrivateKey(const Aws::Utils::ByteBuffer& value) { SetPrivateKey(value); return *this;}
+    inline ImportCertificateRequest& WithPrivateKey(const Aws::Utils::CryptoBuffer& value) { SetPrivateKey(value); return *this;}
 
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
-    inline ImportCertificateRequest& WithPrivateKey(Aws::Utils::ByteBuffer&& value) { SetPrivateKey(std::move(value)); return *this;}
+    inline ImportCertificateRequest& WithPrivateKey(Aws::Utils::CryptoBuffer&& value) { SetPrivateKey(std::move(value)); return *this;}
 
 
     /**
@@ -187,7 +187,7 @@ namespace Model
     Aws::Utils::ByteBuffer m_certificate;
     bool m_certificateHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_privateKey;
+    Aws::Utils::CryptoBuffer m_privateKey;
     bool m_privateKeyHasBeenSet;
 
     Aws::Utils::ByteBuffer m_certificateChain;

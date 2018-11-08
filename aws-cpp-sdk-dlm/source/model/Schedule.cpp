@@ -30,6 +30,8 @@ namespace Model
 
 Schedule::Schedule() : 
     m_nameHasBeenSet(false),
+    m_copyTags(false),
+    m_copyTagsHasBeenSet(false),
     m_tagsToAddHasBeenSet(false),
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false)
@@ -38,6 +40,8 @@ Schedule::Schedule() :
 
 Schedule::Schedule(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_copyTags(false),
+    m_copyTagsHasBeenSet(false),
     m_tagsToAddHasBeenSet(false),
     m_createRuleHasBeenSet(false),
     m_retainRuleHasBeenSet(false)
@@ -52,6 +56,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyTags"))
+  {
+    m_copyTags = jsonValue.GetBool("CopyTags");
+
+    m_copyTagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TagsToAdd"))
@@ -88,6 +99,12 @@ JsonValue Schedule::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_copyTagsHasBeenSet)
+  {
+   payload.WithBool("CopyTags", m_copyTags);
 
   }
 

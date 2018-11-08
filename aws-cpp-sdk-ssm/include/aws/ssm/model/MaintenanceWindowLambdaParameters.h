@@ -173,27 +173,27 @@ namespace Model
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
+    inline const Aws::Utils::CryptoBuffer& GetPayload() const{ return m_payload; }
 
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
+    inline void SetPayload(const Aws::Utils::CryptoBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
+    inline void SetPayload(Aws::Utils::CryptoBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
 
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline MaintenanceWindowLambdaParameters& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
+    inline MaintenanceWindowLambdaParameters& WithPayload(const Aws::Utils::CryptoBuffer& value) { SetPayload(value); return *this;}
 
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
+    inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::CryptoBuffer&& value) { SetPayload(std::move(value)); return *this;}
 
   private:
 
@@ -203,7 +203,7 @@ namespace Model
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_payload;
+    Aws::Utils::CryptoBuffer m_payload;
     bool m_payloadHasBeenSet;
   };
 

@@ -53,31 +53,31 @@ namespace Model
      * <p>The base64-encoded contents of your zip file containing your deployment
      * package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
+    inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>The base64-encoded contents of your zip file containing your deployment
      * package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
      */
-    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
+    inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>The base64-encoded contents of your zip file containing your deployment
      * package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
      */
-    inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
+    inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>The base64-encoded contents of your zip file containing your deployment
      * package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
      */
-    inline FunctionCode& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
+    inline FunctionCode& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>The base64-encoded contents of your zip file containing your deployment
      * package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
      */
-    inline FunctionCode& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
+    inline FunctionCode& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
@@ -196,7 +196,7 @@ namespace Model
 
   private:
 
-    Aws::Utils::ByteBuffer m_zipFile;
+    Aws::Utils::CryptoBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
 
     Aws::String m_s3Bucket;

@@ -29,6 +29,7 @@ namespace Model
 {
 
 ScheduleActionSettings::ScheduleActionSettings() : 
+    m_inputSwitchSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -38,6 +39,7 @@ ScheduleActionSettings::ScheduleActionSettings() :
 }
 
 ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
+    m_inputSwitchSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -49,6 +51,13 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
 
 ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("inputSwitchSettings"))
+  {
+    m_inputSwitchSettings = jsonValue.GetObject("inputSwitchSettings");
+
+    m_inputSwitchSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("scte35ReturnToNetworkSettings"))
   {
     m_scte35ReturnToNetworkSettings = jsonValue.GetObject("scte35ReturnToNetworkSettings");
@@ -90,6 +99,12 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 JsonValue ScheduleActionSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_inputSwitchSettingsHasBeenSet)
+  {
+   payload.WithObject("inputSwitchSettings", m_inputSwitchSettings.Jsonize());
+
+  }
 
   if(m_scte35ReturnToNetworkSettingsHasBeenSet)
   {

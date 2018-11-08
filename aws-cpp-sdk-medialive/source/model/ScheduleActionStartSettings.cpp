@@ -29,12 +29,14 @@ namespace Model
 {
 
 ScheduleActionStartSettings::ScheduleActionStartSettings() : 
-    m_fixedModeScheduleActionStartSettingsHasBeenSet(false)
+    m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
+    m_followModeScheduleActionStartSettingsHasBeenSet(false)
 {
 }
 
 ScheduleActionStartSettings::ScheduleActionStartSettings(JsonView jsonValue) : 
-    m_fixedModeScheduleActionStartSettingsHasBeenSet(false)
+    m_fixedModeScheduleActionStartSettingsHasBeenSet(false),
+    m_followModeScheduleActionStartSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ ScheduleActionStartSettings& ScheduleActionStartSettings::operator =(JsonView js
     m_fixedModeScheduleActionStartSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("followModeScheduleActionStartSettings"))
+  {
+    m_followModeScheduleActionStartSettings = jsonValue.GetObject("followModeScheduleActionStartSettings");
+
+    m_followModeScheduleActionStartSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue ScheduleActionStartSettings::Jsonize() const
   if(m_fixedModeScheduleActionStartSettingsHasBeenSet)
   {
    payload.WithObject("fixedModeScheduleActionStartSettings", m_fixedModeScheduleActionStartSettings.Jsonize());
+
+  }
+
+  if(m_followModeScheduleActionStartSettingsHasBeenSet)
+  {
+   payload.WithObject("followModeScheduleActionStartSettings", m_followModeScheduleActionStartSettings.Jsonize());
 
   }
 

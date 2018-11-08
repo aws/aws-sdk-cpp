@@ -136,7 +136,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a>. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
+    inline const Aws::Utils::CryptoBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
@@ -146,7 +146,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a>. </p>
      */
-    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
+    inline void SetZipFile(const Aws::Utils::CryptoBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
@@ -156,7 +156,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a>. </p>
      */
-    inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
+    inline void SetZipFile(Aws::Utils::CryptoBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
@@ -166,7 +166,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a>. </p>
      */
-    inline UpdateFunctionCodeRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
+    inline UpdateFunctionCodeRequest& WithZipFile(const Aws::Utils::CryptoBuffer& value) { SetZipFile(value); return *this;}
 
     /**
      * <p>The contents of your zip file containing your deployment package. If you are
@@ -176,7 +176,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role.html">Execution
      * Permissions</a>. </p>
      */
-    inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
+    inline UpdateFunctionCodeRequest& WithZipFile(Aws::Utils::CryptoBuffer&& value) { SetZipFile(std::move(value)); return *this;}
 
 
     /**
@@ -433,7 +433,7 @@ namespace Model
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_zipFile;
+    Aws::Utils::CryptoBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
 
     Aws::String m_s3Bucket;

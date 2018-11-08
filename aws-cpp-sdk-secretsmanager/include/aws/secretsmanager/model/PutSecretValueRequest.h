@@ -373,7 +373,7 @@ namespace Model
      * not both. They cannot both be empty.</p> <p>This parameter is not accessible if
      * the secret using the Secrets Manager console.</p> <p/>
      */
-    inline const Aws::Utils::ByteBuffer& GetSecretBinary() const{ return m_secretBinary; }
+    inline const Aws::Utils::CryptoBuffer& GetSecretBinary() const{ return m_secretBinary; }
 
     /**
      * <p>(Optional) Specifies binary data that you want to encrypt and store in the
@@ -384,7 +384,7 @@ namespace Model
      * not both. They cannot both be empty.</p> <p>This parameter is not accessible if
      * the secret using the Secrets Manager console.</p> <p/>
      */
-    inline void SetSecretBinary(const Aws::Utils::ByteBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
+    inline void SetSecretBinary(const Aws::Utils::CryptoBuffer& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = value; }
 
     /**
      * <p>(Optional) Specifies binary data that you want to encrypt and store in the
@@ -395,7 +395,7 @@ namespace Model
      * not both. They cannot both be empty.</p> <p>This parameter is not accessible if
      * the secret using the Secrets Manager console.</p> <p/>
      */
-    inline void SetSecretBinary(Aws::Utils::ByteBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
+    inline void SetSecretBinary(Aws::Utils::CryptoBuffer&& value) { m_secretBinaryHasBeenSet = true; m_secretBinary = std::move(value); }
 
     /**
      * <p>(Optional) Specifies binary data that you want to encrypt and store in the
@@ -406,7 +406,7 @@ namespace Model
      * not both. They cannot both be empty.</p> <p>This parameter is not accessible if
      * the secret using the Secrets Manager console.</p> <p/>
      */
-    inline PutSecretValueRequest& WithSecretBinary(const Aws::Utils::ByteBuffer& value) { SetSecretBinary(value); return *this;}
+    inline PutSecretValueRequest& WithSecretBinary(const Aws::Utils::CryptoBuffer& value) { SetSecretBinary(value); return *this;}
 
     /**
      * <p>(Optional) Specifies binary data that you want to encrypt and store in the
@@ -417,7 +417,7 @@ namespace Model
      * not both. They cannot both be empty.</p> <p>This parameter is not accessible if
      * the secret using the Secrets Manager console.</p> <p/>
      */
-    inline PutSecretValueRequest& WithSecretBinary(Aws::Utils::ByteBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
+    inline PutSecretValueRequest& WithSecretBinary(Aws::Utils::CryptoBuffer&& value) { SetSecretBinary(std::move(value)); return *this;}
 
 
     /**
@@ -680,7 +680,7 @@ namespace Model
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
 
-    Aws::Utils::ByteBuffer m_secretBinary;
+    Aws::Utils::CryptoBuffer m_secretBinary;
     bool m_secretBinaryHasBeenSet;
 
     Aws::String m_secretString;
