@@ -51,6 +51,77 @@ namespace Model
 
 
     /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline SpekeKeyProvider& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    /**
      * The resource ID to include in key requests.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -220,6 +291,9 @@ MediaPackage
     inline SpekeKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;
