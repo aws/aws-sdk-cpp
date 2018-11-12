@@ -202,7 +202,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -213,7 +213,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -224,7 +224,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -235,7 +235,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -246,7 +246,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline UpdateStackSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -257,7 +257,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline UpdateStackSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -268,7 +268,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
      * specify only one of the following parameters: <code>TemplateBody</code> or
-     * <code>TemplateURL</code>��or set <code>UsePreviousTemplate</code> to true. </p>
+     * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true. </p>
      */
     inline UpdateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/batch/model/LaunchTemplateSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -78,17 +79,20 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
+     * <p>The minimum number of EC2 vCPUs that an environment should maintain (even if
+     * the compute environment is <code>DISABLED</code>). </p>
      */
     inline int GetMinvCpus() const{ return m_minvCpus; }
 
     /**
-     * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
+     * <p>The minimum number of EC2 vCPUs that an environment should maintain (even if
+     * the compute environment is <code>DISABLED</code>). </p>
      */
     inline void SetMinvCpus(int value) { m_minvCpusHasBeenSet = true; m_minvCpus = value; }
 
     /**
-     * <p>The minimum number of EC2 vCPUs that an environment should maintain. </p>
+     * <p>The minimum number of EC2 vCPUs that an environment should maintain (even if
+     * the compute environment is <code>DISABLED</code>). </p>
      */
     inline ComputeResource& WithMinvCpus(int value) { SetMinvCpus(value); return *this;}
 
@@ -534,26 +538,32 @@ namespace Model
 
 
     /**
-     * <p>The minimum percentage that a Spot Instance price must be when compared with
+     * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your bid percentage is 20%, then the Spot price must be below 20% of
-     * the current On-Demand price for that EC2 instance.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be below
+     * 20% of the current On-Demand price for that EC2 instance. You always pay the
+     * lowest (market) price and never more than your maximum percentage. If you leave
+     * this field empty, the default value is 100% of the On-Demand price.</p>
      */
     inline int GetBidPercentage() const{ return m_bidPercentage; }
 
     /**
-     * <p>The minimum percentage that a Spot Instance price must be when compared with
+     * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your bid percentage is 20%, then the Spot price must be below 20% of
-     * the current On-Demand price for that EC2 instance.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be below
+     * 20% of the current On-Demand price for that EC2 instance. You always pay the
+     * lowest (market) price and never more than your maximum percentage. If you leave
+     * this field empty, the default value is 100% of the On-Demand price.</p>
      */
     inline void SetBidPercentage(int value) { m_bidPercentageHasBeenSet = true; m_bidPercentage = value; }
 
     /**
-     * <p>The minimum percentage that a Spot Instance price must be when compared with
+     * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
-     * example, if your bid percentage is 20%, then the Spot price must be below 20% of
-     * the current On-Demand price for that EC2 instance.</p>
+     * example, if your maximum percentage is 20%, then the Spot price must be below
+     * 20% of the current On-Demand price for that EC2 instance. You always pay the
+     * lowest (market) price and never more than your maximum percentage. If you leave
+     * this field empty, the default value is 100% of the On-Demand price.</p>
      */
     inline ComputeResource& WithBidPercentage(int value) { SetBidPercentage(value); return *this;}
 
@@ -600,6 +610,52 @@ namespace Model
      */
     inline ComputeResource& WithSpotIamFleetRole(const char* value) { SetSpotIamFleetRole(value); return *this;}
 
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline ComputeResource& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
+
+    /**
+     * <p>The launch template to use for your compute resources. Any other compute
+     * resource parameters that you specify in a <a>CreateComputeEnvironment</a> API
+     * operation override the same parameters in the launch template. You must specify
+     * either the launch template ID or launch template name in the request, but not
+     * both. </p>
+     */
+    inline ComputeResource& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
   private:
 
     CRType m_type;
@@ -640,6 +696,9 @@ namespace Model
 
     Aws::String m_spotIamFleetRole;
     bool m_spotIamFleetRoleHasBeenSet;
+
+    LaunchTemplateSpecification m_launchTemplate;
+    bool m_launchTemplateHasBeenSet;
   };
 
 } // namespace Model

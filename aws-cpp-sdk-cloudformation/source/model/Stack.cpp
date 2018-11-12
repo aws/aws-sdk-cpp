@@ -55,7 +55,8 @@ Stack::Stack() :
     m_enableTerminationProtection(false),
     m_enableTerminationProtectionHasBeenSet(false),
     m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false)
+    m_rootIdHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
 }
 
@@ -84,7 +85,8 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_enableTerminationProtection(false),
     m_enableTerminationProtectionHasBeenSet(false),
     m_parentIdHasBeenSet(false),
-    m_rootIdHasBeenSet(false)
+    m_rootIdHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -251,6 +253,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_rootId = StringUtils::Trim(rootIdNode.GetText().c_str());
       m_rootIdHasBeenSet = true;
     }
+    XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
+    if(!driftInformationNode.IsNull())
+    {
+      m_driftInformation = driftInformationNode;
+      m_driftInformationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -391,6 +399,13 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
   }
 
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::StringStream driftInformationLocationAndMemberSs;
+      driftInformationLocationAndMemberSs << location << index << locationValue << ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -506,6 +521,12 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_rootIdHasBeenSet)
   {
       oStream << location << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
+  }
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::String driftInformationLocationAndMember(location);
+      driftInformationLocationAndMember += ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
   }
 }
 

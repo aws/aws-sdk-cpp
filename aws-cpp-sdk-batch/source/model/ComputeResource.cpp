@@ -46,7 +46,8 @@ ComputeResource::ComputeResource() :
     m_tagsHasBeenSet(false),
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
-    m_spotIamFleetRoleHasBeenSet(false)
+    m_spotIamFleetRoleHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ ComputeResource::ComputeResource(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_bidPercentage(0),
     m_bidPercentageHasBeenSet(false),
-    m_spotIamFleetRoleHasBeenSet(false)
+    m_spotIamFleetRoleHasBeenSet(false),
+    m_launchTemplateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,6 +180,13 @@ ComputeResource& ComputeResource::operator =(JsonView jsonValue)
     m_spotIamFleetRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("launchTemplate"))
+  {
+    m_launchTemplate = jsonValue.GetObject("launchTemplate");
+
+    m_launchTemplateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -279,6 +288,12 @@ JsonValue ComputeResource::Jsonize() const
   if(m_spotIamFleetRoleHasBeenSet)
   {
    payload.WithString("spotIamFleetRole", m_spotIamFleetRole);
+
+  }
+
+  if(m_launchTemplateHasBeenSet)
+  {
+   payload.WithObject("launchTemplate", m_launchTemplate.Jsonize());
 
   }
 

@@ -33,6 +33,7 @@ DeliveryStreamDescription::DeliveryStreamDescription() :
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
+    m_deliveryStreamEncryptionConfigurationHasBeenSet(false),
     m_deliveryStreamType(DeliveryStreamType::NOT_SET),
     m_deliveryStreamTypeHasBeenSet(false),
     m_versionIdHasBeenSet(false),
@@ -50,6 +51,7 @@ DeliveryStreamDescription::DeliveryStreamDescription(JsonView jsonValue) :
     m_deliveryStreamARNHasBeenSet(false),
     m_deliveryStreamStatus(DeliveryStreamStatus::NOT_SET),
     m_deliveryStreamStatusHasBeenSet(false),
+    m_deliveryStreamEncryptionConfigurationHasBeenSet(false),
     m_deliveryStreamType(DeliveryStreamType::NOT_SET),
     m_deliveryStreamTypeHasBeenSet(false),
     m_versionIdHasBeenSet(false),
@@ -84,6 +86,13 @@ DeliveryStreamDescription& DeliveryStreamDescription::operator =(JsonView jsonVa
     m_deliveryStreamStatus = DeliveryStreamStatusMapper::GetDeliveryStreamStatusForName(jsonValue.GetString("DeliveryStreamStatus"));
 
     m_deliveryStreamStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeliveryStreamEncryptionConfiguration"))
+  {
+    m_deliveryStreamEncryptionConfiguration = jsonValue.GetObject("DeliveryStreamEncryptionConfiguration");
+
+    m_deliveryStreamEncryptionConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DeliveryStreamType"))
@@ -160,6 +169,12 @@ JsonValue DeliveryStreamDescription::Jsonize() const
   if(m_deliveryStreamStatusHasBeenSet)
   {
    payload.WithString("DeliveryStreamStatus", DeliveryStreamStatusMapper::GetNameForDeliveryStreamStatus(m_deliveryStreamStatus));
+  }
+
+  if(m_deliveryStreamEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithObject("DeliveryStreamEncryptionConfiguration", m_deliveryStreamEncryptionConfiguration.Jsonize());
+
   }
 
   if(m_deliveryStreamTypeHasBeenSet)

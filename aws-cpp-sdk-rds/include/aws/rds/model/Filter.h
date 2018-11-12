@@ -41,10 +41,11 @@ namespace Model
    * operation are documented with the describe operation.</p> <note> <p>Currently,
    * wildcards are not supported in filters.</p> </note> <p>The following actions can
    * be filtered:</p> <ul> <li> <p> <a>DescribeDBClusterBacktracks</a> </p> </li>
-   * <li> <p> <a>DescribeDBClusters</a> </p> </li> <li> <p>
-   * <a>DescribeDBInstances</a> </p> </li> <li> <p>
-   * <a>DescribePendingMaintenanceActions</a> </p> </li> </ul><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter">AWS API
+   * <li> <p> <a>DescribeDBClusterEndpoints</a> </p> </li> <li> <p>
+   * <a>DescribeDBClusters</a> </p> </li> <li> <p> <a>DescribeDBInstances</a> </p>
+   * </li> <li> <p> <a>DescribePendingMaintenanceActions</a> </p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Filter">AWS API
    * Reference</a></p>
    */
   class AWS_RDS_API Filter

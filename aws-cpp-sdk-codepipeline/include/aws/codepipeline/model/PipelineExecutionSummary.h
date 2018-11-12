@@ -200,25 +200,46 @@ namespace Model
     inline PipelineExecutionSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline const Aws::Vector<SourceRevision>& GetSourceRevisions() const{ return m_sourceRevisions; }
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline void SetSourceRevisions(const Aws::Vector<SourceRevision>& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = value; }
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline void SetSourceRevisions(Aws::Vector<SourceRevision>&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions = std::move(value); }
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline PipelineExecutionSummary& WithSourceRevisions(const Aws::Vector<SourceRevision>& value) { SetSourceRevisions(value); return *this;}
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline PipelineExecutionSummary& WithSourceRevisions(Aws::Vector<SourceRevision>&& value) { SetSourceRevisions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline PipelineExecutionSummary& AddSourceRevisions(const SourceRevision& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of the source artifact revisions that initiated a pipeline
+     * execution.</p>
+     */
     inline PipelineExecutionSummary& AddSourceRevisions(SourceRevision&& value) { m_sourceRevisionsHasBeenSet = true; m_sourceRevisions.push_back(std::move(value)); return *this; }
 
   private:

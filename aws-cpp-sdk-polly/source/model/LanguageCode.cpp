@@ -40,6 +40,7 @@ namespace Aws
         static const int en_IN_HASH = HashingUtils::HashString("en-IN");
         static const int en_US_HASH = HashingUtils::HashString("en-US");
         static const int es_ES_HASH = HashingUtils::HashString("es-ES");
+        static const int es_MX_HASH = HashingUtils::HashString("es-MX");
         static const int es_US_HASH = HashingUtils::HashString("es-US");
         static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
         static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
@@ -101,6 +102,10 @@ namespace Aws
           else if (hashCode == es_ES_HASH)
           {
             return LanguageCode::es_ES;
+          }
+          else if (hashCode == es_MX_HASH)
+          {
+            return LanguageCode::es_MX;
           }
           else if (hashCode == es_US_HASH)
           {
@@ -204,6 +209,8 @@ namespace Aws
             return "en-US";
           case LanguageCode::es_ES:
             return "es-ES";
+          case LanguageCode::es_MX:
+            return "es-MX";
           case LanguageCode::es_US:
             return "es-US";
           case LanguageCode::fr_CA:

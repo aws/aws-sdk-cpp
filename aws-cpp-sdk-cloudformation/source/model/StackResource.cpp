@@ -40,7 +40,8 @@ StackResource::StackResource() :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ StackResource::StackResource(const XmlNode& xmlNode) :
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
     m_resourceStatusReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -119,6 +121,12 @@ StackResource& StackResource::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
+    XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
+    if(!driftInformationNode.IsNull())
+    {
+      m_driftInformation = driftInformationNode;
+      m_driftInformationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -171,6 +179,13 @@ void StackResource::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::StringStream driftInformationLocationAndMemberSs;
+      driftInformationLocationAndMemberSs << location << index << locationValue << ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResource::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -210,6 +225,12 @@ void StackResource::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_descriptionHasBeenSet)
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
+  }
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::String driftInformationLocationAndMember(location);
+      driftInformationLocationAndMember += ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
   }
 }
 

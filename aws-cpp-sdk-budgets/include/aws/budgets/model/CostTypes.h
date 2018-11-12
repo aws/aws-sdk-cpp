@@ -32,8 +32,10 @@ namespace Model
 {
 
   /**
-   * <p>The types of cost included in a budget, such as tax and
-   * subscriptions.</p><p><h3>See Also:</h3>   <a
+   * <p>The types of cost that are included in a <code>COST</code> budget, such as
+   * tax and subscriptions.</p> <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>,
+   * and <code>RI_COVERAGE</code> budgets do not have
+   * <code>CostTypes</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/CostTypes">AWS
    * API Reference</a></p>
    */
@@ -85,19 +87,19 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether a budget uses blended rate.</p> <p>The default value is
+     * <p>Specifies whether a budget uses a blended rate.</p> <p>The default value is
      * <code>false</code>.</p>
      */
     inline bool GetUseBlended() const{ return m_useBlended; }
 
     /**
-     * <p>Specifies whether a budget uses blended rate.</p> <p>The default value is
+     * <p>Specifies whether a budget uses a blended rate.</p> <p>The default value is
      * <code>false</code>.</p>
      */
     inline void SetUseBlended(bool value) { m_useBlendedHasBeenSet = true; m_useBlended = value; }
 
     /**
-     * <p>Specifies whether a budget uses blended rate.</p> <p>The default value is
+     * <p>Specifies whether a budget uses a blended rate.</p> <p>The default value is
      * <code>false</code>.</p>
      */
     inline CostTypes& WithUseBlended(bool value) { SetUseBlended(value); return *this;}

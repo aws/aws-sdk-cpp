@@ -17,6 +17,7 @@
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codepipeline/model/ArtifactStore.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/StageDeclaration.h>
 #include <utility>
@@ -169,6 +170,106 @@ namespace Model
 
 
     /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline const Aws::Map<Aws::String, ArtifactStore>& GetArtifactStores() const{ return m_artifactStores; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline void SetArtifactStores(const Aws::Map<Aws::String, ArtifactStore>& value) { m_artifactStoresHasBeenSet = true; m_artifactStores = value; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline void SetArtifactStores(Aws::Map<Aws::String, ArtifactStore>&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores = std::move(value); }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& WithArtifactStores(const Aws::Map<Aws::String, ArtifactStore>& value) { SetArtifactStores(value); return *this;}
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& WithArtifactStores(Aws::Map<Aws::String, ArtifactStore>&& value) { SetArtifactStores(std::move(value)); return *this;}
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(const Aws::String& key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, value); return *this; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(Aws::String&& key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(const Aws::String& key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(Aws::String&& key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(const char* key, ArtifactStore&& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline PipelineDeclaration& AddArtifactStores(const char* key, const ArtifactStore& value) { m_artifactStoresHasBeenSet = true; m_artifactStores.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The stage in which to perform the action.</p>
      */
     inline const Aws::Vector<StageDeclaration>& GetStages() const{ return m_stages; }
@@ -235,6 +336,9 @@ namespace Model
 
     ArtifactStore m_artifactStore;
     bool m_artifactStoreHasBeenSet;
+
+    Aws::Map<Aws::String, ArtifactStore> m_artifactStores;
+    bool m_artifactStoresHasBeenSet;
 
     Aws::Vector<StageDeclaration> m_stages;
     bool m_stagesHasBeenSet;

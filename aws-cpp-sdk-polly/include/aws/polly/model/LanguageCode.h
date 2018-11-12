@@ -36,6 +36,7 @@ namespace Model
     en_IN,
     en_US,
     es_ES,
+    es_MX,
     es_US,
     fr_CA,
     fr_FR,

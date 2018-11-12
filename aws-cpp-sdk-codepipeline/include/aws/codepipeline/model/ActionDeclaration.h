@@ -320,6 +320,42 @@ namespace Model
      */
     inline ActionDeclaration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline ActionDeclaration& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline ActionDeclaration& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The action declaration's AWS Region, such as us-east-1.</p>
+     */
+    inline ActionDeclaration& WithRegion(const char* value) { SetRegion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -342,6 +378,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_region;
+    bool m_regionHasBeenSet;
   };
 
 } // namespace Model

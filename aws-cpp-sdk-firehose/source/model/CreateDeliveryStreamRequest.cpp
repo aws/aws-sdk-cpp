@@ -30,7 +30,8 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false),
-    m_splunkDestinationConfigurationHasBeenSet(false)
+    m_splunkDestinationConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,17 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_splunkDestinationConfigurationHasBeenSet)
   {
    payload.WithObject("SplunkDestinationConfiguration", m_splunkDestinationConfiguration.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

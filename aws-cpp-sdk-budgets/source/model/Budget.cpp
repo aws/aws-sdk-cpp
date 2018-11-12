@@ -38,7 +38,8 @@ Budget::Budget() :
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
     m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false)
+    m_budgetTypeHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Budget::Budget(JsonView jsonValue) :
     m_timePeriodHasBeenSet(false),
     m_calculatedSpendHasBeenSet(false),
     m_budgetType(BudgetType::NOT_SET),
-    m_budgetTypeHasBeenSet(false)
+    m_budgetTypeHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ Budget& Budget::operator =(JsonView jsonValue)
     m_budgetTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+    m_lastUpdatedTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -186,6 +195,11 @@ JsonValue Budget::Jsonize() const
   if(m_budgetTypeHasBeenSet)
   {
    payload.WithString("BudgetType", BudgetTypeMapper::GetNameForBudgetType(m_budgetType));
+  }
+
+  if(m_lastUpdatedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;

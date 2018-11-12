@@ -17,6 +17,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/DeliveryStreamStatus.h>
+#include <aws/firehose/model/DeliveryStreamEncryptionConfiguration.h>
 #include <aws/firehose/model/DeliveryStreamType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/firehose/model/SourceDescription.h>
@@ -170,6 +171,37 @@ namespace Model
      * <p>The status of the delivery stream.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(DeliveryStreamStatus&& value) { SetDeliveryStreamStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline const DeliveryStreamEncryptionConfiguration& GetDeliveryStreamEncryptionConfiguration() const{ return m_deliveryStreamEncryptionConfiguration; }
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline void SetDeliveryStreamEncryptionConfiguration(const DeliveryStreamEncryptionConfiguration& value) { m_deliveryStreamEncryptionConfigurationHasBeenSet = true; m_deliveryStreamEncryptionConfiguration = value; }
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline void SetDeliveryStreamEncryptionConfiguration(DeliveryStreamEncryptionConfiguration&& value) { m_deliveryStreamEncryptionConfigurationHasBeenSet = true; m_deliveryStreamEncryptionConfiguration = std::move(value); }
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline DeliveryStreamDescription& WithDeliveryStreamEncryptionConfiguration(const DeliveryStreamEncryptionConfiguration& value) { SetDeliveryStreamEncryptionConfiguration(value); return *this;}
+
+    /**
+     * <p>Indicates the server-side encryption (SSE) status for the delivery
+     * stream.</p>
+     */
+    inline DeliveryStreamDescription& WithDeliveryStreamEncryptionConfiguration(DeliveryStreamEncryptionConfiguration&& value) { SetDeliveryStreamEncryptionConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -419,6 +451,9 @@ namespace Model
 
     DeliveryStreamStatus m_deliveryStreamStatus;
     bool m_deliveryStreamStatusHasBeenSet;
+
+    DeliveryStreamEncryptionConfiguration m_deliveryStreamEncryptionConfiguration;
+    bool m_deliveryStreamEncryptionConfigurationHasBeenSet;
 
     DeliveryStreamType m_deliveryStreamType;
     bool m_deliveryStreamTypeHasBeenSet;

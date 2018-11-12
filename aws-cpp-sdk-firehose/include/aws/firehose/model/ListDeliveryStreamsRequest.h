@@ -113,37 +113,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline const Aws::String& GetExclusiveStartDeliveryStreamName() const{ return m_exclusiveStartDeliveryStreamName; }
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline void SetExclusiveStartDeliveryStreamName(const Aws::String& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = value; }
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline void SetExclusiveStartDeliveryStreamName(Aws::String&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = std::move(value); }
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline void SetExclusiveStartDeliveryStreamName(const char* value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName.assign(value); }
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const Aws::String& value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(Aws::String&& value) { SetExclusiveStartDeliveryStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the delivery stream to start the list with.</p>
+     * <p>The list of delivery streams returned by this call to
+     * <code>ListDeliveryStreams</code> will start with the delivery stream whose name
+     * comes alphabetically immediately after the name you specify in
+     * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
     inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const char* value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
 

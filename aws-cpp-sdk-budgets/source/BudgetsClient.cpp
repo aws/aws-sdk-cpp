@@ -34,6 +34,7 @@
 #include <aws/budgets/model/DeleteNotificationRequest.h>
 #include <aws/budgets/model/DeleteSubscriberRequest.h>
 #include <aws/budgets/model/DescribeBudgetRequest.h>
+#include <aws/budgets/model/DescribeBudgetPerformanceHistoryRequest.h>
 #include <aws/budgets/model/DescribeBudgetsRequest.h>
 #include <aws/budgets/model/DescribeNotificationsForBudgetRequest.h>
 #include <aws/budgets/model/DescribeSubscribersForNotificationRequest.h>
@@ -348,6 +349,41 @@ void BudgetsClient::DescribeBudgetAsync(const DescribeBudgetRequest& request, co
 void BudgetsClient::DescribeBudgetAsyncHelper(const DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBudget(request), context);
+}
+
+DescribeBudgetPerformanceHistoryOutcome BudgetsClient::DescribeBudgetPerformanceHistory(const DescribeBudgetPerformanceHistoryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeBudgetPerformanceHistoryOutcome(DescribeBudgetPerformanceHistoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeBudgetPerformanceHistoryOutcome(outcome.GetError());
+  }
+}
+
+DescribeBudgetPerformanceHistoryOutcomeCallable BudgetsClient::DescribeBudgetPerformanceHistoryCallable(const DescribeBudgetPerformanceHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBudgetPerformanceHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBudgetPerformanceHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BudgetsClient::DescribeBudgetPerformanceHistoryAsync(const DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBudgetPerformanceHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void BudgetsClient::DescribeBudgetPerformanceHistoryAsyncHelper(const DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBudgetPerformanceHistory(request), context);
 }
 
 DescribeBudgetsOutcome BudgetsClient::DescribeBudgets(const DescribeBudgetsRequest& request) const

@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>A notification with subscribers. A notification can have one SNS subscriber
-   * and up to ten email subscribers, for a total of 11 subscribers.</p><p><h3>See
+   * and up to 10 email subscribers, for a total of 11 subscribers.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/NotificationWithSubscribers">AWS
    * API Reference</a></p>
@@ -52,27 +52,27 @@ namespace Model
 
 
     /**
-     * <p>The notification associated with a budget.</p>
+     * <p>The notification that is associated with a budget.</p>
      */
     inline const Notification& GetNotification() const{ return m_notification; }
 
     /**
-     * <p>The notification associated with a budget.</p>
+     * <p>The notification that is associated with a budget.</p>
      */
     inline void SetNotification(const Notification& value) { m_notificationHasBeenSet = true; m_notification = value; }
 
     /**
-     * <p>The notification associated with a budget.</p>
+     * <p>The notification that is associated with a budget.</p>
      */
     inline void SetNotification(Notification&& value) { m_notificationHasBeenSet = true; m_notification = std::move(value); }
 
     /**
-     * <p>The notification associated with a budget.</p>
+     * <p>The notification that is associated with a budget.</p>
      */
     inline NotificationWithSubscribers& WithNotification(const Notification& value) { SetNotification(value); return *this;}
 
     /**
-     * <p>The notification associated with a budget.</p>
+     * <p>The notification that is associated with a budget.</p>
      */
     inline NotificationWithSubscribers& WithNotification(Notification&& value) { SetNotification(std::move(value)); return *this;}
 

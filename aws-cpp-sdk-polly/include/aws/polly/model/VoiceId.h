@@ -79,7 +79,10 @@ namespace Model
     Takumi,
     Seoyeon,
     Aditi,
-    Zhiyu
+    Zhiyu,
+    Bianca,
+    Lucia,
+    Mia
   };
 
 namespace VoiceIdMapper

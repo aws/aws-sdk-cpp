@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartPipelineExecutionRequest::StartPipelineExecutionRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestTokenHasBeenSet(true)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String StartPipelineExecutionRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+   payload.WithString("clientRequestToken", m_clientRequestToken);
 
   }
 

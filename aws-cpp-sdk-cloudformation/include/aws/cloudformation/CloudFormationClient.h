@@ -32,13 +32,17 @@
 #include <aws/cloudformation/model/DeleteStackSetResult.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
+#include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
 #include <aws/cloudformation/model/DescribeStackEventsResult.h>
 #include <aws/cloudformation/model/DescribeStackInstanceResult.h>
 #include <aws/cloudformation/model/DescribeStackResourceResult.h>
+#include <aws/cloudformation/model/DescribeStackResourceDriftsResult.h>
 #include <aws/cloudformation/model/DescribeStackResourcesResult.h>
 #include <aws/cloudformation/model/DescribeStackSetResult.h>
 #include <aws/cloudformation/model/DescribeStackSetOperationResult.h>
 #include <aws/cloudformation/model/DescribeStacksResult.h>
+#include <aws/cloudformation/model/DetectStackDriftResult.h>
+#include <aws/cloudformation/model/DetectStackResourceDriftResult.h>
 #include <aws/cloudformation/model/EstimateTemplateCostResult.h>
 #include <aws/cloudformation/model/ExecuteChangeSetResult.h>
 #include <aws/cloudformation/model/GetStackPolicyResult.h>
@@ -117,13 +121,17 @@ namespace Model
         class DeleteStackSetRequest;
         class DescribeAccountLimitsRequest;
         class DescribeChangeSetRequest;
+        class DescribeStackDriftDetectionStatusRequest;
         class DescribeStackEventsRequest;
         class DescribeStackInstanceRequest;
         class DescribeStackResourceRequest;
+        class DescribeStackResourceDriftsRequest;
         class DescribeStackResourcesRequest;
         class DescribeStackSetRequest;
         class DescribeStackSetOperationRequest;
         class DescribeStacksRequest;
+        class DetectStackDriftRequest;
+        class DetectStackResourceDriftRequest;
         class EstimateTemplateCostRequest;
         class ExecuteChangeSetRequest;
         class GetStackPolicyRequest;
@@ -159,13 +167,17 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeChangeSetOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackDriftDetectionStatusOutcome;
         typedef Aws::Utils::Outcome<DescribeStackEventsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackEventsOutcome;
         typedef Aws::Utils::Outcome<DescribeStackInstanceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeStackResourceResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourceOutcome;
+        typedef Aws::Utils::Outcome<DescribeStackResourceDriftsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourceDriftsOutcome;
         typedef Aws::Utils::Outcome<DescribeStackResourcesResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackResourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStacksOutcome;
+        typedef Aws::Utils::Outcome<DetectStackDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackDriftOutcome;
+        typedef Aws::Utils::Outcome<DetectStackResourceDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackResourceDriftOutcome;
         typedef Aws::Utils::Outcome<EstimateTemplateCostResult, Aws::Client::AWSError<CloudFormationErrors>> EstimateTemplateCostOutcome;
         typedef Aws::Utils::Outcome<ExecuteChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> ExecuteChangeSetOutcome;
         typedef Aws::Utils::Outcome<GetStackPolicyResult, Aws::Client::AWSError<CloudFormationErrors>> GetStackPolicyOutcome;
@@ -201,13 +213,17 @@ namespace Model
         typedef std::future<DeleteStackSetOutcome> DeleteStackSetOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
+        typedef std::future<DescribeStackDriftDetectionStatusOutcome> DescribeStackDriftDetectionStatusOutcomeCallable;
         typedef std::future<DescribeStackEventsOutcome> DescribeStackEventsOutcomeCallable;
         typedef std::future<DescribeStackInstanceOutcome> DescribeStackInstanceOutcomeCallable;
         typedef std::future<DescribeStackResourceOutcome> DescribeStackResourceOutcomeCallable;
+        typedef std::future<DescribeStackResourceDriftsOutcome> DescribeStackResourceDriftsOutcomeCallable;
         typedef std::future<DescribeStackResourcesOutcome> DescribeStackResourcesOutcomeCallable;
         typedef std::future<DescribeStackSetOutcome> DescribeStackSetOutcomeCallable;
         typedef std::future<DescribeStackSetOperationOutcome> DescribeStackSetOperationOutcomeCallable;
         typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
+        typedef std::future<DetectStackDriftOutcome> DetectStackDriftOutcomeCallable;
+        typedef std::future<DetectStackResourceDriftOutcome> DetectStackResourceDriftOutcomeCallable;
         typedef std::future<EstimateTemplateCostOutcome> EstimateTemplateCostOutcomeCallable;
         typedef std::future<ExecuteChangeSetOutcome> ExecuteChangeSetOutcomeCallable;
         typedef std::future<GetStackPolicyOutcome> GetStackPolicyOutcomeCallable;
@@ -246,13 +262,17 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackSetRequest&, const Model::DeleteStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackDriftDetectionStatusRequest&, const Model::DescribeStackDriftDetectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackDriftDetectionStatusResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackEventsRequest&, const Model::DescribeStackEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackEventsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackInstanceRequest&, const Model::DescribeStackInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackInstanceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourceRequest&, const Model::DescribeStackResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourceResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourceDriftsRequest&, const Model::DescribeStackResourceDriftsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourceDriftsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackResourcesRequest&, const Model::DescribeStackResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackResourcesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetRequest&, const Model::DescribeStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetOperationRequest&, const Model::DescribeStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DetectStackDriftRequest&, const Model::DetectStackDriftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectStackDriftResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DetectStackResourceDriftRequest&, const Model::DetectStackResourceDriftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectStackResourceDriftResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::EstimateTemplateCostRequest&, const Model::EstimateTemplateCostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EstimateTemplateCostResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ExecuteChangeSetRequest&, const Model::ExecuteChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExecuteChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::GetStackPolicyRequest&, const Model::GetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStackPolicyResponseReceivedHandler;
@@ -789,6 +809,70 @@ namespace Model
         virtual void DescribeChangeSetAsync(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a stack drift detection operation. A stack drift
+         * detection operation detects whether a stack's actual configuration differs, or
+         * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. A stack is considered
+         * to have drifted if one or more of its resources have drifted. For more
+         * information on stack and resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <a>DetectStackDrift</a> to initiate a stack drift detection operation.
+         * <code>DetectStackDrift</code> returns a <code>StackDriftDetectionId</code> you
+         * can use to monitor the progress of the operation using
+         * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection
+         * operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift
+         * information about the stack and its resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackDriftDetectionStatusOutcome DescribeStackDriftDetectionStatus(const Model::DescribeStackDriftDetectionStatusRequest& request) const;
+
+        /**
+         * <p>Returns information about a stack drift detection operation. A stack drift
+         * detection operation detects whether a stack's actual configuration differs, or
+         * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. A stack is considered
+         * to have drifted if one or more of its resources have drifted. For more
+         * information on stack and resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <a>DetectStackDrift</a> to initiate a stack drift detection operation.
+         * <code>DetectStackDrift</code> returns a <code>StackDriftDetectionId</code> you
+         * can use to monitor the progress of the operation using
+         * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection
+         * operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift
+         * information about the stack and its resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStackDriftDetectionStatusOutcomeCallable DescribeStackDriftDetectionStatusCallable(const Model::DescribeStackDriftDetectionStatusRequest& request) const;
+
+        /**
+         * <p>Returns information about a stack drift detection operation. A stack drift
+         * detection operation detects whether a stack's actual configuration differs, or
+         * has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. A stack is considered
+         * to have drifted if one or more of its resources have drifted. For more
+         * information on stack and resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <a>DetectStackDrift</a> to initiate a stack drift detection operation.
+         * <code>DetectStackDrift</code> returns a <code>StackDriftDetectionId</code> you
+         * can use to monitor the progress of the operation using
+         * <code>DescribeStackDriftDetectionStatus</code>. Once the drift detection
+         * operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift
+         * information about the stack and its resources.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackDriftDetectionStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStackDriftDetectionStatusAsync(const Model::DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns all stack related events for a specified stack in reverse
          * chronological order. For more information about a stack's event history, go to
          * <a
@@ -895,6 +979,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStackResourceAsync(const Model::DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns drift information for the resources that have been checked for drift
+         * in the specified stack. This includes actual and expected configuration values
+         * for resources where AWS CloudFormation detects configuration drift.</p> <p>For a
+         * given stack, there will be one <code>StackResourceDrift</code> for each stack
+         * resource that has been checked for drift. Resources that have not yet been
+         * checked for drift are not included. Resources that do not currently support
+         * drift detection are not checked, and so not included. For a list of resources
+         * that support drift detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
+         * detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift
+         * on all supported resources for a given stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStackResourceDriftsOutcome DescribeStackResourceDrifts(const Model::DescribeStackResourceDriftsRequest& request) const;
+
+        /**
+         * <p>Returns drift information for the resources that have been checked for drift
+         * in the specified stack. This includes actual and expected configuration values
+         * for resources where AWS CloudFormation detects configuration drift.</p> <p>For a
+         * given stack, there will be one <code>StackResourceDrift</code> for each stack
+         * resource that has been checked for drift. Resources that have not yet been
+         * checked for drift are not included. Resources that do not currently support
+         * drift detection are not checked, and so not included. For a list of resources
+         * that support drift detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
+         * detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift
+         * on all supported resources for a given stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStackResourceDriftsOutcomeCallable DescribeStackResourceDriftsCallable(const Model::DescribeStackResourceDriftsRequest& request) const;
+
+        /**
+         * <p>Returns drift information for the resources that have been checked for drift
+         * in the specified stack. This includes actual and expected configuration values
+         * for resources where AWS CloudFormation detects configuration drift.</p> <p>For a
+         * given stack, there will be one <code>StackResourceDrift</code> for each stack
+         * resource that has been checked for drift. Resources that have not yet been
+         * checked for drift are not included. Resources that do not currently support
+         * drift detection are not checked, and so not included. For a list of resources
+         * that support drift detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p>Use <a>DetectStackResourceDrift</a> to
+         * detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift
+         * on all supported resources for a given stack.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackResourceDrifts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStackResourceDriftsAsync(const Model::DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns AWS resource descriptions for running and deleted stacks. If
@@ -1064,6 +1206,170 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detects whether a stack's actual configuration differs, or has
+         * <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. For each resource in
+         * the stack that supports drift detection, AWS CloudFormation compares the actual
+         * configuration of the resource with its expected template configuration. Only
+         * resource properties explicitly defined in the stack template are checked for
+         * drift. A stack is considered to have drifted if one or more of its resources
+         * differ from their expected template configurations. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackDrift</code> to detect drift on all supported resources for a
+         * given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual
+         * resources.</p> <p>For a list of stack resources that currently support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p> <code>DetectStackDrift</code> can take
+         * up to several minutes, depending on the number of resources contained within the
+         * stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a
+         * detect stack drift operation. Once the drift detection operation has completed,
+         * use <a>DescribeStackResourceDrifts</a> to return drift information about the
+         * stack and its resources.</p> <p>When detecting drift on a stack, AWS
+         * CloudFormation does not detect drift on any nested stacks belonging to that
+         * stack. Perform <code>DetectStackDrift</code> directly on the nested stack
+         * itself.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectStackDriftOutcome DetectStackDrift(const Model::DetectStackDriftRequest& request) const;
+
+        /**
+         * <p>Detects whether a stack's actual configuration differs, or has
+         * <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. For each resource in
+         * the stack that supports drift detection, AWS CloudFormation compares the actual
+         * configuration of the resource with its expected template configuration. Only
+         * resource properties explicitly defined in the stack template are checked for
+         * drift. A stack is considered to have drifted if one or more of its resources
+         * differ from their expected template configurations. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackDrift</code> to detect drift on all supported resources for a
+         * given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual
+         * resources.</p> <p>For a list of stack resources that currently support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p> <code>DetectStackDrift</code> can take
+         * up to several minutes, depending on the number of resources contained within the
+         * stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a
+         * detect stack drift operation. Once the drift detection operation has completed,
+         * use <a>DescribeStackResourceDrifts</a> to return drift information about the
+         * stack and its resources.</p> <p>When detecting drift on a stack, AWS
+         * CloudFormation does not detect drift on any nested stacks belonging to that
+         * stack. Perform <code>DetectStackDrift</code> directly on the nested stack
+         * itself.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectStackDriftOutcomeCallable DetectStackDriftCallable(const Model::DetectStackDriftRequest& request) const;
+
+        /**
+         * <p>Detects whether a stack's actual configuration differs, or has
+         * <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. For each resource in
+         * the stack that supports drift detection, AWS CloudFormation compares the actual
+         * configuration of the resource with its expected template configuration. Only
+         * resource properties explicitly defined in the stack template are checked for
+         * drift. A stack is considered to have drifted if one or more of its resources
+         * differ from their expected template configurations. For more information, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackDrift</code> to detect drift on all supported resources for a
+         * given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual
+         * resources.</p> <p>For a list of stack resources that currently support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p> <p> <code>DetectStackDrift</code> can take
+         * up to several minutes, depending on the number of resources contained within the
+         * stack. Use <a>DescribeStackDriftDetectionStatus</a> to monitor the progress of a
+         * detect stack drift operation. Once the drift detection operation has completed,
+         * use <a>DescribeStackResourceDrifts</a> to return drift information about the
+         * stack and its resources.</p> <p>When detecting drift on a stack, AWS
+         * CloudFormation does not detect drift on any nested stacks belonging to that
+         * stack. Perform <code>DetectStackDrift</code> directly on the nested stack
+         * itself.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackDrift">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectStackDriftAsync(const Model::DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about whether a resource's actual configuration differs,
+         * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. This information
+         * includes actual and expected property values for resources in which AWS
+         * CloudFormation detects drift. Only resource properties explicitly defined in the
+         * stack template are checked for drift. For more information about stack and
+         * resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackResourceDrift</code> to detect drift on individual resources,
+         * or <a>DetectStackDrift</a> to detect drift on all resources in a given stack
+         * that support drift detection.</p> <p>Resources that do not currently support
+         * drift detection cannot be checked. For a list of resources that support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectStackResourceDriftOutcome DetectStackResourceDrift(const Model::DetectStackResourceDriftRequest& request) const;
+
+        /**
+         * <p>Returns information about whether a resource's actual configuration differs,
+         * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. This information
+         * includes actual and expected property values for resources in which AWS
+         * CloudFormation detects drift. Only resource properties explicitly defined in the
+         * stack template are checked for drift. For more information about stack and
+         * resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackResourceDrift</code> to detect drift on individual resources,
+         * or <a>DetectStackDrift</a> to detect drift on all resources in a given stack
+         * that support drift detection.</p> <p>Resources that do not currently support
+         * drift detection cannot be checked. For a list of resources that support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectStackResourceDriftOutcomeCallable DetectStackResourceDriftCallable(const Model::DetectStackResourceDriftRequest& request) const;
+
+        /**
+         * <p>Returns information about whether a resource's actual configuration differs,
+         * or has <i>drifted</i>, from it's expected configuration, as defined in the stack
+         * template and any values specified as template parameters. This information
+         * includes actual and expected property values for resources in which AWS
+         * CloudFormation detects drift. Only resource properties explicitly defined in the
+         * stack template are checked for drift. For more information about stack and
+         * resource drift, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+         * Unregulated Configuration Changes to Stacks and Resources</a>.</p> <p>Use
+         * <code>DetectStackResourceDrift</code> to detect drift on individual resources,
+         * or <a>DetectStackDrift</a> to detect drift on all resources in a given stack
+         * that support drift detection.</p> <p>Resources that do not currently support
+         * drift detection cannot be checked. For a list of resources that support drift
+         * detection, see <a
+         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+         * that Support Drift Detection</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DetectStackResourceDrift">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectStackResourceDriftAsync(const Model::DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the estimated monthly cost of a template. The return value is an AWS
@@ -1827,10 +2133,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
@@ -1842,10 +2148,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
@@ -1859,10 +2165,10 @@ namespace Model
          * <p>Updates termination protection for the specified stack. If a user attempts to
          * delete a stack with termination protection enabled, the operation fails and the
          * stack remains unchanged. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting
          * a Stack From Being Deleted</a> in the <i>AWS CloudFormation User Guide</i>.</p>
          * <p> For <a
-         * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
+         * href="AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested
          * stacks</a>, termination protection is set on the root stack and cannot be
          * changed directly on the nested stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateTerminationProtection">AWS
@@ -1923,13 +2229,17 @@ namespace Model
         void DeleteStackSetAsyncHelper(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChangeSetAsyncHelper(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStackDriftDetectionStatusAsyncHelper(const Model::DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackEventsAsyncHelper(const Model::DescribeStackEventsRequest& request, const DescribeStackEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackInstanceAsyncHelper(const Model::DescribeStackInstanceRequest& request, const DescribeStackInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackResourceAsyncHelper(const Model::DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStackResourceDriftsAsyncHelper(const Model::DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackResourcesAsyncHelper(const Model::DescribeStackResourcesRequest& request, const DescribeStackResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackSetAsyncHelper(const Model::DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackSetOperationAsyncHelper(const Model::DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectStackDriftAsyncHelper(const Model::DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectStackResourceDriftAsyncHelper(const Model::DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EstimateTemplateCostAsyncHelper(const Model::EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExecuteChangeSetAsyncHelper(const Model::ExecuteChangeSetRequest& request, const ExecuteChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetStackPolicyAsyncHelper(const Model::GetStackPolicyRequest& request, const GetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

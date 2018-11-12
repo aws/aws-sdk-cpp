@@ -28,6 +28,8 @@
 #include <aws/firehose/model/ListTagsForDeliveryStreamResult.h>
 #include <aws/firehose/model/PutRecordResult.h>
 #include <aws/firehose/model/PutRecordBatchResult.h>
+#include <aws/firehose/model/StartDeliveryStreamEncryptionResult.h>
+#include <aws/firehose/model/StopDeliveryStreamEncryptionResult.h>
 #include <aws/firehose/model/TagDeliveryStreamResult.h>
 #include <aws/firehose/model/UntagDeliveryStreamResult.h>
 #include <aws/firehose/model/UpdateDestinationResult.h>
@@ -78,6 +80,8 @@ namespace Model
         class ListTagsForDeliveryStreamRequest;
         class PutRecordRequest;
         class PutRecordBatchRequest;
+        class StartDeliveryStreamEncryptionRequest;
+        class StopDeliveryStreamEncryptionRequest;
         class TagDeliveryStreamRequest;
         class UntagDeliveryStreamRequest;
         class UpdateDestinationRequest;
@@ -89,6 +93,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTagsForDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> ListTagsForDeliveryStreamOutcome;
         typedef Aws::Utils::Outcome<PutRecordResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordOutcome;
         typedef Aws::Utils::Outcome<PutRecordBatchResult, Aws::Client::AWSError<FirehoseErrors>> PutRecordBatchOutcome;
+        typedef Aws::Utils::Outcome<StartDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StartDeliveryStreamEncryptionOutcome;
+        typedef Aws::Utils::Outcome<StopDeliveryStreamEncryptionResult, Aws::Client::AWSError<FirehoseErrors>> StopDeliveryStreamEncryptionOutcome;
         typedef Aws::Utils::Outcome<TagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> TagDeliveryStreamOutcome;
         typedef Aws::Utils::Outcome<UntagDeliveryStreamResult, Aws::Client::AWSError<FirehoseErrors>> UntagDeliveryStreamOutcome;
         typedef Aws::Utils::Outcome<UpdateDestinationResult, Aws::Client::AWSError<FirehoseErrors>> UpdateDestinationOutcome;
@@ -100,6 +106,8 @@ namespace Model
         typedef std::future<ListTagsForDeliveryStreamOutcome> ListTagsForDeliveryStreamOutcomeCallable;
         typedef std::future<PutRecordOutcome> PutRecordOutcomeCallable;
         typedef std::future<PutRecordBatchOutcome> PutRecordBatchOutcomeCallable;
+        typedef std::future<StartDeliveryStreamEncryptionOutcome> StartDeliveryStreamEncryptionOutcomeCallable;
+        typedef std::future<StopDeliveryStreamEncryptionOutcome> StopDeliveryStreamEncryptionOutcomeCallable;
         typedef std::future<TagDeliveryStreamOutcome> TagDeliveryStreamOutcomeCallable;
         typedef std::future<UntagDeliveryStreamOutcome> UntagDeliveryStreamOutcomeCallable;
         typedef std::future<UpdateDestinationOutcome> UpdateDestinationOutcomeCallable;
@@ -114,6 +122,8 @@ namespace Model
     typedef std::function<void(const FirehoseClient*, const Model::ListTagsForDeliveryStreamRequest&, const Model::ListTagsForDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForDeliveryStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::PutRecordRequest&, const Model::PutRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::PutRecordBatchRequest&, const Model::PutRecordBatchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRecordBatchResponseReceivedHandler;
+    typedef std::function<void(const FirehoseClient*, const Model::StartDeliveryStreamEncryptionRequest&, const Model::StartDeliveryStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDeliveryStreamEncryptionResponseReceivedHandler;
+    typedef std::function<void(const FirehoseClient*, const Model::StopDeliveryStreamEncryptionRequest&, const Model::StopDeliveryStreamEncryptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDeliveryStreamEncryptionResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::TagDeliveryStreamRequest&, const Model::TagDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagDeliveryStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::UntagDeliveryStreamRequest&, const Model::UntagDeliveryStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagDeliveryStreamResponseReceivedHandler;
     typedef std::function<void(const FirehoseClient*, const Model::UpdateDestinationRequest&, const Model::UpdateDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDestinationResponseReceivedHandler;
@@ -409,30 +419,30 @@ namespace Model
         virtual void DescribeDeliveryStreamAsync(const Model::DescribeDeliveryStreamRequest& request, const DescribeDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists your delivery streams.</p> <p>The number of delivery streams might be
-         * too large to return using a single call to <code>ListDeliveryStreams</code>. You
-         * can limit the number of delivery streams returned, using the <b>Limit</b>
-         * parameter. To determine whether there are more delivery streams to list, check
-         * the value of <code>HasMoreDeliveryStreams</code> in the output. If there are
-         * more delivery streams to list, you can request them by specifying the name of
-         * the last delivery stream returned in the call in the
-         * <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
+         * number of delivery streams might be too large to return using a single call to
+         * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams
+         * returned, using the <b>Limit</b> parameter. To determine whether there are more
+         * delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code>
+         * in the output. If there are more delivery streams to list, you can request them
+         * by calling this operation again and setting the
+         * <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last
+         * delivery stream returned in the last call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDeliveryStreamsOutcome ListDeliveryStreams(const Model::ListDeliveryStreamsRequest& request) const;
 
         /**
-         * <p>Lists your delivery streams.</p> <p>The number of delivery streams might be
-         * too large to return using a single call to <code>ListDeliveryStreams</code>. You
-         * can limit the number of delivery streams returned, using the <b>Limit</b>
-         * parameter. To determine whether there are more delivery streams to list, check
-         * the value of <code>HasMoreDeliveryStreams</code> in the output. If there are
-         * more delivery streams to list, you can request them by specifying the name of
-         * the last delivery stream returned in the call in the
-         * <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
+         * number of delivery streams might be too large to return using a single call to
+         * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams
+         * returned, using the <b>Limit</b> parameter. To determine whether there are more
+         * delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code>
+         * in the output. If there are more delivery streams to list, you can request them
+         * by calling this operation again and setting the
+         * <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last
+         * delivery stream returned in the last call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
          * API Reference</a></p>
          *
@@ -441,15 +451,15 @@ namespace Model
         virtual Model::ListDeliveryStreamsOutcomeCallable ListDeliveryStreamsCallable(const Model::ListDeliveryStreamsRequest& request) const;
 
         /**
-         * <p>Lists your delivery streams.</p> <p>The number of delivery streams might be
-         * too large to return using a single call to <code>ListDeliveryStreams</code>. You
-         * can limit the number of delivery streams returned, using the <b>Limit</b>
-         * parameter. To determine whether there are more delivery streams to list, check
-         * the value of <code>HasMoreDeliveryStreams</code> in the output. If there are
-         * more delivery streams to list, you can request them by specifying the name of
-         * the last delivery stream returned in the call in the
-         * <code>ExclusiveStartDeliveryStreamName</code> parameter of a subsequent
-         * call.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists your delivery streams in alphabetical order of their names.</p> <p>The
+         * number of delivery streams might be too large to return using a single call to
+         * <code>ListDeliveryStreams</code>. You can limit the number of delivery streams
+         * returned, using the <b>Limit</b> parameter. To determine whether there are more
+         * delivery streams to list, check the value of <code>HasMoreDeliveryStreams</code>
+         * in the output. If there are more delivery streams to list, you can request them
+         * by calling this operation again and setting the
+         * <code>ExclusiveStartDeliveryStreamName</code> parameter to the name of the last
+         * delivery stream returned in the last call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/ListDeliveryStreams">AWS
          * API Reference</a></p>
          *
@@ -513,7 +523,10 @@ namespace Model
          * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it tries to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * concatenate two or more base64 strings to form the data fields of your records.
+         * Instead, concatenate the raw data, then perform base64 encoding.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          */
@@ -547,7 +560,10 @@ namespace Model
          * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it tries to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * concatenate two or more base64 strings to form the data fields of your records.
+         * Instead, concatenate the raw data, then perform base64 encoding.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -583,7 +599,10 @@ namespace Model
          * delivery stream. </p> <p>Data records sent to Kinesis Data Firehose are stored
          * for 24 hours from the time they are added to a delivery stream as it tries to
          * send the records to the destination. If the destination is unreachable for more
-         * than 24 hours, the data is no longer available.</p><p><h3>See Also:</h3>   <a
+         * than 24 hours, the data is no longer available.</p> <important> <p>Don't
+         * concatenate two or more base64 strings to form the data fields of your records.
+         * Instead, concatenate the raw data, then perform base64 encoding.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecord">AWS
          * API Reference</a></p>
          *
@@ -615,18 +634,21 @@ namespace Model
          * allows the consumer application to parse individual data items when reading the
          * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
          * count of failed records, <b>FailedPutCount</b>, and an array of responses,
-         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
-         * provides additional information about the processed record. It directly
-         * correlates with a record in the request array using the same ordering, from the
-         * top to the bottom. The response array always includes the same number of records
-         * as the request array. <b>RequestResponses</b> includes both successfully and
-         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
-         * records in each <a>PutRecordBatch</a> request. A single record failure does not
-         * stop the processing of subsequent records.</p> <p>A successfully processed
-         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * <b>RequestResponses</b>. Even if the <a>PutRecordBatch</a> call succeeds, the
+         * value of <b>FailedPutCount</b> may be greater than 0, indicating that there are
+         * records for which the operation didn't succeed. Each entry in the
+         * <b>RequestResponses</b> array provides additional information about the
+         * processed record. It directly correlates with a record in the request array
+         * using the same ordering, from the top to the bottom. The response array always
+         * includes the same number of records as the request array.
+         * <b>RequestResponses</b> includes both successfully and unsuccessfully processed
+         * records. Kinesis Data Firehose tries to process all records in each
+         * <a>PutRecordBatch</a> request. A single record failure does not stop the
+         * processing of subsequent records. </p> <p>A successfully processed record
+         * includes a <b>RecordId</b> value, which is unique for the record. An
          * unsuccessfully processed record includes <b>ErrorCode</b> and
          * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
-         * one of the following values: <code>ServiceUnavailable</code> or
+         * one of the following values: <code>ServiceUnavailableException</code> or
          * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
@@ -639,8 +661,10 @@ namespace Model
          * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
          * Firehose are stored for 24 hours from the time they are added to a delivery
          * stream as it attempts to send the records to the destination. If the destination
-         * is unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * is unreachable for more than 24 hours, the data is no longer available.</p>
+         * <important> <p>Don't concatenate two or more base64 strings to form the data
+         * fields of your records. Instead, concatenate the raw data, then perform base64
+         * encoding.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          */
@@ -670,18 +694,21 @@ namespace Model
          * allows the consumer application to parse individual data items when reading the
          * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
          * count of failed records, <b>FailedPutCount</b>, and an array of responses,
-         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
-         * provides additional information about the processed record. It directly
-         * correlates with a record in the request array using the same ordering, from the
-         * top to the bottom. The response array always includes the same number of records
-         * as the request array. <b>RequestResponses</b> includes both successfully and
-         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
-         * records in each <a>PutRecordBatch</a> request. A single record failure does not
-         * stop the processing of subsequent records.</p> <p>A successfully processed
-         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * <b>RequestResponses</b>. Even if the <a>PutRecordBatch</a> call succeeds, the
+         * value of <b>FailedPutCount</b> may be greater than 0, indicating that there are
+         * records for which the operation didn't succeed. Each entry in the
+         * <b>RequestResponses</b> array provides additional information about the
+         * processed record. It directly correlates with a record in the request array
+         * using the same ordering, from the top to the bottom. The response array always
+         * includes the same number of records as the request array.
+         * <b>RequestResponses</b> includes both successfully and unsuccessfully processed
+         * records. Kinesis Data Firehose tries to process all records in each
+         * <a>PutRecordBatch</a> request. A single record failure does not stop the
+         * processing of subsequent records. </p> <p>A successfully processed record
+         * includes a <b>RecordId</b> value, which is unique for the record. An
          * unsuccessfully processed record includes <b>ErrorCode</b> and
          * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
-         * one of the following values: <code>ServiceUnavailable</code> or
+         * one of the following values: <code>ServiceUnavailableException</code> or
          * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
@@ -694,8 +721,10 @@ namespace Model
          * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
          * Firehose are stored for 24 hours from the time they are added to a delivery
          * stream as it attempts to send the records to the destination. If the destination
-         * is unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * is unreachable for more than 24 hours, the data is no longer available.</p>
+         * <important> <p>Don't concatenate two or more base64 strings to form the data
+         * fields of your records. Instead, concatenate the raw data, then perform base64
+         * encoding.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *
@@ -727,18 +756,21 @@ namespace Model
          * allows the consumer application to parse individual data items when reading the
          * data from the destination.</p> <p>The <a>PutRecordBatch</a> response includes a
          * count of failed records, <b>FailedPutCount</b>, and an array of responses,
-         * <b>RequestResponses</b>. Each entry in the <b>RequestResponses</b> array
-         * provides additional information about the processed record. It directly
-         * correlates with a record in the request array using the same ordering, from the
-         * top to the bottom. The response array always includes the same number of records
-         * as the request array. <b>RequestResponses</b> includes both successfully and
-         * unsuccessfully processed records. Kinesis Data Firehose tries to process all
-         * records in each <a>PutRecordBatch</a> request. A single record failure does not
-         * stop the processing of subsequent records.</p> <p>A successfully processed
-         * record includes a <b>RecordId</b> value, which is unique for the record. An
+         * <b>RequestResponses</b>. Even if the <a>PutRecordBatch</a> call succeeds, the
+         * value of <b>FailedPutCount</b> may be greater than 0, indicating that there are
+         * records for which the operation didn't succeed. Each entry in the
+         * <b>RequestResponses</b> array provides additional information about the
+         * processed record. It directly correlates with a record in the request array
+         * using the same ordering, from the top to the bottom. The response array always
+         * includes the same number of records as the request array.
+         * <b>RequestResponses</b> includes both successfully and unsuccessfully processed
+         * records. Kinesis Data Firehose tries to process all records in each
+         * <a>PutRecordBatch</a> request. A single record failure does not stop the
+         * processing of subsequent records. </p> <p>A successfully processed record
+         * includes a <b>RecordId</b> value, which is unique for the record. An
          * unsuccessfully processed record includes <b>ErrorCode</b> and
          * <b>ErrorMessage</b> values. <b>ErrorCode</b> reflects the type of error, and is
-         * one of the following values: <code>ServiceUnavailable</code> or
+         * one of the following values: <code>ServiceUnavailableException</code> or
          * <code>InternalFailure</code>. <b>ErrorMessage</b> provides more detailed
          * information about the error.</p> <p>If there is an internal server error or a
          * timeout, the write might have completed or it might have failed. If
@@ -751,14 +783,153 @@ namespace Model
          * been exceeded for the delivery stream.</p> <p>Data records sent to Kinesis Data
          * Firehose are stored for 24 hours from the time they are added to a delivery
          * stream as it attempts to send the records to the destination. If the destination
-         * is unreachable for more than 24 hours, the data is no longer
-         * available.</p><p><h3>See Also:</h3>   <a
+         * is unreachable for more than 24 hours, the data is no longer available.</p>
+         * <important> <p>Don't concatenate two or more base64 strings to form the data
+         * fields of your records. Instead, concatenate the raw data, then perform base64
+         * encoding.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/PutRecordBatch">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRecordBatchAsync(const Model::PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>ENABLING</code> then to
+         * <code>ENABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>ENABLING</code> but they won't get encrypted. It can
+         * take up to 5 seconds after the encryption status changes to <code>ENABLED</code>
+         * before all records written to the delivery stream are encrypted.</p> <p>To check
+         * the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+         * </p> <p>You can only enable SSE for a delivery stream that uses
+         * <code>DirectPut</code> as its source. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartDeliveryStreamEncryptionOutcome StartDeliveryStreamEncryption(const Model::StartDeliveryStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Enables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>ENABLING</code> then to
+         * <code>ENABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>ENABLING</code> but they won't get encrypted. It can
+         * take up to 5 seconds after the encryption status changes to <code>ENABLED</code>
+         * before all records written to the delivery stream are encrypted.</p> <p>To check
+         * the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+         * </p> <p>You can only enable SSE for a delivery stream that uses
+         * <code>DirectPut</code> as its source. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartDeliveryStreamEncryptionOutcomeCallable StartDeliveryStreamEncryptionCallable(const Model::StartDeliveryStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Enables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>ENABLING</code> then to
+         * <code>ENABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>ENABLING</code> but they won't get encrypted. It can
+         * take up to 5 seconds after the encryption status changes to <code>ENABLED</code>
+         * before all records written to the delivery stream are encrypted.</p> <p>To check
+         * the encryption state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+         * </p> <p>You can only enable SSE for a delivery stream that uses
+         * <code>DirectPut</code> as its source. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StartDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartDeliveryStreamEncryptionAsync(const Model::StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>DISABLING</code> then to
+         * <code>DISABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>DISABLING</code>. It can take up to 5 seconds after
+         * the encryption status changes to <code>DISABLED</code> before all records
+         * written to the delivery stream are no longer subject to encryption.</p> <p>To
+         * check the encryption state of a delivery stream, use
+         * <a>DescribeDeliveryStream</a>. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopDeliveryStreamEncryptionOutcome StopDeliveryStreamEncryption(const Model::StopDeliveryStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Disables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>DISABLING</code> then to
+         * <code>DISABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>DISABLING</code>. It can take up to 5 seconds after
+         * the encryption status changes to <code>DISABLED</code> before all records
+         * written to the delivery stream are no longer subject to encryption.</p> <p>To
+         * check the encryption state of a delivery stream, use
+         * <a>DescribeDeliveryStream</a>. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopDeliveryStreamEncryptionOutcomeCallable StopDeliveryStreamEncryptionCallable(const Model::StopDeliveryStreamEncryptionRequest& request) const;
+
+        /**
+         * <p>Disables server-side encryption (SSE) for the delivery stream. This operation
+         * is asynchronous. It returns immediately. When you invoke it, Kinesis Firehose
+         * first sets the status of the stream to <code>DISABLING</code> then to
+         * <code>DISABLED</code>. You can continue to read and write data to your stream
+         * while its status is <code>DISABLING</code>. It can take up to 5 seconds after
+         * the encryption status changes to <code>DISABLED</code> before all records
+         * written to the delivery stream are no longer subject to encryption.</p> <p>To
+         * check the encryption state of a delivery stream, use
+         * <a>DescribeDeliveryStream</a>. </p> <p>The
+         * <code>StartDeliveryStreamEncryption</code> and
+         * <code>StopDeliveryStreamEncryption</code> operations have a combined limit of 25
+         * calls per delivery stream per 24 hours. For example, you reach the limit if you
+         * call <code>StartDeliveryStreamEncryption</code> thirteen times and
+         * <code>StopDeliveryStreamEncryption</code> twelve times for the same stream in a
+         * 24-hour period.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/StopDeliveryStreamEncryption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopDeliveryStreamEncryptionAsync(const Model::StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds or updates tags for the specified delivery stream. A tag is a key-value
@@ -964,6 +1135,8 @@ namespace Model
         void ListTagsForDeliveryStreamAsyncHelper(const Model::ListTagsForDeliveryStreamRequest& request, const ListTagsForDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecordAsyncHelper(const Model::PutRecordRequest& request, const PutRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRecordBatchAsyncHelper(const Model::PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartDeliveryStreamEncryptionAsyncHelper(const Model::StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopDeliveryStreamEncryptionAsyncHelper(const Model::StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagDeliveryStreamAsyncHelper(const Model::TagDeliveryStreamRequest& request, const TagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagDeliveryStreamAsyncHelper(const Model::UntagDeliveryStreamRequest& request, const UntagDeliveryStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDestinationAsyncHelper(const Model::UpdateDestinationRequest& request, const UpdateDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

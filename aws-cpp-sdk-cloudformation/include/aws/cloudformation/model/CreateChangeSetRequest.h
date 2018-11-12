@@ -262,57 +262,43 @@ namespace Model
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline CreateChangeSetRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline CreateChangeSetRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline CreateChangeSetRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
-     * the change set. For more information, see the <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
-     * data type.</p>
+     * the change set. For more information, see the <a>Parameter</a> data type.</p>
      */
     inline CreateChangeSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 

@@ -34,6 +34,8 @@
 #include <aws/firehose/model/ListTagsForDeliveryStreamRequest.h>
 #include <aws/firehose/model/PutRecordRequest.h>
 #include <aws/firehose/model/PutRecordBatchRequest.h>
+#include <aws/firehose/model/StartDeliveryStreamEncryptionRequest.h>
+#include <aws/firehose/model/StopDeliveryStreamEncryptionRequest.h>
 #include <aws/firehose/model/TagDeliveryStreamRequest.h>
 #include <aws/firehose/model/UntagDeliveryStreamRequest.h>
 #include <aws/firehose/model/UpdateDestinationRequest.h>
@@ -345,6 +347,76 @@ void FirehoseClient::PutRecordBatchAsync(const PutRecordBatchRequest& request, c
 void FirehoseClient::PutRecordBatchAsyncHelper(const PutRecordBatchRequest& request, const PutRecordBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutRecordBatch(request), context);
+}
+
+StartDeliveryStreamEncryptionOutcome FirehoseClient::StartDeliveryStreamEncryption(const StartDeliveryStreamEncryptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartDeliveryStreamEncryptionOutcome(StartDeliveryStreamEncryptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDeliveryStreamEncryptionOutcome(outcome.GetError());
+  }
+}
+
+StartDeliveryStreamEncryptionOutcomeCallable FirehoseClient::StartDeliveryStreamEncryptionCallable(const StartDeliveryStreamEncryptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDeliveryStreamEncryptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDeliveryStreamEncryption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FirehoseClient::StartDeliveryStreamEncryptionAsync(const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDeliveryStreamEncryptionAsyncHelper( request, handler, context ); } );
+}
+
+void FirehoseClient::StartDeliveryStreamEncryptionAsyncHelper(const StartDeliveryStreamEncryptionRequest& request, const StartDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDeliveryStreamEncryption(request), context);
+}
+
+StopDeliveryStreamEncryptionOutcome FirehoseClient::StopDeliveryStreamEncryption(const StopDeliveryStreamEncryptionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopDeliveryStreamEncryptionOutcome(StopDeliveryStreamEncryptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopDeliveryStreamEncryptionOutcome(outcome.GetError());
+  }
+}
+
+StopDeliveryStreamEncryptionOutcomeCallable FirehoseClient::StopDeliveryStreamEncryptionCallable(const StopDeliveryStreamEncryptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopDeliveryStreamEncryptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopDeliveryStreamEncryption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FirehoseClient::StopDeliveryStreamEncryptionAsync(const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopDeliveryStreamEncryptionAsyncHelper( request, handler, context ); } );
+}
+
+void FirehoseClient::StopDeliveryStreamEncryptionAsyncHelper(const StopDeliveryStreamEncryptionRequest& request, const StopDeliveryStreamEncryptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopDeliveryStreamEncryption(request), context);
 }
 
 TagDeliveryStreamOutcome FirehoseClient::TagDeliveryStream(const TagDeliveryStreamRequest& request) const

@@ -34,10 +34,12 @@ namespace Model
 {
 
   /**
-   * <p>This data type is used as a response element in the following actions:</p>
-   * <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p>
+   * <p>This data type represents the information you need to connect to an Amazon
+   * RDS DB instance. This data type is used as a response element in the following
+   * actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p>
    * <a>DescribeDBInstances</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p>
-   * </li> </ul><p><h3>See Also:</h3>   <a
+   * </li> </ul> <p>For the data structure that represents Amazon Aurora DB cluster
+   * endpoints, see <a>DBClusterEndpoint</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Endpoint">AWS API
    * Reference</a></p>
    */

@@ -86,44 +86,44 @@ namespace Model
 
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline DescribeBudgetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline DescribeBudgetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results that you can
-     * retrieve.</p>
+     * <p>The pagination token in the service response that indicates the next set of
+     * results that you can retrieve.</p>
      */
     inline DescribeBudgetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

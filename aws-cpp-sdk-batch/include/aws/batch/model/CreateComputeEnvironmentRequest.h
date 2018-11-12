@@ -89,27 +89,37 @@ namespace Model
 
 
     /**
-     * <p>The type of the compute environment. </p>
+     * <p>The type of the compute environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline const CEType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the compute environment. </p>
+     * <p>The type of the compute environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(const CEType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the compute environment. </p>
+     * <p>The type of the compute environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetType(CEType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the compute environment. </p>
+     * <p>The type of the compute environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithType(const CEType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the compute environment. </p>
+     * <p>The type of the compute environment. For more information, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+     * Environments</a> in the <i>AWS Batch User Guide</i>.</p>
      */
     inline CreateComputeEnvironmentRequest& WithType(CEType&& value) { SetType(std::move(value)); return *this;}
 

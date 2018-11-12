@@ -787,9 +787,9 @@ namespace Model
      * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas</p> </li> </ul>
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
+     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
 
@@ -807,9 +807,9 @@ namespace Model
      * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas</p> </li> </ul>
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
+     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
@@ -827,9 +827,9 @@ namespace Model
      * <a>ModifyDBCluster</a>.</p> <p>Default: Uses existing setting</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
      * <p>Can be specified for a MySQL Read Replica only if the source is running MySQL
-     * 5.6</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica only if the
-     * source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to 0 if the DB
-     * instance is a source to Read Replicas</p> </li> </ul>
+     * 5.6 or later</p> </li> <li> <p>Can be specified for a PostgreSQL Read Replica
+     * only if the source is running PostgreSQL 9.3.5</p> </li> <li> <p>Can't be set to
+     * 0 if the DB instance is a source to Read Replicas</p> </li> </ul>
      */
     inline ModifyDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
 

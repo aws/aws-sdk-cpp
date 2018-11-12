@@ -44,19 +44,47 @@ namespace Model
 
 
     /**
-     * <p>The number of records that might have failed processing.</p>
+     * <p>The number of records that might have failed processing. This number might be
+     * greater than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
+     * <code>FailedPutCount</code> to determine whether there are records that you need
+     * to resend.</p>
      */
     inline int GetFailedPutCount() const{ return m_failedPutCount; }
 
     /**
-     * <p>The number of records that might have failed processing.</p>
+     * <p>The number of records that might have failed processing. This number might be
+     * greater than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
+     * <code>FailedPutCount</code> to determine whether there are records that you need
+     * to resend.</p>
      */
     inline void SetFailedPutCount(int value) { m_failedPutCount = value; }
 
     /**
-     * <p>The number of records that might have failed processing.</p>
+     * <p>The number of records that might have failed processing. This number might be
+     * greater than 0 even if the <a>PutRecordBatch</a> call succeeds. Check
+     * <code>FailedPutCount</code> to determine whether there are records that you need
+     * to resend.</p>
      */
     inline PutRecordBatchResult& WithFailedPutCount(int value) { SetFailedPutCount(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline PutRecordBatchResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
 
     /**
@@ -104,6 +132,8 @@ namespace Model
   private:
 
     int m_failedPutCount;
+
+    bool m_encrypted;
 
     Aws::Vector<PutRecordBatchResponseEntry> m_requestResponses;
   };

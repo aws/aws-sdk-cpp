@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 PutRecordBatchResult::PutRecordBatchResult() : 
-    m_failedPutCount(0)
+    m_failedPutCount(0),
+    m_encrypted(false)
 {
 }
 
 PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_failedPutCount(0)
+    m_failedPutCount(0),
+    m_encrypted(false)
 {
   *this = result;
 }
@@ -43,6 +45,12 @@ PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("FailedPutCount"))
   {
     m_failedPutCount = jsonValue.GetInteger("FailedPutCount");
+
+  }
+
+  if(jsonValue.ValueExists("Encrypted"))
+  {
+    m_encrypted = jsonValue.GetBool("Encrypted");
 
   }
 

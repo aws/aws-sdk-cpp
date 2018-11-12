@@ -606,6 +606,47 @@ namespace Model
 
 
     /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetCustomEndpoints() const{ return m_customEndpoints; }
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline void SetCustomEndpoints(const Aws::Vector<Aws::String>& value) { m_customEndpointsHasBeenSet = true; m_customEndpoints = value; }
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline void SetCustomEndpoints(Aws::Vector<Aws::String>&& value) { m_customEndpointsHasBeenSet = true; m_customEndpoints = std::move(value); }
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline DBCluster& WithCustomEndpoints(const Aws::Vector<Aws::String>& value) { SetCustomEndpoints(value); return *this;}
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline DBCluster& WithCustomEndpoints(Aws::Vector<Aws::String>&& value) { SetCustomEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline DBCluster& AddCustomEndpoints(const Aws::String& value) { m_customEndpointsHasBeenSet = true; m_customEndpoints.push_back(value); return *this; }
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline DBCluster& AddCustomEndpoints(Aws::String&& value) { m_customEndpointsHasBeenSet = true; m_customEndpoints.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Identifies all custom endpoints associated with the cluster.</p>
+     */
+    inline DBCluster& AddCustomEndpoints(const char* value) { m_customEndpointsHasBeenSet = true; m_customEndpoints.push_back(value); return *this; }
+
+
+    /**
      * <p>Specifies whether the DB cluster has instances in multiple Availability
      * Zones.</p>
      */
@@ -1667,6 +1708,9 @@ namespace Model
 
     Aws::String m_readerEndpoint;
     bool m_readerEndpointHasBeenSet;
+
+    Aws::Vector<Aws::String> m_customEndpoints;
+    bool m_customEndpointsHasBeenSet;
 
     bool m_multiAZ;
     bool m_multiAZHasBeenSet;

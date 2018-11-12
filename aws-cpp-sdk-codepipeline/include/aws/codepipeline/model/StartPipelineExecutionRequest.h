@@ -18,6 +18,7 @@
 #include <aws/codepipeline/CodePipelineRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -83,10 +84,56 @@ namespace Model
      */
     inline StartPipelineExecutionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline StartPipelineExecutionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline StartPipelineExecutionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The system-generated unique ID used to identify a unique execution
+     * request.</p>
+     */
+    inline StartPipelineExecutionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet;
   };
 
 } // namespace Model

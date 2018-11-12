@@ -77,9 +77,30 @@ namespace Model
      */
     inline PutRecordResult& WithRecordId(const char* value) { SetRecordId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline bool GetEncrypted() const{ return m_encrypted; }
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline void SetEncrypted(bool value) { m_encrypted = value; }
+
+    /**
+     * <p>Indicates whether server-side encryption (SSE) was enabled during this
+     * operation.</p>
+     */
+    inline PutRecordResult& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
+
   private:
 
     Aws::String m_recordId;
+
+    bool m_encrypted;
   };
 
 } // namespace Model

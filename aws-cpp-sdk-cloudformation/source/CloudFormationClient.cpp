@@ -39,13 +39,17 @@
 #include <aws/cloudformation/model/DeleteStackSetRequest.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
+#include <aws/cloudformation/model/DescribeStackDriftDetectionStatusRequest.h>
 #include <aws/cloudformation/model/DescribeStackEventsRequest.h>
 #include <aws/cloudformation/model/DescribeStackInstanceRequest.h>
 #include <aws/cloudformation/model/DescribeStackResourceRequest.h>
+#include <aws/cloudformation/model/DescribeStackResourceDriftsRequest.h>
 #include <aws/cloudformation/model/DescribeStackResourcesRequest.h>
 #include <aws/cloudformation/model/DescribeStackSetRequest.h>
 #include <aws/cloudformation/model/DescribeStackSetOperationRequest.h>
 #include <aws/cloudformation/model/DescribeStacksRequest.h>
+#include <aws/cloudformation/model/DetectStackDriftRequest.h>
+#include <aws/cloudformation/model/DetectStackResourceDriftRequest.h>
 #include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
 #include <aws/cloudformation/model/ExecuteChangeSetRequest.h>
 #include <aws/cloudformation/model/GetStackPolicyRequest.h>
@@ -564,6 +568,41 @@ void CloudFormationClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetR
   handler(this, request, DescribeChangeSet(request), context);
 }
 
+DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDriftDetectionStatus(const DescribeStackDriftDetectionStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStackDriftDetectionStatusOutcome(DescribeStackDriftDetectionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStackDriftDetectionStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeStackDriftDetectionStatusOutcomeCallable CloudFormationClient::DescribeStackDriftDetectionStatusCallable(const DescribeStackDriftDetectionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStackDriftDetectionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStackDriftDetectionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribeStackDriftDetectionStatusAsync(const DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackDriftDetectionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribeStackDriftDetectionStatusAsyncHelper(const DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStackDriftDetectionStatus(request), context);
+}
+
 DescribeStackEventsOutcome CloudFormationClient::DescribeStackEvents(const DescribeStackEventsRequest& request) const
 {
   Aws::StringStream ss;
@@ -667,6 +706,41 @@ void CloudFormationClient::DescribeStackResourceAsync(const DescribeStackResourc
 void CloudFormationClient::DescribeStackResourceAsyncHelper(const DescribeStackResourceRequest& request, const DescribeStackResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeStackResource(request), context);
+}
+
+DescribeStackResourceDriftsOutcome CloudFormationClient::DescribeStackResourceDrifts(const DescribeStackResourceDriftsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStackResourceDriftsOutcome(DescribeStackResourceDriftsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStackResourceDriftsOutcome(outcome.GetError());
+  }
+}
+
+DescribeStackResourceDriftsOutcomeCallable CloudFormationClient::DescribeStackResourceDriftsCallable(const DescribeStackResourceDriftsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStackResourceDriftsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStackResourceDrifts(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribeStackResourceDriftsAsync(const DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStackResourceDriftsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribeStackResourceDriftsAsyncHelper(const DescribeStackResourceDriftsRequest& request, const DescribeStackResourceDriftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStackResourceDrifts(request), context);
 }
 
 DescribeStackResourcesOutcome CloudFormationClient::DescribeStackResources(const DescribeStackResourcesRequest& request) const
@@ -807,6 +881,76 @@ void CloudFormationClient::DescribeStacksAsync(const DescribeStacksRequest& requ
 void CloudFormationClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeStacks(request), context);
+}
+
+DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStackDriftRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DetectStackDriftOutcome(DetectStackDriftResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DetectStackDriftOutcome(outcome.GetError());
+  }
+}
+
+DetectStackDriftOutcomeCallable CloudFormationClient::DetectStackDriftCallable(const DetectStackDriftRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectStackDriftOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectStackDrift(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DetectStackDriftAsync(const DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectStackDriftAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DetectStackDriftAsyncHelper(const DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectStackDrift(request), context);
+}
+
+DetectStackResourceDriftOutcome CloudFormationClient::DetectStackResourceDrift(const DetectStackResourceDriftRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DetectStackResourceDriftOutcome(DetectStackResourceDriftResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DetectStackResourceDriftOutcome(outcome.GetError());
+  }
+}
+
+DetectStackResourceDriftOutcomeCallable CloudFormationClient::DetectStackResourceDriftCallable(const DetectStackResourceDriftRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DetectStackResourceDriftOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DetectStackResourceDrift(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DetectStackResourceDriftAsync(const DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DetectStackResourceDriftAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DetectStackResourceDriftAsyncHelper(const DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DetectStackResourceDrift(request), context);
 }
 
 EstimateTemplateCostOutcome CloudFormationClient::EstimateTemplateCost(const EstimateTemplateCostRequest& request) const

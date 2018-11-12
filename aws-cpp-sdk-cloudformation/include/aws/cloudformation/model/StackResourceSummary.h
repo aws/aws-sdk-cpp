@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudformation/model/ResourceStatus.h>
+#include <aws/cloudformation/model/StackResourceDriftInformationSummary.h>
 #include <utility>
 
 namespace Aws
@@ -268,6 +269,57 @@ namespace Model
      */
     inline StackResourceSummary& WithResourceStatusReason(const char* value) { SetResourceStatusReason(value); return *this;}
 
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline const StackResourceDriftInformationSummary& GetDriftInformation() const{ return m_driftInformation; }
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline void SetDriftInformation(const StackResourceDriftInformationSummary& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline void SetDriftInformation(StackResourceDriftInformationSummary&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline StackResourceSummary& WithDriftInformation(const StackResourceDriftInformationSummary& value) { SetDriftInformation(value); return *this;}
+
+    /**
+     * <p>Information about whether the resource's actual configuration differs, or has
+     * <i>drifted</i>, from its expected configuration, as defined in the stack
+     * template and any values specified as template parameters. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
+     */
+    inline StackResourceSummary& WithDriftInformation(StackResourceDriftInformationSummary&& value) { SetDriftInformation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_logicalResourceId;
@@ -287,6 +339,9 @@ namespace Model
 
     Aws::String m_resourceStatusReason;
     bool m_resourceStatusReasonHasBeenSet;
+
+    StackResourceDriftInformationSummary m_driftInformation;
+    bool m_driftInformationHasBeenSet;
   };
 
 } // namespace Model

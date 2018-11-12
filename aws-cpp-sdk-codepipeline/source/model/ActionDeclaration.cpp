@@ -36,7 +36,8 @@ ActionDeclaration::ActionDeclaration() :
     m_configurationHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ActionDeclaration::ActionDeclaration(JsonView jsonValue) :
     m_configurationHasBeenSet(false),
     m_outputArtifactsHasBeenSet(false),
     m_inputArtifactsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("region"))
+  {
+    m_region = jsonValue.GetString("region");
+
+    m_regionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -174,6 +183,12 @@ JsonValue ActionDeclaration::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("region", m_region);
 
   }
 

@@ -32,6 +32,7 @@ PipelineDeclaration::PipelineDeclaration() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_artifactStoreHasBeenSet(false),
+    m_artifactStoresHasBeenSet(false),
     m_stagesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -42,6 +43,7 @@ PipelineDeclaration::PipelineDeclaration(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_artifactStoreHasBeenSet(false),
+    m_artifactStoresHasBeenSet(false),
     m_stagesHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
@@ -70,6 +72,16 @@ PipelineDeclaration& PipelineDeclaration::operator =(JsonView jsonValue)
     m_artifactStore = jsonValue.GetObject("artifactStore");
 
     m_artifactStoreHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("artifactStores"))
+  {
+    Aws::Map<Aws::String, JsonView> artifactStoresJsonMap = jsonValue.GetObject("artifactStores").GetAllObjects();
+    for(auto& artifactStoresItem : artifactStoresJsonMap)
+    {
+      m_artifactStores[artifactStoresItem.first] = artifactStoresItem.second.AsObject();
+    }
+    m_artifactStoresHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("stages"))
@@ -111,6 +123,17 @@ JsonValue PipelineDeclaration::Jsonize() const
   if(m_artifactStoreHasBeenSet)
   {
    payload.WithObject("artifactStore", m_artifactStore.Jsonize());
+
+  }
+
+  if(m_artifactStoresHasBeenSet)
+  {
+   JsonValue artifactStoresJsonMap;
+   for(auto& artifactStoresItem : m_artifactStores)
+   {
+     artifactStoresJsonMap.WithObject(artifactStoresItem.first, artifactStoresItem.second.Jsonize());
+   }
+   payload.WithObject("artifactStores", std::move(artifactStoresJsonMap));
 
   }
 

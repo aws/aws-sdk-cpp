@@ -154,56 +154,63 @@ namespace Model
 
 
     /**
-     * <p>Optional integer. Specifies the maximum number of results to return in
-     * response.</p>
+     * <p>An optional integer that represents how many entries a paginated response
+     * contains. The maximum is 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Optional integer. Specifies the maximum number of results to return in
-     * response.</p>
+     * <p>An optional integer that represents how many entries a paginated response
+     * contains. The maximum is 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Optional integer. Specifies the maximum number of results to return in
-     * response.</p>
+     * <p>An optional integer that represents how many entries a paginated response
+     * contains. The maximum is 100.</p>
      */
     inline DescribeSubscribersForNotificationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline DescribeSubscribersForNotificationRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline DescribeSubscribersForNotificationRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     * <p>The pagination token that you include in your request to indicate the next
+     * set of results that you want to retrieve.</p>
      */
     inline DescribeSubscribersForNotificationRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

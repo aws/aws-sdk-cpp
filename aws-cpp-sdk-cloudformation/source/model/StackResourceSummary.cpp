@@ -37,7 +37,8 @@ StackResourceSummary::StackResourceSummary() :
     m_lastUpdatedTimestampHasBeenSet(false),
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false)
+    m_resourceStatusReasonHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ StackResourceSummary::StackResourceSummary(const XmlNode& xmlNode) :
     m_lastUpdatedTimestampHasBeenSet(false),
     m_resourceStatus(ResourceStatus::NOT_SET),
     m_resourceStatusHasBeenSet(false),
-    m_resourceStatusReasonHasBeenSet(false)
+    m_resourceStatusReasonHasBeenSet(false),
+    m_driftInformationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +97,12 @@ StackResourceSummary& StackResourceSummary::operator =(const XmlNode& xmlNode)
       m_resourceStatusReason = StringUtils::Trim(resourceStatusReasonNode.GetText().c_str());
       m_resourceStatusReasonHasBeenSet = true;
     }
+    XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
+    if(!driftInformationNode.IsNull())
+    {
+      m_driftInformation = driftInformationNode;
+      m_driftInformationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -132,6 +140,13 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
   }
 
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::StringStream driftInformationLocationAndMemberSs;
+      driftInformationLocationAndMemberSs << location << index << locationValue << ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -159,6 +174,12 @@ void StackResourceSummary::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_resourceStatusReasonHasBeenSet)
   {
       oStream << location << ".ResourceStatusReason=" << StringUtils::URLEncode(m_resourceStatusReason.c_str()) << "&";
+  }
+  if(m_driftInformationHasBeenSet)
+  {
+      Aws::String driftInformationLocationAndMember(location);
+      driftInformationLocationAndMember += ".DriftInformation";
+      m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
   }
 }
 

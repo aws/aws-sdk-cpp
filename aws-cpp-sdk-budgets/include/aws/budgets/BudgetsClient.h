@@ -28,6 +28,7 @@
 #include <aws/budgets/model/DeleteNotificationResult.h>
 #include <aws/budgets/model/DeleteSubscriberResult.h>
 #include <aws/budgets/model/DescribeBudgetResult.h>
+#include <aws/budgets/model/DescribeBudgetPerformanceHistoryResult.h>
 #include <aws/budgets/model/DescribeBudgetsResult.h>
 #include <aws/budgets/model/DescribeNotificationsForBudgetResult.h>
 #include <aws/budgets/model/DescribeSubscribersForNotificationResult.h>
@@ -81,6 +82,7 @@ namespace Model
         class DeleteNotificationRequest;
         class DeleteSubscriberRequest;
         class DescribeBudgetRequest;
+        class DescribeBudgetPerformanceHistoryRequest;
         class DescribeBudgetsRequest;
         class DescribeNotificationsForBudgetRequest;
         class DescribeSubscribersForNotificationRequest;
@@ -95,6 +97,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteNotificationResult, Aws::Client::AWSError<BudgetsErrors>> DeleteNotificationOutcome;
         typedef Aws::Utils::Outcome<DeleteSubscriberResult, Aws::Client::AWSError<BudgetsErrors>> DeleteSubscriberOutcome;
         typedef Aws::Utils::Outcome<DescribeBudgetResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetOutcome;
+        typedef Aws::Utils::Outcome<DescribeBudgetPerformanceHistoryResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetPerformanceHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeBudgetsResult, Aws::Client::AWSError<BudgetsErrors>> DescribeBudgetsOutcome;
         typedef Aws::Utils::Outcome<DescribeNotificationsForBudgetResult, Aws::Client::AWSError<BudgetsErrors>> DescribeNotificationsForBudgetOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscribersForNotificationResult, Aws::Client::AWSError<BudgetsErrors>> DescribeSubscribersForNotificationOutcome;
@@ -109,6 +112,7 @@ namespace Model
         typedef std::future<DeleteNotificationOutcome> DeleteNotificationOutcomeCallable;
         typedef std::future<DeleteSubscriberOutcome> DeleteSubscriberOutcomeCallable;
         typedef std::future<DescribeBudgetOutcome> DescribeBudgetOutcomeCallable;
+        typedef std::future<DescribeBudgetPerformanceHistoryOutcome> DescribeBudgetPerformanceHistoryOutcomeCallable;
         typedef std::future<DescribeBudgetsOutcome> DescribeBudgetsOutcomeCallable;
         typedef std::future<DescribeNotificationsForBudgetOutcome> DescribeNotificationsForBudgetOutcomeCallable;
         typedef std::future<DescribeSubscribersForNotificationOutcome> DescribeSubscribersForNotificationOutcomeCallable;
@@ -126,6 +130,7 @@ namespace Model
     typedef std::function<void(const BudgetsClient*, const Model::DeleteNotificationRequest&, const Model::DeleteNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotificationResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DeleteSubscriberRequest&, const Model::DeleteSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriberResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetRequest&, const Model::DescribeBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetResponseReceivedHandler;
+    typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetPerformanceHistoryRequest&, const Model::DescribeBudgetPerformanceHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetPerformanceHistoryResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DescribeBudgetsRequest&, const Model::DescribeBudgetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBudgetsResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DescribeNotificationsForBudgetRequest&, const Model::DescribeNotificationsForBudgetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotificationsForBudgetResponseReceivedHandler;
     typedef std::function<void(const BudgetsClient*, const Model::DescribeSubscribersForNotificationRequest&, const Model::DescribeSubscribersForNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribersForNotificationResponseReceivedHandler;
@@ -134,31 +139,29 @@ namespace Model
     typedef std::function<void(const BudgetsClient*, const Model::UpdateSubscriberRequest&, const Model::UpdateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriberResponseReceivedHandler;
 
   /**
-   * <p>Budgets enable you to plan your service usage, service costs, and your RI
-   * utilization. You can also track how close your plan is to your budgeted amount
-   * or to the free tier limits. Budgets provide you with a quick way to see your
-   * usage-to-date and current estimated charges from AWS and to see how much your
-   * predicted usage accrues in charges by the end of the month. Budgets also compare
-   * current estimates and charges to the amount that you indicated you want to use
-   * or spend and lets you see how much of your budget has been used. AWS updates
-   * your budget status several times a day. Budgets track your unblended costs,
-   * subscriptions, and refunds. You can create the following types of budgets:</p>
-   * <ul> <li> <p>Cost budgets allow you to say how much you want to spend on a
-   * service.</p> </li> <li> <p>Usage budgets allow you to say how many hours you
-   * want to use for one or more services.</p> </li> <li> <p>RI utilization budgets
-   * allow you to define a utilization threshold and receive alerts when RIs are
-   * tracking below that threshold.</p> </li> </ul> <p>You can create up to 20,000
-   * budgets per AWS master account. Your first two budgets are free of charge. Each
-   * additional budget costs $0.02 per day. You can set up optional notifications
-   * that warn you if you exceed, or are forecasted to exceed, your budgeted amount.
-   * You can have notifications sent to an Amazon SNS topic, to an email address, or
-   * to both. For more information, see <a
-   * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-sns-policy.html">Creating
-   * an Amazon SNS Topic for Budget Notifications</a>. AWS Free Tier usage alerts via
-   * AWS Budgets are provided for you, and do not count toward your budget
-   * limits.</p> <p>Service Endpoint</p> <p>The AWS Budgets API provides the
-   * following endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li>
-   * </ul> <p>For information about costs associated with the AWS Budgets API, see <a
+   * <p>The AWS Budgets API enables you to use AWS Budgets to plan your service
+   * usage, service costs, and instance reservations. The API reference provides
+   * descriptions, syntax, and usage examples for each of the actions and data types
+   * for AWS Budgets. </p> <p>Budgets provide you with a way to see the following
+   * information:</p> <ul> <li> <p>How close your plan is to your budgeted amount or
+   * to the free tier limits</p> </li> <li> <p>Your usage-to-date, including how much
+   * you've used of your Reserved Instances (RIs)</p> </li> <li> <p>Your current
+   * estimated charges from AWS, and how much your predicted usage will accrue in
+   * charges by the end of the month</p> </li> <li> <p>How much of your budget has
+   * been used</p> </li> </ul> <p>AWS updates your budget status several times a day.
+   * Budgets track your unblended costs, subscriptions, refunds, and RIs. You can
+   * create the following types of budgets:</p> <ul> <li> <p> <b>Cost budgets</b> -
+   * Plan how much you want to spend on a service.</p> </li> <li> <p> <b>Usage
+   * budgets</b> - Plan how much you want to use one or more services.</p> </li> <li>
+   * <p> <b>RI utilization budgets</b> - Define a utilization threshold, and receive
+   * alerts when your RI usage falls below that threshold. This lets you see if your
+   * RIs are unused or under-utilized.</p> </li> <li> <p> <b>RI coverage budgets</b>
+   * - Define a coverage threshold, and receive alerts when the number of your
+   * instance hours that are covered by RIs fall below that threshold. This lets you
+   * see how much of your instance usage is covered by a reservation.</p> </li> </ul>
+   * <p>Service Endpoint</p> <p>The AWS Budgets API provides the following
+   * endpoint:</p> <ul> <li> <p>https://budgets.amazonaws.com</p> </li> </ul> <p>For
+   * information about costs that are associated with the AWS Budgets API, see <a
    * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management
    * Pricing</a>.</p>
    */
@@ -276,18 +279,18 @@ namespace Model
         virtual void CreateSubscriberAsync(const Model::CreateSubscriberRequest& request, const CreateSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <p> <b>Deleting
-         * a budget also deletes the notifications and subscribers associated with that
-         * budget.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deleting a budget also deletes the notifications and subscribers that are
+         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteBudgetOutcome DeleteBudget(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <p> <b>Deleting
-         * a budget also deletes the notifications and subscribers associated with that
-         * budget.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deleting a budget also deletes the notifications and subscribers that are
+         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          *
@@ -296,9 +299,9 @@ namespace Model
         virtual Model::DeleteBudgetOutcomeCallable DeleteBudgetCallable(const Model::DeleteBudgetRequest& request) const;
 
         /**
-         * <p>Deletes a budget. You can delete your budget at any time.</p> <p> <b>Deleting
-         * a budget also deletes the notifications and subscribers associated with that
-         * budget.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a budget. You can delete your budget at any time.</p> <important>
+         * <p>Deleting a budget also deletes the notifications and subscribers that are
+         * associated with that budget.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteBudget">AWS
          * API Reference</a></p>
          *
@@ -307,16 +310,18 @@ namespace Model
         virtual void DeleteBudgetAsync(const Model::DeleteBudgetRequest& request, const DeleteBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a notification.</p> <p> <b>Deleting a notification also deletes the
-         * subscribers associated with the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * deletes the subscribers that are associated with the notification.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteNotificationOutcome DeleteNotification(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p> <p> <b>Deleting a notification also deletes the
-         * subscribers associated with the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * deletes the subscribers that are associated with the notification.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          *
@@ -325,8 +330,9 @@ namespace Model
         virtual Model::DeleteNotificationOutcomeCallable DeleteNotificationCallable(const Model::DeleteNotificationRequest& request) const;
 
         /**
-         * <p>Deletes a notification.</p> <p> <b>Deleting a notification also deletes the
-         * subscribers associated with the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a notification.</p> <important> <p>Deleting a notification also
+         * deletes the subscribers that are associated with the notification.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteNotification">AWS
          * API Reference</a></p>
          *
@@ -335,16 +341,18 @@ namespace Model
         virtual void DeleteNotificationAsync(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <p> <b>Deleting the last subscriber to a
-         * notification also deletes the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSubscriberOutcome DeleteSubscriber(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <p> <b>Deleting the last subscriber to a
-         * notification also deletes the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
          *
@@ -353,8 +361,9 @@ namespace Model
         virtual Model::DeleteSubscriberOutcomeCallable DeleteSubscriberCallable(const Model::DeleteSubscriberRequest& request) const;
 
         /**
-         * <p>Deletes a subscriber.</p> <p> <b>Deleting the last subscriber to a
-         * notification also deletes the notification.</b> </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a subscriber.</p> <important> <p>Deleting the last subscriber to a
+         * notification also deletes the notification.</p> </important><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DeleteSubscriber">AWS
          * API Reference</a></p>
          *
@@ -388,14 +397,47 @@ namespace Model
         virtual void DescribeBudgetAsync(const Model::DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the budgets associated with an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
+         * <code>QUARTERLY</code> budgets. Budget history isn't available for
+         * <code>ANNUAL</code> budgets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBudgetPerformanceHistoryOutcome DescribeBudgetPerformanceHistory(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
+
+        /**
+         * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
+         * <code>QUARTERLY</code> budgets. Budget history isn't available for
+         * <code>ANNUAL</code> budgets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeBudgetPerformanceHistoryOutcomeCallable DescribeBudgetPerformanceHistoryCallable(const Model::DescribeBudgetPerformanceHistoryRequest& request) const;
+
+        /**
+         * <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and
+         * <code>QUARTERLY</code> budgets. Budget history isn't available for
+         * <code>ANNUAL</code> budgets.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgetPerformanceHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeBudgetPerformanceHistoryAsync(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the budgets that are associated with an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeBudgetsOutcome DescribeBudgets(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets associated with an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the budgets that are associated with an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          *
@@ -404,7 +446,8 @@ namespace Model
         virtual Model::DescribeBudgetsOutcomeCallable DescribeBudgetsCallable(const Model::DescribeBudgetsRequest& request) const;
 
         /**
-         * <p>Lists the budgets associated with an account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the budgets that are associated with an account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeBudgets">AWS
          * API Reference</a></p>
          *
@@ -413,16 +456,16 @@ namespace Model
         virtual void DescribeBudgetsAsync(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the notifications associated with a budget.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeNotificationsForBudgetOutcome DescribeNotificationsForBudget(const Model::DescribeNotificationsForBudgetRequest& request) const;
 
         /**
-         * <p>Lists the notifications associated with a budget.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">AWS
          * API Reference</a></p>
          *
@@ -431,8 +474,8 @@ namespace Model
         virtual Model::DescribeNotificationsForBudgetOutcomeCallable DescribeNotificationsForBudgetCallable(const Model::DescribeNotificationsForBudgetRequest& request) const;
 
         /**
-         * <p>Lists the notifications associated with a budget.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the notifications that are associated with a budget.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeNotificationsForBudget">AWS
          * API Reference</a></p>
          *
@@ -441,7 +484,7 @@ namespace Model
         virtual void DescribeNotificationsForBudgetAsync(const Model::DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the subscribers associated with a notification.</p><p><h3>See
+         * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">AWS
          * API Reference</a></p>
@@ -449,7 +492,7 @@ namespace Model
         virtual Model::DescribeSubscribersForNotificationOutcome DescribeSubscribersForNotification(const Model::DescribeSubscribersForNotificationRequest& request) const;
 
         /**
-         * <p>Lists the subscribers associated with a notification.</p><p><h3>See
+         * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">AWS
          * API Reference</a></p>
@@ -459,7 +502,7 @@ namespace Model
         virtual Model::DescribeSubscribersForNotificationOutcomeCallable DescribeSubscribersForNotificationCallable(const Model::DescribeSubscribersForNotificationRequest& request) const;
 
         /**
-         * <p>Lists the subscribers associated with a notification.</p><p><h3>See
+         * <p>Lists the subscribers that are associated with a notification.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/DescribeSubscribersForNotification">AWS
          * API Reference</a></p>
@@ -470,8 +513,8 @@ namespace Model
 
         /**
          * <p>Updates a budget. You can change every part of a budget except for the
-         * <code>budgetName</code> and the <code>calculatedSpend</code>. When a budget is
-         * modified, the <code>calculatedSpend</code> drops to zero until AWS has new usage
+         * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
+         * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
          * data to use for forecasting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
@@ -480,8 +523,8 @@ namespace Model
 
         /**
          * <p>Updates a budget. You can change every part of a budget except for the
-         * <code>budgetName</code> and the <code>calculatedSpend</code>. When a budget is
-         * modified, the <code>calculatedSpend</code> drops to zero until AWS has new usage
+         * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
+         * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
          * data to use for forecasting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
@@ -492,8 +535,8 @@ namespace Model
 
         /**
          * <p>Updates a budget. You can change every part of a budget except for the
-         * <code>budgetName</code> and the <code>calculatedSpend</code>. When a budget is
-         * modified, the <code>calculatedSpend</code> drops to zero until AWS has new usage
+         * <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a
+         * budget, the <code>calculatedSpend</code> drops to zero until AWS has new usage
          * data to use for forecasting.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/budgets-2016-10-20/UpdateBudget">AWS
          * API Reference</a></p>
@@ -564,6 +607,7 @@ namespace Model
         void DeleteNotificationAsyncHelper(const Model::DeleteNotificationRequest& request, const DeleteNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSubscriberAsyncHelper(const Model::DeleteSubscriberRequest& request, const DeleteSubscriberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBudgetAsyncHelper(const Model::DescribeBudgetRequest& request, const DescribeBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeBudgetPerformanceHistoryAsyncHelper(const Model::DescribeBudgetPerformanceHistoryRequest& request, const DescribeBudgetPerformanceHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBudgetsAsyncHelper(const Model::DescribeBudgetsRequest& request, const DescribeBudgetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotificationsForBudgetAsyncHelper(const Model::DescribeNotificationsForBudgetRequest& request, const DescribeNotificationsForBudgetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscribersForNotificationAsyncHelper(const Model::DescribeSubscribersForNotificationRequest& request, const DescribeSubscribersForNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

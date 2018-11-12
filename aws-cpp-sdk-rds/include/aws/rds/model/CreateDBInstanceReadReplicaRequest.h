@@ -104,15 +104,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -124,15 +124,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -144,15 +144,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -164,15 +164,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -184,15 +184,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -204,15 +204,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -224,15 +224,15 @@ namespace Model
      * Replica. Each DB instance can have up to five Read Replicas.</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be the identifier of an existing MySQL,
      * MariaDB, or PostgreSQL DB instance.</p> </li> <li> <p>Can specify a DB instance
-     * that is a MySQL Read Replica only if the source is running MySQL 5.6.</p> </li>
-     * <li> <p>Can specify a DB instance that is a PostgreSQL DB instance only if the
-     * source is running PostgreSQL 9.3.5 or later (9.4.7 and higher for cross-region
-     * replication).</p> </li> <li> <p>The specified DB instance must have automatic
-     * backups enabled, its backup retention period must be greater than 0.</p> </li>
-     * <li> <p>If the source DB instance is in the same AWS Region as the Read Replica,
-     * specify a valid DB instance identifier.</p> </li> <li> <p>If the source DB
-     * instance is in a different AWS Region than the Read Replica, specify a valid DB
-     * instance ARN. For more information, go to <a
+     * that is a MySQL Read Replica only if the source is running MySQL 5.6 or
+     * later.</p> </li> <li> <p>Can specify a DB instance that is a PostgreSQL DB
+     * instance only if the source is running PostgreSQL 9.3.5 or later (9.4.7 and
+     * higher for cross-region replication).</p> </li> <li> <p>The specified DB
+     * instance must have automatic backups enabled, its backup retention period must
+     * be greater than 0.</p> </li> <li> <p>If the source DB instance is in the same
+     * AWS Region as the Read Replica, specify a valid DB instance identifier.</p>
+     * </li> <li> <p>If the source DB instance is in a different AWS Region than the
+     * Read Replica, specify a valid DB instance ARN. For more information, go to <a
      * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p>
      * </li> </ul>
@@ -1267,8 +1267,8 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
 
@@ -1277,8 +1277,8 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
@@ -1287,8 +1287,8 @@ namespace Model
      * to database accounts, and otherwise false.</p> <p>You can enable IAM database
      * authentication for the following database engines</p> <ul> <li> <p>For MySQL
      * 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For MySQL 5.7, minor
-     * version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or higher.</p> </li> </ul>
-     * <p>Default: <code>false</code> </p>
+     * version 5.7.16 or higher</p> </li> <li> <p>Aurora MySQL 5.6 or higher</p> </li>
+     * </ul> <p>Default: <code>false</code> </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
 

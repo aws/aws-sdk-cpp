@@ -49,31 +49,31 @@ namespace Model
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
-     * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
-     * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
-     * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
-     * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
     inline Record& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
      * <p>The data blob, which is base64-encoded when the blob is serialized. The
-     * maximum size of the data blob, before base64-encoding, is 1,000 KB.</p>
+     * maximum size of the data blob, before base64-encoding, is 1,000 KiB.</p>
      */
     inline Record& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 

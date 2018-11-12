@@ -46,6 +46,7 @@ DBCluster::DBCluster() :
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_readerEndpointHasBeenSet(false),
+    m_customEndpointsHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_engineHasBeenSet(false),
@@ -103,6 +104,7 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_earliestRestorableTimeHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_readerEndpointHasBeenSet(false),
+    m_customEndpointsHasBeenSet(false),
     m_multiAZ(false),
     m_multiAZHasBeenSet(false),
     m_engineHasBeenSet(false),
@@ -234,6 +236,18 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     {
       m_readerEndpoint = StringUtils::Trim(readerEndpointNode.GetText().c_str());
       m_readerEndpointHasBeenSet = true;
+    }
+    XmlNode customEndpointsNode = resultNode.FirstChild("CustomEndpoints");
+    if(!customEndpointsNode.IsNull())
+    {
+      XmlNode customEndpointsMember = customEndpointsNode.FirstChild("member");
+      while(!customEndpointsMember.IsNull())
+      {
+        m_customEndpoints.push_back(StringUtils::Trim(customEndpointsMember.GetText().c_str()));
+        customEndpointsMember = customEndpointsMember.NextNode("member");
+      }
+
+      m_customEndpointsHasBeenSet = true;
     }
     XmlNode multiAZNode = resultNode.FirstChild("MultiAZ");
     if(!multiAZNode.IsNull())
@@ -527,6 +541,15 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
   }
 
+  if(m_customEndpointsHasBeenSet)
+  {
+      unsigned customEndpointsIdx = 1;
+      for(auto& item : m_customEndpoints)
+      {
+        oStream << location << index << locationValue << ".CustomEndpoints.member." << customEndpointsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_multiAZHasBeenSet)
   {
       oStream << location << index << locationValue << ".MultiAZ=" << std::boolalpha << m_multiAZ << "&";
@@ -770,6 +793,14 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_readerEndpointHasBeenSet)
   {
       oStream << location << ".ReaderEndpoint=" << StringUtils::URLEncode(m_readerEndpoint.c_str()) << "&";
+  }
+  if(m_customEndpointsHasBeenSet)
+  {
+      unsigned customEndpointsIdx = 1;
+      for(auto& item : m_customEndpoints)
+      {
+        oStream << location << ".CustomEndpoints.member." << customEndpointsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
   if(m_multiAZHasBeenSet)
   {
