@@ -22,15 +22,18 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/redshift/model/PendingModifiedValues.h>
 #include <aws/redshift/model/RestoreStatus.h>
+#include <aws/redshift/model/DataTransferProgress.h>
 #include <aws/redshift/model/HsmStatus.h>
 #include <aws/redshift/model/ClusterSnapshotCopyStatus.h>
 #include <aws/redshift/model/ElasticIpStatus.h>
+#include <aws/redshift/model/ResizeInfo.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
 #include <aws/redshift/model/ClusterParameterGroupStatus.h>
 #include <aws/redshift/model/ClusterNode.h>
 #include <aws/redshift/model/Tag.h>
 #include <aws/redshift/model/ClusterIamRole.h>
+#include <aws/redshift/model/DeferredMaintenanceWindow.h>
 #include <utility>
 
 namespace Aws
@@ -137,8 +140,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -153,8 +157,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -169,8 +174,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -185,8 +191,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -201,8 +208,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -217,8 +225,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -233,8 +242,9 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>creating</code>
-     * </p> </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
+     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
+     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
      * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
      * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
      * <code>incompatible-network</code> </p> </li> <li> <p>
@@ -962,6 +972,22 @@ namespace Model
     inline Cluster& WithRestoreStatus(RestoreStatus&& value) { SetRestoreStatus(std::move(value)); return *this;}
 
 
+    
+    inline const DataTransferProgress& GetDataTransferProgress() const{ return m_dataTransferProgress; }
+
+    
+    inline void SetDataTransferProgress(const DataTransferProgress& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = value; }
+
+    
+    inline void SetDataTransferProgress(DataTransferProgress&& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = std::move(value); }
+
+    
+    inline Cluster& WithDataTransferProgress(const DataTransferProgress& value) { SetDataTransferProgress(value); return *this;}
+
+    
+    inline Cluster& WithDataTransferProgress(DataTransferProgress&& value) { SetDataTransferProgress(std::move(value)); return *this;}
+
+
     /**
      * <p>A value that reports whether the Amazon Redshift cluster has finished
      * applying any hardware security module (HSM) settings changes specified in a
@@ -1438,6 +1464,78 @@ namespace Model
      */
     inline Cluster& WithElasticResizeNumberOfNodeOptions(const char* value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
 
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline const Aws::Vector<DeferredMaintenanceWindow>& GetDeferredMaintenanceWindows() const{ return m_deferredMaintenanceWindows; }
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline void SetDeferredMaintenanceWindows(const Aws::Vector<DeferredMaintenanceWindow>& value) { m_deferredMaintenanceWindowsHasBeenSet = true; m_deferredMaintenanceWindows = value; }
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline void SetDeferredMaintenanceWindows(Aws::Vector<DeferredMaintenanceWindow>&& value) { m_deferredMaintenanceWindowsHasBeenSet = true; m_deferredMaintenanceWindows = std::move(value); }
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline Cluster& WithDeferredMaintenanceWindows(const Aws::Vector<DeferredMaintenanceWindow>& value) { SetDeferredMaintenanceWindows(value); return *this;}
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline Cluster& WithDeferredMaintenanceWindows(Aws::Vector<DeferredMaintenanceWindow>&& value) { SetDeferredMaintenanceWindows(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline Cluster& AddDeferredMaintenanceWindows(const DeferredMaintenanceWindow& value) { m_deferredMaintenanceWindowsHasBeenSet = true; m_deferredMaintenanceWindows.push_back(value); return *this; }
+
+    /**
+     * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
+     */
+    inline Cluster& AddDeferredMaintenanceWindows(DeferredMaintenanceWindow&& value) { m_deferredMaintenanceWindowsHasBeenSet = true; m_deferredMaintenanceWindows.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
+     * indicating if the resize operation can be cancelled.</p> </li> <li>
+     * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
+     */
+    inline const ResizeInfo& GetResizeInfo() const{ return m_resizeInfo; }
+
+    /**
+     * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
+     * indicating if the resize operation can be cancelled.</p> </li> <li>
+     * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
+     */
+    inline void SetResizeInfo(const ResizeInfo& value) { m_resizeInfoHasBeenSet = true; m_resizeInfo = value; }
+
+    /**
+     * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
+     * indicating if the resize operation can be cancelled.</p> </li> <li>
+     * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
+     */
+    inline void SetResizeInfo(ResizeInfo&& value) { m_resizeInfoHasBeenSet = true; m_resizeInfo = std::move(value); }
+
+    /**
+     * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
+     * indicating if the resize operation can be cancelled.</p> </li> <li>
+     * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
+     */
+    inline Cluster& WithResizeInfo(const ResizeInfo& value) { SetResizeInfo(value); return *this;}
+
+    /**
+     * <p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value
+     * indicating if the resize operation can be cancelled.</p> </li> <li>
+     * <p>ResizeType: Returns ClassicResize</p> </li> </ul>
+     */
+    inline Cluster& WithResizeInfo(ResizeInfo&& value) { SetResizeInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1509,6 +1607,9 @@ namespace Model
     RestoreStatus m_restoreStatus;
     bool m_restoreStatusHasBeenSet;
 
+    DataTransferProgress m_dataTransferProgress;
+    bool m_dataTransferProgressHasBeenSet;
+
     HsmStatus m_hsmStatus;
     bool m_hsmStatusHasBeenSet;
 
@@ -1547,6 +1648,12 @@ namespace Model
 
     Aws::String m_elasticResizeNumberOfNodeOptions;
     bool m_elasticResizeNumberOfNodeOptionsHasBeenSet;
+
+    Aws::Vector<DeferredMaintenanceWindow> m_deferredMaintenanceWindows;
+    bool m_deferredMaintenanceWindowsHasBeenSet;
+
+    ResizeInfo m_resizeInfo;
+    bool m_resizeInfoHasBeenSet;
   };
 
 } // namespace Model

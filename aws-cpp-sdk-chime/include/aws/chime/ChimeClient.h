@@ -149,17 +149,38 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
 
   /**
-   * <p>Amazon Chime is a communications service that transforms online meetings with
-   * a secure, easy-to-use application that you can trust. Amazon Chime works
-   * seamlessly across your devices so that you can stay connected. You can use
-   * Amazon Chime for online meetings, video conferencing, calls, and chat. You can
-   * also share content, both inside and outside your organization. Amazon Chime
-   * frees you to work productively from anywhere. </p> <p>The Amazon Chime API is
-   * designed for administrators to use to perform key tasks, such as creating and
-   * managing Amazon Chime accounts and users. This guide provides detailed
-   * information about the Amazon Chime API.</p> <p>Use host name
-   * <code>service.chime.aws.amazon.com</code> when working with the Amazon Chime
-   * API.</p>
+   * <p>The Amazon Chime API (application programming interface) is designed for
+   * administrators to use to perform key tasks, such as creating and managing Amazon
+   * Chime accounts and users. This guide provides detailed information about the
+   * Amazon Chime API, including operations, types, inputs and outputs, and error
+   * codes.</p> <p>You can use an AWS SDK, the AWS Command Line Interface (AWS CLI),
+   * or the REST API to make API calls. We recommend using an AWS SDK or the AWS CLI.
+   * Each API operation includes links to information about using it with a
+   * language-specific AWS SDK or the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt>
+   * <dd> <p>You don't need to write code to calculate a signature for request
+   * authentication. The SDK clients authenticate your requests by using access keys
+   * that you provide. For more information about AWS SDKs, see the <a
+   * href="http://aws.amazon.com/developer/">AWS Developer Center</a>.</p> </dd>
+   * <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make
+   * API calls. For information about setting up the AWS CLI, see <a
+   * href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
+   * the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User
+   * Guide</i>. For a list of available Amazon Chime commands, see the <a
+   * href="http://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
+   * Chime commands</a> in the <i>AWS CLI Command Reference</i>.</p> </dd> <dt>Using
+   * REST API</dt> <dd> <p>If you use REST to make API calls, you must authenticate
+   * your request by providing a signature. Amazon Chime supports signature version
+   * 4. For more information, see <a
+   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * Version 4 Signing Process</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p> <p>When making REST API calls, use the service name
+   * <code>chime</code> and REST endpoint
+   * <code>https://service.chime.aws.amazon.com</code>.</p> </dd> </dl>
+   * <p>Administrative permissions are controlled using AWS Identity and Access
+   * Management (IAM). For more information, see <a
+   * href="http://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
+   * Access to the Amazon Chime Console</a> in the <i>Amazon Chime Administration
+   * Guide</i>.</p>
    */
   class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient
   {
@@ -499,7 +520,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p><p><h3>See Also:</h3>   <a
+         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * email address instead of a user ID, use the <a>ListUsers</a> action, and then
+         * filter by email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          */
@@ -507,7 +530,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p><p><h3>See Also:</h3>   <a
+         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * email address instead of a user ID, use the <a>ListUsers</a> action, and then
+         * filter by email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          *
@@ -517,7 +542,9 @@ namespace Model
 
         /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
-         * license type, and personal meeting PIN.</p><p><h3>See Also:</h3>   <a
+         * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
+         * email address instead of a user ID, use the <a>ListUsers</a> action, and then
+         * filter by email address.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetUser">AWS API
          * Reference</a></p>
          *
@@ -591,16 +618,18 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the users that belong to the specified Amazon Chime
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users that belong to the specified Amazon Chime account. You can
+         * specify an email address to list only the user that the email address belongs
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListUsers">AWS API
          * Reference</a></p>
          */
         virtual Model::ListUsersOutcome ListUsers(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users that belong to the specified Amazon Chime
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users that belong to the specified Amazon Chime account. You can
+         * specify an email address to list only the user that the email address belongs
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListUsers">AWS API
          * Reference</a></p>
          *
@@ -609,8 +638,9 @@ namespace Model
         virtual Model::ListUsersOutcomeCallable ListUsersCallable(const Model::ListUsersRequest& request) const;
 
         /**
-         * <p>Lists the users that belong to the specified Amazon Chime
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the users that belong to the specified Amazon Chime account. You can
+         * specify an email address to list only the user that the email address belongs
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListUsers">AWS API
          * Reference</a></p>
          *

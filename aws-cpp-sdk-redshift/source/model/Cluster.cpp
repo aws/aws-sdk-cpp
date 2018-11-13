@@ -59,6 +59,7 @@ Cluster::Cluster() :
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_restoreStatusHasBeenSet(false),
+    m_dataTransferProgressHasBeenSet(false),
     m_hsmStatusHasBeenSet(false),
     m_clusterSnapshotCopyStatusHasBeenSet(false),
     m_clusterPublicKeyHasBeenSet(false),
@@ -72,7 +73,9 @@ Cluster::Cluster() :
     m_iamRolesHasBeenSet(false),
     m_pendingActionsHasBeenSet(false),
     m_maintenanceTrackNameHasBeenSet(false),
-    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false)
+    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false),
+    m_deferredMaintenanceWindowsHasBeenSet(false),
+    m_resizeInfoHasBeenSet(false)
 {
 }
 
@@ -105,6 +108,7 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_restoreStatusHasBeenSet(false),
+    m_dataTransferProgressHasBeenSet(false),
     m_hsmStatusHasBeenSet(false),
     m_clusterSnapshotCopyStatusHasBeenSet(false),
     m_clusterPublicKeyHasBeenSet(false),
@@ -118,7 +122,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_iamRolesHasBeenSet(false),
     m_pendingActionsHasBeenSet(false),
     m_maintenanceTrackNameHasBeenSet(false),
-    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false)
+    m_elasticResizeNumberOfNodeOptionsHasBeenSet(false),
+    m_deferredMaintenanceWindowsHasBeenSet(false),
+    m_resizeInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -285,6 +291,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
       m_restoreStatus = restoreStatusNode;
       m_restoreStatusHasBeenSet = true;
     }
+    XmlNode dataTransferProgressNode = resultNode.FirstChild("DataTransferProgress");
+    if(!dataTransferProgressNode.IsNull())
+    {
+      m_dataTransferProgress = dataTransferProgressNode;
+      m_dataTransferProgressHasBeenSet = true;
+    }
     XmlNode hsmStatusNode = resultNode.FirstChild("HsmStatus");
     if(!hsmStatusNode.IsNull())
     {
@@ -386,6 +398,24 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     {
       m_elasticResizeNumberOfNodeOptions = StringUtils::Trim(elasticResizeNumberOfNodeOptionsNode.GetText().c_str());
       m_elasticResizeNumberOfNodeOptionsHasBeenSet = true;
+    }
+    XmlNode deferredMaintenanceWindowsNode = resultNode.FirstChild("DeferredMaintenanceWindows");
+    if(!deferredMaintenanceWindowsNode.IsNull())
+    {
+      XmlNode deferredMaintenanceWindowsMember = deferredMaintenanceWindowsNode.FirstChild("DeferredMaintenanceWindow");
+      while(!deferredMaintenanceWindowsMember.IsNull())
+      {
+        m_deferredMaintenanceWindows.push_back(deferredMaintenanceWindowsMember);
+        deferredMaintenanceWindowsMember = deferredMaintenanceWindowsMember.NextNode("DeferredMaintenanceWindow");
+      }
+
+      m_deferredMaintenanceWindowsHasBeenSet = true;
+    }
+    XmlNode resizeInfoNode = resultNode.FirstChild("ResizeInfo");
+    if(!resizeInfoNode.IsNull())
+    {
+      m_resizeInfo = resizeInfoNode;
+      m_resizeInfoHasBeenSet = true;
     }
   }
 
@@ -533,6 +563,13 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       m_restoreStatus.OutputToStream(oStream, restoreStatusLocationAndMemberSs.str().c_str());
   }
 
+  if(m_dataTransferProgressHasBeenSet)
+  {
+      Aws::StringStream dataTransferProgressLocationAndMemberSs;
+      dataTransferProgressLocationAndMemberSs << location << index << locationValue << ".DataTransferProgress";
+      m_dataTransferProgress.OutputToStream(oStream, dataTransferProgressLocationAndMemberSs.str().c_str());
+  }
+
   if(m_hsmStatusHasBeenSet)
   {
       Aws::StringStream hsmStatusLocationAndMemberSs;
@@ -624,6 +661,24 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   if(m_elasticResizeNumberOfNodeOptionsHasBeenSet)
   {
       oStream << location << index << locationValue << ".ElasticResizeNumberOfNodeOptions=" << StringUtils::URLEncode(m_elasticResizeNumberOfNodeOptions.c_str()) << "&";
+  }
+
+  if(m_deferredMaintenanceWindowsHasBeenSet)
+  {
+      unsigned deferredMaintenanceWindowsIdx = 1;
+      for(auto& item : m_deferredMaintenanceWindows)
+      {
+        Aws::StringStream deferredMaintenanceWindowsSs;
+        deferredMaintenanceWindowsSs << location << index << locationValue << ".DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
+        item.OutputToStream(oStream, deferredMaintenanceWindowsSs.str().c_str());
+      }
+  }
+
+  if(m_resizeInfoHasBeenSet)
+  {
+      Aws::StringStream resizeInfoLocationAndMemberSs;
+      resizeInfoLocationAndMemberSs << location << index << locationValue << ".ResizeInfo";
+      m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -746,6 +801,12 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
       restoreStatusLocationAndMember += ".RestoreStatus";
       m_restoreStatus.OutputToStream(oStream, restoreStatusLocationAndMember.c_str());
   }
+  if(m_dataTransferProgressHasBeenSet)
+  {
+      Aws::String dataTransferProgressLocationAndMember(location);
+      dataTransferProgressLocationAndMember += ".DataTransferProgress";
+      m_dataTransferProgress.OutputToStream(oStream, dataTransferProgressLocationAndMember.c_str());
+  }
   if(m_hsmStatusHasBeenSet)
   {
       Aws::String hsmStatusLocationAndMember(location);
@@ -825,6 +886,22 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_elasticResizeNumberOfNodeOptionsHasBeenSet)
   {
       oStream << location << ".ElasticResizeNumberOfNodeOptions=" << StringUtils::URLEncode(m_elasticResizeNumberOfNodeOptions.c_str()) << "&";
+  }
+  if(m_deferredMaintenanceWindowsHasBeenSet)
+  {
+      unsigned deferredMaintenanceWindowsIdx = 1;
+      for(auto& item : m_deferredMaintenanceWindows)
+      {
+        Aws::StringStream deferredMaintenanceWindowsSs;
+        deferredMaintenanceWindowsSs << location <<  ".DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
+        item.OutputToStream(oStream, deferredMaintenanceWindowsSs.str().c_str());
+      }
+  }
+  if(m_resizeInfoHasBeenSet)
+  {
+      Aws::String resizeInfoLocationAndMember(location);
+      resizeInfoLocationAndMember += ".ResizeInfo";
+      m_resizeInfo.OutputToStream(oStream, resizeInfoLocationAndMember.c_str());
   }
 }
 

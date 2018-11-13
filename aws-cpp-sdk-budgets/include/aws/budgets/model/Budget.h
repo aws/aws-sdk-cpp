@@ -158,67 +158,111 @@ namespace Model
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline void SetCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_costFiltersHasBeenSet = true; m_costFilters = value; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline void SetCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_costFiltersHasBeenSet = true; m_costFilters = std::move(value); }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& WithCostFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetCostFilters(value); return *this;}
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& WithCostFilters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetCostFilters(std::move(value)); return *this;}
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const char* key, Aws::Vector<Aws::String>&& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
-     * budget.</p>
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
      */
     inline Budget& AddCostFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_costFiltersHasBeenSet = true; m_costFilters.emplace(key, value); return *this; }
 

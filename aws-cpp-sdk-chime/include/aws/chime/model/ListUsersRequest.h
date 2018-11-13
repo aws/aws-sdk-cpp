@@ -85,6 +85,42 @@ namespace Model
 
 
     /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline const Aws::String& GetUserEmail() const{ return m_userEmail; }
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline void SetUserEmail(const Aws::String& value) { m_userEmailHasBeenSet = true; m_userEmail = value; }
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline void SetUserEmail(Aws::String&& value) { m_userEmailHasBeenSet = true; m_userEmail = std::move(value); }
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline void SetUserEmail(const char* value) { m_userEmailHasBeenSet = true; m_userEmail.assign(value); }
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline ListUsersRequest& WithUserEmail(const Aws::String& value) { SetUserEmail(value); return *this;}
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline ListUsersRequest& WithUserEmail(Aws::String&& value) { SetUserEmail(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional. The user email address used to filter results. Maximum 1.</p>
+     */
+    inline ListUsersRequest& WithUserEmail(const char* value) { SetUserEmail(value); return *this;}
+
+
+    /**
      * <p>The maximum number of results to return in a single call. Defaults to
      * 100.</p>
      */
@@ -142,6 +178,9 @@ namespace Model
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet;
+
+    Aws::String m_userEmail;
+    bool m_userEmailHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

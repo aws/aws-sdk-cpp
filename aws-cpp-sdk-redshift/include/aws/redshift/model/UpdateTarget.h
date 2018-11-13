@@ -17,6 +17,8 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/SupportedOperation.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +123,42 @@ namespace Model
      */
     inline UpdateTarget& WithDatabaseVersion(const char* value) { SetDatabaseVersion(value); return *this;}
 
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline const Aws::Vector<SupportedOperation>& GetSupportedOperations() const{ return m_supportedOperations; }
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline void SetSupportedOperations(const Aws::Vector<SupportedOperation>& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = value; }
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline void SetSupportedOperations(Aws::Vector<SupportedOperation>&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations = std::move(value); }
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline UpdateTarget& WithSupportedOperations(const Aws::Vector<SupportedOperation>& value) { SetSupportedOperations(value); return *this;}
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline UpdateTarget& WithSupportedOperations(Aws::Vector<SupportedOperation>&& value) { SetSupportedOperations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline UpdateTarget& AddSupportedOperations(const SupportedOperation& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of operations supported by the maintenance track.</p>
+     */
+    inline UpdateTarget& AddSupportedOperations(SupportedOperation&& value) { m_supportedOperationsHasBeenSet = true; m_supportedOperations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_maintenanceTrackName;
@@ -128,6 +166,9 @@ namespace Model
 
     Aws::String m_databaseVersion;
     bool m_databaseVersionHasBeenSet;
+
+    Aws::Vector<SupportedOperation> m_supportedOperations;
+    bool m_supportedOperationsHasBeenSet;
   };
 
 } // namespace Model

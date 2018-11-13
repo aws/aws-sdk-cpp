@@ -27,6 +27,7 @@ using namespace Aws::Http;
 
 ListUsersRequest::ListUsersRequest() : 
     m_accountIdHasBeenSet(false),
+    m_userEmailHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -41,6 +42,13 @@ Aws::String ListUsersRequest::SerializePayload() const
 void ListUsersRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_userEmailHasBeenSet)
+    {
+      ss << m_userEmail;
+      uri.AddQueryStringParameter("user-email", ss.str());
+      ss.str("");
+    }
+
     if(m_maxResultsHasBeenSet)
     {
       ss << m_maxResults;

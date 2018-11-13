@@ -47,9 +47,9 @@ namespace Model
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
      * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the last 12 months. For <code>QUARTERLY</code>
-     * budgets, the history saves the state of the budget for the last four
-     * quarters.</p>
+     * the state of the budget for the current month plus the last 12 months. For
+     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
+     * the last four quarters.</p>
      */
     inline const BudgetPerformanceHistory& GetBudgetPerformanceHistory() const{ return m_budgetPerformanceHistory; }
 
@@ -57,9 +57,9 @@ namespace Model
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
      * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the last 12 months. For <code>QUARTERLY</code>
-     * budgets, the history saves the state of the budget for the last four
-     * quarters.</p>
+     * the state of the budget for the current month plus the last 12 months. For
+     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
+     * the last four quarters.</p>
      */
     inline void SetBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { m_budgetPerformanceHistory = value; }
 
@@ -67,9 +67,9 @@ namespace Model
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
      * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the last 12 months. For <code>QUARTERLY</code>
-     * budgets, the history saves the state of the budget for the last four
-     * quarters.</p>
+     * the state of the budget for the current month plus the last 12 months. For
+     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
+     * the last four quarters.</p>
      */
     inline void SetBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { m_budgetPerformanceHistory = std::move(value); }
 
@@ -77,9 +77,9 @@ namespace Model
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
      * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the last 12 months. For <code>QUARTERLY</code>
-     * budgets, the history saves the state of the budget for the last four
-     * quarters.</p>
+     * the state of the budget for the current month plus the last 12 months. For
+     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
+     * the last four quarters.</p>
      */
     inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(const BudgetPerformanceHistory& value) { SetBudgetPerformanceHistory(value); return *this;}
 
@@ -87,9 +87,9 @@ namespace Model
      * <p>The history of how often the budget has gone into an <code>ALARM</code>
      * state.</p> <p>For <code>DAILY</code> budgets, the history saves the state of the
      * budget for the last 60 days. For <code>MONTHLY</code> budgets, the history saves
-     * the state of the budget for the last 12 months. For <code>QUARTERLY</code>
-     * budgets, the history saves the state of the budget for the last four
-     * quarters.</p>
+     * the state of the budget for the current month plus the last 12 months. For
+     * <code>QUARTERLY</code> budgets, the history saves the state of the budget for
+     * the last four quarters.</p>
      */
     inline DescribeBudgetPerformanceHistoryResult& WithBudgetPerformanceHistory(BudgetPerformanceHistory&& value) { SetBudgetPerformanceHistory(std::move(value)); return *this;}
 

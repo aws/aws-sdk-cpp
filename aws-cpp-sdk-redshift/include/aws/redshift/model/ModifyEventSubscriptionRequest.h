@@ -283,57 +283,57 @@ namespace Model
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline ModifyEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specifies the Amazon Redshift event categories to be published by the event
-     * notification subscription.</p> <p>Values: Configuration, Management, Monitoring,
-     * Security</p>
+     * notification subscription.</p> <p>Values: configuration, management, monitoring,
+     * security</p>
      */
     inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 

@@ -32,13 +32,15 @@ namespace Model
 
 UpdateTarget::UpdateTarget() : 
     m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false)
+    m_databaseVersionHasBeenSet(false),
+    m_supportedOperationsHasBeenSet(false)
 {
 }
 
 UpdateTarget::UpdateTarget(const XmlNode& xmlNode) : 
     m_maintenanceTrackNameHasBeenSet(false),
-    m_databaseVersionHasBeenSet(false)
+    m_databaseVersionHasBeenSet(false),
+    m_supportedOperationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +63,18 @@ UpdateTarget& UpdateTarget::operator =(const XmlNode& xmlNode)
       m_databaseVersion = StringUtils::Trim(databaseVersionNode.GetText().c_str());
       m_databaseVersionHasBeenSet = true;
     }
+    XmlNode supportedOperationsNode = resultNode.FirstChild("SupportedOperations");
+    if(!supportedOperationsNode.IsNull())
+    {
+      XmlNode supportedOperationsMember = supportedOperationsNode.FirstChild("SupportedOperation");
+      while(!supportedOperationsMember.IsNull())
+      {
+        m_supportedOperations.push_back(supportedOperationsMember);
+        supportedOperationsMember = supportedOperationsMember.NextNode("SupportedOperation");
+      }
+
+      m_supportedOperationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +92,17 @@ void UpdateTarget::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".DatabaseVersion=" << StringUtils::URLEncode(m_databaseVersion.c_str()) << "&";
   }
 
+  if(m_supportedOperationsHasBeenSet)
+  {
+      unsigned supportedOperationsIdx = 1;
+      for(auto& item : m_supportedOperations)
+      {
+        Aws::StringStream supportedOperationsSs;
+        supportedOperationsSs << location << index << locationValue << ".SupportedOperation." << supportedOperationsIdx++;
+        item.OutputToStream(oStream, supportedOperationsSs.str().c_str());
+      }
+  }
+
 }
 
 void UpdateTarget::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -89,6 +114,16 @@ void UpdateTarget::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_databaseVersionHasBeenSet)
   {
       oStream << location << ".DatabaseVersion=" << StringUtils::URLEncode(m_databaseVersion.c_str()) << "&";
+  }
+  if(m_supportedOperationsHasBeenSet)
+  {
+      unsigned supportedOperationsIdx = 1;
+      for(auto& item : m_supportedOperations)
+      {
+        Aws::StringStream supportedOperationsSs;
+        supportedOperationsSs << location <<  ".SupportedOperation." << supportedOperationsIdx++;
+        item.OutputToStream(oStream, supportedOperationsSs.str().c_str());
+      }
   }
 }
 

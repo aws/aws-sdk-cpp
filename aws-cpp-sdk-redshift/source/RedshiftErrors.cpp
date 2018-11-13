@@ -51,8 +51,8 @@ static const int SNAPSHOT_COPY_GRANT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::H
 static const int SNAPSHOT_COPY_GRANT_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotCopyGrantNotFoundFault");
 static const int UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = HashingUtils::HashString("UnknownSnapshotCopyRegionFault");
 static const int SNAPSHOT_COPY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyDisabledFault");
-static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
 static const int RESIZE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResizeNotFound");
+static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
 static const int INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterParameterGroupState");
 static const int INVALID_HSM_CLIENT_CERTIFICATE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmClientCertificateStateFault");
 static const int NUMBER_OF_NODES_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("NumberOfNodesQuotaExceeded");
@@ -215,13 +215,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_DISABLED_FAULT), false);
   }
-  else if (hashCode == INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CONFIGURATION_STATE_FAULT), false);
-  }
   else if (hashCode == RESIZE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::RESIZE_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_HSM_CONFIGURATION_STATE_FAULT), false);
   }
   else if (hashCode == INVALID_CLUSTER_PARAMETER_GROUP_STATE_FAULT_HASH)
   {
