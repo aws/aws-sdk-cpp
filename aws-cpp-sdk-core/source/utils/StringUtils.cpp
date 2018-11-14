@@ -221,10 +221,20 @@ Aws::String StringUtils::URLDecode(const char* safe)
     return unescaped.str();
 }
 
+static bool IsSpace(int ch)
+{
+    if (ch < -1 || ch > 255)
+    {
+        return false;
+    }
+
+    return ::isspace(ch) != 0;
+}
+
 Aws::String StringUtils::LTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), [](int ch) { return !::isspace(ch); }));
+    copy.erase(copy.begin(), std::find_if(copy.begin(), copy.end(), [](int ch) { return !IsSpace(ch); }));
     return copy;
 }
 
@@ -232,7 +242,7 @@ Aws::String StringUtils::LTrim(const char* source)
 Aws::String StringUtils::RTrim(const char* source)
 {
     Aws::String copy(source);
-    copy.erase(std::find_if(copy.rbegin(), copy.rend(), [](int ch) { return !::isspace(ch); }).base(), copy.end());
+    copy.erase(std::find_if(copy.rbegin(), copy.rend(), [](int ch) { return !IsSpace(ch); }).base(), copy.end());
     return copy;
 }
 
