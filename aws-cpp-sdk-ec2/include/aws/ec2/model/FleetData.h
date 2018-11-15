@@ -28,6 +28,8 @@
 #include <aws/ec2/model/OnDemandOptions.h>
 #include <aws/ec2/model/FleetLaunchTemplateConfig.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/DescribeFleetError.h>
+#include <aws/ec2/model/DescribeFleetsInstances.h>
 #include <utility>
 
 namespace Aws
@@ -677,6 +679,92 @@ namespace Model
      */
     inline FleetData& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline const Aws::Vector<DescribeFleetError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetErrors(const Aws::Vector<DescribeFleetError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetErrors(Aws::Vector<DescribeFleetError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& WithErrors(const Aws::Vector<DescribeFleetError>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& WithErrors(Aws::Vector<DescribeFleetError>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& AddErrors(const DescribeFleetError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& AddErrors(DescribeFleetError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline const Aws::Vector<DescribeFleetsInstances>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetInstances(const Aws::Vector<DescribeFleetsInstances>& value) { m_instancesHasBeenSet = true; m_instances = value; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetInstances(Aws::Vector<DescribeFleetsInstances>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& WithInstances(const Aws::Vector<DescribeFleetsInstances>& value) { SetInstances(value); return *this;}
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& WithInstances(Aws::Vector<DescribeFleetsInstances>&& value) { SetInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& AddInstances(const DescribeFleetsInstances& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline FleetData& AddInstances(DescribeFleetsInstances&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
   private:
 
     FleetActivityStatus m_activityStatus;
@@ -732,6 +820,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<DescribeFleetError> m_errors;
+    bool m_errorsHasBeenSet;
+
+    Aws::Vector<DescribeFleetsInstances> m_instances;
+    bool m_instancesHasBeenSet;
   };
 
 } // namespace Model

@@ -26,6 +26,7 @@ CreateHyperParameterTuningJobRequest::CreateHyperParameterTuningJobRequest() :
     m_hyperParameterTuningJobNameHasBeenSet(false),
     m_hyperParameterTuningJobConfigHasBeenSet(false),
     m_trainingJobDefinitionHasBeenSet(false),
+    m_warmStartConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -49,6 +50,12 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
   if(m_trainingJobDefinitionHasBeenSet)
   {
    payload.WithObject("TrainingJobDefinition", m_trainingJobDefinition.Jsonize());
+
+  }
+
+  if(m_warmStartConfigHasBeenSet)
+  {
+   payload.WithObject("WarmStartConfig", m_warmStartConfig.Jsonize());
 
   }
 

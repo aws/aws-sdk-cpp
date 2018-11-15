@@ -18,6 +18,7 @@
 #include <aws/autoscaling/AutoScalingRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
+#include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -85,77 +86,113 @@ namespace Model
 
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the launch configuration. If you specify a launch configuration,
-     * you can't specify a launch template.</p>
+     * <p>The name of the launch configuration. If you specify this parameter, you
+     * can't specify a launch template or a mixed instances policy.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
 
     /**
-     * <p>The launch template to use to specify the updates. If you specify a launch
-     * template, you can't specify a launch configuration.</p>
+     * <p>The launch template and version to use to specify the updates. If you specify
+     * this parameter, you can't specify a launch configuration or a mixed instances
+     * policy.</p>
      */
     inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
 
     /**
-     * <p>The launch template to use to specify the updates. If you specify a launch
-     * template, you can't specify a launch configuration.</p>
+     * <p>The launch template and version to use to specify the updates. If you specify
+     * this parameter, you can't specify a launch configuration or a mixed instances
+     * policy.</p>
      */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
-     * <p>The launch template to use to specify the updates. If you specify a launch
-     * template, you can't specify a launch configuration.</p>
+     * <p>The launch template and version to use to specify the updates. If you specify
+     * this parameter, you can't specify a launch configuration or a mixed instances
+     * policy.</p>
      */
     inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
 
     /**
-     * <p>The launch template to use to specify the updates. If you specify a launch
-     * template, you can't specify a launch configuration.</p>
+     * <p>The launch template and version to use to specify the updates. If you specify
+     * this parameter, you can't specify a launch configuration or a mixed instances
+     * policy.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
 
     /**
-     * <p>The launch template to use to specify the updates. If you specify a launch
-     * template, you can't specify a launch configuration.</p>
+     * <p>The launch template and version to use to specify the updates. If you specify
+     * this parameter, you can't specify a launch configuration or a mixed instances
+     * policy.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The mixed instances policy to use to specify the updates. If you specify this
+     * parameter, you can't specify a launch configuration or a launch template. </p>
+     */
+    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
+
+    /**
+     * <p>The mixed instances policy to use to specify the updates. If you specify this
+     * parameter, you can't specify a launch configuration or a launch template. </p>
+     */
+    inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
+
+    /**
+     * <p>The mixed instances policy to use to specify the updates. If you specify this
+     * parameter, you can't specify a launch configuration or a launch template. </p>
+     */
+    inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
+
+    /**
+     * <p>The mixed instances policy to use to specify the updates. If you specify this
+     * parameter, you can't specify a launch configuration or a launch template. </p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
+
+    /**
+     * <p>The mixed instances policy to use to specify the updates. If you specify this
+     * parameter, you can't specify a launch configuration or a launch template. </p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -353,56 +390,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -646,6 +683,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    MixedInstancesPolicy m_mixedInstancesPolicy;
+    bool m_mixedInstancesPolicyHasBeenSet;
 
     int m_minSize;
     bool m_minSizeHasBeenSet;

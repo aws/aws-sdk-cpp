@@ -24,6 +24,7 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_autoScalingGroupNameHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -62,6 +63,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_launchTemplateHasBeenSet)
   {
     m_launchTemplate.OutputToStream(ss, "LaunchTemplate");
+  }
+
+  if(m_mixedInstancesPolicyHasBeenSet)
+  {
+    m_mixedInstancesPolicy.OutputToStream(ss, "MixedInstancesPolicy");
   }
 
   if(m_minSizeHasBeenSet)

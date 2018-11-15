@@ -80,14 +80,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -105,14 +105,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -130,14 +130,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -155,14 +155,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -180,14 +180,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -205,14 +205,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type
@@ -230,14 +230,14 @@ namespace Model
     /**
      * <p>Identifies the resource associated with the metric type. The following
      * predefined metrics are available:</p> <ul> <li> <p>
-     * <code>ASGAverageCPUUtilization</code> - average CPU utilization of the Auto
-     * Scaling group</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - average
-     * number of bytes received on all network interfaces by the Auto Scaling group</p>
-     * </li> <li> <p> <code>ASGAverageNetworkOut</code> - average number of bytes sent
-     * out on all network interfaces by the Auto Scaling group</p> </li> <li> <p>
-     * <code>ALBRequestCountPerTarget</code> - number of requests completed per target
-     * in an Application Load Balancer target group</p> </li> </ul> <p>For predefined
-     * metric types <code>ASGAverageCPUUtilization</code>,
+     * <code>ASGAverageCPUUtilization</code> - Average CPU utilization of the Auto
+     * Scaling group.</p> </li> <li> <p> <code>ASGAverageNetworkIn</code> - Average
+     * number of bytes received on all network interfaces by the Auto Scaling
+     * group.</p> </li> <li> <p> <code>ASGAverageNetworkOut</code> - Average number of
+     * bytes sent out on all network interfaces by the Auto Scaling group.</p> </li>
+     * <li> <p> <code>ALBRequestCountPerTarget</code> - Number of requests completed
+     * per target in an Application Load Balancer target group.</p> </li> </ul> <p>For
+     * predefined metric types <code>ASGAverageCPUUtilization</code>,
      * <code>ASGAverageNetworkIn</code>, and <code>ASGAverageNetworkOut</code>, the
      * parameter must not be specified as the resource associated with the metric type
      * is the Auto Scaling group. For predefined metric type

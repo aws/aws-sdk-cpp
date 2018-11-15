@@ -170,12 +170,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -184,12 +194,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -198,12 +218,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -212,12 +242,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -226,12 +266,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -240,12 +290,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -254,12 +314,22 @@ namespace Model
     /**
      * <p>The constraint parameters, in JSON format. The syntax depends on the
      * constraint type as follows:</p> <dl> <dt>LAUNCH</dt> <dd> <p>Specify the
-     * <code>RoleArn</code> property as follows:</p> <p>\"RoleArn\" :
-     * \"arn:aws:iam::123456789012:role/LaunchRole\"</p> </dd> <dt>NOTIFICATION</dt>
-     * <dd> <p>Specify the <code>NotificationArns</code> property as follows:</p>
-     * <p>\"NotificationArns\" : [\"arn:aws:sns:us-east-1:123456789012:Topic\"]</p>
-     * </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the <code>Rules</code> property. For
-     * more information, see <a
+     * <code>RoleArn</code> property as follows:</p> <p> <code>{"RoleArn" :
+     * "arn:aws:iam::123456789012:role/LaunchRole"}</code> </p> <p>You cannot have both
+     * a <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>LAUNCH</code> constraint on a product and
+     * portfolio.</p> </dd> <dt>NOTIFICATION</dt> <dd> <p>Specify the
+     * <code>NotificationArns</code> property as follows:</p> <p>
+     * <code>{"NotificationArns" : ["arn:aws:sns:us-east-1:123456789012:Topic"]}</code>
+     * </p> </dd> <dt>STACKSET</dt> <dd> <p>Specify the <code>Parameters</code>
+     * property as follows:</p> <p> <code>{"Version": "String", "Properties":
+     * {"AccountList": [ "String" ], "RegionList": [ "String" ], "AdminRole": "String",
+     * "ExecutionRole": "String"}}</code> </p> <p>You cannot have both a
+     * <code>LAUNCH</code> and a <code>STACKSET</code> constraint.</p> <p>You also
+     * cannot have more than one <code>STACKSET</code> constraint on a product and
+     * portfolio.</p> <p>Products with a <code>STACKSET</code> constraint will launch
+     * an AWS CloudFormation stack set.</p> </dd> <dt>TEMPLATE</dt> <dd> <p>Specify the
+     * <code>Rules</code> property. For more information, see <a
      * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/reference-template_constraint_rules.html">Template
      * Constraint Rules</a>.</p> </dd> </dl>
      */
@@ -268,50 +338,50 @@ namespace Model
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline CreateConstraintRequest& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline CreateConstraintRequest& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of constraint.</p> <ul> <li> <p> <code>LAUNCH</code> </p> </li> <li>
-     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>TEMPLATE</code> </p>
-     * </li> </ul>
+     * <p> <code>NOTIFICATION</code> </p> </li> <li> <p> <code>STACKSET</code> </p>
+     * </li> <li> <p> <code>TEMPLATE</code> </p> </li> </ul>
      */
     inline CreateConstraintRequest& WithType(const char* value) { SetType(value); return *this;}
 

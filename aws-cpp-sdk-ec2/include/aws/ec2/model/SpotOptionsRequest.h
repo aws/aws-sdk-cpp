@@ -140,6 +140,44 @@ namespace Model
      */
     inline SpotOptionsRequest& WithInstancePoolsToUseCount(int value) { SetInstancePoolsToUseCount(value); return *this;}
 
+
+    /**
+     * <p>Indicates that the fleet uses a single instance type to launch all Spot
+     * Instances in the fleet.</p>
+     */
+    inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
+
+    /**
+     * <p>Indicates that the fleet uses a single instance type to launch all Spot
+     * Instances in the fleet.</p>
+     */
+    inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
+
+    /**
+     * <p>Indicates that the fleet uses a single instance type to launch all Spot
+     * Instances in the fleet.</p>
+     */
+    inline SpotOptionsRequest& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum
+     * target capacity is not reached, the fleet launches no instances.</p>
+     */
+    inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
+
+    /**
+     * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum
+     * target capacity is not reached, the fleet launches no instances.</p>
+     */
+    inline void SetMinTargetCapacity(int value) { m_minTargetCapacityHasBeenSet = true; m_minTargetCapacity = value; }
+
+    /**
+     * <p>The minimum target capacity for Spot Instances in the fleet. If the minimum
+     * target capacity is not reached, the fleet launches no instances.</p>
+     */
+    inline SpotOptionsRequest& WithMinTargetCapacity(int value) { SetMinTargetCapacity(value); return *this;}
+
   private:
 
     SpotAllocationStrategy m_allocationStrategy;
@@ -150,6 +188,12 @@ namespace Model
 
     int m_instancePoolsToUseCount;
     bool m_instancePoolsToUseCountHasBeenSet;
+
+    bool m_singleInstanceType;
+    bool m_singleInstanceTypeHasBeenSet;
+
+    int m_minTargetCapacity;
+    bool m_minTargetCapacityHasBeenSet;
   };
 
 } // namespace Model

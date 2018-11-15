@@ -49,37 +49,51 @@ namespace Model
   public:
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A filter used to scope the tags to return.</p>
+     * <p>One or more filters to scope the tags to return. The maximum number of
+     * filters per filter type (for example, <code>auto-scaling-group</code>) is
+     * 1000.</p>
      */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

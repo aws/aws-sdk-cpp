@@ -247,19 +247,79 @@ namespace Model
     inline Channel& WithRecordWrapperType(RecordWrapper&& value) { SetRecordWrapperType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>(Optional) The input mode to use for the data channel in a training job. If
+     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
+     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * request when you have a channel that needs a different input mode from the
+     * training job's general setting. To download the data from Amazon Simple Storage
+     * Service (Amazon S3) to the provisioned ML storage volume, and mount the
+     * directory to a Docker volume, use <code>File</code> input mode. To stream data
+     * directly from Amazon S3 to the container, choose <code>Pipe</code> input
+     * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
+     * input model.</p>
+     */
     inline const TrainingInputMode& GetInputMode() const{ return m_inputMode; }
 
-    
+    /**
+     * <p>(Optional) The input mode to use for the data channel in a training job. If
+     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
+     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * request when you have a channel that needs a different input mode from the
+     * training job's general setting. To download the data from Amazon Simple Storage
+     * Service (Amazon S3) to the provisioned ML storage volume, and mount the
+     * directory to a Docker volume, use <code>File</code> input mode. To stream data
+     * directly from Amazon S3 to the container, choose <code>Pipe</code> input
+     * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
+     * input model.</p>
+     */
     inline void SetInputMode(const TrainingInputMode& value) { m_inputModeHasBeenSet = true; m_inputMode = value; }
 
-    
+    /**
+     * <p>(Optional) The input mode to use for the data channel in a training job. If
+     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
+     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * request when you have a channel that needs a different input mode from the
+     * training job's general setting. To download the data from Amazon Simple Storage
+     * Service (Amazon S3) to the provisioned ML storage volume, and mount the
+     * directory to a Docker volume, use <code>File</code> input mode. To stream data
+     * directly from Amazon S3 to the container, choose <code>Pipe</code> input
+     * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
+     * input model.</p>
+     */
     inline void SetInputMode(TrainingInputMode&& value) { m_inputModeHasBeenSet = true; m_inputMode = std::move(value); }
 
-    
+    /**
+     * <p>(Optional) The input mode to use for the data channel in a training job. If
+     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
+     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * request when you have a channel that needs a different input mode from the
+     * training job's general setting. To download the data from Amazon Simple Storage
+     * Service (Amazon S3) to the provisioned ML storage volume, and mount the
+     * directory to a Docker volume, use <code>File</code> input mode. To stream data
+     * directly from Amazon S3 to the container, choose <code>Pipe</code> input
+     * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
+     * input model.</p>
+     */
     inline Channel& WithInputMode(const TrainingInputMode& value) { SetInputMode(value); return *this;}
 
-    
+    /**
+     * <p>(Optional) The input mode to use for the data channel in a training job. If
+     * you don't set a value for <code>InputMode</code>, Amazon SageMaker uses the
+     * value set for <code>TrainingInputMode</code>. Use this parameter to override the
+     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * request when you have a channel that needs a different input mode from the
+     * training job's general setting. To download the data from Amazon Simple Storage
+     * Service (Amazon S3) to the provisioned ML storage volume, and mount the
+     * directory to a Docker volume, use <code>File</code> input mode. To stream data
+     * directly from Amazon S3 to the container, choose <code>Pipe</code> input
+     * mode.</p> <p>To use a model for incremental training, choose <code>File</code>
+     * input model.</p>
+     */
     inline Channel& WithInputMode(TrainingInputMode&& value) { SetInputMode(std::move(value)); return *this;}
 
   private:

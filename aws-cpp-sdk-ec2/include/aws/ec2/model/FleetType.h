@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     request,
-    maintain
+    maintain,
+    instant
   };
 
 namespace FleetTypeMapper

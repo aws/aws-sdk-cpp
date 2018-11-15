@@ -127,56 +127,56 @@ namespace Model
 
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(const Aws::String& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = value; }
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(Aws::String&& value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition = std::move(value); }
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline void SetLifecycleTransition(const char* value) { m_lifecycleTransitionHasBeenSet = true; m_lifecycleTransition.assign(value); }
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline LifecycleHook& WithLifecycleTransition(const Aws::String& value) { SetLifecycleTransition(value); return *this;}
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline LifecycleHook& WithLifecycleTransition(Aws::String&& value) { SetLifecycleTransition(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the EC2 instance to which you want to attach the lifecycle hook.
-     * The following are possible values:</p> <ul> <li>
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
      * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */

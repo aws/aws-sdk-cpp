@@ -18,6 +18,7 @@
 #include <aws/servicecatalog/ServiceCatalogRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog/model/ProvisioningPreferences.h>
 #include <aws/servicecatalog/model/ProvisioningParameter.h>
 #include <aws/servicecatalog/model/Tag.h>
 #include <utility>
@@ -307,6 +308,37 @@ namespace Model
 
 
     /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
+    inline const ProvisioningPreferences& GetProvisioningPreferences() const{ return m_provisioningPreferences; }
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
+    inline void SetProvisioningPreferences(const ProvisioningPreferences& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = value; }
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
+    inline void SetProvisioningPreferences(ProvisioningPreferences&& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = std::move(value); }
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
+    inline ProvisionProductRequest& WithProvisioningPreferences(const ProvisioningPreferences& value) { SetProvisioningPreferences(value); return *this;}
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
+    inline ProvisionProductRequest& WithProvisioningPreferences(ProvisioningPreferences&& value) { SetProvisioningPreferences(std::move(value)); return *this;}
+
+
+    /**
      * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -445,6 +477,9 @@ namespace Model
 
     Aws::Vector<ProvisioningParameter> m_provisioningParameters;
     bool m_provisioningParametersHasBeenSet;
+
+    ProvisioningPreferences m_provisioningPreferences;
+    bool m_provisioningPreferencesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

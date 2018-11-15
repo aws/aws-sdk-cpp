@@ -53,6 +53,28 @@ CreateFleetResponse& CreateFleetResponse::operator =(const Aws::AmazonWebService
     {
       m_fleetId = StringUtils::Trim(fleetIdNode.GetText().c_str());
     }
+    XmlNode errorsNode = resultNode.FirstChild("errorSet");
+    if(!errorsNode.IsNull())
+    {
+      XmlNode errorsMember = errorsNode.FirstChild("item");
+      while(!errorsMember.IsNull())
+      {
+        m_errors.push_back(errorsMember);
+        errorsMember = errorsMember.NextNode("item");
+      }
+
+    }
+    XmlNode instancesNode = resultNode.FirstChild("fleetInstanceSet");
+    if(!instancesNode.IsNull())
+    {
+      XmlNode instancesMember = instancesNode.FirstChild("item");
+      while(!instancesMember.IsNull())
+      {
+        m_instances.push_back(instancesMember);
+        instancesMember = instancesMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

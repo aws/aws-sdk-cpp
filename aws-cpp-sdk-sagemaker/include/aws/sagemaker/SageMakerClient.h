@@ -541,14 +541,24 @@ namespace Model
         virtual void CreateEndpointConfigAsync(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a hyperparameter tuning job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the
+         * best version of a model by running many training jobs on your dataset using the
+         * algorithm you choose and values for hyperparameters within ranges that you
+         * specify. It then chooses the hyperparameter values that result in a model that
+         * performs the best, as measured by an objective metric that you
+         * choose.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateHyperParameterTuningJobOutcome CreateHyperParameterTuningJob(const Model::CreateHyperParameterTuningJobRequest& request) const;
 
         /**
-         * <p>Starts a hyperparameter tuning job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the
+         * best version of a model by running many training jobs on your dataset using the
+         * algorithm you choose and values for hyperparameters within ranges that you
+         * specify. It then chooses the hyperparameter values that result in a model that
+         * performs the best, as measured by an objective metric that you
+         * choose.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          *
@@ -557,7 +567,12 @@ namespace Model
         virtual Model::CreateHyperParameterTuningJobOutcomeCallable CreateHyperParameterTuningJobCallable(const Model::CreateHyperParameterTuningJobRequest& request) const;
 
         /**
-         * <p>Starts a hyperparameter tuning job.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the
+         * best version of a model by running many training jobs on your dataset using the
+         * algorithm you choose and values for hyperparameters within ranges that you
+         * specify. It then chooses the hyperparameter values that result in a model that
+         * performs the best, as measured by an objective metric that you
+         * choose.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHyperParameterTuningJob">AWS
          * API Reference</a></p>
          *
@@ -837,7 +852,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
@@ -858,7 +873,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
@@ -881,7 +896,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>

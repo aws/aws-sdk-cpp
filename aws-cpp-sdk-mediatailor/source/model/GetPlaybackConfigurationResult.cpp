@@ -50,6 +50,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("DashConfiguration"))
+  {
+    m_dashConfiguration = jsonValue.GetObject("DashConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("HlsConfiguration"))
   {
     m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
@@ -77,6 +83,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
   if(jsonValue.ValueExists("SlateAdUrl"))
   {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");
+
+  }
+
+  if(jsonValue.ValueExists("TranscodeProfileName"))
+  {
+    m_transcodeProfileName = jsonValue.GetString("TranscodeProfileName");
 
   }
 

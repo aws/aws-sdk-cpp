@@ -47,19 +47,19 @@ namespace Model
 
 
     /**
-     * <p>The number of completed training jobs launched by a hyperparameter tuning
+     * <p>The number of completed training jobs launched by the hyperparameter tuning
      * job.</p>
      */
     inline int GetCompleted() const{ return m_completed; }
 
     /**
-     * <p>The number of completed training jobs launched by a hyperparameter tuning
+     * <p>The number of completed training jobs launched by the hyperparameter tuning
      * job.</p>
      */
     inline void SetCompleted(int value) { m_completedHasBeenSet = true; m_completed = value; }
 
     /**
-     * <p>The number of completed training jobs launched by a hyperparameter tuning
+     * <p>The number of completed training jobs launched by the hyperparameter tuning
      * job.</p>
      */
     inline TrainingJobStatusCounters& WithCompleted(int value) { SetCompleted(value); return *this;}

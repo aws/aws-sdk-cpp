@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/resource-groups/model/ResourceIdentifier.h>
+#include <aws/resource-groups/model/QueryError.h>
 #include <utility>
 
 namespace Aws
@@ -129,11 +130,70 @@ namespace Model
      */
     inline ListGroupResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline const Aws::Vector<QueryError>& GetQueryErrors() const{ return m_queryErrors; }
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline void SetQueryErrors(const Aws::Vector<QueryError>& value) { m_queryErrors = value; }
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline void SetQueryErrors(Aws::Vector<QueryError>&& value) { m_queryErrors = std::move(value); }
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline ListGroupResourcesResult& WithQueryErrors(const Aws::Vector<QueryError>& value) { SetQueryErrors(value); return *this;}
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline ListGroupResourcesResult& WithQueryErrors(Aws::Vector<QueryError>&& value) { SetQueryErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline ListGroupResourcesResult& AddQueryErrors(const QueryError& value) { m_queryErrors.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>QueryError</code> objects. Each error is an object that
+     * contains <code>ErrorCode</code> and <code>Message</code> structures. Possible
+     * values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code>
+     * and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
+     */
+    inline ListGroupResourcesResult& AddQueryErrors(QueryError&& value) { m_queryErrors.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ResourceIdentifier> m_resourceIdentifiers;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<QueryError> m_queryErrors;
   };
 
 } // namespace Model

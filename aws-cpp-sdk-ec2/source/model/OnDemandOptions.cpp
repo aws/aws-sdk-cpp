@@ -32,13 +32,21 @@ namespace Model
 
 OnDemandOptions::OnDemandOptions() : 
     m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_singleInstanceType(false),
+    m_singleInstanceTypeHasBeenSet(false),
+    m_minTargetCapacity(0),
+    m_minTargetCapacityHasBeenSet(false)
 {
 }
 
 OnDemandOptions::OnDemandOptions(const XmlNode& xmlNode) : 
     m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
+    m_allocationStrategyHasBeenSet(false),
+    m_singleInstanceType(false),
+    m_singleInstanceTypeHasBeenSet(false),
+    m_minTargetCapacity(0),
+    m_minTargetCapacityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +63,18 @@ OnDemandOptions& OnDemandOptions::operator =(const XmlNode& xmlNode)
       m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(allocationStrategyNode.GetText().c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
     }
+    XmlNode singleInstanceTypeNode = resultNode.FirstChild("singleInstanceType");
+    if(!singleInstanceTypeNode.IsNull())
+    {
+      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(singleInstanceTypeNode.GetText().c_str()).c_str());
+      m_singleInstanceTypeHasBeenSet = true;
+    }
+    XmlNode minTargetCapacityNode = resultNode.FirstChild("minTargetCapacity");
+    if(!minTargetCapacityNode.IsNull())
+    {
+      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minTargetCapacityNode.GetText().c_str()).c_str());
+      m_minTargetCapacityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -67,6 +87,16 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
   }
 
+  if(m_singleInstanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
+  }
+
+  if(m_minTargetCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
+  }
+
 }
 
 void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -74,6 +104,14 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_allocationStrategyHasBeenSet)
   {
       oStream << location << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
+  }
+  if(m_singleInstanceTypeHasBeenSet)
+  {
+      oStream << location << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
+  }
+  if(m_minTargetCapacityHasBeenSet)
+  {
+      oStream << location << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
   }
 }
 

@@ -246,6 +246,56 @@ namespace Model
 
 
     /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline const Aws::String& GetTranscodeProfileName() const{ return m_transcodeProfileName; }
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline void SetTranscodeProfileName(const Aws::String& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = value; }
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline void SetTranscodeProfileName(Aws::String&& value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName = std::move(value); }
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline void SetTranscodeProfileName(const char* value) { m_transcodeProfileNameHasBeenSet = true; m_transcodeProfileName.assign(value); }
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(const Aws::String& value) { SetTranscodeProfileName(value); return *this;}
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(Aws::String&& value) { SetTranscodeProfileName(std::move(value)); return *this;}
+
+    /**
+     * <p>Associate this playbackConfiguration with a custom transcode profile,
+     * overriding MediaTailor's dynamic transcoding defaults. Do not include this field
+     * if you have not setup custom profiles with the MediaTailor service team. </p>
+     */
+    inline PutPlaybackConfigurationRequest& WithTranscodeProfileName(const char* value) { SetTranscodeProfileName(value); return *this;}
+
+
+    /**
      * <p>The URL prefix for the master playlist for the stream, minus the asset ID.
      * The maximum length is 512 characters.</p>
      */
@@ -300,6 +350,9 @@ namespace Model
 
     Aws::String m_slateAdUrl;
     bool m_slateAdUrlHasBeenSet;
+
+    Aws::String m_transcodeProfileName;
+    bool m_transcodeProfileNameHasBeenSet;
 
     Aws::String m_videoContentSourceUrl;
     bool m_videoContentSourceUrlHasBeenSet;

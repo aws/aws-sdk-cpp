@@ -83,21 +83,21 @@ namespace Model
 
 
     /**
-     * <p>Specifies that the group will be deleted along with all instances associated
+     * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
      * parameter also deletes any lifecycle actions associated with the group.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
 
     /**
-     * <p>Specifies that the group will be deleted along with all instances associated
+     * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
      * parameter also deletes any lifecycle actions associated with the group.</p>
      */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
 
     /**
-     * <p>Specifies that the group will be deleted along with all instances associated
+     * <p>Specifies that the group is to be deleted along with all instances associated
      * with the group, without waiting for all instances to be terminated. This
      * parameter also deletes any lifecycle actions associated with the group.</p>
      */

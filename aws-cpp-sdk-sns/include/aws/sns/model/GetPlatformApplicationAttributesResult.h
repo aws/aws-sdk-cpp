@@ -52,13 +52,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -66,13 +66,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -80,13 +80,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -94,13 +94,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -108,13 +108,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -122,13 +122,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -136,13 +136,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -150,13 +150,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -164,13 +164,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -178,13 +178,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -192,13 +192,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */
@@ -206,13 +206,13 @@ namespace Model
 
     /**
      * <p>Attributes include the following:</p> <ul> <li> <p>
-     * <code>EventEndpointCreated</code> -- Topic ARN to which EndpointCreated event
+     * <code>EventEndpointCreated</code> – Topic ARN to which EndpointCreated event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointDeleted</code> -- Topic ARN to which EndpointDeleted event
+     * <code>EventEndpointDeleted</code> – Topic ARN to which EndpointDeleted event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventEndpointUpdated</code> -- Topic ARN to which EndpointUpdate event
+     * <code>EventEndpointUpdated</code> – Topic ARN to which EndpointUpdate event
      * notifications should be sent.</p> </li> <li> <p>
-     * <code>EventDeliveryFailure</code> -- Topic ARN to which DeliveryFailure event
+     * <code>EventDeliveryFailure</code> – Topic ARN to which DeliveryFailure event
      * notifications should be sent upon Direct Publish delivery failure (permanent) to
      * one of the application's endpoints.</p> </li> </ul>
      */

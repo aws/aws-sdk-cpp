@@ -39,7 +39,8 @@ FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides() :
     m_weightedCapacity(0.0),
     m_weightedCapacityHasBeenSet(false),
     m_priority(0.0),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_placementHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ FleetLaunchTemplateOverrides::FleetLaunchTemplateOverrides(const XmlNode& xmlNod
     m_weightedCapacity(0.0),
     m_weightedCapacityHasBeenSet(false),
     m_priority(0.0),
-    m_priorityHasBeenSet(false)
+    m_priorityHasBeenSet(false),
+    m_placementHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -99,6 +101,12 @@ FleetLaunchTemplateOverrides& FleetLaunchTemplateOverrides::operator =(const Xml
       m_priority = StringUtils::ConvertToDouble(StringUtils::Trim(priorityNode.GetText().c_str()).c_str());
       m_priorityHasBeenSet = true;
     }
+    XmlNode placementNode = resultNode.FirstChild("placement");
+    if(!placementNode.IsNull())
+    {
+      m_placement = placementNode;
+      m_placementHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -136,6 +144,13 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
         oStream << location << index << locationValue << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
   }
 
+  if(m_placementHasBeenSet)
+  {
+      Aws::StringStream placementLocationAndMemberSs;
+      placementLocationAndMemberSs << location << index << locationValue << ".Placement";
+      m_placement.OutputToStream(oStream, placementLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -163,6 +178,12 @@ void FleetLaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const c
   if(m_priorityHasBeenSet)
   {
         oStream << location << ".Priority=" << StringUtils::URLEncode(m_priority) << "&";
+  }
+  if(m_placementHasBeenSet)
+  {
+      Aws::String placementLocationAndMember(location);
+      placementLocationAndMember += ".Placement";
+      m_placement.OutputToStream(oStream, placementLocationAndMember.c_str());
   }
 }
 

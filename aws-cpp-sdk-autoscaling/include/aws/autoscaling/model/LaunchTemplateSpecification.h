@@ -34,7 +34,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes a launch template.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a launch template and the launch template version.</p> <p>The
+   * launch template that is specified must be configured for use with an Auto
+   * Scaling group. For more information, see <a
+   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html">Creating
+   * a Launch Template for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
+   * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplateSpecification">AWS
    * API Reference</a></p>
    */

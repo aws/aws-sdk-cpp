@@ -53,6 +53,15 @@ SearchResourcesResult& SearchResourcesResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("QueryErrors"))
+  {
+    Array<JsonView> queryErrorsJsonList = jsonValue.GetArray("QueryErrors");
+    for(unsigned queryErrorsIndex = 0; queryErrorsIndex < queryErrorsJsonList.GetLength(); ++queryErrorsIndex)
+    {
+      m_queryErrors.push_back(queryErrorsJsonList[queryErrorsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

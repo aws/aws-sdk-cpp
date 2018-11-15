@@ -32,6 +32,7 @@ namespace Aws
 
         static const int request_HASH = HashingUtils::HashString("request");
         static const int maintain_HASH = HashingUtils::HashString("maintain");
+        static const int instant_HASH = HashingUtils::HashString("instant");
 
 
         FleetType GetFleetTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == maintain_HASH)
           {
             return FleetType::maintain;
+          }
+          else if (hashCode == instant_HASH)
+          {
+            return FleetType::instant;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "request";
           case FleetType::maintain:
             return "maintain";
+          case FleetType::instant:
+            return "instant";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

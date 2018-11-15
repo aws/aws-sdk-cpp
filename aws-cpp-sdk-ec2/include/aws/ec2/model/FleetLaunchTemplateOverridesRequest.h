@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Placement.h>
 #include <utility>
 
 namespace Aws
@@ -237,6 +238,32 @@ namespace Model
      */
     inline FleetLaunchTemplateOverridesRequest& WithPriority(double value) { SetPriority(value); return *this;}
 
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline const Placement& GetPlacement() const{ return m_placement; }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
+
+    /**
+     * <p>The location where the instance launched, if applicable.</p>
+     */
+    inline FleetLaunchTemplateOverridesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -256,6 +283,9 @@ namespace Model
 
     double m_priority;
     bool m_priorityHasBeenSet;
+
+    Placement m_placement;
+    bool m_placementHasBeenSet;
   };
 
 } // namespace Model

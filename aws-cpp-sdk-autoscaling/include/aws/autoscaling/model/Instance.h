@@ -124,32 +124,32 @@ namespace Model
 
 
     /**
-     * <p>A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.</p>
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
      */
     inline const LifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
-     * <p>A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.</p>
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
      */
     inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
-     * <p>A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.</p>
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
      */
     inline void SetLifecycleState(LifecycleState&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
-     * <p>A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.</p>
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
      */
     inline Instance& WithLifecycleState(const LifecycleState& value) { SetLifecycleState(value); return *this;}
 
     /**
-     * <p>A description of the current lifecycle state. Note that the
-     * <code>Quarantined</code> state is not used.</p>
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
      */
     inline Instance& WithLifecycleState(LifecycleState&& value) { SetLifecycleState(std::move(value)); return *this;}
 
@@ -157,56 +157,56 @@ namespace Model
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline Instance& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline Instance& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
      * instance is healthy and should remain in service. "Unhealthy" means that the
-     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-     * it.</p>
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
      */
     inline Instance& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
 

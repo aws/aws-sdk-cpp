@@ -86,51 +86,93 @@ namespace Model
 
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline SetTopicAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline SetTopicAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the attribute you want to set. Only a subset of the topic's
-     * attributes are mutable.</p> <p>Valid values: <code>Policy</code> |
-     * <code>DisplayName</code> | <code>DeliveryPolicy</code> </p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
      */
     inline SetTopicAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

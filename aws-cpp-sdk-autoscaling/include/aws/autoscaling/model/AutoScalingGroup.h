@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/autoscaling/model/LaunchTemplateSpecification.h>
+#include <aws/autoscaling/model/MixedInstancesPolicy.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/autoscaling/model/Instance.h>
@@ -188,6 +189,32 @@ namespace Model
      * <p>The launch template for the group.</p>
      */
     inline AutoScalingGroup& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The mixed instances policy for the group. </p>
+     */
+    inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
+
+    /**
+     * <p>The mixed instances policy for the group. </p>
+     */
+    inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
+
+    /**
+     * <p>The mixed instances policy for the group. </p>
+     */
+    inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
+
+    /**
+     * <p>The mixed instances policy for the group. </p>
+     */
+    inline AutoScalingGroup& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
+
+    /**
+     * <p>The mixed instances policy for the group. </p>
+     */
+    inline AutoScalingGroup& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
 
     /**
@@ -549,56 +576,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the placement group into which you'll launch your instances, if
-     * any. For more information, see <a
+     * <p>The name of the placement group into which to launch your instances, if any.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
      * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
@@ -892,6 +919,9 @@ namespace Model
 
     LaunchTemplateSpecification m_launchTemplate;
     bool m_launchTemplateHasBeenSet;
+
+    MixedInstancesPolicy m_mixedInstancesPolicy;
+    bool m_mixedInstancesPolicyHasBeenSet;
 
     int m_minSize;
     bool m_minSizeHasBeenSet;

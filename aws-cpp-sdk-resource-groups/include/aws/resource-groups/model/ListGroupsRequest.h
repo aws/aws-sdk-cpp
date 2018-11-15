@@ -52,8 +52,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -61,8 +61,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -70,8 +70,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -79,8 +79,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */
@@ -106,8 +106,8 @@ namespace Model
 
     /**
      * <p>Filters, formatted as GroupFilter objects, that you want to apply to a
-     * ListGroups operation.</p> <ul> <li> <p> <code>group-type</code> - Filter groups
-     * by resource type. Specify up to five group types in the format
+     * ListGroups operation.</p> <ul> <li> <p> <code>resource-type</code> - Filter
+     * groups by resource type. Specify up to five resource types in the format
      * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or
      * AWS::S3::Bucket.</p> </li> </ul>
      */

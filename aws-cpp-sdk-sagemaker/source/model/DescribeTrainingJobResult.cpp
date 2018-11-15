@@ -171,6 +171,15 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("FinalMetricDataList"))
+  {
+    Array<JsonView> finalMetricDataListJsonList = jsonValue.GetArray("FinalMetricDataList");
+    for(unsigned finalMetricDataListIndex = 0; finalMetricDataListIndex < finalMetricDataListJsonList.GetLength(); ++finalMetricDataListIndex)
+    {
+      m_finalMetricDataList.push_back(finalMetricDataListJsonList[finalMetricDataListIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

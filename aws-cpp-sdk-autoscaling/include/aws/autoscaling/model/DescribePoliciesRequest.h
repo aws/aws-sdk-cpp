@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
-     * are described. If an group name is provided, the results are limited to that
+     * are described. If a group name is provided, the results are limited to that
      * group. This list is limited to 50 items. If you specify an unknown policy name,
      * it is ignored with no error.</p>
      */

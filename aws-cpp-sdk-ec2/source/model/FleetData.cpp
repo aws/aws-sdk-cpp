@@ -56,7 +56,9 @@ FleetData::FleetData() :
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_spotOptionsHasBeenSet(false),
     m_onDemandOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_errorsHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
 }
 
@@ -86,7 +88,9 @@ FleetData::FleetData(const XmlNode& xmlNode) :
     m_replaceUnhealthyInstancesHasBeenSet(false),
     m_spotOptionsHasBeenSet(false),
     m_onDemandOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_errorsHasBeenSet(false),
+    m_instancesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -217,6 +221,30 @@ FleetData& FleetData::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode errorsNode = resultNode.FirstChild("errorSet");
+    if(!errorsNode.IsNull())
+    {
+      XmlNode errorsMember = errorsNode.FirstChild("item");
+      while(!errorsMember.IsNull())
+      {
+        m_errors.push_back(errorsMember);
+        errorsMember = errorsMember.NextNode("item");
+      }
+
+      m_errorsHasBeenSet = true;
+    }
+    XmlNode instancesNode = resultNode.FirstChild("fleetInstanceSet");
+    if(!instancesNode.IsNull())
+    {
+      XmlNode instancesMember = instancesNode.FirstChild("item");
+      while(!instancesMember.IsNull())
+      {
+        m_instances.push_back(instancesMember);
+        instancesMember = instancesMember.NextNode("item");
+      }
+
+      m_instancesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -332,6 +360,28 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       }
   }
 
+  if(m_errorsHasBeenSet)
+  {
+      unsigned errorsIdx = 1;
+      for(auto& item : m_errors)
+      {
+        Aws::StringStream errorsSs;
+        errorsSs << location << index << locationValue << ".ErrorSet." << errorsIdx++;
+        item.OutputToStream(oStream, errorsSs.str().c_str());
+      }
+  }
+
+  if(m_instancesHasBeenSet)
+  {
+      unsigned instancesIdx = 1;
+      for(auto& item : m_instances)
+      {
+        Aws::StringStream instancesSs;
+        instancesSs << location << index << locationValue << ".FleetInstanceSet." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
+      }
+  }
+
 }
 
 void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -424,6 +474,26 @@ void FleetData::OutputToStream(Aws::OStream& oStream, const char* location) cons
         Aws::StringStream tagsSs;
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+  if(m_errorsHasBeenSet)
+  {
+      unsigned errorsIdx = 1;
+      for(auto& item : m_errors)
+      {
+        Aws::StringStream errorsSs;
+        errorsSs << location <<  ".ErrorSet." << errorsIdx++;
+        item.OutputToStream(oStream, errorsSs.str().c_str());
+      }
+  }
+  if(m_instancesHasBeenSet)
+  {
+      unsigned instancesIdx = 1;
+      for(auto& item : m_instances)
+      {
+        Aws::StringStream instancesSs;
+        instancesSs << location <<  ".FleetInstanceSet." << instancesIdx++;
+        item.OutputToStream(oStream, instancesSs.str().c_str());
       }
   }
 }

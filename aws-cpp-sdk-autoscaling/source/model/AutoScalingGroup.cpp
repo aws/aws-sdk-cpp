@@ -35,6 +35,7 @@ AutoScalingGroup::AutoScalingGroup() :
     m_autoScalingGroupARNHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -69,6 +70,7 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_autoScalingGroupARNHasBeenSet(false),
     m_launchConfigurationNameHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
+    m_mixedInstancesPolicyHasBeenSet(false),
     m_minSize(0),
     m_minSizeHasBeenSet(false),
     m_maxSize(0),
@@ -128,6 +130,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
     {
       m_launchTemplate = launchTemplateNode;
       m_launchTemplateHasBeenSet = true;
+    }
+    XmlNode mixedInstancesPolicyNode = resultNode.FirstChild("MixedInstancesPolicy");
+    if(!mixedInstancesPolicyNode.IsNull())
+    {
+      m_mixedInstancesPolicy = mixedInstancesPolicyNode;
+      m_mixedInstancesPolicyHasBeenSet = true;
     }
     XmlNode minSizeNode = resultNode.FirstChild("MinSize");
     if(!minSizeNode.IsNull())
@@ -326,6 +334,13 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMemberSs.str().c_str());
   }
 
+  if(m_mixedInstancesPolicyHasBeenSet)
+  {
+      Aws::StringStream mixedInstancesPolicyLocationAndMemberSs;
+      mixedInstancesPolicyLocationAndMemberSs << location << index << locationValue << ".MixedInstancesPolicy";
+      m_mixedInstancesPolicy.OutputToStream(oStream, mixedInstancesPolicyLocationAndMemberSs.str().c_str());
+  }
+
   if(m_minSizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinSize=" << m_minSize << "&";
@@ -487,6 +502,12 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String launchTemplateLocationAndMember(location);
       launchTemplateLocationAndMember += ".LaunchTemplate";
       m_launchTemplate.OutputToStream(oStream, launchTemplateLocationAndMember.c_str());
+  }
+  if(m_mixedInstancesPolicyHasBeenSet)
+  {
+      Aws::String mixedInstancesPolicyLocationAndMember(location);
+      mixedInstancesPolicyLocationAndMember += ".MixedInstancesPolicy";
+      m_mixedInstancesPolicy.OutputToStream(oStream, mixedInstancesPolicyLocationAndMember.c_str());
   }
   if(m_minSizeHasBeenSet)
   {

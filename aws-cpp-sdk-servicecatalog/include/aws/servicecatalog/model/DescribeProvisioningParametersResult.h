@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/servicecatalog/ServiceCatalog_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog/model/ProvisioningArtifactPreferences.h>
 #include <aws/servicecatalog/model/ProvisioningArtifactParameter.h>
 #include <aws/servicecatalog/model/ConstraintSummary.h>
 #include <aws/servicecatalog/model/UsageInstruction.h>
@@ -203,6 +204,37 @@ namespace Model
      */
     inline DescribeProvisioningParametersResult& AddTagOptions(TagOptionSummary&& value) { m_tagOptions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that contains information about preferences, such as regions and
+     * accounts, for the provisioning artifact.</p>
+     */
+    inline const ProvisioningArtifactPreferences& GetProvisioningArtifactPreferences() const{ return m_provisioningArtifactPreferences; }
+
+    /**
+     * <p>An object that contains information about preferences, such as regions and
+     * accounts, for the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactPreferences(const ProvisioningArtifactPreferences& value) { m_provisioningArtifactPreferences = value; }
+
+    /**
+     * <p>An object that contains information about preferences, such as regions and
+     * accounts, for the provisioning artifact.</p>
+     */
+    inline void SetProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { m_provisioningArtifactPreferences = std::move(value); }
+
+    /**
+     * <p>An object that contains information about preferences, such as regions and
+     * accounts, for the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(const ProvisioningArtifactPreferences& value) { SetProvisioningArtifactPreferences(value); return *this;}
+
+    /**
+     * <p>An object that contains information about preferences, such as regions and
+     * accounts, for the provisioning artifact.</p>
+     */
+    inline DescribeProvisioningParametersResult& WithProvisioningArtifactPreferences(ProvisioningArtifactPreferences&& value) { SetProvisioningArtifactPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<ProvisioningArtifactParameter> m_provisioningArtifactParameters;
@@ -212,6 +244,8 @@ namespace Model
     Aws::Vector<UsageInstruction> m_usageInstructions;
 
     Aws::Vector<TagOptionSummary> m_tagOptions;
+
+    ProvisioningArtifactPreferences m_provisioningArtifactPreferences;
   };
 
 } // namespace Model

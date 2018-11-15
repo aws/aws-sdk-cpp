@@ -186,8 +186,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -205,8 +205,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -224,8 +224,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -243,8 +243,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -262,8 +262,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -281,8 +281,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -300,8 +300,8 @@ namespace Model
      * <code>modifying</code>).</p> </li> <li> <p>
      * <code>replace-unhealthy-instances</code> - Indicates whether EC2 Fleet should
      * replace unhealthy instances (<code>true</code> | <code>false</code>).</p> </li>
-     * <li> <p> <code>type</code> - The type of request (<code>request</code> |
-     * <code>maintain</code>).</p> </li> </ul>
+     * <li> <p> <code>type</code> - The type of request (<code>instant</code> |
+     * <code>request</code> | <code>maintain</code>).</p> </li> </ul>
      */
     inline DescribeFleetsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -26,7 +26,8 @@ namespace Model
   enum class QueryType
   {
     NOT_SET,
-    TAG_FILTERS_1_0
+    TAG_FILTERS_1_0,
+    CLOUDFORMATION_STACK_1_0
   };
 
 namespace QueryTypeMapper

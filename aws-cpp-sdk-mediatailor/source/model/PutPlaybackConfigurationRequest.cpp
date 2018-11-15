@@ -27,6 +27,7 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_cdnConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
+    m_transcodeProfileNameHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
 }
@@ -56,6 +57,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_slateAdUrlHasBeenSet)
   {
    payload.WithString("SlateAdUrl", m_slateAdUrl);
+
+  }
+
+  if(m_transcodeProfileNameHasBeenSet)
+  {
+   payload.WithString("TranscodeProfileName", m_transcodeProfileName);
 
   }
 

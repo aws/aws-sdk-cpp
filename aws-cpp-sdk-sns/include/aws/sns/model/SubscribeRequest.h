@@ -88,106 +88,106 @@ namespace Model
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
-     * <code>http</code> -- delivery of JSON-encoded message via HTTP POST</p> </li>
-     * <li> <p> <code>https</code> -- delivery of JSON-encoded message via HTTPS
-     * POST</p> </li> <li> <p> <code>email</code> -- delivery of message via SMTP</p>
-     * </li> <li> <p> <code>email-json</code> -- delivery of JSON-encoded message via
-     * SMTP</p> </li> <li> <p> <code>sms</code> -- delivery of message via SMS</p>
-     * </li> <li> <p> <code>sqs</code> -- delivery of JSON-encoded message to an Amazon
-     * SQS queue</p> </li> <li> <p> <code>application</code> -- delivery of
-     * JSON-encoded message to an EndpointArn for a mobile app and device.</p> </li>
-     * <li> <p> <code>lambda</code> -- delivery of JSON-encoded message to an AWS
-     * Lambda function.</p> </li> </ul>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
 
@@ -306,86 +306,182 @@ namespace Model
 
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Assigns attributes to the subscription as a map of key-value pairs. You can
-     * assign any attribute that is supported by the
-     * <code>SetSubscriptionAttributes</code> action.</p>
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

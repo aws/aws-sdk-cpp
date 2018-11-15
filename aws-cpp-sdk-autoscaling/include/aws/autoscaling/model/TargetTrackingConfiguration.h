@@ -125,26 +125,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If
-     * scale in is disabled, the target tracking policy won't remove instances from the
-     * Auto Scaling group. Otherwise, the target tracking policy can remove instances
-     * from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
+     * scaling in is disabled, the target tracking policy doesn't remove instances from
+     * the Auto Scaling group. Otherwise, the target tracking policy can remove
+     * instances from the Auto Scaling group. The default is disabled.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If
-     * scale in is disabled, the target tracking policy won't remove instances from the
-     * Auto Scaling group. Otherwise, the target tracking policy can remove instances
-     * from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
+     * scaling in is disabled, the target tracking policy doesn't remove instances from
+     * the Auto Scaling group. Otherwise, the target tracking policy can remove
+     * instances from the Auto Scaling group. The default is disabled.</p>
      */
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If
-     * scale in is disabled, the target tracking policy won't remove instances from the
-     * Auto Scaling group. Otherwise, the target tracking policy can remove instances
-     * from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
+     * scaling in is disabled, the target tracking policy doesn't remove instances from
+     * the Auto Scaling group. Otherwise, the target tracking policy can remove
+     * instances from the Auto Scaling group. The default is disabled.</p>
      */
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 

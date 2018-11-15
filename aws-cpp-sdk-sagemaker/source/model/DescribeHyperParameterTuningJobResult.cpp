@@ -106,6 +106,18 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
 
   }
 
+  if(jsonValue.ValueExists("OverallBestTrainingJob"))
+  {
+    m_overallBestTrainingJob = jsonValue.GetObject("OverallBestTrainingJob");
+
+  }
+
+  if(jsonValue.ValueExists("WarmStartConfig"))
+  {
+    m_warmStartConfig = jsonValue.GetObject("WarmStartConfig");
+
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");

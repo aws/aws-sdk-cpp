@@ -30,6 +30,7 @@ UpdateProvisionedProductRequest::UpdateProvisionedProductRequest() :
     m_provisioningArtifactIdHasBeenSet(false),
     m_pathIdHasBeenSet(false),
     m_provisioningParametersHasBeenSet(false),
+    m_provisioningPreferencesHasBeenSet(false),
     m_updateToken(Aws::Utils::UUID::RandomUUID()),
     m_updateTokenHasBeenSet(true)
 {
@@ -83,6 +84,12 @@ Aws::String UpdateProvisionedProductRequest::SerializePayload() const
      provisioningParametersJsonList[provisioningParametersIndex].AsObject(m_provisioningParameters[provisioningParametersIndex].Jsonize());
    }
    payload.WithArray("ProvisioningParameters", std::move(provisioningParametersJsonList));
+
+  }
+
+  if(m_provisioningPreferencesHasBeenSet)
+  {
+   payload.WithObject("ProvisioningPreferences", m_provisioningPreferences.Jsonize());
 
   }
 

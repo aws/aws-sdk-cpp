@@ -255,20 +255,20 @@ namespace Model
 
 
     /**
-     * <p>The size, in GB, of the ML storage volume to attach to the notebook
-     * instance.</p>
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The default value is 5 GB.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
     /**
-     * <p>The size, in GB, of the ML storage volume to attach to the notebook
-     * instance.</p>
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The default value is 5 GB.</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
     /**
-     * <p>The size, in GB, of the ML storage volume to attach to the notebook
-     * instance.</p>
+     * <p>The size, in GB, of the ML storage volume to attach to the notebook instance.
+     * The default value is 5 GB.</p>
      */
     inline UpdateNotebookInstanceRequest& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 

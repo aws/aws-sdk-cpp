@@ -36,7 +36,11 @@ SpotOptionsRequest::SpotOptionsRequest() :
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false)
+    m_instancePoolsToUseCountHasBeenSet(false),
+    m_singleInstanceType(false),
+    m_singleInstanceTypeHasBeenSet(false),
+    m_minTargetCapacity(0),
+    m_minTargetCapacityHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ SpotOptionsRequest::SpotOptionsRequest(const XmlNode& xmlNode) :
     m_instanceInterruptionBehavior(SpotInstanceInterruptionBehavior::NOT_SET),
     m_instanceInterruptionBehaviorHasBeenSet(false),
     m_instancePoolsToUseCount(0),
-    m_instancePoolsToUseCountHasBeenSet(false)
+    m_instancePoolsToUseCountHasBeenSet(false),
+    m_singleInstanceType(false),
+    m_singleInstanceTypeHasBeenSet(false),
+    m_minTargetCapacity(0),
+    m_minTargetCapacityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +83,18 @@ SpotOptionsRequest& SpotOptionsRequest::operator =(const XmlNode& xmlNode)
       m_instancePoolsToUseCount = StringUtils::ConvertToInt32(StringUtils::Trim(instancePoolsToUseCountNode.GetText().c_str()).c_str());
       m_instancePoolsToUseCountHasBeenSet = true;
     }
+    XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
+    if(!singleInstanceTypeNode.IsNull())
+    {
+      m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(singleInstanceTypeNode.GetText().c_str()).c_str());
+      m_singleInstanceTypeHasBeenSet = true;
+    }
+    XmlNode minTargetCapacityNode = resultNode.FirstChild("MinTargetCapacity");
+    if(!minTargetCapacityNode.IsNull())
+    {
+      m_minTargetCapacity = StringUtils::ConvertToInt32(StringUtils::Trim(minTargetCapacityNode.GetText().c_str()).c_str());
+      m_minTargetCapacityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -97,6 +117,16 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
       oStream << location << index << locationValue << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
   }
 
+  if(m_singleInstanceTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
+  }
+
+  if(m_minTargetCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
+  }
+
 }
 
 void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -112,6 +142,14 @@ void SpotOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* locat
   if(m_instancePoolsToUseCountHasBeenSet)
   {
       oStream << location << ".InstancePoolsToUseCount=" << m_instancePoolsToUseCount << "&";
+  }
+  if(m_singleInstanceTypeHasBeenSet)
+  {
+      oStream << location << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
+  }
+  if(m_minTargetCapacityHasBeenSet)
+  {
+      oStream << location << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
   }
 }
 

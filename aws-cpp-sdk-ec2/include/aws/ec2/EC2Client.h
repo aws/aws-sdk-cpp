@@ -7083,14 +7083,14 @@ namespace Model
         virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *
@@ -7099,7 +7099,7 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your EC2 Fleet.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes one or more of your EC2 Fleets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
          *

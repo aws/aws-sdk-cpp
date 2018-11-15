@@ -50,62 +50,172 @@ namespace Model
 
 
     /**
-     * <p>The type of the query. The valid value in this release is
-     * <code>TAG_FILTERS_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A
-     * JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API GetResources
-     * operation. When more than one element is present, only resources that match all
-     * filters are part of the result. If a filter specifies more than one value for a
-     * key, a resource matches the filter if its tag value matches any of the specified
-     * values.</p>
+     * <p>The type of the query. The valid values in this release are
+     * <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p>
+     * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a
+     * collection of simple tag filters for resource types and tags, as supported by
+     * the AWS Tagging API <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+     * operation. If you specify more than one tag key, only resources that match all
+     * tag keys, and at least one value of each specified tag key, are returned in your
+     * query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified
+     * values.</p> <p>For example, consider the following sample query for resources
+     * that have two tags, <code>Stage</code> and <code>Version</code>, with two values
+     * each.
+     * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+     * The results of this query might include the following.</p> <ul> <li> <p>An EC2
+     * instance that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
+     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
+     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
+     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
+     * the following results, however. The following EC2 instance does not have all tag
+     * keys specified in the filter, so it is rejected. The RDS database has all of the
+     * tag keys, but no values that match at least one of the specified tag key values
+     * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
+     * database that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
+     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+     * a CloudFormation stack ARN.</p>
      */
     inline const QueryType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the query. The valid value in this release is
-     * <code>TAG_FILTERS_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A
-     * JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API GetResources
-     * operation. When more than one element is present, only resources that match all
-     * filters are part of the result. If a filter specifies more than one value for a
-     * key, a resource matches the filter if its tag value matches any of the specified
-     * values.</p>
+     * <p>The type of the query. The valid values in this release are
+     * <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p>
+     * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a
+     * collection of simple tag filters for resource types and tags, as supported by
+     * the AWS Tagging API <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+     * operation. If you specify more than one tag key, only resources that match all
+     * tag keys, and at least one value of each specified tag key, are returned in your
+     * query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified
+     * values.</p> <p>For example, consider the following sample query for resources
+     * that have two tags, <code>Stage</code> and <code>Version</code>, with two values
+     * each.
+     * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+     * The results of this query might include the following.</p> <ul> <li> <p>An EC2
+     * instance that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
+     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
+     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
+     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
+     * the following results, however. The following EC2 instance does not have all tag
+     * keys specified in the filter, so it is rejected. The RDS database has all of the
+     * tag keys, but no values that match at least one of the specified tag key values
+     * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
+     * database that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
+     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+     * a CloudFormation stack ARN.</p>
      */
     inline void SetType(const QueryType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the query. The valid value in this release is
-     * <code>TAG_FILTERS_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A
-     * JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API GetResources
-     * operation. When more than one element is present, only resources that match all
-     * filters are part of the result. If a filter specifies more than one value for a
-     * key, a resource matches the filter if its tag value matches any of the specified
-     * values.</p>
+     * <p>The type of the query. The valid values in this release are
+     * <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p>
+     * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a
+     * collection of simple tag filters for resource types and tags, as supported by
+     * the AWS Tagging API <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+     * operation. If you specify more than one tag key, only resources that match all
+     * tag keys, and at least one value of each specified tag key, are returned in your
+     * query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified
+     * values.</p> <p>For example, consider the following sample query for resources
+     * that have two tags, <code>Stage</code> and <code>Version</code>, with two values
+     * each.
+     * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+     * The results of this query might include the following.</p> <ul> <li> <p>An EC2
+     * instance that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
+     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
+     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
+     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
+     * the following results, however. The following EC2 instance does not have all tag
+     * keys specified in the filter, so it is rejected. The RDS database has all of the
+     * tag keys, but no values that match at least one of the specified tag key values
+     * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
+     * database that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
+     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+     * a CloudFormation stack ARN.</p>
      */
     inline void SetType(QueryType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the query. The valid value in this release is
-     * <code>TAG_FILTERS_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A
-     * JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API GetResources
-     * operation. When more than one element is present, only resources that match all
-     * filters are part of the result. If a filter specifies more than one value for a
-     * key, a resource matches the filter if its tag value matches any of the specified
-     * values.</p>
+     * <p>The type of the query. The valid values in this release are
+     * <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p>
+     * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a
+     * collection of simple tag filters for resource types and tags, as supported by
+     * the AWS Tagging API <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+     * operation. If you specify more than one tag key, only resources that match all
+     * tag keys, and at least one value of each specified tag key, are returned in your
+     * query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified
+     * values.</p> <p>For example, consider the following sample query for resources
+     * that have two tags, <code>Stage</code> and <code>Version</code>, with two values
+     * each.
+     * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+     * The results of this query might include the following.</p> <ul> <li> <p>An EC2
+     * instance that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
+     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
+     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
+     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
+     * the following results, however. The following EC2 instance does not have all tag
+     * keys specified in the filter, so it is rejected. The RDS database has all of the
+     * tag keys, but no values that match at least one of the specified tag key values
+     * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
+     * database that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
+     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+     * a CloudFormation stack ARN.</p>
      */
     inline ResourceQuery& WithType(const QueryType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the query. The valid value in this release is
-     * <code>TAG_FILTERS_1_0</code>.</p> <p> <i> <code>TAG_FILTERS_1_0:</code> </i> A
-     * JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API GetResources
-     * operation. When more than one element is present, only resources that match all
-     * filters are part of the result. If a filter specifies more than one value for a
-     * key, a resource matches the filter if its tag value matches any of the specified
-     * values.</p>
+     * <p>The type of the query. The valid values in this release are
+     * <code>TAG_FILTERS_1_0</code> and <code>CLOUDFORMATION_STACK_1_0</code>.</p> <p>
+     * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a
+     * collection of simple tag filters for resource types and tags, as supported by
+     * the AWS Tagging API <a
+     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html">GetResources</a>
+     * operation. If you specify more than one tag key, only resources that match all
+     * tag keys, and at least one value of each specified tag key, are returned in your
+     * query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified
+     * values.</p> <p>For example, consider the following sample query for resources
+     * that have two tags, <code>Stage</code> and <code>Version</code>, with two values
+     * each.
+     * (<code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>)
+     * The results of this query might include the following.</p> <ul> <li> <p>An EC2
+     * instance that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>, and
+     * <code>{"Key":"Version","Values":["2"]}</code> </p> </li> <li> <p>An S3 bucket
+     * that has the following two tags: {"Key":"Stage","Values":["Test","Deploy"]}, and
+     * {"Key":"Version","Values":["1"]}</p> </li> </ul> <p>The query would not return
+     * the following results, however. The following EC2 instance does not have all tag
+     * keys specified in the filter, so it is rejected. The RDS database has all of the
+     * tag keys, but no values that match at least one of the specified tag key values
+     * in the filter.</p> <ul> <li> <p>An EC2 instance that has only the following tag:
+     * <code>{"Key":"Stage","Values":["Deploy"]}</code>.</p> </li> <li> <p>An RDS
+     * database that has the following two tags:
+     * <code>{"Key":"Stage","Values":["Archived"]}</code>, and
+     * <code>{"Key":"Version","Values":["4"]}</code> </p> </li> </ul> <p> <i>
+     * <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify
+     * a CloudFormation stack ARN.</p>
      */
     inline ResourceQuery& WithType(QueryType&& value) { SetType(std::move(value)); return *this;}
 

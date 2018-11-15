@@ -31,14 +31,16 @@ namespace Model
 AlgorithmSpecification::AlgorithmSpecification() : 
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false)
+    m_trainingInputModeHasBeenSet(false),
+    m_metricDefinitionsHasBeenSet(false)
 {
 }
 
 AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) : 
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
-    m_trainingInputModeHasBeenSet(false)
+    m_trainingInputModeHasBeenSet(false),
+    m_metricDefinitionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     m_trainingInputModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MetricDefinitions"))
+  {
+    Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("MetricDefinitions");
+    for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
+    {
+      m_metricDefinitions.push_back(metricDefinitionsJsonList[metricDefinitionsIndex].AsObject());
+    }
+    m_metricDefinitionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -75,6 +87,17 @@ JsonValue AlgorithmSpecification::Jsonize() const
   if(m_trainingInputModeHasBeenSet)
   {
    payload.WithString("TrainingInputMode", TrainingInputModeMapper::GetNameForTrainingInputMode(m_trainingInputMode));
+  }
+
+  if(m_metricDefinitionsHasBeenSet)
+  {
+   Array<JsonValue> metricDefinitionsJsonList(m_metricDefinitions.size());
+   for(unsigned metricDefinitionsIndex = 0; metricDefinitionsIndex < metricDefinitionsJsonList.GetLength(); ++metricDefinitionsIndex)
+   {
+     metricDefinitionsJsonList[metricDefinitionsIndex].AsObject(m_metricDefinitions[metricDefinitionsIndex].Jsonize());
+   }
+   payload.WithArray("MetricDefinitions", std::move(metricDefinitionsJsonList));
+
   }
 
   return payload;

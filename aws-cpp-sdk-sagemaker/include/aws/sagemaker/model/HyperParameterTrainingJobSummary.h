@@ -125,6 +125,28 @@ namespace Model
     inline HyperParameterTrainingJobSummary& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
 
 
+    
+    inline const Aws::String& GetTuningJobName() const{ return m_tuningJobName; }
+
+    
+    inline void SetTuningJobName(const Aws::String& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = value; }
+
+    
+    inline void SetTuningJobName(Aws::String&& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = std::move(value); }
+
+    
+    inline void SetTuningJobName(const char* value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName.assign(value); }
+
+    
+    inline HyperParameterTrainingJobSummary& WithTuningJobName(const Aws::String& value) { SetTuningJobName(value); return *this;}
+
+    
+    inline HyperParameterTrainingJobSummary& WithTuningJobName(Aws::String&& value) { SetTuningJobName(std::move(value)); return *this;}
+
+    
+    inline HyperParameterTrainingJobSummary& WithTuningJobName(const char* value) { SetTuningJobName(value); return *this;}
+
+
     /**
      * <p>The date and time that the training job was created.</p>
      */
@@ -429,6 +451,9 @@ namespace Model
 
     Aws::String m_trainingJobArn;
     bool m_trainingJobArnHasBeenSet;
+
+    Aws::String m_tuningJobName;
+    bool m_tuningJobNameHasBeenSet;
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;

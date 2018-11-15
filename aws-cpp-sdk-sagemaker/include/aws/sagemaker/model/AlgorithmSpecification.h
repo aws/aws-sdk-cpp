@@ -17,6 +17,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/TrainingInputMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/MetricDefinition.h>
 #include <utility>
 
 namespace Aws
@@ -222,6 +224,56 @@ namespace Model
      */
     inline AlgorithmSpecification& WithTrainingInputMode(TrainingInputMode&& value) { SetTrainingInputMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const{ return m_metricDefinitions; }
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline void SetMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = value; }
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline void SetMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::move(value); }
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline AlgorithmSpecification& WithMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { SetMetricDefinitions(value); return *this;}
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline AlgorithmSpecification& WithMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { SetMetricDefinitions(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline AlgorithmSpecification& AddMetricDefinitions(const MetricDefinition& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(value); return *this; }
+
+    /**
+     * <p>A list of metric definition objects. Each object specifies the metric name
+     * and regular expressions used to parse algorithm logs. Amazon SageMaker publishes
+     * each metric to Amazon CloudWatch.</p>
+     */
+    inline AlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_trainingImage;
@@ -229,6 +281,9 @@ namespace Model
 
     TrainingInputMode m_trainingInputMode;
     bool m_trainingInputModeHasBeenSet;
+
+    Aws::Vector<MetricDefinition> m_metricDefinitions;
+    bool m_metricDefinitionsHasBeenSet;
   };
 
 } // namespace Model

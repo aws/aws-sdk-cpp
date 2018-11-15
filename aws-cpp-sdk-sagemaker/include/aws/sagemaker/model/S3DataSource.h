@@ -113,7 +113,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -134,7 +134,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -155,7 +155,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -176,7 +176,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -197,7 +197,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -218,7 +218,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role
@@ -239,7 +239,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p> The complete set of <code>s3uris</code> in this
      * manifest constitutes the input data for the channel for this datasource. The
      * object that each <code>s3uris</code> points to must readable by the IAM role

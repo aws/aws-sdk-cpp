@@ -74,6 +74,12 @@ DescribeProvisioningParametersResult& DescribeProvisioningParametersResult::oper
     }
   }
 
+  if(jsonValue.ValueExists("ProvisioningArtifactPreferences"))
+  {
+    m_provisioningArtifactPreferences = jsonValue.GetObject("ProvisioningArtifactPreferences");
+
+  }
+
 
 
   return *this;

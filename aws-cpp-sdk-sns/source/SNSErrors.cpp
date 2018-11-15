@@ -28,27 +28,30 @@ namespace SNS
 namespace SNSErrorMapper
 {
 
-static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
 static const int THROTTLED_HASH = HashingUtils::HashString("Throttled");
 static const int SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubscriptionLimitExceeded");
-static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
-static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
-static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
+static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabled");
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
 static const int TOPIC_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TopicLimitExceeded");
+static const int K_M_S_THROTTLING_HASH = HashingUtils::HashString("KMSThrottling");
 static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AuthorizationError");
+static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameter");
+static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFound");
+static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDenied");
+static const int INVALID_SECURITY_HASH = HashingUtils::HashString("InvalidSecurity");
+static const int ENDPOINT_DISABLED_HASH = HashingUtils::HashString("EndpointDisabled");
+static const int K_M_S_OPT_IN_REQUIRED_HASH = HashingUtils::HashString("KMSOptInRequired");
+static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFound");
+static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidState");
+static const int FILTER_POLICY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FilterPolicyLimitExceeded");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_PARAMETER_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_PARAMETER), false);
-  }
-  else if (hashCode == THROTTLED_HASH)
+  if (hashCode == THROTTLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::THROTTLED), false);
   }
@@ -56,17 +59,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::SUBSCRIPTION_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == ENDPOINT_DISABLED_HASH)
+  else if (hashCode == K_M_S_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::ENDPOINT_DISABLED), false);
-  }
-  else if (hashCode == NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::NOT_FOUND), false);
-  }
-  else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_DISABLED), false);
   }
   else if (hashCode == PLATFORM_APPLICATION_DISABLED_HASH)
   {
@@ -80,9 +75,49 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::TOPIC_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == K_M_S_THROTTLING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_THROTTLING), false);
+  }
   else if (hashCode == AUTHORIZATION_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::AUTHORIZATION_ERROR), false);
+  }
+  else if (hashCode == INVALID_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_PARAMETER), false);
+  }
+  else if (hashCode == K_M_S_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_NOT_FOUND), false);
+  }
+  else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_ACCESS_DENIED), false);
+  }
+  else if (hashCode == INVALID_SECURITY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::INVALID_SECURITY), false);
+  }
+  else if (hashCode == ENDPOINT_DISABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::ENDPOINT_DISABLED), false);
+  }
+  else if (hashCode == K_M_S_OPT_IN_REQUIRED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_OPT_IN_REQUIRED), false);
+  }
+  else if (hashCode == NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == K_M_S_INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::K_M_S_INVALID_STATE), false);
+  }
+  else if (hashCode == FILTER_POLICY_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::FILTER_POLICY_LIMIT_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

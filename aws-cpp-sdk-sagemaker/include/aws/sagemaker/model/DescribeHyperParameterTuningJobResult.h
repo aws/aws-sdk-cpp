@@ -23,6 +23,7 @@
 #include <aws/sagemaker/model/TrainingJobStatusCounters.h>
 #include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 #include <aws/sagemaker/model/HyperParameterTrainingJobSummary.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
 #include <utility>
 
 namespace Aws
@@ -391,6 +392,93 @@ namespace Model
 
 
     /**
+     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
+     * the <a>TrainingJobSummary</a> for the training job with the best objective
+     * metric value of all training jobs launched by this tuning job and all parent
+     * jobs specified for the incremental tuning job.</p>
+     */
+    inline const HyperParameterTrainingJobSummary& GetOverallBestTrainingJob() const{ return m_overallBestTrainingJob; }
+
+    /**
+     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
+     * the <a>TrainingJobSummary</a> for the training job with the best objective
+     * metric value of all training jobs launched by this tuning job and all parent
+     * jobs specified for the incremental tuning job.</p>
+     */
+    inline void SetOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { m_overallBestTrainingJob = value; }
+
+    /**
+     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
+     * the <a>TrainingJobSummary</a> for the training job with the best objective
+     * metric value of all training jobs launched by this tuning job and all parent
+     * jobs specified for the incremental tuning job.</p>
+     */
+    inline void SetOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { m_overallBestTrainingJob = std::move(value); }
+
+    /**
+     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
+     * the <a>TrainingJobSummary</a> for the training job with the best objective
+     * metric value of all training jobs launched by this tuning job and all parent
+     * jobs specified for the incremental tuning job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { SetOverallBestTrainingJob(value); return *this;}
+
+    /**
+     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
+     * the <a>TrainingJobSummary</a> for the training job with the best objective
+     * metric value of all training jobs launched by this tuning job and all parent
+     * jobs specified for the incremental tuning job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { SetOverallBestTrainingJob(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for starting the hyperparameter parameter tuning job using
+     * one or more previous tuning jobs as a starting point. The results of previous
+     * tuning jobs are used to inform which combinations of hyperparameters to search
+     * over in the new tuning job.</p>
+     */
+    inline const HyperParameterTuningJobWarmStartConfig& GetWarmStartConfig() const{ return m_warmStartConfig; }
+
+    /**
+     * <p>The configuration for starting the hyperparameter parameter tuning job using
+     * one or more previous tuning jobs as a starting point. The results of previous
+     * tuning jobs are used to inform which combinations of hyperparameters to search
+     * over in the new tuning job.</p>
+     */
+    inline void SetWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { m_warmStartConfig = value; }
+
+    /**
+     * <p>The configuration for starting the hyperparameter parameter tuning job using
+     * one or more previous tuning jobs as a starting point. The results of previous
+     * tuning jobs are used to inform which combinations of hyperparameters to search
+     * over in the new tuning job.</p>
+     */
+    inline void SetWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { m_warmStartConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for starting the hyperparameter parameter tuning job using
+     * one or more previous tuning jobs as a starting point. The results of previous
+     * tuning jobs are used to inform which combinations of hyperparameters to search
+     * over in the new tuning job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithWarmStartConfig(const HyperParameterTuningJobWarmStartConfig& value) { SetWarmStartConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for starting the hyperparameter parameter tuning job using
+     * one or more previous tuning jobs as a starting point. The results of previous
+     * tuning jobs are used to inform which combinations of hyperparameters to search
+     * over in the new tuning job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithWarmStartConfig(HyperParameterTuningJobWarmStartConfig&& value) { SetWarmStartConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>If the tuning job failed, the reason it failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
@@ -448,6 +536,10 @@ namespace Model
     ObjectiveStatusCounters m_objectiveStatusCounters;
 
     HyperParameterTrainingJobSummary m_bestTrainingJob;
+
+    HyperParameterTrainingJobSummary m_overallBestTrainingJob;
+
+    HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
 
     Aws::String m_failureReason;
   };

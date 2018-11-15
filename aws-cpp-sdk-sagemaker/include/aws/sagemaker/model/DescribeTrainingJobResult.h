@@ -29,6 +29,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
+#include <aws/sagemaker/model/MetricData.h>
 #include <utility>
 
 namespace Aws
@@ -952,6 +953,56 @@ namespace Model
      */
     inline DescribeTrainingJobResult& AddSecondaryStatusTransitions(SecondaryStatusTransition&& value) { m_secondaryStatusTransitions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline const Aws::Vector<MetricData>& GetFinalMetricDataList() const{ return m_finalMetricDataList; }
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline void SetFinalMetricDataList(const Aws::Vector<MetricData>& value) { m_finalMetricDataList = value; }
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline void SetFinalMetricDataList(Aws::Vector<MetricData>&& value) { m_finalMetricDataList = std::move(value); }
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline DescribeTrainingJobResult& WithFinalMetricDataList(const Aws::Vector<MetricData>& value) { SetFinalMetricDataList(value); return *this;}
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline DescribeTrainingJobResult& WithFinalMetricDataList(Aws::Vector<MetricData>&& value) { SetFinalMetricDataList(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline DescribeTrainingJobResult& AddFinalMetricDataList(const MetricData& value) { m_finalMetricDataList.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of <code>MetricData</code> objects that specify the names,
+     * values, and dates and times that the training algorithm emitted to Amazon
+     * CloudWatch.</p>
+     */
+    inline DescribeTrainingJobResult& AddFinalMetricDataList(MetricData&& value) { m_finalMetricDataList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
@@ -993,6 +1044,8 @@ namespace Model
     Aws::Utils::DateTime m_lastModifiedTime;
 
     Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
+
+    Aws::Vector<MetricData> m_finalMetricDataList;
   };
 
 } // namespace Model

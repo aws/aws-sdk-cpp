@@ -16,7 +16,10 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/CreateFleetError.h>
+#include <aws/ec2/model/CreateFleetInstance.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +82,92 @@ namespace Model
     inline CreateFleetResponse& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline const Aws::Vector<CreateFleetError>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetErrors(const Aws::Vector<CreateFleetError>& value) { m_errors = value; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetErrors(Aws::Vector<CreateFleetError>&& value) { m_errors = std::move(value); }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& WithErrors(const Aws::Vector<CreateFleetError>& value) { SetErrors(value); return *this;}
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& WithErrors(Aws::Vector<CreateFleetError>&& value) { SetErrors(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& AddErrors(const CreateFleetError& value) { m_errors.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the instances that could not be launched by the fleet.
+     * Valid only when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& AddErrors(CreateFleetError&& value) { m_errors.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline const Aws::Vector<CreateFleetInstance>& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetInstances(const Aws::Vector<CreateFleetInstance>& value) { m_instances = value; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline void SetInstances(Aws::Vector<CreateFleetInstance>&& value) { m_instances = std::move(value); }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& WithInstances(const Aws::Vector<CreateFleetInstance>& value) { SetInstances(value); return *this;}
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& WithInstances(Aws::Vector<CreateFleetInstance>&& value) { SetInstances(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& AddInstances(const CreateFleetInstance& value) { m_instances.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the instances that were launched by the fleet. Valid only
+     * when <b>Type</b> is set to <code>instant</code>.</p>
+     */
+    inline CreateFleetResponse& AddInstances(CreateFleetInstance&& value) { m_instances.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -97,6 +186,10 @@ namespace Model
   private:
 
     Aws::String m_fleetId;
+
+    Aws::Vector<CreateFleetError> m_errors;
+
+    Aws::Vector<CreateFleetInstance> m_instances;
 
     ResponseMetadata m_responseMetadata;
   };
