@@ -33,6 +33,7 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClient
 import com.amazonaws.util.awsclientgenerator.generators.cpp.r53.Route53CppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
+import com.amazonaws.util.awsclientgenerator.generators.cpp.s3control.S3ControlRestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.budgets.BudgetsCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.waf.WafCppClientGenerator;
@@ -63,6 +64,7 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-lambda", new LambdaRestJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-sqs", new SQSQueryXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-s3", new S3RestXmlCppClientGenerator());
+            SPEC_OVERRIDE_MAPPING.put("cpp-s3control", new S3ControlRestXmlCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-iam", new IamCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-cloudfront", new CloudfrontCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-ec2", new Ec2CppClientGenerator());

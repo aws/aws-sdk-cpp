@@ -5,7 +5,10 @@
 #set($signPayloads = "")
 #set($signPayloadsParam = "")
 #end
-#if($doNotDoubleUrlEncode)
+#if($metadata.signatureVersion.equals("s3") || $metadata.signatureVersion.equals("s3v4"))
+#if(!$signPayloadsOptional)
+#set($signPayloadsParam = ", Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent")
+#end
 #set($doubleEncodeValue = ", false")
 #else
 #set($doubleEncodeValue = "")
@@ -66,7 +69,7 @@ ${className}::~${className}()
 
 void ${className}::init(const ClientConfiguration& config)
 {
-#if($virtualAddressingSupported)
+#if($virtualAddressingSupported || $accountIdInHostnameSupported)
     if(config.endpointOverride.empty())
     {
         m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);

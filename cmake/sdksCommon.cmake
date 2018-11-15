@@ -130,6 +130,7 @@ list(APPEND SDK_TEST_PROJECT_LIST "dynamodb:aws-cpp-sdk-dynamodb-integration-tes
 list(APPEND SDK_TEST_PROJECT_LIST "identity-management:aws-cpp-sdk-identity-management-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "lambda:aws-cpp-sdk-lambda-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "s3:aws-cpp-sdk-s3-integration-tests")
+list(APPEND SDK_TEST_PROJECT_LIST "s3control:aws-cpp-sdk-s3control-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "redshift:aws-cpp-sdk-redshift-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "sqs:aws-cpp-sdk-sqs-integration-tests")
 list(APPEND SDK_TEST_PROJECT_LIST "transfer:aws-cpp-sdk-transfer-tests")
@@ -153,6 +154,7 @@ list(APPEND TEST_DEPENDENCY_LIST "lambda:access-management,cognito-identity,iam,
 list(APPEND TEST_DEPENDENCY_LIST "sqs:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "transfer:s3,core")
 list(APPEND TEST_DEPENDENCY_LIST "s3-encryption:s3,kms,core")
+list(APPEND TEST_DEPENDENCY_LIST "s3control:access-management,cognito-identity,iam,core")
 list(APPEND TEST_DEPENDENCY_LIST "text-to-speech:polly,core")
 
 build_sdk_list()

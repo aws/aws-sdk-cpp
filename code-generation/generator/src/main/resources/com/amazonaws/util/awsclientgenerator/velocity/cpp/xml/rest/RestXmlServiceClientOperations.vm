@@ -5,11 +5,18 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
   Aws::StringStream ss;
 #set($startIndex = 0)
 #set($skipFirst = false)
-#if($virtualAddressingSupported)
+#if($virtualAddressingSupported || $accountIdInHostnameSupported)
 #if($operation.virtualAddressAllowed)
   Aws::Http::URI uri = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
 #set($startIndex = 1)
 #set($skipFirst = true)
+#elseif($operation.hasAccountIdInHostname)
+  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
+  if (endpointString.empty())
+  {
+      return ${operation.name}Outcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
+  }
+  Aws::Http::URI uri = endpointString;
 #else
   Aws::Http::URI uri = ComputeEndpointString();
 #end
@@ -111,7 +118,7 @@ void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
   Aws::StringStream ss;
-#if($virtualAddressingSupported)
+#if($virtualAddressingSupported || $accountIdInHostnameSupported)
   ss << ComputeEndpointString();
 #else
   ss << m_uri << "${operation.http.requestUri}";

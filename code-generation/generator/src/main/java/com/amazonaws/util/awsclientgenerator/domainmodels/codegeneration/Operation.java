@@ -30,6 +30,8 @@ public class Operation {
     private boolean supportsPresigning;
     private boolean virtualAddressAllowed;
     private String virtualAddressMemberName;
+    private boolean hasAccountIdInHostname;
+    private String accountIdMemberName;
     private String authtype;
     private String authorizer;
 }

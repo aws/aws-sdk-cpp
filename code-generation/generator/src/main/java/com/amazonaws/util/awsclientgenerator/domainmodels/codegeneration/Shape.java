@@ -121,6 +121,10 @@ public class Shape {
         return members.values().parallelStream().anyMatch(member -> member.getShape().isBlob());
     }
 
+    public boolean hasAccountIdMembers() {
+        return members.keySet().stream().anyMatch(key -> key.equals("AccountId"));
+    }
+
     public ShapeMember getMemberByLocationName(String locationName) {
         Optional<ShapeMember> found =
                 members.values().parallelStream().filter(member -> member.getLocationName() != null && locationName.equals(member.getLocationName())).findFirst();

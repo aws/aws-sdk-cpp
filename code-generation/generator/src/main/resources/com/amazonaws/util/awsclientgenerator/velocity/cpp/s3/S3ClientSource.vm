@@ -1,5 +1,4 @@
 #set($signPayloadsOptional = true)
-#set($doNotDoubleUrlEncode = true)
 #set($virtualAddressingSupported = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
 \#include<aws/core/utils/HashingUtils.h>

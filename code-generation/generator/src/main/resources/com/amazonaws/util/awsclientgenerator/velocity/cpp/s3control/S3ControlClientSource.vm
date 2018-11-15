@@ -1,0 +1,25 @@
+#set($accountIdInHostnameSupported = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
+\#include<aws/core/utils/HashingUtils.h>
+
+Aws::String ${className}::ComputeEndpointString(const Aws::String& accountId) const
+{
+    Aws::StringStream ss;
+    // The account ID have to follow RFC 1123 2.1(https://tools.ietf.org/html/rfc1123#section-2.1).
+    if(Aws::Utils::IsValidDnsLabel(accountId))
+    {
+        ss << m_scheme << "://" << accountId << "." << m_baseUri;
+        return ss.str();
+    }
+    else
+    {
+        return "";
+    }
+}
+
+Aws::String ${className}::ComputeEndpointString() const
+{
+    Aws::StringStream ss;
+    ss << m_scheme << "://" << m_baseUri;
+    return ss.str();
+}
