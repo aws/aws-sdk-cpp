@@ -80,3 +80,7 @@ aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #nuget
 *.nupkg
+
+#Aws common runtime libs
+.aws-common-runtime-libs-build/
+.aws-common-runtime-libs-install/

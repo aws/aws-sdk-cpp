@@ -49,6 +49,8 @@ public class Shape {
     private boolean signBody;
     private String signerName;
     private String timestampFormat;
+    private boolean eventStream;
+    private boolean event;
     private boolean sensitive;
 
     public boolean isMap() {
@@ -95,10 +97,12 @@ public class Shape {
     }
 
     public boolean hasHeaderMembers() {
+      if (members == null) return false;
       return members.values().parallelStream().anyMatch(member -> member.isUsedForHeader());
     }
 
     public boolean hasStatusCodeMembers() {
+      if (members == null) return false;
       return members.values().parallelStream().anyMatch(member -> member.isUsedForHttpStatusCode());
     }
 
@@ -109,16 +113,29 @@ public class Shape {
     }
 
     public boolean hasPayloadMembers() {
-       return members.values().parallelStream().anyMatch(member -> !member.isUsedForHttpStatusCode() && !member.isUsedForHeader()
+        if (members == null) return false;
+        return members.values().parallelStream().anyMatch(member -> !member.isUsedForHttpStatusCode() && !member.isUsedForHeader()
                && !member.isStreaming() && !member.isUsedForUri() && !member.isUsedForQueryString());
     }
 
     public boolean hasQueryStringMembers() {
+        if (members == null) return false;
         return members.values().parallelStream().anyMatch(member -> member.getLocation() != null && member.getLocation().equalsIgnoreCase("querystring"));
     }
 
     public boolean hasBlobMembers() {
+        if (members == null) return false;
         return members.values().parallelStream().anyMatch(member -> member.getShape().isBlob());
+    }
+
+    public boolean hasEventStreamMembers() {
+        if (members == null) return false;
+        return members.values().parallelStream().anyMatch(member -> member.getShape().isEventStream());
+    }
+
+    public boolean hasEventPayloadMembers() {
+        if (members == null) return false;
+        return members.values().parallelStream().anyMatch(member -> member.isEventPayload());
     }
 
     public boolean hasAccountIdMembers() {

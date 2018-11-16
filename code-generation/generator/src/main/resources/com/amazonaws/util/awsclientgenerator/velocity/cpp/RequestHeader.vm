@@ -6,6 +6,10 @@
 #set($serviceNamespace = $metadata.namespace)
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
+#if($operation.result.shape.hasEventStreamMembers())
+\#include <aws/s3/model/${operation.name}Handler.h>
+\#include <aws/core/utils/event/EventStreamDecoder.h>
+#end
 #foreach($header in $typeInfo.headerIncludes)
 \#include $header
 #end
@@ -64,6 +68,28 @@ namespace Model
 #end
 #if(!$shape.signBody && $shape.members.size() > 0)
     bool SignBody() const override { return false; }
+
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+    /**
+     * Underlying Event Stream Decoder.
+     */
+    inline Aws::Utils::Event::EventStreamDecoder& GetEventStreamDecoder() { return m_decoder; }
+
+    /**
+     * Underlying Event Stream Handler which is used to define callback functions.
+     */
+    inline const ${operation.name}Handler& GetEventStreamHandler() const { return m_handler; }
+
+    /**
+     * Underlying Event Stream Handler which is used to define callback functions.
+     */
+    inline void SetEventStreamHandler(const ${operation.name}Handler& value) { m_handler = value; m_decoder.ResetEventStreamHandler(&m_handler); }
+
+    /**
+     * Underlying Event Stream Handler which is used to define callback functions.
+     */
+    inline ${operation.name}Request& WithEventStreamHandler(const ${operation.name}Handler& value) { SetEventStreamHandler(value); return *this; }
 
 #end
 #if($shape.supportsPresigning)

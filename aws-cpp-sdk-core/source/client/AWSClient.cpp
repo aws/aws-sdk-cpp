@@ -370,6 +370,32 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(httpResponseOutcome.GetError());
 }
 
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
+    const Aws::AmazonWebServiceRequest& request,
+    Http::HttpMethod method,
+    const char* signerName) const
+{
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName);
+    if (httpOutcome.IsSuccess())
+    {
+        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
+    }
+
+    return XmlOutcome(httpOutcome.GetError());
+}
+
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri, Http::HttpMethod method,
+    const char* signerName, const char* requestName) const
+{
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, method, signerName, requestName);
+    if (httpOutcome.IsSuccess())
+    {
+        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
+    }
+
+    return XmlOutcome(httpOutcome.GetError());
+}
+
 void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Http::HeaderValueCollection& headerValues) const
 {

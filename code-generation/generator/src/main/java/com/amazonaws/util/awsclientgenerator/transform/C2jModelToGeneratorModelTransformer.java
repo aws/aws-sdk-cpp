@@ -192,7 +192,7 @@ public class C2jModelToGeneratorModelTransformer {
         // All shapes only related to shapes enable "eventstream" or "event" should be removed, there are two cases:
         // 1. The removed shape is the only ancestor of this shape.
         // 2. This shape is the ancestor of the removed shape.
-        if (c2jShape.isEventstream() || c2jShape.isEvent()) {
+        if ((c2jShape.isEventstream() || c2jShape.isEvent()) && !this.c2jServiceModel.getServiceName().equals("s3")) {
             // shape.setIgnored(true);
             removedShapes.add(shape.getName());
         }
@@ -210,6 +210,8 @@ public class C2jModelToGeneratorModelTransformer {
                     c2jShape.getTimestampFormat() :
                     c2jServiceModel.getMetadata().getTimestampFormat());
         }
+        shape.setEventStream(c2jShape.isEventstream());
+        shape.setEvent(c2jShape.isEvent());
         return shape;
     }
 
@@ -265,6 +267,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setQueryName(c2jShapeMember.getQueryName());
         shapeMember.setStreaming(c2jShapeMember.isStreaming());
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
+        shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
         if(shapeMember.isStreaming()) {
             shapeMember.setRequired(true);
         }
@@ -450,6 +453,13 @@ public class C2jModelToGeneratorModelTransformer {
         cloned.setType(shape.getType());
         cloned.setPayload(shape.getPayload());
         cloned.setFlattened(shape.isFlattened());
+        cloned.setTimestampFormat(shape.getTimestampFormat());
+        cloned.setComputeContentMd5(shape.isComputeContentMd5());
+        cloned.setSupportsPresigning(shape.isSupportsPresigning());
+        cloned.setSignBody(shape.isSignBody());
+        cloned.setSignerName(shape.getSignerName());
+        cloned.setEventStream(shape.isEventStream());
+        cloned.setEvent(shape.isEvent());
         return cloned;
     }
     void renameShapeMember(Shape parentShape, String originalName, String newName) {

@@ -43,11 +43,13 @@ def Main():
     arguments = ParseArguments()
 
     configDir = ""
+    testDir = ""
     exeExtension = ""
 
     #Visual Studio puts executables into a configuration sub-dir, so append that.
     if platform.system() == "Windows":
         configDir = arguments["configuration"]
+        testDir = "bin"
         exeExtension = ".exe"
 
     testList = [ "aws-cpp-sdk-dynamodb-integration-tests",
@@ -62,7 +64,7 @@ def Main():
                  "aws-cpp-sdk-ec2-integration-tests" ]
 
     for testName in testList:
-        testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
+        testExe = arguments["buildDir"] + "/" + (testDir if testDir else testName) + "/" + configDir + "/" + testName + exeExtension
         # when build with BUILD_ONLY, not all test binaries will be generated.
         if not os.path.isfile(testExe):
             continue

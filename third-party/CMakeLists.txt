@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.1)
+
+if(POLICY CMP0054)
+    cmake_policy(SET CMP0054 NEW)
+endif()
+
+project(AWSSDK_DEPS)
+
+list(APPEND CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+include(ExternalProject)
+
+set(AWS_DEPS_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}" CACHE PATH "Dependencies install directory.")
+set(AWS_DEPS_BIN_DIR "${AWS_DEPS_INSTALL_DIR}/bin" CACHE PATH "Dependencies binary install directory.")
+set(AWS_DEPS_LIB_DIR "${AWS_DEPS_INSTALL_DIR}/lib" CACHE PATH "Dependencies library install directory.")
+set(AWS_DEPS_BUILD_DIR "${CMAKE_BINARY_DIR}/build" CACHE PATH "Dependencies build directory.")
+set(AWS_DEPS_DOWNLOAD_DIR "${AWS_DEPS_BUILD_DIR}/downloads" CACHE PATH "Dependencies download directory.")
+
+set(AWS_CHECKSUMS_URL "https://github.com/awslabs/aws-checksums.git")
+set(AWS_CHECKSUMS_SHA "8db7ac89d232b")
+include(BuildAwsChecksums)
+
+set(AWS_C_COMMON_URL "https://github.com/awslabs/aws-c-common.git")
+set(AWS_C_COMMON_SHA "a9380a43ab3762")
+include(BuildAwsCCommon)
+
+set(AWS_EVENT_STREAM_URL "https://github.com/awslabs/aws-c-event-stream.git")
+set(AWS_EVENT_STREAM_SHA "40dc42f47f3")
+include(BuildAwsEventStream)
+
+add_dependencies(AwsCEventStream AwsCCommon AwsChecksums)
+
+
+

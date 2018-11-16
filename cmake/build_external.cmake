@@ -147,7 +147,7 @@ if(BUILD_CURL OR BUILD_OPENSSL OR BUILD_ZLIB)
                 -DCURL_STATICLIB=ON
                 -DBUILD_CURL_EXE=ON
                 -DBUILD_CURL_TESTS=OFF
-		-DCURL_ZLIB=${CURL_USE_ZLIB}
+                -DCURL_ZLIB=${CURL_USE_ZLIB}
                 )
 
         add_library(curl UNKNOWN IMPORTED)

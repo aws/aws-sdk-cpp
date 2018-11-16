@@ -34,4 +34,5 @@ public class Operation {
     private String accountIdMemberName;
     private String authtype;
     private String authorizer;
+    private boolean eventStream;
 }

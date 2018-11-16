@@ -267,6 +267,8 @@ public class C2jModelToGeneratorModelTransformerTest {
         Map<String, C2jShape> c2jShapeMap = new HashMap<>();
         c2jServiceModel.setMetadata(new C2jMetadata());
         c2jServiceModel.getMetadata().setUid("service-7869-05-67");
+        // Currently, we only support event stream in S3, so we should suppress event stream in kinesis.
+        c2jServiceModel.setServiceName("kinesis");
 
         C2jShape stringShape = new C2jShape();
         stringShape.setDocumentation("String Shape Documentation");
@@ -341,113 +343,5 @@ public class C2jModelToGeneratorModelTransformerTest {
         assertEquals("POST", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getMethod());
         assertEquals("/", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getRequestUri());
         assertEquals("200", c2jModelToGeneratorModelTransformer.operations.get("Operation").getHttp().getResponseCode());
-    }
-
-    @Test
-    public void testRemoveSpecifiedOperationsAndShapes() {
-        C2jServiceModel c2jServiceModel = new C2jServiceModel();
-        Map<String, C2jShape> c2jShapeMap = new HashMap<>();
-        c2jServiceModel.setMetadata(new C2jMetadata());
-        c2jServiceModel.getMetadata().setUid("service-7869-05-67");
-
-        C2jShape stringShape = new C2jShape();
-        stringShape.setDocumentation("String Shape Documentation");
-        stringShape.setType("string");
-
-        c2jShapeMap.put("StringShape", stringShape);
-
-        C2jShape numberShape = new C2jShape();
-        numberShape.setType("integer");
-
-        c2jShapeMap.put("NumberShape", numberShape);
-
-        C2jShape removedShape = new C2jShape();
-        removedShape.setDocumentation("Specified shape which should be removed");
-        removedShape.setType("structure");
-        removedShape.setEventstream(true);
-        C2jShapeMember removedShapeMember = new C2jShapeMember();
-        removedShapeMember.setShape("NumberShape");
-        removedShape.setMembers(new HashMap<>());
-        removedShape.getMembers().put("NumberShape", removedShapeMember);
-        removedShape.setMember(removedShapeMember);
-
-        c2jShapeMap.put("RemovedShape", removedShape);
-
-        C2jShape inputShape = new C2jShape();
-        inputShape.setType("structure");
-        C2jShapeMember inputStringShapeMember = new C2jShapeMember();
-        inputStringShapeMember.setShape("StringShape");
-        inputShape.setMembers(new HashMap<>());
-        inputShape.getMembers().put("StringShape", inputStringShapeMember);
-
-        c2jShapeMap.put("OperationRequest", inputShape);
-
-        C2jShape outputShape = new C2jShape();
-        outputShape.setType("structure");
-        C2jShapeMember outputNumberShapeMember = new C2jShapeMember();
-        outputNumberShapeMember.setShape("RemovedShape");
-        outputShape.setMembers(new HashMap<>());
-        outputShape.getMembers().put("RemovedShape", outputNumberShapeMember);
-
-        c2jShapeMap.put("OperationResult", outputShape);
-
-        c2jServiceModel.setShapes(c2jShapeMap);
-
-        C2jOperation operation = new C2jOperation();
-        C2jShapeMember inputShapeMember = new C2jShapeMember();
-        inputShapeMember.setShape("OperationRequest");
-        operation.setInput(inputShapeMember);
-        C2jShapeMember outputShapeMember = new C2jShapeMember();
-        outputShapeMember.setShape("OperationResult");
-        operation.setOutput(outputShapeMember);
-
-        C2jShape errorShape = new C2jShape();
-        errorShape.setType("structure");
-        errorShape.setMembers(new HashMap<>());
-        errorShape.getMembers().put("StringShape", inputStringShapeMember);
-        c2jShapeMap.put("ErrorShape", errorShape);
-
-        C2jError error = new C2jError();
-        error.setShape("ErrorShape");
-        operation.setErrors(new LinkedList<>());
-        operation.getErrors().add(error);
-        operation.setName("Operation");
-        C2jHttp http = new C2jHttp();
-        http.setMethod("POST");
-        http.setRequestUri("/");
-        http.setResponseCode("200");
-        operation.setHttp(http);
-
-        c2jServiceModel.setOperations(new HashMap<>());
-        c2jServiceModel.getOperations().put("Operation", operation);
-
-        C2jModelToGeneratorModelTransformer c2jModelToGeneratorModelTransformer = new C2jModelToGeneratorModelTransformer(c2jServiceModel, false);
-        c2jModelToGeneratorModelTransformer.convertShapes();
-        c2jModelToGeneratorModelTransformer.convertOperations();
-
-        Map<String, Shape> shapes = c2jModelToGeneratorModelTransformer.shapes;
-        assertEquals(6, shapes.size());
-        assertEquals(0, shapes.get("NumberShape").getReferencedBy().size());
-        assertEquals(2, shapes.get("StringShape").getReferencedBy().size());
-        assertTrue(shapes.get("StringShape").getReferencedBy().contains("OperationRequest"));        
-        assertTrue(shapes.get("StringShape").getReferencedBy().contains("ErrorShape"));        
-        assertEquals(1, shapes.get("RemovedShape").getReferencedBy().size());
-        assertTrue(shapes.get("RemovedShape").getReferencedBy().contains("OperationResult"));
-        assertTrue(c2jModelToGeneratorModelTransformer.removedShapes.contains("RemovedShape"));
-        assertEquals(1, shapes.get("OperationRequest").getReferencedBy().size());
-        assertTrue(shapes.get("OperationRequest").getReferencedBy().contains("Operation"));
-        assertEquals(1, shapes.get("OperationResult").getReferencedBy().size());
-        assertTrue(shapes.get("OperationResult").getReferencedBy().contains("Operation"));
-
-        c2jModelToGeneratorModelTransformer.removeIgnoredOperations();
-
-        assertEquals(0, c2jModelToGeneratorModelTransformer.operations.size());
-        assertEquals(6, shapes.size());
-        assertEquals(0, shapes.get("NumberShape").getReferencedBy().size());
-        assertEquals(1, shapes.get("StringShape").getReferencedBy().size());
-        assertTrue(shapes.get("StringShape").getReferencedBy().contains("ErrorShape"));
-        assertEquals(0, shapes.get("RemovedShape").getReferencedBy().size());
-        assertEquals(0, shapes.get("OperationRequest").getReferencedBy().size());
-        assertEquals(0, shapes.get("OperationResult").getReferencedBy().size());
     }
 }

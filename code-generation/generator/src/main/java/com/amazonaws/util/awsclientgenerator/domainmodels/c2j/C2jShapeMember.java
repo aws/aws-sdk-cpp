@@ -29,4 +29,5 @@ public class C2jShapeMember {
     C2jXmlNamespace xmlNamespace;
     boolean deprecated;
     boolean flattened;
+    boolean eventpayload;
 }

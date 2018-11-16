@@ -367,6 +367,22 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requesetName = nullptr) const;
+
+            /**
+            * This is used for event stream response.
+            */
+            XmlOutcome MakeRequestWithEventStream(const Aws::Http::URI& uri,
+                const Aws::AmazonWebServiceRequest& request,
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* singerName = Aws::Auth::SIGV4_SIGNER) const;
+
+            /**
+            * This is used for event stream response.
+            */
+            XmlOutcome MakeRequestWithEventStream(const Aws::Http::URI& uri,
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* requestName = nullptr) const;
         };
 
     } // namespace Client

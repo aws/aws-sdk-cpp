@@ -68,7 +68,11 @@
 #if($member.locationName)##location specified
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
 #else##no location specified
+#if($shape.event && $member.eventPayload)
+    XmlNode ${lowerCaseVarName}Node = resultNode;
+#else
     XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##shape of the member is event
 #end##this is not a map or a list
 #end##member is list
 #set($spaces = '  ')

@@ -1,5 +1,10 @@
 
 #foreach($operation in $serviceModel.operations)
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#else
+#set($constText = "const ")
+#end
 #if(!$operation.documentation)
 #set($operation.documentation = '')
 #end
@@ -7,21 +12,21 @@
         /**
          * ${operation.documentation}
          */
-        virtual Model::${operation.name}Outcome ${operation.name}(const Model::${operation.request.shape.name}& request) const;
+        virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
 
         /**
          * ${operation.documentation}
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(const Model::${operation.request.shape.name}& request) const;
+        virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
 
         /**
          * ${operation.documentation}
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void ${operation.name}Async(const Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 #else
         /**

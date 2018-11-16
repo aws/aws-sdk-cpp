@@ -13,6 +13,7 @@ file(GLOB AWS_NET_SRC "${CMAKE_CURRENT_SOURCE_DIR}/aws/net/*.cpp")
 file(GLOB HTTP_SRC "${CMAKE_CURRENT_SOURCE_DIR}/http/*.cpp")
 file(GLOB UTILS_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/*.cpp")
 file(GLOB UTILS_CRYPTO_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/crypto/*.cpp")
+file(GLOB UTILS_EVENT_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/event/*.cpp")
 file(GLOB UTILS_JSON_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/json/*.cpp")
 file(GLOB UTILS_STREAM_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/stream/*.cpp")
 file(GLOB UTILS_LOGGING_SRC "${CMAKE_CURRENT_SOURCE_DIR}/utils/logging/*.cpp")
@@ -35,6 +36,7 @@ file(GLOB AWS_CPP_SDK_CORE_TESTS_SRC
   ${HTTP_SRC}
   ${UTILS_SRC}
   ${UTILS_CRYPTO_SRC}
+  ${UTILS_EVENT_SRC}
   ${UTILS_JSON_SRC}
   ${UTILS_STREAM_SRC}
   ${UTILS_XML_SRC}
@@ -55,6 +57,7 @@ if(PLATFORM_WINDOWS)
     source_group("Source Files\\monitoring" FILES ${MONITORING_SRC})
     source_group("Source Files\\utils" FILES ${UTILS_SRC})
     source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SRC})
+    source_group("Source Files\\utils\\event" FILES ${UTILS_EVENT_SRC})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SRC})
     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SRC})
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SRC})
@@ -93,8 +96,6 @@ set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
-
-copyDlls(${PROJECT_NAME} ${PROJECT_LIBS})
 
 add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
                    COMMAND ${CMAKE_COMMAND} -E copy_directory
