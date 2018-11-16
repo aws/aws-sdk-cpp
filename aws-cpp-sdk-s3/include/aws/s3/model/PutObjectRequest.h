@@ -950,43 +950,43 @@ namespace Model
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline const Aws::String& GetTagging() const{ return m_tagging; }
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline PutObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline PutObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
 
     /**
      * <p>The tag-set for the object. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * parameters. (For example, "Key1=Value1")</p>
      */
     inline PutObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
 

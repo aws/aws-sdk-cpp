@@ -34,6 +34,8 @@ ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus() :
     m_destinationRegionHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_snapshotCopyGrantNameHasBeenSet(false)
 {
 }
@@ -42,6 +44,8 @@ ClusterSnapshotCopyStatus::ClusterSnapshotCopyStatus(const XmlNode& xmlNode) :
     m_destinationRegionHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_snapshotCopyGrantNameHasBeenSet(false)
 {
   *this = xmlNode;
@@ -64,6 +68,12 @@ ClusterSnapshotCopyStatus& ClusterSnapshotCopyStatus::operator =(const XmlNode& 
     {
       m_retentionPeriod = StringUtils::ConvertToInt64(StringUtils::Trim(retentionPeriodNode.GetText().c_str()).c_str());
       m_retentionPeriodHasBeenSet = true;
+    }
+    XmlNode manualSnapshotRetentionPeriodNode = resultNode.FirstChild("ManualSnapshotRetentionPeriod");
+    if(!manualSnapshotRetentionPeriodNode.IsNull())
+    {
+      m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(manualSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
+      m_manualSnapshotRetentionPeriodHasBeenSet = true;
     }
     XmlNode snapshotCopyGrantNameNode = resultNode.FirstChild("SnapshotCopyGrantName");
     if(!snapshotCopyGrantNameNode.IsNull())
@@ -88,6 +98,11 @@ void ClusterSnapshotCopyStatus::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".RetentionPeriod=" << m_retentionPeriod << "&";
   }
 
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
+  }
+
   if(m_snapshotCopyGrantNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
@@ -104,6 +119,10 @@ void ClusterSnapshotCopyStatus::OutputToStream(Aws::OStream& oStream, const char
   if(m_retentionPeriodHasBeenSet)
   {
       oStream << location << ".RetentionPeriod=" << m_retentionPeriod << "&";
+  }
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
   if(m_snapshotCopyGrantNameHasBeenSet)
   {

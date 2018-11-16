@@ -91,17 +91,17 @@ namespace Model
 
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * Value to be compared.
+     * The value to be compared.
      */
     inline MetricDimension& WithValue(double value) { SetValue(value); return *this;}
 

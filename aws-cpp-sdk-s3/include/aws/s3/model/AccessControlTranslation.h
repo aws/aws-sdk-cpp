@@ -33,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for information regarding the access control for
-   * replicas.</p><p><h3>See Also:</h3>   <a
+   * <p>A container for information about access control for replicas.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccessControlTranslation">AWS
    * API Reference</a></p>
    */

@@ -51,90 +51,90 @@ namespace Model
 
     /**
      * <p>The type of cache used by the build project. Valid values include:</p> <ul>
-     * <li> <p> <code>NO_CACHE</code>: The build project will not use any cache.</p>
-     * </li> <li> <p> <code>S3</code>: The build project will read and write from/to
+     * <li> <p> <code>NO_CACHE</code>: The build project does not use any cache.</p>
+     * </li> <li> <p> <code>S3</code>: The build project reads and writes from and to
      * S3.</p> </li> </ul>
      */
     inline const CacheType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of cache used by the build project. Valid values include:</p> <ul>
-     * <li> <p> <code>NO_CACHE</code>: The build project will not use any cache.</p>
-     * </li> <li> <p> <code>S3</code>: The build project will read and write from/to
+     * <li> <p> <code>NO_CACHE</code>: The build project does not use any cache.</p>
+     * </li> <li> <p> <code>S3</code>: The build project reads and writes from and to
      * S3.</p> </li> </ul>
      */
     inline void SetType(const CacheType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of cache used by the build project. Valid values include:</p> <ul>
-     * <li> <p> <code>NO_CACHE</code>: The build project will not use any cache.</p>
-     * </li> <li> <p> <code>S3</code>: The build project will read and write from/to
+     * <li> <p> <code>NO_CACHE</code>: The build project does not use any cache.</p>
+     * </li> <li> <p> <code>S3</code>: The build project reads and writes from and to
      * S3.</p> </li> </ul>
      */
     inline void SetType(CacheType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of cache used by the build project. Valid values include:</p> <ul>
-     * <li> <p> <code>NO_CACHE</code>: The build project will not use any cache.</p>
-     * </li> <li> <p> <code>S3</code>: The build project will read and write from/to
+     * <li> <p> <code>NO_CACHE</code>: The build project does not use any cache.</p>
+     * </li> <li> <p> <code>S3</code>: The build project reads and writes from and to
      * S3.</p> </li> </ul>
      */
     inline ProjectCache& WithType(const CacheType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of cache used by the build project. Valid values include:</p> <ul>
-     * <li> <p> <code>NO_CACHE</code>: The build project will not use any cache.</p>
-     * </li> <li> <p> <code>S3</code>: The build project will read and write from/to
+     * <li> <p> <code>NO_CACHE</code>: The build project does not use any cache.</p>
+     * </li> <li> <p> <code>S3</code>: The build project reads and writes from and to
      * S3.</p> </li> </ul>
      */
     inline ProjectCache& WithType(CacheType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline ProjectCache& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline ProjectCache& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the cache location, as follows: </p> <ul> <li> <p>
-     * <code>NO_CACHE</code>: This value will be ignored.</p> </li> <li> <p>
+     * <p>Information about the cache location: </p> <ul> <li> <p>
+     * <code>NO_CACHE</code>: This value is ignored.</p> </li> <li> <p>
      * <code>S3</code>: This is the S3 bucket name/prefix.</p> </li> </ul>
      */
     inline ProjectCache& WithLocation(const char* value) { SetLocation(value); return *this;}

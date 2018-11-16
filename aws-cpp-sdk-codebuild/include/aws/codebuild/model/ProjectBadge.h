@@ -49,19 +49,19 @@ namespace Model
 
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline ProjectBadge& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
@@ -69,43 +69,50 @@ namespace Model
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline const Aws::String& GetBadgeRequestUrl() const{ return m_badgeRequestUrl; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline void SetBadgeRequestUrl(const Aws::String& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = value; }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline void SetBadgeRequestUrl(Aws::String&& value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl = std::move(value); }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline void SetBadgeRequestUrl(const char* value) { m_badgeRequestUrlHasBeenSet = true; m_badgeRequestUrl.assign(value); }
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(const Aws::String& value) { SetBadgeRequestUrl(value); return *this;}
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(Aws::String&& value) { SetBadgeRequestUrl(std::move(value)); return *this;}
 
     /**
      * <p>The publicly-accessible URL through which you can access the build badge for
-     * your project. </p>
+     * your project. </p> <p>The publicly accessible URL through which you can access
+     * the build badge for your project. </p>
      */
     inline ProjectBadge& WithBadgeRequestUrl(const char* value) { SetBadgeRequestUrl(value); return *this;}
 

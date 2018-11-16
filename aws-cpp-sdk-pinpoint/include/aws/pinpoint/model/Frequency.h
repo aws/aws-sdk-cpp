@@ -30,7 +30,8 @@ namespace Model
     HOURLY,
     DAILY,
     WEEKLY,
-    MONTHLY
+    MONTHLY,
+    EVENT
   };
 
 namespace FrequencyMapper

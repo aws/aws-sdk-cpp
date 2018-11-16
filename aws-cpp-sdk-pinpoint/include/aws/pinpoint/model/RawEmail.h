@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * The raw data of the email.
+     * The raw email message itself. Then entire message must be base64-encoded.
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
 
     /**
-     * The raw data of the email.
+     * The raw email message itself. Then entire message must be base64-encoded.
      */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
-     * The raw data of the email.
+     * The raw email message itself. Then entire message must be base64-encoded.
      */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
 
     /**
-     * The raw data of the email.
+     * The raw email message itself. Then entire message must be base64-encoded.
      */
     inline RawEmail& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
 
     /**
-     * The raw data of the email.
+     * The raw email message itself. Then entire message must be base64-encoded.
      */
     inline RawEmail& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
 

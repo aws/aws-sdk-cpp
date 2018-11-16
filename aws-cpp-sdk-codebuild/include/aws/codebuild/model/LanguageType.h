@@ -34,7 +34,8 @@ namespace Model
     DOCKER,
     ANDROID_,
     DOTNET,
-    BASE
+    BASE,
+    PHP
   };
 
 namespace LanguageTypeMapper

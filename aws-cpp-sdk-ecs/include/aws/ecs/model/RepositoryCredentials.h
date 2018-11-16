@@ -49,44 +49,72 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline const Aws::String& GetCredentialsParameter() const{ return m_credentialsParameter; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline void SetCredentialsParameter(const Aws::String& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline void SetCredentialsParameter(Aws::String&& value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline void SetCredentialsParameter(const char* value) { m_credentialsParameterHasBeenSet = true; m_credentialsParameter.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline RepositoryCredentials& WithCredentialsParameter(const Aws::String& value) { SetCredentialsParameter(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline RepositoryCredentials& WithCredentialsParameter(Aws::String&& value) { SetCredentialsParameter(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) or name of the secret containing the private
-     * repository credentials.</p>
+     * <p>The Amazon Resource Name (ARN) of the secret containing the private
+     * repository credentials.</p> <note> <p>When you are using the Amazon ECS API, AWS
+     * CLI, or AWS SDK, if the secret exists in the same Region as the task that you
+     * are launching then you can use either the full ARN or the name of the secret.
+     * When you are using the AWS Management Console, you must specify the full ARN of
+     * the secret.</p> </note>
      */
     inline RepositoryCredentials& WithCredentialsParameter(const char* value) { SetCredentialsParameter(value); return *this;}
 

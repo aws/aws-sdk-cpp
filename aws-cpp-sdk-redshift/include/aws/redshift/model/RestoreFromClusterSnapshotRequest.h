@@ -854,6 +854,16 @@ namespace Model
     inline RestoreFromClusterSnapshotRequest& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
 
 
+    
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    
+    inline RestoreFromClusterSnapshotRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
     /**
      * <p>The AWS Key Management Service (KMS) key ID of the encryption key that you
      * want to use to encrypt data in the cluster that you restore from a shared
@@ -1244,6 +1254,42 @@ namespace Model
      */
     inline RestoreFromClusterSnapshotRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline const Aws::String& GetSnapshotScheduleIdentifier() const{ return m_snapshotScheduleIdentifier; }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const Aws::String& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = value; }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(Aws::String&& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const char* value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier.assign(value); }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotScheduleIdentifier(const Aws::String& value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotScheduleIdentifier(Aws::String&& value) { SetSnapshotScheduleIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline RestoreFromClusterSnapshotRequest& WithSnapshotScheduleIdentifier(const char* value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -1297,6 +1343,9 @@ namespace Model
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
 
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
 
@@ -1314,6 +1363,9 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    Aws::String m_snapshotScheduleIdentifier;
+    bool m_snapshotScheduleIdentifierHasBeenSet;
   };
 
 } // namespace Model

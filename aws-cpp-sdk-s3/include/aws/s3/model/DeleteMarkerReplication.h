@@ -50,36 +50,36 @@ namespace Model
 
     /**
      * <p>The status of the delete marker replication.</p> <note> <p> In the current
-     * implementation, Amazon S3 does not replicate the delete markers. Therefore, the
-     * status must be <code>Disabled</code>. </p> </note>
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
      */
     inline const DeleteMarkerReplicationStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the delete marker replication.</p> <note> <p> In the current
-     * implementation, Amazon S3 does not replicate the delete markers. Therefore, the
-     * status must be <code>Disabled</code>. </p> </note>
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
      */
     inline void SetStatus(const DeleteMarkerReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the delete marker replication.</p> <note> <p> In the current
-     * implementation, Amazon S3 does not replicate the delete markers. Therefore, the
-     * status must be <code>Disabled</code>. </p> </note>
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
      */
     inline void SetStatus(DeleteMarkerReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the delete marker replication.</p> <note> <p> In the current
-     * implementation, Amazon S3 does not replicate the delete markers. Therefore, the
-     * status must be <code>Disabled</code>. </p> </note>
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
      */
     inline DeleteMarkerReplication& WithStatus(const DeleteMarkerReplicationStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the delete marker replication.</p> <note> <p> In the current
-     * implementation, Amazon S3 does not replicate the delete markers. Therefore, the
-     * status must be <code>Disabled</code>. </p> </note>
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
      */
     inline DeleteMarkerReplication& WithStatus(DeleteMarkerReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

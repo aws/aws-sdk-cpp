@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 DescribeContainerInstancesRequest::DescribeContainerInstancesRequest() : 
     m_clusterHasBeenSet(false),
-    m_containerInstancesHasBeenSet(false)
+    m_containerInstancesHasBeenSet(false),
+    m_includeHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String DescribeContainerInstancesRequest::SerializePayload() const
      containerInstancesJsonList[containerInstancesIndex].AsString(m_containerInstances[containerInstancesIndex]);
    }
    payload.WithArray("containerInstances", std::move(containerInstancesJsonList));
+
+  }
+
+  if(m_includeHasBeenSet)
+  {
+   Array<JsonValue> includeJsonList(m_include.size());
+   for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
+   {
+     includeJsonList[includeIndex].AsString(ContainerInstanceFieldMapper::GetNameForContainerInstanceField(m_include[includeIndex]));
+   }
+   payload.WithArray("include", std::move(includeJsonList));
 
   }
 

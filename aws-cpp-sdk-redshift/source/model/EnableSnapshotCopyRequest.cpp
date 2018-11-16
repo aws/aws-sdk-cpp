@@ -25,7 +25,9 @@ EnableSnapshotCopyRequest::EnableSnapshotCopyRequest() :
     m_destinationRegionHasBeenSet(false),
     m_retentionPeriod(0),
     m_retentionPeriodHasBeenSet(false),
-    m_snapshotCopyGrantNameHasBeenSet(false)
+    m_snapshotCopyGrantNameHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,11 @@ Aws::String EnableSnapshotCopyRequest::SerializePayload() const
   if(m_snapshotCopyGrantNameHasBeenSet)
   {
     ss << "SnapshotCopyGrantName=" << StringUtils::URLEncode(m_snapshotCopyGrantName.c_str()) << "&";
+  }
+
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+    ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
   ss << "Version=2012-12-01";

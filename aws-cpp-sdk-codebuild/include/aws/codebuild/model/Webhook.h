@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline const Aws::String& GetPayloadUrl() const{ return m_payloadUrl; }
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(const Aws::String& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = value; }
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(Aws::String&& value) { m_payloadUrlHasBeenSet = true; m_payloadUrl = std::move(value); }
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline void SetPayloadUrl(const char* value) { m_payloadUrlHasBeenSet = true; m_payloadUrl.assign(value); }
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(const Aws::String& value) { SetPayloadUrl(value); return *this;}
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(Aws::String&& value) { SetPayloadUrl(std::move(value)); return *this;}
 
     /**
-     * <p> The CodeBuild endpoint where webhook events are sent.</p>
+     * <p> The AWS CodeBuild endpoint where webhook events are sent.</p>
      */
     inline Webhook& WithPayloadUrl(const char* value) { SetPayloadUrl(value); return *this;}
 
@@ -165,88 +165,88 @@ namespace Model
 
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline Webhook& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline Webhook& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline Webhook& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
 
 
     /**
-     * <p> A timestamp indicating the last time a repository's secret token was
+     * <p> A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedSecret() const{ return m_lastModifiedSecret; }
 
     /**
-     * <p> A timestamp indicating the last time a repository's secret token was
+     * <p> A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
     inline void SetLastModifiedSecret(const Aws::Utils::DateTime& value) { m_lastModifiedSecretHasBeenSet = true; m_lastModifiedSecret = value; }
 
     /**
-     * <p> A timestamp indicating the last time a repository's secret token was
+     * <p> A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
     inline void SetLastModifiedSecret(Aws::Utils::DateTime&& value) { m_lastModifiedSecretHasBeenSet = true; m_lastModifiedSecret = std::move(value); }
 
     /**
-     * <p> A timestamp indicating the last time a repository's secret token was
+     * <p> A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
     inline Webhook& WithLastModifiedSecret(const Aws::Utils::DateTime& value) { SetLastModifiedSecret(value); return *this;}
 
     /**
-     * <p> A timestamp indicating the last time a repository's secret token was
+     * <p> A timestamp that indicates the last time a repository's secret token was
      * modified. </p>
      */
     inline Webhook& WithLastModifiedSecret(Aws::Utils::DateTime&& value) { SetLastModifiedSecret(std::move(value)); return *this;}

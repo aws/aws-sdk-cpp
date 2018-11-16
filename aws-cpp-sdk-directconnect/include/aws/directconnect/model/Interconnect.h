@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/InterconnectState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <utility>
 
 namespace Aws
@@ -454,6 +455,37 @@ namespace Model
      */
     inline Interconnect& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(const HasLogicalRedundancy& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = value; }
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(HasLogicalRedundancy&& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = std::move(value); }
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline Interconnect& WithHasLogicalRedundancy(const HasLogicalRedundancy& value) { SetHasLogicalRedundancy(value); return *this;}
+
+    /**
+     * <p>Indicates whether the interconnect supports a secondary BGP in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline Interconnect& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_interconnectId;
@@ -488,6 +520,9 @@ namespace Model
 
     Aws::String m_awsDeviceV2;
     bool m_awsDeviceV2HasBeenSet;
+
+    HasLogicalRedundancy m_hasLogicalRedundancy;
+    bool m_hasLogicalRedundancyHasBeenSet;
   };
 
 } // namespace Model

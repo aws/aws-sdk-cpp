@@ -43,6 +43,8 @@ Task::Task() :
     m_version(0),
     m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
+    m_stopCode(TaskStopCode::NOT_SET),
+    m_stopCodeHasBeenSet(false),
     m_connectivity(Connectivity::NOT_SET),
     m_connectivityHasBeenSet(false),
     m_connectivityAtHasBeenSet(false),
@@ -59,7 +61,8 @@ Task::Task() :
     m_platformVersionHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -78,6 +81,8 @@ Task::Task(JsonView jsonValue) :
     m_version(0),
     m_versionHasBeenSet(false),
     m_stoppedReasonHasBeenSet(false),
+    m_stopCode(TaskStopCode::NOT_SET),
+    m_stopCodeHasBeenSet(false),
     m_connectivity(Connectivity::NOT_SET),
     m_connectivityHasBeenSet(false),
     m_connectivityAtHasBeenSet(false),
@@ -94,7 +99,8 @@ Task::Task(JsonView jsonValue) :
     m_platformVersionHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -193,6 +199,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_stoppedReason = jsonValue.GetString("stoppedReason");
 
     m_stoppedReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stopCode"))
+  {
+    m_stopCode = TaskStopCodeMapper::GetTaskStopCodeForName(jsonValue.GetString("stopCode"));
+
+    m_stopCodeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("connectivity"))
@@ -296,6 +309,16 @@ Task& Task::operator =(JsonView jsonValue)
     m_healthStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -386,6 +409,11 @@ JsonValue Task::Jsonize() const
 
   }
 
+  if(m_stopCodeHasBeenSet)
+  {
+   payload.WithString("stopCode", TaskStopCodeMapper::GetNameForTaskStopCode(m_stopCode));
+  }
+
   if(m_connectivityHasBeenSet)
   {
    payload.WithString("connectivity", ConnectivityMapper::GetNameForConnectivity(m_connectivity));
@@ -462,6 +490,17 @@ JsonValue Task::Jsonize() const
   if(m_healthStatusHasBeenSet)
   {
    payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload;

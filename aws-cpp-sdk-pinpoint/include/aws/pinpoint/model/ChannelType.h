@@ -33,6 +33,7 @@ namespace Model
     APNS_VOIP_SANDBOX,
     ADM,
     SMS,
+    VOICE,
     EMAIL,
     BAIDU,
     CUSTOM

@@ -209,80 +209,80 @@ namespace Model
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
      * You can see a list of the categories for a given source type by calling the
-     * <b>DescribeEventCategories</b> action or in the topic <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-     * with Events and Notifications</a> in the AWS Database Migration Service User
-     * Guide. </p>
+     * <code>DescribeEventCategories</code> action or in the topic <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+     * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+     * Guide.</i> </p>
      */
     inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
 
@@ -361,20 +361,20 @@ namespace Model
 
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription, or set to
-     * <b>false</b> to create the subscription but not activate it. </p>
+     * <p> A Boolean value; set to <code>true</code> to activate the subscription, or
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription, or set to
-     * <b>false</b> to create the subscription but not activate it. </p>
+     * <p> A Boolean value; set to <code>true</code> to activate the subscription, or
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p> A Boolean value; set to <b>true</b> to activate the subscription, or set to
-     * <b>false</b> to create the subscription but not activate it. </p>
+     * <p> A Boolean value; set to <code>true</code> to activate the subscription, or
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

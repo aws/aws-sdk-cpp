@@ -43,6 +43,7 @@
 #include <aws/s3/model/GetBucketMetricsConfigurationResult.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationResult.h>
 #include <aws/s3/model/GetBucketPolicyResult.h>
+#include <aws/s3/model/GetBucketPolicyStatusResult.h>
 #include <aws/s3/model/GetBucketReplicationResult.h>
 #include <aws/s3/model/GetBucketRequestPaymentResult.h>
 #include <aws/s3/model/GetBucketTaggingResult.h>
@@ -52,6 +53,7 @@
 #include <aws/s3/model/GetObjectAclResult.h>
 #include <aws/s3/model/GetObjectTaggingResult.h>
 #include <aws/s3/model/GetObjectTorrentResult.h>
+#include <aws/s3/model/GetPublicAccessBlockResult.h>
 #include <aws/s3/model/HeadObjectResult.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsResult.h>
 #include <aws/s3/model/ListBucketInventoryConfigurationsResult.h>
@@ -131,6 +133,7 @@ namespace Aws
         class DeleteObjectRequest;
         class DeleteObjectTaggingRequest;
         class DeleteObjectsRequest;
+        class DeletePublicAccessBlockRequest;
         class GetBucketAccelerateConfigurationRequest;
         class GetBucketAclRequest;
         class GetBucketAnalyticsConfigurationRequest;
@@ -143,6 +146,7 @@ namespace Aws
         class GetBucketMetricsConfigurationRequest;
         class GetBucketNotificationConfigurationRequest;
         class GetBucketPolicyRequest;
+        class GetBucketPolicyStatusRequest;
         class GetBucketReplicationRequest;
         class GetBucketRequestPaymentRequest;
         class GetBucketTaggingRequest;
@@ -152,6 +156,7 @@ namespace Aws
         class GetObjectAclRequest;
         class GetObjectTaggingRequest;
         class GetObjectTorrentRequest;
+        class GetPublicAccessBlockRequest;
         class HeadBucketRequest;
         class HeadObjectRequest;
         class ListBucketAnalyticsConfigurationsRequest;
@@ -181,6 +186,7 @@ namespace Aws
         class PutObjectRequest;
         class PutObjectAclRequest;
         class PutObjectTaggingRequest;
+        class PutPublicAccessBlockRequest;
         class RestoreObjectRequest;
         class UploadPartRequest;
         class UploadPartCopyRequest;
@@ -204,6 +210,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DeleteObjectResult, Aws::Client::AWSError<S3Errors>> DeleteObjectOutcome;
         typedef Aws::Utils::Outcome<DeleteObjectTaggingResult, Aws::Client::AWSError<S3Errors>> DeleteObjectTaggingOutcome;
         typedef Aws::Utils::Outcome<DeleteObjectsResult, Aws::Client::AWSError<S3Errors>> DeleteObjectsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> DeletePublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<GetBucketAccelerateConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketAccelerateConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketAclResult, Aws::Client::AWSError<S3Errors>> GetBucketAclOutcome;
         typedef Aws::Utils::Outcome<GetBucketAnalyticsConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketAnalyticsConfigurationOutcome;
@@ -216,6 +223,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetBucketMetricsConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketMetricsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketNotificationConfigurationResult, Aws::Client::AWSError<S3Errors>> GetBucketNotificationConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetBucketPolicyResult, Aws::Client::AWSError<S3Errors>> GetBucketPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetBucketPolicyStatusResult, Aws::Client::AWSError<S3Errors>> GetBucketPolicyStatusOutcome;
         typedef Aws::Utils::Outcome<GetBucketReplicationResult, Aws::Client::AWSError<S3Errors>> GetBucketReplicationOutcome;
         typedef Aws::Utils::Outcome<GetBucketRequestPaymentResult, Aws::Client::AWSError<S3Errors>> GetBucketRequestPaymentOutcome;
         typedef Aws::Utils::Outcome<GetBucketTaggingResult, Aws::Client::AWSError<S3Errors>> GetBucketTaggingOutcome;
@@ -225,6 +233,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetObjectAclResult, Aws::Client::AWSError<S3Errors>> GetObjectAclOutcome;
         typedef Aws::Utils::Outcome<GetObjectTaggingResult, Aws::Client::AWSError<S3Errors>> GetObjectTaggingOutcome;
         typedef Aws::Utils::Outcome<GetObjectTorrentResult, Aws::Client::AWSError<S3Errors>> GetObjectTorrentOutcome;
+        typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, Aws::Client::AWSError<S3Errors>> GetPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> HeadBucketOutcome;
         typedef Aws::Utils::Outcome<HeadObjectResult, Aws::Client::AWSError<S3Errors>> HeadObjectOutcome;
         typedef Aws::Utils::Outcome<ListBucketAnalyticsConfigurationsResult, Aws::Client::AWSError<S3Errors>> ListBucketAnalyticsConfigurationsOutcome;
@@ -255,6 +264,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<PutObjectResult, Aws::Client::AWSError<S3Errors>> PutObjectOutcome;
         typedef Aws::Utils::Outcome<PutObjectAclResult, Aws::Client::AWSError<S3Errors>> PutObjectAclOutcome;
         typedef Aws::Utils::Outcome<PutObjectTaggingResult, Aws::Client::AWSError<S3Errors>> PutObjectTaggingOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> PutPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<RestoreObjectResult, Aws::Client::AWSError<S3Errors>> RestoreObjectOutcome;
         typedef Aws::Utils::Outcome<UploadPartResult, Aws::Client::AWSError<S3Errors>> UploadPartOutcome;
         typedef Aws::Utils::Outcome<UploadPartCopyResult, Aws::Client::AWSError<S3Errors>> UploadPartCopyOutcome;
@@ -278,6 +288,7 @@ namespace Aws
         typedef std::future<DeleteObjectOutcome> DeleteObjectOutcomeCallable;
         typedef std::future<DeleteObjectTaggingOutcome> DeleteObjectTaggingOutcomeCallable;
         typedef std::future<DeleteObjectsOutcome> DeleteObjectsOutcomeCallable;
+        typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
         typedef std::future<GetBucketAccelerateConfigurationOutcome> GetBucketAccelerateConfigurationOutcomeCallable;
         typedef std::future<GetBucketAclOutcome> GetBucketAclOutcomeCallable;
         typedef std::future<GetBucketAnalyticsConfigurationOutcome> GetBucketAnalyticsConfigurationOutcomeCallable;
@@ -290,6 +301,7 @@ namespace Aws
         typedef std::future<GetBucketMetricsConfigurationOutcome> GetBucketMetricsConfigurationOutcomeCallable;
         typedef std::future<GetBucketNotificationConfigurationOutcome> GetBucketNotificationConfigurationOutcomeCallable;
         typedef std::future<GetBucketPolicyOutcome> GetBucketPolicyOutcomeCallable;
+        typedef std::future<GetBucketPolicyStatusOutcome> GetBucketPolicyStatusOutcomeCallable;
         typedef std::future<GetBucketReplicationOutcome> GetBucketReplicationOutcomeCallable;
         typedef std::future<GetBucketRequestPaymentOutcome> GetBucketRequestPaymentOutcomeCallable;
         typedef std::future<GetBucketTaggingOutcome> GetBucketTaggingOutcomeCallable;
@@ -299,6 +311,7 @@ namespace Aws
         typedef std::future<GetObjectAclOutcome> GetObjectAclOutcomeCallable;
         typedef std::future<GetObjectTaggingOutcome> GetObjectTaggingOutcomeCallable;
         typedef std::future<GetObjectTorrentOutcome> GetObjectTorrentOutcomeCallable;
+        typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
         typedef std::future<HeadBucketOutcome> HeadBucketOutcomeCallable;
         typedef std::future<HeadObjectOutcome> HeadObjectOutcomeCallable;
         typedef std::future<ListBucketAnalyticsConfigurationsOutcome> ListBucketAnalyticsConfigurationsOutcomeCallable;
@@ -329,6 +342,7 @@ namespace Aws
         typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
         typedef std::future<PutObjectAclOutcome> PutObjectAclOutcomeCallable;
         typedef std::future<PutObjectTaggingOutcome> PutObjectTaggingOutcomeCallable;
+        typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
         typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
         typedef std::future<UploadPartOutcome> UploadPartOutcomeCallable;
         typedef std::future<UploadPartCopyOutcome> UploadPartCopyOutcomeCallable;
@@ -364,6 +378,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::DeleteObjectRequest&, const Model::DeleteObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteObjectTaggingRequest&, const Model::DeleteObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::DeleteObjectsRequest&, const Model::DeleteObjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteObjectsResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::DeletePublicAccessBlockRequest&, const Model::DeletePublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketAccelerateConfigurationRequest&, const Model::GetBucketAccelerateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketAccelerateConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketAclRequest&, const Model::GetBucketAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketAclResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketAnalyticsConfigurationRequest&, const Model::GetBucketAnalyticsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketAnalyticsConfigurationResponseReceivedHandler;
@@ -376,6 +391,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::GetBucketMetricsConfigurationRequest&, const Model::GetBucketMetricsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketMetricsConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketNotificationConfigurationRequest&, const Model::GetBucketNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketNotificationConfigurationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketPolicyRequest&, const Model::GetBucketPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetBucketPolicyStatusRequest&, const Model::GetBucketPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketPolicyStatusResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketReplicationRequest&, const Model::GetBucketReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketReplicationResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketRequestPaymentRequest&, const Model::GetBucketRequestPaymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketRequestPaymentResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetBucketTaggingRequest&, const Model::GetBucketTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketTaggingResponseReceivedHandler;
@@ -385,6 +401,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::GetObjectAclRequest&, const Model::GetObjectAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectAclResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectTaggingRequest&, const Model::GetObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectTorrentRequest&, const Model::GetObjectTorrentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectTorrentResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetPublicAccessBlockRequest&, const Model::GetPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::HeadBucketRequest&, const Model::HeadBucketOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > HeadBucketResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::HeadObjectRequest&, const Model::HeadObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > HeadObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::ListBucketAnalyticsConfigurationsRequest&, const Model::ListBucketAnalyticsConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBucketAnalyticsConfigurationsResponseReceivedHandler;
@@ -415,6 +432,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutObjectAclRequest&, const Model::PutObjectAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectAclResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutObjectTaggingRequest&, const Model::PutObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectTaggingResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartRequest&, const Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartCopyRequest&, const Model::UploadPartCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartCopyResponseReceivedHandler;
@@ -663,7 +681,7 @@ namespace Aws
         virtual void DeleteBucketAnalyticsConfigurationAsync(const Model::DeleteBucketAnalyticsConfigurationRequest& request, const DeleteBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
+         * <p>Deletes the CORS configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -671,7 +689,7 @@ namespace Aws
         virtual Model::DeleteBucketCorsOutcome DeleteBucketCors(const Model::DeleteBucketCorsRequest& request) const;
 
         /**
-         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
+         * <p>Deletes the CORS configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -681,7 +699,7 @@ namespace Aws
         virtual Model::DeleteBucketCorsOutcomeCallable DeleteBucketCorsCallable(const Model::DeleteBucketCorsRequest& request) const;
 
         /**
-         * <p>Deletes the cors configuration information set for the bucket.</p><p><h3>See
+         * <p>Deletes the CORS configuration information set for the bucket.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketCors">AWS
          * API Reference</a></p>
@@ -828,7 +846,10 @@ namespace Aws
         virtual void DeleteBucketPolicyAsync(const Model::DeleteBucketPolicyRequest& request, const DeleteBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * <p> Deletes the replication configuration from the bucket. For information about
+         * replication configuration, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
@@ -836,7 +857,10 @@ namespace Aws
         virtual Model::DeleteBucketReplicationOutcome DeleteBucketReplication(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * <p> Deletes the replication configuration from the bucket. For information about
+         * replication configuration, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
@@ -846,7 +870,10 @@ namespace Aws
         virtual Model::DeleteBucketReplicationOutcomeCallable DeleteBucketReplicationCallable(const Model::DeleteBucketReplicationRequest& request) const;
 
         /**
-         * <p>Deletes the replication configuration from the bucket.</p><p><h3>See
+         * <p> Deletes the replication configuration from the bucket. For information about
+         * replication configuration, see <a href="
+         * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketReplication">AWS
          * API Reference</a></p>
@@ -993,6 +1020,34 @@ namespace Aws
         virtual void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePublicAccessBlockAsync(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the accelerate configuration of a bucket.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
@@ -1074,14 +1129,14 @@ namespace Aws
         virtual void GetBucketAnalyticsConfigurationAsync(const Model::GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the CORS configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketCorsOutcome GetBucketCors(const Model::GetBucketCorsRequest& request) const;
 
         /**
-         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the CORS configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1090,7 +1145,7 @@ namespace Aws
         virtual Model::GetBucketCorsOutcomeCallable GetBucketCorsCallable(const Model::GetBucketCorsRequest& request) const;
 
         /**
-         * <p>Returns the cors configuration for the bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the CORS configuration for the bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1320,16 +1375,48 @@ namespace Aws
         virtual void GetBucketPolicyAsync(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves the policy status for an Amazon S3 bucket, indicating whether the
+         * bucket is public.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBucketPolicyStatusOutcome GetBucketPolicyStatus(const Model::GetBucketPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the policy status for an Amazon S3 bucket, indicating whether the
+         * bucket is public.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBucketPolicyStatusOutcomeCallable GetBucketPolicyStatusCallable(const Model::GetBucketPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Retrieves the policy status for an Amazon S3 bucket, indicating whether the
+         * bucket is public.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBucketPolicyStatusAsync(const Model::GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the replication configuration of a bucket.</p> <note> <p> It can take
+         * a while to propagate the put or delete a replication configuration to all Amazon
+         * S3 systems. Therefore, a get request soon after put or delete can return a wrong
+         * result. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          */
         virtual Model::GetBucketReplicationOutcome GetBucketReplication(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the replication configuration of a bucket.</p> <note> <p> It can take
+         * a while to propagate the put or delete a replication configuration to all Amazon
+         * S3 systems. Therefore, a get request soon after put or delete can return a wrong
+         * result. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -1338,8 +1425,10 @@ namespace Aws
         virtual Model::GetBucketReplicationOutcomeCallable GetBucketReplicationCallable(const Model::GetBucketReplicationRequest& request) const;
 
         /**
-         * <p>Returns the replication configuration of a bucket.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the replication configuration of a bucket.</p> <note> <p> It can take
+         * a while to propagate the put or delete a replication configuration to all Amazon
+         * S3 systems. Therefore, a get request soon after put or delete can return a wrong
+         * result. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS
          * API Reference</a></p>
          *
@@ -1549,6 +1638,34 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetPublicAccessBlockAsync(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>This operation is useful to determine if a bucket exists and you have
@@ -1957,14 +2074,14 @@ namespace Aws
         virtual void PutBucketAnalyticsConfigurationAsync(const Model::PutBucketAnalyticsConfigurationRequest& request, const PutBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the CORS configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          */
         virtual Model::PutBucketCorsOutcome PutBucketCors(const Model::PutBucketCorsRequest& request) const;
 
         /**
-         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the CORS configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          *
@@ -1973,7 +2090,7 @@ namespace Aws
         virtual Model::PutBucketCorsOutcomeCallable PutBucketCorsCallable(const Model::PutBucketCorsRequest& request) const;
 
         /**
-         * <p>Sets the cors configuration for a bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the CORS configuration for a bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketCors">AWS
          * API Reference</a></p>
          *
@@ -2181,10 +2298,10 @@ namespace Aws
         virtual void PutBucketPolicyAsync(const Model::PutBucketPolicyRequest& request, const PutBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Creates a new replication configuration (or replaces an existing one, if
-         * present). For more information, see <a href="
+         * <p> Creates a replication configuration or replaces an existing one. For more
+         * information, see <a href="
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
@@ -2192,10 +2309,10 @@ namespace Aws
         virtual Model::PutBucketReplicationOutcome PutBucketReplication(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * <p> Creates a new replication configuration (or replaces an existing one, if
-         * present). For more information, see <a href="
+         * <p> Creates a replication configuration or replaces an existing one. For more
+         * information, see <a href="
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
@@ -2205,10 +2322,10 @@ namespace Aws
         virtual Model::PutBucketReplicationOutcomeCallable PutBucketReplicationCallable(const Model::PutBucketReplicationRequest& request) const;
 
         /**
-         * <p> Creates a new replication configuration (or replaces an existing one, if
-         * present). For more information, see <a href="
+         * <p> Creates a replication configuration or replaces an existing one. For more
+         * information, see <a href="
          * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-         * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p><p><h3>See
+         * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketReplication">AWS
          * API Reference</a></p>
@@ -2420,6 +2537,34 @@ namespace Aws
         virtual void PutObjectTaggingAsync(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutPublicAccessBlockOutcome PutPublicAccessBlock(const Model::PutPublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutPublicAccessBlockOutcomeCallable PutPublicAccessBlockCallable(const Model::PutPublicAccessBlockRequest& request) const;
+
+        /**
+         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Restores an archived copy of an object back into Amazon S3</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
@@ -2593,6 +2738,7 @@ namespace Aws
         void DeleteObjectAsyncHelper(const Model::DeleteObjectRequest& request, const DeleteObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteObjectTaggingAsyncHelper(const Model::DeleteObjectTaggingRequest& request, const DeleteObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteObjectsAsyncHelper(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePublicAccessBlockAsyncHelper(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketAccelerateConfigurationAsyncHelper(const Model::GetBucketAccelerateConfigurationRequest& request, const GetBucketAccelerateConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketAclAsyncHelper(const Model::GetBucketAclRequest& request, const GetBucketAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketAnalyticsConfigurationAsyncHelper(const Model::GetBucketAnalyticsConfigurationRequest& request, const GetBucketAnalyticsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2605,6 +2751,7 @@ namespace Aws
         void GetBucketMetricsConfigurationAsyncHelper(const Model::GetBucketMetricsConfigurationRequest& request, const GetBucketMetricsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketNotificationConfigurationAsyncHelper(const Model::GetBucketNotificationConfigurationRequest& request, const GetBucketNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketPolicyAsyncHelper(const Model::GetBucketPolicyRequest& request, const GetBucketPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBucketPolicyStatusAsyncHelper(const Model::GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketReplicationAsyncHelper(const Model::GetBucketReplicationRequest& request, const GetBucketReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketRequestPaymentAsyncHelper(const Model::GetBucketRequestPaymentRequest& request, const GetBucketRequestPaymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBucketTaggingAsyncHelper(const Model::GetBucketTaggingRequest& request, const GetBucketTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2614,6 +2761,7 @@ namespace Aws
         void GetObjectAclAsyncHelper(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectTaggingAsyncHelper(const Model::GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectTorrentAsyncHelper(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetPublicAccessBlockAsyncHelper(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void HeadBucketAsyncHelper(const Model::HeadBucketRequest& request, const HeadBucketResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void HeadObjectAsyncHelper(const Model::HeadObjectRequest& request, const HeadObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBucketAnalyticsConfigurationsAsyncHelper(const Model::ListBucketAnalyticsConfigurationsRequest& request, const ListBucketAnalyticsConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2644,6 +2792,7 @@ namespace Aws
         void PutObjectAsyncHelper(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutObjectAclAsyncHelper(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutObjectTaggingAsyncHelper(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutPublicAccessBlockAsyncHelper(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreObjectAsyncHelper(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadPartAsyncHelper(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadPartCopyAsyncHelper(const Model::UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

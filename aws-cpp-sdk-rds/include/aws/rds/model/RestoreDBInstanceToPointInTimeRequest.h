@@ -1320,6 +1320,42 @@ namespace Model
      */
     inline RestoreDBInstanceToPointInTimeRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline const Aws::String& GetSourceDbiResourceId() const{ return m_sourceDbiResourceId; }
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline void SetSourceDbiResourceId(const Aws::String& value) { m_sourceDbiResourceIdHasBeenSet = true; m_sourceDbiResourceId = value; }
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline void SetSourceDbiResourceId(Aws::String&& value) { m_sourceDbiResourceIdHasBeenSet = true; m_sourceDbiResourceId = std::move(value); }
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline void SetSourceDbiResourceId(const char* value) { m_sourceDbiResourceIdHasBeenSet = true; m_sourceDbiResourceId.assign(value); }
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDbiResourceId(const Aws::String& value) { SetSourceDbiResourceId(value); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDbiResourceId(Aws::String&& value) { SetSourceDbiResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The resource ID of the source DB instance from which to restore.</p>
+     */
+    inline RestoreDBInstanceToPointInTimeRequest& WithSourceDbiResourceId(const char* value) { SetSourceDbiResourceId(value); return *this;}
+
   private:
 
     Aws::String m_sourceDBInstanceIdentifier;
@@ -1408,6 +1444,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_sourceDbiResourceId;
+    bool m_sourceDbiResourceIdHasBeenSet;
   };
 
 } // namespace Model

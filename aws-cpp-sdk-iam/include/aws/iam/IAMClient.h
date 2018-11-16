@@ -75,6 +75,7 @@
 #include <aws/iam/model/ListPoliciesResult.h>
 #include <aws/iam/model/ListPolicyVersionsResult.h>
 #include <aws/iam/model/ListRolePoliciesResult.h>
+#include <aws/iam/model/ListRoleTagsResult.h>
 #include <aws/iam/model/ListRolesResult.h>
 #include <aws/iam/model/ListSAMLProvidersResult.h>
 #include <aws/iam/model/ListSSHPublicKeysResult.h>
@@ -82,6 +83,7 @@
 #include <aws/iam/model/ListServiceSpecificCredentialsResult.h>
 #include <aws/iam/model/ListSigningCertificatesResult.h>
 #include <aws/iam/model/ListUserPoliciesResult.h>
+#include <aws/iam/model/ListUserTagsResult.h>
 #include <aws/iam/model/ListUsersResult.h>
 #include <aws/iam/model/ListVirtualMFADevicesResult.h>
 #include <aws/iam/model/ResetServiceSpecificCredentialResult.h>
@@ -227,6 +229,7 @@ namespace Model
         class ListPoliciesRequest;
         class ListPolicyVersionsRequest;
         class ListRolePoliciesRequest;
+        class ListRoleTagsRequest;
         class ListRolesRequest;
         class ListSAMLProvidersRequest;
         class ListSSHPublicKeysRequest;
@@ -234,6 +237,7 @@ namespace Model
         class ListServiceSpecificCredentialsRequest;
         class ListSigningCertificatesRequest;
         class ListUserPoliciesRequest;
+        class ListUserTagsRequest;
         class ListUsersRequest;
         class ListVirtualMFADevicesRequest;
         class PutGroupPolicyRequest;
@@ -249,6 +253,10 @@ namespace Model
         class SetDefaultPolicyVersionRequest;
         class SimulateCustomPolicyRequest;
         class SimulatePrincipalPolicyRequest;
+        class TagRoleRequest;
+        class TagUserRequest;
+        class UntagRoleRequest;
+        class UntagUserRequest;
         class UpdateAccessKeyRequest;
         class UpdateAccountPasswordPolicyRequest;
         class UpdateAssumeRolePolicyRequest;
@@ -355,6 +363,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListPoliciesResult, Aws::Client::AWSError<IAMErrors>> ListPoliciesOutcome;
         typedef Aws::Utils::Outcome<ListPolicyVersionsResult, Aws::Client::AWSError<IAMErrors>> ListPolicyVersionsOutcome;
         typedef Aws::Utils::Outcome<ListRolePoliciesResult, Aws::Client::AWSError<IAMErrors>> ListRolePoliciesOutcome;
+        typedef Aws::Utils::Outcome<ListRoleTagsResult, Aws::Client::AWSError<IAMErrors>> ListRoleTagsOutcome;
         typedef Aws::Utils::Outcome<ListRolesResult, Aws::Client::AWSError<IAMErrors>> ListRolesOutcome;
         typedef Aws::Utils::Outcome<ListSAMLProvidersResult, Aws::Client::AWSError<IAMErrors>> ListSAMLProvidersOutcome;
         typedef Aws::Utils::Outcome<ListSSHPublicKeysResult, Aws::Client::AWSError<IAMErrors>> ListSSHPublicKeysOutcome;
@@ -362,6 +371,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListServiceSpecificCredentialsResult, Aws::Client::AWSError<IAMErrors>> ListServiceSpecificCredentialsOutcome;
         typedef Aws::Utils::Outcome<ListSigningCertificatesResult, Aws::Client::AWSError<IAMErrors>> ListSigningCertificatesOutcome;
         typedef Aws::Utils::Outcome<ListUserPoliciesResult, Aws::Client::AWSError<IAMErrors>> ListUserPoliciesOutcome;
+        typedef Aws::Utils::Outcome<ListUserTagsResult, Aws::Client::AWSError<IAMErrors>> ListUserTagsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<IAMErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVirtualMFADevicesResult, Aws::Client::AWSError<IAMErrors>> ListVirtualMFADevicesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> PutGroupPolicyOutcome;
@@ -377,6 +387,10 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> SetDefaultPolicyVersionOutcome;
         typedef Aws::Utils::Outcome<SimulateCustomPolicyResult, Aws::Client::AWSError<IAMErrors>> SimulateCustomPolicyOutcome;
         typedef Aws::Utils::Outcome<SimulatePrincipalPolicyResult, Aws::Client::AWSError<IAMErrors>> SimulatePrincipalPolicyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> TagRoleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> TagUserOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> UntagRoleOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> UntagUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> UpdateAccessKeyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> UpdateAccountPasswordPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<IAMErrors>> UpdateAssumeRolePolicyOutcome;
@@ -483,6 +497,7 @@ namespace Model
         typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
         typedef std::future<ListPolicyVersionsOutcome> ListPolicyVersionsOutcomeCallable;
         typedef std::future<ListRolePoliciesOutcome> ListRolePoliciesOutcomeCallable;
+        typedef std::future<ListRoleTagsOutcome> ListRoleTagsOutcomeCallable;
         typedef std::future<ListRolesOutcome> ListRolesOutcomeCallable;
         typedef std::future<ListSAMLProvidersOutcome> ListSAMLProvidersOutcomeCallable;
         typedef std::future<ListSSHPublicKeysOutcome> ListSSHPublicKeysOutcomeCallable;
@@ -490,6 +505,7 @@ namespace Model
         typedef std::future<ListServiceSpecificCredentialsOutcome> ListServiceSpecificCredentialsOutcomeCallable;
         typedef std::future<ListSigningCertificatesOutcome> ListSigningCertificatesOutcomeCallable;
         typedef std::future<ListUserPoliciesOutcome> ListUserPoliciesOutcomeCallable;
+        typedef std::future<ListUserTagsOutcome> ListUserTagsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVirtualMFADevicesOutcome> ListVirtualMFADevicesOutcomeCallable;
         typedef std::future<PutGroupPolicyOutcome> PutGroupPolicyOutcomeCallable;
@@ -505,6 +521,10 @@ namespace Model
         typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
         typedef std::future<SimulateCustomPolicyOutcome> SimulateCustomPolicyOutcomeCallable;
         typedef std::future<SimulatePrincipalPolicyOutcome> SimulatePrincipalPolicyOutcomeCallable;
+        typedef std::future<TagRoleOutcome> TagRoleOutcomeCallable;
+        typedef std::future<TagUserOutcome> TagUserOutcomeCallable;
+        typedef std::future<UntagRoleOutcome> UntagRoleOutcomeCallable;
+        typedef std::future<UntagUserOutcome> UntagUserOutcomeCallable;
         typedef std::future<UpdateAccessKeyOutcome> UpdateAccessKeyOutcomeCallable;
         typedef std::future<UpdateAccountPasswordPolicyOutcome> UpdateAccountPasswordPolicyOutcomeCallable;
         typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
@@ -614,6 +634,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPoliciesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListPolicyVersionsRequest&, const Model::ListPolicyVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPolicyVersionsResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListRolePoliciesRequest&, const Model::ListRolePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRolePoliciesResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::ListRoleTagsRequest&, const Model::ListRoleTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoleTagsResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListRolesRequest&, const Model::ListRolesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRolesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListSAMLProvidersRequest&, const Model::ListSAMLProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSAMLProvidersResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListSSHPublicKeysRequest&, const Model::ListSSHPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSSHPublicKeysResponseReceivedHandler;
@@ -621,6 +642,7 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::ListServiceSpecificCredentialsRequest&, const Model::ListServiceSpecificCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceSpecificCredentialsResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListSigningCertificatesRequest&, const Model::ListSigningCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSigningCertificatesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListUserPoliciesRequest&, const Model::ListUserPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserPoliciesResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::ListUserTagsRequest&, const Model::ListUserTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserTagsResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::ListVirtualMFADevicesRequest&, const Model::ListVirtualMFADevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVirtualMFADevicesResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::PutGroupPolicyRequest&, const Model::PutGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutGroupPolicyResponseReceivedHandler;
@@ -636,6 +658,10 @@ namespace Model
     typedef std::function<void(const IAMClient*, const Model::SetDefaultPolicyVersionRequest&, const Model::SetDefaultPolicyVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetDefaultPolicyVersionResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::SimulateCustomPolicyRequest&, const Model::SimulateCustomPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SimulateCustomPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::SimulatePrincipalPolicyRequest&, const Model::SimulatePrincipalPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SimulatePrincipalPolicyResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::TagRoleRequest&, const Model::TagRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagRoleResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::TagUserRequest&, const Model::TagUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagUserResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::UntagRoleRequest&, const Model::UntagRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagRoleResponseReceivedHandler;
+    typedef std::function<void(const IAMClient*, const Model::UntagUserRequest&, const Model::UntagUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagUserResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateAccessKeyRequest&, const Model::UpdateAccessKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessKeyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateAccountPasswordPolicyRequest&, const Model::UpdateAccountPasswordPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccountPasswordPolicyResponseReceivedHandler;
     typedef std::function<void(const IAMClient*, const Model::UpdateAssumeRolePolicyRequest&, const Model::UpdateAssumeRolePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAssumeRolePolicyResponseReceivedHandler;
@@ -1573,13 +1599,11 @@ namespace Model
          * ensure that the service is not broken by an unexpectedly changed or deleted
          * role, which could put your AWS resources into an unknown state. Allowing the
          * service to control the role helps improve service stability and proper cleanup
-         * when a service and its role are no longer needed.</p> <p>The name of the role is
-         * generated by combining the string that you specify for the
-         * <code>AWSServiceName</code> parameter with the string that you specify for the
-         * <code>CustomSuffix</code> parameter. The resulting name must be unique in your
-         * account or the request fails.</p> <p>To attach a policy to this service-linked
-         * role, you must make the request using the AWS service that depends on this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * when a service and its role are no longer needed. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using
+         * Service-Linked Roles</a> in the <i>IAM User Guide</i>. </p> <p>To attach a
+         * policy to this service-linked role, you must make the request using the AWS
+         * service that depends on this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">AWS
          * API Reference</a></p>
          */
@@ -1591,13 +1615,11 @@ namespace Model
          * ensure that the service is not broken by an unexpectedly changed or deleted
          * role, which could put your AWS resources into an unknown state. Allowing the
          * service to control the role helps improve service stability and proper cleanup
-         * when a service and its role are no longer needed.</p> <p>The name of the role is
-         * generated by combining the string that you specify for the
-         * <code>AWSServiceName</code> parameter with the string that you specify for the
-         * <code>CustomSuffix</code> parameter. The resulting name must be unique in your
-         * account or the request fails.</p> <p>To attach a policy to this service-linked
-         * role, you must make the request using the AWS service that depends on this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * when a service and its role are no longer needed. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using
+         * Service-Linked Roles</a> in the <i>IAM User Guide</i>. </p> <p>To attach a
+         * policy to this service-linked role, you must make the request using the AWS
+         * service that depends on this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">AWS
          * API Reference</a></p>
          *
@@ -1611,13 +1633,11 @@ namespace Model
          * ensure that the service is not broken by an unexpectedly changed or deleted
          * role, which could put your AWS resources into an unknown state. Allowing the
          * service to control the role helps improve service stability and proper cleanup
-         * when a service and its role are no longer needed.</p> <p>The name of the role is
-         * generated by combining the string that you specify for the
-         * <code>AWSServiceName</code> parameter with the string that you specify for the
-         * <code>CustomSuffix</code> parameter. The resulting name must be unique in your
-         * account or the request fails.</p> <p>To attach a policy to this service-linked
-         * role, you must make the request using the AWS service that depends on this
-         * role.</p><p><h3>See Also:</h3>   <a
+         * when a service and its role are no longer needed. For more information, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using
+         * Service-Linked Roles</a> in the <i>IAM User Guide</i>. </p> <p>To attach a
+         * policy to this service-linked role, you must make the request using the AWS
+         * service that depends on this role.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/CreateServiceLinkedRole">AWS
          * API Reference</a></p>
          *
@@ -4768,6 +4788,40 @@ namespace Model
         virtual void ListRolePoliciesAsync(const Model::ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the tags that are attached to the specified role. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRoleTagsOutcome ListRoleTags(const Model::ListRoleTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags that are attached to the specified role. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRoleTagsOutcomeCallable ListRoleTagsCallable(const Model::ListRoleTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags that are attached to the specified role. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListRoleTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRoleTagsAsync(const Model::ListRoleTagsRequest& request, const ListRoleTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the IAM roles that have the specified path prefix. If there are none,
          * the operation returns an empty list. For more information about roles, go to <a
          * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/WorkingWithRoles.html">Working
@@ -5088,6 +5142,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListUserPoliciesAsync(const Model::ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the tags that are attached to the specified user. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUserTagsOutcome ListUserTags(const Model::ListUserTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags that are attached to the specified user. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListUserTagsOutcomeCallable ListUserTagsCallable(const Model::ListUserTagsRequest& request) const;
+
+        /**
+         * <p>Lists the tags that are attached to the specified user. The returned list of
+         * tags is sorted by tag key. For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ListUserTags">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListUserTagsAsync(const Model::ListUserTagsRequest& request, const ListUserTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the IAM users that have the specified path prefix. If no path prefix is
@@ -5898,6 +5986,271 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SimulatePrincipalPolicyAsync(const Model::SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM role. The role can be a regular role or a
+         * service-linked role. If a tag with the same key name already exists, then that
+         * tag is overwritten with the new value.</p> <p>A tag consists of a key name and
+         * an associated value. By assigning tags to your resources, you can do the
+         * following:</p> <ul> <li> <p> <b>Administrative grouping and discovery</b> -
+         * Attach tags to resources to aid in organization and search. For example, you
+         * could search for all resources with the key name <i>Project</i> and the value
+         * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost
+         * Center</i> and the value <i>41200</i>. </p> </li> <li> <p> <b>Access control</b>
+         * - Reference tags in IAM user-based and resource-based policies. You can use tags
+         * to restrict access to only an IAM user or role that has a specified tag
+         * attached. You can also restrict access to only those resources that have a
+         * certain tag attached. For examples of policies that show how to use tags to
+         * control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagRoleOutcome TagRole(const Model::TagRoleRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM role. The role can be a regular role or a
+         * service-linked role. If a tag with the same key name already exists, then that
+         * tag is overwritten with the new value.</p> <p>A tag consists of a key name and
+         * an associated value. By assigning tags to your resources, you can do the
+         * following:</p> <ul> <li> <p> <b>Administrative grouping and discovery</b> -
+         * Attach tags to resources to aid in organization and search. For example, you
+         * could search for all resources with the key name <i>Project</i> and the value
+         * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost
+         * Center</i> and the value <i>41200</i>. </p> </li> <li> <p> <b>Access control</b>
+         * - Reference tags in IAM user-based and resource-based policies. You can use tags
+         * to restrict access to only an IAM user or role that has a specified tag
+         * attached. You can also restrict access to only those resources that have a
+         * certain tag attached. For examples of policies that show how to use tags to
+         * control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagRoleOutcomeCallable TagRoleCallable(const Model::TagRoleRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM role. The role can be a regular role or a
+         * service-linked role. If a tag with the same key name already exists, then that
+         * tag is overwritten with the new value.</p> <p>A tag consists of a key name and
+         * an associated value. By assigning tags to your resources, you can do the
+         * following:</p> <ul> <li> <p> <b>Administrative grouping and discovery</b> -
+         * Attach tags to resources to aid in organization and search. For example, you
+         * could search for all resources with the key name <i>Project</i> and the value
+         * <i>MyImportantProject</i>. Or search for all resources with the key name <i>Cost
+         * Center</i> and the value <i>41200</i>. </p> </li> <li> <p> <b>Access control</b>
+         * - Reference tags in IAM user-based and resource-based policies. You can use tags
+         * to restrict access to only an IAM user or role that has a specified tag
+         * attached. You can also restrict access to only those resources that have a
+         * certain tag attached. For examples of policies that show how to use tags to
+         * control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagRole">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagRoleAsync(const Model::TagRoleRequest& request, const TagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM user. If a tag with the same key name already
+         * exists, then that tag is overwritten with the new value.</p> <p>A tag consists
+         * of a key name and an associated value. By assigning tags to your resources, you
+         * can do the following:</p> <ul> <li> <p> <b>Administrative grouping and
+         * discovery</b> - Attach tags to resources to aid in organization and search. For
+         * example, you could search for all resources with the key name <i>Project</i> and
+         * the value <i>MyImportantProject</i>. Or search for all resources with the key
+         * name <i>Cost Center</i> and the value <i>41200</i>. </p> </li> <li> <p>
+         * <b>Access control</b> - Reference tags in IAM user-based and resource-based
+         * policies. You can use tags to restrict access to only an IAM requesting user or
+         * to a role that has a specified tag attached. You can also restrict access to
+         * only those resources that have a certain tag attached. For examples of policies
+         * that show how to use tags to control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::TagUserOutcome TagUser(const Model::TagUserRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM user. If a tag with the same key name already
+         * exists, then that tag is overwritten with the new value.</p> <p>A tag consists
+         * of a key name and an associated value. By assigning tags to your resources, you
+         * can do the following:</p> <ul> <li> <p> <b>Administrative grouping and
+         * discovery</b> - Attach tags to resources to aid in organization and search. For
+         * example, you could search for all resources with the key name <i>Project</i> and
+         * the value <i>MyImportantProject</i>. Or search for all resources with the key
+         * name <i>Cost Center</i> and the value <i>41200</i>. </p> </li> <li> <p>
+         * <b>Access control</b> - Reference tags in IAM user-based and resource-based
+         * policies. You can use tags to restrict access to only an IAM requesting user or
+         * to a role that has a specified tag attached. You can also restrict access to
+         * only those resources that have a certain tag attached. For examples of policies
+         * that show how to use tags to control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagUserOutcomeCallable TagUserCallable(const Model::TagUserRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to an IAM user. If a tag with the same key name already
+         * exists, then that tag is overwritten with the new value.</p> <p>A tag consists
+         * of a key name and an associated value. By assigning tags to your resources, you
+         * can do the following:</p> <ul> <li> <p> <b>Administrative grouping and
+         * discovery</b> - Attach tags to resources to aid in organization and search. For
+         * example, you could search for all resources with the key name <i>Project</i> and
+         * the value <i>MyImportantProject</i>. Or search for all resources with the key
+         * name <i>Cost Center</i> and the value <i>41200</i>. </p> </li> <li> <p>
+         * <b>Access control</b> - Reference tags in IAM user-based and resource-based
+         * policies. You can use tags to restrict access to only an IAM requesting user or
+         * to a role that has a specified tag attached. You can also restrict access to
+         * only those resources that have a certain tag attached. For examples of policies
+         * that show how to use tags to control access, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Control
+         * Access Using IAM Tags</a> in the <i>IAM User Guide</i>.</p> </li> <li> <p>
+         * <b>Cost allocation</b> - Use tags to help track which individuals and teams are
+         * using which AWS resources.</p> </li> </ul> <note> <ul> <li> <p>Make sure that
+         * you have no invalid tags and that you do not exceed the allowed number of tags
+         * per role. In either case, the entire request fails and <i>no</i> tags are added
+         * to the role.</p> </li> <li> <p>AWS always interprets the tag <code>Value</code>
+         * as a single string. If you need to store an array, you can store comma-separated
+         * values in the string. However, you must interpret the value in your code.</p>
+         * </li> </ul> </note> <p>For more information about tagging, see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/TagUser">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagUserAsync(const Model::TagUserRequest& request, const TagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the role. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UntagRoleOutcome UntagRole(const Model::UntagRoleRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the role. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagRoleOutcomeCallable UntagRoleCallable(const Model::UntagRoleRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the role. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagRole">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagRoleAsync(const Model::UntagRoleRequest& request, const UntagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the user. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::UntagUserOutcome UntagUser(const Model::UntagUserRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the user. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagUserOutcomeCallable UntagUserCallable(const Model::UntagUserRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the user. For more information about tagging,
+         * see <a
+         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+         * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/UntagUser">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagUserAsync(const Model::UntagUserRequest& request, const UntagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Changes the status of the specified access key from Active to Inactive, or
@@ -6897,6 +7250,7 @@ namespace Model
         void ListPoliciesAsyncHelper(const Model::ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPolicyVersionsAsyncHelper(const Model::ListPolicyVersionsRequest& request, const ListPolicyVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRolePoliciesAsyncHelper(const Model::ListRolePoliciesRequest& request, const ListRolePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRoleTagsAsyncHelper(const Model::ListRoleTagsRequest& request, const ListRoleTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRolesAsyncHelper(const Model::ListRolesRequest& request, const ListRolesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSAMLProvidersAsyncHelper(const Model::ListSAMLProvidersRequest& request, const ListSAMLProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSSHPublicKeysAsyncHelper(const Model::ListSSHPublicKeysRequest& request, const ListSSHPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6904,6 +7258,7 @@ namespace Model
         void ListServiceSpecificCredentialsAsyncHelper(const Model::ListServiceSpecificCredentialsRequest& request, const ListServiceSpecificCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSigningCertificatesAsyncHelper(const Model::ListSigningCertificatesRequest& request, const ListSigningCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUserPoliciesAsyncHelper(const Model::ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListUserTagsAsyncHelper(const Model::ListUserTagsRequest& request, const ListUserTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVirtualMFADevicesAsyncHelper(const Model::ListVirtualMFADevicesRequest& request, const ListVirtualMFADevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutGroupPolicyAsyncHelper(const Model::PutGroupPolicyRequest& request, const PutGroupPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6919,6 +7274,10 @@ namespace Model
         void SetDefaultPolicyVersionAsyncHelper(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SimulateCustomPolicyAsyncHelper(const Model::SimulateCustomPolicyRequest& request, const SimulateCustomPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SimulatePrincipalPolicyAsyncHelper(const Model::SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagRoleAsyncHelper(const Model::TagRoleRequest& request, const TagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagUserAsyncHelper(const Model::TagUserRequest& request, const TagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagRoleAsyncHelper(const Model::UntagRoleRequest& request, const UntagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagUserAsyncHelper(const Model::UntagUserRequest& request, const UntagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccessKeyAsyncHelper(const Model::UpdateAccessKeyRequest& request, const UpdateAccessKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAccountPasswordPolicyAsyncHelper(const Model::UpdateAccountPasswordPolicyRequest& request, const UpdateAccountPasswordPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAssumeRolePolicyAsyncHelper(const Model::UpdateAssumeRolePolicyRequest& request, const UpdateAssumeRolePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

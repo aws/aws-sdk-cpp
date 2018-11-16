@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/redshift/model/SnapshotSortingEntity.h>
 #include <utility>
 
 namespace Aws
@@ -617,6 +618,28 @@ namespace Model
      */
     inline DescribeClusterSnapshotsRequest& WithClusterExists(bool value) { SetClusterExists(value); return *this;}
 
+
+    
+    inline const Aws::Vector<SnapshotSortingEntity>& GetSortingEntities() const{ return m_sortingEntities; }
+
+    
+    inline void SetSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = value; }
+
+    
+    inline void SetSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities = std::move(value); }
+
+    
+    inline DescribeClusterSnapshotsRequest& WithSortingEntities(const Aws::Vector<SnapshotSortingEntity>& value) { SetSortingEntities(value); return *this;}
+
+    
+    inline DescribeClusterSnapshotsRequest& WithSortingEntities(Aws::Vector<SnapshotSortingEntity>&& value) { SetSortingEntities(std::move(value)); return *this;}
+
+    
+    inline DescribeClusterSnapshotsRequest& AddSortingEntities(const SnapshotSortingEntity& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(value); return *this; }
+
+    
+    inline DescribeClusterSnapshotsRequest& AddSortingEntities(SnapshotSortingEntity&& value) { m_sortingEntitiesHasBeenSet = true; m_sortingEntities.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -651,6 +674,9 @@ namespace Model
 
     bool m_clusterExists;
     bool m_clusterExistsHasBeenSet;
+
+    Aws::Vector<SnapshotSortingEntity> m_sortingEntities;
+    bool m_sortingEntitiesHasBeenSet;
   };
 
 } // namespace Model

@@ -35,6 +35,7 @@ namespace Aws
         static const int ADV_HASH = HashingUtils::HashString("ADV");
         static const int AUX_HASH = HashingUtils::HashString("AUX");
         static const int CONJ_HASH = HashingUtils::HashString("CONJ");
+        static const int CCONJ_HASH = HashingUtils::HashString("CCONJ");
         static const int DET_HASH = HashingUtils::HashString("DET");
         static const int INTJ_HASH = HashingUtils::HashString("INTJ");
         static const int NOUN_HASH = HashingUtils::HashString("NOUN");
@@ -71,6 +72,10 @@ namespace Aws
           else if (hashCode == CONJ_HASH)
           {
             return PartOfSpeechTagType::CONJ;
+          }
+          else if (hashCode == CCONJ_HASH)
+          {
+            return PartOfSpeechTagType::CCONJ;
           }
           else if (hashCode == DET_HASH)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "AUX";
           case PartOfSpeechTagType::CONJ:
             return "CONJ";
+          case PartOfSpeechTagType::CCONJ:
+            return "CCONJ";
           case PartOfSpeechTagType::DET:
             return "DET";
           case PartOfSpeechTagType::INTJ:

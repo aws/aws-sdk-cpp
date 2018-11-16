@@ -33,7 +33,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_placementConstraintsHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,17 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_memoryHasBeenSet)
   {
    payload.WithString("memory", m_memory);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

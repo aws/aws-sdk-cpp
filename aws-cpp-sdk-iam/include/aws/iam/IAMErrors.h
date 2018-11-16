@@ -55,7 +55,8 @@ enum class IAMErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  CREDENTIAL_REPORT_EXPIRED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CREDENTIAL_REPORT_EXPIRED,
   CREDENTIAL_REPORT_NOT_PRESENT,
   CREDENTIAL_REPORT_NOT_READY,
   DELETE_CONFLICT,

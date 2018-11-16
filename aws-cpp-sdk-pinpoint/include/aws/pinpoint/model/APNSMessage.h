@@ -352,37 +352,44 @@ namespace Model
 
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline APNSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline APNSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
 
     /**
-     * The URL that points to a video used in the push notification.
+     * A URL that refers to the location of an image or video that you want to display
+     * in the push notification.
      */
     inline APNSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
 

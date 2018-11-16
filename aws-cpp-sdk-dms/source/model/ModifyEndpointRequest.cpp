@@ -43,7 +43,9 @@ ModifyEndpointRequest::ModifyEndpointRequest() :
     m_dynamoDbSettingsHasBeenSet(false),
     m_s3SettingsHasBeenSet(false),
     m_dmsTransferSettingsHasBeenSet(false),
-    m_mongoDbSettingsHasBeenSet(false)
+    m_mongoDbSettingsHasBeenSet(false),
+    m_kinesisSettingsHasBeenSet(false),
+    m_elasticsearchSettingsHasBeenSet(false)
 {
 }
 
@@ -154,6 +156,18 @@ Aws::String ModifyEndpointRequest::SerializePayload() const
   if(m_mongoDbSettingsHasBeenSet)
   {
    payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
+
+  }
+
+  if(m_kinesisSettingsHasBeenSet)
+  {
+   payload.WithObject("KinesisSettings", m_kinesisSettings.Jsonize());
+
+  }
+
+  if(m_elasticsearchSettingsHasBeenSet)
+  {
+   payload.WithObject("ElasticsearchSettings", m_elasticsearchSettings.Jsonize());
 
   }
 

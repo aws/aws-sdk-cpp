@@ -52,7 +52,8 @@ ReplicationInstance::ReplicationInstance() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_freeUntilHasBeenSet(false)
+    m_freeUntilHasBeenSet(false),
+    m_dnsNameServersHasBeenSet(false)
 {
 }
 
@@ -80,7 +81,8 @@ ReplicationInstance::ReplicationInstance(JsonView jsonValue) :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_freeUntilHasBeenSet(false)
+    m_freeUntilHasBeenSet(false),
+    m_dnsNameServersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -236,6 +238,13 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     m_freeUntilHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DnsNameServers"))
+  {
+    m_dnsNameServers = jsonValue.GetString("DnsNameServers");
+
+    m_dnsNameServersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -374,6 +383,12 @@ JsonValue ReplicationInstance::Jsonize() const
   if(m_freeUntilHasBeenSet)
   {
    payload.WithDouble("FreeUntil", m_freeUntil.SecondsWithMSPrecision());
+  }
+
+  if(m_dnsNameServersHasBeenSet)
+  {
+   payload.WithString("DnsNameServers", m_dnsNameServers);
+
   }
 
   return payload;

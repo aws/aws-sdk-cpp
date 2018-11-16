@@ -30,6 +30,7 @@ namespace Model
 
 Schedule::Schedule() : 
     m_endTimeHasBeenSet(false),
+    m_eventFilterHasBeenSet(false),
     m_frequency(Frequency::NOT_SET),
     m_frequencyHasBeenSet(false),
     m_isLocalTime(false),
@@ -42,6 +43,7 @@ Schedule::Schedule() :
 
 Schedule::Schedule(JsonView jsonValue) : 
     m_endTimeHasBeenSet(false),
+    m_eventFilterHasBeenSet(false),
     m_frequency(Frequency::NOT_SET),
     m_frequencyHasBeenSet(false),
     m_isLocalTime(false),
@@ -60,6 +62,13 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     m_endTime = jsonValue.GetString("EndTime");
 
     m_endTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EventFilter"))
+  {
+    m_eventFilter = jsonValue.GetObject("EventFilter");
+
+    m_eventFilterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Frequency"))
@@ -107,6 +116,12 @@ JsonValue Schedule::Jsonize() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("EndTime", m_endTime);
+
+  }
+
+  if(m_eventFilterHasBeenSet)
+  {
+   payload.WithObject("EventFilter", m_eventFilter.Jsonize());
 
   }
 

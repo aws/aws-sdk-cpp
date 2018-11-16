@@ -52,49 +52,56 @@ namespace Model
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline DeleteClusterSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline DeleteClusterSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier of the manual snapshot to be deleted.</p>
      * <p>Constraints: Must be the name of an existing snapshot that is in the
-     * <code>available</code> state.</p>
+     * <code>available</code>, <code>failed</code>, or <code>cancelled</code>
+     * state.</p>
      */
     inline DeleteClusterSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
 

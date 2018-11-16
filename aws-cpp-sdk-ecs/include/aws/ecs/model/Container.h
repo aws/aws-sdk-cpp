@@ -328,35 +328,35 @@ namespace Model
 
     /**
      * <p>The health status of the container. If health checks are not configured for
-     * this container in its task definition, then it reports health status as
+     * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline const HealthStatus& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
      * <p>The health status of the container. If health checks are not configured for
-     * this container in its task definition, then it reports health status as
+     * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline void SetHealthStatus(const HealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
 
     /**
      * <p>The health status of the container. If health checks are not configured for
-     * this container in its task definition, then it reports health status as
+     * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline void SetHealthStatus(HealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
 
     /**
      * <p>The health status of the container. If health checks are not configured for
-     * this container in its task definition, then it reports health status as
+     * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline Container& WithHealthStatus(const HealthStatus& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>The health status of the container. If health checks are not configured for
-     * this container in its task definition, then it reports health status as
+     * this container in its task definition, then it reports the health status as
      * <code>UNKNOWN</code>.</p>
      */
     inline Container& WithHealthStatus(HealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}

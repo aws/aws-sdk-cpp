@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 DescribeServicesRequest::DescribeServicesRequest() : 
     m_clusterHasBeenSet(false),
-    m_servicesHasBeenSet(false)
+    m_servicesHasBeenSet(false),
+    m_includeHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String DescribeServicesRequest::SerializePayload() const
      servicesJsonList[servicesIndex].AsString(m_services[servicesIndex]);
    }
    payload.WithArray("services", std::move(servicesJsonList));
+
+  }
+
+  if(m_includeHasBeenSet)
+  {
+   Array<JsonValue> includeJsonList(m_include.size());
+   for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
+   {
+     includeJsonList[includeIndex].AsString(ServiceFieldMapper::GetNameForServiceField(m_include[includeIndex]));
+   }
+   payload.WithArray("include", std::move(includeJsonList));
 
   }
 

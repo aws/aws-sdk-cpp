@@ -71,7 +71,12 @@ Snapshot::Snapshot() :
     m_restorableNodeTypesHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false)
+    m_maintenanceTrackNameHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
+    m_manualSnapshotRemainingDays(0),
+    m_manualSnapshotRemainingDaysHasBeenSet(false),
+    m_snapshotRetentionStartTimeHasBeenSet(false)
 {
 }
 
@@ -116,7 +121,12 @@ Snapshot::Snapshot(const XmlNode& xmlNode) :
     m_restorableNodeTypesHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
-    m_maintenanceTrackNameHasBeenSet(false)
+    m_maintenanceTrackNameHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
+    m_manualSnapshotRemainingDays(0),
+    m_manualSnapshotRemainingDaysHasBeenSet(false),
+    m_snapshotRetentionStartTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -325,6 +335,24 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
       m_maintenanceTrackName = StringUtils::Trim(maintenanceTrackNameNode.GetText().c_str());
       m_maintenanceTrackNameHasBeenSet = true;
     }
+    XmlNode manualSnapshotRetentionPeriodNode = resultNode.FirstChild("ManualSnapshotRetentionPeriod");
+    if(!manualSnapshotRetentionPeriodNode.IsNull())
+    {
+      m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(manualSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
+      m_manualSnapshotRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode manualSnapshotRemainingDaysNode = resultNode.FirstChild("ManualSnapshotRemainingDays");
+    if(!manualSnapshotRemainingDaysNode.IsNull())
+    {
+      m_manualSnapshotRemainingDays = StringUtils::ConvertToInt32(StringUtils::Trim(manualSnapshotRemainingDaysNode.GetText().c_str()).c_str());
+      m_manualSnapshotRemainingDaysHasBeenSet = true;
+    }
+    XmlNode snapshotRetentionStartTimeNode = resultNode.FirstChild("SnapshotRetentionStartTime");
+    if(!snapshotRetentionStartTimeNode.IsNull())
+    {
+      m_snapshotRetentionStartTime = DateTime(StringUtils::Trim(snapshotRetentionStartTimeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_snapshotRetentionStartTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -498,6 +526,21 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
   }
 
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
+  }
+
+  if(m_manualSnapshotRemainingDaysHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManualSnapshotRemainingDays=" << m_manualSnapshotRemainingDays << "&";
+  }
+
+  if(m_snapshotRetentionStartTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotRetentionStartTime=" << StringUtils::URLEncode(m_snapshotRetentionStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -637,6 +680,18 @@ void Snapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_maintenanceTrackNameHasBeenSet)
   {
       oStream << location << ".MaintenanceTrackName=" << StringUtils::URLEncode(m_maintenanceTrackName.c_str()) << "&";
+  }
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
+  }
+  if(m_manualSnapshotRemainingDaysHasBeenSet)
+  {
+      oStream << location << ".ManualSnapshotRemainingDays=" << m_manualSnapshotRemainingDays << "&";
+  }
+  if(m_snapshotRetentionStartTimeHasBeenSet)
+  {
+      oStream << location << ".SnapshotRetentionStartTime=" << StringUtils::URLEncode(m_snapshotRetentionStartTime.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

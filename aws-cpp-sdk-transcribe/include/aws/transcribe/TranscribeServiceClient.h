@@ -182,7 +182,7 @@ namespace Model
         virtual void CreateVocabularyAsync(const Model::CreateVocabularyRequest& request, const CreateVocabularyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as well as any other
+         * <p>Deletes a previously submitted transcription job along with any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
@@ -191,7 +191,7 @@ namespace Model
         virtual Model::DeleteTranscriptionJobOutcome DeleteTranscriptionJob(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as well as any other
+         * <p>Deletes a previously submitted transcription job along with any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS
@@ -202,7 +202,7 @@ namespace Model
         virtual Model::DeleteTranscriptionJobOutcomeCallable DeleteTranscriptionJobCallable(const Model::DeleteTranscriptionJobRequest& request) const;
 
         /**
-         * <p>Deletes a previously submitted transcription job as well as any other
+         * <p>Deletes a previously submitted transcription job along with any other
          * generated results such as the transcription, models, and so on.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteTranscriptionJob">AWS

@@ -511,6 +511,42 @@ namespace Model
      */
     inline DescribeDBSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline DescribeDBSnapshotsRequest& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline DescribeDBSnapshotsRequest& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>A specific DB resource ID to describe.</p>
+     */
+    inline DescribeDBSnapshotsRequest& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -536,6 +572,9 @@ namespace Model
 
     bool m_includePublic;
     bool m_includePublicHasBeenSet;
+
+    Aws::String m_dbiResourceId;
+    bool m_dbiResourceIdHasBeenSet;
   };
 
 } // namespace Model

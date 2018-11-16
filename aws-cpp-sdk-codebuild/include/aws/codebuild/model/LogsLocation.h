@@ -159,37 +159,37 @@ namespace Model
 
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline const Aws::String& GetS3DeepLink() const{ return m_s3DeepLink; }
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline void SetS3DeepLink(const Aws::String& value) { m_s3DeepLinkHasBeenSet = true; m_s3DeepLink = value; }
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline void SetS3DeepLink(Aws::String&& value) { m_s3DeepLinkHasBeenSet = true; m_s3DeepLink = std::move(value); }
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline void SetS3DeepLink(const char* value) { m_s3DeepLinkHasBeenSet = true; m_s3DeepLink.assign(value); }
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline LogsLocation& WithS3DeepLink(const Aws::String& value) { SetS3DeepLink(value); return *this;}
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline LogsLocation& WithS3DeepLink(Aws::String&& value) { SetS3DeepLink(std::move(value)); return *this;}
 
     /**
-     * <p> The URL to an individual build log in an S3 bucket. </p>
+     * <p> The URL to a build log in an S3 bucket. </p>
      */
     inline LogsLocation& WithS3DeepLink(const char* value) { SetS3DeepLink(value); return *this;}
 

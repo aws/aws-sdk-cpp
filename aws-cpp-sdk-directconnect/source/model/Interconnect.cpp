@@ -41,7 +41,9 @@ Interconnect::Interconnect() :
     m_awsDeviceHasBeenSet(false),
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_hasLogicalRedundancyHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ Interconnect::Interconnect(JsonView jsonValue) :
     m_awsDeviceHasBeenSet(false),
     m_jumboFrameCapable(false),
     m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false)
+    m_awsDeviceV2HasBeenSet(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_hasLogicalRedundancyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -142,6 +146,13 @@ Interconnect& Interconnect::operator =(JsonView jsonValue)
     m_awsDeviceV2HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hasLogicalRedundancy"))
+  {
+    m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
+
+    m_hasLogicalRedundancyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +222,11 @@ JsonValue Interconnect::Jsonize() const
   {
    payload.WithString("awsDeviceV2", m_awsDeviceV2);
 
+  }
+
+  if(m_hasLogicalRedundancyHasBeenSet)
+  {
+   payload.WithString("hasLogicalRedundancy", HasLogicalRedundancyMapper::GetNameForHasLogicalRedundancy(m_hasLogicalRedundancy));
   }
 
   return payload;

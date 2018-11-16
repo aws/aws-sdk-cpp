@@ -21,8 +21,10 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
+#include <aws/ecs/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -243,7 +245,7 @@ namespace Model
 
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -256,7 +258,7 @@ namespace Model
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -269,7 +271,7 @@ namespace Model
     inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -282,7 +284,7 @@ namespace Model
     inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -295,7 +297,7 @@ namespace Model
     inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -308,7 +310,7 @@ namespace Model
     inline RunTaskRequest& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -321,7 +323,7 @@ namespace Model
     inline RunTaskRequest& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
 
     /**
-     * <p>An optional tag specified when a task is started. For example if you
+     * <p>An optional tag specified when a task is started. For example, if you
      * automatically trigger a task to run a batch process job, you could apply a
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
@@ -380,49 +382,49 @@ namespace Model
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline RunTaskRequest& WithPlacementConstraints(const Aws::Vector<PlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline RunTaskRequest& WithPlacementConstraints(Aws::Vector<PlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline RunTaskRequest& AddPlacementConstraints(const PlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * up to 10 constraints per task (including constraints in the task definition and
-     * those specified at run time).</p>
+     * those specified at runtime).</p>
      */
     inline RunTaskRequest& AddPlacementConstraints(PlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
@@ -542,7 +544,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * Elastic Network Interface, and it is not supported for other network modes. For
+     * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -553,7 +555,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * Elastic Network Interface, and it is not supported for other network modes. For
+     * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -564,7 +566,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * Elastic Network Interface, and it is not supported for other network modes. For
+     * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -575,7 +577,7 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * Elastic Network Interface, and it is not supported for other network modes. For
+     * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
@@ -586,13 +588,129 @@ namespace Model
     /**
      * <p>The network configuration for the task. This parameter is required for task
      * definitions that use the <code>awsvpc</code> network mode to receive their own
-     * Elastic Network Interface, and it is not supported for other network modes. For
+     * elastic network interface, and it is not supported for other network modes. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
     inline RunTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline RunTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline RunTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline RunTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline RunTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline RunTaskRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline RunTaskRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline RunTaskRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 
   private:
 
@@ -628,6 +746,15 @@ namespace Model
 
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    bool m_enableECSManagedTags;
+    bool m_enableECSManagedTagsHasBeenSet;
+
+    PropagateTags m_propagateTags;
+    bool m_propagateTagsHasBeenSet;
   };
 
 } // namespace Model

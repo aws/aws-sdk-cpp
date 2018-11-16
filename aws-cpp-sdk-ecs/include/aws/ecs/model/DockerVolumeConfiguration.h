@@ -36,10 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>This parameter is specified when using Docker volumes. Docker volumes are
-   * only supported when using the EC2 launch type. Windows containers only support
-   * the use of the <code>local</code> driver. To use bind mounts, specify a
-   * <code>host</code> instead.</p><p><h3>See Also:</h3>   <a
+   * <p>This parameter is specified when you are using Docker volumes. Docker volumes
+   * are only supported when you are using the EC2 launch type. Windows containers
+   * only support the use of the <code>local</code> driver. To use bind mounts,
+   * specify a <code>host</code> instead.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DockerVolumeConfiguration">AWS
    * API Reference</a></p>
    */
@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The scope for the Docker volume which determines it's lifecycle. Docker
-     * volumes that are scoped to a <code>task</code> are automatically provisioned
-     * when the task starts and destroyed when the task stops. Docker volumes that are
-     * scoped as <code>shared</code> persist after the task stops.</p>
+     * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
+     * that are scoped to a <code>task</code> are automatically provisioned when the
+     * task starts and destroyed when the task stops. Docker volumes that are scoped as
+     * <code>shared</code> persist after the task stops.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
 
     /**
-     * <p>The scope for the Docker volume which determines it's lifecycle. Docker
-     * volumes that are scoped to a <code>task</code> are automatically provisioned
-     * when the task starts and destroyed when the task stops. Docker volumes that are
-     * scoped as <code>shared</code> persist after the task stops.</p>
+     * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
+     * that are scoped to a <code>task</code> are automatically provisioned when the
+     * task starts and destroyed when the task stops. Docker volumes that are scoped as
+     * <code>shared</code> persist after the task stops.</p>
      */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
-     * <p>The scope for the Docker volume which determines it's lifecycle. Docker
-     * volumes that are scoped to a <code>task</code> are automatically provisioned
-     * when the task starts and destroyed when the task stops. Docker volumes that are
-     * scoped as <code>shared</code> persist after the task stops.</p>
+     * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
+     * that are scoped to a <code>task</code> are automatically provisioned when the
+     * task starts and destroyed when the task stops. Docker volumes that are scoped as
+     * <code>shared</code> persist after the task stops.</p>
      */
     inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
 
     /**
-     * <p>The scope for the Docker volume which determines it's lifecycle. Docker
-     * volumes that are scoped to a <code>task</code> are automatically provisioned
-     * when the task starts and destroyed when the task stops. Docker volumes that are
-     * scoped as <code>shared</code> persist after the task stops.</p>
+     * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
+     * that are scoped to a <code>task</code> are automatically provisioned when the
+     * task starts and destroyed when the task stops. Docker volumes that are scoped as
+     * <code>shared</code> persist after the task stops.</p>
      */
     inline DockerVolumeConfiguration& WithScope(const Scope& value) { SetScope(value); return *this;}
 
     /**
-     * <p>The scope for the Docker volume which determines it's lifecycle. Docker
-     * volumes that are scoped to a <code>task</code> are automatically provisioned
-     * when the task starts and destroyed when the task stops. Docker volumes that are
-     * scoped as <code>shared</code> persist after the task stops.</p>
+     * <p>The scope for the Docker volume that determines its lifecycle. Docker volumes
+     * that are scoped to a <code>task</code> are automatically provisioned when the
+     * task starts and destroyed when the task stops. Docker volumes that are scoped as
+     * <code>shared</code> persist after the task stops.</p>
      */
     inline DockerVolumeConfiguration& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
 
@@ -243,7 +243,7 @@ namespace Model
 
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -255,7 +255,7 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetDriverOpts() const{ return m_driverOpts; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -267,7 +267,7 @@ namespace Model
     inline void SetDriverOpts(const Aws::Map<Aws::String, Aws::String>& value) { m_driverOptsHasBeenSet = true; m_driverOpts = value; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -279,7 +279,7 @@ namespace Model
     inline void SetDriverOpts(Aws::Map<Aws::String, Aws::String>&& value) { m_driverOptsHasBeenSet = true; m_driverOpts = std::move(value); }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -291,7 +291,7 @@ namespace Model
     inline DockerVolumeConfiguration& WithDriverOpts(const Aws::Map<Aws::String, Aws::String>& value) { SetDriverOpts(value); return *this;}
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -303,7 +303,7 @@ namespace Model
     inline DockerVolumeConfiguration& WithDriverOpts(Aws::Map<Aws::String, Aws::String>&& value) { SetDriverOpts(std::move(value)); return *this;}
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -315,7 +315,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(const Aws::String& key, const Aws::String& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -327,7 +327,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(Aws::String&& key, const Aws::String& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -339,7 +339,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(const Aws::String& key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -351,7 +351,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(Aws::String&& key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -363,7 +363,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(const char* key, Aws::String&& value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a
@@ -375,7 +375,7 @@ namespace Model
     inline DockerVolumeConfiguration& AddDriverOpts(Aws::String&& key, const char* value) { m_driverOptsHasBeenSet = true; m_driverOpts.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of Docker driver specific options passed through. This parameter maps
+     * <p>A map of Docker driver-specific options passed through. This parameter maps
      * to <code>DriverOpts</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/VolumeCreate">Create a
      * volume</a> section of the <a

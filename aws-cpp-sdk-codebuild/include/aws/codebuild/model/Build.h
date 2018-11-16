@@ -407,44 +407,44 @@ namespace Model
 
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline const Aws::Vector<BuildPhase>& GetPhases() const{ return m_phases; }
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline void SetPhases(const Aws::Vector<BuildPhase>& value) { m_phasesHasBeenSet = true; m_phases = value; }
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline void SetPhases(Aws::Vector<BuildPhase>&& value) { m_phasesHasBeenSet = true; m_phases = std::move(value); }
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline Build& WithPhases(const Aws::Vector<BuildPhase>& value) { SetPhases(value); return *this;}
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline Build& WithPhases(Aws::Vector<BuildPhase>&& value) { SetPhases(std::move(value)); return *this;}
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline Build& AddPhases(const BuildPhase& value) { m_phasesHasBeenSet = true; m_phases.push_back(value); return *this; }
 
     /**
-     * <p>Information about all previous build phases that are completed and
-     * information about any current build phase that is not yet complete.</p>
+     * <p>Information about all previous build phases that are complete and information
+     * about any current build phase that is not yet complete.</p>
      */
     inline Build& AddPhases(BuildPhase&& value) { m_phasesHasBeenSet = true; m_phases.push_back(std::move(value)); return *this; }
 
@@ -517,15 +517,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline const Aws::Vector<ProjectSourceVersion>& GetSecondarySourceVersions() const{ return m_secondarySourceVersions; }
 
@@ -535,15 +535,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline void SetSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = value; }
 
@@ -553,15 +553,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline void SetSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions = std::move(value); }
 
@@ -571,15 +571,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline Build& WithSecondarySourceVersions(const Aws::Vector<ProjectSourceVersion>& value) { SetSecondarySourceVersions(value); return *this;}
 
@@ -589,15 +589,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline Build& WithSecondarySourceVersions(Aws::Vector<ProjectSourceVersion>&& value) { SetSecondarySourceVersions(std::move(value)); return *this;}
 
@@ -607,15 +607,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline Build& AddSecondarySourceVersions(const ProjectSourceVersion& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(value); return *this; }
 
@@ -625,15 +625,15 @@ namespace Model
      * CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the commit ID,
      * pull request ID, branch name, or tag name that corresponds to the version of the
      * source code you want to build. If a pull request ID is specified, it must use
-     * the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If
-     * a branch name is specified, the branch's HEAD commit ID will be used. If not
-     * specified, the default branch's HEAD commit ID will be used.</p> </li> <li>
-     * <p>For Bitbucket: the commit ID, branch name, or tag name that corresponds to
-     * the version of the source code you want to build. If a branch name is specified,
-     * the branch's HEAD commit ID will be used. If not specified, the default branch's
-     * HEAD commit ID will be used.</p> </li> <li> <p>For Amazon Simple Storage Service
-     * (Amazon S3): the version ID of the object representing the build input ZIP file
-     * to use.</p> </li> </ul>
+     * the format <code>pr/pull-request-ID</code> (for example, <code>pr/25</code>). If
+     * a branch name is specified, the branch's HEAD commit ID is used. If not
+     * specified, the default branch's HEAD commit ID is used.</p> </li> <li> <p>For
+     * Bitbucket: the commit ID, branch name, or tag name that corresponds to the
+     * version of the source code you want to build. If a branch name is specified, the
+     * branch's HEAD commit ID is used. If not specified, the default branch's HEAD
+     * commit ID is used.</p> </li> <li> <p>For Amazon Simple Storage Service (Amazon
+     * S3): the version ID of the object that represents the build input ZIP file to
+     * use.</p> </li> </ul>
      */
     inline Build& AddSecondarySourceVersions(ProjectSourceVersion&& value) { m_secondarySourceVersionsHasBeenSet = true; m_secondarySourceVersions.push_back(std::move(value)); return *this; }
 
@@ -834,17 +834,36 @@ namespace Model
 
 
     /**
-     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline void SetQueuedTimeoutInMinutes(int value) { m_queuedTimeoutInMinutesHasBeenSet = true; m_queuedTimeoutInMinutes = value; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline Build& WithQueuedTimeoutInMinutes(int value) { SetQueuedTimeoutInMinutes(value); return *this;}
+
+
+    /**
+     * <p>Whether the build is complete. True if complete; otherwise, false.</p>
      */
     inline bool GetBuildComplete() const{ return m_buildComplete; }
 
     /**
-     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
+     * <p>Whether the build is complete. True if complete; otherwise, false.</p>
      */
     inline void SetBuildComplete(bool value) { m_buildCompleteHasBeenSet = true; m_buildComplete = value; }
 
     /**
-     * <p>Whether the build has finished. True if completed; otherwise, false.</p>
+     * <p>Whether the build is complete. True if complete; otherwise, false.</p>
      */
     inline Build& WithBuildComplete(bool value) { SetBuildComplete(value); return *this;}
 
@@ -854,7 +873,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -865,7 +884,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -876,7 +895,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -887,7 +906,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -898,7 +917,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -909,7 +928,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -920,7 +939,7 @@ namespace Model
      * AWS CodePipeline started the build, the pipeline's name (for example,
      * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an AWS
      * Identity and Access Management (IAM) user started the build, the user's name
-     * (for example <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
+     * (for example, <code>MyUserName</code>).</p> </li> <li> <p>If the Jenkins plugin
      * for AWS CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
@@ -997,56 +1016,56 @@ namespace Model
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Build& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Build& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).</p>
+     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
+     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Build& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -1111,6 +1130,9 @@ namespace Model
 
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
+    int m_queuedTimeoutInMinutes;
+    bool m_queuedTimeoutInMinutesHasBeenSet;
 
     bool m_buildComplete;
     bool m_buildCompleteHasBeenSet;

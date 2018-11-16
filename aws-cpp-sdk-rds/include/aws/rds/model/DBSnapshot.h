@@ -967,6 +967,49 @@ namespace Model
      */
     inline DBSnapshot& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline void SetDbiResourceId(Aws::String&& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = std::move(value); }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline void SetDbiResourceId(const char* value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId.assign(value); }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline DBSnapshot& WithDbiResourceId(const Aws::String& value) { SetDbiResourceId(value); return *this;}
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline DBSnapshot& WithDbiResourceId(Aws::String&& value) { SetDbiResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline DBSnapshot& WithDbiResourceId(const char* value) { SetDbiResourceId(value); return *this;}
+
   private:
 
     Aws::String m_dBSnapshotIdentifier;
@@ -1049,6 +1092,9 @@ namespace Model
 
     Aws::Vector<ProcessorFeature> m_processorFeatures;
     bool m_processorFeaturesHasBeenSet;
+
+    Aws::String m_dbiResourceId;
+    bool m_dbiResourceIdHasBeenSet;
   };
 
 } // namespace Model

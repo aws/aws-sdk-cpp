@@ -134,6 +134,42 @@ namespace Model
      */
     inline DeleteBGPPeerRequest& WithCustomerAddress(const char* value) { SetCustomerAddress(value); return *this;}
 
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline const Aws::String& GetBgpPeerId() const{ return m_bgpPeerId; }
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline void SetBgpPeerId(const Aws::String& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = value; }
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline void SetBgpPeerId(Aws::String&& value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId = std::move(value); }
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline void SetBgpPeerId(const char* value) { m_bgpPeerIdHasBeenSet = true; m_bgpPeerId.assign(value); }
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline DeleteBGPPeerRequest& WithBgpPeerId(const Aws::String& value) { SetBgpPeerId(value); return *this;}
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline DeleteBGPPeerRequest& WithBgpPeerId(Aws::String&& value) { SetBgpPeerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the BGP peer.</p>
+     */
+    inline DeleteBGPPeerRequest& WithBgpPeerId(const char* value) { SetBgpPeerId(value); return *this;}
+
   private:
 
     Aws::String m_virtualInterfaceId;
@@ -144,6 +180,9 @@ namespace Model
 
     Aws::String m_customerAddress;
     bool m_customerAddressHasBeenSet;
+
+    Aws::String m_bgpPeerId;
+    bool m_bgpPeerIdHasBeenSet;
   };
 
 } // namespace Model

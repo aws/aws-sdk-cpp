@@ -87,35 +87,35 @@ namespace Model
     /**
      * <p>Container for redirect information. You can redirect requests to another
      * host, to another page, or with another protocol. In the event of an error, you
-     * can can specify a different error code to return.</p>
+     * can specify a different error code to return.</p>
      */
     inline const Redirect& GetRedirect() const{ return m_redirect; }
 
     /**
      * <p>Container for redirect information. You can redirect requests to another
      * host, to another page, or with another protocol. In the event of an error, you
-     * can can specify a different error code to return.</p>
+     * can specify a different error code to return.</p>
      */
     inline void SetRedirect(const Redirect& value) { m_redirectHasBeenSet = true; m_redirect = value; }
 
     /**
      * <p>Container for redirect information. You can redirect requests to another
      * host, to another page, or with another protocol. In the event of an error, you
-     * can can specify a different error code to return.</p>
+     * can specify a different error code to return.</p>
      */
     inline void SetRedirect(Redirect&& value) { m_redirectHasBeenSet = true; m_redirect = std::move(value); }
 
     /**
      * <p>Container for redirect information. You can redirect requests to another
      * host, to another page, or with another protocol. In the event of an error, you
-     * can can specify a different error code to return.</p>
+     * can specify a different error code to return.</p>
      */
     inline RoutingRule& WithRedirect(const Redirect& value) { SetRedirect(value); return *this;}
 
     /**
      * <p>Container for redirect information. You can redirect requests to another
      * host, to another page, or with another protocol. In the event of an error, you
-     * can can specify a different error code to return.</p>
+     * can specify a different error code to return.</p>
      */
     inline RoutingRule& WithRedirect(Redirect&& value) { SetRedirect(std::move(value)); return *this;}
 

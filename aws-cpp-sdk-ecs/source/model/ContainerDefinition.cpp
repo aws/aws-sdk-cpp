@@ -48,6 +48,7 @@ ContainerDefinition::ContainerDefinition() :
     m_mountPointsHasBeenSet(false),
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
+    m_secretsHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -93,6 +94,7 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_mountPointsHasBeenSet(false),
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
+    m_secretsHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -245,6 +247,16 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_linuxParameters = jsonValue.GetObject("linuxParameters");
 
     m_linuxParametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("secrets"))
+  {
+    Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
+    for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+    {
+      m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
+    }
+    m_secretsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hostname"))
@@ -516,6 +528,17 @@ JsonValue ContainerDefinition::Jsonize() const
   if(m_linuxParametersHasBeenSet)
   {
    payload.WithObject("linuxParameters", m_linuxParameters.Jsonize());
+
+  }
+
+  if(m_secretsHasBeenSet)
+  {
+   Array<JsonValue> secretsJsonList(m_secrets.size());
+   for(unsigned secretsIndex = 0; secretsIndex < secretsJsonList.GetLength(); ++secretsIndex)
+   {
+     secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
+   }
+   payload.WithArray("secrets", std::move(secretsJsonList));
 
   }
 

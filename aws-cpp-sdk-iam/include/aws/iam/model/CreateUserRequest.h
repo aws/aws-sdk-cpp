@@ -17,6 +17,8 @@
 #include <aws/iam/IAM_EXPORTS.h>
 #include <aws/iam/IAMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iam/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -217,6 +219,84 @@ namespace Model
 
 
     /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline CreateUserRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline CreateUserRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline CreateUserRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created user. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per user, then the
+     * entire request fails and the user is not created.</p> </note>
+     */
+    inline CreateUserRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The ARN of the policy that is used to set the permissions boundary for the
      * user.</p>
      */
@@ -265,6 +345,9 @@ namespace Model
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_permissionsBoundary;
     bool m_permissionsBoundaryHasBeenSet;

@@ -101,17 +101,17 @@ TIMEOUT -
      * The message couldn't be sent within the timeout period.
 
 QUIET_TIME - The local
-     * time for the endpoint was within the Quiet Hours for the campaign.
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
 
-DAILY_CAP -
-     * The endpoint has received the maximum number of messages it can receive within a
-     * 24-hour period.
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
 
-HOLDOUT - The endpoint was in a hold out treatment for the
-     * campaign.
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
 
-THROTTLED - Amazon Pinpoint throttled sending to this
-     * endpoint.
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
 
 EXPIRED - The endpoint address is expired.
 
@@ -143,17 +143,17 @@ TIMEOUT -
      * The message couldn't be sent within the timeout period.
 
 QUIET_TIME - The local
-     * time for the endpoint was within the Quiet Hours for the campaign.
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
 
-DAILY_CAP -
-     * The endpoint has received the maximum number of messages it can receive within a
-     * 24-hour period.
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
 
-HOLDOUT - The endpoint was in a hold out treatment for the
-     * campaign.
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
 
-THROTTLED - Amazon Pinpoint throttled sending to this
-     * endpoint.
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
 
 EXPIRED - The endpoint address is expired.
 
@@ -185,17 +185,17 @@ TIMEOUT -
      * The message couldn't be sent within the timeout period.
 
 QUIET_TIME - The local
-     * time for the endpoint was within the Quiet Hours for the campaign.
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
 
-DAILY_CAP -
-     * The endpoint has received the maximum number of messages it can receive within a
-     * 24-hour period.
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
 
-HOLDOUT - The endpoint was in a hold out treatment for the
-     * campaign.
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
 
-THROTTLED - Amazon Pinpoint throttled sending to this
-     * endpoint.
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
 
 EXPIRED - The endpoint address is expired.
 
@@ -227,17 +227,17 @@ TIMEOUT -
      * The message couldn't be sent within the timeout period.
 
 QUIET_TIME - The local
-     * time for the endpoint was within the Quiet Hours for the campaign.
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
 
-DAILY_CAP -
-     * The endpoint has received the maximum number of messages it can receive within a
-     * 24-hour period.
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
 
-HOLDOUT - The endpoint was in a hold out treatment for the
-     * campaign.
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
 
-THROTTLED - Amazon Pinpoint throttled sending to this
-     * endpoint.
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
 
 EXPIRED - The endpoint address is expired.
 
@@ -269,17 +269,17 @@ TIMEOUT -
      * The message couldn't be sent within the timeout period.
 
 QUIET_TIME - The local
-     * time for the endpoint was within the Quiet Hours for the campaign.
+     * time for the endpoint was within the QuietTime for the campaign or
+     * app.
 
-DAILY_CAP -
-     * The endpoint has received the maximum number of messages it can receive within a
-     * 24-hour period.
+DAILY_CAP - The endpoint has received the maximum number of messages it
+     * can receive within a 24-hour period.
 
-HOLDOUT - The endpoint was in a hold out treatment for the
-     * campaign.
+HOLDOUT - The endpoint was in a hold out
+     * treatment for the campaign.
 
-THROTTLED - Amazon Pinpoint throttled sending to this
-     * endpoint.
+THROTTLED - Amazon Pinpoint throttled sending to
+     * this endpoint.
 
 EXPIRED - The endpoint address is expired.
 

@@ -91,7 +91,10 @@ namespace Model
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>FAILED -
-     * The job did not complete. To get details, use the operation.</p> </li> </ul>
+     * The job did not complete. To get details, use the operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
@@ -100,7 +103,10 @@ namespace Model
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>FAILED -
-     * The job did not complete. To get details, use the operation.</p> </li> </ul>
+     * The job did not complete. To get details, use the operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
@@ -109,7 +115,10 @@ namespace Model
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>FAILED -
-     * The job did not complete. To get details, use the operation.</p> </li> </ul>
+     * The job did not complete. To get details, use the operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
@@ -118,7 +127,10 @@ namespace Model
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>FAILED -
-     * The job did not complete. To get details, use the operation.</p> </li> </ul>
+     * The job did not complete. To get details, use the operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline StartEntitiesDetectionJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
@@ -127,7 +139,10 @@ namespace Model
      * received and is queued for processing.</p> </li> <li> <p>IN_PROGRESS - Amazon
      * Comprehend is processing the job.</p> </li> <li> <p>COMPLETED - The job was
      * successfully completed and the output is available.</p> </li> <li> <p>FAILED -
-     * The job did not complete. To get details, use the operation.</p> </li> </ul>
+     * The job did not complete. To get details, use the operation.</p> </li> <li>
+     * <p>STOP_REQUESTED - Amazon Comprehend has received a stop request for the job
+     * and is processing the request.</p> </li> <li> <p>STOPPED - The job was
+     * successfully stopped without completing.</p> </li> </ul>
      */
     inline StartEntitiesDetectionJobResult& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

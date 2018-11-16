@@ -29,7 +29,8 @@ RegisterContainerInstanceRequest::RegisterContainerInstanceRequest() :
     m_totalResourcesHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
     m_containerInstanceArnHasBeenSet(false),
-    m_attributesHasBeenSet(false)
+    m_attributesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,17 @@ Aws::String RegisterContainerInstanceRequest::SerializePayload() const
      attributesJsonList[attributesIndex].AsObject(m_attributes[attributesIndex].Jsonize());
    }
    payload.WithArray("attributes", std::move(attributesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

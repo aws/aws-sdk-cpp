@@ -26,6 +26,7 @@
 #include <aws/redshift/model/HsmStatus.h>
 #include <aws/redshift/model/ClusterSnapshotCopyStatus.h>
 #include <aws/redshift/model/ElasticIpStatus.h>
+#include <aws/redshift/model/ScheduleState.h>
 #include <aws/redshift/model/ResizeInfo.h>
 #include <aws/redshift/model/ClusterSecurityGroupMembership.h>
 #include <aws/redshift/model/VpcSecurityGroupMembership.h>
@@ -460,6 +461,31 @@ namespace Model
      * <p>The number of days that automatic cluster snapshots are retained.</p>
      */
     inline Cluster& WithAutomatedSnapshotRetentionPeriod(int value) { SetAutomatedSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline Cluster& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 
 
     /**
@@ -1423,43 +1449,43 @@ namespace Model
 
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline const Aws::String& GetElasticResizeNumberOfNodeOptions() const{ return m_elasticResizeNumberOfNodeOptions; }
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline void SetElasticResizeNumberOfNodeOptions(const Aws::String& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = value; }
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline void SetElasticResizeNumberOfNodeOptions(Aws::String&& value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions = std::move(value); }
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline void SetElasticResizeNumberOfNodeOptions(const char* value) { m_elasticResizeNumberOfNodeOptionsHasBeenSet = true; m_elasticResizeNumberOfNodeOptions.assign(value); }
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline Cluster& WithElasticResizeNumberOfNodeOptions(const Aws::String& value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline Cluster& WithElasticResizeNumberOfNodeOptions(Aws::String&& value) { SetElasticResizeNumberOfNodeOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the number of nodes the cluster can be resized to with the elastic
+     * <p>The number of nodes that you can resize the cluster to with the elastic
      * resize method. </p>
      */
     inline Cluster& WithElasticResizeNumberOfNodeOptions(const char* value) { SetElasticResizeNumberOfNodeOptions(value); return *this;}
@@ -1499,6 +1525,68 @@ namespace Model
      * <p>Describes a group of <code>DeferredMaintenanceWindow</code> objects.</p>
      */
     inline Cluster& AddDeferredMaintenanceWindows(DeferredMaintenanceWindow&& value) { m_deferredMaintenanceWindowsHasBeenSet = true; m_deferredMaintenanceWindows.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline const Aws::String& GetSnapshotScheduleIdentifier() const{ return m_snapshotScheduleIdentifier; }
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const Aws::String& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = value; }
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(Aws::String&& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const char* value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier.assign(value); }
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline Cluster& WithSnapshotScheduleIdentifier(const Aws::String& value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline Cluster& WithSnapshotScheduleIdentifier(Aws::String&& value) { SetSnapshotScheduleIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the cluster snapshot schedule.</p>
+     */
+    inline Cluster& WithSnapshotScheduleIdentifier(const char* value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
+
+    /**
+     * <p>The current state of the cluster snapshot schedule.</p>
+     */
+    inline const ScheduleState& GetSnapshotScheduleState() const{ return m_snapshotScheduleState; }
+
+    /**
+     * <p>The current state of the cluster snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleState(const ScheduleState& value) { m_snapshotScheduleStateHasBeenSet = true; m_snapshotScheduleState = value; }
+
+    /**
+     * <p>The current state of the cluster snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleState(ScheduleState&& value) { m_snapshotScheduleStateHasBeenSet = true; m_snapshotScheduleState = std::move(value); }
+
+    /**
+     * <p>The current state of the cluster snapshot schedule.</p>
+     */
+    inline Cluster& WithSnapshotScheduleState(const ScheduleState& value) { SetSnapshotScheduleState(value); return *this;}
+
+    /**
+     * <p>The current state of the cluster snapshot schedule.</p>
+     */
+    inline Cluster& WithSnapshotScheduleState(ScheduleState&& value) { SetSnapshotScheduleState(std::move(value)); return *this;}
 
 
     /**
@@ -1564,6 +1652,9 @@ namespace Model
 
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
 
     Aws::Vector<ClusterSecurityGroupMembership> m_clusterSecurityGroups;
     bool m_clusterSecurityGroupsHasBeenSet;
@@ -1651,6 +1742,12 @@ namespace Model
 
     Aws::Vector<DeferredMaintenanceWindow> m_deferredMaintenanceWindows;
     bool m_deferredMaintenanceWindowsHasBeenSet;
+
+    Aws::String m_snapshotScheduleIdentifier;
+    bool m_snapshotScheduleIdentifierHasBeenSet;
+
+    ScheduleState m_snapshotScheduleState;
+    bool m_snapshotScheduleStateHasBeenSet;
 
     ResizeInfo m_resizeInfo;
     bool m_resizeInfoHasBeenSet;

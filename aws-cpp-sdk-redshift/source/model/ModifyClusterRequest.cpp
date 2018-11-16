@@ -32,6 +32,8 @@ ModifyClusterRequest::ModifyClusterRequest() :
     m_clusterParameterGroupNameHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
     m_allowVersionUpgrade(false),
@@ -110,6 +112,11 @@ Aws::String ModifyClusterRequest::SerializePayload() const
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
     ss << "AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
+  }
+
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+    ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
   if(m_preferredMaintenanceWindowHasBeenSet)

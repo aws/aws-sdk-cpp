@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/pinpoint/model/CampaignEventFilter.h>
 #include <aws/pinpoint/model/Frequency.h>
 #include <aws/pinpoint/model/QuietTime.h>
 #include <utility>
@@ -86,42 +87,133 @@ namespace Model
 
 
     /**
+     * Defines the type of events that can trigger the campaign. Used when the
+     * Frequency is set to EVENT.
+     */
+    inline const CampaignEventFilter& GetEventFilter() const{ return m_eventFilter; }
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the
+     * Frequency is set to EVENT.
+     */
+    inline void SetEventFilter(const CampaignEventFilter& value) { m_eventFilterHasBeenSet = true; m_eventFilter = value; }
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the
+     * Frequency is set to EVENT.
+     */
+    inline void SetEventFilter(CampaignEventFilter&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::move(value); }
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the
+     * Frequency is set to EVENT.
+     */
+    inline Schedule& WithEventFilter(const CampaignEventFilter& value) { SetEventFilter(value); return *this;}
+
+    /**
+     * Defines the type of events that can trigger the campaign. Used when the
+     * Frequency is set to EVENT.
+     */
+    inline Schedule& WithEventFilter(CampaignEventFilter&& value) { SetEventFilter(std::move(value)); return *this;}
+
+
+    /**
      * How often the campaign delivers messages.
 
-Valid values: ONCE, HOURLY, DAILY,
-     * WEEKLY, MONTHLY
+Valid
+     * values:
+
+ONCE
+
+HOURLY
+
+DAILY
+
+WEEKLY
+
+MONTHLY
+
+EVENT
      */
     inline const Frequency& GetFrequency() const{ return m_frequency; }
 
     /**
      * How often the campaign delivers messages.
 
-Valid values: ONCE, HOURLY, DAILY,
-     * WEEKLY, MONTHLY
+Valid
+     * values:
+
+ONCE
+
+HOURLY
+
+DAILY
+
+WEEKLY
+
+MONTHLY
+
+EVENT
      */
     inline void SetFrequency(const Frequency& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
      * How often the campaign delivers messages.
 
-Valid values: ONCE, HOURLY, DAILY,
-     * WEEKLY, MONTHLY
+Valid
+     * values:
+
+ONCE
+
+HOURLY
+
+DAILY
+
+WEEKLY
+
+MONTHLY
+
+EVENT
      */
     inline void SetFrequency(Frequency&& value) { m_frequencyHasBeenSet = true; m_frequency = std::move(value); }
 
     /**
      * How often the campaign delivers messages.
 
-Valid values: ONCE, HOURLY, DAILY,
-     * WEEKLY, MONTHLY
+Valid
+     * values:
+
+ONCE
+
+HOURLY
+
+DAILY
+
+WEEKLY
+
+MONTHLY
+
+EVENT
      */
     inline Schedule& WithFrequency(const Frequency& value) { SetFrequency(value); return *this;}
 
     /**
      * How often the campaign delivers messages.
 
-Valid values: ONCE, HOURLY, DAILY,
-     * WEEKLY, MONTHLY
+Valid
+     * values:
+
+ONCE
+
+HOURLY
+
+DAILY
+
+WEEKLY
+
+MONTHLY
+
+EVENT
      */
     inline Schedule& WithFrequency(Frequency&& value) { SetFrequency(std::move(value)); return *this;}
 
@@ -146,27 +238,117 @@ Valid values: ONCE, HOURLY, DAILY,
 
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * campaign. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up a
+     * campaign to use quiet time, the campaign doesn't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign.
+- The current time in the endpoint's
+     * time zone is earlier than or equal to the time specified in the QuietTime.End
+     * attribute for the campaign.
      */
     inline const QuietTime& GetQuietTime() const{ return m_quietTime; }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * campaign. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up a
+     * campaign to use quiet time, the campaign doesn't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign.
+- The current time in the endpoint's
+     * time zone is earlier than or equal to the time specified in the QuietTime.End
+     * attribute for the campaign.
      */
     inline void SetQuietTime(const QuietTime& value) { m_quietTimeHasBeenSet = true; m_quietTime = value; }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * campaign. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up a
+     * campaign to use quiet time, the campaign doesn't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign.
+- The current time in the endpoint's
+     * time zone is earlier than or equal to the time specified in the QuietTime.End
+     * attribute for the campaign.
      */
     inline void SetQuietTime(QuietTime&& value) { m_quietTimeHasBeenSet = true; m_quietTime = std::move(value); }
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * campaign. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up a
+     * campaign to use quiet time, the campaign doesn't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign.
+- The current time in the endpoint's
+     * time zone is earlier than or equal to the time specified in the QuietTime.End
+     * attribute for the campaign.
      */
     inline Schedule& WithQuietTime(const QuietTime& value) { SetQuietTime(value); return *this;}
 
     /**
-     * The time during which the campaign sends no messages.
+     * The default quiet time for the campaign. The campaign doesn't send messages to
+     * endpoints during the quiet time.
+
+Note: Make sure that your endpoints include
+     * the Demographics.Timezone attribute if you plan to enable a quiet time for your
+     * campaign. If your endpoints don't include this attribute, they'll receive the
+     * messages that you send them, even if quiet time is enabled.
+
+When you set up a
+     * campaign to use quiet time, the campaign doesn't send messages during the time
+     * range you specified, as long as all of the following are true:
+- The endpoint
+     * includes a valid Demographic.Timezone attribute.
+- The current time in the
+     * endpoint's time zone is later than or equal to the time specified in the
+     * QuietTime.Start attribute for the campaign.
+- The current time in the endpoint's
+     * time zone is earlier than or equal to the time specified in the QuietTime.End
+     * attribute for the campaign.
      */
     inline Schedule& WithQuietTime(QuietTime&& value) { SetQuietTime(std::move(value)); return *this;}
 
@@ -491,6 +673,9 @@ UTC-11
 
     Aws::String m_endTime;
     bool m_endTimeHasBeenSet;
+
+    CampaignEventFilter m_eventFilter;
+    bool m_eventFilterHasBeenSet;
 
     Frequency m_frequency;
     bool m_frequencyHasBeenSet;

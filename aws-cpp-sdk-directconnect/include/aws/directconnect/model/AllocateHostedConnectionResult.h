@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/ConnectionState.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <utility>
 
 namespace Aws
@@ -575,6 +576,37 @@ namespace Model
      */
     inline AllocateHostedConnectionResult& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(const HasLogicalRedundancy& value) { m_hasLogicalRedundancy = value; }
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(HasLogicalRedundancy&& value) { m_hasLogicalRedundancy = std::move(value); }
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline AllocateHostedConnectionResult& WithHasLogicalRedundancy(const HasLogicalRedundancy& value) { SetHasLogicalRedundancy(value); return *this;}
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline AllocateHostedConnectionResult& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerAccount;
@@ -604,6 +636,8 @@ namespace Model
     bool m_jumboFrameCapable;
 
     Aws::String m_awsDeviceV2;
+
+    HasLogicalRedundancy m_hasLogicalRedundancy;
   };
 
 } // namespace Model

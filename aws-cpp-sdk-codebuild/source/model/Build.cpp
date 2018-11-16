@@ -51,6 +51,8 @@ Build::Build() :
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
+    m_queuedTimeoutInMinutes(0),
+    m_queuedTimeoutInMinutesHasBeenSet(false),
     m_buildComplete(false),
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
@@ -83,6 +85,8 @@ Build::Build(JsonView jsonValue) :
     m_logsHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
+    m_queuedTimeoutInMinutes(0),
+    m_queuedTimeoutInMinutesHasBeenSet(false),
     m_buildComplete(false),
     m_buildCompleteHasBeenSet(false),
     m_initiatorHasBeenSet(false),
@@ -245,6 +249,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
 
     m_timeoutInMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queuedTimeoutInMinutes"))
+  {
+    m_queuedTimeoutInMinutes = jsonValue.GetInteger("queuedTimeoutInMinutes");
+
+    m_queuedTimeoutInMinutesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("buildComplete"))
@@ -423,6 +434,12 @@ JsonValue Build::Jsonize() const
   if(m_timeoutInMinutesHasBeenSet)
   {
    payload.WithInteger("timeoutInMinutes", m_timeoutInMinutes);
+
+  }
+
+  if(m_queuedTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("queuedTimeoutInMinutes", m_queuedTimeoutInMinutes);
 
   }
 

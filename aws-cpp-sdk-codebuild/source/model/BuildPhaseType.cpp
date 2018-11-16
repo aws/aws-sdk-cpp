@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
         static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
         static const int DOWNLOAD_SOURCE_HASH = HashingUtils::HashString("DOWNLOAD_SOURCE");
         static const int INSTALL_HASH = HashingUtils::HashString("INSTALL");
@@ -48,6 +49,10 @@ namespace Aws
           if (hashCode == SUBMITTED_HASH)
           {
             return BuildPhaseType::SUBMITTED;
+          }
+          else if (hashCode == QUEUED_HASH)
+          {
+            return BuildPhaseType::QUEUED;
           }
           else if (hashCode == PROVISIONING_HASH)
           {
@@ -101,6 +106,8 @@ namespace Aws
           {
           case BuildPhaseType::SUBMITTED:
             return "SUBMITTED";
+          case BuildPhaseType::QUEUED:
+            return "QUEUED";
           case BuildPhaseType::PROVISIONING:
             return "PROVISIONING";
           case BuildPhaseType::DOWNLOAD_SOURCE:

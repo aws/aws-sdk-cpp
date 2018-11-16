@@ -33,7 +33,8 @@ DescribeClusterSnapshotsRequest::DescribeClusterSnapshotsRequest() :
     m_tagKeysHasBeenSet(false),
     m_tagValuesHasBeenSet(false),
     m_clusterExists(false),
-    m_clusterExistsHasBeenSet(false)
+    m_clusterExistsHasBeenSet(false),
+    m_sortingEntitiesHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ Aws::String DescribeClusterSnapshotsRequest::SerializePayload() const
   if(m_clusterExistsHasBeenSet)
   {
     ss << "ClusterExists=" << std::boolalpha << m_clusterExists << "&";
+  }
+
+  if(m_sortingEntitiesHasBeenSet)
+  {
+    unsigned sortingEntitiesCount = 1;
+    for(auto& item : m_sortingEntities)
+    {
+      item.OutputToStream(ss, "SortingEntities.member.", sortingEntitiesCount, "");
+      sortingEntitiesCount++;
+    }
   }
 
   ss << "Version=2012-12-01";

@@ -191,7 +191,7 @@ namespace Model
      * parameter requires version 1.25 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container
      * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline bool GetInitProcessEnabled() const{ return m_initProcessEnabled; }
 
@@ -202,7 +202,7 @@ namespace Model
      * parameter requires version 1.25 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container
      * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline void SetInitProcessEnabled(bool value) { m_initProcessEnabledHasBeenSet = true; m_initProcessEnabled = value; }
 
@@ -213,7 +213,7 @@ namespace Model
      * parameter requires version 1.25 of the Docker Remote API or greater on your
      * container instance. To check the Docker Remote API version on your container
      * instance, log in to your container instance and run the following command:
-     * <code>sudo docker version | grep "Server API version"</code> </p>
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LinuxParameters& WithInitProcessEnabled(bool value) { SetInitProcessEnabled(value); return *this;}
 

@@ -31,6 +31,7 @@ namespace Model
     ADV,
     AUX,
     CONJ,
+    CCONJ,
     DET,
     INTJ,
     NOUN,

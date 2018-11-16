@@ -81,79 +81,79 @@ namespace Model
 
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline UpdateWebhookRequest& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline UpdateWebhookRequest& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
 
     /**
-     * <p>A regular expression used to determine which branches in a repository are
-     * built when a webhook is triggered. If the name of a branch matches the regular
-     * expression, then it is built. If it doesn't match, then it is not. If
-     * <code>branchFilter</code> is empty, then all branches are built.</p>
+     * <p>A regular expression used to determine which repository branches are built
+     * when a webhook is triggered. If the name of a branch matches the regular
+     * expression, then it is built. If <code>branchFilter</code> is empty, then all
+     * branches are built.</p>
      */
     inline UpdateWebhookRequest& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
 
 
     /**
      * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository then
+     * secret token should be updated. If you use Bitbucket for your repository,
      * <code>rotateSecret</code> is ignored. </p>
      */
     inline bool GetRotateSecret() const{ return m_rotateSecret; }
 
     /**
      * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository then
+     * secret token should be updated. If you use Bitbucket for your repository,
      * <code>rotateSecret</code> is ignored. </p>
      */
     inline void SetRotateSecret(bool value) { m_rotateSecretHasBeenSet = true; m_rotateSecret = value; }
 
     /**
      * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository then
+     * secret token should be updated. If you use Bitbucket for your repository,
      * <code>rotateSecret</code> is ignored. </p>
      */
     inline UpdateWebhookRequest& WithRotateSecret(bool value) { SetRotateSecret(value); return *this;}

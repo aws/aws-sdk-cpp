@@ -53,9 +53,9 @@ namespace Model
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     * driver, see <a
+     * with by default. If you are using the Fargate launch type, the only supported
+     * value is <code>awslogs</code>. For more information about using the
+     * <code>awslogs</code> driver, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -68,16 +68,16 @@ namespace Model
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline const LogDriver& GetLogDriver() const{ return m_logDriver; }
 
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     * driver, see <a
+     * with by default. If you are using the Fargate launch type, the only supported
+     * value is <code>awslogs</code>. For more information about using the
+     * <code>awslogs</code> driver, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -90,16 +90,16 @@ namespace Model
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline void SetLogDriver(const LogDriver& value) { m_logDriverHasBeenSet = true; m_logDriver = value; }
 
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     * driver, see <a
+     * with by default. If you are using the Fargate launch type, the only supported
+     * value is <code>awslogs</code>. For more information about using the
+     * <code>awslogs</code> driver, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -112,16 +112,16 @@ namespace Model
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline void SetLogDriver(LogDriver&& value) { m_logDriverHasBeenSet = true; m_logDriver = std::move(value); }
 
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     * driver, see <a
+     * with by default. If you are using the Fargate launch type, the only supported
+     * value is <code>awslogs</code>. For more information about using the
+     * <code>awslogs</code> driver, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -134,16 +134,16 @@ namespace Model
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& WithLogDriver(const LogDriver& value) { SetLogDriver(value); return *this;}
 
     /**
      * <p>The log driver to use for the container. The valid values listed for this
      * parameter are log drivers that the Amazon ECS container agent can communicate
-     * with by default. If using the Fargate launch type, the only supported value is
-     * <code>awslogs</code>. For more information about using the <code>awslogs</code>
-     * driver, see <a
+     * with by default. If you are using the Fargate launch type, the only supported
+     * value is <code>awslogs</code>. For more information about using the
+     * <code>awslogs</code> driver, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
@@ -156,7 +156,7 @@ namespace Model
      * <p>This parameter requires version 1.18 of the Docker Remote API or greater on
      * your container instance. To check the Docker Remote API version on your
      * container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version | grep "Server API version"</code> </p>
+     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& WithLogDriver(LogDriver&& value) { SetLogDriver(std::move(value)); return *this;}
 
@@ -165,8 +165,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetOptions() const{ return m_options; }
 
@@ -174,8 +174,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline void SetOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
 
@@ -183,8 +183,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline void SetOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
@@ -192,8 +192,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& WithOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetOptions(value); return *this;}
 
@@ -201,8 +201,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& WithOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
 
@@ -210,8 +210,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(const Aws::String& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 
@@ -219,8 +219,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, const Aws::String& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
 
@@ -228,8 +228,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(const Aws::String& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
 
@@ -237,8 +237,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -246,8 +246,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(const char* key, Aws::String&& value) { m_optionsHasBeenSet = true; m_options.emplace(key, std::move(value)); return *this; }
 
@@ -255,8 +255,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(Aws::String&& key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(std::move(key), value); return *this; }
 
@@ -264,8 +264,8 @@ namespace Model
      * <p>The configuration options to send to the log driver. This parameter requires
      * version 1.19 of the Docker Remote API or greater on your container instance. To
      * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>
+     * container instance and run the following command: <code>sudo docker version
+     * --format '{{.Server.APIVersion}}'</code> </p>
      */
     inline LogConfiguration& AddOptions(const char* key, const char* value) { m_optionsHasBeenSet = true; m_options.emplace(key, value); return *this; }
 

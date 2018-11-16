@@ -47,6 +47,7 @@
 #include <aws/rds/model/DeleteDBClusterEndpointResult.h>
 #include <aws/rds/model/DeleteDBClusterSnapshotResult.h>
 #include <aws/rds/model/DeleteDBInstanceResult.h>
+#include <aws/rds/model/DeleteDBInstanceAutomatedBackupResult.h>
 #include <aws/rds/model/DeleteDBSnapshotResult.h>
 #include <aws/rds/model/DeleteEventSubscriptionResult.h>
 #include <aws/rds/model/DescribeAccountAttributesResult.h>
@@ -59,6 +60,7 @@
 #include <aws/rds/model/DescribeDBClusterSnapshotsResult.h>
 #include <aws/rds/model/DescribeDBClustersResult.h>
 #include <aws/rds/model/DescribeDBEngineVersionsResult.h>
+#include <aws/rds/model/DescribeDBInstanceAutomatedBackupsResult.h>
 #include <aws/rds/model/DescribeDBInstancesResult.h>
 #include <aws/rds/model/DescribeDBLogFilesResult.h>
 #include <aws/rds/model/DescribeDBParameterGroupsResult.h>
@@ -185,6 +187,7 @@ namespace Aws
         class DeleteDBClusterParameterGroupRequest;
         class DeleteDBClusterSnapshotRequest;
         class DeleteDBInstanceRequest;
+        class DeleteDBInstanceAutomatedBackupRequest;
         class DeleteDBParameterGroupRequest;
         class DeleteDBSecurityGroupRequest;
         class DeleteDBSnapshotRequest;
@@ -201,6 +204,7 @@ namespace Aws
         class DescribeDBClusterSnapshotsRequest;
         class DescribeDBClustersRequest;
         class DescribeDBEngineVersionsRequest;
+        class DescribeDBInstanceAutomatedBackupsRequest;
         class DescribeDBInstancesRequest;
         class DescribeDBLogFilesRequest;
         class DescribeDBParameterGroupsRequest;
@@ -286,6 +290,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> DeleteDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteDBInstanceResult, Aws::Client::AWSError<RDSErrors>> DeleteDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<DeleteDBInstanceAutomatedBackupResult, Aws::Client::AWSError<RDSErrors>> DeleteDBInstanceAutomatedBackupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBParameterGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<RDSErrors>> DeleteDBSecurityGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteDBSnapshotResult, Aws::Client::AWSError<RDSErrors>> DeleteDBSnapshotOutcome;
@@ -302,6 +307,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DescribeDBClusterSnapshotsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClusterSnapshotsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBClustersResult, Aws::Client::AWSError<RDSErrors>> DescribeDBClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeDBEngineVersionsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBEngineVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDBInstanceAutomatedBackupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBInstanceAutomatedBackupsOutcome;
         typedef Aws::Utils::Outcome<DescribeDBInstancesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeDBLogFilesResult, Aws::Client::AWSError<RDSErrors>> DescribeDBLogFilesOutcome;
         typedef Aws::Utils::Outcome<DescribeDBParameterGroupsResult, Aws::Client::AWSError<RDSErrors>> DescribeDBParameterGroupsOutcome;
@@ -387,6 +393,7 @@ namespace Aws
         typedef std::future<DeleteDBClusterParameterGroupOutcome> DeleteDBClusterParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBClusterSnapshotOutcome> DeleteDBClusterSnapshotOutcomeCallable;
         typedef std::future<DeleteDBInstanceOutcome> DeleteDBInstanceOutcomeCallable;
+        typedef std::future<DeleteDBInstanceAutomatedBackupOutcome> DeleteDBInstanceAutomatedBackupOutcomeCallable;
         typedef std::future<DeleteDBParameterGroupOutcome> DeleteDBParameterGroupOutcomeCallable;
         typedef std::future<DeleteDBSecurityGroupOutcome> DeleteDBSecurityGroupOutcomeCallable;
         typedef std::future<DeleteDBSnapshotOutcome> DeleteDBSnapshotOutcomeCallable;
@@ -403,6 +410,7 @@ namespace Aws
         typedef std::future<DescribeDBClusterSnapshotsOutcome> DescribeDBClusterSnapshotsOutcomeCallable;
         typedef std::future<DescribeDBClustersOutcome> DescribeDBClustersOutcomeCallable;
         typedef std::future<DescribeDBEngineVersionsOutcome> DescribeDBEngineVersionsOutcomeCallable;
+        typedef std::future<DescribeDBInstanceAutomatedBackupsOutcome> DescribeDBInstanceAutomatedBackupsOutcomeCallable;
         typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
         typedef std::future<DescribeDBLogFilesOutcome> DescribeDBLogFilesOutcomeCallable;
         typedef std::future<DescribeDBParameterGroupsOutcome> DescribeDBParameterGroupsOutcomeCallable;
@@ -491,6 +499,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterParameterGroupRequest&, const Model::DeleteDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBClusterSnapshotRequest&, const Model::DeleteDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBInstanceRequest&, const Model::DeleteDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DeleteDBInstanceAutomatedBackupRequest&, const Model::DeleteDBInstanceAutomatedBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBInstanceAutomatedBackupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBParameterGroupRequest&, const Model::DeleteDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBSecurityGroupRequest&, const Model::DeleteDBSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSecurityGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DeleteDBSnapshotRequest&, const Model::DeleteDBSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDBSnapshotResponseReceivedHandler;
@@ -507,6 +516,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeDBClusterSnapshotsRequest&, const Model::DescribeDBClusterSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClusterSnapshotsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBClustersRequest&, const Model::DescribeDBClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBClustersResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBEngineVersionsRequest&, const Model::DescribeDBEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBEngineVersionsResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeDBInstanceAutomatedBackupsRequest&, const Model::DescribeDBInstanceAutomatedBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBInstanceAutomatedBackupsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBInstancesRequest&, const Model::DescribeDBInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBInstancesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBLogFilesRequest&, const Model::DescribeDBLogFilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBLogFilesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeDBParameterGroupsRequest&, const Model::DescribeDBParameterGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDBParameterGroupsResponseReceivedHandler;
@@ -1984,7 +1994,38 @@ namespace Aws
         virtual void DeleteDBInstanceAsync(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
+         * <p>Deletes automated backups based on the source instance's
+         * <code>DbiResourceId</code> value or the restorable instance's resource
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDBInstanceAutomatedBackupOutcome DeleteDBInstanceAutomatedBackup(const Model::DeleteDBInstanceAutomatedBackupRequest& request) const;
+
+        /**
+         * <p>Deletes automated backups based on the source instance's
+         * <code>DbiResourceId</code> value or the restorable instance's resource
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDBInstanceAutomatedBackupOutcomeCallable DeleteDBInstanceAutomatedBackupCallable(const Model::DeleteDBInstanceAutomatedBackupRequest& request) const;
+
+        /**
+         * <p>Deletes automated backups based on the source instance's
+         * <code>DbiResourceId</code> value or the restorable instance's resource
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstanceAutomatedBackup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDBInstanceAutomatedBackupAsync(const Model::DeleteDBInstanceAutomatedBackupRequest& request, const DeleteDBInstanceAutomatedBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a specified DB parameter group. The DB parameter group to be deleted
          * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
@@ -1992,7 +2033,7 @@ namespace Aws
         virtual Model::DeleteDBParameterGroupOutcome DeleteDBParameterGroup(const Model::DeleteDBParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
+         * <p>Deletes a specified DB parameter group. The DB parameter group to be deleted
          * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
@@ -2002,7 +2043,7 @@ namespace Aws
         virtual Model::DeleteDBParameterGroupOutcomeCallable DeleteDBParameterGroupCallable(const Model::DeleteDBParameterGroupRequest& request) const;
 
         /**
-         * <p>Deletes a specified DBParameterGroup. The DBParameterGroup to be deleted
+         * <p>Deletes a specified DB parameter group. The DB parameter group to be deleted
          * can't be associated with any DB instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBParameterGroup">AWS
          * API Reference</a></p>
@@ -2043,8 +2084,8 @@ namespace Aws
         virtual void DeleteDBSecurityGroupAsync(const Model::DeleteDBSecurityGroupRequest& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
-         * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
+         * <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is
+         * terminated.</p> <note> <p>The DB snapshot must be in the <code>available</code>
          * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
          * API Reference</a></p>
@@ -2052,8 +2093,8 @@ namespace Aws
         virtual Model::DeleteDBSnapshotOutcome DeleteDBSnapshot(const Model::DeleteDBSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
-         * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
+         * <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is
+         * terminated.</p> <note> <p>The DB snapshot must be in the <code>available</code>
          * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
          * API Reference</a></p>
@@ -2063,8 +2104,8 @@ namespace Aws
         virtual Model::DeleteDBSnapshotOutcomeCallable DeleteDBSnapshotCallable(const Model::DeleteDBSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a DBSnapshot. If the snapshot is being copied, the copy operation is
-         * terminated.</p> <note> <p>The DBSnapshot must be in the <code>available</code>
+         * <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is
+         * terminated.</p> <note> <p>The DB snapshot must be in the <code>available</code>
          * state to be deleted.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBSnapshot">AWS
          * API Reference</a></p>
@@ -2520,6 +2561,46 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeDBEngineVersionsAsync(const Model::DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Displays backups for both current and deleted instances. For example, use
+         * this operation to find details about automated backups for previously deleted
+         * instances. Current instances with retention periods greater than zero (0) are
+         * returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+         * <code>DescribeDBInstances</code> operations.</p> <p>All parameters are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDBInstanceAutomatedBackupsOutcome DescribeDBInstanceAutomatedBackups(const Model::DescribeDBInstanceAutomatedBackupsRequest& request) const;
+
+        /**
+         * <p>Displays backups for both current and deleted instances. For example, use
+         * this operation to find details about automated backups for previously deleted
+         * instances. Current instances with retention periods greater than zero (0) are
+         * returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+         * <code>DescribeDBInstances</code> operations.</p> <p>All parameters are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDBInstanceAutomatedBackupsOutcomeCallable DescribeDBInstanceAutomatedBackupsCallable(const Model::DescribeDBInstanceAutomatedBackupsRequest& request) const;
+
+        /**
+         * <p>Displays backups for both current and deleted instances. For example, use
+         * this operation to find details about automated backups for previously deleted
+         * instances. Current instances with retention periods greater than zero (0) are
+         * returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and
+         * <code>DescribeDBInstances</code> operations.</p> <p>All parameters are
+         * optional.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstanceAutomatedBackups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDBInstanceAutomatedBackupsAsync(const Model::DescribeDBInstanceAutomatedBackupsRequest& request, const DescribeDBInstanceAutomatedBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
@@ -4709,7 +4790,7 @@ namespace Aws
          * stop-db-instance AWS CLI command, or the StopDBInstance action. </p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
-         * Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the
+         * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
          * <i>Amazon RDS User Guide.</i> </p> <note> <p> This command doesn't apply to
          * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
          * <a>StartDBCluster</a> instead. </p> </note><p><h3>See Also:</h3>   <a
@@ -4723,7 +4804,7 @@ namespace Aws
          * stop-db-instance AWS CLI command, or the StopDBInstance action. </p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
-         * Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the
+         * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
          * <i>Amazon RDS User Guide.</i> </p> <note> <p> This command doesn't apply to
          * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
          * <a>StartDBCluster</a> instead. </p> </note><p><h3>See Also:</h3>   <a
@@ -4739,7 +4820,7 @@ namespace Aws
          * stop-db-instance AWS CLI command, or the StopDBInstance action. </p> <p>For more
          * information, see <a
          * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_StartInstance.html">
-         * Starting an Amazon RDS DB Instance That Was Previously Stopped</a> in the
+         * Starting an Amazon RDS DB instance That Was Previously Stopped</a> in the
          * <i>Amazon RDS User Guide.</i> </p> <note> <p> This command doesn't apply to
          * Aurora MySQL and Aurora PostgreSQL. For Aurora DB clusters, use
          * <a>StartDBCluster</a> instead. </p> </note><p><h3>See Also:</h3>   <a
@@ -4878,6 +4959,7 @@ namespace Aws
         void DeleteDBClusterParameterGroupAsyncHelper(const Model::DeleteDBClusterParameterGroupRequest& request, const DeleteDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBClusterSnapshotAsyncHelper(const Model::DeleteDBClusterSnapshotRequest& request, const DeleteDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBInstanceAsyncHelper(const Model::DeleteDBInstanceRequest& request, const DeleteDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDBInstanceAutomatedBackupAsyncHelper(const Model::DeleteDBInstanceAutomatedBackupRequest& request, const DeleteDBInstanceAutomatedBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBParameterGroupAsyncHelper(const Model::DeleteDBParameterGroupRequest& request, const DeleteDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSecurityGroupAsyncHelper(const Model::DeleteDBSecurityGroupRequest& request, const DeleteDBSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDBSnapshotAsyncHelper(const Model::DeleteDBSnapshotRequest& request, const DeleteDBSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4894,6 +4976,7 @@ namespace Aws
         void DescribeDBClusterSnapshotsAsyncHelper(const Model::DescribeDBClusterSnapshotsRequest& request, const DescribeDBClusterSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBClustersAsyncHelper(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBEngineVersionsAsyncHelper(const Model::DescribeDBEngineVersionsRequest& request, const DescribeDBEngineVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDBInstanceAutomatedBackupsAsyncHelper(const Model::DescribeDBInstanceAutomatedBackupsRequest& request, const DescribeDBInstanceAutomatedBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBInstancesAsyncHelper(const Model::DescribeDBInstancesRequest& request, const DescribeDBInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBLogFilesAsyncHelper(const Model::DescribeDBLogFilesRequest& request, const DescribeDBLogFilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDBParameterGroupsAsyncHelper(const Model::DescribeDBParameterGroupsRequest& request, const DescribeDBParameterGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

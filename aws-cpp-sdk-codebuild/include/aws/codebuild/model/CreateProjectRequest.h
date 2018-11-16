@@ -357,79 +357,98 @@ namespace Model
 
     /**
      * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * until timing out any build that has not been marked as completed. The default is
-     * 60 minutes.</p>
+     * before it times out any build that has not been marked as completed. The default
+     * is 60 minutes.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
 
     /**
      * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * until timing out any build that has not been marked as completed. The default is
-     * 60 minutes.</p>
+     * before it times out any build that has not been marked as completed. The default
+     * is 60 minutes.</p>
      */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
 
     /**
      * <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait
-     * until timing out any build that has not been marked as completed. The default is
-     * 60 minutes.</p>
+     * before it times out any build that has not been marked as completed. The default
+     * is 60 minutes.</p>
      */
     inline CreateProjectRequest& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
 
 
     /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline void SetQueuedTimeoutInMinutes(int value) { m_queuedTimeoutInMinutesHasBeenSet = true; m_queuedTimeoutInMinutes = value; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline CreateProjectRequest& WithQueuedTimeoutInMinutes(int value) { SetQueuedTimeoutInMinutes(value); return *this;}
+
+
+    /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline CreateProjectRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline CreateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
      * for encrypting the build output artifacts.</p> <p>You can specify either the
-     * CMK's Amazon Resource Name (ARN) or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).</p>
+     * Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     * the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline CreateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -504,51 +523,51 @@ namespace Model
 
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline CreateProjectRequest& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
 
 
     /**
-     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
-     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. These can be logs in Amazon
+     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
 
     /**
-     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
-     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. These can be logs in Amazon
+     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
 
     /**
-     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
-     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. These can be logs in Amazon
+     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
 
     /**
-     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
-     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. These can be logs in Amazon
+     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline CreateProjectRequest& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
 
     /**
-     * <p> Information about logs for the build project. Logs can be Amazon CloudWatch
-     * Logs, uploaded to a specified S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. These can be logs in Amazon
+     * CloudWatch Logs, logs uploaded to a specified S3 bucket, or both. </p>
      */
     inline CreateProjectRequest& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
 
@@ -583,6 +602,9 @@ namespace Model
 
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
+    int m_queuedTimeoutInMinutes;
+    bool m_queuedTimeoutInMinutesHasBeenSet;
 
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;

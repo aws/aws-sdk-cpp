@@ -46,6 +46,7 @@
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3/model/DeleteObjectTaggingRequest.h>
 #include <aws/s3/model/DeleteObjectsRequest.h>
+#include <aws/s3/model/DeletePublicAccessBlockRequest.h>
 #include <aws/s3/model/GetBucketAccelerateConfigurationRequest.h>
 #include <aws/s3/model/GetBucketAclRequest.h>
 #include <aws/s3/model/GetBucketAnalyticsConfigurationRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/s3/model/GetBucketMetricsConfigurationRequest.h>
 #include <aws/s3/model/GetBucketNotificationConfigurationRequest.h>
 #include <aws/s3/model/GetBucketPolicyRequest.h>
+#include <aws/s3/model/GetBucketPolicyStatusRequest.h>
 #include <aws/s3/model/GetBucketReplicationRequest.h>
 #include <aws/s3/model/GetBucketRequestPaymentRequest.h>
 #include <aws/s3/model/GetBucketTaggingRequest.h>
@@ -67,6 +69,7 @@
 #include <aws/s3/model/GetObjectAclRequest.h>
 #include <aws/s3/model/GetObjectTaggingRequest.h>
 #include <aws/s3/model/GetObjectTorrentRequest.h>
+#include <aws/s3/model/GetPublicAccessBlockRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
 #include <aws/s3/model/ListBucketAnalyticsConfigurationsRequest.h>
@@ -96,6 +99,7 @@
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectAclRequest.h>
 #include <aws/s3/model/PutObjectTaggingRequest.h>
+#include <aws/s3/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3/model/RestoreObjectRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/UploadPartCopyRequest.h>
@@ -836,6 +840,41 @@ void S3Client::DeleteObjectsAsyncHelper(const DeleteObjectsRequest& request, con
   handler(this, request, DeleteObjects(request), context);
 }
 
+DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?publicAccessBlock");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
+  if(outcome.IsSuccess())
+  {
+    return DeletePublicAccessBlockOutcome(NoResult());
+  }
+  else
+  {
+    return DeletePublicAccessBlockOutcome(outcome.GetError());
+  }
+}
+
+DeletePublicAccessBlockOutcomeCallable S3Client::DeletePublicAccessBlockCallable(const DeletePublicAccessBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePublicAccessBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::DeletePublicAccessBlockAsync(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePublicAccessBlockAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::DeletePublicAccessBlockAsyncHelper(const DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePublicAccessBlock(request), context);
+}
+
 GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfiguration(const GetBucketAccelerateConfigurationRequest& request) const
 {
   Aws::StringStream ss;
@@ -1256,6 +1295,41 @@ void S3Client::GetBucketPolicyAsyncHelper(const GetBucketPolicyRequest& request,
   handler(this, request, GetBucketPolicy(request), context);
 }
 
+GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPolicyStatusRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?policyStatus");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetBucketPolicyStatusOutcome(GetBucketPolicyStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBucketPolicyStatusOutcome(outcome.GetError());
+  }
+}
+
+GetBucketPolicyStatusOutcomeCallable S3Client::GetBucketPolicyStatusCallable(const GetBucketPolicyStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBucketPolicyStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBucketPolicyStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetBucketPolicyStatusAsync(const GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBucketPolicyStatusAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetBucketPolicyStatusAsyncHelper(const GetBucketPolicyStatusRequest& request, const GetBucketPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBucketPolicyStatus(request), context);
+}
+
 GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplicationRequest& request) const
 {
   Aws::StringStream ss;
@@ -1579,6 +1653,41 @@ void S3Client::GetObjectTorrentAsync(const GetObjectTorrentRequest& request, con
 void S3Client::GetObjectTorrentAsyncHelper(const GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetObjectTorrent(request), context);
+}
+
+GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?publicAccessBlock");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPublicAccessBlockOutcome(outcome.GetError());
+  }
+}
+
+GetPublicAccessBlockOutcomeCallable S3Client::GetPublicAccessBlockCallable(const GetPublicAccessBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPublicAccessBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetPublicAccessBlockAsync(const GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPublicAccessBlockAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPublicAccessBlock(request), context);
 }
 
 HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
@@ -2634,6 +2743,41 @@ void S3Client::PutObjectTaggingAsync(const PutObjectTaggingRequest& request, con
 void S3Client::PutObjectTaggingAsyncHelper(const PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutObjectTagging(request), context);
+}
+
+PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?publicAccessBlock");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutPublicAccessBlockOutcome(NoResult());
+  }
+  else
+  {
+    return PutPublicAccessBlockOutcome(outcome.GetError());
+  }
+}
+
+PutPublicAccessBlockOutcomeCallable S3Client::PutPublicAccessBlockCallable(const PutPublicAccessBlockRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutPublicAccessBlockOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutPublicAccessBlock(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutPublicAccessBlockAsync(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutPublicAccessBlockAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutPublicAccessBlockAsyncHelper(const PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutPublicAccessBlock(request), context);
 }
 
 RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request) const

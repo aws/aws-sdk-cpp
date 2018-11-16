@@ -40,13 +40,19 @@ namespace Model
    * a container</a> section of the <a
    * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
    * <code>--sysctl</code> option to <a
-   * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-   * <p>It is not recommended that you specify network-related
-   * <code>systemControls</code> parameters for multiple containers in a single task
-   * that also uses either the <code>awsvpc</code> or <code>host</code> network
-   * modes. When you do, the container that is started last will determine which
-   * <code>systemControls</code> parameters take effect.</p> </note><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>It
+   * is not recommended that you specify network-related <code>systemControls</code>
+   * parameters for multiple containers in a single task that also uses either the
+   * <code>awsvpc</code> or <code>host</code> network mode for the following
+   * reasons:</p> <ul> <li> <p>For tasks that use the <code>awsvpc</code> network
+   * mode, if you set <code>systemControls</code> for any container, it applies to
+   * all containers in the task. If you set different <code>systemControls</code> for
+   * multiple containers in a single task, the container that is started last
+   * determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For
+   * tasks that use the <code>host</code> network mode, the
+   * <code>systemControls</code> parameter applies to the container instance's kernel
+   * parameter as well as that of all containers of any tasks running on that
+   * container instance.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SystemControl">AWS
    * API Reference</a></p>
    */
@@ -96,43 +102,43 @@ namespace Model
 
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline SystemControl& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline SystemControl& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>The value for the namespaced kernel parameter specifed in
+     * <p>The value for the namespaced kernel parameter specified in
      * <code>namespace</code>.</p>
      */
     inline SystemControl& WithValue(const char* value) { SetValue(value); return *this;}

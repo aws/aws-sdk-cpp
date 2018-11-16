@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 CopyClusterSnapshotRequest::CopyClusterSnapshotRequest() : 
     m_sourceSnapshotIdentifierHasBeenSet(false),
     m_sourceSnapshotClusterIdentifierHasBeenSet(false),
-    m_targetSnapshotIdentifierHasBeenSet(false)
+    m_targetSnapshotIdentifierHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,11 @@ Aws::String CopyClusterSnapshotRequest::SerializePayload() const
   if(m_targetSnapshotIdentifierHasBeenSet)
   {
     ss << "TargetSnapshotIdentifier=" << StringUtils::URLEncode(m_targetSnapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+    ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
   ss << "Version=2012-12-01";

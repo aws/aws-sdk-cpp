@@ -63,9 +63,10 @@ namespace Model
      * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
      * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
      * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
-     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
-     * output location.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
     inline const BuildPhaseType& GetPhaseType() const{ return m_phaseType; }
 
@@ -81,9 +82,10 @@ namespace Model
      * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
      * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
      * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
-     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
-     * output location.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
     inline void SetPhaseType(const BuildPhaseType& value) { m_phaseTypeHasBeenSet = true; m_phaseType = value; }
 
@@ -99,9 +101,10 @@ namespace Model
      * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
      * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
      * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
-     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
-     * output location.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
     inline void SetPhaseType(BuildPhaseType&& value) { m_phaseTypeHasBeenSet = true; m_phaseType = std::move(value); }
 
@@ -117,9 +120,10 @@ namespace Model
      * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
      * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
      * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
-     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
-     * output location.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseType(const BuildPhaseType& value) { SetPhaseType(value); return *this;}
 
@@ -135,9 +139,10 @@ namespace Model
      * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
      * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
      * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
-     * <p> <code>SUBMITTED</code>: The build has been submitted.</p> </li> <li> <p>
-     * <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to the
-     * output location.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseType(BuildPhaseType&& value) { SetPhaseType(std::move(value)); return *this;}
 
@@ -147,9 +152,11 @@ namespace Model
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.</p> </li> <li> <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
      */
     inline const StatusType& GetPhaseStatus() const{ return m_phaseStatus; }
 
@@ -158,9 +165,11 @@ namespace Model
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.</p> </li> <li> <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
      */
     inline void SetPhaseStatus(const StatusType& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = value; }
 
@@ -169,9 +178,11 @@ namespace Model
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.</p> </li> <li> <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
      */
     inline void SetPhaseStatus(StatusType&& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = std::move(value); }
 
@@ -180,9 +191,11 @@ namespace Model
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.</p> </li> <li> <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseStatus(const StatusType& value) { SetPhaseStatus(value); return *this;}
 
@@ -191,9 +204,11 @@ namespace Model
      * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
      * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
      * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
-     * <p> <code>STOPPED</code>: The build phase stopped.</p> </li> <li> <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.</p> </li> <li> <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.</p> </li> </ul>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
      */
     inline BuildPhase& WithPhaseStatus(StatusType&& value) { SetPhaseStatus(std::move(value)); return *this;}
 

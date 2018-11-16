@@ -63,7 +63,8 @@ DBSnapshot::DBSnapshot() :
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_dbiResourceIdHasBeenSet(false)
 {
 }
 
@@ -100,7 +101,8 @@ DBSnapshot::DBSnapshot(const XmlNode& xmlNode) :
     m_timezoneHasBeenSet(false),
     m_iAMDatabaseAuthenticationEnabled(false),
     m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_processorFeaturesHasBeenSet(false)
+    m_processorFeaturesHasBeenSet(false),
+    m_dbiResourceIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -279,6 +281,12 @@ DBSnapshot& DBSnapshot::operator =(const XmlNode& xmlNode)
 
       m_processorFeaturesHasBeenSet = true;
     }
+    XmlNode dbiResourceIdNode = resultNode.FirstChild("DbiResourceId");
+    if(!dbiResourceIdNode.IsNull())
+    {
+      m_dbiResourceId = StringUtils::Trim(dbiResourceIdNode.GetText().c_str());
+      m_dbiResourceIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -427,6 +435,11 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_dbiResourceIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
+  }
+
 }
 
 void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -544,6 +557,10 @@ void DBSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) con
         processorFeaturesSs << location <<  ".ProcessorFeature." << processorFeaturesIdx++;
         item.OutputToStream(oStream, processorFeaturesSs.str().c_str());
       }
+  }
+  if(m_dbiResourceIdHasBeenSet)
+  {
+      oStream << location << ".DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
   }
 }
 

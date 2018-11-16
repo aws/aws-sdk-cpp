@@ -513,65 +513,65 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the content on the
-     * replication instance. If you do not specify a value for the KmsKeyId parameter,
-     * then AWS DMS will use your default encryption key. AWS KMS creates the default
-     * encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline CreateReplicationInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -599,6 +599,42 @@ namespace Model
      * value is <code>true</code>. </p>
      */
     inline CreateReplicationInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
+
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline const Aws::String& GetDnsNameServers() const{ return m_dnsNameServers; }
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline void SetDnsNameServers(const Aws::String& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = value; }
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline void SetDnsNameServers(Aws::String&& value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers = std::move(value); }
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline void SetDnsNameServers(const char* value) { m_dnsNameServersHasBeenSet = true; m_dnsNameServers.assign(value); }
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithDnsNameServers(const Aws::String& value) { SetDnsNameServers(value); return *this;}
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithDnsNameServers(Aws::String&& value) { SetDnsNameServers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of DNS name servers supported for the replication instance.</p>
+     */
+    inline CreateReplicationInstanceRequest& WithDnsNameServers(const char* value) { SetDnsNameServers(value); return *this;}
 
   private:
 
@@ -640,6 +676,9 @@ namespace Model
 
     bool m_publiclyAccessible;
     bool m_publiclyAccessibleHasBeenSet;
+
+    Aws::String m_dnsNameServers;
+    bool m_dnsNameServersHasBeenSet;
   };
 
 } // namespace Model

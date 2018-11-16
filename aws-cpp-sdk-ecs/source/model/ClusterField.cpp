@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int STATISTICS_HASH = HashingUtils::HashString("STATISTICS");
+        static const int TAGS_HASH = HashingUtils::HashString("TAGS");
 
 
         ClusterField GetClusterFieldForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == STATISTICS_HASH)
           {
             return ClusterField::STATISTICS;
+          }
+          else if (hashCode == TAGS_HASH)
+          {
+            return ClusterField::TAGS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ClusterField::STATISTICS:
             return "STATISTICS";
+          case ClusterField::TAGS:
+            return "TAGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

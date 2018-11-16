@@ -29,7 +29,12 @@ StartTaskRequest::StartTaskRequest() :
     m_containerInstancesHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_groupHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false)
+    m_networkConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_enableECSManagedTags(false),
+    m_enableECSManagedTagsHasBeenSet(false),
+    m_propagateTags(PropagateTags::NOT_SET),
+    m_propagateTagsHasBeenSet(false)
 {
 }
 
@@ -82,6 +87,28 @@ Aws::String StartTaskRequest::SerializePayload() const
   {
    payload.WithObject("networkConfiguration", m_networkConfiguration.Jsonize());
 
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_enableECSManagedTagsHasBeenSet)
+  {
+   payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
   }
 
   return payload.View().WriteReadable();

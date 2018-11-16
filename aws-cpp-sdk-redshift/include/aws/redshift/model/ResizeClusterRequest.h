@@ -173,21 +173,21 @@ namespace Model
     /**
      * <p>A boolean value indicating whether the resize operation is using the classic
      * resize process. If you don't provide this parameter or set the value to
-     * <code>false</code> the resize type is elastic. </p>
+     * <code>false</code>, the resize type is elastic. </p>
      */
     inline bool GetClassic() const{ return m_classic; }
 
     /**
      * <p>A boolean value indicating whether the resize operation is using the classic
      * resize process. If you don't provide this parameter or set the value to
-     * <code>false</code> the resize type is elastic. </p>
+     * <code>false</code>, the resize type is elastic. </p>
      */
     inline void SetClassic(bool value) { m_classicHasBeenSet = true; m_classic = value; }
 
     /**
      * <p>A boolean value indicating whether the resize operation is using the classic
      * resize process. If you don't provide this parameter or set the value to
-     * <code>false</code> the resize type is elastic. </p>
+     * <code>false</code>, the resize type is elastic. </p>
      */
     inline ResizeClusterRequest& WithClassic(bool value) { SetClassic(value); return *this;}
 

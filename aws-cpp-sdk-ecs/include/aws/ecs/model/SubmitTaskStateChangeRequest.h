@@ -272,79 +272,79 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline void SetPullStartedAt(Aws::Utils::DateTime&& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStartedAt(const Aws::Utils::DateTime& value) { SetPullStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStartedAt(Aws::Utils::DateTime&& value) { SetPullStartedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStoppedAt() const{ return m_pullStoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(const Aws::Utils::DateTime& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(Aws::Utils::DateTime&& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStoppedAt(const Aws::Utils::DateTime& value) { SetPullStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline SubmitTaskStateChangeRequest& WithPullStoppedAt(Aws::Utils::DateTime&& value) { SetPullStoppedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(Aws::Utils::DateTime&& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(const Aws::Utils::DateTime& value) { SetExecutionStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline SubmitTaskStateChangeRequest& WithExecutionStoppedAt(Aws::Utils::DateTime&& value) { SetExecutionStoppedAt(std::move(value)); return *this;}
 

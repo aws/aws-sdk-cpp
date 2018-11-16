@@ -28,13 +28,15 @@ using namespace Aws;
 
 CreateInterconnectResult::CreateInterconnectResult() : 
     m_interconnectState(InterconnectState::NOT_SET),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
 }
 
 CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_interconnectState(InterconnectState::NOT_SET),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
   *this = result;
 }
@@ -105,6 +107,12 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+  }
+
+  if(jsonValue.ValueExists("hasLogicalRedundancy"))
+  {
+    m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
 
   }
 

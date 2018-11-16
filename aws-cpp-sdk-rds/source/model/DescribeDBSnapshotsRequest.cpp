@@ -31,7 +31,8 @@ DescribeDBSnapshotsRequest::DescribeDBSnapshotsRequest() :
     m_includeShared(false),
     m_includeSharedHasBeenSet(false),
     m_includePublic(false),
-    m_includePublicHasBeenSet(false)
+    m_includePublicHasBeenSet(false),
+    m_dbiResourceIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,11 @@ Aws::String DescribeDBSnapshotsRequest::SerializePayload() const
   if(m_includePublicHasBeenSet)
   {
     ss << "IncludePublic=" << std::boolalpha << m_includePublic << "&";
+  }
+
+  if(m_dbiResourceIdHasBeenSet)
+  {
+    ss << "DbiResourceId=" << StringUtils::URLEncode(m_dbiResourceId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

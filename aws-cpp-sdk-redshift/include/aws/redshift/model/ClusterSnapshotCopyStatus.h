@@ -113,6 +113,31 @@ namespace Model
 
 
     /**
+     * <p>The number of days that automated snapshots are retained in the destination
+     * region after they are copied from a source region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that automated snapshots are retained in the destination
+     * region after they are copied from a source region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days that automated snapshots are retained in the destination
+     * region after they are copied from a source region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
+     */
+    inline ClusterSnapshotCopyStatus& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>The name of the snapshot copy grant.</p>
      */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
@@ -154,6 +179,9 @@ namespace Model
 
     long long m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
 
     Aws::String m_snapshotCopyGrantName;
     bool m_snapshotCopyGrantNameHasBeenSet;

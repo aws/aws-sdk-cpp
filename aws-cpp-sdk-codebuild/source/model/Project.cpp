@@ -41,6 +41,8 @@ Project::Project() :
     m_serviceRoleHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
+    m_queuedTimeoutInMinutes(0),
+    m_queuedTimeoutInMinutesHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -65,6 +67,8 @@ Project::Project(JsonView jsonValue) :
     m_serviceRoleHasBeenSet(false),
     m_timeoutInMinutes(0),
     m_timeoutInMinutesHasBeenSet(false),
+    m_queuedTimeoutInMinutes(0),
+    m_queuedTimeoutInMinutesHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdHasBeenSet(false),
@@ -160,6 +164,13 @@ Project& Project::operator =(JsonView jsonValue)
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
 
     m_timeoutInMinutesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queuedTimeoutInMinutes"))
+  {
+    m_queuedTimeoutInMinutes = jsonValue.GetInteger("queuedTimeoutInMinutes");
+
+    m_queuedTimeoutInMinutesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("encryptionKey"))
@@ -301,6 +312,12 @@ JsonValue Project::Jsonize() const
   if(m_timeoutInMinutesHasBeenSet)
   {
    payload.WithInteger("timeoutInMinutes", m_timeoutInMinutes);
+
+  }
+
+  if(m_queuedTimeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("queuedTimeoutInMinutes", m_queuedTimeoutInMinutes);
 
   }
 

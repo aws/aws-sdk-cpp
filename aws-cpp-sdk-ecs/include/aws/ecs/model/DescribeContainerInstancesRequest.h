@@ -18,6 +18,7 @@
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/ContainerInstanceField.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +144,56 @@ namespace Model
      */
     inline DescribeContainerInstancesRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline const Aws::Vector<ContainerInstanceField>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline void SetInclude(const Aws::Vector<ContainerInstanceField>& value) { m_includeHasBeenSet = true; m_include = value; }
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline void SetInclude(Aws::Vector<ContainerInstanceField>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline DescribeContainerInstancesRequest& WithInclude(const Aws::Vector<ContainerInstanceField>& value) { SetInclude(value); return *this;}
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline DescribeContainerInstancesRequest& WithInclude(Aws::Vector<ContainerInstanceField>&& value) { SetInclude(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline DescribeContainerInstancesRequest& AddInclude(const ContainerInstanceField& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies whether you want to see the resource tags for the container
+     * instance. If <code>TAGS</code> is specified, the tags are included in the
+     * response. If this field is omitted, tags are not included in the response.</p>
+     */
+    inline DescribeContainerInstancesRequest& AddInclude(ContainerInstanceField&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_cluster;
@@ -150,6 +201,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_containerInstances;
     bool m_containerInstancesHasBeenSet;
+
+    Aws::Vector<ContainerInstanceField> m_include;
+    bool m_includeHasBeenSet;
   };
 
 } // namespace Model

@@ -49,44 +49,51 @@ namespace Model
 
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline void SetTranscriptionJobName(Aws::String&& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = std::move(value); }
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline void SetTranscriptionJobName(const char* value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName.assign(value); }
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const Aws::String& value) { SetTranscriptionJobName(value); return *this;}
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(Aws::String&& value) { SetTranscriptionJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job. You can't use the strings "." or ".." in the job name.
-     * The name must be unique within an AWS account.</p>
+     * <p>The name of the job. Note that you can't use the strings "." or ".." by
+     * themselves as the job name. The name must also be unique within an AWS
+     * account.</p>
      */
     inline StartTranscriptionJobRequest& WithTranscriptionJobName(const char* value) { SetTranscriptionJobName(value); return *this;}
 

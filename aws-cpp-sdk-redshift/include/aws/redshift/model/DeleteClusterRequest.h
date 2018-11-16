@@ -214,6 +214,28 @@ namespace Model
      */
     inline DeleteClusterRequest& WithFinalClusterSnapshotIdentifier(const char* value) { SetFinalClusterSnapshotIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
+     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline int GetFinalClusterSnapshotRetentionPeriod() const{ return m_finalClusterSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
+     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline void SetFinalClusterSnapshotRetentionPeriod(int value) { m_finalClusterSnapshotRetentionPeriodHasBeenSet = true; m_finalClusterSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
+     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline DeleteClusterRequest& WithFinalClusterSnapshotRetentionPeriod(int value) { SetFinalClusterSnapshotRetentionPeriod(value); return *this;}
+
   private:
 
     Aws::String m_clusterIdentifier;
@@ -224,6 +246,9 @@ namespace Model
 
     Aws::String m_finalClusterSnapshotIdentifier;
     bool m_finalClusterSnapshotIdentifierHasBeenSet;
+
+    int m_finalClusterSnapshotRetentionPeriod;
+    bool m_finalClusterSnapshotRetentionPeriodHasBeenSet;
   };
 
 } // namespace Model

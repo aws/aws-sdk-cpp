@@ -39,6 +39,7 @@ namespace Aws
         static const int ANDROID__HASH = HashingUtils::HashString("ANDROID");
         static const int DOTNET_HASH = HashingUtils::HashString("DOTNET");
         static const int BASE_HASH = HashingUtils::HashString("BASE");
+        static const int PHP_HASH = HashingUtils::HashString("PHP");
 
 
         LanguageType GetLanguageTypeForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return LanguageType::BASE;
           }
+          else if (hashCode == PHP_HASH)
+          {
+            return LanguageType::PHP;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "DOTNET";
           case LanguageType::BASE:
             return "BASE";
+          case LanguageType::PHP:
+            return "PHP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

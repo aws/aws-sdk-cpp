@@ -26,7 +26,8 @@ namespace Model
   enum class ClusterField
   {
     NOT_SET,
-    STATISTICS
+    STATISTICS,
+    TAGS
   };
 
 namespace ClusterFieldMapper

@@ -115,7 +115,7 @@ namespace Model
 
 
     /**
-     * <p>Information about the compute resources the build project will use. Available
+     * <p>Information about the compute resources the build project uses. Available
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
@@ -125,7 +125,7 @@ namespace Model
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
 
     /**
-     * <p>Information about the compute resources the build project will use. Available
+     * <p>Information about the compute resources the build project uses. Available
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
@@ -135,7 +135,7 @@ namespace Model
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
 
     /**
-     * <p>Information about the compute resources the build project will use. Available
+     * <p>Information about the compute resources the build project uses. Available
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
@@ -145,7 +145,7 @@ namespace Model
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
 
     /**
-     * <p>Information about the compute resources the build project will use. Available
+     * <p>Information about the compute resources the build project uses. Available
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
@@ -155,7 +155,7 @@ namespace Model
     inline ProjectEnvironment& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
 
     /**
-     * <p>Information about the compute resources the build project will use. Available
+     * <p>Information about the compute resources the build project uses. Available
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
@@ -213,20 +213,19 @@ namespace Model
      * if the build project is be used to build Docker images, and the specified build
      * environment image is not provided by AWS CodeBuild with Docker support.
      * Otherwise, all associated builds that attempt to interact with the Docker daemon
-     * will fail. Note that you must also start the Docker daemon so that builds can
-     * interact with it. One way to do this is to initialize the Docker daemon during
-     * the install phase of your build spec by running the following build commands.
-     * (Do not run the following build commands if the specified build environment
-     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
-     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
-     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
-     * system's base image is Alpine Linux, add the <code>-t</code> argument to
-     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * fail. You must also start the Docker daemon so that builds can interact with it.
+     * One way to do this is to initialize the Docker daemon during the install phase
+     * of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild
+     * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
+     * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
-     * .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
+     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
+     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
+     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
 
@@ -235,20 +234,19 @@ namespace Model
      * if the build project is be used to build Docker images, and the specified build
      * environment image is not provided by AWS CodeBuild with Docker support.
      * Otherwise, all associated builds that attempt to interact with the Docker daemon
-     * will fail. Note that you must also start the Docker daemon so that builds can
-     * interact with it. One way to do this is to initialize the Docker daemon during
-     * the install phase of your build spec by running the following build commands.
-     * (Do not run the following build commands if the specified build environment
-     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
-     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
-     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
-     * system's base image is Alpine Linux, add the <code>-t</code> argument to
-     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * fail. You must also start the Docker daemon so that builds can interact with it.
+     * One way to do this is to initialize the Docker daemon during the install phase
+     * of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild
+     * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
+     * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
-     * .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
+     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
+     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
+     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
 
@@ -257,20 +255,19 @@ namespace Model
      * if the build project is be used to build Docker images, and the specified build
      * environment image is not provided by AWS CodeBuild with Docker support.
      * Otherwise, all associated builds that attempt to interact with the Docker daemon
-     * will fail. Note that you must also start the Docker daemon so that builds can
-     * interact with it. One way to do this is to initialize the Docker daemon during
-     * the install phase of your build spec by running the following build commands.
-     * (Do not run the following build commands if the specified build environment
-     * image is provided by AWS CodeBuild with Docker support.)</p> <p>If the operating
-     * system's base image is Ubuntu Linux:</p> <p> <code>- nohup
-     * /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
-     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 sh -c
-     * "until docker info; do echo .; sleep 1; done"</code> </p> <p>If the operating
-     * system's base image is Alpine Linux, add the <code>-t</code> argument to
-     * <code>timeout</code>:</p> <p> <code>- nohup /usr/local/bin/dockerd
+     * fail. You must also start the Docker daemon so that builds can interact with it.
+     * One way to do this is to initialize the Docker daemon during the install phase
+     * of your build spec by running the following build commands. (Do not run these
+     * commands if the specified build environment image is provided by AWS CodeBuild
+     * with Docker support.)</p> <p>If the operating system's base image is Ubuntu
+     * Linux:</p> <p> <code>- nohup /usr/local/bin/dockerd
      * --host=unix:///var/run/docker.sock --host=tcp://0.0.0.0:2375
-     * --storage-driver=overlay&amp; - timeout 15 -t sh -c "until docker info; do echo
-     * .; sleep 1; done"</code> </p>
+     * --storage-driver=overlay&amp; - timeout 15 sh -c "until docker info; do echo .;
+     * sleep 1; done"</code> </p> <p>If the operating system's base image is Alpine
+     * Linux, add the <code>-t</code> argument to <code>timeout</code>:</p> <p> <code>-
+     * nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock
+     * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp; - timeout 15 -t sh -c
+     * "until docker info; do echo .; sleep 1; done"</code> </p>
      */
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
 

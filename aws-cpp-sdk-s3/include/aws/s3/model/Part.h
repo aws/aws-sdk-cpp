@@ -125,17 +125,17 @@ namespace Model
 
 
     /**
-     * <p>Size of the uploaded part data.</p>
+     * <p>Size in bytes of the uploaded part data.</p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p>Size of the uploaded part data.</p>
+     * <p>Size in bytes of the uploaded part data.</p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>Size of the uploaded part data.</p>
+     * <p>Size in bytes of the uploaded part data.</p>
      */
     inline Part& WithSize(long long value) { SetSize(value); return *this;}
 

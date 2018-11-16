@@ -31,7 +31,8 @@ DeleteLagResult::DeleteLagResult() :
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
     m_allowsHostedConnections(false),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
 }
 
@@ -40,7 +41,8 @@ DeleteLagResult::DeleteLagResult(const Aws::AmazonWebServiceResult<JsonValue>& r
     m_lagState(LagState::NOT_SET),
     m_minimumLinks(0),
     m_allowsHostedConnections(false),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
   *this = result;
 }
@@ -132,6 +134,12 @@ DeleteLagResult& DeleteLagResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
+
+  }
+
+  if(jsonValue.ValueExists("hasLogicalRedundancy"))
+  {
+    m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
 
   }
 

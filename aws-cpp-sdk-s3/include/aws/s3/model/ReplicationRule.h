@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * <p>Container for information about a particular replication rule.</p><p><h3>See
+   * <p>A container for information about a specific replication rule.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRule">AWS
    * API Reference</a></p>
@@ -54,87 +54,80 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline ReplicationRule& WithID(const Aws::String& value) { SetID(value); return *this;}
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline ReplicationRule& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the rule. The value cannot be longer than 255
-     * characters.</p>
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
     inline ReplicationRule& WithID(const char* value) { SetID(value); return *this;}
 
 
     /**
      * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, then Amazon S3 applies rule priority in the event
-     * there are conflicts (two or more rules identify the same object based on filter
-     * specified). The rule with higher priority takes precedence. For example,</p>
-     * <ul> <li> <p>Same object quality prefix based filter criteria If prefixes you
-     * specified in multiple rules overlap. </p> </li> <li> <p>Same object qualify tag
-     * based filter criteria specified in multiple rules</p> </li> </ul> <p>For more
-     * information, see <a href="
+     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
+     * when filtering. If two or more rules identify the same object based on a
+     * specified filter, the rule with higher priority takes precedence. For
+     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
+     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>
+     * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
      * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, then Amazon S3 applies rule priority in the event
-     * there are conflicts (two or more rules identify the same object based on filter
-     * specified). The rule with higher priority takes precedence. For example,</p>
-     * <ul> <li> <p>Same object quality prefix based filter criteria If prefixes you
-     * specified in multiple rules overlap. </p> </li> <li> <p>Same object qualify tag
-     * based filter criteria specified in multiple rules</p> </li> </ul> <p>For more
-     * information, see <a href="
+     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
+     * when filtering. If two or more rules identify the same object based on a
+     * specified filter, the rule with higher priority takes precedence. For
+     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
+     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>
+     * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
      * <p>The priority associated with the rule. If you specify multiple rules in a
-     * replication configuration, then Amazon S3 applies rule priority in the event
-     * there are conflicts (two or more rules identify the same object based on filter
-     * specified). The rule with higher priority takes precedence. For example,</p>
-     * <ul> <li> <p>Same object quality prefix based filter criteria If prefixes you
-     * specified in multiple rules overlap. </p> </li> <li> <p>Same object qualify tag
-     * based filter criteria specified in multiple rules</p> </li> </ul> <p>For more
-     * information, see <a href="
+     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
+     * when filtering. If two or more rules identify the same object based on a
+     * specified filter, the rule with higher priority takes precedence. For
+     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
+     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide.</p>
+     * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}
 
@@ -156,104 +149,104 @@ namespace Model
 
 
     /**
-     * <p>The rule is ignored if status is not Enabled.</p>
+     * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The rule is ignored if status is not Enabled.</p>
+     * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline void SetStatus(const ReplicationRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The rule is ignored if status is not Enabled.</p>
+     * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline void SetStatus(ReplicationRuleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The rule is ignored if status is not Enabled.</p>
+     * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline ReplicationRule& WithStatus(const ReplicationRuleStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The rule is ignored if status is not Enabled.</p>
+     * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline ReplicationRule& WithStatus(ReplicationRuleStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p> Container that describes additional filters in identifying source objects
-     * that you want to replicate. Currently, Amazon S3 supports only the filter that
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-managed key. You can choose to enable or disable replication of these
-     * objects. </p> <p> if you want Amazon S3 to replicate objects created with
-     * server-side encryption using AWS KMS-managed keys. </p>
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
 
     /**
-     * <p> Container that describes additional filters in identifying source objects
-     * that you want to replicate. Currently, Amazon S3 supports only the filter that
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-managed key. You can choose to enable or disable replication of these
-     * objects. </p> <p> if you want Amazon S3 to replicate objects created with
-     * server-side encryption using AWS KMS-managed keys. </p>
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline void SetSourceSelectionCriteria(const SourceSelectionCriteria& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = value; }
 
     /**
-     * <p> Container that describes additional filters in identifying source objects
-     * that you want to replicate. Currently, Amazon S3 supports only the filter that
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-managed key. You can choose to enable or disable replication of these
-     * objects. </p> <p> if you want Amazon S3 to replicate objects created with
-     * server-side encryption using AWS KMS-managed keys. </p>
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline void SetSourceSelectionCriteria(SourceSelectionCriteria&& value) { m_sourceSelectionCriteriaHasBeenSet = true; m_sourceSelectionCriteria = std::move(value); }
 
     /**
-     * <p> Container that describes additional filters in identifying source objects
-     * that you want to replicate. Currently, Amazon S3 supports only the filter that
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-managed key. You can choose to enable or disable replication of these
-     * objects. </p> <p> if you want Amazon S3 to replicate objects created with
-     * server-side encryption using AWS KMS-managed keys. </p>
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(const SourceSelectionCriteria& value) { SetSourceSelectionCriteria(value); return *this;}
 
     /**
-     * <p> Container that describes additional filters in identifying source objects
-     * that you want to replicate. Currently, Amazon S3 supports only the filter that
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
      * you can specify for objects created with server-side encryption using an AWS
-     * KMS-managed key. You can choose to enable or disable replication of these
-     * objects. </p> <p> if you want Amazon S3 to replicate objects created with
-     * server-side encryption using AWS KMS-managed keys. </p>
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline ReplicationRule& WithSourceSelectionCriteria(SourceSelectionCriteria&& value) { SetSourceSelectionCriteria(std::move(value)); return *this;}
 
 
     /**
-     * <p>Container for replication destination information.</p>
+     * <p>A container for information about the replication destination.</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>Container for replication destination information.</p>
+     * <p>A container for information about the replication destination.</p>
      */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>Container for replication destination information.</p>
+     * <p>A container for information about the replication destination.</p>
      */
     inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>Container for replication destination information.</p>
+     * <p>A container for information about the replication destination.</p>
      */
     inline ReplicationRule& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>Container for replication destination information.</p>
+     * <p>A container for information about the replication destination.</p>
      */
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 

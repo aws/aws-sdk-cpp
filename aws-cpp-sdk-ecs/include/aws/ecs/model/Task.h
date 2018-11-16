@@ -18,12 +18,14 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/TaskOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/TaskStopCode.h>
 #include <aws/ecs/model/Connectivity.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/LaunchType.h>
 #include <aws/ecs/model/HealthStatus.h>
 #include <aws/ecs/model/Container.h>
 #include <aws/ecs/model/Attachment.h>
+#include <aws/ecs/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -326,161 +328,168 @@ namespace Model
 
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline Task& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
     inline Task& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
     /**
-     * <p>The number of CPU units used by the task. It can be expressed as an integer
-     * using CPU units, for example <code>1024</code>, or as a string using vCPUs, for
-     * example <code>1 vCPU</code> or <code>1 vcpu</code>, in a task definition. String
-     * values are converted to an integer indicating the CPU units when the task
-     * definition is registered.</p> <p>If using the EC2 launch type, this field is
-     * optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
+     * <p>The number of CPU units used by the task as expressed in a task definition.
+     * It can be expressed as an integer using CPU units, for example
+     * <code>1024</code>. It can also be expressed as a string using vCPUs, for example
+     * <code>1 vCPU</code> or <code>1 vcpu</code>. String values are converted to an
+     * integer indicating the CPU units when the task definition is registered.</p>
+     * <p>If you are using the EC2 launch type, this field is optional. Supported
+     * values are between <code>128</code> CPU units (<code>0.125</code> vCPUs) and
+     * <code>10240</code> CPU units (<code>10</code> vCPUs).</p> <p>If you are using
+     * the Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
+     * <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) - Available
+     * <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p> </li>
+     * <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB), 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) - Available
+     * <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB),
+     * 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2 vCPU) -
+     * Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in
+     * increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
      * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
      * of 1024 (1 GB)</p> </li> </ul>
      */
@@ -488,13 +497,14 @@ namespace Model
 
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -508,13 +518,14 @@ namespace Model
     inline const Aws::String& GetMemory() const{ return m_memory; }
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -528,13 +539,14 @@ namespace Model
     inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -548,13 +560,14 @@ namespace Model
     inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -568,13 +581,14 @@ namespace Model
     inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -588,13 +602,14 @@ namespace Model
     inline Task& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -608,13 +623,14 @@ namespace Model
     inline Task& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of memory (in MiB) used by the task. It can be expressed as an
-     * integer using MiB, for example <code>1024</code>, or as a string using GB, for
-     * example <code>1GB</code> or <code>1 GB</code>, in a task definition. String
-     * values are converted to an integer indicating the MiB when the task definition
-     * is registered.</p> <p>If using the EC2 launch type, this field is optional.</p>
-     * <p>If using the Fargate launch type, this field is required and you must use one
-     * of the following values, which determines your range of supported values for the
+     * <p>The amount of memory (in MiB) used by the task as expressed in a task
+     * definition. It can be expressed as an integer using MiB, for example
+     * <code>1024</code>. It can also be expressed as a string using GB, for example
+     * <code>1GB</code> or <code>1 GB</code>. String values are converted to an integer
+     * indicating the MiB when the task definition is registered.</p> <p>If you are
+     * using the EC2 launch type, this field is optional.</p> <p>If you are using the
+     * Fargate launch type, this field is required and you must use one of the
+     * following values, which determines your range of supported values for the
      * <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5 GB), 1024 (1 GB), 2048 (2
      * GB) - Available <code>cpu</code> values: 256 (.25 vCPU)</p> </li> <li> <p>1024
      * (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) - Available <code>cpu</code>
@@ -782,6 +798,37 @@ namespace Model
 
 
     /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
+    inline const TaskStopCode& GetStopCode() const{ return m_stopCode; }
+
+    /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
+    inline void SetStopCode(const TaskStopCode& value) { m_stopCodeHasBeenSet = true; m_stopCode = value; }
+
+    /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
+    inline void SetStopCode(TaskStopCode&& value) { m_stopCodeHasBeenSet = true; m_stopCode = std::move(value); }
+
+    /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
+    inline Task& WithStopCode(const TaskStopCode& value) { SetStopCode(value); return *this;}
+
+    /**
+     * <p>The stop code indicating why a task was stopped. The
+     * <code>stoppedReason</code> may contain additional details.</p>
+     */
+    inline Task& WithStopCode(TaskStopCode&& value) { SetStopCode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The connectivity status of a task.</p>
      */
     inline const Connectivity& GetConnectivity() const{ return m_connectivity; }
@@ -808,233 +855,233 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the task last went into <code>CONNECTED</code>
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
      * status.</p>
      */
     inline const Aws::Utils::DateTime& GetConnectivityAt() const{ return m_connectivityAt; }
 
     /**
-     * <p>The Unix time stamp for when the task last went into <code>CONNECTED</code>
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
      * status.</p>
      */
     inline void SetConnectivityAt(const Aws::Utils::DateTime& value) { m_connectivityAtHasBeenSet = true; m_connectivityAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task last went into <code>CONNECTED</code>
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
      * status.</p>
      */
     inline void SetConnectivityAt(Aws::Utils::DateTime&& value) { m_connectivityAtHasBeenSet = true; m_connectivityAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task last went into <code>CONNECTED</code>
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
      * status.</p>
      */
     inline Task& WithConnectivityAt(const Aws::Utils::DateTime& value) { SetConnectivityAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task last went into <code>CONNECTED</code>
+     * <p>The Unix timestamp for when the task last went into <code>CONNECTED</code>
      * status.</p>
      */
     inline Task& WithConnectivityAt(Aws::Utils::DateTime&& value) { SetConnectivityAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStartedAt() const{ return m_pullStartedAt; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline void SetPullStartedAt(const Aws::Utils::DateTime& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline void SetPullStartedAt(Aws::Utils::DateTime&& value) { m_pullStartedAtHasBeenSet = true; m_pullStartedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline Task& WithPullStartedAt(const Aws::Utils::DateTime& value) { SetPullStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the container image pull began.</p>
+     * <p>The Unix timestamp for when the container image pull began.</p>
      */
     inline Task& WithPullStartedAt(Aws::Utils::DateTime&& value) { SetPullStartedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline const Aws::Utils::DateTime& GetPullStoppedAt() const{ return m_pullStoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(const Aws::Utils::DateTime& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline void SetPullStoppedAt(Aws::Utils::DateTime&& value) { m_pullStoppedAtHasBeenSet = true; m_pullStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline Task& WithPullStoppedAt(const Aws::Utils::DateTime& value) { SetPullStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the container image pull completed.</p>
+     * <p>The Unix timestamp for when the container image pull completed.</p>
      */
     inline Task& WithPullStoppedAt(Aws::Utils::DateTime&& value) { SetPullStoppedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStoppedAt() const{ return m_executionStoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(const Aws::Utils::DateTime& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline void SetExecutionStoppedAt(Aws::Utils::DateTime&& value) { m_executionStoppedAtHasBeenSet = true; m_executionStoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline Task& WithExecutionStoppedAt(const Aws::Utils::DateTime& value) { SetExecutionStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task execution stopped.</p>
+     * <p>The Unix timestamp for when the task execution stopped.</p>
      */
     inline Task& WithExecutionStoppedAt(Aws::Utils::DateTime&& value) { SetExecutionStoppedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task was created (the task entered the
+     * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time stamp for when the task was created (the task entered the
+     * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task was created (the task entered the
+     * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task was created (the task entered the
+     * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
      */
     inline Task& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task was created (the task entered the
+     * <p>The Unix timestamp for when the task was created (the task entered the
      * <code>PENDING</code> state).</p>
      */
     inline Task& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task started (the task transitioned from the
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp for when the task started (the task transitioned from the
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task started (the task transitioned from the
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task started (the task transitioned from the
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline Task& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task started (the task transitioned from the
+     * <p>The Unix timestamp for when the task started (the task transitioned from the
      * <code>PENDING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline Task& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task stops (transitions from the
+     * <p>The Unix timestamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetStoppingAt() const{ return m_stoppingAt; }
 
     /**
-     * <p>The Unix time stamp for when the task stops (transitions from the
+     * <p>The Unix timestamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline void SetStoppingAt(const Aws::Utils::DateTime& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task stops (transitions from the
+     * <p>The Unix timestamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline void SetStoppingAt(Aws::Utils::DateTime&& value) { m_stoppingAtHasBeenSet = true; m_stoppingAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task stops (transitions from the
+     * <p>The Unix timestamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline Task& WithStoppingAt(const Aws::Utils::DateTime& value) { SetStoppingAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task stops (transitions from the
+     * <p>The Unix timestamp for when the task stops (transitions from the
      * <code>RUNNING</code> state to <code>STOPPED</code>).</p>
      */
     inline Task& WithStoppingAt(Aws::Utils::DateTime&& value) { SetStoppingAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the task was stopped (the task transitioned from
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline const Aws::Utils::DateTime& GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the task was stopped (the task transitioned from
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline void SetStoppedAt(const Aws::Utils::DateTime& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the task was stopped (the task transitioned from
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline void SetStoppedAt(Aws::Utils::DateTime&& value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the task was stopped (the task transitioned from
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline Task& WithStoppedAt(const Aws::Utils::DateTime& value) { SetStoppedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the task was stopped (the task transitioned from
+     * <p>The Unix timestamp for when the task was stopped (the task transitioned from
      * the <code>RUNNING</code> state to the <code>STOPPED</code> state).</p>
      */
     inline Task& WithStoppedAt(Aws::Utils::DateTime&& value) { SetStoppedAt(std::move(value)); return *this;}
@@ -1167,43 +1214,43 @@ namespace Model
 
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
 
     /**
-     * <p>The elastic network adapter associated with the task if the task uses the
+     * <p>The Elastic Network Adapter associated with the task if the task uses the
      * <code>awsvpc</code> network mode.</p>
      */
     inline Task& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
@@ -1289,6 +1336,63 @@ namespace Model
      */
     inline Task& WithHealthStatus(HealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline Task& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline Task& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline Task& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata that you apply to the task to help you categorize and organize
+     * them. Each tag consists of a key and an optional value, both of which you
+     * define. Tag keys can have a maximum character length of 128 characters, and tag
+     * values can have a maximum length of 256 characters.</p>
+     */
+    inline Task& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_taskArn;
@@ -1329,6 +1433,9 @@ namespace Model
 
     Aws::String m_stoppedReason;
     bool m_stoppedReasonHasBeenSet;
+
+    TaskStopCode m_stopCode;
+    bool m_stopCodeHasBeenSet;
 
     Connectivity m_connectivity;
     bool m_connectivityHasBeenSet;
@@ -1371,6 +1478,9 @@ namespace Model
 
     HealthStatus m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

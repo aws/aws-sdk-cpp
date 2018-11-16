@@ -59,7 +59,8 @@ RestoreDBInstanceToPointInTimeRequest::RestoreDBInstanceToPointInTimeRequest() :
     m_useDefaultProcessorFeaturesHasBeenSet(false),
     m_dBParameterGroupNameHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_sourceDbiResourceIdHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,11 @@ Aws::String RestoreDBInstanceToPointInTimeRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_sourceDbiResourceIdHasBeenSet)
+  {
+    ss << "SourceDbiResourceId=" << StringUtils::URLEncode(m_sourceDbiResourceId.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

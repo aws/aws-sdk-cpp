@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Filter that identifies subset of objects to which the replication rule
+   * <p>A filter that identifies the subset of objects to which the replication rule
    * applies. A <code>Filter</code> must specify exactly one <code>Prefix</code>,
    * <code>Tag</code>, or an <code>And</code> child element.</p><p><h3>See Also:</h3>
    * <a
@@ -53,130 +53,130 @@ namespace Model
 
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Object keyname prefix that identifies subset of objects to which the rule
-     * applies.</p>
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * <p>Container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects having the tag in its tagset.</p>
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
      */
     inline const Tag& GetTag() const{ return m_tag; }
 
     /**
-     * <p>Container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects having the tag in its tagset.</p>
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
      */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
-     * <p>Container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects having the tag in its tagset.</p>
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
      */
     inline void SetTag(Tag&& value) { m_tagHasBeenSet = true; m_tag = std::move(value); }
 
     /**
-     * <p>Container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects having the tag in its tagset.</p>
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
      */
     inline ReplicationRuleFilter& WithTag(const Tag& value) { SetTag(value); return *this;}
 
     /**
-     * <p>Container for specifying a tag key and value. </p> <p>The rule applies only
-     * to objects having the tag in its tagset.</p>
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
      */
     inline ReplicationRuleFilter& WithTag(Tag&& value) { SetTag(std::move(value)); return *this;}
 
 
     /**
-     * <p>Container for specifying rule filters. These filters determine the subset of
-     * objects to which the rule applies. The element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>You specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an
-     * <code>And</code> tag.</p> </li> <li> <p>You specify filter based on multiple
-     * tags. Then you wrap the <code>Tag</code> elements in an <code>And</code>
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * tag.</p> </li> </ul>
      */
     inline const ReplicationRuleAndOperator& GetAnd() const{ return m_and; }
 
     /**
-     * <p>Container for specifying rule filters. These filters determine the subset of
-     * objects to which the rule applies. The element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>You specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an
-     * <code>And</code> tag.</p> </li> <li> <p>You specify filter based on multiple
-     * tags. Then you wrap the <code>Tag</code> elements in an <code>And</code>
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * tag.</p> </li> </ul>
      */
     inline void SetAnd(const ReplicationRuleAndOperator& value) { m_andHasBeenSet = true; m_and = value; }
 
     /**
-     * <p>Container for specifying rule filters. These filters determine the subset of
-     * objects to which the rule applies. The element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>You specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an
-     * <code>And</code> tag.</p> </li> <li> <p>You specify filter based on multiple
-     * tags. Then you wrap the <code>Tag</code> elements in an <code>And</code>
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * tag.</p> </li> </ul>
      */
     inline void SetAnd(ReplicationRuleAndOperator&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
 
     /**
-     * <p>Container for specifying rule filters. These filters determine the subset of
-     * objects to which the rule applies. The element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>You specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an
-     * <code>And</code> tag.</p> </li> <li> <p>You specify filter based on multiple
-     * tags. Then you wrap the <code>Tag</code> elements in an <code>And</code>
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * tag.</p> </li> </ul>
      */
     inline ReplicationRuleFilter& WithAnd(const ReplicationRuleAndOperator& value) { SetAnd(value); return *this;}
 
     /**
-     * <p>Container for specifying rule filters. These filters determine the subset of
-     * objects to which the rule applies. The element is required only if you specify
-     * more than one filter. For example: </p> <ul> <li> <p>You specify both a
-     * <code>Prefix</code> and a <code>Tag</code> filters. Then you wrap these in an
-     * <code>And</code> tag.</p> </li> <li> <p>You specify filter based on multiple
-     * tags. Then you wrap the <code>Tag</code> elements in an <code>And</code>
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
      * tag.</p> </li> </ul>
      */
     inline ReplicationRuleFilter& WithAnd(ReplicationRuleAndOperator&& value) { SetAnd(std::move(value)); return *this;}

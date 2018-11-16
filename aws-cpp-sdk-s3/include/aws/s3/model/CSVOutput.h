@@ -75,152 +75,159 @@ namespace Model
 
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline const Aws::String& GetQuoteEscapeCharacter() const{ return m_quoteEscapeCharacter; }
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(const Aws::String& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = value; }
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(Aws::String&& value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter = std::move(value); }
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline void SetQuoteEscapeCharacter(const char* value) { m_quoteEscapeCharacterHasBeenSet = true; m_quoteEscapeCharacter.assign(value); }
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline CSVOutput& WithQuoteEscapeCharacter(const Aws::String& value) { SetQuoteEscapeCharacter(value); return *this;}
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline CSVOutput& WithQuoteEscapeCharacter(Aws::String&& value) { SetQuoteEscapeCharacter(std::move(value)); return *this;}
 
     /**
-     * <p>Single character used for escaping the quote character inside an already
+     * <p>Th single character used for escaping the quote character inside an already
      * escaped value.</p>
      */
     inline CSVOutput& WithQuoteEscapeCharacter(const char* value) { SetQuoteEscapeCharacter(value); return *this;}
 
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline const Aws::String& GetRecordDelimiter() const{ return m_recordDelimiter; }
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(const Aws::String& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = value; }
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(Aws::String&& value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter = std::move(value); }
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline void SetRecordDelimiter(const char* value) { m_recordDelimiterHasBeenSet = true; m_recordDelimiter.assign(value); }
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline CSVOutput& WithRecordDelimiter(const Aws::String& value) { SetRecordDelimiter(value); return *this;}
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline CSVOutput& WithRecordDelimiter(Aws::String&& value) { SetRecordDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>Value used to separate individual records.</p>
+     * <p>The value used to separate individual records.</p>
      */
     inline CSVOutput& WithRecordDelimiter(const char* value) { SetRecordDelimiter(value); return *this;}
 
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline const Aws::String& GetFieldDelimiter() const{ return m_fieldDelimiter; }
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(const Aws::String& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = value; }
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(Aws::String&& value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter = std::move(value); }
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline void SetFieldDelimiter(const char* value) { m_fieldDelimiterHasBeenSet = true; m_fieldDelimiter.assign(value); }
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline CSVOutput& WithFieldDelimiter(const Aws::String& value) { SetFieldDelimiter(value); return *this;}
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline CSVOutput& WithFieldDelimiter(Aws::String&& value) { SetFieldDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>Value used to separate individual fields in a record.</p>
+     * <p>The value used to separate individual fields in a record.</p>
      */
     inline CSVOutput& WithFieldDelimiter(const char* value) { SetFieldDelimiter(value); return *this;}
 
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline const Aws::String& GetQuoteCharacter() const{ return m_quoteCharacter; }
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline void SetQuoteCharacter(const Aws::String& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = value; }
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline void SetQuoteCharacter(Aws::String&& value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter = std::move(value); }
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline void SetQuoteCharacter(const char* value) { m_quoteCharacterHasBeenSet = true; m_quoteCharacter.assign(value); }
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline CSVOutput& WithQuoteCharacter(const Aws::String& value) { SetQuoteCharacter(value); return *this;}
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline CSVOutput& WithQuoteCharacter(Aws::String&& value) { SetQuoteCharacter(std::move(value)); return *this;}
 
     /**
-     * <p>Value used for escaping where the field delimiter is part of the value.</p>
+     * <p>The value used for escaping where the field delimiter is part of the
+     * value.</p>
      */
     inline CSVOutput& WithQuoteCharacter(const char* value) { SetQuoteCharacter(value); return *this;}
 

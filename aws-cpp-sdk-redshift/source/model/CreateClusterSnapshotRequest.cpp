@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 CreateClusterSnapshotRequest::CreateClusterSnapshotRequest() : 
     m_snapshotIdentifierHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -39,6 +41,11 @@ Aws::String CreateClusterSnapshotRequest::SerializePayload() const
   if(m_clusterIdentifierHasBeenSet)
   {
     ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+    ss << "ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
   if(m_tagsHasBeenSet)

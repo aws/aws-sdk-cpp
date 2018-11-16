@@ -39,7 +39,8 @@ CreateReplicationInstanceRequest::CreateReplicationInstanceRequest() :
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false),
+    m_dnsNameServersHasBeenSet(false)
 {
 }
 
@@ -132,6 +133,12 @@ Aws::String CreateReplicationInstanceRequest::SerializePayload() const
   if(m_publiclyAccessibleHasBeenSet)
   {
    payload.WithBool("PubliclyAccessible", m_publiclyAccessible);
+
+  }
+
+  if(m_dnsNameServersHasBeenSet)
+  {
+   payload.WithString("DnsNameServers", m_dnsNameServers);
 
   }
 

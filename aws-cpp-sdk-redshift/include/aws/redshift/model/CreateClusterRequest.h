@@ -1008,6 +1008,31 @@ namespace Model
 
 
     /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The default number of days to retain a manual snapshot. If the value is -1,
+     * the snapshot is retained indefinitely. This setting does not change the
+     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
+     * integer between 1 and 3,653</p>
+     */
+    inline CreateClusterRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>The port number on which the cluster accepts incoming connections.</p> <p>The
      * cluster is accessible only via the JDBC and ODBC connection strings. Part of the
      * connection string requires the port on which the cluster will listen for
@@ -1626,6 +1651,42 @@ namespace Model
      */
     inline CreateClusterRequest& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline const Aws::String& GetSnapshotScheduleIdentifier() const{ return m_snapshotScheduleIdentifier; }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const Aws::String& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = value; }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(Aws::String&& value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline void SetSnapshotScheduleIdentifier(const char* value) { m_snapshotScheduleIdentifierHasBeenSet = true; m_snapshotScheduleIdentifier.assign(value); }
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline CreateClusterRequest& WithSnapshotScheduleIdentifier(const Aws::String& value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline CreateClusterRequest& WithSnapshotScheduleIdentifier(Aws::String&& value) { SetSnapshotScheduleIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the snapshot schedule.</p>
+     */
+    inline CreateClusterRequest& WithSnapshotScheduleIdentifier(const char* value) { SetSnapshotScheduleIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBName;
@@ -1666,6 +1727,9 @@ namespace Model
 
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
 
     int m_port;
     bool m_portHasBeenSet;
@@ -1711,6 +1775,9 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    Aws::String m_snapshotScheduleIdentifier;
+    bool m_snapshotScheduleIdentifierHasBeenSet;
   };
 
 } // namespace Model

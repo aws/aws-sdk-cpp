@@ -159,6 +159,28 @@ namespace Model
 
 
     /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline CreateClusterSnapshotRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>A list of tag instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -200,6 +222,9 @@ namespace Model
 
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

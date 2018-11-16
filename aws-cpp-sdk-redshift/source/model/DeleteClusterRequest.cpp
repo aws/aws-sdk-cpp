@@ -24,7 +24,9 @@ DeleteClusterRequest::DeleteClusterRequest() :
     m_clusterIdentifierHasBeenSet(false),
     m_skipFinalClusterSnapshot(false),
     m_skipFinalClusterSnapshotHasBeenSet(false),
-    m_finalClusterSnapshotIdentifierHasBeenSet(false)
+    m_finalClusterSnapshotIdentifierHasBeenSet(false),
+    m_finalClusterSnapshotRetentionPeriod(0),
+    m_finalClusterSnapshotRetentionPeriodHasBeenSet(false)
 {
 }
 
@@ -45,6 +47,11 @@ Aws::String DeleteClusterRequest::SerializePayload() const
   if(m_finalClusterSnapshotIdentifierHasBeenSet)
   {
     ss << "FinalClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_finalClusterSnapshotIdentifier.c_str()) << "&";
+  }
+
+  if(m_finalClusterSnapshotRetentionPeriodHasBeenSet)
+  {
+    ss << "FinalClusterSnapshotRetentionPeriod=" << m_finalClusterSnapshotRetentionPeriod << "&";
   }
 
   ss << "Version=2012-12-01";

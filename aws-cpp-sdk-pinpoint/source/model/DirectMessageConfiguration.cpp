@@ -36,7 +36,8 @@ DirectMessageConfiguration::DirectMessageConfiguration() :
     m_defaultPushNotificationMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_voiceMessageHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ DirectMessageConfiguration::DirectMessageConfiguration(JsonView jsonValue) :
     m_defaultPushNotificationMessageHasBeenSet(false),
     m_emailMessageHasBeenSet(false),
     m_gCMMessageHasBeenSet(false),
-    m_sMSMessageHasBeenSet(false)
+    m_sMSMessageHasBeenSet(false),
+    m_voiceMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +113,13 @@ DirectMessageConfiguration& DirectMessageConfiguration::operator =(JsonView json
     m_sMSMessageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VoiceMessage"))
+  {
+    m_voiceMessage = jsonValue.GetObject("VoiceMessage");
+
+    m_voiceMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +172,12 @@ JsonValue DirectMessageConfiguration::Jsonize() const
   if(m_sMSMessageHasBeenSet)
   {
    payload.WithObject("SMSMessage", m_sMSMessage.Jsonize());
+
+  }
+
+  if(m_voiceMessageHasBeenSet)
+  {
+   payload.WithObject("VoiceMessage", m_voiceMessage.Jsonize());
 
   }
 

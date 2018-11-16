@@ -29,14 +29,16 @@ using namespace Aws;
 AssociateConnectionWithLagResult::AssociateConnectionWithLagResult() : 
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
 }
 
 AssociateConnectionWithLagResult::AssociateConnectionWithLagResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_connectionState(ConnectionState::NOT_SET),
     m_vlan(0),
-    m_jumboFrameCapable(false)
+    m_jumboFrameCapable(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
 {
   *this = result;
 }
@@ -125,6 +127,12 @@ AssociateConnectionWithLagResult& AssociateConnectionWithLagResult::operator =(c
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
+
+  }
+
+  if(jsonValue.ValueExists("hasLogicalRedundancy"))
+  {
+    m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
 
   }
 

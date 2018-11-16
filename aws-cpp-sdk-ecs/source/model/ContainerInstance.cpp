@@ -47,7 +47,8 @@ ContainerInstance::ContainerInstance() :
     m_agentUpdateStatusHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ ContainerInstance::ContainerInstance(JsonView jsonValue) :
     m_agentUpdateStatusHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
-    m_attachmentsHasBeenSet(false)
+    m_attachmentsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,6 +189,16 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     m_attachmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -293,6 +305,17 @@ JsonValue ContainerInstance::Jsonize() const
      attachmentsJsonList[attachmentsIndex].AsObject(m_attachments[attachmentsIndex].Jsonize());
    }
    payload.WithArray("attachments", std::move(attachmentsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

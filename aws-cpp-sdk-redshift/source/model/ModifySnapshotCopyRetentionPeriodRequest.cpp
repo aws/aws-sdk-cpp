@@ -23,7 +23,9 @@ using namespace Aws::Utils;
 ModifySnapshotCopyRetentionPeriodRequest::ModifySnapshotCopyRetentionPeriodRequest() : 
     m_clusterIdentifierHasBeenSet(false),
     m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_manual(false),
+    m_manualHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,11 @@ Aws::String ModifySnapshotCopyRetentionPeriodRequest::SerializePayload() const
   if(m_retentionPeriodHasBeenSet)
   {
     ss << "RetentionPeriod=" << m_retentionPeriod << "&";
+  }
+
+  if(m_manualHasBeenSet)
+  {
+    ss << "Manual=" << std::boolalpha << m_manual << "&";
   }
 
   ss << "Version=2012-12-01";

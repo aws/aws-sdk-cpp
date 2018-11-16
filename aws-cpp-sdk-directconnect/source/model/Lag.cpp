@@ -47,7 +47,9 @@ Lag::Lag() :
     m_allowsHostedConnections(false),
     m_allowsHostedConnectionsHasBeenSet(false),
     m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false)
+    m_jumboFrameCapableHasBeenSet(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_hasLogicalRedundancyHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ Lag::Lag(JsonView jsonValue) :
     m_allowsHostedConnections(false),
     m_allowsHostedConnectionsHasBeenSet(false),
     m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false)
+    m_jumboFrameCapableHasBeenSet(false),
+    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
+    m_hasLogicalRedundancyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,6 +182,13 @@ Lag& Lag::operator =(JsonView jsonValue)
     m_jumboFrameCapableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("hasLogicalRedundancy"))
+  {
+    m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
+
+    m_hasLogicalRedundancyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +282,11 @@ JsonValue Lag::Jsonize() const
   {
    payload.WithBool("jumboFrameCapable", m_jumboFrameCapable);
 
+  }
+
+  if(m_hasLogicalRedundancyHasBeenSet)
+  {
+   payload.WithString("hasLogicalRedundancy", HasLogicalRedundancyMapper::GetNameForHasLogicalRedundancy(m_hasLogicalRedundancy));
   }
 
   return payload;

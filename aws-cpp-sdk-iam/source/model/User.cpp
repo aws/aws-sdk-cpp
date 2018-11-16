@@ -37,6 +37,7 @@ User::User() :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_passwordLastUsedHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_permissionsBoundaryHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ User::User(const XmlNode& xmlNode) :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_passwordLastUsedHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_permissionsBoundaryHasBeenSet(false)
 {
   *this = xmlNode;
@@ -95,6 +97,18 @@ User& User::operator =(const XmlNode& xmlNode)
       m_passwordLastUsed = DateTime(StringUtils::Trim(passwordLastUsedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
     XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
     if(!permissionsBoundaryNode.IsNull())
     {
@@ -138,6 +152,17 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
   if(m_permissionsBoundaryHasBeenSet)
   {
       Aws::StringStream permissionsBoundaryLocationAndMemberSs;
@@ -172,6 +197,16 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_passwordLastUsedHasBeenSet)
   {
       oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
   if(m_permissionsBoundaryHasBeenSet)
   {

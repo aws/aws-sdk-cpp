@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/directconnect/model/LagState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/directconnect/model/HasLogicalRedundancy.h>
 #include <aws/directconnect/model/Connection.h>
 #include <utility>
 
@@ -517,6 +518,37 @@ namespace Model
      */
     inline Lag& WithJumboFrameCapable(bool value) { SetJumboFrameCapable(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the LAG supports a secondary BGP peer in the same address
+     * family (IPv4/IPv6).</p>
+     */
+    inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+
+    /**
+     * <p>Indicates whether the LAG supports a secondary BGP peer in the same address
+     * family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(const HasLogicalRedundancy& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = value; }
+
+    /**
+     * <p>Indicates whether the LAG supports a secondary BGP peer in the same address
+     * family (IPv4/IPv6).</p>
+     */
+    inline void SetHasLogicalRedundancy(HasLogicalRedundancy&& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = std::move(value); }
+
+    /**
+     * <p>Indicates whether the LAG supports a secondary BGP peer in the same address
+     * family (IPv4/IPv6).</p>
+     */
+    inline Lag& WithHasLogicalRedundancy(const HasLogicalRedundancy& value) { SetHasLogicalRedundancy(value); return *this;}
+
+    /**
+     * <p>Indicates whether the LAG supports a secondary BGP peer in the same address
+     * family (IPv4/IPv6).</p>
+     */
+    inline Lag& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_connectionsBandwidth;
@@ -560,6 +592,9 @@ namespace Model
 
     bool m_jumboFrameCapable;
     bool m_jumboFrameCapableHasBeenSet;
+
+    HasLogicalRedundancy m_hasLogicalRedundancy;
+    bool m_hasLogicalRedundancyHasBeenSet;
   };
 
 } // namespace Model

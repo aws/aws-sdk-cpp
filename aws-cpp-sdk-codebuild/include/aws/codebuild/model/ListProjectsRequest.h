@@ -48,107 +48,102 @@ namespace Model
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
-     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
-     * names based on when each build project was created.</p> </li> <li> <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when
-     * information about each build project was last changed.</p> </li> <li> <p>
-     * <code>NAME</code>: List the build project names based on each build project's
-     * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
-     * list the build project names based on the preceding criteria.</p>
+     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List based on when each
+     * build project was created.</p> </li> <li> <p> <code>LAST_MODIFIED_TIME</code>:
+     * List based on when information about each build project was last changed.</p>
+     * </li> <li> <p> <code>NAME</code>: List based on each build project's name.</p>
+     * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
+     * build project names based on the preceding criteria.</p>
      */
     inline const ProjectSortByType& GetSortBy() const{ return m_sortBy; }
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
-     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
-     * names based on when each build project was created.</p> </li> <li> <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when
-     * information about each build project was last changed.</p> </li> <li> <p>
-     * <code>NAME</code>: List the build project names based on each build project's
-     * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
-     * list the build project names based on the preceding criteria.</p>
+     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List based on when each
+     * build project was created.</p> </li> <li> <p> <code>LAST_MODIFIED_TIME</code>:
+     * List based on when information about each build project was last changed.</p>
+     * </li> <li> <p> <code>NAME</code>: List based on each build project's name.</p>
+     * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
+     * build project names based on the preceding criteria.</p>
      */
     inline void SetSortBy(const ProjectSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
-     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
-     * names based on when each build project was created.</p> </li> <li> <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when
-     * information about each build project was last changed.</p> </li> <li> <p>
-     * <code>NAME</code>: List the build project names based on each build project's
-     * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
-     * list the build project names based on the preceding criteria.</p>
+     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List based on when each
+     * build project was created.</p> </li> <li> <p> <code>LAST_MODIFIED_TIME</code>:
+     * List based on when information about each build project was last changed.</p>
+     * </li> <li> <p> <code>NAME</code>: List based on each build project's name.</p>
+     * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
+     * build project names based on the preceding criteria.</p>
      */
     inline void SetSortBy(ProjectSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
-     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
-     * names based on when each build project was created.</p> </li> <li> <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when
-     * information about each build project was last changed.</p> </li> <li> <p>
-     * <code>NAME</code>: List the build project names based on each build project's
-     * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
-     * list the build project names based on the preceding criteria.</p>
+     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List based on when each
+     * build project was created.</p> </li> <li> <p> <code>LAST_MODIFIED_TIME</code>:
+     * List based on when information about each build project was last changed.</p>
+     * </li> <li> <p> <code>NAME</code>: List based on each build project's name.</p>
+     * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
+     * build project names based on the preceding criteria.</p>
      */
     inline ListProjectsRequest& WithSortBy(const ProjectSortByType& value) { SetSortBy(value); return *this;}
 
     /**
      * <p>The criterion to be used to list build project names. Valid values
-     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List the build project
-     * names based on when each build project was created.</p> </li> <li> <p>
-     * <code>LAST_MODIFIED_TIME</code>: List the build project names based on when
-     * information about each build project was last changed.</p> </li> <li> <p>
-     * <code>NAME</code>: List the build project names based on each build project's
-     * name.</p> </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to
-     * list the build project names based on the preceding criteria.</p>
+     * include:</p> <ul> <li> <p> <code>CREATED_TIME</code>: List based on when each
+     * build project was created.</p> </li> <li> <p> <code>LAST_MODIFIED_TIME</code>:
+     * List based on when information about each build project was last changed.</p>
+     * </li> <li> <p> <code>NAME</code>: List based on each build project's name.</p>
+     * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
+     * build project names based on the preceding criteria.</p>
      */
     inline ListProjectsRequest& WithSortBy(ProjectSortByType&& value) { SetSortBy(std::move(value)); return *this;}
 
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
-     * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
-     * order.</p> </li> <li> <p> <code>DESCENDING</code>: List the build project names
-     * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
-     * criterion to be used to list build project names.</p>
+     * <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li> <p>
+     * <code>DESCENDING</code>: List in descending order.</p> </li> </ul> <p>Use
+     * <code>sortBy</code> to specify the criterion to be used to list build project
+     * names.</p>
      */
     inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
-     * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
-     * order.</p> </li> <li> <p> <code>DESCENDING</code>: List the build project names
-     * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
-     * criterion to be used to list build project names.</p>
+     * <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li> <p>
+     * <code>DESCENDING</code>: List in descending order.</p> </li> </ul> <p>Use
+     * <code>sortBy</code> to specify the criterion to be used to list build project
+     * names.</p>
      */
     inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
-     * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
-     * order.</p> </li> <li> <p> <code>DESCENDING</code>: List the build project names
-     * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
-     * criterion to be used to list build project names.</p>
+     * <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li> <p>
+     * <code>DESCENDING</code>: List in descending order.</p> </li> </ul> <p>Use
+     * <code>sortBy</code> to specify the criterion to be used to list build project
+     * names.</p>
      */
     inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
-     * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
-     * order.</p> </li> <li> <p> <code>DESCENDING</code>: List the build project names
-     * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
-     * criterion to be used to list build project names.</p>
+     * <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li> <p>
+     * <code>DESCENDING</code>: List in descending order.</p> </li> </ul> <p>Use
+     * <code>sortBy</code> to specify the criterion to be used to list build project
+     * names.</p>
      */
     inline ListProjectsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p>The order in which to list build projects. Valid values include:</p> <ul>
-     * <li> <p> <code>ASCENDING</code>: List the build project names in ascending
-     * order.</p> </li> <li> <p> <code>DESCENDING</code>: List the build project names
-     * in descending order.</p> </li> </ul> <p>Use <code>sortBy</code> to specify the
-     * criterion to be used to list build project names.</p>
+     * <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li> <p>
+     * <code>DESCENDING</code>: List in descending order.</p> </li> </ul> <p>Use
+     * <code>sortBy</code> to specify the criterion to be used to list build project
+     * names.</p>
      */
     inline ListProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
 

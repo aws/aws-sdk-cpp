@@ -115,6 +115,7 @@
 #include <aws/iam/model/ListPoliciesRequest.h>
 #include <aws/iam/model/ListPolicyVersionsRequest.h>
 #include <aws/iam/model/ListRolePoliciesRequest.h>
+#include <aws/iam/model/ListRoleTagsRequest.h>
 #include <aws/iam/model/ListRolesRequest.h>
 #include <aws/iam/model/ListSAMLProvidersRequest.h>
 #include <aws/iam/model/ListSSHPublicKeysRequest.h>
@@ -122,6 +123,7 @@
 #include <aws/iam/model/ListServiceSpecificCredentialsRequest.h>
 #include <aws/iam/model/ListSigningCertificatesRequest.h>
 #include <aws/iam/model/ListUserPoliciesRequest.h>
+#include <aws/iam/model/ListUserTagsRequest.h>
 #include <aws/iam/model/ListUsersRequest.h>
 #include <aws/iam/model/ListVirtualMFADevicesRequest.h>
 #include <aws/iam/model/PutGroupPolicyRequest.h>
@@ -137,6 +139,10 @@
 #include <aws/iam/model/SetDefaultPolicyVersionRequest.h>
 #include <aws/iam/model/SimulateCustomPolicyRequest.h>
 #include <aws/iam/model/SimulatePrincipalPolicyRequest.h>
+#include <aws/iam/model/TagRoleRequest.h>
+#include <aws/iam/model/TagUserRequest.h>
+#include <aws/iam/model/UntagRoleRequest.h>
+#include <aws/iam/model/UntagUserRequest.h>
 #include <aws/iam/model/UpdateAccessKeyRequest.h>
 #include <aws/iam/model/UpdateAccountPasswordPolicyRequest.h>
 #include <aws/iam/model/UpdateAssumeRolePolicyRequest.h>
@@ -3310,6 +3316,41 @@ void IAMClient::ListRolePoliciesAsyncHelper(const ListRolePoliciesRequest& reque
   handler(this, request, ListRolePolicies(request), context);
 }
 
+ListRoleTagsOutcome IAMClient::ListRoleTags(const ListRoleTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListRoleTagsOutcome(ListRoleTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRoleTagsOutcome(outcome.GetError());
+  }
+}
+
+ListRoleTagsOutcomeCallable IAMClient::ListRoleTagsCallable(const ListRoleTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRoleTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRoleTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::ListRoleTagsAsync(const ListRoleTagsRequest& request, const ListRoleTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRoleTagsAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::ListRoleTagsAsyncHelper(const ListRoleTagsRequest& request, const ListRoleTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRoleTags(request), context);
+}
+
 ListRolesOutcome IAMClient::ListRoles(const ListRolesRequest& request) const
 {
   Aws::StringStream ss;
@@ -3553,6 +3594,41 @@ void IAMClient::ListUserPoliciesAsync(const ListUserPoliciesRequest& request, co
 void IAMClient::ListUserPoliciesAsyncHelper(const ListUserPoliciesRequest& request, const ListUserPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListUserPolicies(request), context);
+}
+
+ListUserTagsOutcome IAMClient::ListUserTags(const ListUserTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListUserTagsOutcome(ListUserTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListUserTagsOutcome(outcome.GetError());
+  }
+}
+
+ListUserTagsOutcomeCallable IAMClient::ListUserTagsCallable(const ListUserTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListUserTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListUserTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::ListUserTagsAsync(const ListUserTagsRequest& request, const ListUserTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListUserTagsAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::ListUserTagsAsyncHelper(const ListUserTagsRequest& request, const ListUserTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListUserTags(request), context);
 }
 
 ListUsersOutcome IAMClient::ListUsers(const ListUsersRequest& request) const
@@ -4078,6 +4154,146 @@ void IAMClient::SimulatePrincipalPolicyAsync(const SimulatePrincipalPolicyReques
 void IAMClient::SimulatePrincipalPolicyAsyncHelper(const SimulatePrincipalPolicyRequest& request, const SimulatePrincipalPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SimulatePrincipalPolicy(request), context);
+}
+
+TagRoleOutcome IAMClient::TagRole(const TagRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagRoleOutcome(NoResult());
+  }
+  else
+  {
+    return TagRoleOutcome(outcome.GetError());
+  }
+}
+
+TagRoleOutcomeCallable IAMClient::TagRoleCallable(const TagRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::TagRoleAsync(const TagRoleRequest& request, const TagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::TagRoleAsyncHelper(const TagRoleRequest& request, const TagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagRole(request), context);
+}
+
+TagUserOutcome IAMClient::TagUser(const TagUserRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return TagUserOutcome(NoResult());
+  }
+  else
+  {
+    return TagUserOutcome(outcome.GetError());
+  }
+}
+
+TagUserOutcomeCallable IAMClient::TagUserCallable(const TagUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::TagUserAsync(const TagUserRequest& request, const TagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagUserAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::TagUserAsyncHelper(const TagUserRequest& request, const TagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagUser(request), context);
+}
+
+UntagRoleOutcome IAMClient::UntagRole(const UntagRoleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagRoleOutcome(NoResult());
+  }
+  else
+  {
+    return UntagRoleOutcome(outcome.GetError());
+  }
+}
+
+UntagRoleOutcomeCallable IAMClient::UntagRoleCallable(const UntagRoleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagRoleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagRole(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UntagRoleAsync(const UntagRoleRequest& request, const UntagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagRoleAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UntagRoleAsyncHelper(const UntagRoleRequest& request, const UntagRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagRole(request), context);
+}
+
+UntagUserOutcome IAMClient::UntagUser(const UntagUserRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return UntagUserOutcome(NoResult());
+  }
+  else
+  {
+    return UntagUserOutcome(outcome.GetError());
+  }
+}
+
+UntagUserOutcomeCallable IAMClient::UntagUserCallable(const UntagUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::UntagUserAsync(const UntagUserRequest& request, const UntagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagUserAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::UntagUserAsyncHelper(const UntagUserRequest& request, const UntagUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagUser(request), context);
 }
 
 UpdateAccessKeyOutcome IAMClient::UpdateAccessKey(const UpdateAccessKeyRequest& request) const

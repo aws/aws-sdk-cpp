@@ -23,6 +23,7 @@
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/Attachment.h>
+#include <aws/ecs/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -315,7 +316,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -326,7 +327,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -337,7 +338,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -348,7 +349,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -359,7 +360,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -370,7 +371,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -381,7 +382,7 @@ namespace Model
     /**
      * <p>For CPU and memory resource types, this parameter describes the amount of
      * each resource that was available on the container instance when the container
-     * agent registered it with Amazon ECS; this value represents the total amount of
+     * agent registered it with Amazon ECS. This value represents the total amount of
      * CPU and memory that can be allocated on this container instance to tasks. For
      * port resource types, this parameter describes the ports that were reserved by
      * the Amazon ECS container agent when it registered the container instance with
@@ -627,27 +628,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for when the container instance was registered.</p>
      */
     inline const Aws::Utils::DateTime& GetRegisteredAt() const{ return m_registeredAt; }
 
     /**
-     * <p>The Unix time stamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for when the container instance was registered.</p>
      */
     inline void SetRegisteredAt(const Aws::Utils::DateTime& value) { m_registeredAtHasBeenSet = true; m_registeredAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for when the container instance was registered.</p>
      */
     inline void SetRegisteredAt(Aws::Utils::DateTime&& value) { m_registeredAtHasBeenSet = true; m_registeredAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for when the container instance was registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(const Aws::Utils::DateTime& value) { SetRegisteredAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the container instance was registered.</p>
+     * <p>The Unix timestamp for when the container instance was registered.</p>
      */
     inline ContainerInstance& WithRegisteredAt(Aws::Utils::DateTime&& value) { SetRegisteredAt(std::move(value)); return *this;}
 
@@ -686,6 +687,63 @@ namespace Model
      * <p>The elastic network interfaces associated with the container instance.</p>
      */
     inline ContainerInstance& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline ContainerInstance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline ContainerInstance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline ContainerInstance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline ContainerInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -730,6 +788,9 @@ namespace Model
 
     Aws::Vector<Attachment> m_attachments;
     bool m_attachmentsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

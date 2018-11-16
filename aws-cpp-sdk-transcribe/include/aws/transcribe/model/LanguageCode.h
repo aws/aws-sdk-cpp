@@ -30,7 +30,10 @@ namespace Model
     es_US,
     en_AU,
     fr_CA,
-    en_UK
+    en_GB,
+    de_DE,
+    pt_BR,
+    fr_FR
   };
 
 namespace LanguageCodeMapper

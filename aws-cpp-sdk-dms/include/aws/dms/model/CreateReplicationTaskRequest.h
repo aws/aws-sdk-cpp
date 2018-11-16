@@ -317,7 +317,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline const Aws::String& GetReplicationTaskSettings() const{ return m_replicationTaskSettings; }
 
@@ -325,7 +326,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
@@ -333,7 +335,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(Aws::String&& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = std::move(value); }
 
@@ -341,7 +344,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline void SetReplicationTaskSettings(const char* value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings.assign(value); }
 
@@ -349,7 +353,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const Aws::String& value) { SetReplicationTaskSettings(value); return *this;}
 
@@ -357,7 +362,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(Aws::String&& value) { SetReplicationTaskSettings(std::move(value)); return *this;}
 
@@ -365,7 +371,8 @@ namespace Model
      * <p>Settings for the task, such as target metadata settings. For a complete list
      * of task settings, see <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task
-     * Settings for AWS Database Migration Service Tasks</a>.</p>
+     * Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
+     * Migration User Guide.</i> </p>
      */
     inline CreateReplicationTaskRequest& WithReplicationTaskSettings(const char* value) { SetReplicationTaskSettings(value); return *this;}
 

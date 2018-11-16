@@ -87,65 +87,65 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline Deployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline Deployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> (for the
-     * most recent deployment), <code>ACTIVE</code> (for previous deployments that
-     * still have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment), and <code>INACTIVE</code> (for deployments that have been
-     * completely replaced).</p>
+     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
+     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
+     * have tasks running, but are being replaced with the <code>PRIMARY</code>
+     * deployment, and <code>INACTIVE</code> for deployments that have been completely
+     * replaced.</p>
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -251,53 +251,53 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time stamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service was created.</p>
      */
     inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix time stamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix time stamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix time stamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

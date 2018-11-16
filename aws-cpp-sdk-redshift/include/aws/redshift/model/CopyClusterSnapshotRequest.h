@@ -233,6 +233,28 @@ namespace Model
      */
     inline CopyClusterSnapshotRequest& WithTargetSnapshotIdentifier(const char* value) { SetTargetSnapshotIdentifier(value); return *this;}
 
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline CopyClusterSnapshotRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
   private:
 
     Aws::String m_sourceSnapshotIdentifier;
@@ -243,6 +265,9 @@ namespace Model
 
     Aws::String m_targetSnapshotIdentifier;
     bool m_targetSnapshotIdentifierHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
   };
 
 } // namespace Model

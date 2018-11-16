@@ -29,6 +29,7 @@ namespace Model
 {
 
 BGPPeer::BGPPeer() : 
+    m_bgpPeerIdHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
@@ -45,6 +46,7 @@ BGPPeer::BGPPeer() :
 }
 
 BGPPeer::BGPPeer(JsonView jsonValue) : 
+    m_bgpPeerIdHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
     m_authKeyHasBeenSet(false),
@@ -63,6 +65,13 @@ BGPPeer::BGPPeer(JsonView jsonValue) :
 
 BGPPeer& BGPPeer::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("bgpPeerId"))
+  {
+    m_bgpPeerId = jsonValue.GetString("bgpPeerId");
+
+    m_bgpPeerIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("asn"))
   {
     m_asn = jsonValue.GetInteger("asn");
@@ -125,6 +134,12 @@ BGPPeer& BGPPeer::operator =(JsonView jsonValue)
 JsonValue BGPPeer::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_bgpPeerIdHasBeenSet)
+  {
+   payload.WithString("bgpPeerId", m_bgpPeerId);
+
+  }
 
   if(m_asnHasBeenSet)
   {

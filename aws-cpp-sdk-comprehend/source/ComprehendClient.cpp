@@ -32,6 +32,10 @@
 #include <aws/comprehend/model/BatchDetectKeyPhrasesRequest.h>
 #include <aws/comprehend/model/BatchDetectSentimentRequest.h>
 #include <aws/comprehend/model/BatchDetectSyntaxRequest.h>
+#include <aws/comprehend/model/CreateDocumentClassifierRequest.h>
+#include <aws/comprehend/model/DeleteDocumentClassifierRequest.h>
+#include <aws/comprehend/model/DescribeDocumentClassificationJobRequest.h>
+#include <aws/comprehend/model/DescribeDocumentClassifierRequest.h>
 #include <aws/comprehend/model/DescribeDominantLanguageDetectionJobRequest.h>
 #include <aws/comprehend/model/DescribeEntitiesDetectionJobRequest.h>
 #include <aws/comprehend/model/DescribeKeyPhrasesDetectionJobRequest.h>
@@ -42,11 +46,14 @@
 #include <aws/comprehend/model/DetectKeyPhrasesRequest.h>
 #include <aws/comprehend/model/DetectSentimentRequest.h>
 #include <aws/comprehend/model/DetectSyntaxRequest.h>
+#include <aws/comprehend/model/ListDocumentClassificationJobsRequest.h>
+#include <aws/comprehend/model/ListDocumentClassifiersRequest.h>
 #include <aws/comprehend/model/ListDominantLanguageDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListEntitiesDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListKeyPhrasesDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListSentimentDetectionJobsRequest.h>
 #include <aws/comprehend/model/ListTopicsDetectionJobsRequest.h>
+#include <aws/comprehend/model/StartDocumentClassificationJobRequest.h>
 #include <aws/comprehend/model/StartDominantLanguageDetectionJobRequest.h>
 #include <aws/comprehend/model/StartEntitiesDetectionJobRequest.h>
 #include <aws/comprehend/model/StartKeyPhrasesDetectionJobRequest.h>
@@ -294,6 +301,146 @@ void ComprehendClient::BatchDetectSyntaxAsync(const BatchDetectSyntaxRequest& re
 void ComprehendClient::BatchDetectSyntaxAsyncHelper(const BatchDetectSyntaxRequest& request, const BatchDetectSyntaxResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDetectSyntax(request), context);
+}
+
+CreateDocumentClassifierOutcome ComprehendClient::CreateDocumentClassifier(const CreateDocumentClassifierRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDocumentClassifierOutcome(CreateDocumentClassifierResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDocumentClassifierOutcome(outcome.GetError());
+  }
+}
+
+CreateDocumentClassifierOutcomeCallable ComprehendClient::CreateDocumentClassifierCallable(const CreateDocumentClassifierRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDocumentClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDocumentClassifier(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::CreateDocumentClassifierAsync(const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDocumentClassifierAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::CreateDocumentClassifierAsyncHelper(const CreateDocumentClassifierRequest& request, const CreateDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDocumentClassifier(request), context);
+}
+
+DeleteDocumentClassifierOutcome ComprehendClient::DeleteDocumentClassifier(const DeleteDocumentClassifierRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDocumentClassifierOutcome(DeleteDocumentClassifierResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDocumentClassifierOutcome(outcome.GetError());
+  }
+}
+
+DeleteDocumentClassifierOutcomeCallable ComprehendClient::DeleteDocumentClassifierCallable(const DeleteDocumentClassifierRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDocumentClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDocumentClassifier(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::DeleteDocumentClassifierAsync(const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDocumentClassifierAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::DeleteDocumentClassifierAsyncHelper(const DeleteDocumentClassifierRequest& request, const DeleteDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDocumentClassifier(request), context);
+}
+
+DescribeDocumentClassificationJobOutcome ComprehendClient::DescribeDocumentClassificationJob(const DescribeDocumentClassificationJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDocumentClassificationJobOutcome(DescribeDocumentClassificationJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDocumentClassificationJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeDocumentClassificationJobOutcomeCallable ComprehendClient::DescribeDocumentClassificationJobCallable(const DescribeDocumentClassificationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDocumentClassificationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDocumentClassificationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::DescribeDocumentClassificationJobAsync(const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDocumentClassificationJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::DescribeDocumentClassificationJobAsyncHelper(const DescribeDocumentClassificationJobRequest& request, const DescribeDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDocumentClassificationJob(request), context);
+}
+
+DescribeDocumentClassifierOutcome ComprehendClient::DescribeDocumentClassifier(const DescribeDocumentClassifierRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDocumentClassifierOutcome(DescribeDocumentClassifierResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDocumentClassifierOutcome(outcome.GetError());
+  }
+}
+
+DescribeDocumentClassifierOutcomeCallable ComprehendClient::DescribeDocumentClassifierCallable(const DescribeDocumentClassifierRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDocumentClassifierOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDocumentClassifier(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::DescribeDocumentClassifierAsync(const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDocumentClassifierAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::DescribeDocumentClassifierAsyncHelper(const DescribeDocumentClassifierRequest& request, const DescribeDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDocumentClassifier(request), context);
 }
 
 DescribeDominantLanguageDetectionJobOutcome ComprehendClient::DescribeDominantLanguageDetectionJob(const DescribeDominantLanguageDetectionJobRequest& request) const
@@ -646,6 +793,76 @@ void ComprehendClient::DetectSyntaxAsyncHelper(const DetectSyntaxRequest& reques
   handler(this, request, DetectSyntax(request), context);
 }
 
+ListDocumentClassificationJobsOutcome ComprehendClient::ListDocumentClassificationJobs(const ListDocumentClassificationJobsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDocumentClassificationJobsOutcome(ListDocumentClassificationJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDocumentClassificationJobsOutcome(outcome.GetError());
+  }
+}
+
+ListDocumentClassificationJobsOutcomeCallable ComprehendClient::ListDocumentClassificationJobsCallable(const ListDocumentClassificationJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDocumentClassificationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDocumentClassificationJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::ListDocumentClassificationJobsAsync(const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentClassificationJobsAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::ListDocumentClassificationJobsAsyncHelper(const ListDocumentClassificationJobsRequest& request, const ListDocumentClassificationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDocumentClassificationJobs(request), context);
+}
+
+ListDocumentClassifiersOutcome ComprehendClient::ListDocumentClassifiers(const ListDocumentClassifiersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDocumentClassifiersOutcome(ListDocumentClassifiersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDocumentClassifiersOutcome(outcome.GetError());
+  }
+}
+
+ListDocumentClassifiersOutcomeCallable ComprehendClient::ListDocumentClassifiersCallable(const ListDocumentClassifiersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDocumentClassifiersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDocumentClassifiers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::ListDocumentClassifiersAsync(const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDocumentClassifiersAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::ListDocumentClassifiersAsyncHelper(const ListDocumentClassifiersRequest& request, const ListDocumentClassifiersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDocumentClassifiers(request), context);
+}
+
 ListDominantLanguageDetectionJobsOutcome ComprehendClient::ListDominantLanguageDetectionJobs(const ListDominantLanguageDetectionJobsRequest& request) const
 {
   Aws::StringStream ss;
@@ -819,6 +1036,41 @@ void ComprehendClient::ListTopicsDetectionJobsAsync(const ListTopicsDetectionJob
 void ComprehendClient::ListTopicsDetectionJobsAsyncHelper(const ListTopicsDetectionJobsRequest& request, const ListTopicsDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTopicsDetectionJobs(request), context);
+}
+
+StartDocumentClassificationJobOutcome ComprehendClient::StartDocumentClassificationJob(const StartDocumentClassificationJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartDocumentClassificationJobOutcome(StartDocumentClassificationJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartDocumentClassificationJobOutcome(outcome.GetError());
+  }
+}
+
+StartDocumentClassificationJobOutcomeCallable ComprehendClient::StartDocumentClassificationJobCallable(const StartDocumentClassificationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartDocumentClassificationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartDocumentClassificationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ComprehendClient::StartDocumentClassificationJobAsync(const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartDocumentClassificationJobAsyncHelper( request, handler, context ); } );
+}
+
+void ComprehendClient::StartDocumentClassificationJobAsyncHelper(const StartDocumentClassificationJobRequest& request, const StartDocumentClassificationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartDocumentClassificationJob(request), context);
 }
 
 StartDominantLanguageDetectionJobOutcome ComprehendClient::StartDominantLanguageDetectionJob(const StartDominantLanguageDetectionJobRequest& request) const

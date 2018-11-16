@@ -38,9 +38,9 @@ namespace S3
 namespace Model
 {
   /**
-   * <p>Container for specifying the notification configuration of the bucket. If
-   * this element is empty, notifications are turned off on the bucket.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A container for specifying the notification configuration of the bucket. If
+   * this element is empty, notifications are turned off for the
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/NotificationConfiguration">AWS
    * API Reference</a></p>
    */

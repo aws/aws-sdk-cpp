@@ -23,6 +23,7 @@
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 #include <aws/ecs/model/Compatibility.h>
+#include <aws/ecs/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -232,21 +233,22 @@ namespace Model
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
      * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If using the EC2 launch type, any network mode can be used. If the network mode
-     * is set to <code>none</code>, you can't specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p> <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an Elastic Network Interface, and you must specify a
-     * <a>NetworkConfiguration</a> when you create a service or run a task with the
-     * task definition. For more information, see <a
+     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     * required. If you are using the EC2 launch type, any network mode can be used. If
+     * the network mode is set to <code>none</code>, you can't specify port mappings in
+     * your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
+     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
+     * network interface, and you must specify a <a>NetworkConfiguration</a> when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
@@ -264,21 +266,22 @@ namespace Model
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
      * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If using the EC2 launch type, any network mode can be used. If the network mode
-     * is set to <code>none</code>, you can't specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p> <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an Elastic Network Interface, and you must specify a
-     * <a>NetworkConfiguration</a> when you create a service or run a task with the
-     * task definition. For more information, see <a
+     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     * required. If you are using the EC2 launch type, any network mode can be used. If
+     * the network mode is set to <code>none</code>, you can't specify port mappings in
+     * your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
+     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
+     * network interface, and you must specify a <a>NetworkConfiguration</a> when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
@@ -296,21 +299,22 @@ namespace Model
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
      * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If using the EC2 launch type, any network mode can be used. If the network mode
-     * is set to <code>none</code>, you can't specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p> <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an Elastic Network Interface, and you must specify a
-     * <a>NetworkConfiguration</a> when you create a service or run a task with the
-     * task definition. For more information, see <a
+     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     * required. If you are using the EC2 launch type, any network mode can be used. If
+     * the network mode is set to <code>none</code>, you can't specify port mappings in
+     * your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
+     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
+     * network interface, and you must specify a <a>NetworkConfiguration</a> when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
@@ -328,21 +332,22 @@ namespace Model
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
      * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If using the EC2 launch type, any network mode can be used. If the network mode
-     * is set to <code>none</code>, you can't specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p> <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an Elastic Network Interface, and you must specify a
-     * <a>NetworkConfiguration</a> when you create a service or run a task with the
-     * task definition. For more information, see <a
+     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     * required. If you are using the EC2 launch type, any network mode can be used. If
+     * the network mode is set to <code>none</code>, you can't specify port mappings in
+     * your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
+     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
+     * network interface, and you must specify a <a>NetworkConfiguration</a> when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
@@ -360,21 +365,22 @@ namespace Model
      * <p>The Docker networking mode to use for the containers in the task. The valid
      * values are <code>none</code>, <code>bridge</code>, <code>awsvpc</code>, and
      * <code>host</code>. The default Docker network mode is <code>bridge</code>. If
-     * using the Fargate launch type, the <code>awsvpc</code> network mode is required.
-     * If using the EC2 launch type, any network mode can be used. If the network mode
-     * is set to <code>none</code>, you can't specify port mappings in your container
-     * definitions, and the task's containers do not have external connectivity. The
-     * <code>host</code> and <code>awsvpc</code> network modes offer the highest
-     * networking performance for containers because they use the EC2 network stack
-     * instead of the virtualized network stack provided by the <code>bridge</code>
-     * mode.</p> <p>With the <code>host</code> and <code>awsvpc</code> network modes,
-     * exposed container ports are mapped directly to the corresponding host port (for
-     * the <code>host</code> network mode) or the attached elastic network interface
-     * port (for the <code>awsvpc</code> network mode), so you cannot take advantage of
-     * dynamic host port mappings. </p> <p>If the network mode is <code>awsvpc</code>,
-     * the task is allocated an Elastic Network Interface, and you must specify a
-     * <a>NetworkConfiguration</a> when you create a service or run a task with the
-     * task definition. For more information, see <a
+     * you are using the Fargate launch type, the <code>awsvpc</code> network mode is
+     * required. If you are using the EC2 launch type, any network mode can be used. If
+     * the network mode is set to <code>none</code>, you can't specify port mappings in
+     * your container definitions, and the task's containers do not have external
+     * connectivity. The <code>host</code> and <code>awsvpc</code> network modes offer
+     * the highest networking performance for containers because they use the EC2
+     * network stack instead of the virtualized network stack provided by the
+     * <code>bridge</code> mode.</p> <p>With the <code>host</code> and
+     * <code>awsvpc</code> network modes, exposed container ports are mapped directly
+     * to the corresponding host port (for the <code>host</code> network mode) or the
+     * attached elastic network interface port (for the <code>awsvpc</code> network
+     * mode), so you cannot take advantage of dynamic host port mappings. </p> <p>If
+     * the network mode is <code>awsvpc</code>, the task is allocated an elastic
+     * network interface, and you must specify a <a>NetworkConfiguration</a> when you
+     * create a service or run a task with the task definition. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
      * Networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>If the network mode is <code>host</code>, you can't run
@@ -478,49 +484,49 @@ namespace Model
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline const Aws::Vector<TaskDefinitionPlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = value; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline void SetPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints = std::move(value); }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline RegisterTaskDefinitionRequest& WithPlacementConstraints(const Aws::Vector<TaskDefinitionPlacementConstraint>& value) { SetPlacementConstraints(value); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline RegisterTaskDefinitionRequest& WithPlacementConstraints(Aws::Vector<TaskDefinitionPlacementConstraint>&& value) { SetPlacementConstraints(std::move(value)); return *this;}
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline RegisterTaskDefinitionRequest& AddPlacementConstraints(const TaskDefinitionPlacementConstraint& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(value); return *this; }
 
     /**
      * <p>An array of placement constraint objects to use for the task. You can specify
      * a maximum of 10 constraints per task (this limit includes constraints in the
-     * task definition and those specified at run time).</p>
+     * task definition and those specified at runtime).</p>
      */
     inline RegisterTaskDefinitionRequest& AddPlacementConstraints(TaskDefinitionPlacementConstraint&& value) { m_placementConstraintsHasBeenSet = true; m_placementConstraints.push_back(std::move(value)); return *this; }
 
@@ -575,21 +581,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline const Aws::String& GetCpu() const{ return m_cpu; }
 
@@ -600,21 +606,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
@@ -625,21 +631,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
 
@@ -650,21 +656,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
 
@@ -675,21 +681,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
 
@@ -700,21 +706,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
 
@@ -725,21 +731,21 @@ namespace Model
      * values are converted to an integer indicating the CPU units when the task
      * definition is registered.</p> <note> <p>Task-level CPU and memory parameters are
      * ignored for Windows containers. We recommend specifying container-level
-     * resources for Windows containers.</p> </note> <p>If using the EC2 launch type,
-     * this field is optional. Supported values are between <code>128</code> CPU units
-     * (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     * vCPUs).</p> <p>If using the Fargate launch type, this field is required and you
-     * must use one of the following values, which determines your range of supported
-     * values for the <code>memory</code> parameter:</p> <ul> <li> <p>256 (.25 vCPU) -
-     * Available <code>memory</code> values: 512 (0.5 GB), 1024 (1 GB), 2048 (2 GB)</p>
-     * </li> <li> <p>512 (.5 vCPU) - Available <code>memory</code> values: 1024 (1 GB),
-     * 2048 (2 GB), 3072 (3 GB), 4096 (4 GB)</p> </li> <li> <p>1024 (1 vCPU) -
-     * Available <code>memory</code> values: 2048 (2 GB), 3072 (3 GB), 4096 (4 GB),
-     * 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB)</p> </li> <li> <p>2048 (2
-     * vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16
-     * GB) in increments of 1024 (1 GB)</p> </li> <li> <p>4096 (4 vCPU) - Available
-     * <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     * of 1024 (1 GB)</p> </li> </ul>
+     * resources for Windows containers.</p> </note> <p>If you are using the EC2 launch
+     * type, this field is optional. Supported values are between <code>128</code> CPU
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units
+     * (<code>10</code> vCPUs).</p> <p>If you are using the Fargate launch type, this
+     * field is required and you must use one of the following values, which determines
+     * your range of supported values for the <code>memory</code> parameter:</p> <ul>
+     * <li> <p>256 (.25 vCPU) - Available <code>memory</code> values: 512 (0.5 GB),
+     * 1024 (1 GB), 2048 (2 GB)</p> </li> <li> <p>512 (.5 vCPU) - Available
+     * <code>memory</code> values: 1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB)</p> </li> <li> <p>1024 (1 vCPU) - Available <code>memory</code> values: 2048
+     * (2 GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB)</p> </li> <li> <p>2048 (2 vCPU) - Available <code>memory</code> values:
+     * Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)</p> </li>
+     * <li> <p>4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8
+     * GB) and 30720 (30 GB) in increments of 1024 (1 GB)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithCpu(const char* value) { SetCpu(value); return *this;}
 
@@ -751,16 +757,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -774,16 +780,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -797,16 +803,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -820,16 +826,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -843,16 +849,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -866,16 +872,16 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
@@ -889,21 +895,78 @@ namespace Model
      * values are converted to an integer indicating the MiB when the task definition
      * is registered.</p> <note> <p>Task-level CPU and memory parameters are ignored
      * for Windows containers. We recommend specifying container-level resources for
-     * Windows containers.</p> </note> <p>If using the EC2 launch type, this field is
-     * optional.</p> <p>If using the Fargate launch type, this field is required and
-     * you must use one of the following values, which determines your range of
-     * supported values for the <code>cpu</code> parameter:</p> <ul> <li> <p>512 (0.5
-     * GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values: 256 (.25
-     * vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4 GB) -
-     * Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2 GB),
-     * 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8 GB) -
-     * Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between 4096
-     * (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
+     * Windows containers.</p> </note> <p>If you are using the EC2 launch type, this
+     * field is optional.</p> <p>If you are using the Fargate launch type, this field
+     * is required and you must use one of the following values, which determines your
+     * range of supported values for the <code>cpu</code> parameter:</p> <ul> <li>
+     * <p>512 (0.5 GB), 1024 (1 GB), 2048 (2 GB) - Available <code>cpu</code> values:
+     * 256 (.25 vCPU)</p> </li> <li> <p>1024 (1 GB), 2048 (2 GB), 3072 (3 GB), 4096 (4
+     * GB) - Available <code>cpu</code> values: 512 (.5 vCPU)</p> </li> <li> <p>2048 (2
+     * GB), 3072 (3 GB), 4096 (4 GB), 5120 (5 GB), 6144 (6 GB), 7168 (7 GB), 8192 (8
+     * GB) - Available <code>cpu</code> values: 1024 (1 vCPU)</p> </li> <li> <p>Between
+     * 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB) - Available
      * <code>cpu</code> values: 2048 (2 vCPU)</p> </li> <li> <p>Between 8192 (8 GB) and
      * 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      * 4096 (4 vCPU)</p> </li> </ul>
      */
     inline RegisterTaskDefinitionRequest& WithMemory(const char* value) { SetMemory(value); return *this;}
+
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline RegisterTaskDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The metadata that you apply to the task definition to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline RegisterTaskDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -936,6 +999,9 @@ namespace Model
 
     Aws::String m_memory;
     bool m_memoryHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

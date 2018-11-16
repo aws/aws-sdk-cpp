@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     SUBMITTED,
+    QUEUED,
     PROVISIONING,
     DOWNLOAD_SOURCE,
     INSTALL,

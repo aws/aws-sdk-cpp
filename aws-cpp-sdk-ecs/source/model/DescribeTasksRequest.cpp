@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 DescribeTasksRequest::DescribeTasksRequest() : 
     m_clusterHasBeenSet(false),
-    m_tasksHasBeenSet(false)
+    m_tasksHasBeenSet(false),
+    m_includeHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,17 @@ Aws::String DescribeTasksRequest::SerializePayload() const
      tasksJsonList[tasksIndex].AsString(m_tasks[tasksIndex]);
    }
    payload.WithArray("tasks", std::move(tasksJsonList));
+
+  }
+
+  if(m_includeHasBeenSet)
+  {
+   Array<JsonValue> includeJsonList(m_include.size());
+   for(unsigned includeIndex = 0; includeIndex < includeJsonList.GetLength(); ++includeIndex)
+   {
+     includeJsonList[includeIndex].AsString(TaskFieldMapper::GetNameForTaskField(m_include[includeIndex]));
+   }
+   payload.WithArray("include", std::move(includeJsonList));
 
   }
 

@@ -23,6 +23,8 @@
 #include <aws/dms/model/S3Settings.h>
 #include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
+#include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/ElasticsearchSettings.h>
 #include <utility>
 
 namespace Aws
@@ -587,109 +589,104 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see the <b>Using Object Mapping to
-     * Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
-     * Service</a>. </p>
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
      */
     inline const DynamoDbSettings& GetDynamoDbSettings() const{ return m_dynamoDbSettings; }
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see the <b>Using Object Mapping to
-     * Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
-     * Service</a>. </p>
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
      */
     inline void SetDynamoDbSettings(const DynamoDbSettings& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = value; }
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see the <b>Using Object Mapping to
-     * Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
-     * Service</a>. </p>
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
      */
     inline void SetDynamoDbSettings(DynamoDbSettings&& value) { m_dynamoDbSettingsHasBeenSet = true; m_dynamoDbSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see the <b>Using Object Mapping to
-     * Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
-     * Service</a>. </p>
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithDynamoDbSettings(const DynamoDbSettings& value) { SetDynamoDbSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
-     * information about the available settings, see the <b>Using Object Mapping to
-     * Migrate Data to DynamoDB</b> section at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">
-     * Using an Amazon DynamoDB Database as a Target for AWS Database Migration
-     * Service</a>. </p>
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithDynamoDbSettings(DynamoDbSettings&& value) { SetDynamoDbSettings(std::move(value)); return *this;}
 
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline const S3Settings& GetS3Settings() const{ return m_s3Settings; }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetS3Settings(const S3Settings& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = value; }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline void SetS3Settings(S3Settings&& value) { m_s3SettingsHasBeenSet = true; m_s3Settings = std::move(value); }
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithS3Settings(const S3Settings& value) { SetS3Settings(value); return *this;}
 
     /**
-     * <p>Settings in JSON format for the target S3 endpoint. For more information
-     * about the available settings, see the <b>Extra Connection Attributes</b> section
-     * at <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithS3Settings(S3Settings&& value) { SetS3Settings(std::move(value)); return *this;}
 
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>BucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
      * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
      * "none"|"gzip" } </p>
@@ -697,13 +694,13 @@ namespace Model
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>BucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
      * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
      * "none"|"gzip" } </p>
@@ -711,13 +708,13 @@ namespace Model
     inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>BucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
      * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
      * "none"|"gzip" } </p>
@@ -725,13 +722,13 @@ namespace Model
     inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>BucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
      * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
      * "none"|"gzip" } </p>
@@ -739,13 +736,13 @@ namespace Model
     inline ModifyEndpointRequest& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>BucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
      * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
      * "none"|"gzip" } </p>
@@ -755,48 +752,140 @@ namespace Model
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the <b>Configuration Properties When Using
-     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * about the available settings, see the configuration properties section in <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline const MongoDbSettings& GetMongoDbSettings() const{ return m_mongoDbSettings; }
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the <b>Configuration Properties When Using
-     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * about the available settings, see the configuration properties section in <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetMongoDbSettings(const MongoDbSettings& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = value; }
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the <b>Configuration Properties When Using
-     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * about the available settings, see the configuration properties section in <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline void SetMongoDbSettings(MongoDbSettings&& value) { m_mongoDbSettingsHasBeenSet = true; m_mongoDbSettings = std::move(value); }
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the <b>Configuration Properties When Using
-     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * about the available settings, see the configuration properties section in <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithMongoDbSettings(const MongoDbSettings& value) { SetMongoDbSettings(value); return *this;}
 
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
-     * about the available settings, see the <b>Configuration Properties When Using
-     * MongoDB as a Source for AWS Database Migration Service</b> section at <a
+     * about the available settings, see the configuration properties section in <a
      * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
-     * Using Amazon S3 as a Target for AWS Database Migration Service</a>. </p>
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline ModifyEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
 
   private:
 
@@ -853,6 +942,12 @@ namespace Model
 
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;
+
+    KinesisSettings m_kinesisSettings;
+    bool m_kinesisSettingsHasBeenSet;
+
+    ElasticsearchSettings m_elasticsearchSettings;
+    bool m_elasticsearchSettingsHasBeenSet;
   };
 
 } // namespace Model

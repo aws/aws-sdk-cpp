@@ -22,6 +22,8 @@
 #include <aws/dms/model/S3Settings.h>
 #include <aws/dms/model/DmsTransferSettings.h>
 #include <aws/dms/model/MongoDbSettings.h>
+#include <aws/dms/model/KinesisSettings.h>
+#include <aws/dms/model/ElasticsearchSettings.h>
 #include <utility>
 
 namespace Aws
@@ -426,65 +428,65 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier that will be used to encrypt the connection
-     * parameters. If you do not specify a value for the KmsKeyId parameter, then AWS
-     * DMS will use your default encryption key. AWS KMS creates the default encryption
-     * key for your AWS account. Your AWS account has a different default encryption
-     * key for each AWS region.</p>
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
      */
     inline Endpoint& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -789,72 +791,87 @@ namespace Model
 
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * "none"|"gzip" } </code> </p>
      */
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * "none"|"gzip" } </code> </p>
      */
     inline void SetDmsTransferSettings(const DmsTransferSettings& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = value; }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * "none"|"gzip" } </code> </p>
      */
     inline void SetDmsTransferSettings(DmsTransferSettings&& value) { m_dmsTransferSettingsHasBeenSet = true; m_dmsTransferSettings = std::move(value); }
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * "none"|"gzip" } </code> </p>
      */
     inline Endpoint& WithDmsTransferSettings(const DmsTransferSettings& value) { SetDmsTransferSettings(value); return *this;}
 
     /**
-     * <p> The settings in JSON format for the DMS Transfer type source endpoint. </p>
-     * <p>Attributes include:</p> <ul> <li> <p>serviceAccessRoleArn - The IAM role that
-     * has permission to access the Amazon S3 bucket.</p> </li> <li> <p>bucketName -
-     * The name of the S3 bucket to use.</p> </li> <li> <p>compressionType - An
-     * optional parameter to use GZIP to compress the target files. Set to NONE (the
-     * default) or do not use to leave the files uncompressed.</p> </li> </ul>
-     * <p>Shorthand syntax: ServiceAccessRoleArn=string
-     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Possible attributes include the following:</p> <ul> <li> <p>
+     * <code>serviceAccessRoleArn</code> - The IAM role that has permission to access
+     * the Amazon S3 bucket.</p> </li> <li> <p> <code>bucketName</code> - The name of
+     * the S3 bucket to use.</p> </li> <li> <p> <code>compressionType</code> - An
+     * optional parameter to use GZIP to compress the target files. To use GZIP, set
+     * this value to <code>NONE</code> (the default). To keep the files uncompressed,
+     * don't use this value. </p> </li> </ul> <p>Shorthand syntax for these attributes
+     * is as follows:
+     * <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+     * </p> <p>JSON syntax for these attributes is as follows: <code>{
      * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
-     * "none"|"gzip" } </p>
+     * "none"|"gzip" } </code> </p>
      */
     inline Endpoint& WithDmsTransferSettings(DmsTransferSettings&& value) { SetDmsTransferSettings(std::move(value)); return *this;}
 
@@ -888,6 +905,68 @@ namespace Model
      * <code>MongoDbSettings</code> structure.</p>
      */
     inline Endpoint& WithMongoDbSettings(MongoDbSettings&& value) { SetMongoDbSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
+    inline const KinesisSettings& GetKinesisSettings() const{ return m_kinesisSettings; }
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
+    inline void SetKinesisSettings(const KinesisSettings& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = value; }
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
+    inline void SetKinesisSettings(KinesisSettings&& value) { m_kinesisSettingsHasBeenSet = true; m_kinesisSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
+    inline Endpoint& WithKinesisSettings(const KinesisSettings& value) { SetKinesisSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Amazon Kinesis source endpoint. For more information,
+     * see the <code>KinesisSettings</code> structure.</p>
+     */
+    inline Endpoint& WithKinesisSettings(KinesisSettings&& value) { SetKinesisSettings(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
+    inline const ElasticsearchSettings& GetElasticsearchSettings() const{ return m_elasticsearchSettings; }
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
+    inline void SetElasticsearchSettings(const ElasticsearchSettings& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = value; }
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
+    inline void SetElasticsearchSettings(ElasticsearchSettings&& value) { m_elasticsearchSettingsHasBeenSet = true; m_elasticsearchSettings = std::move(value); }
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
+    inline Endpoint& WithElasticsearchSettings(const ElasticsearchSettings& value) { SetElasticsearchSettings(value); return *this;}
+
+    /**
+     * <p>The settings for the Elasticsearch source endpoint. For more information, see
+     * the <code>ElasticsearchSettings</code> structure.</p>
+     */
+    inline Endpoint& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
 
   private:
 
@@ -953,6 +1032,12 @@ namespace Model
 
     MongoDbSettings m_mongoDbSettings;
     bool m_mongoDbSettingsHasBeenSet;
+
+    KinesisSettings m_kinesisSettings;
+    bool m_kinesisSettingsHasBeenSet;
+
+    ElasticsearchSettings m_elasticsearchSettings;
+    bool m_elasticsearchSettingsHasBeenSet;
   };
 
 } // namespace Model

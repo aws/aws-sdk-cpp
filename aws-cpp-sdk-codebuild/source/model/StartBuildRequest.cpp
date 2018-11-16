@@ -53,6 +53,8 @@ StartBuildRequest::StartBuildRequest() :
     m_privilegedModeOverrideHasBeenSet(false),
     m_timeoutInMinutesOverride(0),
     m_timeoutInMinutesOverrideHasBeenSet(false),
+    m_queuedTimeoutInMinutesOverride(0),
+    m_queuedTimeoutInMinutesOverrideHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_logsConfigOverrideHasBeenSet(false)
 {
@@ -208,6 +210,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_timeoutInMinutesOverrideHasBeenSet)
   {
    payload.WithInteger("timeoutInMinutesOverride", m_timeoutInMinutesOverride);
+
+  }
+
+  if(m_queuedTimeoutInMinutesOverrideHasBeenSet)
+  {
+   payload.WithInteger("queuedTimeoutInMinutesOverride", m_queuedTimeoutInMinutesOverride);
 
   }
 

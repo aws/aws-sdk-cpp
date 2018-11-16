@@ -23,6 +23,7 @@
 #include <aws/pinpoint/model/EmailMessage.h>
 #include <aws/pinpoint/model/GCMMessage.h>
 #include <aws/pinpoint/model/SMSMessage.h>
+#include <aws/pinpoint/model/VoiceMessage.h>
 #include <utility>
 
 namespace Aws
@@ -267,6 +268,32 @@ namespace Model
      */
     inline DirectMessageConfiguration& WithSMSMessage(SMSMessage&& value) { SetSMSMessage(std::move(value)); return *this;}
 
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline const VoiceMessage& GetVoiceMessage() const{ return m_voiceMessage; }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline void SetVoiceMessage(const VoiceMessage& value) { m_voiceMessageHasBeenSet = true; m_voiceMessage = value; }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline void SetVoiceMessage(VoiceMessage&& value) { m_voiceMessageHasBeenSet = true; m_voiceMessage = std::move(value); }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline DirectMessageConfiguration& WithVoiceMessage(const VoiceMessage& value) { SetVoiceMessage(value); return *this;}
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline DirectMessageConfiguration& WithVoiceMessage(VoiceMessage&& value) { SetVoiceMessage(std::move(value)); return *this;}
+
   private:
 
     ADMMessage m_aDMMessage;
@@ -292,6 +319,9 @@ namespace Model
 
     SMSMessage m_sMSMessage;
     bool m_sMSMessageHasBeenSet;
+
+    VoiceMessage m_voiceMessage;
+    bool m_voiceMessageHasBeenSet;
   };
 
 } // namespace Model

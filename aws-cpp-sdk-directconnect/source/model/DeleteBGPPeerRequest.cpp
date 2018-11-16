@@ -26,7 +26,8 @@ DeleteBGPPeerRequest::DeleteBGPPeerRequest() :
     m_virtualInterfaceIdHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
-    m_customerAddressHasBeenSet(false)
+    m_customerAddressHasBeenSet(false),
+    m_bgpPeerIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,12 @@ Aws::String DeleteBGPPeerRequest::SerializePayload() const
   if(m_customerAddressHasBeenSet)
   {
    payload.WithString("customerAddress", m_customerAddress);
+
+  }
+
+  if(m_bgpPeerIdHasBeenSet)
+  {
+   payload.WithString("bgpPeerId", m_bgpPeerId);
 
   }
 

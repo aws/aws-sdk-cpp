@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the use of SSE-KMS to encrypt delievered Inventory
+   * <p>Specifies the use of SSE-KMS to encrypt delivered Inventory
    * reports.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SSEKMS">AWS API
    * Reference</a></p>

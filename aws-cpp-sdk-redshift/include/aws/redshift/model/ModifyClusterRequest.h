@@ -667,6 +667,34 @@ namespace Model
 
 
     /**
+     * <p>The default for number of days that a newly created manual snapshot is
+     * retained. If the value is -1, the manual snapshot is retained indefinitely. This
+     * value will not retroactively change the retention periods of existing manual
+     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The default for number of days that a newly created manual snapshot is
+     * retained. If the value is -1, the manual snapshot is retained indefinitely. This
+     * value will not retroactively change the retention periods of existing manual
+     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The default for number of days that a newly created manual snapshot is
+     * retained. If the value is -1, the manual snapshot is retained indefinitely. This
+     * value will not retroactively change the retention periods of existing manual
+     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline ModifyClusterRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur, if
      * necessary. If system maintenance is necessary during the window, it may result
      * in an outage.</p> <p>This maintenance window change is made immediately. If the
@@ -1322,6 +1350,9 @@ namespace Model
 
     int m_automatedSnapshotRetentionPeriod;
     bool m_automatedSnapshotRetentionPeriodHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
 
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet;

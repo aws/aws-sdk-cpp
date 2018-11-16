@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -101,7 +101,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -109,7 +109,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -117,7 +117,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -125,7 +125,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -133,7 +133,7 @@ namespace Model
 
     /**
      * <p>The SHA-256 hash of the build artifact.</p> <p>You can use this hash along
-     * with a checksum tool to confirm both file integrity and authenticity.</p> <note>
+     * with a checksum tool to confirm file integrity and authenticity.</p> <note>
      * <p>This value is available only if the build project's <code>packaging</code>
      * value is set to <code>ZIP</code>.</p> </note>
      */
@@ -142,80 +142,80 @@ namespace Model
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline const Aws::String& GetMd5sum() const{ return m_md5sum; }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline void SetMd5sum(const Aws::String& value) { m_md5sumHasBeenSet = true; m_md5sum = value; }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline void SetMd5sum(Aws::String&& value) { m_md5sumHasBeenSet = true; m_md5sum = std::move(value); }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline void SetMd5sum(const char* value) { m_md5sumHasBeenSet = true; m_md5sum.assign(value); }
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline BuildArtifacts& WithMd5sum(const Aws::String& value) { SetMd5sum(value); return *this;}
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline BuildArtifacts& WithMd5sum(Aws::String&& value) { SetMd5sum(std::move(value)); return *this;}
 
     /**
      * <p>The MD5 hash of the build artifact.</p> <p>You can use this hash along with a
-     * checksum tool to confirm both file integrity and authenticity.</p> <note>
-     * <p>This value is available only if the build project's <code>packaging</code>
-     * value is set to <code>ZIP</code>.</p> </note>
+     * checksum tool to confirm file integrity and authenticity.</p> <note> <p>This
+     * value is available only if the build project's <code>packaging</code> value is
+     * set to <code>ZIP</code>.</p> </note>
      */
     inline BuildArtifacts& WithMd5sum(const char* value) { SetMd5sum(value); return *this;}
 
 
     /**
-     * <p> If this flag is set, a name specified in the buildspec file overrides the
-     * artifact name. The name specified in a buildspec file is calculated at build
+     * <p> If this flag is set, a name specified in the build spec file overrides the
+     * artifact name. The name specified in a build spec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
     inline bool GetOverrideArtifactName() const{ return m_overrideArtifactName; }
 
     /**
-     * <p> If this flag is set, a name specified in the buildspec file overrides the
-     * artifact name. The name specified in a buildspec file is calculated at build
+     * <p> If this flag is set, a name specified in the build spec file overrides the
+     * artifact name. The name specified in a build spec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
     inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
 
     /**
-     * <p> If this flag is set, a name specified in the buildspec file overrides the
-     * artifact name. The name specified in a buildspec file is calculated at build
+     * <p> If this flag is set, a name specified in the build spec file overrides the
+     * artifact name. The name specified in a build spec file is calculated at build
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */

@@ -41,6 +41,7 @@ static const int CREDENTIAL_REPORT_NOT_READY_HASH = HashingUtils::HashString("Re
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceeded");
 static const int ENTITY_TEMPORARILY_UNMODIFIABLE_HASH = HashingUtils::HashString("EntityTemporarilyUnmodifiable");
 static const int SERVICE_FAILURE_HASH = HashingUtils::HashString("ServiceFailure");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModification");
 static const int ENTITY_ALREADY_EXISTS_HASH = HashingUtils::HashString("EntityAlreadyExists");
 static const int POLICY_EVALUATION_HASH = HashingUtils::HashString("PolicyEvaluation");
 static const int INVALID_USER_TYPE_HASH = HashingUtils::HashString("InvalidUserType");
@@ -110,6 +111,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == SERVICE_FAILURE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::SERVICE_FAILURE), true);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IAMErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
   {

@@ -41,6 +41,8 @@ Cluster::Cluster() :
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_clusterSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_clusterParameterGroupsHasBeenSet(false),
@@ -75,6 +77,9 @@ Cluster::Cluster() :
     m_maintenanceTrackNameHasBeenSet(false),
     m_elasticResizeNumberOfNodeOptionsHasBeenSet(false),
     m_deferredMaintenanceWindowsHasBeenSet(false),
+    m_snapshotScheduleIdentifierHasBeenSet(false),
+    m_snapshotScheduleState(ScheduleState::NOT_SET),
+    m_snapshotScheduleStateHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
 }
@@ -90,6 +95,8 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_clusterCreateTimeHasBeenSet(false),
     m_automatedSnapshotRetentionPeriod(0),
     m_automatedSnapshotRetentionPeriodHasBeenSet(false),
+    m_manualSnapshotRetentionPeriod(0),
+    m_manualSnapshotRetentionPeriodHasBeenSet(false),
     m_clusterSecurityGroupsHasBeenSet(false),
     m_vpcSecurityGroupsHasBeenSet(false),
     m_clusterParameterGroupsHasBeenSet(false),
@@ -124,6 +131,9 @@ Cluster::Cluster(const XmlNode& xmlNode) :
     m_maintenanceTrackNameHasBeenSet(false),
     m_elasticResizeNumberOfNodeOptionsHasBeenSet(false),
     m_deferredMaintenanceWindowsHasBeenSet(false),
+    m_snapshotScheduleIdentifierHasBeenSet(false),
+    m_snapshotScheduleState(ScheduleState::NOT_SET),
+    m_snapshotScheduleStateHasBeenSet(false),
     m_resizeInfoHasBeenSet(false)
 {
   *this = xmlNode;
@@ -188,6 +198,12 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
     {
       m_automatedSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(automatedSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
       m_automatedSnapshotRetentionPeriodHasBeenSet = true;
+    }
+    XmlNode manualSnapshotRetentionPeriodNode = resultNode.FirstChild("ManualSnapshotRetentionPeriod");
+    if(!manualSnapshotRetentionPeriodNode.IsNull())
+    {
+      m_manualSnapshotRetentionPeriod = StringUtils::ConvertToInt32(StringUtils::Trim(manualSnapshotRetentionPeriodNode.GetText().c_str()).c_str());
+      m_manualSnapshotRetentionPeriodHasBeenSet = true;
     }
     XmlNode clusterSecurityGroupsNode = resultNode.FirstChild("ClusterSecurityGroups");
     if(!clusterSecurityGroupsNode.IsNull())
@@ -411,6 +427,18 @@ Cluster& Cluster::operator =(const XmlNode& xmlNode)
 
       m_deferredMaintenanceWindowsHasBeenSet = true;
     }
+    XmlNode snapshotScheduleIdentifierNode = resultNode.FirstChild("SnapshotScheduleIdentifier");
+    if(!snapshotScheduleIdentifierNode.IsNull())
+    {
+      m_snapshotScheduleIdentifier = StringUtils::Trim(snapshotScheduleIdentifierNode.GetText().c_str());
+      m_snapshotScheduleIdentifierHasBeenSet = true;
+    }
+    XmlNode snapshotScheduleStateNode = resultNode.FirstChild("SnapshotScheduleState");
+    if(!snapshotScheduleStateNode.IsNull())
+    {
+      m_snapshotScheduleState = ScheduleStateMapper::GetScheduleStateForName(StringUtils::Trim(snapshotScheduleStateNode.GetText().c_str()).c_str());
+      m_snapshotScheduleStateHasBeenSet = true;
+    }
     XmlNode resizeInfoNode = resultNode.FirstChild("ResizeInfo");
     if(!resizeInfoNode.IsNull())
     {
@@ -469,6 +497,11 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
       oStream << location << index << locationValue << ".AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
+  }
+
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
 
   if(m_clusterSecurityGroupsHasBeenSet)
@@ -674,6 +707,16 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       }
   }
 
+  if(m_snapshotScheduleIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotScheduleIdentifier=" << StringUtils::URLEncode(m_snapshotScheduleIdentifier.c_str()) << "&";
+  }
+
+  if(m_snapshotScheduleStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
+  }
+
   if(m_resizeInfoHasBeenSet)
   {
       Aws::StringStream resizeInfoLocationAndMemberSs;
@@ -722,6 +765,10 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_automatedSnapshotRetentionPeriodHasBeenSet)
   {
       oStream << location << ".AutomatedSnapshotRetentionPeriod=" << m_automatedSnapshotRetentionPeriod << "&";
+  }
+  if(m_manualSnapshotRetentionPeriodHasBeenSet)
+  {
+      oStream << location << ".ManualSnapshotRetentionPeriod=" << m_manualSnapshotRetentionPeriod << "&";
   }
   if(m_clusterSecurityGroupsHasBeenSet)
   {
@@ -896,6 +943,14 @@ void Cluster::OutputToStream(Aws::OStream& oStream, const char* location) const
         deferredMaintenanceWindowsSs << location <<  ".DeferredMaintenanceWindow." << deferredMaintenanceWindowsIdx++;
         item.OutputToStream(oStream, deferredMaintenanceWindowsSs.str().c_str());
       }
+  }
+  if(m_snapshotScheduleIdentifierHasBeenSet)
+  {
+      oStream << location << ".SnapshotScheduleIdentifier=" << StringUtils::URLEncode(m_snapshotScheduleIdentifier.c_str()) << "&";
+  }
+  if(m_snapshotScheduleStateHasBeenSet)
+  {
+      oStream << location << ".SnapshotScheduleState=" << ScheduleStateMapper::GetNameForScheduleState(m_snapshotScheduleState) << "&";
   }
   if(m_resizeInfoHasBeenSet)
   {

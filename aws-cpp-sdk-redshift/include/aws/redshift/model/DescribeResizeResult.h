@@ -469,44 +469,51 @@ namespace Model
 
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline const Aws::String& GetResizeType() const{ return m_resizeType; }
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline void SetResizeType(const Aws::String& value) { m_resizeType = value; }
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline void SetResizeType(Aws::String&& value) { m_resizeType = std::move(value); }
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline void SetResizeType(const char* value) { m_resizeType.assign(value); }
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline DescribeResizeResult& WithResizeType(const Aws::String& value) { SetResizeType(value); return *this;}
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline DescribeResizeResult& WithResizeType(Aws::String&& value) { SetResizeType(std::move(value)); return *this;}
 
     /**
-     * <p>An enum with possible values of ClassicResize and ElasticResize. These values
-     * describe the type of resize operation being performed. </p>
+     * <p>An enum with possible values of <code>ClassicResize</code> and
+     * <code>ElasticResize</code>. These values describe the type of resize operation
+     * being performed. </p>
      */
     inline DescribeResizeResult& WithResizeType(const char* value) { SetResizeType(value); return *this;}
 

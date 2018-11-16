@@ -87,63 +87,63 @@ namespace Model
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline EnvironmentVariable& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline EnvironmentVariable& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The value of the environment variable.</p> <important> <p>We strongly
-     * discourage using environment variables to store sensitive values, especially AWS
-     * secret key IDs and secret access keys. Environment variables can be displayed in
-     * plain text using tools such as the AWS CodeBuild console and the AWS Command
+     * discourage the use of environment variables to store sensitive values,
+     * especially AWS secret key IDs and secret access keys. Environment variables can
+     * be displayed in plain text using the AWS CodeBuild console and the AWS Command
      * Line Interface (AWS CLI).</p> </important>
      */
     inline EnvironmentVariable& WithValue(const char* value) { SetValue(value); return *this;}

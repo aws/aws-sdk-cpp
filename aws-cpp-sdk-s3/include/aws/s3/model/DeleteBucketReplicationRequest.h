@@ -50,72 +50,44 @@ namespace Model
 
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline DeleteBucketReplicationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline DeleteBucketReplicationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Deletes the replication subresource associated with the specified bucket.</p>
-     * <note> <p>There is usually some time lag before replication configuration
-     * deletion is fully propagated to all the Amazon S3 systems.</p> </note> <p> For
-     * more information, see <a href="
-     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
-     * Replication (CRR)</a> in the Amazon S3 Developer Guide. </p>
+     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
+     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
      */
     inline DeleteBucketReplicationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

@@ -296,9 +296,10 @@ namespace Model
    * Enterprise (ASE). The service supports homogeneous migrations such as Oracle to
    * Oracle, as well as heterogeneous migrations between different database
    * platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p> <p>For more
-   * information about AWS DMS, see the AWS DMS user guide at <a
-   * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"> What Is AWS
-   * Database Migration Service? </a> </p>
+   * information about AWS DMS, see <a
+   * href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is AWS
+   * Database Migration Service?</a> in the <i>AWS Database Migration User Guide.</i>
+   * </p>
    */
   class AWS_DATABASEMIGRATIONSERVICE_API DatabaseMigrationServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -406,9 +407,9 @@ namespace Model
          * <code>SourceIdentifier</code>, you will be notified of events generated from all
          * AWS DMS sources belonging to your customer account.</p> <p>For more information
          * about AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database MIgration Service User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          */
@@ -429,9 +430,9 @@ namespace Model
          * <code>SourceIdentifier</code>, you will be notified of events generated from all
          * AWS DMS sources belonging to your customer account.</p> <p>For more information
          * about AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database MIgration Service User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -454,9 +455,9 @@ namespace Model
          * <code>SourceIdentifier</code>, you will be notified of events generated from all
          * AWS DMS sources belonging to your customer account.</p> <p>For more information
          * about AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database MIgration Service User
-         * Guide.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -863,9 +864,9 @@ namespace Model
          * <p>Lists categories for all event source types, or, if specified, for a
          * specified source type. You can see a list of the event categories and source
          * types in <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database Migration Service User
-         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
          * API Reference</a></p>
          */
@@ -875,9 +876,9 @@ namespace Model
          * <p>Lists categories for all event source types, or, if specified, for a
          * specified source type. You can see a list of the event categories and source
          * types in <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database Migration Service User
-         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
          * API Reference</a></p>
          *
@@ -889,9 +890,9 @@ namespace Model
          * <p>Lists categories for all event source types, or, if specified, for a
          * specified source type. You can see a list of the event categories and source
          * types in <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a> in the AWS Database Migration Service User
-         * Guide. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEventCategories">AWS
          * API Reference</a></p>
          *
@@ -942,8 +943,9 @@ namespace Model
         /**
          * <p> Lists events for a given source identifier and source type. You can also
          * specify a start and end time. For more information on AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
          * API Reference</a></p>
          */
@@ -952,8 +954,9 @@ namespace Model
         /**
          * <p> Lists events for a given source identifier and source type. You can also
          * specify a start and end time. For more information on AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -964,8 +967,9 @@ namespace Model
         /**
          * <p> Lists events for a given source identifier and source type. You can also
          * specify a start and end time. For more information on AWS DMS events, see <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html"> Working
-         * with Events and Notifications </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working
+         * with Events and Notifications</a> in the <i>AWS Database Migration User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEvents">AWS
          * API Reference</a></p>
          *
@@ -1402,9 +1406,10 @@ namespace Model
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
          * endpoints. The task must be stopped before you can modify it. </p> <p>For more
-         * information about AWS DMS tasks, see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * information about AWS DMS tasks, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks</a> in the <i>AWS Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          */
@@ -1413,9 +1418,10 @@ namespace Model
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
          * endpoints. The task must be stopped before you can modify it. </p> <p>For more
-         * information about AWS DMS tasks, see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * information about AWS DMS tasks, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks</a> in the <i>AWS Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1426,9 +1432,10 @@ namespace Model
         /**
          * <p>Modifies the specified replication task.</p> <p>You can't modify the task
          * endpoints. The task must be stopped before you can modify it. </p> <p>For more
-         * information about AWS DMS tasks, see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * information about AWS DMS tasks, see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks</a> in the <i>AWS Database Migration Service User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1556,9 +1563,10 @@ namespace Model
 
         /**
          * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
-         * see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks </a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          */
@@ -1566,9 +1574,10 @@ namespace Model
 
         /**
          * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
-         * see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks </a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          *
@@ -1578,9 +1587,10 @@ namespace Model
 
         /**
          * <p>Starts the replication task.</p> <p>For more information about AWS DMS tasks,
-         * see the AWS DMS user guide at <a
-         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html"> Working
-         * with Migration Tasks </a> </p><p><h3>See Also:</h3>   <a
+         * see <a
+         * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html">Working
+         * with Migration Tasks </a> in the <i>AWS Database Migration Service User
+         * Guide.</i> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTask">AWS
          * API Reference</a></p>
          *

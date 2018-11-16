@@ -35,6 +35,7 @@ namespace Aws
         static const int DAILY_HASH = HashingUtils::HashString("DAILY");
         static const int WEEKLY_HASH = HashingUtils::HashString("WEEKLY");
         static const int MONTHLY_HASH = HashingUtils::HashString("MONTHLY");
+        static const int EVENT_HASH = HashingUtils::HashString("EVENT");
 
 
         Frequency GetFrequencyForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return Frequency::MONTHLY;
           }
+          else if (hashCode == EVENT_HASH)
+          {
+            return Frequency::EVENT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "WEEKLY";
           case Frequency::MONTHLY:
             return "MONTHLY";
+          case Frequency::EVENT:
+            return "EVENT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

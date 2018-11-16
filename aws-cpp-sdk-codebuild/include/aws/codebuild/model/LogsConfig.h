@@ -35,8 +35,9 @@ namespace Model
 {
 
   /**
-   * <p> Information about logs for a build project. Logs can be Amazon CloudWatch
-   * Logs, built in a specified S3 bucket, or both. </p><p><h3>See Also:</h3>   <a
+   * <p> Information about logs for a build project. These can be logs in Amazon
+   * CloudWatch Logs, built in a specified S3 bucket, or both. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/LogsConfig">AWS
    * API Reference</a></p>
    */

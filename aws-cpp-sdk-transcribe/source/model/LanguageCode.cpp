@@ -34,7 +34,10 @@ namespace Aws
         static const int es_US_HASH = HashingUtils::HashString("es-US");
         static const int en_AU_HASH = HashingUtils::HashString("en-AU");
         static const int fr_CA_HASH = HashingUtils::HashString("fr-CA");
-        static const int en_UK_HASH = HashingUtils::HashString("en-UK");
+        static const int en_GB_HASH = HashingUtils::HashString("en-GB");
+        static const int de_DE_HASH = HashingUtils::HashString("de-DE");
+        static const int pt_BR_HASH = HashingUtils::HashString("pt-BR");
+        static const int fr_FR_HASH = HashingUtils::HashString("fr-FR");
 
 
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
@@ -56,9 +59,21 @@ namespace Aws
           {
             return LanguageCode::fr_CA;
           }
-          else if (hashCode == en_UK_HASH)
+          else if (hashCode == en_GB_HASH)
           {
-            return LanguageCode::en_UK;
+            return LanguageCode::en_GB;
+          }
+          else if (hashCode == de_DE_HASH)
+          {
+            return LanguageCode::de_DE;
+          }
+          else if (hashCode == pt_BR_HASH)
+          {
+            return LanguageCode::pt_BR;
+          }
+          else if (hashCode == fr_FR_HASH)
+          {
+            return LanguageCode::fr_FR;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -82,8 +97,14 @@ namespace Aws
             return "en-AU";
           case LanguageCode::fr_CA:
             return "fr-CA";
-          case LanguageCode::en_UK:
-            return "en-UK";
+          case LanguageCode::en_GB:
+            return "en-GB";
+          case LanguageCode::de_DE:
+            return "de-DE";
+          case LanguageCode::pt_BR:
+            return "pt-BR";
+          case LanguageCode::fr_FR:
+            return "fr-FR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

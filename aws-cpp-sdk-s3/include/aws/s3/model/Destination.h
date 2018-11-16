@@ -36,9 +36,10 @@ namespace Model
 {
 
   /**
-   * <p>Container for replication destination information.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS
-   * API Reference</a></p>
+   * <p>A container for information about the replication destination.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
+   * Reference</a></p>
    */
   class AWS_S3_API Destination
   {
@@ -51,211 +52,209 @@ namespace Model
 
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p> Amazon resource name (ARN) of the bucket where you want Amazon S3 to store
-     * replicas of the object identified by the rule. </p> <p> If you have multiple
-     * rules in your replication configuration, all rules must specify the same bucket
-     * as the destination. A replication configuration can replicate objects only to
-     * one destination bucket. </p>
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
      */
     inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
     /**
-     * <p> Account ID of the destination bucket. Currently Amazon S3 verifies this
-     * value only if Access Control Translation is enabled. </p> <p> In a cross-account
-     * scenario, if you tell Amazon S3 to change replica ownership to the AWS account
-     * that owns the destination bucket by adding the
-     * <code>AccessControlTranslation</code> element, this is the account ID of the
-     * destination bucket owner. </p>
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
      */
     inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
 
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
      */
     inline Destination& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The class of storage used to store the object.</p>
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
      */
     inline Destination& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
     /**
-     * <p> Container for information regarding the access control for replicas. </p>
-     * <p> Use only in a cross-account scenario, where source and destination bucket
-     * owners are not the same, when you want to change replica ownership to the AWS
-     * account that owns the destination bucket. If you don't add this element to the
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
      * replication configuration, the replicas are owned by same AWS account that owns
      * the source object. </p>
      */
     inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
 
     /**
-     * <p> Container for information regarding the access control for replicas. </p>
-     * <p> Use only in a cross-account scenario, where source and destination bucket
-     * owners are not the same, when you want to change replica ownership to the AWS
-     * account that owns the destination bucket. If you don't add this element to the
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
      * replication configuration, the replicas are owned by same AWS account that owns
      * the source object. </p>
      */
     inline void SetAccessControlTranslation(const AccessControlTranslation& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = value; }
 
     /**
-     * <p> Container for information regarding the access control for replicas. </p>
-     * <p> Use only in a cross-account scenario, where source and destination bucket
-     * owners are not the same, when you want to change replica ownership to the AWS
-     * account that owns the destination bucket. If you don't add this element to the
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
      * replication configuration, the replicas are owned by same AWS account that owns
      * the source object. </p>
      */
     inline void SetAccessControlTranslation(AccessControlTranslation&& value) { m_accessControlTranslationHasBeenSet = true; m_accessControlTranslation = std::move(value); }
 
     /**
-     * <p> Container for information regarding the access control for replicas. </p>
-     * <p> Use only in a cross-account scenario, where source and destination bucket
-     * owners are not the same, when you want to change replica ownership to the AWS
-     * account that owns the destination bucket. If you don't add this element to the
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
      * replication configuration, the replicas are owned by same AWS account that owns
      * the source object. </p>
      */
     inline Destination& WithAccessControlTranslation(const AccessControlTranslation& value) { SetAccessControlTranslation(value); return *this;}
 
     /**
-     * <p> Container for information regarding the access control for replicas. </p>
-     * <p> Use only in a cross-account scenario, where source and destination bucket
-     * owners are not the same, when you want to change replica ownership to the AWS
-     * account that owns the destination bucket. If you don't add this element to the
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
      * replication configuration, the replicas are owned by same AWS account that owns
      * the source object. </p>
      */
@@ -263,32 +262,37 @@ namespace Model
 
 
     /**
-     * <p> Container that provides encryption-related information. You must specify
-     * this element if the <code>SourceSelectionCriteria</code> is specified. </p>
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
-     * <p> Container that provides encryption-related information. You must specify
-     * this element if the <code>SourceSelectionCriteria</code> is specified. </p>
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
-     * <p> Container that provides encryption-related information. You must specify
-     * this element if the <code>SourceSelectionCriteria</code> is specified. </p>
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
-     * <p> Container that provides encryption-related information. You must specify
-     * this element if the <code>SourceSelectionCriteria</code> is specified. </p>
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
      */
     inline Destination& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p> Container that provides encryption-related information. You must specify
-     * this element if the <code>SourceSelectionCriteria</code> is specified. </p>
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
      */
     inline Destination& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 

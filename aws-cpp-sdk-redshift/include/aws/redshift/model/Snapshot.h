@@ -1040,6 +1040,78 @@ namespace Model
      */
     inline Snapshot& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
 
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p>
+     */
+    inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p>
+     */
+    inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely. </p> <p>The value must be either
+     * -1 or an integer between 1 and 3,653.</p>
+     */
+    inline Snapshot& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
+
+
+    /**
+     * <p>The number of days until a manual snapshot will pass its retention
+     * period.</p>
+     */
+    inline int GetManualSnapshotRemainingDays() const{ return m_manualSnapshotRemainingDays; }
+
+    /**
+     * <p>The number of days until a manual snapshot will pass its retention
+     * period.</p>
+     */
+    inline void SetManualSnapshotRemainingDays(int value) { m_manualSnapshotRemainingDaysHasBeenSet = true; m_manualSnapshotRemainingDays = value; }
+
+    /**
+     * <p>The number of days until a manual snapshot will pass its retention
+     * period.</p>
+     */
+    inline Snapshot& WithManualSnapshotRemainingDays(int value) { SetManualSnapshotRemainingDays(value); return *this;}
+
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline const Aws::Utils::DateTime& GetSnapshotRetentionStartTime() const{ return m_snapshotRetentionStartTime; }
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline void SetSnapshotRetentionStartTime(const Aws::Utils::DateTime& value) { m_snapshotRetentionStartTimeHasBeenSet = true; m_snapshotRetentionStartTime = value; }
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline void SetSnapshotRetentionStartTime(Aws::Utils::DateTime&& value) { m_snapshotRetentionStartTimeHasBeenSet = true; m_snapshotRetentionStartTime = std::move(value); }
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline Snapshot& WithSnapshotRetentionStartTime(const Aws::Utils::DateTime& value) { SetSnapshotRetentionStartTime(value); return *this;}
+
+    /**
+     * <p>A timestamp representing the start of the retention period for the
+     * snapshot.</p>
+     */
+    inline Snapshot& WithSnapshotRetentionStartTime(Aws::Utils::DateTime&& value) { SetSnapshotRetentionStartTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_snapshotIdentifier;
@@ -1131,6 +1203,15 @@ namespace Model
 
     Aws::String m_maintenanceTrackName;
     bool m_maintenanceTrackNameHasBeenSet;
+
+    int m_manualSnapshotRetentionPeriod;
+    bool m_manualSnapshotRetentionPeriodHasBeenSet;
+
+    int m_manualSnapshotRemainingDays;
+    bool m_manualSnapshotRemainingDaysHasBeenSet;
+
+    Aws::Utils::DateTime m_snapshotRetentionStartTime;
+    bool m_snapshotRetentionStartTimeHasBeenSet;
   };
 
 } // namespace Model

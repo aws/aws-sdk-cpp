@@ -180,7 +180,7 @@ namespace Model
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListServices</code> request with
-     * the returned <code>nextToken</code> value. This value can be between 1 and 10.
+     * the returned <code>nextToken</code> value. This value can be between 1 and 100.
      * If this parameter is not used, then <code>ListServices</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
@@ -192,7 +192,7 @@ namespace Model
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListServices</code> request with
-     * the returned <code>nextToken</code> value. This value can be between 1 and 10.
+     * the returned <code>nextToken</code> value. This value can be between 1 and 100.
      * If this parameter is not used, then <code>ListServices</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
@@ -204,7 +204,7 @@ namespace Model
      * returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial
      * request can be seen by sending another <code>ListServices</code> request with
-     * the returned <code>nextToken</code> value. This value can be between 1 and 10.
+     * the returned <code>nextToken</code> value. This value can be between 1 and 100.
      * If this parameter is not used, then <code>ListServices</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */

@@ -422,14 +422,14 @@ namespace Model
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
      * the results to tasks that Amazon ECS has set the desired status to
-     * <code>STOPPED</code>, which can be useful for debugging tasks that are not
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
      * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
-     * results because Amazon ECS never sets the desired status of a task to that value
-     * (only a task's <code>lastStatus</code> may have a value of
-     * <code>PENDING</code>).</p> </note>
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
      */
     inline const DesiredStatus& GetDesiredStatus() const{ return m_desiredStatus; }
 
@@ -437,14 +437,14 @@ namespace Model
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
      * the results to tasks that Amazon ECS has set the desired status to
-     * <code>STOPPED</code>, which can be useful for debugging tasks that are not
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
      * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
-     * results because Amazon ECS never sets the desired status of a task to that value
-     * (only a task's <code>lastStatus</code> may have a value of
-     * <code>PENDING</code>).</p> </note>
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
      */
     inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
@@ -452,14 +452,14 @@ namespace Model
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
      * the results to tasks that Amazon ECS has set the desired status to
-     * <code>STOPPED</code>, which can be useful for debugging tasks that are not
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
      * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
-     * results because Amazon ECS never sets the desired status of a task to that value
-     * (only a task's <code>lastStatus</code> may have a value of
-     * <code>PENDING</code>).</p> </note>
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
      */
     inline void SetDesiredStatus(DesiredStatus&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = std::move(value); }
 
@@ -467,14 +467,14 @@ namespace Model
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
      * the results to tasks that Amazon ECS has set the desired status to
-     * <code>STOPPED</code>, which can be useful for debugging tasks that are not
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
      * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
-     * results because Amazon ECS never sets the desired status of a task to that value
-     * (only a task's <code>lastStatus</code> may have a value of
-     * <code>PENDING</code>).</p> </note>
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
      */
     inline ListTasksRequest& WithDesiredStatus(const DesiredStatus& value) { SetDesiredStatus(value); return *this;}
 
@@ -482,14 +482,14 @@ namespace Model
      * <p>The task desired status with which to filter the <code>ListTasks</code>
      * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
      * the results to tasks that Amazon ECS has set the desired status to
-     * <code>STOPPED</code>, which can be useful for debugging tasks that are not
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
      * starting properly or have died or finished. The default status filter is
      * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
      * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
      * based on a desired status of <code>PENDING</code>, this does not return any
-     * results because Amazon ECS never sets the desired status of a task to that value
-     * (only a task's <code>lastStatus</code> may have a value of
-     * <code>PENDING</code>).</p> </note>
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
      */
     inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(std::move(value)); return *this;}
 

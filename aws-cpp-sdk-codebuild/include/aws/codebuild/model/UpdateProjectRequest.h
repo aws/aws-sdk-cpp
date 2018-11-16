@@ -400,58 +400,77 @@ namespace Model
 
 
     /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline int GetQueuedTimeoutInMinutes() const{ return m_queuedTimeoutInMinutes; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline void SetQueuedTimeoutInMinutes(int value) { m_queuedTimeoutInMinutesHasBeenSet = true; m_queuedTimeoutInMinutes = value; }
+
+    /**
+     * <p> The number of minutes a build is allowed to be queued before it times out.
+     * </p>
+     */
+    inline UpdateProjectRequest& WithQueuedTimeoutInMinutes(int value) { SetQueuedTimeoutInMinutes(value); return *this;}
+
+
+    /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The replacement AWS Key Management Service (AWS KMS) customer master key
      * (CMK) to be used for encrypting the build output artifacts.</p> <p>You can
-     * specify either the CMK's Amazon Resource Name (ARN) or, if available, the CMK's
-     * alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * specify either the Amazon Resource Name (ARN)of the CMK or, if available, the
+     * CMK's alias (using the format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline UpdateProjectRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 
@@ -533,51 +552,51 @@ namespace Model
 
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline bool GetBadgeEnabled() const{ return m_badgeEnabled; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline void SetBadgeEnabled(bool value) { m_badgeEnabledHasBeenSet = true; m_badgeEnabled = value; }
 
     /**
-     * <p>Set this to true to generate a publicly-accessible URL for your project's
+     * <p>Set this to true to generate a publicly accessible URL for your project's
      * build badge.</p>
      */
     inline UpdateProjectRequest& WithBadgeEnabled(bool value) { SetBadgeEnabled(value); return *this;}
 
 
     /**
-     * <p> Information about logs for the build project. A project can create Amazon
-     * CloudWatch Logs, logs in an S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, logs in an S3 bucket, or both. </p>
      */
     inline const LogsConfig& GetLogsConfig() const{ return m_logsConfig; }
 
     /**
-     * <p> Information about logs for the build project. A project can create Amazon
-     * CloudWatch Logs, logs in an S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, logs in an S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(const LogsConfig& value) { m_logsConfigHasBeenSet = true; m_logsConfig = value; }
 
     /**
-     * <p> Information about logs for the build project. A project can create Amazon
-     * CloudWatch Logs, logs in an S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, logs in an S3 bucket, or both. </p>
      */
     inline void SetLogsConfig(LogsConfig&& value) { m_logsConfigHasBeenSet = true; m_logsConfig = std::move(value); }
 
     /**
-     * <p> Information about logs for the build project. A project can create Amazon
-     * CloudWatch Logs, logs in an S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, logs in an S3 bucket, or both. </p>
      */
     inline UpdateProjectRequest& WithLogsConfig(const LogsConfig& value) { SetLogsConfig(value); return *this;}
 
     /**
-     * <p> Information about logs for the build project. A project can create Amazon
-     * CloudWatch Logs, logs in an S3 bucket, or both. </p>
+     * <p> Information about logs for the build project. A project can create logs in
+     * Amazon CloudWatch Logs, logs in an S3 bucket, or both. </p>
      */
     inline UpdateProjectRequest& WithLogsConfig(LogsConfig&& value) { SetLogsConfig(std::move(value)); return *this;}
 
@@ -612,6 +631,9 @@ namespace Model
 
     int m_timeoutInMinutes;
     bool m_timeoutInMinutesHasBeenSet;
+
+    int m_queuedTimeoutInMinutes;
+    bool m_queuedTimeoutInMinutesHasBeenSet;
 
     Aws::String m_encryptionKey;
     bool m_encryptionKeyHasBeenSet;
