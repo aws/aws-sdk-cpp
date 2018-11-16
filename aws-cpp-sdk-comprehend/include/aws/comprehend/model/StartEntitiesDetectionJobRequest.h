@@ -194,6 +194,56 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline const Aws::String& GetEntityRecognizerArn() const{ return m_entityRecognizerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline void SetEntityRecognizerArn(const Aws::String& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline void SetEntityRecognizerArn(Aws::String&& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline void SetEntityRecognizerArn(const char* value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithEntityRecognizerArn(const Aws::String& value) { SetEntityRecognizerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithEntityRecognizerArn(Aws::String&& value) { SetEntityRecognizerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the specific entity recognizer
+     * to be used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional
+     * and is only used for a custom entity recognition job.</p>
+     */
+    inline StartEntitiesDetectionJobRequest& WithEntityRecognizerArn(const char* value) { SetEntityRecognizerArn(value); return *this;}
+
+
+    /**
      * <p>The language of the input documents. All documents must be in the same
      * language. You can specify any of the languages supported by Amazon Comprehend:
      * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
@@ -294,6 +344,9 @@ namespace Model
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet;
+
+    Aws::String m_entityRecognizerArn;
+    bool m_entityRecognizerArnHasBeenSet;
 
     LanguageCode m_languageCode;
     bool m_languageCodeHasBeenSet;

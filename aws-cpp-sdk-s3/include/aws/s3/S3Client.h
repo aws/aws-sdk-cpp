@@ -188,6 +188,7 @@ namespace Aws
         class PutObjectTaggingRequest;
         class PutPublicAccessBlockRequest;
         class RestoreObjectRequest;
+        class SelectObjectContentRequest;
         class UploadPartRequest;
         class UploadPartCopyRequest;
 
@@ -266,6 +267,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<PutObjectTaggingResult, Aws::Client::AWSError<S3Errors>> PutObjectTaggingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> PutPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<RestoreObjectResult, Aws::Client::AWSError<S3Errors>> RestoreObjectOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> SelectObjectContentOutcome;
         typedef Aws::Utils::Outcome<UploadPartResult, Aws::Client::AWSError<S3Errors>> UploadPartOutcome;
         typedef Aws::Utils::Outcome<UploadPartCopyResult, Aws::Client::AWSError<S3Errors>> UploadPartCopyOutcome;
 
@@ -344,6 +346,7 @@ namespace Aws
         typedef std::future<PutObjectTaggingOutcome> PutObjectTaggingOutcomeCallable;
         typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
         typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
+        typedef std::future<SelectObjectContentOutcome> SelectObjectContentOutcomeCallable;
         typedef std::future<UploadPartOutcome> UploadPartOutcomeCallable;
         typedef std::future<UploadPartCopyOutcome> UploadPartCopyOutcomeCallable;
     } // namespace Model
@@ -434,6 +437,7 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::PutObjectTaggingRequest&, const Model::PutObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreObjectResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::SelectObjectContentRequest&, const Model::SelectObjectContentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectObjectContentResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartRequest&, const Model::UploadPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::UploadPartCopyRequest&, const Model::UploadPartCopyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadPartCopyResponseReceivedHandler;
 
@@ -2593,6 +2597,46 @@ namespace Aws
         virtual void RestoreObjectAsync(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>This operation filters the contents of an Amazon S3 object based on a simple
+         * Structured Query Language (SQL) statement. In the request, along with the SQL
+         * expression, you must also specify a data serialization format (JSON or CSV) of
+         * the object. Amazon S3 uses this to parse object data into records, and returns
+         * only records that match the specified SQL expression. You must also specify the
+         * data serialization format for the response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SelectObjectContentOutcome SelectObjectContent(Model::SelectObjectContentRequest& request) const;
+
+        /**
+         * <p>This operation filters the contents of an Amazon S3 object based on a simple
+         * Structured Query Language (SQL) statement. In the request, along with the SQL
+         * expression, you must also specify a data serialization format (JSON or CSV) of
+         * the object. Amazon S3 uses this to parse object data into records, and returns
+         * only records that match the specified SQL expression. You must also specify the
+         * data serialization format for the response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SelectObjectContentOutcomeCallable SelectObjectContentCallable(Model::SelectObjectContentRequest& request) const;
+
+        /**
+         * <p>This operation filters the contents of an Amazon S3 object based on a simple
+         * Structured Query Language (SQL) statement. In the request, along with the SQL
+         * expression, you must also specify a data serialization format (JSON or CSV) of
+         * the object. Amazon S3 uses this to parse object data into records, and returns
+         * only records that match the specified SQL expression. You must also specify the
+         * data serialization format for the response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SelectObjectContentAsync(Model::SelectObjectContentRequest& request, const SelectObjectContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Uploads a part in a multipart upload.</p> <p> <b>Note:</b> After you initiate
          * multipart upload and upload one or more parts, you must either complete or abort
          * multipart upload in order to stop getting charged for storage of the uploaded
@@ -2794,6 +2838,7 @@ namespace Aws
         void PutObjectTaggingAsyncHelper(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPublicAccessBlockAsyncHelper(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreObjectAsyncHelper(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SelectObjectContentAsyncHelper(Model::SelectObjectContentRequest& request, const SelectObjectContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadPartAsyncHelper(const Model::UploadPartRequest& request, const UploadPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UploadPartCopyAsyncHelper(const Model::UploadPartCopyRequest& request, const UploadPartCopyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

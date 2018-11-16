@@ -54,7 +54,9 @@ AutomationExecution::AutomationExecution() :
     m_resolvedTargetsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_targetHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_progressCountersHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ AutomationExecution::AutomationExecution(JsonView jsonValue) :
     m_resolvedTargetsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_targetHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false),
+    m_progressCountersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -294,6 +298,23 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     m_targetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetLocations"))
+  {
+    Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
+    for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+    {
+      m_targetLocations.push_back(targetLocationsJsonList[targetLocationsIndex].AsObject());
+    }
+    m_targetLocationsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProgressCounters"))
+  {
+    m_progressCounters = jsonValue.GetObject("ProgressCounters");
+
+    m_progressCountersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -477,6 +498,23 @@ JsonValue AutomationExecution::Jsonize() const
   if(m_targetHasBeenSet)
   {
    payload.WithString("Target", m_target);
+
+  }
+
+  if(m_targetLocationsHasBeenSet)
+  {
+   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+   {
+     targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
+   }
+   payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
+
+  }
+
+  if(m_progressCountersHasBeenSet)
+  {
+   payload.WithObject("ProgressCounters", m_progressCounters.Jsonize());
 
   }
 

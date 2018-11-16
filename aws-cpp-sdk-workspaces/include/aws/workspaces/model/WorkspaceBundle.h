@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a WorkSpace bundle.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a WorkSpace bundle.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceBundle">AWS
    * API Reference</a></p>
    */

@@ -33,7 +33,8 @@ StartAutomationExecutionRequest::StartAutomationExecutionRequest() :
     m_targetsHasBeenSet(false),
     m_targetMapsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false)
+    m_maxErrorsHasBeenSet(false),
+    m_targetLocationsHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,17 @@ Aws::String StartAutomationExecutionRequest::SerializePayload() const
   if(m_maxErrorsHasBeenSet)
   {
    payload.WithString("MaxErrors", m_maxErrors);
+
+  }
+
+  if(m_targetLocationsHasBeenSet)
+  {
+   Array<JsonValue> targetLocationsJsonList(m_targetLocations.size());
+   for(unsigned targetLocationsIndex = 0; targetLocationsIndex < targetLocationsJsonList.GetLength(); ++targetLocationsIndex)
+   {
+     targetLocationsJsonList[targetLocationsIndex].AsObject(m_targetLocations[targetLocationsIndex].Jsonize());
+   }
+   payload.WithArray("TargetLocations", std::move(targetLocationsJsonList));
 
   }
 

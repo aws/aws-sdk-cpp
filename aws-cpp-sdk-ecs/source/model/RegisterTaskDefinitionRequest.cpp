@@ -34,7 +34,11 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_pidMode(PidMode::NOT_SET),
+    m_pidModeHasBeenSet(false),
+    m_ipcMode(IpcMode::NOT_SET),
+    m_ipcModeHasBeenSet(false)
 {
 }
 
@@ -130,6 +134,16 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_pidModeHasBeenSet)
+  {
+   payload.WithString("pidMode", PidModeMapper::GetNameForPidMode(m_pidMode));
+  }
+
+  if(m_ipcModeHasBeenSet)
+  {
+   payload.WithString("ipcMode", IpcModeMapper::GetNameForIpcMode(m_ipcMode));
   }
 
   return payload.View().WriteReadable();

@@ -21,6 +21,7 @@
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/TargetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -559,6 +560,77 @@ namespace Model
      */
     inline StartAutomationExecutionRequest& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
 
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline StartAutomationExecutionRequest& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline StartAutomationExecutionRequest& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline StartAutomationExecutionRequest& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
+
+    /**
+     * <p>A location is a combination of AWS Regions and/or AWS accounts where you want
+     * to execute the Automation. Use this action to start an Automation in multiple
+     * Regions and multiple accounts. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
+     * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
+     * Systems Manager User Guide</i>. </p>
+     */
+    inline StartAutomationExecutionRequest& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_documentName;
@@ -590,6 +662,9 @@ namespace Model
 
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;
+
+    Aws::Vector<TargetLocation> m_targetLocations;
+    bool m_targetLocationsHasBeenSet;
   };
 
 } // namespace Model

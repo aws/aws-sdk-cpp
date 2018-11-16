@@ -36,6 +36,7 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties() :
     m_messageHasBeenSet(false),
     m_submitTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_entityRecognizerArnHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
@@ -52,6 +53,7 @@ EntitiesDetectionJobProperties::EntitiesDetectionJobProperties(JsonView jsonValu
     m_messageHasBeenSet(false),
     m_submitTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_entityRecognizerArnHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
@@ -103,6 +105,13 @@ EntitiesDetectionJobProperties& EntitiesDetectionJobProperties::operator =(JsonV
     m_endTime = jsonValue.GetDouble("EndTime");
 
     m_endTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EntityRecognizerArn"))
+  {
+    m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");
+
+    m_entityRecognizerArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InputDataConfig"))
@@ -171,6 +180,12 @@ JsonValue EntitiesDetectionJobProperties::Jsonize() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_entityRecognizerArnHasBeenSet)
+  {
+   payload.WithString("EntityRecognizerArn", m_entityRecognizerArn);
+
   }
 
   if(m_inputDataConfigHasBeenSet)

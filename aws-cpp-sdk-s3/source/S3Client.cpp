@@ -24,6 +24,7 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/event/EventStream.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3Endpoint.h>
 #include <aws/s3/S3ErrorMarshaller.h>
@@ -101,6 +102,7 @@
 #include <aws/s3/model/PutObjectTaggingRequest.h>
 #include <aws/s3/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3/model/RestoreObjectRequest.h>
+#include <aws/s3/model/SelectObjectContentRequest.h>
 #include <aws/s3/model/UploadPartRequest.h>
 #include <aws/s3/model/UploadPartCopyRequest.h>
 
@@ -2816,6 +2818,48 @@ void S3Client::RestoreObjectAsync(const RestoreObjectRequest& request, const Res
 void S3Client::RestoreObjectAsyncHelper(const RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RestoreObject(request), context);
+}
+
+SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss << "/";
+  ss << request.GetKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?select&select-type=2");
+  uri.SetQueryString(ss.str());
+  request.GetEventStreamDecoder().Reset();
+  request.SetResponseStreamFactory(
+      [&] { return Aws::New<Aws::Utils::Event::EventStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SelectObjectContentOutcome(NoResult());
+  }
+  else
+  {
+    return SelectObjectContentOutcome(outcome.GetError());
+  }
+}
+
+SelectObjectContentOutcomeCallable S3Client::SelectObjectContentCallable(SelectObjectContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SelectObjectContentOutcome() > >(ALLOCATION_TAG, [this, &request](){ return this->SelectObjectContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::SelectObjectContentAsync(SelectObjectContentRequest& request, const SelectObjectContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, &request, handler, context](){ this->SelectObjectContentAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::SelectObjectContentAsyncHelper(SelectObjectContentRequest& request, const SelectObjectContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SelectObjectContent(request), context);
 }
 
 UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const

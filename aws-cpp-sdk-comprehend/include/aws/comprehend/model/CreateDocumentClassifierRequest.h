@@ -196,37 +196,32 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. You can create a document classifier in
-     * any of the languages supported by Amazon Comprehend. However, all documents must
-     * be in the same language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. You can create a document classifier in
-     * any of the languages supported by Amazon Comprehend. However, all documents must
-     * be in the same language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. You can create a document classifier in
-     * any of the languages supported by Amazon Comprehend. However, all documents must
-     * be in the same language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. You can create a document classifier in
-     * any of the languages supported by Amazon Comprehend. However, all documents must
-     * be in the same language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline CreateDocumentClassifierRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. You can create a document classifier in
-     * any of the languages supported by Amazon Comprehend. However, all documents must
-     * be in the same language.</p>
+     * <p>The language of the input documents. You can specify English ("en") or
+     * Spanish ("es"). All documents must be in the same language.</p>
      */
     inline CreateDocumentClassifierRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

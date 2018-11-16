@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Information used to create a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the information used to create a WorkSpace.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceRequest">AWS
    * API Reference</a></p>
    */

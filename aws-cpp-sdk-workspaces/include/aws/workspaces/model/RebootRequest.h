@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information used to reboot a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the information used to reboot a WorkSpace.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebootRequest">AWS
    * API Reference</a></p>
    */
@@ -48,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline RebootRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 

@@ -858,7 +858,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -871,7 +871,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -886,7 +886,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -901,7 +901,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -914,7 +914,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -929,7 +929,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>

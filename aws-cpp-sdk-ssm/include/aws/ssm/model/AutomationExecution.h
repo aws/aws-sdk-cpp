@@ -22,8 +22,10 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/ExecutionMode.h>
 #include <aws/ssm/model/ResolvedTargets.h>
+#include <aws/ssm/model/ProgressCounters.h>
 #include <aws/ssm/model/StepExecution.h>
 #include <aws/ssm/model/Target.h>
+#include <aws/ssm/model/TargetLocation.h>
 #include <utility>
 
 namespace Aws
@@ -905,6 +907,80 @@ namespace Model
      */
     inline AutomationExecution& WithTarget(const char* value) { SetTarget(value); return *this;}
 
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline const Aws::Vector<TargetLocation>& GetTargetLocations() const{ return m_targetLocations; }
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline void SetTargetLocations(const Aws::Vector<TargetLocation>& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = value; }
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline void SetTargetLocations(Aws::Vector<TargetLocation>&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations = std::move(value); }
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline AutomationExecution& WithTargetLocations(const Aws::Vector<TargetLocation>& value) { SetTargetLocations(value); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline AutomationExecution& WithTargetLocations(Aws::Vector<TargetLocation>&& value) { SetTargetLocations(std::move(value)); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline AutomationExecution& AddTargetLocations(const TargetLocation& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(value); return *this; }
+
+    /**
+     * <p>The combination of AWS Regions and/or AWS accounts where you want to execute
+     * the Automation.</p>
+     */
+    inline AutomationExecution& AddTargetLocations(TargetLocation&& value) { m_targetLocationsHasBeenSet = true; m_targetLocations.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
+     * multi-Region and multi-account Automation execution.</p>
+     */
+    inline const ProgressCounters& GetProgressCounters() const{ return m_progressCounters; }
+
+    /**
+     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
+     * multi-Region and multi-account Automation execution.</p>
+     */
+    inline void SetProgressCounters(const ProgressCounters& value) { m_progressCountersHasBeenSet = true; m_progressCounters = value; }
+
+    /**
+     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
+     * multi-Region and multi-account Automation execution.</p>
+     */
+    inline void SetProgressCounters(ProgressCounters&& value) { m_progressCountersHasBeenSet = true; m_progressCounters = std::move(value); }
+
+    /**
+     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
+     * multi-Region and multi-account Automation execution.</p>
+     */
+    inline AutomationExecution& WithProgressCounters(const ProgressCounters& value) { SetProgressCounters(value); return *this;}
+
+    /**
+     * <p>An aggregate of step execution statuses displayed in the AWS Console for a
+     * multi-Region and multi-account Automation execution.</p>
+     */
+    inline AutomationExecution& WithProgressCounters(ProgressCounters&& value) { SetProgressCounters(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_automationExecutionId;
@@ -975,6 +1051,12 @@ namespace Model
 
     Aws::String m_target;
     bool m_targetHasBeenSet;
+
+    Aws::Vector<TargetLocation> m_targetLocations;
+    bool m_targetLocationsHasBeenSet;
+
+    ProgressCounters m_progressCounters;
+    bool m_progressCountersHasBeenSet;
   };
 
 } // namespace Model

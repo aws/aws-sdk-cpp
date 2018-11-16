@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Information about a WorkSpace that could not be rebooted
-   * (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), terminated
-   * (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped
+   * <p>Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>),
+   * rebuilt (<a>RebuildWorkspaces</a>), terminated (<a>TerminateWorkspaces</a>),
+   * started (<a>StartWorkspaces</a>), or stopped
    * (<a>StopWorkspaces</a>).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedWorkspaceChangeRequest">AWS
    * API Reference</a></p>
@@ -87,73 +87,80 @@ namespace Model
 
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * rebooted.</p>
      */
     inline FailedWorkspaceChangeRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

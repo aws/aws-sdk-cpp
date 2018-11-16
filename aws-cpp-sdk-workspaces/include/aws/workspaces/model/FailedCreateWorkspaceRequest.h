@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a WorkSpace that could not be created.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes a WorkSpace that cannot be created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/FailedCreateWorkspaceRequest">AWS
    * API Reference</a></p>
    */
@@ -76,73 +75,80 @@ namespace Model
 
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
-     * <p>The error code.</p>
+     * <p>The error code that is returned if the WorkSpace cannot be created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The textual error message.</p>
+     * <p>The text of the error message that is returned if the WorkSpace cannot be
+     * created.</p>
      */
     inline FailedCreateWorkspaceRequest& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

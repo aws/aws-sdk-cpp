@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a tag.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Tag">AWS API
    * Reference</a></p>
    */

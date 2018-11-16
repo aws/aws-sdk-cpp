@@ -250,6 +250,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline const Aws::String& GetEntityRecognizerArn() const{ return m_entityRecognizerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline void SetEntityRecognizerArn(const Aws::String& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline void SetEntityRecognizerArn(Aws::String&& value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline void SetEntityRecognizerArn(const char* value) { m_entityRecognizerArnHasBeenSet = true; m_entityRecognizerArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline EntitiesDetectionJobProperties& WithEntityRecognizerArn(const Aws::String& value) { SetEntityRecognizerArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline EntitiesDetectionJobProperties& WithEntityRecognizerArn(Aws::String&& value) { SetEntityRecognizerArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the entity recognizer.</p>
+     */
+    inline EntitiesDetectionJobProperties& WithEntityRecognizerArn(const char* value) { SetEntityRecognizerArn(value); return *this;}
+
+
+    /**
      * <p>The input data configuration that you supplied when you created the entities
      * detection job.</p>
      */
@@ -398,6 +434,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    Aws::String m_entityRecognizerArn;
+    bool m_entityRecognizerArnHasBeenSet;
 
     InputDataConfig m_inputDataConfig;
     bool m_inputDataConfigHasBeenSet;

@@ -21,6 +21,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/FailureDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -785,6 +787,73 @@ namespace Model
      */
     inline StepExecution& AddValidNextSteps(const char* value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
 
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline const TargetLocation& GetTargetLocation() const{ return m_targetLocation; }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline void SetTargetLocation(const TargetLocation& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline void SetTargetLocation(TargetLocation&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline StepExecution& WithTargetLocation(const TargetLocation& value) { SetTargetLocation(value); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline StepExecution& WithTargetLocation(TargetLocation&& value) { SetTargetLocation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stepName;
@@ -846,6 +915,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_validNextSteps;
     bool m_validNextStepsHasBeenSet;
+
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+
+    TargetLocation m_targetLocation;
+    bool m_targetLocationHasBeenSet;
   };
 
 } // namespace Model

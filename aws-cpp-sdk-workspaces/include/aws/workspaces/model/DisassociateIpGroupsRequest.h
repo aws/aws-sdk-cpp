@@ -46,78 +46,78 @@ namespace Model
 
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline DisassociateIpGroupsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline DisassociateIpGroupsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the directory.</p>
+     * <p>The identifier of the directory.</p>
      */
     inline DisassociateIpGroupsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
 
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline DisassociateIpGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline DisassociateIpGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline DisassociateIpGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline DisassociateIpGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of one or more IP access control groups.</p>
+     * <p>The identifiers of one or more IP access control groups.</p>
      */
     inline DisassociateIpGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
 

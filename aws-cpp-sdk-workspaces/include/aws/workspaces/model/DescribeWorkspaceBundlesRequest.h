@@ -46,98 +46,98 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBundleIds() const{ return m_bundleIds; }
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline void SetBundleIds(const Aws::Vector<Aws::String>& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithBundleIds(const Aws::Vector<Aws::String>& value) { SetBundleIds(value); return *this;}
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(const Aws::String& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the bundles. This parameter cannot be combined with any other
-     * filter.</p>
+     * <p>The identifiers of the bundles. You cannot combine this parameter with any
+     * other filter.</p>
      */
     inline DescribeWorkspaceBundlesRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */
     inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The owner of the bundles. This parameter cannot be combined with any other
+     * <p>The owner of the bundles. You cannot combine this parameter with any other
      * filter.</p> <p>Specify <code>AMAZON</code> to describe the bundles provided by
      * AWS or null to describe the bundles that belong to your account.</p>
      */

@@ -27,6 +27,7 @@ StartEntitiesDetectionJobRequest::StartEntitiesDetectionJobRequest() :
     m_outputDataConfigHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
+    m_entityRecognizerArnHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
@@ -59,6 +60,12 @@ Aws::String StartEntitiesDetectionJobRequest::SerializePayload() const
   if(m_jobNameHasBeenSet)
   {
    payload.WithString("JobName", m_jobName);
+
+  }
+
+  if(m_entityRecognizerArnHasBeenSet)
+  {
+   payload.WithString("EntityRecognizerArn", m_entityRecognizerArn);
 
   }
 

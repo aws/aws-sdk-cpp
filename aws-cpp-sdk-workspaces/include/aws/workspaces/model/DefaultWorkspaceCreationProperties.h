@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about defaults used to create a WorkSpace.</p><p><h3>See
+   * <p>Describes the default values used to create a WorkSpace.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties">AWS
    * API Reference</a></p>
@@ -49,17 +49,17 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline bool GetEnableWorkDocs() const{ return m_enableWorkDocs; }
 
     /**
-     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline void SetEnableWorkDocs(bool value) { m_enableWorkDocsHasBeenSet = true; m_enableWorkDocs = value; }
 
     /**
-     * <p>Indicates whether the directory is enabled for Amazon WorkDocs.</p>
+     * <p>Specifies whether the directory is enabled for Amazon WorkDocs.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithEnableWorkDocs(bool value) { SetEnableWorkDocs(value); return *this;}
 
@@ -170,19 +170,19 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * <p>Specifies whether the WorkSpace user is an administrator on the
      * WorkSpace.</p>
      */
     inline bool GetUserEnabledAsLocalAdministrator() const{ return m_userEnabledAsLocalAdministrator; }
 
     /**
-     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * <p>Specifies whether the WorkSpace user is an administrator on the
      * WorkSpace.</p>
      */
     inline void SetUserEnabledAsLocalAdministrator(bool value) { m_userEnabledAsLocalAdministratorHasBeenSet = true; m_userEnabledAsLocalAdministrator = value; }
 
     /**
-     * <p>Indicates whether the WorkSpace user is an administrator on the
+     * <p>Specifies whether the WorkSpace user is an administrator on the
      * WorkSpace.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithUserEnabledAsLocalAdministrator(bool value) { SetUserEnabledAsLocalAdministrator(value); return *this;}

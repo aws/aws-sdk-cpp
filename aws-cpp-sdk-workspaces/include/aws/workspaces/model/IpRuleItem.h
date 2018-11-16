@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a rule for an IP access control group.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes a rule for an IP access control group.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/IpRuleItem">AWS
    * API Reference</a></p>
    */

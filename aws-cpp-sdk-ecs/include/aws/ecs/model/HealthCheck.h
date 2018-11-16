@@ -67,7 +67,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -81,7 +81,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -95,7 +95,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -109,7 +109,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -123,7 +123,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -137,7 +137,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -151,7 +151,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
@@ -165,7 +165,7 @@ namespace Model
      * the command arguments directly, or <code>CMD-SHELL</code> to run the command
      * with the container's default shell. For example:</p> <p> <code>[ "CMD-SHELL",
      * "curl -f http://localhost/ || exit 1" ]</code> </p> <p>An exit code of 0
-     * indicates success, and a non-zero exit code indicates failure. For more
+     * indicates success, and non-zero exit code indicates failure. For more
      * information, see <code>HealthCheck</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a

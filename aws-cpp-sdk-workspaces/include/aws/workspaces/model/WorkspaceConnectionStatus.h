@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline WorkspaceConnectionStatus& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline WorkspaceConnectionStatus& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the WorkSpace.</p>
+     * <p>The identifier of the WorkSpace.</p>
      */
     inline WorkspaceConnectionStatus& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
@@ -117,27 +117,27 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of the connection state check.</p>
+     * <p>The timestamp of the connection status check.</p>
      */
     inline const Aws::Utils::DateTime& GetConnectionStateCheckTimestamp() const{ return m_connectionStateCheckTimestamp; }
 
     /**
-     * <p>The timestamp of the connection state check.</p>
+     * <p>The timestamp of the connection status check.</p>
      */
     inline void SetConnectionStateCheckTimestamp(const Aws::Utils::DateTime& value) { m_connectionStateCheckTimestampHasBeenSet = true; m_connectionStateCheckTimestamp = value; }
 
     /**
-     * <p>The timestamp of the connection state check.</p>
+     * <p>The timestamp of the connection status check.</p>
      */
     inline void SetConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { m_connectionStateCheckTimestampHasBeenSet = true; m_connectionStateCheckTimestamp = std::move(value); }
 
     /**
-     * <p>The timestamp of the connection state check.</p>
+     * <p>The timestamp of the connection status check.</p>
      */
     inline WorkspaceConnectionStatus& WithConnectionStateCheckTimestamp(const Aws::Utils::DateTime& value) { SetConnectionStateCheckTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp of the connection state check.</p>
+     * <p>The timestamp of the connection status check.</p>
      */
     inline WorkspaceConnectionStatus& WithConnectionStateCheckTimestamp(Aws::Utils::DateTime&& value) { SetConnectionStateCheckTimestamp(std::move(value)); return *this;}
 
