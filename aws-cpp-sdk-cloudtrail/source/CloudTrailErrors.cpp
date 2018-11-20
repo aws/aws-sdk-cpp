@@ -37,12 +37,15 @@ static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::Has
 static const int INSUFFICIENT_SNS_TOPIC_POLICY_HASH = HashingUtils::HashString("InsufficientSnsTopicPolicyException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
+static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
 static const int INVALID_HOME_REGION_HASH = HashingUtils::HashString("InvalidHomeRegionException");
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
 static const int TRAIL_ALREADY_EXISTS_HASH = HashingUtils::HashString("TrailAlreadyExistsException");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH = HashingUtils::HashString("CloudWatchLogsDeliveryUnavailableException");
+static const int CLOUD_TRAIL_ACCESS_NOT_ENABLED_HASH = HashingUtils::HashString("CloudTrailAccessNotEnabledException");
+static const int INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientDependencyServiceAccessPermissionException");
 static const int CLOUD_TRAIL_A_R_N_INVALID_HASH = HashingUtils::HashString("CloudTrailARNInvalidException");
 static const int TAGS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagsLimitExceededException");
 static const int INVALID_S3_BUCKET_NAME_HASH = HashingUtils::HashString("InvalidS3BucketNameException");
@@ -50,8 +53,10 @@ static const int INVALID_MAX_RESULTS_HASH = HashingUtils::HashString("InvalidMax
 static const int INVALID_CLOUD_WATCH_LOGS_ROLE_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsRoleArnException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int INVALID_TRAIL_NAME_HASH = HashingUtils::HashString("InvalidTrailNameException");
+static const int ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString("OrganizationsNotInUseException");
 static const int INVALID_KMS_KEY_ID_HASH = HashingUtils::HashString("InvalidKmsKeyIdException");
 static const int INVALID_SNS_TOPIC_NAME_HASH = HashingUtils::HashString("InvalidSnsTopicNameException");
+static const int NOT_ORGANIZATION_MASTER_ACCOUNT_HASH = HashingUtils::HashString("NotOrganizationMasterAccountException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
 static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
@@ -102,6 +107,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS), false);
   }
+  else if (hashCode == ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), false);
+  }
   else if (hashCode == INVALID_HOME_REGION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_HOME_REGION), false);
@@ -125,6 +134,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE), false);
+  }
+  else if (hashCode == CLOUD_TRAIL_ACCESS_NOT_ENABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_ACCESS_NOT_ENABLED), false);
+  }
+  else if (hashCode == INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION), false);
   }
   else if (hashCode == CLOUD_TRAIL_A_R_N_INVALID_HASH)
   {
@@ -154,6 +171,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TRAIL_NAME), false);
   }
+  else if (hashCode == ORGANIZATIONS_NOT_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATIONS_NOT_IN_USE), false);
+  }
   else if (hashCode == INVALID_KMS_KEY_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_KMS_KEY_ID), false);
@@ -161,6 +182,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_SNS_TOPIC_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SNS_TOPIC_NAME), false);
+  }
+  else if (hashCode == NOT_ORGANIZATION_MASTER_ACCOUNT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NOT_ORGANIZATION_MASTER_ACCOUNT), false);
   }
   else if (hashCode == INSUFFICIENT_ENCRYPTION_POLICY_HASH)
   {

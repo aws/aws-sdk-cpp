@@ -27,6 +27,7 @@ using namespace Aws::Http;
 
 CancelJobRequest::CancelJobRequest() : 
     m_jobIdHasBeenSet(false),
+    m_reasonCodeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_force(false),
     m_forceHasBeenSet(false)
@@ -36,6 +37,12 @@ CancelJobRequest::CancelJobRequest() :
 Aws::String CancelJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_reasonCodeHasBeenSet)
+  {
+   payload.WithString("reasonCode", m_reasonCode);
+
+  }
 
   if(m_commentHasBeenSet)
   {

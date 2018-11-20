@@ -106,6 +106,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether an activity is indirect or direct. An indirect activity
+     * results from a direct activity performed on a parent resource. For example,
+     * sharing a parent folder (the direct activity) shares all of the subfolders and
+     * documents within the parent folder (the indirect activity).</p>
+     */
+    inline bool GetIsIndirectActivity() const{ return m_isIndirectActivity; }
+
+    /**
+     * <p>Indicates whether an activity is indirect or direct. An indirect activity
+     * results from a direct activity performed on a parent resource. For example,
+     * sharing a parent folder (the direct activity) shares all of the subfolders and
+     * documents within the parent folder (the indirect activity).</p>
+     */
+    inline void SetIsIndirectActivity(bool value) { m_isIndirectActivityHasBeenSet = true; m_isIndirectActivity = value; }
+
+    /**
+     * <p>Indicates whether an activity is indirect or direct. An indirect activity
+     * results from a direct activity performed on a parent resource. For example,
+     * sharing a parent folder (the direct activity) shares all of the subfolders and
+     * documents within the parent folder (the indirect activity).</p>
+     */
+    inline Activity& WithIsIndirectActivity(bool value) { SetIsIndirectActivity(value); return *this;}
+
+
+    /**
      * <p>The ID of the organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
@@ -297,6 +322,9 @@ namespace Model
 
     Aws::Utils::DateTime m_timeStamp;
     bool m_timeStampHasBeenSet;
+
+    bool m_isIndirectActivity;
+    bool m_isIndirectActivityHasBeenSet;
 
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;

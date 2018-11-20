@@ -29,6 +29,7 @@
 #include <aws/devicefarm/model/Radios.h>
 #include <aws/devicefarm/model/Location.h>
 #include <aws/devicefarm/model/CustomerArtifactPaths.h>
+#include <aws/devicefarm/model/DeviceSelectionResult.h>
 #include <utility>
 
 namespace Aws
@@ -1047,6 +1048,32 @@ namespace Model
      */
     inline Run& WithTestSpecArn(const char* value) { SetTestSpecArn(value); return *this;}
 
+
+    /**
+     * <p>The results of a device filter used to select the devices for a test run.</p>
+     */
+    inline const DeviceSelectionResult& GetDeviceSelectionResult() const{ return m_deviceSelectionResult; }
+
+    /**
+     * <p>The results of a device filter used to select the devices for a test run.</p>
+     */
+    inline void SetDeviceSelectionResult(const DeviceSelectionResult& value) { m_deviceSelectionResultHasBeenSet = true; m_deviceSelectionResult = value; }
+
+    /**
+     * <p>The results of a device filter used to select the devices for a test run.</p>
+     */
+    inline void SetDeviceSelectionResult(DeviceSelectionResult&& value) { m_deviceSelectionResultHasBeenSet = true; m_deviceSelectionResult = std::move(value); }
+
+    /**
+     * <p>The results of a device filter used to select the devices for a test run.</p>
+     */
+    inline Run& WithDeviceSelectionResult(const DeviceSelectionResult& value) { SetDeviceSelectionResult(value); return *this;}
+
+    /**
+     * <p>The results of a device filter used to select the devices for a test run.</p>
+     */
+    inline Run& WithDeviceSelectionResult(DeviceSelectionResult&& value) { SetDeviceSelectionResult(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1138,6 +1165,9 @@ namespace Model
 
     Aws::String m_testSpecArn;
     bool m_testSpecArnHasBeenSet;
+
+    DeviceSelectionResult m_deviceSelectionResult;
+    bool m_deviceSelectionResultHasBeenSet;
   };
 
 } // namespace Model

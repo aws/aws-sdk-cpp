@@ -31,6 +31,7 @@
 #include <aws/workspaces/model/DeleteWorkspaceImageResult.h>
 #include <aws/workspaces/model/DescribeAccountResult.h>
 #include <aws/workspaces/model/DescribeAccountModificationsResult.h>
+#include <aws/workspaces/model/DescribeClientPropertiesResult.h>
 #include <aws/workspaces/model/DescribeIpGroupsResult.h>
 #include <aws/workspaces/model/DescribeTagsResult.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesResult.h>
@@ -42,6 +43,7 @@
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
 #include <aws/workspaces/model/ModifyAccountResult.h>
+#include <aws/workspaces/model/ModifyClientPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspacePropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceStateResult.h>
 #include <aws/workspaces/model/RebootWorkspacesResult.h>
@@ -101,6 +103,7 @@ namespace Model
         class DeleteWorkspaceImageRequest;
         class DescribeAccountRequest;
         class DescribeAccountModificationsRequest;
+        class DescribeClientPropertiesRequest;
         class DescribeIpGroupsRequest;
         class DescribeTagsRequest;
         class DescribeWorkspaceBundlesRequest;
@@ -112,6 +115,7 @@ namespace Model
         class ImportWorkspaceImageRequest;
         class ListAvailableManagementCidrRangesRequest;
         class ModifyAccountRequest;
+        class ModifyClientPropertiesRequest;
         class ModifyWorkspacePropertiesRequest;
         class ModifyWorkspaceStateRequest;
         class RebootWorkspacesRequest;
@@ -132,6 +136,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteWorkspaceImageResult, Aws::Client::AWSError<WorkSpacesErrors>> DeleteWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeAccountOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountModificationsResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeAccountModificationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeClientPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeClientPropertiesOutcome;
         typedef Aws::Utils::Outcome<DescribeIpGroupsResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeIpGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkspaceBundlesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeWorkspaceBundlesOutcome;
@@ -143,6 +148,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportWorkspaceImageResult, Aws::Client::AWSError<WorkSpacesErrors>> ImportWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, Aws::Client::AWSError<WorkSpacesErrors>> ListAvailableManagementCidrRangesOutcome;
         typedef Aws::Utils::Outcome<ModifyAccountResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyAccountOutcome;
+        typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyClientPropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspacePropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspacePropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspaceStateResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspaceStateOutcome;
         typedef Aws::Utils::Outcome<RebootWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebootWorkspacesOutcome;
@@ -163,6 +169,7 @@ namespace Model
         typedef std::future<DeleteWorkspaceImageOutcome> DeleteWorkspaceImageOutcomeCallable;
         typedef std::future<DescribeAccountOutcome> DescribeAccountOutcomeCallable;
         typedef std::future<DescribeAccountModificationsOutcome> DescribeAccountModificationsOutcomeCallable;
+        typedef std::future<DescribeClientPropertiesOutcome> DescribeClientPropertiesOutcomeCallable;
         typedef std::future<DescribeIpGroupsOutcome> DescribeIpGroupsOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DescribeWorkspaceBundlesOutcome> DescribeWorkspaceBundlesOutcomeCallable;
@@ -174,6 +181,7 @@ namespace Model
         typedef std::future<ImportWorkspaceImageOutcome> ImportWorkspaceImageOutcomeCallable;
         typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
         typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
+        typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
         typedef std::future<ModifyWorkspacePropertiesOutcome> ModifyWorkspacePropertiesOutcomeCallable;
         typedef std::future<ModifyWorkspaceStateOutcome> ModifyWorkspaceStateOutcomeCallable;
         typedef std::future<RebootWorkspacesOutcome> RebootWorkspacesOutcomeCallable;
@@ -197,6 +205,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteWorkspaceImageRequest&, const Model::DeleteWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountRequest&, const Model::DescribeAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountModificationsRequest&, const Model::DescribeAccountModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountModificationsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientPropertiesRequest&, const Model::DescribeClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeIpGroupsRequest&, const Model::DescribeIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeWorkspaceBundlesRequest&, const Model::DescribeWorkspaceBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkspaceBundlesResponseReceivedHandler;
@@ -208,6 +217,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportWorkspaceImageRequest&, const Model::ImportWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspacePropertiesRequest&, const Model::ModifyWorkspacePropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspacePropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceStateRequest&, const Model::ModifyWorkspaceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceStateResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebootWorkspacesRequest&, const Model::RebootWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootWorkspacesResponseReceivedHandler;
@@ -569,6 +579,34 @@ namespace Model
         virtual void DescribeAccountModificationsAsync(const Model::DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a list that describes one or more specified Amazon WorkSpaces
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeClientPropertiesOutcome DescribeClientProperties(const Model::DescribeClientPropertiesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one or more specified Amazon WorkSpaces
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeClientPropertiesOutcomeCallable DescribeClientPropertiesCallable(const Model::DescribeClientPropertiesRequest& request) const;
+
+        /**
+         * <p>Retrieves a list that describes one or more specified Amazon WorkSpaces
+         * clients.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeClientProperties">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeClientPropertiesAsync(const Model::DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more of your IP access control groups.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeIpGroups">AWS
@@ -904,6 +942,34 @@ namespace Model
         virtual void ModifyAccountAsync(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the properties of the specified Amazon WorkSpaces
+         * client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyClientPropertiesOutcome ModifyClientProperties(const Model::ModifyClientPropertiesRequest& request) const;
+
+        /**
+         * <p>Modifies the properties of the specified Amazon WorkSpaces
+         * client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyClientPropertiesOutcomeCallable ModifyClientPropertiesCallable(const Model::ModifyClientPropertiesRequest& request) const;
+
+        /**
+         * <p>Modifies the properties of the specified Amazon WorkSpaces
+         * client.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyClientProperties">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyClientPropertiesAsync(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceProperties">AWS
          * API Reference</a></p>
@@ -1224,6 +1290,7 @@ namespace Model
         void DeleteWorkspaceImageAsyncHelper(const Model::DeleteWorkspaceImageRequest& request, const DeleteWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAsyncHelper(const Model::DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountModificationsAsyncHelper(const Model::DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeClientPropertiesAsyncHelper(const Model::DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeIpGroupsAsyncHelper(const Model::DescribeIpGroupsRequest& request, const DescribeIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkspaceBundlesAsyncHelper(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1235,6 +1302,7 @@ namespace Model
         void ImportWorkspaceImageAsyncHelper(const Model::ImportWorkspaceImageRequest& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableManagementCidrRangesAsyncHelper(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAccountAsyncHelper(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyClientPropertiesAsyncHelper(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspacePropertiesAsyncHelper(const Model::ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspaceStateAsyncHelper(const Model::ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootWorkspacesAsyncHelper(const Model::RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

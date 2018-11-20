@@ -477,6 +477,22 @@ namespace Model
      */
     inline UpdateTrailResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrail = value; }
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline UpdateTrailResult& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -500,6 +516,8 @@ namespace Model
     Aws::String m_cloudWatchLogsRoleArn;
 
     Aws::String m_kmsKeyId;
+
+    bool m_isOrganizationTrail;
   };
 
 } // namespace Model

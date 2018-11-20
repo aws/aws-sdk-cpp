@@ -313,6 +313,42 @@ namespace Model
      */
     inline DescribeThingResult& WithVersion(long long value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupName = value; }
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline void SetBillingGroupName(const char* value) { m_billingGroupName.assign(value); }
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline DescribeThingResult& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline DescribeThingResult& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the billing group the thing belongs to.</p>
+     */
+    inline DescribeThingResult& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+
   private:
 
     Aws::String m_defaultClientId;
@@ -328,6 +364,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_attributes;
 
     long long m_version;
+
+    Aws::String m_billingGroupName;
   };
 
 } // namespace Model

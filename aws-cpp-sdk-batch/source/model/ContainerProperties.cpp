@@ -44,7 +44,8 @@ ContainerProperties::ContainerProperties() :
     m_privileged(false),
     m_privilegedHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_privileged(false),
     m_privilegedHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_userHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +280,12 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_userHasBeenSet)
   {
    payload.WithString("user", m_user);
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
 
   }
 

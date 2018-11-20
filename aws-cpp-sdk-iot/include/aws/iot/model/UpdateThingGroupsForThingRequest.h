@@ -160,6 +160,31 @@ namespace Model
      */
     inline UpdateThingGroupsForThingRequest& AddThingGroupsToRemove(const char* value) { m_thingGroupsToRemoveHasBeenSet = true; m_thingGroupsToRemove.push_back(value); return *this; }
 
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline void SetOverrideDynamicGroups(bool value) { m_overrideDynamicGroupsHasBeenSet = true; m_overrideDynamicGroups = value; }
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline UpdateThingGroupsForThingRequest& WithOverrideDynamicGroups(bool value) { SetOverrideDynamicGroups(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
@@ -170,6 +195,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_thingGroupsToRemove;
     bool m_thingGroupsToRemoveHasBeenSet;
+
+    bool m_overrideDynamicGroups;
+    bool m_overrideDynamicGroupsHasBeenSet;
   };
 
 } // namespace Model

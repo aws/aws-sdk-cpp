@@ -20,6 +20,7 @@
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/ContainerProperties.h>
 #include <aws/batch/model/JobTimeout.h>
+#include <aws/batch/model/NodeProperties.h>
 #include <utility>
 
 namespace Aws
@@ -401,6 +402,32 @@ namespace Model
      */
     inline JobDefinition& WithTimeout(JobTimeout&& value) { SetTimeout(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline JobDefinition& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
+
+    /**
+     * <p>An object with various properties specific to multi-node parallel jobs.</p>
+     */
+    inline JobDefinition& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobDefinitionName;
@@ -429,6 +456,9 @@ namespace Model
 
     JobTimeout m_timeout;
     bool m_timeoutHasBeenSet;
+
+    NodeProperties m_nodeProperties;
+    bool m_nodePropertiesHasBeenSet;
   };
 
 } // namespace Model

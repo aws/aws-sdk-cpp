@@ -919,6 +919,56 @@ namespace Model
      */
     inline ContainerProperties& WithUser(const char* value) { SetUser(value); return *this;}
 
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
   private:
 
     Aws::String m_image;
@@ -956,6 +1006,9 @@ namespace Model
 
     Aws::String m_user;
     bool m_userHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
   };
 
 } // namespace Model

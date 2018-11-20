@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerOverrides.h>
+#include <aws/batch/model/NodeOverrides.h>
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/JobDependency.h>
@@ -193,9 +194,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
@@ -204,9 +205,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
@@ -215,9 +216,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
@@ -226,9 +227,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline SubmitJobRequest& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
@@ -237,9 +238,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline SubmitJobRequest& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
@@ -248,9 +249,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline SubmitJobRequest& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
@@ -259,9 +260,9 @@ namespace Model
      * jobs. You can specify a <code>SEQUENTIAL</code> type dependency without
      * specifying a job ID for array jobs so that each child array job completes
      * sequentially, starting at index 0. You can also specify an <code>N_TO_N</code>
-     * type dependency with a job ID for array jobs so that each index child of this
-     * job must wait for the corresponding index child of each dependency to complete
-     * before it can begin.</p>
+     * type dependency with a job ID for array jobs. In that case, each index child of
+     * this job must wait for the corresponding index child of each dependency to
+     * complete before it can begin.</p>
      */
     inline SubmitJobRequest& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 
@@ -470,6 +471,37 @@ namespace Model
 
 
     /**
+     * <p>A list of node overrides in JSON format that specify the node range to target
+     * and the container overrides for that node range.</p>
+     */
+    inline const NodeOverrides& GetNodeOverrides() const{ return m_nodeOverrides; }
+
+    /**
+     * <p>A list of node overrides in JSON format that specify the node range to target
+     * and the container overrides for that node range.</p>
+     */
+    inline void SetNodeOverrides(const NodeOverrides& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = value; }
+
+    /**
+     * <p>A list of node overrides in JSON format that specify the node range to target
+     * and the container overrides for that node range.</p>
+     */
+    inline void SetNodeOverrides(NodeOverrides&& value) { m_nodeOverridesHasBeenSet = true; m_nodeOverrides = std::move(value); }
+
+    /**
+     * <p>A list of node overrides in JSON format that specify the node range to target
+     * and the container overrides for that node range.</p>
+     */
+    inline SubmitJobRequest& WithNodeOverrides(const NodeOverrides& value) { SetNodeOverrides(value); return *this;}
+
+    /**
+     * <p>A list of node overrides in JSON format that specify the node range to target
+     * and the container overrides for that node range.</p>
+     */
+    inline SubmitJobRequest& WithNodeOverrides(NodeOverrides&& value) { SetNodeOverrides(std::move(value)); return *this;}
+
+
+    /**
      * <p>The retry strategy to use for failed jobs from this <a>SubmitJob</a>
      * operation. When a retry strategy is specified here, it overrides the retry
      * strategy defined in the job definition.</p>
@@ -592,6 +624,9 @@ namespace Model
 
     ContainerOverrides m_containerOverrides;
     bool m_containerOverridesHasBeenSet;
+
+    NodeOverrides m_nodeOverrides;
+    bool m_nodeOverridesHasBeenSet;
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet;

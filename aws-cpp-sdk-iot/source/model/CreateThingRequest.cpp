@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateThingRequest::CreateThingRequest() : 
     m_thingNameHasBeenSet(false),
     m_thingTypeNameHasBeenSet(false),
-    m_attributePayloadHasBeenSet(false)
+    m_attributePayloadHasBeenSet(false),
+    m_billingGroupNameHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,12 @@ Aws::String CreateThingRequest::SerializePayload() const
   if(m_attributePayloadHasBeenSet)
   {
    payload.WithObject("attributePayload", m_attributePayload.Jsonize());
+
+  }
+
+  if(m_billingGroupNameHasBeenSet)
+  {
+   payload.WithString("billingGroupName", m_billingGroupName);
 
   }
 

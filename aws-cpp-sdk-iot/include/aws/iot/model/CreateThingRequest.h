@@ -153,6 +153,42 @@ namespace Model
      */
     inline CreateThingRequest& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline const Aws::String& GetBillingGroupName() const{ return m_billingGroupName; }
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline void SetBillingGroupName(const Aws::String& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = value; }
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline void SetBillingGroupName(Aws::String&& value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline void SetBillingGroupName(const char* value) { m_billingGroupNameHasBeenSet = true; m_billingGroupName.assign(value); }
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline CreateThingRequest& WithBillingGroupName(const Aws::String& value) { SetBillingGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline CreateThingRequest& WithBillingGroupName(Aws::String&& value) { SetBillingGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the billing group the thing will be added to.</p>
+     */
+    inline CreateThingRequest& WithBillingGroupName(const char* value) { SetBillingGroupName(value); return *this;}
+
   private:
 
     Aws::String m_thingName;
@@ -163,6 +199,9 @@ namespace Model
 
     AttributePayload m_attributePayload;
     bool m_attributePayloadHasBeenSet;
+
+    Aws::String m_billingGroupName;
+    bool m_billingGroupNameHasBeenSet;
   };
 
 } // namespace Model

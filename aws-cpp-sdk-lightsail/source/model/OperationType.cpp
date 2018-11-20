@@ -64,6 +64,16 @@ namespace Aws
         static const int CreateDiskSnapshot_HASH = HashingUtils::HashString("CreateDiskSnapshot");
         static const int DeleteDiskSnapshot_HASH = HashingUtils::HashString("DeleteDiskSnapshot");
         static const int CreateDiskFromSnapshot_HASH = HashingUtils::HashString("CreateDiskFromSnapshot");
+        static const int CreateRelationalDatabase_HASH = HashingUtils::HashString("CreateRelationalDatabase");
+        static const int UpdateRelationalDatabase_HASH = HashingUtils::HashString("UpdateRelationalDatabase");
+        static const int DeleteRelationalDatabase_HASH = HashingUtils::HashString("DeleteRelationalDatabase");
+        static const int CreateRelationalDatabaseFromSnapshot_HASH = HashingUtils::HashString("CreateRelationalDatabaseFromSnapshot");
+        static const int CreateRelationalDatabaseSnapshot_HASH = HashingUtils::HashString("CreateRelationalDatabaseSnapshot");
+        static const int DeleteRelationalDatabaseSnapshot_HASH = HashingUtils::HashString("DeleteRelationalDatabaseSnapshot");
+        static const int UpdateRelationalDatabaseParameters_HASH = HashingUtils::HashString("UpdateRelationalDatabaseParameters");
+        static const int StartRelationalDatabase_HASH = HashingUtils::HashString("StartRelationalDatabase");
+        static const int RebootRelationalDatabase_HASH = HashingUtils::HashString("RebootRelationalDatabase");
+        static const int StopRelationalDatabase_HASH = HashingUtils::HashString("StopRelationalDatabase");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -205,6 +215,46 @@ namespace Aws
           {
             return OperationType::CreateDiskFromSnapshot;
           }
+          else if (hashCode == CreateRelationalDatabase_HASH)
+          {
+            return OperationType::CreateRelationalDatabase;
+          }
+          else if (hashCode == UpdateRelationalDatabase_HASH)
+          {
+            return OperationType::UpdateRelationalDatabase;
+          }
+          else if (hashCode == DeleteRelationalDatabase_HASH)
+          {
+            return OperationType::DeleteRelationalDatabase;
+          }
+          else if (hashCode == CreateRelationalDatabaseFromSnapshot_HASH)
+          {
+            return OperationType::CreateRelationalDatabaseFromSnapshot;
+          }
+          else if (hashCode == CreateRelationalDatabaseSnapshot_HASH)
+          {
+            return OperationType::CreateRelationalDatabaseSnapshot;
+          }
+          else if (hashCode == DeleteRelationalDatabaseSnapshot_HASH)
+          {
+            return OperationType::DeleteRelationalDatabaseSnapshot;
+          }
+          else if (hashCode == UpdateRelationalDatabaseParameters_HASH)
+          {
+            return OperationType::UpdateRelationalDatabaseParameters;
+          }
+          else if (hashCode == StartRelationalDatabase_HASH)
+          {
+            return OperationType::StartRelationalDatabase;
+          }
+          else if (hashCode == RebootRelationalDatabase_HASH)
+          {
+            return OperationType::RebootRelationalDatabase;
+          }
+          else if (hashCode == StopRelationalDatabase_HASH)
+          {
+            return OperationType::StopRelationalDatabase;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -287,6 +337,26 @@ namespace Aws
             return "DeleteDiskSnapshot";
           case OperationType::CreateDiskFromSnapshot:
             return "CreateDiskFromSnapshot";
+          case OperationType::CreateRelationalDatabase:
+            return "CreateRelationalDatabase";
+          case OperationType::UpdateRelationalDatabase:
+            return "UpdateRelationalDatabase";
+          case OperationType::DeleteRelationalDatabase:
+            return "DeleteRelationalDatabase";
+          case OperationType::CreateRelationalDatabaseFromSnapshot:
+            return "CreateRelationalDatabaseFromSnapshot";
+          case OperationType::CreateRelationalDatabaseSnapshot:
+            return "CreateRelationalDatabaseSnapshot";
+          case OperationType::DeleteRelationalDatabaseSnapshot:
+            return "DeleteRelationalDatabaseSnapshot";
+          case OperationType::UpdateRelationalDatabaseParameters:
+            return "UpdateRelationalDatabaseParameters";
+          case OperationType::StartRelationalDatabase:
+            return "StartRelationalDatabase";
+          case OperationType::RebootRelationalDatabase:
+            return "RebootRelationalDatabase";
+          case OperationType::StopRelationalDatabase:
+            return "StopRelationalDatabase";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -199,12 +199,12 @@ namespace Model
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
-     * automatically, based on job queue demand.</p> <p>If the state is
+     * automatically, based on the job queue demand.</p> <p>If the state is
      * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state do not scale out; however, they
-     * scale in to <code>minvCpus</code> value once instances become idle.</p>
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline const CEState& GetState() const{ return m_state; }
 
@@ -214,12 +214,12 @@ namespace Model
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
-     * automatically, based on job queue demand.</p> <p>If the state is
+     * automatically, based on the job queue demand.</p> <p>If the state is
      * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state do not scale out; however, they
-     * scale in to <code>minvCpus</code> value once instances become idle.</p>
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -229,12 +229,12 @@ namespace Model
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
-     * automatically, based on job queue demand.</p> <p>If the state is
+     * automatically, based on the job queue demand.</p> <p>If the state is
      * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state do not scale out; however, they
-     * scale in to <code>minvCpus</code> value once instances become idle.</p>
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline void SetState(CEState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -244,12 +244,12 @@ namespace Model
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
-     * automatically, based on job queue demand.</p> <p>If the state is
+     * automatically, based on the job queue demand.</p> <p>If the state is
      * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state do not scale out; however, they
-     * scale in to <code>minvCpus</code> value once instances become idle.</p>
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline ComputeEnvironmentDetail& WithState(const CEState& value) { SetState(value); return *this;}
 
@@ -259,12 +259,12 @@ namespace Model
      * <code>ENABLED</code>, then the AWS Batch scheduler can attempt to place jobs
      * from an associated job queue on the compute resources within the environment. If
      * the compute environment is managed, then it can scale its instances out or in
-     * automatically, based on job queue demand.</p> <p>If the state is
+     * automatically, based on the job queue demand.</p> <p>If the state is
      * <code>DISABLED</code>, then the AWS Batch scheduler does not attempt to place
      * jobs within the environment. Jobs in a <code>STARTING</code> or
      * <code>RUNNING</code> state continue to progress normally. Managed compute
-     * environments in the <code>DISABLED</code> state do not scale out; however, they
-     * scale in to <code>minvCpus</code> value once instances become idle.</p>
+     * environments in the <code>DISABLED</code> state do not scale out. However, they
+     * scale in to <code>minvCpus</code> value after instances become idle.</p>
      */
     inline ComputeEnvironmentDetail& WithState(CEState&& value) { SetState(std::move(value)); return *this;}
 

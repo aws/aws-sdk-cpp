@@ -1692,16 +1692,16 @@ namespace Model
         virtual void ListRunsAsync(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSamplesOutcome ListSamples(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          *
@@ -1710,8 +1710,8 @@ namespace Model
         virtual Model::ListSamplesOutcomeCallable ListSamplesCallable(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          *

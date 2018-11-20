@@ -48,24 +48,24 @@ namespace Model
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
      * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
-     * greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.</p>
+     * greater than one, the job is retried on failure the same number of attempts as
+     * the value.</p>
      */
     inline int GetAttempts() const{ return m_attempts; }
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
      * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
-     * greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.</p>
+     * greater than one, the job is retried on failure the same number of attempts as
+     * the value.</p>
      */
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
 
     /**
      * <p>The number of times to move a job to the <code>RUNNABLE</code> status. You
      * may specify between 1 and 10 attempts. If the value of <code>attempts</code> is
-     * greater than one, the job is retried if it fails until it has moved to
-     * <code>RUNNABLE</code> that many times.</p>
+     * greater than one, the job is retried on failure the same number of attempts as
+     * the value.</p>
      */
     inline RetryStrategy& WithAttempts(int value) { SetAttempts(value); return *this;}
 

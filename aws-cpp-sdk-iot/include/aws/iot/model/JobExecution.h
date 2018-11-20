@@ -340,19 +340,28 @@ namespace Model
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline long long GetApproximateSecondsBeforeTimedOut() const{ return m_approximateSecondsBeforeTimedOut; }
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline void SetApproximateSecondsBeforeTimedOut(long long value) { m_approximateSecondsBeforeTimedOutHasBeenSet = true; m_approximateSecondsBeforeTimedOut = value; }
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline JobExecution& WithApproximateSecondsBeforeTimedOut(long long value) { SetApproximateSecondsBeforeTimedOut(value); return *this;}
 

@@ -28,6 +28,7 @@
 #include <aws/iot/IoTEndpoint.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/model/AcceptCertificateTransferRequest.h>
+#include <aws/iot/model/AddThingToBillingGroupRequest.h>
 #include <aws/iot/model/AddThingToThingGroupRequest.h>
 #include <aws/iot/model/AssociateTargetsWithJobRequest.h>
 #include <aws/iot/model/AttachPolicyRequest.h>
@@ -39,7 +40,9 @@
 #include <aws/iot/model/CancelJobExecutionRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
+#include <aws/iot/model/CreateBillingGroupRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
+#include <aws/iot/model/CreateDynamicThingGroupRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
@@ -55,8 +58,10 @@
 #include <aws/iot/model/CreateTopicRuleRequest.h>
 #include <aws/iot/model/DeleteAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
+#include <aws/iot/model/DeleteBillingGroupRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
+#include <aws/iot/model/DeleteDynamicThingGroupRequest.h>
 #include <aws/iot/model/DeleteJobRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
@@ -76,6 +81,7 @@
 #include <aws/iot/model/DescribeAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DescribeAuditTaskRequest.h>
 #include <aws/iot/model/DescribeAuthorizerRequest.h>
+#include <aws/iot/model/DescribeBillingGroupRequest.h>
 #include <aws/iot/model/DescribeCACertificateRequest.h>
 #include <aws/iot/model/DescribeCertificateRequest.h>
 #include <aws/iot/model/DescribeDefaultAuthorizerRequest.h>
@@ -112,6 +118,7 @@
 #include <aws/iot/model/ListAuditFindingsRequest.h>
 #include <aws/iot/model/ListAuditTasksRequest.h>
 #include <aws/iot/model/ListAuthorizersRequest.h>
+#include <aws/iot/model/ListBillingGroupsRequest.h>
 #include <aws/iot/model/ListCACertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesByCARequest.h>
@@ -129,6 +136,7 @@
 #include <aws/iot/model/ListSecurityProfilesRequest.h>
 #include <aws/iot/model/ListSecurityProfilesForTargetRequest.h>
 #include <aws/iot/model/ListStreamsRequest.h>
+#include <aws/iot/model/ListTagsForResourceRequest.h>
 #include <aws/iot/model/ListTargetsForPolicyRequest.h>
 #include <aws/iot/model/ListTargetsForSecurityProfileRequest.h>
 #include <aws/iot/model/ListThingGroupsRequest.h>
@@ -138,6 +146,7 @@
 #include <aws/iot/model/ListThingRegistrationTasksRequest.h>
 #include <aws/iot/model/ListThingTypesRequest.h>
 #include <aws/iot/model/ListThingsRequest.h>
+#include <aws/iot/model/ListThingsInBillingGroupRequest.h>
 #include <aws/iot/model/ListThingsInThingGroupRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
 #include <aws/iot/model/ListV2LoggingLevelsRequest.h>
@@ -146,6 +155,7 @@
 #include <aws/iot/model/RegisterCertificateRequest.h>
 #include <aws/iot/model/RegisterThingRequest.h>
 #include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/RemoveThingFromBillingGroupRequest.h>
 #include <aws/iot/model/RemoveThingFromThingGroupRequest.h>
 #include <aws/iot/model/ReplaceTopicRuleRequest.h>
 #include <aws/iot/model/SearchIndexRequest.h>
@@ -157,15 +167,20 @@
 #include <aws/iot/model/StartOnDemandAuditTaskRequest.h>
 #include <aws/iot/model/StartThingRegistrationTaskRequest.h>
 #include <aws/iot/model/StopThingRegistrationTaskRequest.h>
+#include <aws/iot/model/TagResourceRequest.h>
 #include <aws/iot/model/TestAuthorizationRequest.h>
 #include <aws/iot/model/TestInvokeAuthorizerRequest.h>
 #include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/UntagResourceRequest.h>
 #include <aws/iot/model/UpdateAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/UpdateAuthorizerRequest.h>
+#include <aws/iot/model/UpdateBillingGroupRequest.h>
 #include <aws/iot/model/UpdateCACertificateRequest.h>
 #include <aws/iot/model/UpdateCertificateRequest.h>
+#include <aws/iot/model/UpdateDynamicThingGroupRequest.h>
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
+#include <aws/iot/model/UpdateJobRequest.h>
 #include <aws/iot/model/UpdateRoleAliasRequest.h>
 #include <aws/iot/model/UpdateScheduledAuditRequest.h>
 #include <aws/iot/model/UpdateSecurityProfileRequest.h>
@@ -273,6 +288,41 @@ void IoTClient::AcceptCertificateTransferAsync(const AcceptCertificateTransferRe
 void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTransferRequest& request, const AcceptCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptCertificateTransfer(request), context);
+}
+
+AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingToBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/addThingToBillingGroup";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddThingToBillingGroupOutcome(AddThingToBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddThingToBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+AddThingToBillingGroupOutcomeCallable IoTClient::AddThingToBillingGroupCallable(const AddThingToBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddThingToBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddThingToBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::AddThingToBillingGroupAsync(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddThingToBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::AddThingToBillingGroupAsyncHelper(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddThingToBillingGroup(request), context);
 }
 
 AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
@@ -677,6 +727,42 @@ void IoTClient::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& reque
   handler(this, request, CreateAuthorizer(request), context);
 }
 
+CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateBillingGroupOutcome(CreateBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateBillingGroupOutcomeCallable IoTClient::CreateBillingGroupCallable(const CreateBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateBillingGroupAsyncHelper(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBillingGroup(request), context);
+}
+
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
   Aws::StringStream ss;
@@ -710,6 +796,42 @@ void IoTClient::CreateCertificateFromCsrAsync(const CreateCertificateFromCsrRequ
 void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromCsrRequest& request, const CreateCertificateFromCsrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateCertificateFromCsr(request), context);
+}
+
+CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDynamicThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDynamicThingGroupOutcome(CreateDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateDynamicThingGroupOutcomeCallable IoTClient::CreateDynamicThingGroupCallable(const CreateDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateDynamicThingGroupAsync(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateDynamicThingGroupAsyncHelper(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDynamicThingGroup(request), context);
 }
 
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
@@ -1251,6 +1373,42 @@ void IoTClient::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& reque
   handler(this, request, DeleteAuthorizer(request), context);
 }
 
+DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBillingGroupOutcome(DeleteBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteBillingGroupOutcomeCallable IoTClient::DeleteBillingGroupCallable(const DeleteBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteBillingGroupAsyncHelper(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBillingGroup(request), context);
+}
+
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
 {
   Aws::StringStream ss;
@@ -1321,6 +1479,42 @@ void IoTClient::DeleteCertificateAsync(const DeleteCertificateRequest& request, 
 void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& request, const DeleteCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCertificate(request), context);
+}
+
+DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDynamicThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDynamicThingGroupOutcome(DeleteDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteDynamicThingGroupOutcomeCallable IoTClient::DeleteDynamicThingGroupCallable(const DeleteDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteDynamicThingGroupAsync(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteDynamicThingGroupAsyncHelper(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDynamicThingGroup(request), context);
 }
 
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
@@ -2009,6 +2203,42 @@ void IoTClient::DescribeAuthorizerAsync(const DescribeAuthorizerRequest& request
 void IoTClient::DescribeAuthorizerAsyncHelper(const DescribeAuthorizerRequest& request, const DescribeAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeAuthorizer(request), context);
+}
+
+DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeBillingGroupOutcome(DescribeBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+DescribeBillingGroupOutcomeCallable IoTClient::DescribeBillingGroupCallable(const DescribeBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeBillingGroupAsync(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeBillingGroupAsyncHelper(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBillingGroup(request), context);
 }
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
@@ -3304,6 +3534,41 @@ void IoTClient::ListAuthorizersAsyncHelper(const ListAuthorizersRequest& request
   handler(this, request, ListAuthorizers(request), context);
 }
 
+ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBillingGroupsOutcome(ListBillingGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBillingGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListBillingGroupsOutcomeCallable IoTClient::ListBillingGroupsCallable(const ListBillingGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBillingGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBillingGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBillingGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListBillingGroupsAsyncHelper(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBillingGroups(request), context);
+}
+
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
   Aws::StringStream ss;
@@ -3906,6 +4171,41 @@ void IoTClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const 
   handler(this, request, ListStreams(request), context);
 }
 
+ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable IoTClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
 {
   Aws::StringStream ss;
@@ -4230,6 +4530,43 @@ void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const Li
   handler(this, request, ListThings(request), context);
 }
 
+ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListThingsInBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  ss << "/things";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingsInBillingGroupOutcome(ListThingsInBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingsInBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+ListThingsInBillingGroupOutcomeCallable IoTClient::ListThingsInBillingGroupCallable(const ListThingsInBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingsInBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingsInBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingsInBillingGroupAsync(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingsInBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingsInBillingGroupAsyncHelper(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingsInBillingGroup(request), context);
+}
+
 ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
 {
   Aws::StringStream ss;
@@ -4511,6 +4848,41 @@ void IoTClient::RejectCertificateTransferAsync(const RejectCertificateTransferRe
 void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTransferRequest& request, const RejectCertificateTransferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RejectCertificateTransfer(request), context);
+}
+
+RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const RemoveThingFromBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/removeThingFromBillingGroup";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveThingFromBillingGroupOutcome(RemoveThingFromBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveThingFromBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+RemoveThingFromBillingGroupOutcomeCallable IoTClient::RemoveThingFromBillingGroupCallable(const RemoveThingFromBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveThingFromBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveThingFromBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveThingFromBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::RemoveThingFromBillingGroupAsyncHelper(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveThingFromBillingGroup(request), context);
 }
 
 RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
@@ -4904,6 +5276,41 @@ void IoTClient::StopThingRegistrationTaskAsyncHelper(const StopThingRegistration
   handler(this, request, StopThingRegistrationTask(request), context);
 }
 
+TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable IoTClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
 {
   Aws::StringStream ss;
@@ -5012,6 +5419,41 @@ void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest&
   handler(this, request, TransferCertificate(request), context);
 }
 
+UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/untag";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable IoTClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguration(const UpdateAccountAuditConfigurationRequest& request) const
 {
   Aws::StringStream ss;
@@ -5081,6 +5523,42 @@ void IoTClient::UpdateAuthorizerAsync(const UpdateAuthorizerRequest& request, co
 void IoTClient::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& request, const UpdateAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAuthorizer(request), context);
+}
+
+UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateBillingGroupOutcome(UpdateBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateBillingGroupOutcomeCallable IoTClient::UpdateBillingGroupCallable(const UpdateBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateBillingGroupAsyncHelper(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBillingGroup(request), context);
 }
 
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
@@ -5155,6 +5633,42 @@ void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& req
   handler(this, request, UpdateCertificate(request), context);
 }
 
+UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDynamicThingGroupRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDynamicThingGroupOutcome(UpdateDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateDynamicThingGroupOutcomeCallable IoTClient::UpdateDynamicThingGroupCallable(const UpdateDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateDynamicThingGroupAsync(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateDynamicThingGroupAsyncHelper(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDynamicThingGroup(request), context);
+}
+
 UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
 {
   Aws::StringStream ss;
@@ -5223,6 +5737,42 @@ void IoTClient::UpdateIndexingConfigurationAsync(const UpdateIndexingConfigurati
 void IoTClient::UpdateIndexingConfigurationAsyncHelper(const UpdateIndexingConfigurationRequest& request, const UpdateIndexingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateIndexingConfiguration(request), context);
+}
+
+UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJobOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateJobOutcome(outcome.GetError());
+  }
+}
+
+UpdateJobOutcomeCallable IoTClient::UpdateJobCallable(const UpdateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJob(request), context);
 }
 
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const

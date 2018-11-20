@@ -19,6 +19,7 @@
 #include <aws/batch/model/JobStatus.h>
 #include <aws/batch/model/ContainerSummary.h>
 #include <aws/batch/model/ArrayPropertiesSummary.h>
+#include <aws/batch/model/NodePropertiesSummary.h>
 #include <utility>
 
 namespace Aws
@@ -123,7 +124,7 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * <p>The Unix timestamp for when the job was created. For non-array jobs and
      * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
      * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
      * the child job was spawned by its parent and entered the <code>PENDING</code>
@@ -132,7 +133,7 @@ namespace Model
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * <p>The Unix timestamp for when the job was created. For non-array jobs and
      * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
      * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
      * the child job was spawned by its parent and entered the <code>PENDING</code>
@@ -141,7 +142,7 @@ namespace Model
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the job was created. For non-array jobs and
+     * <p>The Unix timestamp for when the job was created. For non-array jobs and
      * parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
      * (at the time <a>SubmitJob</a> was called). For array child jobs, this is when
      * the child job was spawned by its parent and entered the <code>PENDING</code>
@@ -220,40 +221,40 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * <p>The Unix timestamp for when the job was started (when the job transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * <p>The Unix timestamp for when the job was started (when the job transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the job was started (when the job transitioned
+     * <p>The Unix timestamp for when the job was started (when the job transitioned
      * from the <code>STARTING</code> state to the <code>RUNNING</code> state).</p>
      */
     inline JobSummary& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * <p>The Unix timestamp for when the job was stopped (when the job transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as
      * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * <p>The Unix timestamp for when the job was stopped (when the job transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as
      * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp for when the job was stopped (when the job transitioned
+     * <p>The Unix timestamp for when the job was stopped (when the job transitioned
      * from the <code>RUNNING</code> state to a terminal state, such as
      * <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
@@ -316,6 +317,32 @@ namespace Model
      */
     inline JobSummary& WithArrayProperties(ArrayPropertiesSummary&& value) { SetArrayProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline const NodePropertiesSummary& GetNodeProperties() const{ return m_nodeProperties; }
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline void SetNodeProperties(const NodePropertiesSummary& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline void SetNodeProperties(NodePropertiesSummary&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline JobSummary& WithNodeProperties(const NodePropertiesSummary& value) { SetNodeProperties(value); return *this;}
+
+    /**
+     * <p>The node properties for a single node in a job summary list.</p>
+     */
+    inline JobSummary& WithNodeProperties(NodePropertiesSummary&& value) { SetNodeProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_jobId;
@@ -344,6 +371,9 @@ namespace Model
 
     ArrayPropertiesSummary m_arrayProperties;
     bool m_arrayPropertiesHasBeenSet;
+
+    NodePropertiesSummary m_nodeProperties;
+    bool m_nodePropertiesHasBeenSet;
   };
 
 } // namespace Model

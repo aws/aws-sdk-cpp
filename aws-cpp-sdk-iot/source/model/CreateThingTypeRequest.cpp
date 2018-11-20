@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateThingTypeRequest::CreateThingTypeRequest() : 
     m_thingTypeNameHasBeenSet(false),
-    m_thingTypePropertiesHasBeenSet(false)
+    m_thingTypePropertiesHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -35,6 +36,17 @@ Aws::String CreateThingTypeRequest::SerializePayload() const
   if(m_thingTypePropertiesHasBeenSet)
   {
    payload.WithObject("thingTypeProperties", m_thingTypeProperties.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

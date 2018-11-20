@@ -673,6 +673,63 @@ namespace Model
 
 
     /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> A list of EC2 VPC security groups to associate with the Read Replica. </p>
+     * <p> Default: The default EC2 VPC security group for the DB subnet group's VPC.
+     * </p>
+     */
+    inline CreateDBInstanceReadReplicaRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+
+
+    /**
      * <p>Specifies the storage type to be associated with the Read Replica.</p> <p>
      * Valid values: <code>standard | gp2 | io1</code> </p> <p> If you specify
      * <code>io1</code>, you must also include a value for the <code>Iops</code>
@@ -1594,6 +1651,9 @@ namespace Model
 
     Aws::String m_dBSubnetGroupName;
     bool m_dBSubnetGroupNameHasBeenSet;
+
+    Aws::Vector<Aws::String> m_vpcSecurityGroupIds;
+    bool m_vpcSecurityGroupIdsHasBeenSet;
 
     Aws::String m_storageType;
     bool m_storageTypeHasBeenSet;

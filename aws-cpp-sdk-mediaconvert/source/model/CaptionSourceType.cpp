@@ -33,10 +33,12 @@ namespace Aws
         static const int ANCILLARY_HASH = HashingUtils::HashString("ANCILLARY");
         static const int DVB_SUB_HASH = HashingUtils::HashString("DVB_SUB");
         static const int EMBEDDED_HASH = HashingUtils::HashString("EMBEDDED");
+        static const int SCTE20_HASH = HashingUtils::HashString("SCTE20");
         static const int SCC_HASH = HashingUtils::HashString("SCC");
         static const int TTML_HASH = HashingUtils::HashString("TTML");
         static const int STL_HASH = HashingUtils::HashString("STL");
         static const int SRT_HASH = HashingUtils::HashString("SRT");
+        static const int SMI_HASH = HashingUtils::HashString("SMI");
         static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
         static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
 
@@ -56,6 +58,10 @@ namespace Aws
           {
             return CaptionSourceType::EMBEDDED;
           }
+          else if (hashCode == SCTE20_HASH)
+          {
+            return CaptionSourceType::SCTE20;
+          }
           else if (hashCode == SCC_HASH)
           {
             return CaptionSourceType::SCC;
@@ -71,6 +77,10 @@ namespace Aws
           else if (hashCode == SRT_HASH)
           {
             return CaptionSourceType::SRT;
+          }
+          else if (hashCode == SMI_HASH)
+          {
+            return CaptionSourceType::SMI;
           }
           else if (hashCode == TELETEXT_HASH)
           {
@@ -100,6 +110,8 @@ namespace Aws
             return "DVB_SUB";
           case CaptionSourceType::EMBEDDED:
             return "EMBEDDED";
+          case CaptionSourceType::SCTE20:
+            return "SCTE20";
           case CaptionSourceType::SCC:
             return "SCC";
           case CaptionSourceType::TTML:
@@ -108,6 +120,8 @@ namespace Aws
             return "STL";
           case CaptionSourceType::SRT:
             return "SRT";
+          case CaptionSourceType::SMI:
+            return "SMI";
           case CaptionSourceType::TELETEXT:
             return "TELETEXT";
           case CaptionSourceType::NULL_SOURCE:

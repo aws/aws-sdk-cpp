@@ -187,21 +187,30 @@ namespace Model
 
     /**
      * <p>Specifies whether to include shadow trails in the response. A shadow trail is
-     * the replication in a region of a trail that was created in a different region.
+     * the replication in a region of a trail that was created in a different region,
+     * or in the case of an organization trail, the replication of an organization
+     * trail in member accounts. If you do not include shadow trails, organization
+     * trails in a member account and region replication trails will not be returned.
      * The default is true.</p>
      */
     inline bool GetIncludeShadowTrails() const{ return m_includeShadowTrails; }
 
     /**
      * <p>Specifies whether to include shadow trails in the response. A shadow trail is
-     * the replication in a region of a trail that was created in a different region.
+     * the replication in a region of a trail that was created in a different region,
+     * or in the case of an organization trail, the replication of an organization
+     * trail in member accounts. If you do not include shadow trails, organization
+     * trails in a member account and region replication trails will not be returned.
      * The default is true.</p>
      */
     inline void SetIncludeShadowTrails(bool value) { m_includeShadowTrailsHasBeenSet = true; m_includeShadowTrails = value; }
 
     /**
      * <p>Specifies whether to include shadow trails in the response. A shadow trail is
-     * the replication in a region of a trail that was created in a different region.
+     * the replication in a region of a trail that was created in a different region,
+     * or in the case of an organization trail, the replication of an organization
+     * trail in member accounts. If you do not include shadow trails, organization
+     * trails in a member account and region replication trails will not be returned.
      * The default is true.</p>
      */
     inline DescribeTrailsRequest& WithIncludeShadowTrails(bool value) { SetIncludeShadowTrails(value); return *this;}

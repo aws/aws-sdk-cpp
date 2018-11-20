@@ -545,6 +545,22 @@ namespace Model
      */
     inline Trail& WithHasCustomEventSelectors(bool value) { SetHasCustomEventSelectors(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrailHasBeenSet = true; m_isOrganizationTrail = value; }
+
+    /**
+     * <p>Specifies whether the trail is an organization trail.</p>
+     */
+    inline Trail& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -585,6 +601,9 @@ namespace Model
 
     bool m_hasCustomEventSelectors;
     bool m_hasCustomEventSelectorsHasBeenSet;
+
+    bool m_isOrganizationTrail;
+    bool m_isOrganizationTrailHasBeenSet;
   };
 
 } // namespace Model

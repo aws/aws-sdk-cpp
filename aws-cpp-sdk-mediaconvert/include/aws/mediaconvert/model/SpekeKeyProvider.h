@@ -49,6 +49,56 @@ namespace Model
 
 
     /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    /**
      * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
@@ -176,6 +226,9 @@ namespace Model
     inline SpekeKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;

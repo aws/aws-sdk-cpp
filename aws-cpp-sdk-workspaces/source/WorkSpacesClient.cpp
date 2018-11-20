@@ -37,6 +37,7 @@
 #include <aws/workspaces/model/DeleteWorkspaceImageRequest.h>
 #include <aws/workspaces/model/DescribeAccountRequest.h>
 #include <aws/workspaces/model/DescribeAccountModificationsRequest.h>
+#include <aws/workspaces/model/DescribeClientPropertiesRequest.h>
 #include <aws/workspaces/model/DescribeIpGroupsRequest.h>
 #include <aws/workspaces/model/DescribeTagsRequest.h>
 #include <aws/workspaces/model/DescribeWorkspaceBundlesRequest.h>
@@ -48,6 +49,7 @@
 #include <aws/workspaces/model/ImportWorkspaceImageRequest.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesRequest.h>
 #include <aws/workspaces/model/ModifyAccountRequest.h>
+#include <aws/workspaces/model/ModifyClientPropertiesRequest.h>
 #include <aws/workspaces/model/ModifyWorkspacePropertiesRequest.h>
 #include <aws/workspaces/model/ModifyWorkspaceStateRequest.h>
 #include <aws/workspaces/model/RebootWorkspacesRequest.h>
@@ -472,6 +474,41 @@ void WorkSpacesClient::DescribeAccountModificationsAsyncHelper(const DescribeAcc
   handler(this, request, DescribeAccountModifications(request), context);
 }
 
+DescribeClientPropertiesOutcome WorkSpacesClient::DescribeClientProperties(const DescribeClientPropertiesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeClientPropertiesOutcome(DescribeClientPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeClientPropertiesOutcome(outcome.GetError());
+  }
+}
+
+DescribeClientPropertiesOutcomeCallable WorkSpacesClient::DescribeClientPropertiesCallable(const DescribeClientPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeClientPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeClientProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::DescribeClientPropertiesAsync(const DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeClientPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::DescribeClientPropertiesAsyncHelper(const DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeClientProperties(request), context);
+}
+
 DescribeIpGroupsOutcome WorkSpacesClient::DescribeIpGroups(const DescribeIpGroupsRequest& request) const
 {
   Aws::StringStream ss;
@@ -855,6 +892,41 @@ void WorkSpacesClient::ModifyAccountAsync(const ModifyAccountRequest& request, c
 void WorkSpacesClient::ModifyAccountAsyncHelper(const ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyAccount(request), context);
+}
+
+ModifyClientPropertiesOutcome WorkSpacesClient::ModifyClientProperties(const ModifyClientPropertiesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ModifyClientPropertiesOutcome(ModifyClientPropertiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyClientPropertiesOutcome(outcome.GetError());
+  }
+}
+
+ModifyClientPropertiesOutcomeCallable WorkSpacesClient::ModifyClientPropertiesCallable(const ModifyClientPropertiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyClientPropertiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyClientProperties(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::ModifyClientPropertiesAsync(const ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyClientPropertiesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::ModifyClientPropertiesAsyncHelper(const ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyClientProperties(request), context);
 }
 
 ModifyWorkspacePropertiesOutcome WorkSpacesClient::ModifyWorkspaceProperties(const ModifyWorkspacePropertiesRequest& request) const

@@ -29,8 +29,11 @@ namespace Model
     BURN_IN,
     DVB_SUB,
     EMBEDDED,
+    EMBEDDED_PLUS_SCTE20,
+    SCTE20_PLUS_EMBEDDED,
     SCC,
     SRT,
+    SMI,
     TELETEXT,
     TTML,
     WEBVTT

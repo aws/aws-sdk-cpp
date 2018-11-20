@@ -33,6 +33,7 @@ namespace Model
     java8,
     python2_7,
     python3_6,
+    python3_7,
     dotnetcore1_0,
     dotnetcore2_0,
     dotnetcore2_1,

@@ -54,7 +54,9 @@ Device::Device() :
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
     m_fleetNameHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_availability(DeviceAvailability::NOT_SET),
+    m_availabilityHasBeenSet(false)
 {
 }
 
@@ -84,7 +86,9 @@ Device::Device(JsonView jsonValue) :
     m_remoteDebugEnabledHasBeenSet(false),
     m_fleetTypeHasBeenSet(false),
     m_fleetNameHasBeenSet(false),
-    m_instancesHasBeenSet(false)
+    m_instancesHasBeenSet(false),
+    m_availability(DeviceAvailability::NOT_SET),
+    m_availabilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -234,6 +238,13 @@ Device& Device::operator =(JsonView jsonValue)
     m_instancesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("availability"))
+  {
+    m_availability = DeviceAvailabilityMapper::GetDeviceAvailabilityForName(jsonValue.GetString("availability"));
+
+    m_availabilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -362,6 +373,11 @@ JsonValue Device::Jsonize() const
    }
    payload.WithArray("instances", std::move(instancesJsonList));
 
+  }
+
+  if(m_availabilityHasBeenSet)
+  {
+   payload.WithString("availability", DeviceAvailabilityMapper::GetNameForDeviceAvailability(m_availability));
   }
 
   return payload;

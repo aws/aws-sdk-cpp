@@ -45,95 +45,138 @@ namespace Model
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
 
     /**
      * <p>The name or full Amazon Resource Name (ARN) of the job queue with which to
-     * list jobs. You must specify either a job queue or an array job ID.</p>
+     * list jobs.</p>
      */
     inline ListJobsRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
 
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline const Aws::String& GetArrayJobId() const{ return m_arrayJobId; }
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline void SetArrayJobId(const Aws::String& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = value; }
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline void SetArrayJobId(Aws::String&& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = std::move(value); }
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline void SetArrayJobId(const char* value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId.assign(value); }
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline ListJobsRequest& WithArrayJobId(const Aws::String& value) { SetArrayJobId(value); return *this;}
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline ListJobsRequest& WithArrayJobId(Aws::String&& value) { SetArrayJobId(std::move(value)); return *this;}
 
     /**
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
-     * lists all child jobs from within the specified array. You must specify either a
-     * job queue or an array job ID.</p>
+     * lists all child jobs from within the specified array.</p>
      */
     inline ListJobsRequest& WithArrayJobId(const char* value) { SetArrayJobId(value); return *this;}
+
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline const Aws::String& GetMultiNodeJobId() const{ return m_multiNodeJobId; }
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline void SetMultiNodeJobId(const Aws::String& value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId = value; }
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline void SetMultiNodeJobId(Aws::String&& value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId = std::move(value); }
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline void SetMultiNodeJobId(const char* value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId.assign(value); }
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline ListJobsRequest& WithMultiNodeJobId(const Aws::String& value) { SetMultiNodeJobId(value); return *this;}
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline ListJobsRequest& WithMultiNodeJobId(Aws::String&& value) { SetMultiNodeJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>The job ID for a multi-node parallel job. Specifying a multi-node parallel
+     * job ID with this parameter lists all nodes that are associated with the
+     * specified job.</p>
+     */
+    inline ListJobsRequest& WithMultiNodeJobId(const char* value) { SetMultiNodeJobId(value); return *this;}
 
 
     /**
@@ -295,6 +338,9 @@ namespace Model
 
     Aws::String m_arrayJobId;
     bool m_arrayJobIdHasBeenSet;
+
+    Aws::String m_multiNodeJobId;
+    bool m_multiNodeJobIdHasBeenSet;
 
     JobStatus m_jobStatus;
     bool m_jobStatusHasBeenSet;

@@ -33,19 +33,25 @@ namespace Aws
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
+        static const int elastic_ip_HASH = HashingUtils::HashString("elastic-ip");
+        static const int fleet_HASH = HashingUtils::HashString("fleet");
+        static const int fpga_image_HASH = HashingUtils::HashString("fpga-image");
         static const int image_HASH = HashingUtils::HashString("image");
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
+        static const int launch_template_HASH = HashingUtils::HashString("launch-template");
+        static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
+        static const int security_group_HASH = HashingUtils::HashString("security-group");
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
         static const int subnet_HASH = HashingUtils::HashString("subnet");
-        static const int security_group_HASH = HashingUtils::HashString("security-group");
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
+        static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
         static const int vpn_connection_HASH = HashingUtils::HashString("vpn-connection");
         static const int vpn_gateway_HASH = HashingUtils::HashString("vpn-gateway");
 
@@ -65,6 +71,18 @@ namespace Aws
           {
             return ResourceType::dhcp_options;
           }
+          else if (hashCode == elastic_ip_HASH)
+          {
+            return ResourceType::elastic_ip;
+          }
+          else if (hashCode == fleet_HASH)
+          {
+            return ResourceType::fleet;
+          }
+          else if (hashCode == fpga_image_HASH)
+          {
+            return ResourceType::fpga_image;
+          }
           else if (hashCode == image_HASH)
           {
             return ResourceType::image;
@@ -76,6 +94,14 @@ namespace Aws
           else if (hashCode == internet_gateway_HASH)
           {
             return ResourceType::internet_gateway;
+          }
+          else if (hashCode == launch_template_HASH)
+          {
+            return ResourceType::launch_template;
+          }
+          else if (hashCode == natgateway_HASH)
+          {
+            return ResourceType::natgateway;
           }
           else if (hashCode == network_acl_HASH)
           {
@@ -93,6 +119,10 @@ namespace Aws
           {
             return ResourceType::route_table;
           }
+          else if (hashCode == security_group_HASH)
+          {
+            return ResourceType::security_group;
+          }
           else if (hashCode == snapshot_HASH)
           {
             return ResourceType::snapshot;
@@ -105,10 +135,6 @@ namespace Aws
           {
             return ResourceType::subnet;
           }
-          else if (hashCode == security_group_HASH)
-          {
-            return ResourceType::security_group;
-          }
           else if (hashCode == volume_HASH)
           {
             return ResourceType::volume;
@@ -116,6 +142,10 @@ namespace Aws
           else if (hashCode == vpc_HASH)
           {
             return ResourceType::vpc;
+          }
+          else if (hashCode == vpc_peering_connection_HASH)
+          {
+            return ResourceType::vpc_peering_connection;
           }
           else if (hashCode == vpn_connection_HASH)
           {
@@ -145,12 +175,22 @@ namespace Aws
             return "dedicated-host";
           case ResourceType::dhcp_options:
             return "dhcp-options";
+          case ResourceType::elastic_ip:
+            return "elastic-ip";
+          case ResourceType::fleet:
+            return "fleet";
+          case ResourceType::fpga_image:
+            return "fpga-image";
           case ResourceType::image:
             return "image";
           case ResourceType::instance:
             return "instance";
           case ResourceType::internet_gateway:
             return "internet-gateway";
+          case ResourceType::launch_template:
+            return "launch-template";
+          case ResourceType::natgateway:
+            return "natgateway";
           case ResourceType::network_acl:
             return "network-acl";
           case ResourceType::network_interface:
@@ -159,18 +199,20 @@ namespace Aws
             return "reserved-instances";
           case ResourceType::route_table:
             return "route-table";
+          case ResourceType::security_group:
+            return "security-group";
           case ResourceType::snapshot:
             return "snapshot";
           case ResourceType::spot_instances_request:
             return "spot-instances-request";
           case ResourceType::subnet:
             return "subnet";
-          case ResourceType::security_group:
-            return "security-group";
           case ResourceType::volume:
             return "volume";
           case ResourceType::vpc:
             return "vpc";
+          case ResourceType::vpc_peering_connection:
+            return "vpc-peering-connection";
           case ResourceType::vpn_connection:
             return "vpn-connection";
           case ResourceType::vpn_gateway:

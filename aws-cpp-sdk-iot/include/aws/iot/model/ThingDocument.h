@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/ThingConnectivity.h>
 #include <utility>
 
 namespace Aws
@@ -294,6 +295,32 @@ namespace Model
      */
     inline ThingDocument& WithShadow(const char* value) { SetShadow(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline const ThingConnectivity& GetConnectivity() const{ return m_connectivity; }
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline void SetConnectivity(const ThingConnectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline void SetConnectivity(ThingConnectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline ThingDocument& WithConnectivity(const ThingConnectivity& value) { SetConnectivity(value); return *this;}
+
+    /**
+     * <p>Indicates whether or not the thing is connected to the AWS IoT service.</p>
+     */
+    inline ThingDocument& WithConnectivity(ThingConnectivity&& value) { SetConnectivity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_thingName;
@@ -313,6 +340,9 @@ namespace Model
 
     Aws::String m_shadow;
     bool m_shadowHasBeenSet;
+
+    ThingConnectivity m_connectivity;
+    bool m_connectivityHasBeenSet;
   };
 
 } // namespace Model

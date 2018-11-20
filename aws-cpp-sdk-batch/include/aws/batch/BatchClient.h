@@ -239,23 +239,24 @@ namespace Model
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
          * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the capacity and instance types of the compute
-         * resources within the environment, based on the compute resource specification
-         * that you define or <a
+         * resources within the environment. This is based on the compute resource
+         * specification that you define or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a> that you specify when you create the compute environment. You can
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <p>In an unmanaged compute environment,
-         * you can manage your own compute resources. This provides more compute resource
-         * configuration options, such as using a custom AMI, but you must ensure that your
-         * AMI meets the Amazon ECS container instance AMI specification. For more
-         * information, see <a
+         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * environment, you can manage your own compute resources. This provides more
+         * compute resource configuration options, such as using a custom AMI, but you must
+         * ensure that your AMI meets the Amazon ECS container instance AMI specification.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
          * Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>. After you have created your unmanaged compute environment, you can
          * use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS
-         * cluster that is associated with it and then manually launch your container
+         * cluster that is associated with it. Then, manually launch your container
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
@@ -278,23 +279,24 @@ namespace Model
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
          * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the capacity and instance types of the compute
-         * resources within the environment, based on the compute resource specification
-         * that you define or <a
+         * resources within the environment. This is based on the compute resource
+         * specification that you define or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a> that you specify when you create the compute environment. You can
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <p>In an unmanaged compute environment,
-         * you can manage your own compute resources. This provides more compute resource
-         * configuration options, such as using a custom AMI, but you must ensure that your
-         * AMI meets the Amazon ECS container instance AMI specification. For more
-         * information, see <a
+         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * environment, you can manage your own compute resources. This provides more
+         * compute resource configuration options, such as using a custom AMI, but you must
+         * ensure that your AMI meets the Amazon ECS container instance AMI specification.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
          * Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>. After you have created your unmanaged compute environment, you can
          * use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS
-         * cluster that is associated with it and then manually launch your container
+         * cluster that is associated with it. Then, manually launch your container
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
@@ -319,23 +321,24 @@ namespace Model
          * <p>Creates an AWS Batch compute environment. You can create <code>MANAGED</code>
          * or <code>UNMANAGED</code> compute environments.</p> <p>In a managed compute
          * environment, AWS Batch manages the capacity and instance types of the compute
-         * resources within the environment, based on the compute resource specification
-         * that you define or <a
+         * resources within the environment. This is based on the compute resource
+         * specification that you define or the <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a> that you specify when you create the compute environment. You can
          * choose to use Amazon EC2 On-Demand Instances or Spot Instances in your managed
          * compute environment. You can optionally set a maximum price so that Spot
          * Instances only launch when the Spot Instance price is below a specified
-         * percentage of the On-Demand price.</p> <p>In an unmanaged compute environment,
-         * you can manage your own compute resources. This provides more compute resource
-         * configuration options, such as using a custom AMI, but you must ensure that your
-         * AMI meets the Amazon ECS container instance AMI specification. For more
-         * information, see <a
+         * percentage of the On-Demand price.</p> <note> <p>Multi-node parallel jobs are
+         * not supported on Spot Instances.</p> </note> <p>In an unmanaged compute
+         * environment, you can manage your own compute resources. This provides more
+         * compute resource configuration options, such as using a custom AMI, but you must
+         * ensure that your AMI meets the Amazon ECS container instance AMI specification.
+         * For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container
          * Instance AMIs</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>. After you have created your unmanaged compute environment, you can
          * use the <a>DescribeComputeEnvironments</a> operation to find the Amazon ECS
-         * cluster that is associated with it and then manually launch your container
+         * cluster that is associated with it. Then, manually launch your container
          * instances into that Amazon ECS cluster. For more information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
          * an Amazon ECS Container Instance</a> in the <i>Amazon Elastic Container Service
@@ -620,10 +623,11 @@ namespace Model
         virtual void DescribeJobsAsync(const Model::DescribeJobsRequest& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs. You must specify either a job queue to
-         * return a list of jobs in that job queue, or an array job ID to return a list of
-         * that job's children. You cannot specify both a job queue and an array job
-         * ID.</p> <p>You can filter the results by job status with the
+         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * following:</p> <ul> <li> <p>a job queue ID to return a list of jobs in that job
+         * queue</p> </li> <li> <p>a multi-node parallel job ID to return a list of that
+         * job's nodes</p> </li> <li> <p>an array job ID to return a list of that job's
+         * children</p> </li> </ul> <p>You can filter the results by job status with the
          * <code>jobStatus</code> parameter. If you do not specify a status, only
          * <code>RUNNING</code> jobs are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">AWS API
@@ -632,10 +636,11 @@ namespace Model
         virtual Model::ListJobsOutcome ListJobs(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs. You must specify either a job queue to
-         * return a list of jobs in that job queue, or an array job ID to return a list of
-         * that job's children. You cannot specify both a job queue and an array job
-         * ID.</p> <p>You can filter the results by job status with the
+         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * following:</p> <ul> <li> <p>a job queue ID to return a list of jobs in that job
+         * queue</p> </li> <li> <p>a multi-node parallel job ID to return a list of that
+         * job's nodes</p> </li> <li> <p>an array job ID to return a list of that job's
+         * children</p> </li> </ul> <p>You can filter the results by job status with the
          * <code>jobStatus</code> parameter. If you do not specify a status, only
          * <code>RUNNING</code> jobs are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">AWS API
@@ -646,10 +651,11 @@ namespace Model
         virtual Model::ListJobsOutcomeCallable ListJobsCallable(const Model::ListJobsRequest& request) const;
 
         /**
-         * <p>Returns a list of AWS Batch jobs. You must specify either a job queue to
-         * return a list of jobs in that job queue, or an array job ID to return a list of
-         * that job's children. You cannot specify both a job queue and an array job
-         * ID.</p> <p>You can filter the results by job status with the
+         * <p>Returns a list of AWS Batch jobs.</p> <p>You must specify only one of the
+         * following:</p> <ul> <li> <p>a job queue ID to return a list of jobs in that job
+         * queue</p> </li> <li> <p>a multi-node parallel job ID to return a list of that
+         * job's nodes</p> </li> <li> <p>an array job ID to return a list of that job's
+         * children</p> </li> </ul> <p>You can filter the results by job status with the
          * <code>jobStatus</code> parameter. If you do not specify a status, only
          * <code>RUNNING</code> jobs are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ListJobs">AWS API

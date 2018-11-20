@@ -17,9 +17,11 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconvert/model/InputDeblockFilter.h>
+#include <aws/mediaconvert/model/InputDecryptionSettings.h>
 #include <aws/mediaconvert/model/InputDenoiseFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/InputFilterEnable.h>
+#include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
@@ -309,6 +311,32 @@ namespace Model
     inline Input& WithDeblockFilter(InputDeblockFilter&& value) { SetDeblockFilter(std::move(value)); return *this;}
 
 
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     */
+    inline const InputDecryptionSettings& GetDecryptionSettings() const{ return m_decryptionSettings; }
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     */
+    inline void SetDecryptionSettings(const InputDecryptionSettings& value) { m_decryptionSettingsHasBeenSet = true; m_decryptionSettings = value; }
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     */
+    inline void SetDecryptionSettings(InputDecryptionSettings&& value) { m_decryptionSettingsHasBeenSet = true; m_decryptionSettings = std::move(value); }
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     */
+    inline Input& WithDecryptionSettings(const InputDecryptionSettings& value) { SetDecryptionSettings(value); return *this;}
+
+    /**
+     * If the input file is encrypted, decryption settings to decrypt the media file
+     */
+    inline Input& WithDecryptionSettings(InputDecryptionSettings&& value) { SetDecryptionSettings(std::move(value)); return *this;}
+
+
     
     inline const InputDenoiseFilter& GetDenoiseFilter() const{ return m_denoiseFilter; }
 
@@ -408,6 +436,42 @@ namespace Model
      * settings (Deblock and Denoise). The range is -5 to 5. Default is 0.
      */
     inline Input& WithFilterStrength(int value) { SetFilterStrength(value); return *this;}
+
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline Input& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline Input& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
 
 
     /**
@@ -567,6 +631,9 @@ namespace Model
     InputDeblockFilter m_deblockFilter;
     bool m_deblockFilterHasBeenSet;
 
+    InputDecryptionSettings m_decryptionSettings;
+    bool m_decryptionSettingsHasBeenSet;
+
     InputDenoiseFilter m_denoiseFilter;
     bool m_denoiseFilterHasBeenSet;
 
@@ -578,6 +645,9 @@ namespace Model
 
     int m_filterStrength;
     bool m_filterStrengthHasBeenSet;
+
+    ImageInserter m_imageInserter;
+    bool m_imageInserterHasBeenSet;
 
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet;

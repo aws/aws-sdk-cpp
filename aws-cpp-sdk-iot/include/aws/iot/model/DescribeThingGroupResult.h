@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/ThingGroupProperties.h>
 #include <aws/iot/model/ThingGroupMetadata.h>
+#include <aws/iot/model/DynamicGroupStatus.h>
 #include <utility>
 
 namespace Aws
@@ -219,6 +220,140 @@ namespace Model
      */
     inline DescribeThingGroupResult& WithThingGroupMetadata(ThingGroupMetadata&& value) { SetThingGroupMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline void SetIndexName(const Aws::String& value) { m_indexName = value; }
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline void SetIndexName(Aws::String&& value) { m_indexName = std::move(value); }
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline void SetIndexName(const char* value) { m_indexName.assign(value); }
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline DescribeThingGroupResult& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline DescribeThingGroupResult& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
+
+    /**
+     * <p>The dynamic thing group index name.</p>
+     */
+    inline DescribeThingGroupResult& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline void SetQueryString(const Aws::String& value) { m_queryString = value; }
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline void SetQueryString(Aws::String&& value) { m_queryString = std::move(value); }
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline void SetQueryString(const char* value) { m_queryString.assign(value); }
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
+
+    /**
+     * <p>The dynamic thing group search query string.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline void SetQueryVersion(const Aws::String& value) { m_queryVersion = value; }
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline void SetQueryVersion(Aws::String&& value) { m_queryVersion = std::move(value); }
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline void SetQueryVersion(const char* value) { m_queryVersion.assign(value); }
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryVersion(const Aws::String& value) { SetQueryVersion(value); return *this;}
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryVersion(Aws::String&& value) { SetQueryVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The dynamic thing group query version.</p>
+     */
+    inline DescribeThingGroupResult& WithQueryVersion(const char* value) { SetQueryVersion(value); return *this;}
+
+
+    /**
+     * <p>The dynamic thing group status.</p>
+     */
+    inline const DynamicGroupStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The dynamic thing group status.</p>
+     */
+    inline void SetStatus(const DynamicGroupStatus& value) { m_status = value; }
+
+    /**
+     * <p>The dynamic thing group status.</p>
+     */
+    inline void SetStatus(DynamicGroupStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The dynamic thing group status.</p>
+     */
+    inline DescribeThingGroupResult& WithStatus(const DynamicGroupStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The dynamic thing group status.</p>
+     */
+    inline DescribeThingGroupResult& WithStatus(DynamicGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_thingGroupName;
@@ -232,6 +367,14 @@ namespace Model
     ThingGroupProperties m_thingGroupProperties;
 
     ThingGroupMetadata m_thingGroupMetadata;
+
+    Aws::String m_indexName;
+
+    Aws::String m_queryString;
+
+    Aws::String m_queryVersion;
+
+    DynamicGroupStatus m_status;
   };
 
 } // namespace Model

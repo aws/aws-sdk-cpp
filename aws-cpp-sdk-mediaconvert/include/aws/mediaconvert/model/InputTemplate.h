@@ -19,6 +19,7 @@
 #include <aws/mediaconvert/model/InputDeblockFilter.h>
 #include <aws/mediaconvert/model/InputDenoiseFilter.h>
 #include <aws/mediaconvert/model/InputFilterEnable.h>
+#include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/InputPsiControl.h>
 #include <aws/mediaconvert/model/InputTimecodeSource.h>
@@ -361,6 +362,42 @@ namespace Model
 
 
     /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline InputTemplate& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
+
+    /**
+     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
+     * on your video. Enable or disable this feature for each input individually. This
+     * setting is disabled by default.
+     */
+    inline InputTemplate& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
+
+
+    /**
      * (InputClippings) contains sets of start and end times that together specify a
      * portion of the input to be used in the outputs. If you provide only a start
      * time, the clip will be the entire input from that point to the end. If you
@@ -525,6 +562,9 @@ namespace Model
 
     int m_filterStrength;
     bool m_filterStrengthHasBeenSet;
+
+    ImageInserter m_imageInserter;
+    bool m_imageInserterHasBeenSet;
 
     Aws::Vector<InputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet;

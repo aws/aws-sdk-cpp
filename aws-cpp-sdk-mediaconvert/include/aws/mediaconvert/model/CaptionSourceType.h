@@ -29,10 +29,12 @@ namespace Model
     ANCILLARY,
     DVB_SUB,
     EMBEDDED,
+    SCTE20,
     SCC,
     TTML,
     STL,
     SRT,
+    SMI,
     TELETEXT,
     NULL_SOURCE
   };

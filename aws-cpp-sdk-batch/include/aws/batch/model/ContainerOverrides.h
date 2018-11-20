@@ -138,6 +138,49 @@ namespace Model
 
 
     /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline ContainerOverrides& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline ContainerOverrides& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. This parameter is not
+     * valid for single-node container jobs.</p>
+     */
+    inline ContainerOverrides& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
      * <p>The environment variables to send to the container. You can add new
      * environment variables, which are added to the container at launch, or you can
      * override the existing environment variables from the Docker image or the job
@@ -217,6 +260,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_command;
     bool m_commandHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
 
     Aws::Vector<KeyValuePair> m_environment;
     bool m_environmentHasBeenSet;

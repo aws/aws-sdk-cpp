@@ -79,37 +79,51 @@ namespace Model
 
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline AttachPolicyRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline AttachPolicyRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The identity to which the policy is attached.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a>
+     * to which the policy is attached.</p>
      */
     inline AttachPolicyRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
 

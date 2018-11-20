@@ -29,10 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAvailabilityZones.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZonesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeAvailabilityZonesRequest : public EC2Request
   {
@@ -59,8 +55,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -71,8 +68,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -83,8 +81,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -95,8 +94,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -107,8 +107,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -119,8 +120,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -131,8 +133,9 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> <li> <p> <code>state</code> - The state of
      * the Availability Zone (<code>available</code> | <code>information</code> |
      * <code>impaired</code> | <code>unavailable</code>).</p> </li> <li> <p>
-     * <code>zone-name</code> - The name of the Availability Zone (for example,
-     * <code>us-east-1a</code>).</p> </li> </ul>
+     * <code>zone-id</code> - The ID of the Availability Zone (for example,
+     * <code>use1-az1</code>).</p> </li> <li> <p> <code>zone-name</code> - The name of
+     * the Availability Zone (for example, <code>us-east-1a</code>).</p> </li> </ul>
      */
     inline DescribeAvailabilityZonesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -179,6 +182,47 @@ namespace Model
 
 
     /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline void SetZoneIds(const Aws::Vector<Aws::String>& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = value; }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline void SetZoneIds(Aws::Vector<Aws::String>&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::move(value); }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline DescribeAvailabilityZonesRequest& WithZoneIds(const Aws::Vector<Aws::String>& value) { SetZoneIds(value); return *this;}
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline DescribeAvailabilityZonesRequest& WithZoneIds(Aws::Vector<Aws::String>&& value) { SetZoneIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline DescribeAvailabilityZonesRequest& AddZoneIds(const Aws::String& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline DescribeAvailabilityZonesRequest& AddZoneIds(Aws::String&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of one or more Availability Zones.</p>
+     */
+    inline DescribeAvailabilityZonesRequest& AddZoneIds(const char* value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -209,6 +253,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_zoneNames;
     bool m_zoneNamesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_zoneIds;
+    bool m_zoneIdsHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

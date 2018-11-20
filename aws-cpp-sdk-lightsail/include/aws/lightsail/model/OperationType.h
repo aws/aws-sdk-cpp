@@ -59,7 +59,17 @@ namespace Model
     DetachDisk,
     CreateDiskSnapshot,
     DeleteDiskSnapshot,
-    CreateDiskFromSnapshot
+    CreateDiskFromSnapshot,
+    CreateRelationalDatabase,
+    UpdateRelationalDatabase,
+    DeleteRelationalDatabase,
+    CreateRelationalDatabaseFromSnapshot,
+    CreateRelationalDatabaseSnapshot,
+    DeleteRelationalDatabaseSnapshot,
+    UpdateRelationalDatabaseParameters,
+    StartRelationalDatabase,
+    RebootRelationalDatabase,
+    StopRelationalDatabase
   };
 
 namespace OperationTypeMapper

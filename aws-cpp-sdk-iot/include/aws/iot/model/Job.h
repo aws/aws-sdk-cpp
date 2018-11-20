@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/PresignedUrlConfig.h>
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
+#include <aws/iot/model/AbortConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot/model/JobProcessDetails.h>
 #include <aws/iot/model/TimeoutConfig.h>
@@ -242,6 +243,42 @@ namespace Model
 
 
     /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline Job& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline Job& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
+
+    /**
+     * <p>If the job was updated, provides the reason code for the update.</p>
+     */
+    inline Job& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+
+
+    /**
      * <p>If the job was updated, describes the reason for the update.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
@@ -404,6 +441,32 @@ namespace Model
      * <p>Allows you to create a staged rollout of a job.</p>
      */
     inline Job& WithJobExecutionsRolloutConfig(JobExecutionsRolloutConfig&& value) { SetJobExecutionsRolloutConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
+    inline const AbortConfig& GetAbortConfig() const{ return m_abortConfig; }
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
+    inline void SetAbortConfig(const AbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
+    inline void SetAbortConfig(AbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
+    inline Job& WithAbortConfig(const AbortConfig& value) { SetAbortConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for criteria to abort the job.</p>
+     */
+    inline Job& WithAbortConfig(AbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
 
 
     /**
@@ -572,6 +635,9 @@ namespace Model
     bool m_forceCanceled;
     bool m_forceCanceledHasBeenSet;
 
+    Aws::String m_reasonCode;
+    bool m_reasonCodeHasBeenSet;
+
     Aws::String m_comment;
     bool m_commentHasBeenSet;
 
@@ -586,6 +652,9 @@ namespace Model
 
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
     bool m_jobExecutionsRolloutConfigHasBeenSet;
+
+    AbortConfig m_abortConfig;
+    bool m_abortConfigHasBeenSet;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;

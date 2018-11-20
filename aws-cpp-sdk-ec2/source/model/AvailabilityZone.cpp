@@ -35,7 +35,8 @@ AvailabilityZone::AvailabilityZone() :
     m_stateHasBeenSet(false),
     m_messagesHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_messagesHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_zoneNameHasBeenSet(false)
+    m_zoneNameHasBeenSet(false),
+    m_zoneIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -85,6 +87,12 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
       m_zoneName = StringUtils::Trim(zoneNameNode.GetText().c_str());
       m_zoneNameHasBeenSet = true;
     }
+    XmlNode zoneIdNode = resultNode.FirstChild("zoneId");
+    if(!zoneIdNode.IsNull())
+    {
+      m_zoneId = StringUtils::Trim(zoneIdNode.GetText().c_str());
+      m_zoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -118,6 +126,11 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
   }
 
+  if(m_zoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ZoneId=" << StringUtils::URLEncode(m_zoneId.c_str()) << "&";
+  }
+
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -143,6 +156,10 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_zoneNameHasBeenSet)
   {
       oStream << location << ".ZoneName=" << StringUtils::URLEncode(m_zoneName.c_str()) << "&";
+  }
+  if(m_zoneIdHasBeenSet)
+  {
+      oStream << location << ".ZoneId=" << StringUtils::URLEncode(m_zoneId.c_str()) << "&";
   }
 }
 

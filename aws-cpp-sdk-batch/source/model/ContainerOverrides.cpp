@@ -34,6 +34,7 @@ ContainerOverrides::ContainerOverrides() :
     m_memory(0),
     m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false)
 {
 }
@@ -44,6 +45,7 @@ ContainerOverrides::ContainerOverrides(JsonView jsonValue) :
     m_memory(0),
     m_memoryHasBeenSet(false),
     m_commandHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
     m_environmentHasBeenSet(false)
 {
   *this = jsonValue;
@@ -73,6 +75,13 @@ ContainerOverrides& ContainerOverrides::operator =(JsonView jsonValue)
       m_command.push_back(commandJsonList[commandIndex].AsString());
     }
     m_commandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environment"))
@@ -112,6 +121,12 @@ JsonValue ContainerOverrides::Jsonize() const
      commandJsonList[commandIndex].AsString(m_command[commandIndex]);
    }
    payload.WithArray("command", std::move(commandJsonList));
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
 
   }
 

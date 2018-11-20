@@ -27,6 +27,7 @@
 #include <aws/mediaconvert/MediaConvertClient.h>
 #include <aws/mediaconvert/MediaConvertEndpoint.h>
 #include <aws/mediaconvert/MediaConvertErrorMarshaller.h>
+#include <aws/mediaconvert/model/AssociateCertificateRequest.h>
 #include <aws/mediaconvert/model/CancelJobRequest.h>
 #include <aws/mediaconvert/model/CreateJobRequest.h>
 #include <aws/mediaconvert/model/CreateJobTemplateRequest.h>
@@ -36,6 +37,7 @@
 #include <aws/mediaconvert/model/DeletePresetRequest.h>
 #include <aws/mediaconvert/model/DeleteQueueRequest.h>
 #include <aws/mediaconvert/model/DescribeEndpointsRequest.h>
+#include <aws/mediaconvert/model/DisassociateCertificateRequest.h>
 #include <aws/mediaconvert/model/GetJobRequest.h>
 #include <aws/mediaconvert/model/GetJobTemplateRequest.h>
 #include <aws/mediaconvert/model/GetPresetRequest.h>
@@ -113,6 +115,41 @@ void MediaConvertClient::init(const ClientConfiguration& config)
   }
 
   m_uri = ss.str();
+}
+
+AssociateCertificateOutcome MediaConvertClient::AssociateCertificate(const AssociateCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-08-29/certificates";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateCertificateOutcome(AssociateCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateCertificateOutcome(outcome.GetError());
+  }
+}
+
+AssociateCertificateOutcomeCallable MediaConvertClient::AssociateCertificateCallable(const AssociateCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConvertClient::AssociateCertificateAsync(const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConvertClient::AssociateCertificateAsyncHelper(const AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateCertificate(request), context);
 }
 
 CancelJobOutcome MediaConvertClient::CancelJob(const CancelJobRequest& request) const
@@ -432,6 +469,42 @@ void MediaConvertClient::DescribeEndpointsAsync(const DescribeEndpointsRequest& 
 void MediaConvertClient::DescribeEndpointsAsyncHelper(const DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeEndpoints(request), context);
+}
+
+DisassociateCertificateOutcome MediaConvertClient::DisassociateCertificate(const DisassociateCertificateRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2017-08-29/certificates/";
+  ss << request.GetArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateCertificateOutcome(DisassociateCertificateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateCertificateOutcome(outcome.GetError());
+  }
+}
+
+DisassociateCertificateOutcomeCallable MediaConvertClient::DisassociateCertificateCallable(const DisassociateCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaConvertClient::DisassociateCertificateAsync(const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void MediaConvertClient::DisassociateCertificateAsyncHelper(const DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateCertificate(request), context);
 }
 
 GetJobOutcome MediaConvertClient::GetJob(const GetJobRequest& request) const

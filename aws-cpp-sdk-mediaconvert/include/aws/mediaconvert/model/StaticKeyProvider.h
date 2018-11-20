@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Settings for use with a SPEKE key provider.<p><h3>See Also:</h3>   <a
+   * Use these settings to set up encryption with a static key provider.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StaticKeyProvider">AWS
    * API Reference</a></p>
    */

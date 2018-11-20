@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline const Aws::String& GetUUID() const{ return m_uUID; }
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline DeleteEventSourceMappingRequest& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline DeleteEventSourceMappingRequest& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
 
     /**
-     * <p>The event source mapping ID.</p>
+     * <p>The identifier of the event source mapping.</p>
      */
     inline DeleteEventSourceMappingRequest& WithUUID(const char* value) { SetUUID(value); return *this;}
 

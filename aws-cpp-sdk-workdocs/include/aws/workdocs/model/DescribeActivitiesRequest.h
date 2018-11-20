@@ -200,6 +200,85 @@ namespace Model
 
 
     /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline const Aws::String& GetActivityTypes() const{ return m_activityTypes; }
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline void SetActivityTypes(const Aws::String& value) { m_activityTypesHasBeenSet = true; m_activityTypes = value; }
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline void SetActivityTypes(Aws::String&& value) { m_activityTypesHasBeenSet = true; m_activityTypes = std::move(value); }
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline void SetActivityTypes(const char* value) { m_activityTypesHasBeenSet = true; m_activityTypes.assign(value); }
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline DescribeActivitiesRequest& WithActivityTypes(const Aws::String& value) { SetActivityTypes(value); return *this;}
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline DescribeActivitiesRequest& WithActivityTypes(Aws::String&& value) { SetActivityTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies which activity types to include in the response. If this field is
+     * left empty, all activity types are returned.</p>
+     */
+    inline DescribeActivitiesRequest& WithActivityTypes(const char* value) { SetActivityTypes(value); return *this;}
+
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline DescribeActivitiesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline DescribeActivitiesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The document or folder ID for which to describe activity types.</p>
+     */
+    inline DescribeActivitiesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+
+
+    /**
      * <p>The ID of the user who performed the action. The response includes activities
      * pertaining to this user. This is an optional parameter and is only applicable
      * for administrative API (SigV4) requests.</p>
@@ -247,6 +326,31 @@ namespace Model
      * for administrative API (SigV4) requests.</p>
      */
     inline DescribeActivitiesRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+
+
+    /**
+     * <p>Includes indirect activities. An indirect activity results from a direct
+     * activity performed on a parent resource. For example, sharing a parent folder
+     * (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).</p>
+     */
+    inline bool GetIncludeIndirectActivities() const{ return m_includeIndirectActivities; }
+
+    /**
+     * <p>Includes indirect activities. An indirect activity results from a direct
+     * activity performed on a parent resource. For example, sharing a parent folder
+     * (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).</p>
+     */
+    inline void SetIncludeIndirectActivities(bool value) { m_includeIndirectActivitiesHasBeenSet = true; m_includeIndirectActivities = value; }
+
+    /**
+     * <p>Includes indirect activities. An indirect activity results from a direct
+     * activity performed on a parent resource. For example, sharing a parent folder
+     * (the direct activity) shares all of the subfolders and documents within the
+     * parent folder (the indirect activity).</p>
+     */
+    inline DescribeActivitiesRequest& WithIncludeIndirectActivities(bool value) { SetIncludeIndirectActivities(value); return *this;}
 
 
     /**
@@ -314,8 +418,17 @@ namespace Model
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet;
 
+    Aws::String m_activityTypes;
+    bool m_activityTypesHasBeenSet;
+
+    Aws::String m_resourceId;
+    bool m_resourceIdHasBeenSet;
+
     Aws::String m_userId;
     bool m_userIdHasBeenSet;
+
+    bool m_includeIndirectActivities;
+    bool m_includeIndirectActivitiesHasBeenSet;
 
     int m_limit;
     bool m_limitHasBeenSet;

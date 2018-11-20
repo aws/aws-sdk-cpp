@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 ListJobsRequest::ListJobsRequest() : 
     m_jobQueueHasBeenSet(false),
     m_arrayJobIdHasBeenSet(false),
+    m_multiNodeJobIdHasBeenSet(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobStatusHasBeenSet(false),
     m_maxResults(0),
@@ -46,6 +47,12 @@ Aws::String ListJobsRequest::SerializePayload() const
   if(m_arrayJobIdHasBeenSet)
   {
    payload.WithString("arrayJobId", m_arrayJobId);
+
+  }
+
+  if(m_multiNodeJobIdHasBeenSet)
+  {
+   payload.WithString("multiNodeJobId", m_multiNodeJobId);
 
   }
 

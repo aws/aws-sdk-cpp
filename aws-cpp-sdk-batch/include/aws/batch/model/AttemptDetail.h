@@ -75,21 +75,21 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
@@ -97,21 +97,21 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */

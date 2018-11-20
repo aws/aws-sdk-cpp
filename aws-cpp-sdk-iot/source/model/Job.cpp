@@ -37,11 +37,13 @@ Job::Job() :
     m_statusHasBeenSet(false),
     m_forceCanceled(false),
     m_forceCanceledHasBeenSet(false),
+    m_reasonCodeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_presignedUrlConfigHasBeenSet(false),
     m_jobExecutionsRolloutConfigHasBeenSet(false),
+    m_abortConfigHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_completedAtHasBeenSet(false),
@@ -59,11 +61,13 @@ Job::Job(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_forceCanceled(false),
     m_forceCanceledHasBeenSet(false),
+    m_reasonCodeHasBeenSet(false),
     m_commentHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_presignedUrlConfigHasBeenSet(false),
     m_jobExecutionsRolloutConfigHasBeenSet(false),
+    m_abortConfigHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_lastUpdatedAtHasBeenSet(false),
     m_completedAtHasBeenSet(false),
@@ -110,6 +114,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_forceCanceledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reasonCode"))
+  {
+    m_reasonCode = jsonValue.GetString("reasonCode");
+
+    m_reasonCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
@@ -146,6 +157,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_jobExecutionsRolloutConfig = jsonValue.GetObject("jobExecutionsRolloutConfig");
 
     m_jobExecutionsRolloutConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("abortConfig"))
+  {
+    m_abortConfig = jsonValue.GetObject("abortConfig");
+
+    m_abortConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -218,6 +236,12 @@ JsonValue Job::Jsonize() const
 
   }
 
+  if(m_reasonCodeHasBeenSet)
+  {
+   payload.WithString("reasonCode", m_reasonCode);
+
+  }
+
   if(m_commentHasBeenSet)
   {
    payload.WithString("comment", m_comment);
@@ -250,6 +274,12 @@ JsonValue Job::Jsonize() const
   if(m_jobExecutionsRolloutConfigHasBeenSet)
   {
    payload.WithObject("jobExecutionsRolloutConfig", m_jobExecutionsRolloutConfig.Jsonize());
+
+  }
+
+  if(m_abortConfigHasBeenSet)
+  {
+   payload.WithObject("abortConfig", m_abortConfig.Jsonize());
 
   }
 

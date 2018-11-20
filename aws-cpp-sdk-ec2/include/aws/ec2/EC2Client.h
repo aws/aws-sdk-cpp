@@ -11313,7 +11313,7 @@ namespace Model
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
          * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
@@ -11348,7 +11348,7 @@ namespace Model
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
          * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
@@ -11385,7 +11385,7 @@ namespace Model
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
-         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>Resources
+         * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
          * <code>Describe</code> command for the resource type.</p><p><h3>See Also:</h3>  
@@ -12373,12 +12373,16 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to modify the peering connection options,
-         * depending on whether their VPC was the requester or accepter for the VPC peering
-         * connection. If the peered VPCs are in the same account, you can modify the
-         * requester and accepter options in the same request. To confirm which VPC is the
-         * accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * enable DNS resolution for queries from the local VPC. This ensures that queries
+         * from the local VPC resolve to private IP addresses in the peer VPC. This option
+         * is not available if the peered VPCs are in different AWS accounts or different
+         * regions. For peered VPCs in different AWS accounts, each AWS account owner must
+         * initiate a separate request to modify the peering connection options. For
+         * inter-region peering connections, you must use the region for the requester VPC
+         * to modify the requester VPC peering options and the region for the accepter VPC
+         * to modify the accepter VPC peering options. To verify which VPCs are the
+         * accepter and the requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">AWS
          * API Reference</a></p>
@@ -12394,12 +12398,16 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to modify the peering connection options,
-         * depending on whether their VPC was the requester or accepter for the VPC peering
-         * connection. If the peered VPCs are in the same account, you can modify the
-         * requester and accepter options in the same request. To confirm which VPC is the
-         * accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * enable DNS resolution for queries from the local VPC. This ensures that queries
+         * from the local VPC resolve to private IP addresses in the peer VPC. This option
+         * is not available if the peered VPCs are in different AWS accounts or different
+         * regions. For peered VPCs in different AWS accounts, each AWS account owner must
+         * initiate a separate request to modify the peering connection options. For
+         * inter-region peering connections, you must use the region for the requester VPC
+         * to modify the requester VPC peering options and the region for the accepter VPC
+         * to modify the accepter VPC peering options. To verify which VPCs are the
+         * accepter and the requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">AWS
          * API Reference</a></p>
@@ -12417,12 +12425,16 @@ namespace Model
          * instances in your VPC and an EC2-Classic instance that's linked to the peer
          * VPC.</p> </li> <li> <p>Enable/disable the ability to resolve public DNS
          * hostnames to private IP addresses when queried from instances in the peer
-         * VPC.</p> </li> </ul> <p>If the peered VPCs are in different accounts, each owner
-         * must initiate a separate request to modify the peering connection options,
-         * depending on whether their VPC was the requester or accepter for the VPC peering
-         * connection. If the peered VPCs are in the same account, you can modify the
-         * requester and accepter options in the same request. To confirm which VPC is the
-         * accepter and requester for a VPC peering connection, use the
+         * VPC.</p> </li> </ul> <p>If the peered VPCs are in the same AWS account, you can
+         * enable DNS resolution for queries from the local VPC. This ensures that queries
+         * from the local VPC resolve to private IP addresses in the peer VPC. This option
+         * is not available if the peered VPCs are in different AWS accounts or different
+         * regions. For peered VPCs in different AWS accounts, each AWS account owner must
+         * initiate a separate request to modify the peering connection options. For
+         * inter-region peering connections, you must use the region for the requester VPC
+         * to modify the requester VPC peering options and the region for the accepter VPC
+         * to modify the accepter VPC peering options. To verify which VPCs are the
+         * accepter and the requester for a VPC peering connection, use the
          * <a>DescribeVpcPeeringConnections</a> command.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcPeeringConnectionOptions">AWS
          * API Reference</a></p>

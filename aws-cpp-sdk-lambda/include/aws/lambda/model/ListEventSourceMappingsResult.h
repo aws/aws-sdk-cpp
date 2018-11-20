@@ -36,12 +36,6 @@ namespace Lambda
 {
 namespace Model
 {
-  /**
-   * <p>Contains a list of event sources (see
-   * <a>EventSourceMappingConfiguration</a>)</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappingsResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_LAMBDA_API ListEventSourceMappingsResult
   {
   public:
@@ -51,73 +45,80 @@ namespace Model
 
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A string, present if there are more event source mappings.</p>
+     * <p>A pagination token that's returned when the response doesn't contain all
+     * event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline const Aws::Vector<EventSourceMappingConfiguration>& GetEventSourceMappings() const{ return m_eventSourceMappings; }
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline void SetEventSourceMappings(const Aws::Vector<EventSourceMappingConfiguration>& value) { m_eventSourceMappings = value; }
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline void SetEventSourceMappings(Aws::Vector<EventSourceMappingConfiguration>&& value) { m_eventSourceMappings = std::move(value); }
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithEventSourceMappings(const Aws::Vector<EventSourceMappingConfiguration>& value) { SetEventSourceMappings(value); return *this;}
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& WithEventSourceMappings(Aws::Vector<EventSourceMappingConfiguration>&& value) { SetEventSourceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& AddEventSourceMappings(const EventSourceMappingConfiguration& value) { m_eventSourceMappings.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>EventSourceMappingConfiguration</code> objects.</p>
+     * <p>A list of event source mappings.</p>
      */
     inline ListEventSourceMappingsResult& AddEventSourceMappings(EventSourceMappingConfiguration&& value) { m_eventSourceMappings.push_back(std::move(value)); return *this; }
 

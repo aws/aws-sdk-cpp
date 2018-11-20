@@ -34,6 +34,7 @@ Input::Input() :
     m_captionSelectorsHasBeenSet(false),
     m_deblockFilter(InputDeblockFilter::NOT_SET),
     m_deblockFilterHasBeenSet(false),
+    m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
     m_fileInputHasBeenSet(false),
@@ -41,6 +42,7 @@ Input::Input() :
     m_filterEnableHasBeenSet(false),
     m_filterStrength(0),
     m_filterStrengthHasBeenSet(false),
+    m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -58,6 +60,7 @@ Input::Input(JsonView jsonValue) :
     m_captionSelectorsHasBeenSet(false),
     m_deblockFilter(InputDeblockFilter::NOT_SET),
     m_deblockFilterHasBeenSet(false),
+    m_decryptionSettingsHasBeenSet(false),
     m_denoiseFilter(InputDenoiseFilter::NOT_SET),
     m_denoiseFilterHasBeenSet(false),
     m_fileInputHasBeenSet(false),
@@ -65,6 +68,7 @@ Input::Input(JsonView jsonValue) :
     m_filterEnableHasBeenSet(false),
     m_filterStrength(0),
     m_filterStrengthHasBeenSet(false),
+    m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -116,6 +120,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_deblockFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("decryptionSettings"))
+  {
+    m_decryptionSettings = jsonValue.GetObject("decryptionSettings");
+
+    m_decryptionSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("denoiseFilter"))
   {
     m_denoiseFilter = InputDenoiseFilterMapper::GetInputDenoiseFilterForName(jsonValue.GetString("denoiseFilter"));
@@ -142,6 +153,13 @@ Input& Input::operator =(JsonView jsonValue)
     m_filterStrength = jsonValue.GetInteger("filterStrength");
 
     m_filterStrengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageInserter"))
+  {
+    m_imageInserter = jsonValue.GetObject("imageInserter");
+
+    m_imageInserterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputClippings"))
@@ -227,6 +245,12 @@ JsonValue Input::Jsonize() const
    payload.WithString("deblockFilter", InputDeblockFilterMapper::GetNameForInputDeblockFilter(m_deblockFilter));
   }
 
+  if(m_decryptionSettingsHasBeenSet)
+  {
+   payload.WithObject("decryptionSettings", m_decryptionSettings.Jsonize());
+
+  }
+
   if(m_denoiseFilterHasBeenSet)
   {
    payload.WithString("denoiseFilter", InputDenoiseFilterMapper::GetNameForInputDenoiseFilter(m_denoiseFilter));
@@ -246,6 +270,12 @@ JsonValue Input::Jsonize() const
   if(m_filterStrengthHasBeenSet)
   {
    payload.WithInteger("filterStrength", m_filterStrength);
+
+  }
+
+  if(m_imageInserterHasBeenSet)
+  {
+   payload.WithObject("imageInserter", m_imageInserter.Jsonize());
 
   }
 

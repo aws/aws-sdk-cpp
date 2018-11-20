@@ -38,6 +38,7 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_dBSubnetGroupNameHasBeenSet(false),
+    m_vpcSecurityGroupIdsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
@@ -129,6 +130,17 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_dBSubnetGroupNameHasBeenSet)
   {
     ss << "DBSubnetGroupName=" << StringUtils::URLEncode(m_dBSubnetGroupName.c_str()) << "&";
+  }
+
+  if(m_vpcSecurityGroupIdsHasBeenSet)
+  {
+    unsigned vpcSecurityGroupIdsCount = 1;
+    for(auto& item : m_vpcSecurityGroupIds)
+    {
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      vpcSecurityGroupIdsCount++;
+    }
   }
 
   if(m_storageTypeHasBeenSet)

@@ -86,6 +86,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline const Aws::String& GetInviteePrincipalId() const{ return m_inviteePrincipalId; }
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline void SetInviteePrincipalId(const Aws::String& value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId = value; }
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline void SetInviteePrincipalId(Aws::String&& value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId = std::move(value); }
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline void SetInviteePrincipalId(const char* value) { m_inviteePrincipalIdHasBeenSet = true; m_inviteePrincipalId.assign(value); }
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline ShareResult& WithInviteePrincipalId(const Aws::String& value) { SetInviteePrincipalId(value); return *this;}
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline ShareResult& WithInviteePrincipalId(Aws::String&& value) { SetInviteePrincipalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the invited user.</p>
+     */
+    inline ShareResult& WithInviteePrincipalId(const char* value) { SetInviteePrincipalId(value); return *this;}
+
+
+    /**
      * <p>The role.</p>
      */
     inline const RoleType& GetRole() const{ return m_role; }
@@ -212,6 +248,9 @@ namespace Model
 
     Aws::String m_principalId;
     bool m_principalIdHasBeenSet;
+
+    Aws::String m_inviteePrincipalId;
+    bool m_inviteePrincipalIdHasBeenSet;
 
     RoleType m_role;
     bool m_roleHasBeenSet;

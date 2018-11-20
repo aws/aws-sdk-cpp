@@ -85,6 +85,12 @@ DescribeThingResult& DescribeThingResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("billingGroupName"))
+  {
+    m_billingGroupName = jsonValue.GetString("billingGroupName");
+
+  }
+
 
 
   return *this;

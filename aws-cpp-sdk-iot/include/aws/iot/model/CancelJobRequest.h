@@ -85,6 +85,42 @@ namespace Model
 
 
     /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline void SetReasonCode(const Aws::String& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline void SetReasonCode(Aws::String&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline void SetReasonCode(const char* value) { m_reasonCodeHasBeenSet = true; m_reasonCode.assign(value); }
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline CancelJobRequest& WithReasonCode(const Aws::String& value) { SetReasonCode(value); return *this;}
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline CancelJobRequest& WithReasonCode(Aws::String&& value) { SetReasonCode(std::move(value)); return *this;}
+
+    /**
+     * <p>(Optional)A reason code string that explains why the job was canceled.</p>
+     */
+    inline CancelJobRequest& WithReasonCode(const char* value) { SetReasonCode(value); return *this;}
+
+
+    /**
      * <p>An optional comment string describing why the job was canceled.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
@@ -154,6 +190,9 @@ namespace Model
 
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet;
+
+    Aws::String m_reasonCode;
+    bool m_reasonCodeHasBeenSet;
 
     Aws::String m_comment;
     bool m_commentHasBeenSet;

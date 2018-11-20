@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/config/model/BatchGetAggregateResourceConfigResult.h>
 #include <aws/config/model/BatchGetResourceConfigResult.h>
 #include <aws/config/model/DeleteEvaluationResultsResult.h>
 #include <aws/config/model/DeliverConfigSnapshotResult.h>
@@ -40,12 +41,15 @@
 #include <aws/config/model/DescribeRetentionConfigurationsResult.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleResult.h>
 #include <aws/config/model/GetAggregateConfigRuleComplianceSummaryResult.h>
+#include <aws/config/model/GetAggregateDiscoveredResourceCountsResult.h>
+#include <aws/config/model/GetAggregateResourceConfigResult.h>
 #include <aws/config/model/GetComplianceDetailsByConfigRuleResult.h>
 #include <aws/config/model/GetComplianceDetailsByResourceResult.h>
 #include <aws/config/model/GetComplianceSummaryByConfigRuleResult.h>
 #include <aws/config/model/GetComplianceSummaryByResourceTypeResult.h>
 #include <aws/config/model/GetDiscoveredResourceCountsResult.h>
 #include <aws/config/model/GetResourceConfigHistoryResult.h>
+#include <aws/config/model/ListAggregateDiscoveredResourcesResult.h>
 #include <aws/config/model/ListDiscoveredResourcesResult.h>
 #include <aws/config/model/PutAggregationAuthorizationResult.h>
 #include <aws/config/model/PutConfigurationAggregatorResult.h>
@@ -93,6 +97,7 @@ namespace ConfigService
 
 namespace Model
 {
+        class BatchGetAggregateResourceConfigRequest;
         class BatchGetResourceConfigRequest;
         class DeleteAggregationAuthorizationRequest;
         class DeleteConfigRuleRequest;
@@ -119,11 +124,14 @@ namespace Model
         class DescribeRetentionConfigurationsRequest;
         class GetAggregateComplianceDetailsByConfigRuleRequest;
         class GetAggregateConfigRuleComplianceSummaryRequest;
+        class GetAggregateDiscoveredResourceCountsRequest;
+        class GetAggregateResourceConfigRequest;
         class GetComplianceDetailsByConfigRuleRequest;
         class GetComplianceDetailsByResourceRequest;
         class GetComplianceSummaryByResourceTypeRequest;
         class GetDiscoveredResourceCountsRequest;
         class GetResourceConfigHistoryRequest;
+        class ListAggregateDiscoveredResourcesRequest;
         class ListDiscoveredResourcesRequest;
         class PutAggregationAuthorizationRequest;
         class PutConfigRuleRequest;
@@ -136,6 +144,7 @@ namespace Model
         class StartConfigurationRecorderRequest;
         class StopConfigurationRecorderRequest;
 
+        typedef Aws::Utils::Outcome<BatchGetAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetAggregateResourceConfigOutcome;
         typedef Aws::Utils::Outcome<BatchGetResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> BatchGetResourceConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteAggregationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteConfigRuleOutcome;
@@ -162,12 +171,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeRetentionConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeRetentionConfigurationsOutcome;
         typedef Aws::Utils::Outcome<GetAggregateComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateComplianceDetailsByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetAggregateConfigRuleComplianceSummaryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateConfigRuleComplianceSummaryOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateDiscoveredResourceCountsOutcome;
+        typedef Aws::Utils::Outcome<GetAggregateResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> GetAggregateResourceConfigOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailsByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetComplianceDetailsByResourceResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceDetailsByResourceOutcome;
         typedef Aws::Utils::Outcome<GetComplianceSummaryByConfigRuleResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByConfigRuleOutcome;
         typedef Aws::Utils::Outcome<GetComplianceSummaryByResourceTypeResult, Aws::Client::AWSError<ConfigServiceErrors>> GetComplianceSummaryByResourceTypeOutcome;
         typedef Aws::Utils::Outcome<GetDiscoveredResourceCountsResult, Aws::Client::AWSError<ConfigServiceErrors>> GetDiscoveredResourceCountsOutcome;
         typedef Aws::Utils::Outcome<GetResourceConfigHistoryResult, Aws::Client::AWSError<ConfigServiceErrors>> GetResourceConfigHistoryOutcome;
+        typedef Aws::Utils::Outcome<ListAggregateDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListAggregateDiscoveredResourcesOutcome;
         typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<ConfigServiceErrors>> ListDiscoveredResourcesOutcome;
         typedef Aws::Utils::Outcome<PutAggregationAuthorizationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutAggregationAuthorizationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutConfigRuleOutcome;
@@ -180,6 +192,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigurationRecorderOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> StopConfigurationRecorderOutcome;
 
+        typedef std::future<BatchGetAggregateResourceConfigOutcome> BatchGetAggregateResourceConfigOutcomeCallable;
         typedef std::future<BatchGetResourceConfigOutcome> BatchGetResourceConfigOutcomeCallable;
         typedef std::future<DeleteAggregationAuthorizationOutcome> DeleteAggregationAuthorizationOutcomeCallable;
         typedef std::future<DeleteConfigRuleOutcome> DeleteConfigRuleOutcomeCallable;
@@ -206,12 +219,15 @@ namespace Model
         typedef std::future<DescribeRetentionConfigurationsOutcome> DescribeRetentionConfigurationsOutcomeCallable;
         typedef std::future<GetAggregateComplianceDetailsByConfigRuleOutcome> GetAggregateComplianceDetailsByConfigRuleOutcomeCallable;
         typedef std::future<GetAggregateConfigRuleComplianceSummaryOutcome> GetAggregateConfigRuleComplianceSummaryOutcomeCallable;
+        typedef std::future<GetAggregateDiscoveredResourceCountsOutcome> GetAggregateDiscoveredResourceCountsOutcomeCallable;
+        typedef std::future<GetAggregateResourceConfigOutcome> GetAggregateResourceConfigOutcomeCallable;
         typedef std::future<GetComplianceDetailsByConfigRuleOutcome> GetComplianceDetailsByConfigRuleOutcomeCallable;
         typedef std::future<GetComplianceDetailsByResourceOutcome> GetComplianceDetailsByResourceOutcomeCallable;
         typedef std::future<GetComplianceSummaryByConfigRuleOutcome> GetComplianceSummaryByConfigRuleOutcomeCallable;
         typedef std::future<GetComplianceSummaryByResourceTypeOutcome> GetComplianceSummaryByResourceTypeOutcomeCallable;
         typedef std::future<GetDiscoveredResourceCountsOutcome> GetDiscoveredResourceCountsOutcomeCallable;
         typedef std::future<GetResourceConfigHistoryOutcome> GetResourceConfigHistoryOutcomeCallable;
+        typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
         typedef std::future<PutAggregationAuthorizationOutcome> PutAggregationAuthorizationOutcomeCallable;
         typedef std::future<PutConfigRuleOutcome> PutConfigRuleOutcomeCallable;
@@ -227,6 +243,7 @@ namespace Model
 
   class ConfigServiceClient;
 
+    typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetAggregateResourceConfigRequest&, const Model::BatchGetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::BatchGetResourceConfigRequest&, const Model::BatchGetResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteAggregationAuthorizationRequest&, const Model::DeleteAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAggregationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteConfigRuleRequest&, const Model::DeleteConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigRuleResponseReceivedHandler;
@@ -253,12 +270,15 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeRetentionConfigurationsRequest&, const Model::DescribeRetentionConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRetentionConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateComplianceDetailsByConfigRuleRequest&, const Model::GetAggregateComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateConfigRuleComplianceSummaryRequest&, const Model::GetAggregateConfigRuleComplianceSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateDiscoveredResourceCountsRequest&, const Model::GetAggregateDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateDiscoveredResourceCountsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::GetAggregateResourceConfigRequest&, const Model::GetAggregateResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAggregateResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByConfigRuleRequest&, const Model::GetComplianceDetailsByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceDetailsByResourceRequest&, const Model::GetComplianceDetailsByResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceDetailsByResourceResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByConfigRuleResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetComplianceSummaryByResourceTypeRequest&, const Model::GetComplianceSummaryByResourceTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetComplianceSummaryByResourceTypeResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetDiscoveredResourceCountsRequest&, const Model::GetDiscoveredResourceCountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoveredResourceCountsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::GetResourceConfigHistoryRequest&, const Model::GetResourceConfigHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourceConfigHistoryResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::ListAggregateDiscoveredResourcesRequest&, const Model::ListAggregateDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAggregateDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutAggregationAuthorizationRequest&, const Model::PutAggregationAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAggregationAuthorizationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutConfigRuleRequest&, const Model::PutConfigRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigRuleResponseReceivedHandler;
@@ -323,6 +343,49 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Config Service"; }
 
+
+        /**
+         * <p>Returns the current configuration items for resources that are present in
+         * your AWS Config aggregator. The operation also returns a list of resources that
+         * are not processed in the current request. If there are no unprocessed resources,
+         * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * resources.</p> </li> <li> <p> The API does not return tags and
+         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetAggregateResourceConfigOutcome BatchGetAggregateResourceConfig(const Model::BatchGetAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration items for resources that are present in
+         * your AWS Config aggregator. The operation also returns a list of resources that
+         * are not processed in the current request. If there are no unprocessed resources,
+         * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * resources.</p> </li> <li> <p> The API does not return tags and
+         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetAggregateResourceConfigOutcomeCallable BatchGetAggregateResourceConfigCallable(const Model::BatchGetAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns the current configuration items for resources that are present in
+         * your AWS Config aggregator. The operation also returns a list of resources that
+         * are not processed in the current request. If there are no unprocessed resources,
+         * the operation returns an empty <code>unprocessedResourceIdentifiers</code> list.
+         * </p> <note> <ul> <li> <p>The API does not return results for deleted
+         * resources.</p> </li> <li> <p> The API does not return tags and
+         * relationships.</p> </li> </ul> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/BatchGetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetAggregateResourceConfigAsync(const Model::BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the current configuration for one or more requested resources. The
@@ -1314,6 +1377,77 @@ namespace Model
         virtual void GetAggregateConfigRuleComplianceSummaryAsync(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the resource counts across accounts and regions that are present in
+         * your AWS Config aggregator. You can request the resource counts by providing
+         * filters and GroupByKey.</p> <p>For example, if the input contains accountID
+         * 12345678910 and region us-east-1 in filters, the API returns the count of
+         * resources in account ID 12345678910 and region us-east-1. If the input contains
+         * ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source
+         * accounts that are present in your aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregateDiscoveredResourceCountsOutcome GetAggregateDiscoveredResourceCounts(const Model::GetAggregateDiscoveredResourceCountsRequest& request) const;
+
+        /**
+         * <p>Returns the resource counts across accounts and regions that are present in
+         * your AWS Config aggregator. You can request the resource counts by providing
+         * filters and GroupByKey.</p> <p>For example, if the input contains accountID
+         * 12345678910 and region us-east-1 in filters, the API returns the count of
+         * resources in account ID 12345678910 and region us-east-1. If the input contains
+         * ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source
+         * accounts that are present in your aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAggregateDiscoveredResourceCountsOutcomeCallable GetAggregateDiscoveredResourceCountsCallable(const Model::GetAggregateDiscoveredResourceCountsRequest& request) const;
+
+        /**
+         * <p>Returns the resource counts across accounts and regions that are present in
+         * your AWS Config aggregator. You can request the resource counts by providing
+         * filters and GroupByKey.</p> <p>For example, if the input contains accountID
+         * 12345678910 and region us-east-1 in filters, the API returns the count of
+         * resources in account ID 12345678910 and region us-east-1. If the input contains
+         * ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source
+         * accounts that are present in your aggregator.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAggregateDiscoveredResourceCountsAsync(const Model::GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns configuration item that is aggregated for your specific resource in a
+         * specific source account and region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAggregateResourceConfigOutcome GetAggregateResourceConfig(const Model::GetAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns configuration item that is aggregated for your specific resource in a
+         * specific source account and region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAggregateResourceConfigOutcomeCallable GetAggregateResourceConfigCallable(const Model::GetAggregateResourceConfigRequest& request) const;
+
+        /**
+         * <p>Returns configuration item that is aggregated for your specific resource in a
+         * specific source account and region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAggregateResourceConfigAsync(const Model::GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the evaluation results for the specified AWS Config rule. The results
          * indicate which AWS resources were evaluated by the rule, when each resource was
          * last evaluated, and whether each resource complies with the rule.</p><p><h3>See
@@ -1593,6 +1727,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetResourceConfigHistoryAsync(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Accepts a resource type and returns a list of resource identifiers that are
+         * aggregated for a specific resource type across accounts and regions. A resource
+         * identifier includes the resource type, ID, (if available) the custom resource
+         * name, source account, and source region. You can narrow the results to include
+         * only resources that have specific resource IDs, or a resource name, or source
+         * account ID, or source region.</p> <p>For example, if the input consists of
+         * accountID 12345678910 and the region is us-east-1 for resource type
+         * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance
+         * identifiers of accountID 12345678910 and region us-east-1.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAggregateDiscoveredResourcesOutcome ListAggregateDiscoveredResources(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
+
+        /**
+         * <p>Accepts a resource type and returns a list of resource identifiers that are
+         * aggregated for a specific resource type across accounts and regions. A resource
+         * identifier includes the resource type, ID, (if available) the custom resource
+         * name, source account, and source region. You can narrow the results to include
+         * only resources that have specific resource IDs, or a resource name, or source
+         * account ID, or source region.</p> <p>For example, if the input consists of
+         * accountID 12345678910 and the region is us-east-1 for resource type
+         * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance
+         * identifiers of accountID 12345678910 and region us-east-1.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAggregateDiscoveredResourcesOutcomeCallable ListAggregateDiscoveredResourcesCallable(const Model::ListAggregateDiscoveredResourcesRequest& request) const;
+
+        /**
+         * <p>Accepts a resource type and returns a list of resource identifiers that are
+         * aggregated for a specific resource type across accounts and regions. A resource
+         * identifier includes the resource type, ID, (if available) the custom resource
+         * name, source account, and source region. You can narrow the results to include
+         * only resources that have specific resource IDs, or a resource name, or source
+         * account ID, or source region.</p> <p>For example, if the input consists of
+         * accountID 12345678910 and the region is us-east-1 for resource type
+         * <code>AWS::EC2::Instance</code> then the API returns all the EC2 instance
+         * identifiers of accountID 12345678910 and region us-east-1.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a resource type and returns a list of resource identifiers for the
@@ -2174,6 +2360,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void BatchGetAggregateResourceConfigAsyncHelper(const Model::BatchGetAggregateResourceConfigRequest& request, const BatchGetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetResourceConfigAsyncHelper(const Model::BatchGetResourceConfigRequest& request, const BatchGetResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAggregationAuthorizationAsyncHelper(const Model::DeleteAggregationAuthorizationRequest& request, const DeleteAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigRuleAsyncHelper(const Model::DeleteConfigRuleRequest& request, const DeleteConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2200,12 +2387,15 @@ namespace Model
         void DescribeRetentionConfigurationsAsyncHelper(const Model::DescribeRetentionConfigurationsRequest& request, const DescribeRetentionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateComplianceDetailsByConfigRuleAsyncHelper(const Model::GetAggregateComplianceDetailsByConfigRuleRequest& request, const GetAggregateComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAggregateConfigRuleComplianceSummaryAsyncHelper(const Model::GetAggregateConfigRuleComplianceSummaryRequest& request, const GetAggregateConfigRuleComplianceSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAggregateDiscoveredResourceCountsAsyncHelper(const Model::GetAggregateDiscoveredResourceCountsRequest& request, const GetAggregateDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAggregateResourceConfigAsyncHelper(const Model::GetAggregateResourceConfigRequest& request, const GetAggregateResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailsByConfigRuleAsyncHelper(const Model::GetComplianceDetailsByConfigRuleRequest& request, const GetComplianceDetailsByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceDetailsByResourceAsyncHelper(const Model::GetComplianceDetailsByResourceRequest& request, const GetComplianceDetailsByResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceSummaryByConfigRuleAsyncHelper(const GetComplianceSummaryByConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetComplianceSummaryByResourceTypeAsyncHelper(const Model::GetComplianceSummaryByResourceTypeRequest& request, const GetComplianceSummaryByResourceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiscoveredResourceCountsAsyncHelper(const Model::GetDiscoveredResourceCountsRequest& request, const GetDiscoveredResourceCountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResourceConfigHistoryAsyncHelper(const Model::GetResourceConfigHistoryRequest& request, const GetResourceConfigHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAggregateDiscoveredResourcesAsyncHelper(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAggregationAuthorizationAsyncHelper(const Model::PutAggregationAuthorizationRequest& request, const PutAggregationAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigRuleAsyncHelper(const Model::PutConfigRuleRequest& request, const PutConfigRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

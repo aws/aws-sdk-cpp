@@ -21,6 +21,8 @@
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ContainerDetail.h>
+#include <aws/batch/model/NodeDetails.h>
+#include <aws/batch/model/NodeProperties.h>
 #include <aws/batch/model/ArrayPropertiesDetail.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/AttemptDetail.h>
@@ -297,7 +299,7 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
      * created. For non-array jobs and parent array jobs, this is when the job entered
      * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
@@ -306,7 +308,7 @@ namespace Model
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
      * created. For non-array jobs and parent array jobs, this is when the job entered
      * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
@@ -315,7 +317,7 @@ namespace Model
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was
      * created. For non-array jobs and parent array jobs, this is when the job entered
      * the <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
      * array child jobs, this is when the child job was spawned by its parent and
@@ -351,45 +353,45 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * started (when the job transitioned from the <code>STARTING</code> state to the
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
+     * (when the job transitioned from the <code>STARTING</code> state to the
      * <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * started (when the job transitioned from the <code>STARTING</code> state to the
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
+     * (when the job transitioned from the <code>STARTING</code> state to the
      * <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * started (when the job transitioned from the <code>STARTING</code> state to the
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was started
+     * (when the job transitioned from the <code>STARTING</code> state to the
      * <code>RUNNING</code> state).</p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * stopped (when the job transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
+     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * stopped (when the job transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
+     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the job was
-     * stopped (when the job transitioned from the <code>RUNNING</code> state to a
-     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the job was stopped
+     * (when the job transitioned from the <code>RUNNING</code> state to a terminal
+     * state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline JobDetail& WithStoppedAt(long long value) { SetStoppedAt(value); return *this;}
 
@@ -583,6 +585,63 @@ namespace Model
 
 
     /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline const NodeDetails& GetNodeDetails() const{ return m_nodeDetails; }
+
+    /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline void SetNodeDetails(const NodeDetails& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = value; }
+
+    /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline void SetNodeDetails(NodeDetails&& value) { m_nodeDetailsHasBeenSet = true; m_nodeDetails = std::move(value); }
+
+    /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline JobDetail& WithNodeDetails(const NodeDetails& value) { SetNodeDetails(value); return *this;}
+
+    /**
+     * <p>An object representing the details of a node that is associated with a
+     * multi-node parallel job.</p>
+     */
+    inline JobDetail& WithNodeDetails(NodeDetails&& value) { SetNodeDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
+    inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
+    inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
+    inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
+    inline JobDetail& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
+
+    /**
+     * <p>An object representing the node properties of a multi-node parallel job.</p>
+     */
+    inline JobDetail& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
+
+
+    /**
      * <p>The array properties of the job, if it is an array job.</p>
      */
     inline const ArrayPropertiesDetail& GetArrayProperties() const{ return m_arrayProperties; }
@@ -676,6 +735,12 @@ namespace Model
 
     ContainerDetail m_container;
     bool m_containerHasBeenSet;
+
+    NodeDetails m_nodeDetails;
+    bool m_nodeDetailsHasBeenSet;
+
+    NodeProperties m_nodeProperties;
+    bool m_nodePropertiesHasBeenSet;
 
     ArrayPropertiesDetail m_arrayProperties;
     bool m_arrayPropertiesHasBeenSet;

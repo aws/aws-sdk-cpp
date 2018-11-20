@@ -26,7 +26,9 @@ AddThingToThingGroupRequest::AddThingToThingGroupRequest() :
     m_thingGroupNameHasBeenSet(false),
     m_thingGroupArnHasBeenSet(false),
     m_thingNameHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
+    m_thingArnHasBeenSet(false),
+    m_overrideDynamicGroups(false),
+    m_overrideDynamicGroupsHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,12 @@ Aws::String AddThingToThingGroupRequest::SerializePayload() const
   if(m_thingArnHasBeenSet)
   {
    payload.WithString("thingArn", m_thingArn);
+
+  }
+
+  if(m_overrideDynamicGroupsHasBeenSet)
+  {
+   payload.WithBool("overrideDynamicGroups", m_overrideDynamicGroups);
 
   }
 

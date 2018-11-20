@@ -538,6 +538,91 @@ namespace Model
 
 
     /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline ComputeResource& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline ComputeResource& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EC2 placement group to associate with your compute resources. If
+     * you intend to submit multi-node parallel jobs to your compute environment, you
+     * should consider creating a cluster placement group and associate it with your
+     * compute resources. This keeps your multi-node parallel job on a logical grouping
+     * of instances within a single Availability Zone with high network flow potential.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline ComputeResource& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
+
+
+    /**
      * <p>The maximum percentage that a Spot Instance price can be when compared with
      * the On-Demand price for that instance type before instances are launched. For
      * example, if your maximum percentage is 20%, then the Spot price must be below
@@ -690,6 +775,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_placementGroup;
+    bool m_placementGroupHasBeenSet;
 
     int m_bidPercentage;
     bool m_bidPercentageHasBeenSet;

@@ -60,6 +60,7 @@
 #include <aws/workdocs/model/GetDocumentVersionRequest.h>
 #include <aws/workdocs/model/GetFolderRequest.h>
 #include <aws/workdocs/model/GetFolderPathRequest.h>
+#include <aws/workdocs/model/GetResourcesRequest.h>
 #include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
 #include <aws/workdocs/model/RemoveAllResourcePermissionsRequest.h>
 #include <aws/workdocs/model/RemoveResourcePermissionRequest.h>
@@ -1342,6 +1343,41 @@ void WorkDocsClient::GetFolderPathAsync(const GetFolderPathRequest& request, con
 void WorkDocsClient::GetFolderPathAsyncHelper(const GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFolderPath(request), context);
+}
+
+GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/api/v1/resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourcesOutcome(outcome.GetError());
+  }
+}
+
+GetResourcesOutcomeCallable WorkDocsClient::GetResourcesCallable(const GetResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::GetResourcesAsyncHelper(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResources(request), context);
 }
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const

@@ -44,6 +44,7 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_storageTypeHasBeenSet(false),
     m_tdeCredentialArnHasBeenSet(false),
     m_tdeCredentialPasswordHasBeenSet(false),
+    m_vpcSecurityGroupIdsHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_copyTagsToSnapshot(false),
     m_copyTagsToSnapshotHasBeenSet(false),
@@ -157,6 +158,17 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_tdeCredentialPasswordHasBeenSet)
   {
     ss << "TdeCredentialPassword=" << StringUtils::URLEncode(m_tdeCredentialPassword.c_str()) << "&";
+  }
+
+  if(m_vpcSecurityGroupIdsHasBeenSet)
+  {
+    unsigned vpcSecurityGroupIdsCount = 1;
+    for(auto& item : m_vpcSecurityGroupIds)
+    {
+      ss << "VpcSecurityGroupIds.member." << vpcSecurityGroupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      vpcSecurityGroupIdsCount++;
+    }
   }
 
   if(m_domainHasBeenSet)

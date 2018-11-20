@@ -317,67 +317,72 @@ namespace Model
 
 
     /**
-     * <p>The type of request. <code>instant</code> indicates whether the EC2 Fleet
-     * submits a one-time request for your desired capacity. <code>request</code>
-     * indicates whether the EC2 Fleet submits ongoing requests until your desired
-     * capacity is fulfilled, but does not attempt to submit requests in alternative
-     * capacity pools if capacity is unavailable or maintain the capacity.
-     * <code>maintain</code> indicates whether the EC2 Fleet submits ongoing requests
-     * until your desired capacity is fulfilled, and continues to maintain your desired
-     * capacity by replenishing interrupted Spot Instances. Default:
-     * <code>maintain</code>.</p>
+     * <p>The type of the request. By default, the EC2 Fleet places an asynchronous
+     * request for your desired capacity, and maintains it by replenishing interrupted
+     * Spot Instances (<code>maintain</code>). A value of <code>instant</code> places a
+     * synchronous one-time request, and returns errors for any instances that could
+     * not be launched. A value of <code>request</code> places an asynchronous one-time
+     * request without maintaining capacity or submitting requests in alternative
+     * capacity pools if capacity is unavailable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of request. <code>instant</code> indicates whether the EC2 Fleet
-     * submits a one-time request for your desired capacity. <code>request</code>
-     * indicates whether the EC2 Fleet submits ongoing requests until your desired
-     * capacity is fulfilled, but does not attempt to submit requests in alternative
-     * capacity pools if capacity is unavailable or maintain the capacity.
-     * <code>maintain</code> indicates whether the EC2 Fleet submits ongoing requests
-     * until your desired capacity is fulfilled, and continues to maintain your desired
-     * capacity by replenishing interrupted Spot Instances. Default:
-     * <code>maintain</code>.</p>
+     * <p>The type of the request. By default, the EC2 Fleet places an asynchronous
+     * request for your desired capacity, and maintains it by replenishing interrupted
+     * Spot Instances (<code>maintain</code>). A value of <code>instant</code> places a
+     * synchronous one-time request, and returns errors for any instances that could
+     * not be launched. A value of <code>request</code> places an asynchronous one-time
+     * request without maintaining capacity or submitting requests in alternative
+     * capacity pools if capacity is unavailable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of request. <code>instant</code> indicates whether the EC2 Fleet
-     * submits a one-time request for your desired capacity. <code>request</code>
-     * indicates whether the EC2 Fleet submits ongoing requests until your desired
-     * capacity is fulfilled, but does not attempt to submit requests in alternative
-     * capacity pools if capacity is unavailable or maintain the capacity.
-     * <code>maintain</code> indicates whether the EC2 Fleet submits ongoing requests
-     * until your desired capacity is fulfilled, and continues to maintain your desired
-     * capacity by replenishing interrupted Spot Instances. Default:
-     * <code>maintain</code>.</p>
+     * <p>The type of the request. By default, the EC2 Fleet places an asynchronous
+     * request for your desired capacity, and maintains it by replenishing interrupted
+     * Spot Instances (<code>maintain</code>). A value of <code>instant</code> places a
+     * synchronous one-time request, and returns errors for any instances that could
+     * not be launched. A value of <code>request</code> places an asynchronous one-time
+     * request without maintaining capacity or submitting requests in alternative
+     * capacity pools if capacity is unavailable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of request. <code>instant</code> indicates whether the EC2 Fleet
-     * submits a one-time request for your desired capacity. <code>request</code>
-     * indicates whether the EC2 Fleet submits ongoing requests until your desired
-     * capacity is fulfilled, but does not attempt to submit requests in alternative
-     * capacity pools if capacity is unavailable or maintain the capacity.
-     * <code>maintain</code> indicates whether the EC2 Fleet submits ongoing requests
-     * until your desired capacity is fulfilled, and continues to maintain your desired
-     * capacity by replenishing interrupted Spot Instances. Default:
-     * <code>maintain</code>.</p>
+     * <p>The type of the request. By default, the EC2 Fleet places an asynchronous
+     * request for your desired capacity, and maintains it by replenishing interrupted
+     * Spot Instances (<code>maintain</code>). A value of <code>instant</code> places a
+     * synchronous one-time request, and returns errors for any instances that could
+     * not be launched. A value of <code>request</code> places an asynchronous one-time
+     * request without maintaining capacity or submitting requests in alternative
+     * capacity pools if capacity is unavailable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(const FleetType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of request. <code>instant</code> indicates whether the EC2 Fleet
-     * submits a one-time request for your desired capacity. <code>request</code>
-     * indicates whether the EC2 Fleet submits ongoing requests until your desired
-     * capacity is fulfilled, but does not attempt to submit requests in alternative
-     * capacity pools if capacity is unavailable or maintain the capacity.
-     * <code>maintain</code> indicates whether the EC2 Fleet submits ongoing requests
-     * until your desired capacity is fulfilled, and continues to maintain your desired
-     * capacity by replenishing interrupted Spot Instances. Default:
-     * <code>maintain</code>.</p>
+     * <p>The type of the request. By default, the EC2 Fleet places an asynchronous
+     * request for your desired capacity, and maintains it by replenishing interrupted
+     * Spot Instances (<code>maintain</code>). A value of <code>instant</code> places a
+     * synchronous one-time request, and returns errors for any instances that could
+     * not be launched. A value of <code>request</code> places an asynchronous one-time
+     * request without maintaining capacity or submitting requests in alternative
+     * capacity pools if capacity is unavailable. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
      */
     inline CreateFleetRequest& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 

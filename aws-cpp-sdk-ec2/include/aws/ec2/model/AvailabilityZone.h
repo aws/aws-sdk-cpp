@@ -185,6 +185,42 @@ namespace Model
      */
     inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetZoneId() const{ return m_zoneId; }
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline void SetZoneId(const Aws::String& value) { m_zoneIdHasBeenSet = true; m_zoneId = value; }
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline void SetZoneId(Aws::String&& value) { m_zoneIdHasBeenSet = true; m_zoneId = std::move(value); }
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline void SetZoneId(const char* value) { m_zoneIdHasBeenSet = true; m_zoneId.assign(value); }
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneId(const Aws::String& value) { SetZoneId(value); return *this;}
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneId(Aws::String&& value) { SetZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneId(const char* value) { SetZoneId(value); return *this;}
+
   private:
 
     AvailabilityZoneState m_state;
@@ -198,6 +234,9 @@ namespace Model
 
     Aws::String m_zoneName;
     bool m_zoneNameHasBeenSet;
+
+    Aws::String m_zoneId;
+    bool m_zoneIdHasBeenSet;
   };
 
 } // namespace Model

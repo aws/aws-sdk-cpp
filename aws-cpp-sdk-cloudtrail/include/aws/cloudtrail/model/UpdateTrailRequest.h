@@ -563,6 +563,43 @@ namespace Model
      */
     inline UpdateTrailRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether the trail is applied to all accounts in an organization in
+     * AWS Organizations, or only for the current AWS account. The default is false,
+     * and cannot be true unless the call is made on behalf of an AWS account that is
+     * the master account for an organization in AWS Organizations. If the trail is not
+     * an organization trail and this is set to true, the trail will be created in all
+     * AWS accounts that belong to the organization. If the trail is an organization
+     * trail and this is set to false, the trail will remain in the current AWS account
+     * but be deleted from all member accounts in the organization.</p>
+     */
+    inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
+
+    /**
+     * <p>Specifies whether the trail is applied to all accounts in an organization in
+     * AWS Organizations, or only for the current AWS account. The default is false,
+     * and cannot be true unless the call is made on behalf of an AWS account that is
+     * the master account for an organization in AWS Organizations. If the trail is not
+     * an organization trail and this is set to true, the trail will be created in all
+     * AWS accounts that belong to the organization. If the trail is an organization
+     * trail and this is set to false, the trail will remain in the current AWS account
+     * but be deleted from all member accounts in the organization.</p>
+     */
+    inline void SetIsOrganizationTrail(bool value) { m_isOrganizationTrailHasBeenSet = true; m_isOrganizationTrail = value; }
+
+    /**
+     * <p>Specifies whether the trail is applied to all accounts in an organization in
+     * AWS Organizations, or only for the current AWS account. The default is false,
+     * and cannot be true unless the call is made on behalf of an AWS account that is
+     * the master account for an organization in AWS Organizations. If the trail is not
+     * an organization trail and this is set to true, the trail will be created in all
+     * AWS accounts that belong to the organization. If the trail is an organization
+     * trail and this is set to false, the trail will remain in the current AWS account
+     * but be deleted from all member accounts in the organization.</p>
+     */
+    inline UpdateTrailRequest& WithIsOrganizationTrail(bool value) { SetIsOrganizationTrail(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -594,6 +631,9 @@ namespace Model
 
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet;
+
+    bool m_isOrganizationTrail;
+    bool m_isOrganizationTrailHasBeenSet;
   };
 
 } // namespace Model

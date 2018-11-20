@@ -21,6 +21,7 @@
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
+#include <aws/batch/model/NetworkInterface.h>
 #include <utility>
 
 namespace Aws
@@ -638,6 +639,85 @@ namespace Model
      */
     inline ContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_image;
@@ -690,6 +770,12 @@ namespace Model
 
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
+
+    Aws::Vector<NetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
   };
 
 } // namespace Model

@@ -185,6 +185,31 @@ namespace Model
      */
     inline AddThingToThingGroupRequest& WithThingArn(const char* value) { SetThingArn(value); return *this;}
 
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline bool GetOverrideDynamicGroups() const{ return m_overrideDynamicGroups; }
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline void SetOverrideDynamicGroups(bool value) { m_overrideDynamicGroupsHasBeenSet = true; m_overrideDynamicGroups = value; }
+
+    /**
+     * <p>Override dynamic thing groups with static thing groups when 10-group limit is
+     * reached. If a thing belongs to 10 thing groups, and one or more of those groups
+     * are dynamic thing groups, adding a thing to a static group removes the thing
+     * from the last dynamic group.</p>
+     */
+    inline AddThingToThingGroupRequest& WithOverrideDynamicGroups(bool value) { SetOverrideDynamicGroups(value); return *this;}
+
   private:
 
     Aws::String m_thingGroupName;
@@ -198,6 +223,9 @@ namespace Model
 
     Aws::String m_thingArn;
     bool m_thingArnHasBeenSet;
+
+    bool m_overrideDynamicGroups;
+    bool m_overrideDynamicGroupsHasBeenSet;
   };
 
 } // namespace Model

@@ -36,8 +36,8 @@ namespace Model
 
   /**
    * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-   * on your video. Enable or disable this feature for each output individually. This
-   * setting is disabled by default.<p><h3>See Also:</h3>   <a
+   * on your video. Enable or disable this feature for each input or output
+   * individually. This setting is disabled by default.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter">AWS
    * API Reference</a></p>
    */
@@ -51,44 +51,44 @@ namespace Model
 
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline const Aws::Vector<InsertableImage>& GetInsertableImages() const{ return m_insertableImages; }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline void SetInsertableImages(const Aws::Vector<InsertableImage>& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = value; }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline void SetInsertableImages(Aws::Vector<InsertableImage>&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages = std::move(value); }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline ImageInserter& WithInsertableImages(const Aws::Vector<InsertableImage>& value) { SetInsertableImages(value); return *this;}
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline ImageInserter& WithInsertableImages(Aws::Vector<InsertableImage>&& value) { SetInsertableImages(std::move(value)); return *this;}
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline ImageInserter& AddInsertableImages(const InsertableImage& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.push_back(value); return *this; }
 
     /**
-     * Image to insert. Must be 32 bit windows BMP, PNG, or TGA file. Must not be 
-     * larger than the output frames.
+     * Specify the images that you want to overlay on your video. The images must be
+     * PNG or TGA files.
      */
     inline ImageInserter& AddInsertableImages(InsertableImage&& value) { m_insertableImagesHasBeenSet = true; m_insertableImages.push_back(std::move(value)); return *this; }
 

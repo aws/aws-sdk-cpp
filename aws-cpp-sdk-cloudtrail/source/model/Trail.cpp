@@ -45,7 +45,9 @@ Trail::Trail() :
     m_cloudWatchLogsRoleArnHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_hasCustomEventSelectors(false),
-    m_hasCustomEventSelectorsHasBeenSet(false)
+    m_hasCustomEventSelectorsHasBeenSet(false),
+    m_isOrganizationTrail(false),
+    m_isOrganizationTrailHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ Trail::Trail(JsonView jsonValue) :
     m_cloudWatchLogsRoleArnHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_hasCustomEventSelectors(false),
-    m_hasCustomEventSelectorsHasBeenSet(false)
+    m_hasCustomEventSelectorsHasBeenSet(false),
+    m_isOrganizationTrail(false),
+    m_isOrganizationTrailHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +168,13 @@ Trail& Trail::operator =(JsonView jsonValue)
     m_hasCustomEventSelectorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IsOrganizationTrail"))
+  {
+    m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
+
+    m_isOrganizationTrailHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +257,12 @@ JsonValue Trail::Jsonize() const
   if(m_hasCustomEventSelectorsHasBeenSet)
   {
    payload.WithBool("HasCustomEventSelectors", m_hasCustomEventSelectors);
+
+  }
+
+  if(m_isOrganizationTrailHasBeenSet)
+  {
+   payload.WithBool("IsOrganizationTrail", m_isOrganizationTrail);
 
   }
 
