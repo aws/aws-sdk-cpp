@@ -388,9 +388,11 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you create a collection, it is associated with the latest version
+         * of the face model version.</p> <note> <p>Collection names are
+         * case-sensitive.</p> </note> <p>This operation requires permissions to perform
+         * the <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          */
@@ -402,9 +404,11 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you create a collection, it is associated with the latest version
+         * of the face model version.</p> <note> <p>Collection names are
+         * case-sensitive.</p> </note> <p>This operation requires permissions to perform
+         * the <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -418,9 +422,11 @@ namespace Model
          * each of your application users. A user can then index faces using the
          * <code>IndexFaces</code> operation and persist results in a specific collection.
          * Then, a user can search the collection for faces in the user-specific container.
-         * </p> <note> <p>Collection names are case-sensitive.</p> </note> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you create a collection, it is associated with the latest version
+         * of the face model version.</p> <note> <p>Collection names are
+         * case-sensitive.</p> </note> <p>This operation requires permissions to perform
+         * the <code>rekognition:CreateCollection</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateCollection">AWS
          * API Reference</a></p>
          *
@@ -673,12 +679,11 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
-         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
-         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * If you use the to call Amazon Rekognition operations, passing image bytes is not
+         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
+         * <p>This is a stateless API operation. That is, the operation does not persist
+         * any data.</p> </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          */
@@ -695,12 +700,11 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
-         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
-         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * If you use the to call Amazon Rekognition operations, passing image bytes is not
+         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
+         * <p>This is a stateless API operation. That is, the operation does not persist
+         * any data.</p> </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          *
@@ -719,12 +723,11 @@ namespace Model
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
-         * If you use the AWS CLI to call Amazon Rekognition operations, passing image
-         * bytes is not supported. The image must be either a PNG or JPEG formatted file.
-         * </p> <note> <p>This is a stateless API operation. That is, the operation does
-         * not persist any data.</p> </note> <p>This operation requires permissions to
-         * perform the <code>rekognition:DetectFaces</code> action. </p><p><h3>See
-         * Also:</h3>   <a
+         * If you use the to call Amazon Rekognition operations, passing image bytes is not
+         * supported. The image must be either a PNG or JPEG formatted file. </p> <note>
+         * <p>This is a stateless API operation. That is, the operation does not persist
+         * any data.</p> </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:DetectFaces</code> action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectFaces">AWS
          * API Reference</a></p>
          *
@@ -1726,26 +1729,28 @@ namespace Model
          * collection, call . </p> <p>If you're using version 1.0 of the face detection
          * model, <code>IndexFaces</code> indexes the 15 largest faces in the input image.
          * Later versions of the face detection model index the 100 largest faces in the
-         * input image. To determine which version of the model you're using, call and
-         * supply the collection ID. You can also get the model version from the value of
-         * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>. </p>
-         * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
-         * for the input image you provided, Amazon Rekognition associates this ID with all
-         * faces that it detects. When you call the operation, the response returns the
-         * external ID. You can use this external image ID to create a client-side index to
-         * associate the faces with each image. You can then use the index to find all
-         * faces in an image.</p> <p>You can specify the maximum number of faces to index
-         * with the <code>MaxFaces</code> input parameter. This is useful when you want to
-         * index the largest faces in an image and don't want to index smaller faces, such
-         * as those belonging to people standing in the background.</p> <p>The
-         * <code>QualityFilter</code> input parameter allows you to filter out detected
-         * faces that don’t meet the required quality bar chosen by Amazon Rekognition. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>IndexFaces</code> filters detected faces. You can also explicitly filter
-         * detected faces by specifying <code>AUTO</code> for the value of
-         * <code>QualityFilter</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * input image. </p> <p>If you're using version 4 or later of the face model, image
+         * orientation information is not returned in the
+         * <code>OrientationCorrection</code> field. </p> <p>To determine which version of
+         * the model you're using, call and supply the collection ID. You can also get the
+         * model version from the value of <code>FaceModelVersion</code> in the response
+         * from <code>IndexFaces</code> </p> <p>For more information, see Model Versioning
+         * in the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image.</p> <p>You can specify the
+         * maximum number of faces to index with the <code>MaxFaces</code> input parameter.
+         * This is useful when you want to index the largest faces in an image and don't
+         * want to index smaller faces, such as those belonging to people standing in the
+         * background.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet the required quality bar chosen by
+         * Amazon Rekognition. The quality bar is based on a variety of common use cases.
+         * By default, <code>IndexFaces</code> filters detected faces. You can also
+         * explicitly filter detected faces by specifying <code>AUTO</code> for the value
+         * of <code>QualityFilter</code>. If you do not want to filter detected faces,
+         * specify <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model. To get the version of
          * the face model associated with a collection, call . </p> </note> <p>Information
          * about faces detected in an image, but not indexed, is returned in an array of
@@ -1791,26 +1796,28 @@ namespace Model
          * collection, call . </p> <p>If you're using version 1.0 of the face detection
          * model, <code>IndexFaces</code> indexes the 15 largest faces in the input image.
          * Later versions of the face detection model index the 100 largest faces in the
-         * input image. To determine which version of the model you're using, call and
-         * supply the collection ID. You can also get the model version from the value of
-         * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>. </p>
-         * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
-         * for the input image you provided, Amazon Rekognition associates this ID with all
-         * faces that it detects. When you call the operation, the response returns the
-         * external ID. You can use this external image ID to create a client-side index to
-         * associate the faces with each image. You can then use the index to find all
-         * faces in an image.</p> <p>You can specify the maximum number of faces to index
-         * with the <code>MaxFaces</code> input parameter. This is useful when you want to
-         * index the largest faces in an image and don't want to index smaller faces, such
-         * as those belonging to people standing in the background.</p> <p>The
-         * <code>QualityFilter</code> input parameter allows you to filter out detected
-         * faces that don’t meet the required quality bar chosen by Amazon Rekognition. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>IndexFaces</code> filters detected faces. You can also explicitly filter
-         * detected faces by specifying <code>AUTO</code> for the value of
-         * <code>QualityFilter</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * input image. </p> <p>If you're using version 4 or later of the face model, image
+         * orientation information is not returned in the
+         * <code>OrientationCorrection</code> field. </p> <p>To determine which version of
+         * the model you're using, call and supply the collection ID. You can also get the
+         * model version from the value of <code>FaceModelVersion</code> in the response
+         * from <code>IndexFaces</code> </p> <p>For more information, see Model Versioning
+         * in the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image.</p> <p>You can specify the
+         * maximum number of faces to index with the <code>MaxFaces</code> input parameter.
+         * This is useful when you want to index the largest faces in an image and don't
+         * want to index smaller faces, such as those belonging to people standing in the
+         * background.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet the required quality bar chosen by
+         * Amazon Rekognition. The quality bar is based on a variety of common use cases.
+         * By default, <code>IndexFaces</code> filters detected faces. You can also
+         * explicitly filter detected faces by specifying <code>AUTO</code> for the value
+         * of <code>QualityFilter</code>. If you do not want to filter detected faces,
+         * specify <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model. To get the version of
          * the face model associated with a collection, call . </p> </note> <p>Information
          * about faces detected in an image, but not indexed, is returned in an array of
@@ -1858,26 +1865,28 @@ namespace Model
          * collection, call . </p> <p>If you're using version 1.0 of the face detection
          * model, <code>IndexFaces</code> indexes the 15 largest faces in the input image.
          * Later versions of the face detection model index the 100 largest faces in the
-         * input image. To determine which version of the model you're using, call and
-         * supply the collection ID. You can also get the model version from the value of
-         * <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>. </p>
-         * <p>For more information, see Model Versioning in the Amazon Rekognition
-         * Developer Guide.</p> <p>If you provide the optional <code>ExternalImageID</code>
-         * for the input image you provided, Amazon Rekognition associates this ID with all
-         * faces that it detects. When you call the operation, the response returns the
-         * external ID. You can use this external image ID to create a client-side index to
-         * associate the faces with each image. You can then use the index to find all
-         * faces in an image.</p> <p>You can specify the maximum number of faces to index
-         * with the <code>MaxFaces</code> input parameter. This is useful when you want to
-         * index the largest faces in an image and don't want to index smaller faces, such
-         * as those belonging to people standing in the background.</p> <p>The
-         * <code>QualityFilter</code> input parameter allows you to filter out detected
-         * faces that don’t meet the required quality bar chosen by Amazon Rekognition. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>IndexFaces</code> filters detected faces. You can also explicitly filter
-         * detected faces by specifying <code>AUTO</code> for the value of
-         * <code>QualityFilter</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
+         * input image. </p> <p>If you're using version 4 or later of the face model, image
+         * orientation information is not returned in the
+         * <code>OrientationCorrection</code> field. </p> <p>To determine which version of
+         * the model you're using, call and supply the collection ID. You can also get the
+         * model version from the value of <code>FaceModelVersion</code> in the response
+         * from <code>IndexFaces</code> </p> <p>For more information, see Model Versioning
+         * in the Amazon Rekognition Developer Guide.</p> <p>If you provide the optional
+         * <code>ExternalImageID</code> for the input image you provided, Amazon
+         * Rekognition associates this ID with all faces that it detects. When you call the
+         * operation, the response returns the external ID. You can use this external image
+         * ID to create a client-side index to associate the faces with each image. You can
+         * then use the index to find all faces in an image.</p> <p>You can specify the
+         * maximum number of faces to index with the <code>MaxFaces</code> input parameter.
+         * This is useful when you want to index the largest faces in an image and don't
+         * want to index smaller faces, such as those belonging to people standing in the
+         * background.</p> <p>The <code>QualityFilter</code> input parameter allows you to
+         * filter out detected faces that don’t meet the required quality bar chosen by
+         * Amazon Rekognition. The quality bar is based on a variety of common use cases.
+         * By default, <code>IndexFaces</code> filters detected faces. You can also
+         * explicitly filter detected faces by specifying <code>AUTO</code> for the value
+         * of <code>QualityFilter</code>. If you do not want to filter detected faces,
+         * specify <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model. To get the version of
          * the face model associated with a collection, call . </p> </note> <p>Information
          * about faces detected in an image, but not indexed, is returned in an array of

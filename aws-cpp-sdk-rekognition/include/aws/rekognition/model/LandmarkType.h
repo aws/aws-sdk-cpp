@@ -50,7 +50,12 @@ namespace Model
     mouthUp,
     mouthDown,
     leftPupil,
-    rightPupil
+    rightPupil,
+    upperJawlineLeft,
+    midJawlineLeft,
+    chinBottom,
+    midJawlineRight,
+    upperJawlineRight
   };
 
 namespace LandmarkTypeMapper
