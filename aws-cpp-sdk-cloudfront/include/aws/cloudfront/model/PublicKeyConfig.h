@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Information about a public key you add to CloudFront to use with features
    * like field-level encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/PublicKeyConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKeyConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeyConfig
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline PublicKeyConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 

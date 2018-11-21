@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/Origins.h>
+#include <aws/cloudfront/model/OriginGroups.h>
 #include <aws/cloudfront/model/DefaultCacheBehavior.h>
 #include <aws/cloudfront/model/CacheBehaviors.h>
 #include <aws/cloudfront/model/CustomErrorResponses.h>
@@ -44,7 +45,7 @@ namespace Model
 
   /**
    * <p>A distribution configuration.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfig
@@ -62,13 +63,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
@@ -77,13 +73,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
@@ -92,13 +83,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
@@ -107,13 +93,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
@@ -122,13 +103,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline DistributionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
@@ -137,13 +113,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline DistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
@@ -152,13 +123,8 @@ namespace Model
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
      * (regardless of the content of the <code>DistributionConfig</code> object),
      * CloudFront creates a new distribution.</p> <p>If <code>CallerReference</code> is
-     * a value you already sent in a previous request to create a distribution, and if
-     * the content of the <code>DistributionConfig</code> is identical to the original
-     * request (ignoring white space), CloudFront returns the same the response that it
-     * returned to the original request.</p> <p>If <code>CallerReference</code> is a
-     * value you already sent in a previous request to create a distribution but the
-     * content of the <code>DistributionConfig</code> is different from the original
-     * request, CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
+     * a value that you already sent in a previous request to create a distribution,
+     * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
     inline DistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
@@ -364,6 +330,37 @@ namespace Model
      * </p>
      */
     inline DistributionConfig& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline DistributionConfig& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline DistributionConfig& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
 
 
     /**
@@ -711,35 +708,55 @@ namespace Model
     inline DistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionConfig& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionConfig& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRestrictions(Restrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionConfig& WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionConfig& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
 
@@ -1016,6 +1033,9 @@ namespace Model
 
     Origins m_origins;
     bool m_originsHasBeenSet;
+
+    OriginGroups m_originGroups;
+    bool m_originGroupsHasBeenSet;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
     bool m_defaultCacheBehaviorHasBeenSet;

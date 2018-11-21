@@ -64,7 +64,8 @@ MetricAlarm::MetricAlarm() :
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false)
+    m_evaluateLowSampleCountPercentileHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
 }
 
@@ -102,7 +103,8 @@ MetricAlarm::MetricAlarm(const XmlNode& xmlNode) :
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false)
+    m_evaluateLowSampleCountPercentileHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -287,6 +289,18 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
       m_evaluateLowSampleCountPercentile = StringUtils::Trim(evaluateLowSampleCountPercentileNode.GetText().c_str());
       m_evaluateLowSampleCountPercentileHasBeenSet = true;
     }
+    XmlNode metricsNode = resultNode.FirstChild("Metrics");
+    if(!metricsNode.IsNull())
+    {
+      XmlNode metricsMember = metricsNode.FirstChild("member");
+      while(!metricsMember.IsNull())
+      {
+        m_metrics.push_back(metricsMember);
+        metricsMember = metricsMember.NextNode("member");
+      }
+
+      m_metricsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -437,6 +451,17 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
   }
 
+  if(m_metricsHasBeenSet)
+  {
+      unsigned metricsIdx = 1;
+      for(auto& item : m_metrics)
+      {
+        Aws::StringStream metricsSs;
+        metricsSs << location << index << locationValue << ".Metrics.member." << metricsIdx++;
+        item.OutputToStream(oStream, metricsSs.str().c_str());
+      }
+  }
+
 }
 
 void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -558,6 +583,16 @@ void MetricAlarm::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_evaluateLowSampleCountPercentileHasBeenSet)
   {
       oStream << location << ".EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
+  }
+  if(m_metricsHasBeenSet)
+  {
+      unsigned metricsIdx = 1;
+      for(auto& item : m_metrics)
+      {
+        Aws::StringStream metricsSs;
+        metricsSs << location <<  ".Metrics.member." << metricsIdx++;
+        item.OutputToStream(oStream, metricsSs.str().c_str());
+      }
   }
 }
 

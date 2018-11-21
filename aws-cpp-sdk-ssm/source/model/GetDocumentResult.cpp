@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetDocumentResult::GetDocumentResult() : 
+    m_status(DocumentStatus::NOT_SET),
     m_documentType(DocumentType::NOT_SET),
     m_documentFormat(DocumentFormat::NOT_SET)
 {
 }
 
 GetDocumentResult::GetDocumentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(DocumentStatus::NOT_SET),
     m_documentType(DocumentType::NOT_SET),
     m_documentFormat(DocumentFormat::NOT_SET)
 {
@@ -48,9 +50,27 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+  }
+
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
+
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("StatusInformation"))
+  {
+    m_statusInformation = jsonValue.GetString("StatusInformation");
 
   }
 
@@ -70,6 +90,15 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
   {
     m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
 
+  }
+
+  if(jsonValue.ValueExists("AttachmentsContent"))
+  {
+    Array<JsonView> attachmentsContentJsonList = jsonValue.GetArray("AttachmentsContent");
+    for(unsigned attachmentsContentIndex = 0; attachmentsContentIndex < attachmentsContentJsonList.GetLength(); ++attachmentsContentIndex)
+    {
+      m_attachmentsContent.push_back(attachmentsContentJsonList[attachmentsContentIndex].AsObject());
+    }
   }
 
 

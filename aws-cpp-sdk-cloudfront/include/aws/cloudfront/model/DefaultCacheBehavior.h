@@ -42,7 +42,7 @@ namespace Model
    * a <code>CacheBehavior</code> element or if files don't match any of the values
    * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
    * create exactly one default cache behavior.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DefaultCacheBehavior">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DefaultCacheBehavior">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DefaultCacheBehavior

@@ -141,12 +141,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -158,12 +159,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -175,12 +177,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -192,12 +195,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -209,12 +213,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -226,12 +231,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -243,12 +249,13 @@ namespace Model
 
     /**
      * <p> The current state of the cluster. Possible values are the following:</p>
-     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p>
-     * <code>cancelling-resize</code> </p> </li> <li> <p> <code>creating</code> </p>
-     * </li> <li> <p> <code>deleting</code> </p> </li> <li> <p>
-     * <code>final-snapshot</code> </p> </li> <li> <p> <code>hardware-failure</code>
-     * </p> </li> <li> <p> <code>incompatible-hsm</code> </p> </li> <li> <p>
-     * <code>incompatible-network</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>available</code> </p> </li> <li> <p> <code>available,
+     * prep-for-resize</code> </p> </li> <li> <p> <code>available,
+     * resize-cleanup</code> </p> </li> <li> <p> <code>cancelling-resize</code> </p>
+     * </li> <li> <p> <code>creating</code> </p> </li> <li> <p> <code>deleting</code>
+     * </p> </li> <li> <p> <code>final-snapshot</code> </p> </li> <li> <p>
+     * <code>hardware-failure</code> </p> </li> <li> <p> <code>incompatible-hsm</code>
+     * </p> </li> <li> <p> <code>incompatible-network</code> </p> </li> <li> <p>
      * <code>incompatible-parameters</code> </p> </li> <li> <p>
      * <code>incompatible-restore</code> </p> </li> <li> <p> <code>modifying</code>
      * </p> </li> <li> <p> <code>rebooting</code> </p> </li> <li> <p>
@@ -465,25 +472,25 @@ namespace Model
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline Cluster& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 
@@ -892,21 +899,21 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that major version
+     * <p>A boolean value that, if <code>true</code>, indicates that major version
      * upgrades will be applied automatically to the cluster during the maintenance
      * window. </p>
      */
     inline bool GetAllowVersionUpgrade() const{ return m_allowVersionUpgrade; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that major version
+     * <p>A boolean value that, if <code>true</code>, indicates that major version
      * upgrades will be applied automatically to the cluster during the maintenance
      * window. </p>
      */
     inline void SetAllowVersionUpgrade(bool value) { m_allowVersionUpgradeHasBeenSet = true; m_allowVersionUpgrade = value; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that major version
+     * <p>A boolean value that, if <code>true</code>, indicates that major version
      * upgrades will be applied automatically to the cluster during the maintenance
      * window. </p>
      */
@@ -930,38 +937,38 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that the cluster can be
+     * <p>A boolean value that, if <code>true</code>, indicates that the cluster can be
      * accessed from a public network.</p>
      */
     inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that the cluster can be
+     * <p>A boolean value that, if <code>true</code>, indicates that the cluster can be
      * accessed from a public network.</p>
      */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that the cluster can be
+     * <p>A boolean value that, if <code>true</code>, indicates that the cluster can be
      * accessed from a public network.</p>
      */
     inline Cluster& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
 
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that data in the
+     * <p>A boolean value that, if <code>true</code>, indicates that data in the
      * cluster is encrypted at rest.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that data in the
+     * <p>A boolean value that, if <code>true</code>, indicates that data in the
      * cluster is encrypted at rest.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
-     * <p>A Boolean value that, if <code>true</code>, indicates that data in the
+     * <p>A boolean value that, if <code>true</code>, indicates that data in the
      * cluster is encrypted at rest.</p>
      */
     inline Cluster& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

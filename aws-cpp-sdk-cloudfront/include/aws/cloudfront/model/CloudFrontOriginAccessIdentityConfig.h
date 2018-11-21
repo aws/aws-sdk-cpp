@@ -36,7 +36,7 @@ namespace Model
    * <p>Origin access identity configuration. Send a <code>GET</code> request to the
    * <code>/<i>CloudFront API version</i>/CloudFront/identity ID/config</code>
    * resource. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CloudFrontOriginAccessIdentityConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentityConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityConfig
@@ -50,8 +50,9 @@ namespace Model
 
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -66,8 +67,9 @@ namespace Model
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -82,8 +84,9 @@ namespace Model
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -98,8 +101,9 @@ namespace Model
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -114,8 +118,9 @@ namespace Model
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -130,8 +135,9 @@ namespace Model
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the
@@ -146,8 +152,9 @@ namespace Model
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p> <p>If the
-     * <code>CallerReference</code> is new (no matter the content of the
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the
      * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
      * identity is created.</p> <p>If the <code>CallerReference</code> is a value
      * already sent in a previous identity request, and the content of the

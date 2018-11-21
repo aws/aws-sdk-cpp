@@ -17,6 +17,8 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/ResolverKind.h>
+#include <aws/appsync/model/PipelineConfig.h>
 #include <utility>
 
 namespace Aws
@@ -257,6 +259,88 @@ namespace Model
      */
     inline UpdateResolverRequest& WithResponseMappingTemplate(const char* value) { SetResponseMappingTemplate(value); return *this;}
 
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline const ResolverKind& GetKind() const{ return m_kind; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline void SetKind(ResolverKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline UpdateResolverRequest& WithKind(const ResolverKind& value) { SetKind(value); return *this;}
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline UpdateResolverRequest& WithKind(ResolverKind&& value) { SetKind(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline const PipelineConfig& GetPipelineConfig() const{ return m_pipelineConfig; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline void SetPipelineConfig(const PipelineConfig& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = value; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline void SetPipelineConfig(PipelineConfig&& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = std::move(value); }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline UpdateResolverRequest& WithPipelineConfig(const PipelineConfig& value) { SetPipelineConfig(value); return *this;}
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline UpdateResolverRequest& WithPipelineConfig(PipelineConfig&& value) { SetPipelineConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -276,6 +360,12 @@ namespace Model
 
     Aws::String m_responseMappingTemplate;
     bool m_responseMappingTemplateHasBeenSet;
+
+    ResolverKind m_kind;
+    bool m_kindHasBeenSet;
+
+    PipelineConfig m_pipelineConfig;
+    bool m_pipelineConfigHasBeenSet;
   };
 
 } // namespace Model

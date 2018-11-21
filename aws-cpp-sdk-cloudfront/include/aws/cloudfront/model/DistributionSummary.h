@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/Origins.h>
+#include <aws/cloudfront/model/OriginGroups.h>
 #include <aws/cloudfront/model/DefaultCacheBehavior.h>
 #include <aws/cloudfront/model/CacheBehaviors.h>
 #include <aws/cloudfront/model/CustomErrorResponses.h>
@@ -45,7 +46,7 @@ namespace Model
   /**
    * <p>A summary of the information about a CloudFront distribution.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionSummary
@@ -333,6 +334,37 @@ namespace Model
 
 
     /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline DistributionSummary& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
+
+    /**
+     * <p> A complex type that contains information about origin groups for this
+     * distribution.</p>
+     */
+    inline DistributionSummary& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
+
+
+    /**
      * <p>A complex type that describes the default cache behavior if you don't specify
      * a <code>CacheBehavior</code> element or if files don't match any of the values
      * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
@@ -471,19 +503,34 @@ namespace Model
     inline DistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
 
-    
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
-    
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
-    
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
-    
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline DistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
-    
+    /**
+     * <p>A complex type that contains information about price class for this streaming
+     * distribution. </p>
+     */
     inline DistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
 
@@ -503,35 +550,55 @@ namespace Model
     inline DistributionSummary& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionSummary& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRestrictions(Restrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionSummary& WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DistributionSummary& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
 
 
@@ -652,6 +719,9 @@ namespace Model
 
     Origins m_origins;
     bool m_originsHasBeenSet;
+
+    OriginGroups m_originGroups;
+    bool m_originGroupsHasBeenSet;
 
     DefaultCacheBehavior m_defaultCacheBehavior;
     bool m_defaultCacheBehaviorHasBeenSet;

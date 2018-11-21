@@ -96,6 +96,78 @@ namespace Model
 
 
     /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(Aws::String&& value) { m_groupARNHasBeenSet = true; m_groupARN = std::move(value); }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(const char* value) { m_groupARNHasBeenSet = true; m_groupARN.assign(value); }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(const Aws::String& value) { SetGroupARN(value); return *this;}
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(Aws::String&& value) { SetGroupARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(const char* value) { SetGroupARN(value); return *this;}
+
+
+    /**
      * <p>Pagination token. Not used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -137,6 +209,12 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+
+    Aws::String m_groupARN;
+    bool m_groupARNHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

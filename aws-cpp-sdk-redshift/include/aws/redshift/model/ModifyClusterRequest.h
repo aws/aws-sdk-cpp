@@ -669,8 +669,8 @@ namespace Model
     /**
      * <p>The default for number of days that a newly created manual snapshot is
      * retained. If the value is -1, the manual snapshot is retained indefinitely. This
-     * value will not retroactively change the retention periods of existing manual
-     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * value doesn't retroactively change the retention periods of existing manual
+     * snapshots.</p> <p>The value must be either -1 or an integer between 1 and
      * 3,653.</p> <p>The default value is -1.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
@@ -678,8 +678,8 @@ namespace Model
     /**
      * <p>The default for number of days that a newly created manual snapshot is
      * retained. If the value is -1, the manual snapshot is retained indefinitely. This
-     * value will not retroactively change the retention periods of existing manual
-     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * value doesn't retroactively change the retention periods of existing manual
+     * snapshots.</p> <p>The value must be either -1 or an integer between 1 and
      * 3,653.</p> <p>The default value is -1.</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
@@ -687,8 +687,8 @@ namespace Model
     /**
      * <p>The default for number of days that a newly created manual snapshot is
      * retained. If the value is -1, the manual snapshot is retained indefinitely. This
-     * value will not retroactively change the retention periods of existing manual
-     * snapshots</p> <p>The value must be either -1 or an integer between 1 and
+     * value doesn't retroactively change the retention periods of existing manual
+     * snapshots.</p> <p>The value must be either -1 or an integer between 1 and
      * 3,653.</p> <p>The default value is -1.</p>
      */
     inline ModifyClusterRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}

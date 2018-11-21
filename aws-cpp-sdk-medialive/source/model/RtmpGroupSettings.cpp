@@ -37,6 +37,8 @@ RtmpGroupSettings::RtmpGroupSettings() :
     m_cacheLengthHasBeenSet(false),
     m_captionData(RtmpCaptionData::NOT_SET),
     m_captionDataHasBeenSet(false),
+    m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
+    m_inputLossActionHasBeenSet(false),
     m_restartDelay(0),
     m_restartDelayHasBeenSet(false)
 {
@@ -51,6 +53,8 @@ RtmpGroupSettings::RtmpGroupSettings(JsonView jsonValue) :
     m_cacheLengthHasBeenSet(false),
     m_captionData(RtmpCaptionData::NOT_SET),
     m_captionDataHasBeenSet(false),
+    m_inputLossAction(InputLossActionForRtmpOut::NOT_SET),
+    m_inputLossActionHasBeenSet(false),
     m_restartDelay(0),
     m_restartDelayHasBeenSet(false)
 {
@@ -87,6 +91,13 @@ RtmpGroupSettings& RtmpGroupSettings::operator =(JsonView jsonValue)
     m_captionDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inputLossAction"))
+  {
+    m_inputLossAction = InputLossActionForRtmpOutMapper::GetInputLossActionForRtmpOutForName(jsonValue.GetString("inputLossAction"));
+
+    m_inputLossActionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("restartDelay"))
   {
     m_restartDelay = jsonValue.GetInteger("restartDelay");
@@ -120,6 +131,11 @@ JsonValue RtmpGroupSettings::Jsonize() const
   if(m_captionDataHasBeenSet)
   {
    payload.WithString("captionData", RtmpCaptionDataMapper::GetNameForRtmpCaptionData(m_captionData));
+  }
+
+  if(m_inputLossActionHasBeenSet)
+  {
+   payload.WithString("inputLossAction", InputLossActionForRtmpOutMapper::GetNameForInputLossActionForRtmpOut(m_inputLossAction));
   }
 
   if(m_restartDelayHasBeenSet)

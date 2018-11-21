@@ -126,6 +126,56 @@ namespace Model
 
 
     /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline DocumentIdentifier& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline DocumentIdentifier& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional field specifying the version of the artifact associated with the
+     * document. For example, "Release 12, Update 6". This value is unique across all
+     * versions of a document, and cannot be changed.</p>
+     */
+    inline DocumentIdentifier& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>The operating system platform. </p>
      */
     inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
@@ -384,6 +434,9 @@ namespace Model
 
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
+
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
 
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet;

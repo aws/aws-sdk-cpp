@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p> Public key information summary. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/PublicKeySummary">AWS
+   * <p>A complex data type for public key information. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKeySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeySummary

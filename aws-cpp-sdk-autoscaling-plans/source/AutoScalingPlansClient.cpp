@@ -31,6 +31,7 @@
 #include <aws/autoscaling-plans/model/DeleteScalingPlanRequest.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlanResourcesRequest.h>
 #include <aws/autoscaling-plans/model/DescribeScalingPlansRequest.h>
+#include <aws/autoscaling-plans/model/GetScalingPlanResourceForecastDataRequest.h>
 #include <aws/autoscaling-plans/model/UpdateScalingPlanRequest.h>
 
 using namespace Aws;
@@ -235,6 +236,41 @@ void AutoScalingPlansClient::DescribeScalingPlansAsync(const DescribeScalingPlan
 void AutoScalingPlansClient::DescribeScalingPlansAsyncHelper(const DescribeScalingPlansRequest& request, const DescribeScalingPlansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeScalingPlans(request), context);
+}
+
+GetScalingPlanResourceForecastDataOutcome AutoScalingPlansClient::GetScalingPlanResourceForecastData(const GetScalingPlanResourceForecastDataRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetScalingPlanResourceForecastDataOutcome(GetScalingPlanResourceForecastDataResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetScalingPlanResourceForecastDataOutcome(outcome.GetError());
+  }
+}
+
+GetScalingPlanResourceForecastDataOutcomeCallable AutoScalingPlansClient::GetScalingPlanResourceForecastDataCallable(const GetScalingPlanResourceForecastDataRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetScalingPlanResourceForecastDataOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetScalingPlanResourceForecastData(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsync(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetScalingPlanResourceForecastDataAsyncHelper( request, handler, context ); } );
+}
+
+void AutoScalingPlansClient::GetScalingPlanResourceForecastDataAsyncHelper(const GetScalingPlanResourceForecastDataRequest& request, const GetScalingPlanResourceForecastDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetScalingPlanResourceForecastData(request), context);
 }
 
 UpdateScalingPlanOutcome AutoScalingPlansClient::UpdateScalingPlan(const UpdateScalingPlanRequest& request) const

@@ -119,31 +119,31 @@ namespace Model
 
 
     /**
-     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
     inline const LogConfig& GetLogConfig() const{ return m_logConfig; }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
     inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
     inline void SetLogConfig(LogConfig&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
     inline UpdateGraphqlApiRequest& WithLogConfig(const LogConfig& value) { SetLogConfig(value); return *this;}
 
     /**
-     * <p>The Amazon CloudWatch logs configuration for the <code>GraphqlApi</code>
+     * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
     inline UpdateGraphqlApiRequest& WithLogConfig(LogConfig&& value) { SetLogConfig(std::move(value)); return *this;}
@@ -176,63 +176,58 @@ namespace Model
 
 
     /**
-     * <p>The new Amazon Cognito User Pool configuration for the
+     * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
 
     /**
-     * <p>The new Amazon Cognito User Pool configuration for the
+     * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
-     * <p>The new Amazon Cognito User Pool configuration for the
+     * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
     inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
 
     /**
-     * <p>The new Amazon Cognito User Pool configuration for the
+     * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
 
     /**
-     * <p>The new Amazon Cognito User Pool configuration for the
+     * <p>The new Amazon Cognito user pool configuration for the
      * <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Open Id Connect configuration configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
 
     /**
-     * <p>The Open Id Connect configuration configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
 
     /**
-     * <p>The Open Id Connect configuration configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
 
     /**
-     * <p>The Open Id Connect configuration configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
 
     /**
-     * <p>The Open Id Connect configuration configuration for the
-     * <code>GraphqlApi</code> object.</p>
+     * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
     inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 

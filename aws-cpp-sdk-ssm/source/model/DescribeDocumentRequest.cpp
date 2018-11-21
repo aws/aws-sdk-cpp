@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 DescribeDocumentRequest::DescribeDocumentRequest() : 
     m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false)
+    m_documentVersionHasBeenSet(false),
+    m_versionNameHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,12 @@ Aws::String DescribeDocumentRequest::SerializePayload() const
   if(m_documentVersionHasBeenSet)
   {
    payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A customer origin or an Amazon S3 bucket configured as a website
    * endpoint.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CustomOriginConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CustomOriginConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomOriginConfig

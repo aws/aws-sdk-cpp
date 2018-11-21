@@ -29,7 +29,8 @@ namespace Model
     Creating,
     Active,
     Updating,
-    Deleting
+    Deleting,
+    Failed
   };
 
 namespace DocumentStatusMapper

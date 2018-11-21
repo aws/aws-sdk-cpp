@@ -50,49 +50,49 @@ namespace Model
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const{ return m_scheduleDefinitions; }
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline void SetScheduleDefinitions(const Aws::Vector<Aws::String>& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = value; }
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline void SetScheduleDefinitions(Aws::Vector<Aws::String>&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions = std::move(value); }
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline CreateSnapshotScheduleRequest& WithScheduleDefinitions(const Aws::Vector<Aws::String>& value) { SetScheduleDefinitions(value); return *this;}
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline CreateSnapshotScheduleRequest& WithScheduleDefinitions(Aws::Vector<Aws::String>&& value) { SetScheduleDefinitions(std::move(value)); return *this;}
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline CreateSnapshotScheduleRequest& AddScheduleDefinitions(const Aws::String& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline CreateSnapshotScheduleRequest& AddScheduleDefinitions(Aws::String&& value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The definition of the snapshot schedule. The definition is made up of
-     * schedule expressions. For example, "cron(30 12 *)" or "rate(12 hours)". </p>
+     * schedule expressions, for example "cron(30 12 *)" or "rate(12 hours)". </p>
      */
     inline CreateSnapshotScheduleRequest& AddScheduleDefinitions(const char* value) { m_scheduleDefinitionsHasBeenSet = true; m_scheduleDefinitions.push_back(value); return *this; }
 

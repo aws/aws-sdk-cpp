@@ -47,7 +47,8 @@ PutMetricAlarmRequest::PutMetricAlarmRequest() :
     m_comparisonOperator(ComparisonOperator::NOT_SET),
     m_comparisonOperatorHasBeenSet(false),
     m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false)
+    m_evaluateLowSampleCountPercentileHasBeenSet(false),
+    m_metricsHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ Aws::String PutMetricAlarmRequest::SerializePayload() const
   if(m_evaluateLowSampleCountPercentileHasBeenSet)
   {
     ss << "EvaluateLowSampleCountPercentile=" << StringUtils::URLEncode(m_evaluateLowSampleCountPercentile.c_str()) << "&";
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+    unsigned metricsCount = 1;
+    for(auto& item : m_metrics)
+    {
+      item.OutputToStream(ss, "Metrics.member.", metricsCount, "");
+      metricsCount++;
+    }
   }
 
   ss << "Version=2010-08-01";

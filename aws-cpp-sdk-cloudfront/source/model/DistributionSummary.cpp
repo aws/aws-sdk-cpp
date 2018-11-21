@@ -38,6 +38,7 @@ DistributionSummary::DistributionSummary() :
     m_domainNameHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_originsHasBeenSet(false),
+    m_originGroupsHasBeenSet(false),
     m_defaultCacheBehaviorHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_customErrorResponsesHasBeenSet(false),
@@ -64,6 +65,7 @@ DistributionSummary::DistributionSummary(const XmlNode& xmlNode) :
     m_domainNameHasBeenSet(false),
     m_aliasesHasBeenSet(false),
     m_originsHasBeenSet(false),
+    m_originGroupsHasBeenSet(false),
     m_defaultCacheBehaviorHasBeenSet(false),
     m_cacheBehaviorsHasBeenSet(false),
     m_customErrorResponsesHasBeenSet(false),
@@ -130,6 +132,12 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     {
       m_origins = originsNode;
       m_originsHasBeenSet = true;
+    }
+    XmlNode originGroupsNode = resultNode.FirstChild("OriginGroups");
+    if(!originGroupsNode.IsNull())
+    {
+      m_originGroups = originGroupsNode;
+      m_originGroupsHasBeenSet = true;
     }
     XmlNode defaultCacheBehaviorNode = resultNode.FirstChild("DefaultCacheBehavior");
     if(!defaultCacheBehaviorNode.IsNull())
@@ -245,6 +253,12 @@ void DistributionSummary::AddToNode(XmlNode& parentNode) const
   {
    XmlNode originsNode = parentNode.CreateChildElement("Origins");
    m_origins.AddToNode(originsNode);
+  }
+
+  if(m_originGroupsHasBeenSet)
+  {
+   XmlNode originGroupsNode = parentNode.CreateChildElement("OriginGroups");
+   m_originGroups.AddToNode(originGroupsNode);
   }
 
   if(m_defaultCacheBehaviorHasBeenSet)

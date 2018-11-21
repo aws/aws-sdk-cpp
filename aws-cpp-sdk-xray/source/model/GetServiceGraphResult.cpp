@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServiceGraphResult::GetServiceGraphResult()
+GetServiceGraphResult::GetServiceGraphResult() : 
+    m_containsOldGroupVersions(false)
 {
 }
 
-GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetServiceGraphResult::GetServiceGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_containsOldGroupVersions(false)
 {
   *this = result;
 }
@@ -57,6 +59,12 @@ GetServiceGraphResult& GetServiceGraphResult::operator =(const Aws::AmazonWebSer
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("ContainsOldGroupVersions"))
+  {
+    m_containsOldGroupVersions = jsonValue.GetBool("ContainsOldGroupVersions");
+
   }
 
   if(jsonValue.ValueExists("NextToken"))

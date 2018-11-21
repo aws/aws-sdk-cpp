@@ -40,7 +40,7 @@ namespace Model
   /**
    * <p> A summary of the information for an Amazon CloudFront streaming
    * distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistributionSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionSummary
@@ -449,19 +449,29 @@ namespace Model
     inline StreamingDistributionSummary& WithComment(const char* value) { SetComment(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline StreamingDistributionSummary& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline StreamingDistributionSummary& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
 
 

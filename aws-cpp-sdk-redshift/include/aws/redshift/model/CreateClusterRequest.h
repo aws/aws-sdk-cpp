@@ -1009,25 +1009,25 @@ namespace Model
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
      * <p>The default number of days to retain a manual snapshot. If the value is -1,
-     * the snapshot is retained indefinitely. This setting does not change the
-     * retention period of existing snapshots.</p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653</p>
+     * the snapshot is retained indefinitely. This setting doesn't change the retention
+     * period of existing snapshots.</p> <p>The value must be either -1 or an integer
+     * between 1 and 3,653.</p>
      */
     inline CreateClusterRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 

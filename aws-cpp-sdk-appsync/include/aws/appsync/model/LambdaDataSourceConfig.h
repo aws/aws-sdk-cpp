@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a Lambda data source configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an AWS Lambda data source configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/LambdaDataSourceConfig">AWS
    * API Reference</a></p>
    */

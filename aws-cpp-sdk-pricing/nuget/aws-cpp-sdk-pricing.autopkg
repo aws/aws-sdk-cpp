@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Pricing;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20171015.2;
+        version : 1.7.20171015.3;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Price List Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.2
+            AWSSDKCPP-Core/1.7.3
        }
     }
 

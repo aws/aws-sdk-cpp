@@ -37,8 +37,11 @@ namespace Model
 {
 
   /**
-   * <p>Represents a customized metric for a target tracking policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a CloudWatch metric of your choosing that can be used for dynamic
+   * scaling as part of a target tracking scaling policy. </p> <p>For information
+   * about terminology, see <a
+   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+   * CloudWatch Concepts</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */
@@ -186,37 +189,37 @@ namespace Model
 
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline CustomizedScalingMetricSpecification& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline CustomizedScalingMetricSpecification& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
 
     /**
-     * <p>The unit of the metric.</p>
+     * <p>The unit of the metric. </p>
      */
     inline CustomizedScalingMetricSpecification& WithUnit(const char* value) { SetUnit(value); return *this;}
 

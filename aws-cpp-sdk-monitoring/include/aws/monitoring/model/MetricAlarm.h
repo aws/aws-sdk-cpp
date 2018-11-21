@@ -24,6 +24,7 @@
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/MetricDataQuery.h>
 #include <utility>
 
 namespace Aws
@@ -916,6 +917,42 @@ namespace Model
      */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p/>
+     */
+    inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_alarmName;
@@ -992,6 +1029,9 @@ namespace Model
 
     Aws::String m_evaluateLowSampleCountPercentile;
     bool m_evaluateLowSampleCountPercentileHasBeenSet;
+
+    Aws::Vector<MetricDataQuery> m_metrics;
+    bool m_metricsHasBeenSet;
   };
 
 } // namespace Model

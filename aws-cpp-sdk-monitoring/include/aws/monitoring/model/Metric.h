@@ -88,37 +88,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline Metric& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline Metric& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. This is a required field.</p>
      */
     inline Metric& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 

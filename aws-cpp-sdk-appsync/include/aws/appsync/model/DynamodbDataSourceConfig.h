@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a DynamoDB data source configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Amazon DynamoDB data source configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DynamodbDataSourceConfig">AWS
    * API Reference</a></p>
    */
@@ -84,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline DynamodbDataSourceConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline DynamodbDataSourceConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline DynamodbDataSourceConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

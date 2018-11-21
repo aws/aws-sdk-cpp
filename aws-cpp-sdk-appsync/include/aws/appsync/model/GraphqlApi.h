@@ -177,53 +177,53 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline GraphqlApi& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline GraphqlApi& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline GraphqlApi& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline GraphqlApi& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 

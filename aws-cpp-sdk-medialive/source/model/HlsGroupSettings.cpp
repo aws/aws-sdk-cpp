@@ -73,6 +73,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_redundantManifest(HlsRedundantManifest::NOT_SET),
+    m_redundantManifestHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
     m_segmentationMode(HlsSegmentationMode::NOT_SET),
@@ -137,6 +139,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_redundantManifest(HlsRedundantManifest::NOT_SET),
+    m_redundantManifestHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
     m_segmentationMode(HlsSegmentationMode::NOT_SET),
@@ -352,6 +356,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_programDateTimePeriod = jsonValue.GetInteger("programDateTimePeriod");
 
     m_programDateTimePeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("redundantManifest"))
+  {
+    m_redundantManifest = HlsRedundantManifestMapper::GetHlsRedundantManifestForName(jsonValue.GetString("redundantManifest"));
+
+    m_redundantManifestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentLength"))
@@ -574,6 +585,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithInteger("programDateTimePeriod", m_programDateTimePeriod);
 
+  }
+
+  if(m_redundantManifestHasBeenSet)
+  {
+   payload.WithString("redundantManifest", HlsRedundantManifestMapper::GetNameForHlsRedundantManifest(m_redundantManifest));
   }
 
   if(m_segmentLengthHasBeenSet)

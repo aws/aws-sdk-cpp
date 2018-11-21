@@ -22,6 +22,7 @@
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
+#include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -182,70 +183,70 @@ namespace Model
 
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM service role ARN for the data source. The system assumes this role
-     * when accessing the data source.</p>
+     * <p>The AWS IAM service role ARN for the data source. The system assumes this
+     * role when accessing the data source.</p>
      */
     inline CreateDataSourceRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 
 
     /**
-     * <p>DynamoDB settings.</p>
+     * <p>Amazon DynamoDB settings.</p>
      */
     inline const DynamodbDataSourceConfig& GetDynamodbConfig() const{ return m_dynamodbConfig; }
 
     /**
-     * <p>DynamoDB settings.</p>
+     * <p>Amazon DynamoDB settings.</p>
      */
     inline void SetDynamodbConfig(const DynamodbDataSourceConfig& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = value; }
 
     /**
-     * <p>DynamoDB settings.</p>
+     * <p>Amazon DynamoDB settings.</p>
      */
     inline void SetDynamodbConfig(DynamodbDataSourceConfig&& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = std::move(value); }
 
     /**
-     * <p>DynamoDB settings.</p>
+     * <p>Amazon DynamoDB settings.</p>
      */
     inline CreateDataSourceRequest& WithDynamodbConfig(const DynamodbDataSourceConfig& value) { SetDynamodbConfig(value); return *this;}
 
     /**
-     * <p>DynamoDB settings.</p>
+     * <p>Amazon DynamoDB settings.</p>
      */
     inline CreateDataSourceRequest& WithDynamodbConfig(DynamodbDataSourceConfig&& value) { SetDynamodbConfig(std::move(value)); return *this;}
 
@@ -277,55 +278,81 @@ namespace Model
 
 
     /**
-     * <p>Amazon Elasticsearch settings.</p>
+     * <p>Amazon Elasticsearch Service settings.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>Amazon Elasticsearch settings.</p>
+     * <p>Amazon Elasticsearch Service settings.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>Amazon Elasticsearch settings.</p>
+     * <p>Amazon Elasticsearch Service settings.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>Amazon Elasticsearch settings.</p>
+     * <p>Amazon Elasticsearch Service settings.</p>
      */
     inline CreateDataSourceRequest& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>Amazon Elasticsearch settings.</p>
+     * <p>Amazon Elasticsearch Service settings.</p>
      */
     inline CreateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Http endpoint settings.</p>
+     * <p>HTTP endpoint settings.</p>
      */
     inline const HttpDataSourceConfig& GetHttpConfig() const{ return m_httpConfig; }
 
     /**
-     * <p>Http endpoint settings.</p>
+     * <p>HTTP endpoint settings.</p>
      */
     inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
 
     /**
-     * <p>Http endpoint settings.</p>
+     * <p>HTTP endpoint settings.</p>
      */
     inline void SetHttpConfig(HttpDataSourceConfig&& value) { m_httpConfigHasBeenSet = true; m_httpConfig = std::move(value); }
 
     /**
-     * <p>Http endpoint settings.</p>
+     * <p>HTTP endpoint settings.</p>
      */
     inline CreateDataSourceRequest& WithHttpConfig(const HttpDataSourceConfig& value) { SetHttpConfig(value); return *this;}
 
     /**
-     * <p>Http endpoint settings.</p>
+     * <p>HTTP endpoint settings.</p>
      */
     inline CreateDataSourceRequest& WithHttpConfig(HttpDataSourceConfig&& value) { SetHttpConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline const RelationalDatabaseDataSourceConfig& GetRelationalDatabaseConfig() const{ return m_relationalDatabaseConfig; }
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline void SetRelationalDatabaseConfig(const RelationalDatabaseDataSourceConfig& value) { m_relationalDatabaseConfigHasBeenSet = true; m_relationalDatabaseConfig = value; }
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline void SetRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { m_relationalDatabaseConfigHasBeenSet = true; m_relationalDatabaseConfig = std::move(value); }
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline CreateDataSourceRequest& WithRelationalDatabaseConfig(const RelationalDatabaseDataSourceConfig& value) { SetRelationalDatabaseConfig(value); return *this;}
+
+    /**
+     * <p>Relational database settings.</p>
+     */
+    inline CreateDataSourceRequest& WithRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { SetRelationalDatabaseConfig(std::move(value)); return *this;}
 
   private:
 
@@ -355,6 +382,9 @@ namespace Model
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;
+
+    RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
+    bool m_relationalDatabaseConfigHasBeenSet;
   };
 
 } // namespace Model

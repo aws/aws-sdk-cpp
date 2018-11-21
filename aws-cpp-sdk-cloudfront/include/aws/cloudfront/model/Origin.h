@@ -36,14 +36,16 @@ namespace Model
 {
 
   /**
-   * <p>A complex type that describes the Amazon S3 bucket or the HTTP server (for
-   * example, a web server) from which CloudFront gets your files. You must create at
-   * least one origin.</p> <p>For the current limit on the number of origins that you
-   * can create for a distribution, see <a
+   * <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example,
+   * a web server), Amazon MediaStore, or other server from which CloudFront gets
+   * your files. This can also be an origin group, if you've created an origin group.
+   * You must specify at least one origin or origin group.</p> <p>For the current
+   * limit on the number of origins or origin groups that you can specify for a
+   * distribution, see <a
    * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_cloudfront">Amazon
    * CloudFront Limits</a> in the <i>AWS General Reference</i>.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Origin">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Origin">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Origin
@@ -57,91 +59,98 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
     inline Origin& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the origin. The value of <code>Id</code> must be
-     * unique within the distribution.</p> <p>When you specify the value of
-     * <code>TargetOriginId</code> for the default cache behavior or for another cache
-     * behavior, you indicate the origin to which you want the cache behavior to route
-     * requests by specifying the value of the <code>Id</code> element for that origin.
-     * When a request matches the path pattern for that cache behavior, CloudFront
-     * routes the request to the specified origin. For more information, see <a
+     * <p>A unique identifier for the origin or origin group. The value of
+     * <code>Id</code> must be unique within the distribution.</p> <p>When you specify
+     * the value of <code>TargetOriginId</code> for the default cache behavior or for
+     * another cache behavior, you indicate the origin to which you want the cache
+     * behavior to route requests by specifying the value of the <code>Id</code>
+     * element for that origin. When a request matches the path pattern for that cache
+     * behavior, CloudFront routes the request to the specified origin. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior">Cache
      * Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -153,19 +162,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
@@ -174,19 +187,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
@@ -195,19 +212,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
 
@@ -216,19 +237,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
 
@@ -237,19 +262,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
 
@@ -258,19 +287,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
 
@@ -279,19 +312,23 @@ namespace Model
      * you want CloudFront to get objects for this origin, for example,
      * <code>myawsbucket.s3.amazonaws.com</code>. If you set up your bucket to be
      * configured as a website endpoint, enter the Amazon S3 static website hosting
-     * endpoint for the bucket.</p> <p>Constraints for Amazon S3 origins: </p> <ul>
-     * <li> <p>If you configured Amazon S3 Transfer Acceleration for your bucket, don't
-     * specify the <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p>
-     * </li> <li> <p>The bucket name must be between 3 and 63 characters long
-     * (inclusive).</p> </li> <li> <p>The bucket name must contain only lowercase
-     * characters, numbers, periods, underscores, and dashes.</p> </li> <li> <p>The
-     * bucket name must not contain adjacent periods.</p> </li> </ul> <p> <b>Custom
-     * Origins</b>: The DNS domain name for the HTTP server from which you want
-     * CloudFront to get objects for this origin, for example,
-     * <code>www.example.com</code>. </p> <p>Constraints for custom origins:</p> <ul>
-     * <li> <p> <code>DomainName</code> must be a valid DNS name that contains only
-     * a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore (_) characters.</p> </li> <li>
-     * <p>The name cannot exceed 128 characters.</p> </li> </ul>
+     * endpoint for the bucket.</p> <p>For more information about specifying this value
+     * for different types of origins, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
+     * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+     * <p>Constraints for Amazon S3 origins: </p> <ul> <li> <p>If you configured Amazon
+     * S3 Transfer Acceleration for your bucket, don't specify the
+     * <code>s3-accelerate</code> endpoint for <code>DomainName</code>.</p> </li> <li>
+     * <p>The bucket name must be between 3 and 63 characters long (inclusive).</p>
+     * </li> <li> <p>The bucket name must contain only lowercase characters, numbers,
+     * periods, underscores, and dashes.</p> </li> <li> <p>The bucket name must not
+     * contain adjacent periods.</p> </li> </ul> <p> <b>Custom Origins</b>: The DNS
+     * domain name for the HTTP server from which you want CloudFront to get objects
+     * for this origin, for example, <code>www.example.com</code>. </p> <p>Constraints
+     * for custom origins:</p> <ul> <li> <p> <code>DomainName</code> must be a valid
+     * DNS name that contains only a-z, A-Z, 0-9, dot (.), hyphen (-), or underscore
+     * (_) characters.</p> </li> <li> <p>The name cannot exceed 128 characters.</p>
+     * </li> </ul>
      */
     inline Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
 

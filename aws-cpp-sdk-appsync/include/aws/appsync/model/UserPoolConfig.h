@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an Amazon Cognito User Pool configuration.</p><p><h3>See Also:</h3>
+   * <p>Describes an Amazon Cognito user pool configuration.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UserPoolConfig">AWS
    * API Reference</a></p>
@@ -86,115 +86,115 @@ namespace Model
 
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline UserPoolConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline UserPoolConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region in which the user pool was created.</p>
+     * <p>The AWS Region in which the user pool was created.</p>
      */
     inline UserPoolConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 
 
     /**
      * <p>The action that you want your GraphQL API to take when a request that uses
-     * Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User
-     * Pool configuration.</p>
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
      */
     inline const DefaultAction& GetDefaultAction() const{ return m_defaultAction; }
 
     /**
      * <p>The action that you want your GraphQL API to take when a request that uses
-     * Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User
-     * Pool configuration.</p>
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
      */
     inline void SetDefaultAction(const DefaultAction& value) { m_defaultActionHasBeenSet = true; m_defaultAction = value; }
 
     /**
      * <p>The action that you want your GraphQL API to take when a request that uses
-     * Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User
-     * Pool configuration.</p>
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
      */
     inline void SetDefaultAction(DefaultAction&& value) { m_defaultActionHasBeenSet = true; m_defaultAction = std::move(value); }
 
     /**
      * <p>The action that you want your GraphQL API to take when a request that uses
-     * Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User
-     * Pool configuration.</p>
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
      */
     inline UserPoolConfig& WithDefaultAction(const DefaultAction& value) { SetDefaultAction(value); return *this;}
 
     /**
      * <p>The action that you want your GraphQL API to take when a request that uses
-     * Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User
-     * Pool configuration.</p>
+     * Amazon Cognito user pool authentication doesn't match the Amazon Cognito user
+     * pool configuration.</p>
      */
     inline UserPoolConfig& WithDefaultAction(DefaultAction&& value) { SetDefaultAction(std::move(value)); return *this;}
 
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline const Aws::String& GetAppIdClientRegex() const{ return m_appIdClientRegex; }
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline void SetAppIdClientRegex(const Aws::String& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = value; }
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline void SetAppIdClientRegex(Aws::String&& value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex = std::move(value); }
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline void SetAppIdClientRegex(const char* value) { m_appIdClientRegexHasBeenSet = true; m_appIdClientRegex.assign(value); }
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(const Aws::String& value) { SetAppIdClientRegex(value); return *this;}
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(Aws::String&& value) { SetAppIdClientRegex(std::move(value)); return *this;}
 
     /**
-     * <p>A regular expression for validating the incoming Amazon Cognito User Pool app
+     * <p>A regular expression for validating the incoming Amazon Cognito user pool app
      * client ID.</p>
      */
     inline UserPoolConfig& WithAppIdClientRegex(const char* value) { SetAppIdClientRegex(value); return *this;}

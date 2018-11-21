@@ -31,6 +31,7 @@ namespace Model
 DocumentIdentifier::DocumentIdentifier() : 
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_platformTypesHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
@@ -46,6 +47,7 @@ DocumentIdentifier::DocumentIdentifier() :
 DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_platformTypesHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_documentType(DocumentType::NOT_SET),
@@ -73,6 +75,13 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
     m_owner = jsonValue.GetString("Owner");
 
     m_ownerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+    m_versionNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PlatformTypes"))
@@ -146,6 +155,12 @@ JsonValue DocumentIdentifier::Jsonize() const
   if(m_ownerHasBeenSet)
   {
    payload.WithString("Owner", m_owner);
+
+  }
+
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
 
   }
 

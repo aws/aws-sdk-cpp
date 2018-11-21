@@ -84,17 +84,17 @@ namespace Model
 
 
     /**
-     * <p>The period to use when retrieving the metric.</p>
+     * <p>The period, in seconds, to use when retrieving the metric.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period to use when retrieving the metric.</p>
+     * <p>The period, in seconds, to use when retrieving the metric.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period to use when retrieving the metric.</p>
+     * <p>The period, in seconds, to use when retrieving the metric.</p>
      */
     inline MetricStat& WithPeriod(int value) { SetPeriod(value); return *this;}
 

@@ -70,8 +70,7 @@ Run::Run() :
     m_webUrlHasBeenSet(false),
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false),
-    m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false)
+    m_testSpecArnHasBeenSet(false)
 {
 }
 
@@ -117,8 +116,7 @@ Run::Run(JsonView jsonValue) :
     m_webUrlHasBeenSet(false),
     m_skipAppResign(false),
     m_skipAppResignHasBeenSet(false),
-    m_testSpecArnHasBeenSet(false),
-    m_deviceSelectionResultHasBeenSet(false)
+    m_testSpecArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -335,13 +333,6 @@ Run& Run::operator =(JsonView jsonValue)
     m_testSpecArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("deviceSelectionResult"))
-  {
-    m_deviceSelectionResult = jsonValue.GetObject("deviceSelectionResult");
-
-    m_deviceSelectionResultHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -517,12 +508,6 @@ JsonValue Run::Jsonize() const
   if(m_testSpecArnHasBeenSet)
   {
    payload.WithString("testSpecArn", m_testSpecArn);
-
-  }
-
-  if(m_deviceSelectionResultHasBeenSet)
-  {
-   payload.WithObject("deviceSelectionResult", m_deviceSelectionResult.Jsonize());
 
   }
 

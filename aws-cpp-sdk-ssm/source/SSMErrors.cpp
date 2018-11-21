@@ -36,6 +36,7 @@ static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::Has
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
 static const int INVALID_AGGREGATOR_HASH = HashingUtils::HashString("InvalidAggregatorException");
 static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
+static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString("DuplicateDocumentVersionName");
 static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
@@ -163,6 +164,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_INVENTORY_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+  }
+  else if (hashCode == DUPLICATE_DOCUMENT_VERSION_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
   }
   else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
   {

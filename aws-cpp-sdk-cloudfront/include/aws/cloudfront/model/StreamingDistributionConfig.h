@@ -40,7 +40,7 @@ namespace Model
   /**
    * <p>The RTMP distribution's configuration information.</p><p><h3>See Also:</h3>  
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistributionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionConfig
@@ -54,114 +54,79 @@ namespace Model
 
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline StreamingDistributionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline StreamingDistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique number that ensures that the request can't be replayed. If the
-     * <code>CallerReference</code> is new (no matter the content of the
-     * <code>StreamingDistributionConfig</code> object), a new streaming distribution
-     * is created. If the <code>CallerReference</code> is a value that you already sent
-     * in a previous request to create a streaming distribution, and the content of the
-     * <code>StreamingDistributionConfig</code> is identical to the original request
-     * (ignoring white space), the response includes the same information returned to
-     * the original request. If the <code>CallerReference</code> is a value that you
-     * already sent in a previous request to create a streaming distribution but the
-     * content of the <code>StreamingDistributionConfig</code> is different from the
-     * original request, CloudFront returns a <code>DistributionAlreadyExists</code>
-     * error. </p>
+     * <p>A unique value (for example, a date-time stamp) that ensures that the request
+     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
+     * (regardless of the content of the <code>StreamingDistributionConfig</code>
+     * object), CloudFront creates a new distribution.</p> <p>If
+     * <code>CallerReference</code> is a value that you already sent in a previous
+     * request to create a distribution, CloudFront returns a
+     * <code>DistributionAlreadyExists</code> error.</p>
      */
     inline StreamingDistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 

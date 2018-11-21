@@ -33,6 +33,7 @@
 #include <aws/medialive/model/HlsMode.h>
 #include <aws/medialive/model/HlsOutputSelection.h>
 #include <aws/medialive/model/HlsProgramDateTime.h>
+#include <aws/medialive/model/HlsRedundantManifest.h>
 #include <aws/medialive/model/HlsSegmentationMode.h>
 #include <aws/medialive/model/HlsStreamInfResolution.h>
 #include <aws/medialive/model/HlsTimedMetadataId3Frame.h>
@@ -1057,6 +1058,37 @@ VOD
 
 
     /**
+     * When set to "enabled", includes the media playlists from both pipelines in the
+     * master manifest (.m3u8) file.
+     */
+    inline const HlsRedundantManifest& GetRedundantManifest() const{ return m_redundantManifest; }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the
+     * master manifest (.m3u8) file.
+     */
+    inline void SetRedundantManifest(const HlsRedundantManifest& value) { m_redundantManifestHasBeenSet = true; m_redundantManifest = value; }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the
+     * master manifest (.m3u8) file.
+     */
+    inline void SetRedundantManifest(HlsRedundantManifest&& value) { m_redundantManifestHasBeenSet = true; m_redundantManifest = std::move(value); }
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the
+     * master manifest (.m3u8) file.
+     */
+    inline HlsGroupSettings& WithRedundantManifest(const HlsRedundantManifest& value) { SetRedundantManifest(value); return *this;}
+
+    /**
+     * When set to "enabled", includes the media playlists from both pipelines in the
+     * master manifest (.m3u8) file.
+     */
+    inline HlsGroupSettings& WithRedundantManifest(HlsRedundantManifest&& value) { SetRedundantManifest(std::move(value)); return *this;}
+
+
+    /**
      * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that
      * segments will end on the next keyframe after this number of seconds, so actual
      * segment length may be longer.
@@ -1337,6 +1369,9 @@ VOD
 
     int m_programDateTimePeriod;
     bool m_programDateTimePeriodHasBeenSet;
+
+    HlsRedundantManifest m_redundantManifest;
+    bool m_redundantManifestHasBeenSet;
 
     int m_segmentLength;
     bool m_segmentLengthHasBeenSet;

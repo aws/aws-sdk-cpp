@@ -22,6 +22,7 @@
 #include <aws/appsync/model/LambdaDataSourceConfig.h>
 #include <aws/appsync/model/ElasticsearchDataSourceConfig.h>
 #include <aws/appsync/model/HttpDataSourceConfig.h>
+#include <aws/appsync/model/RelationalDatabaseDataSourceConfig.h>
 #include <utility>
 
 namespace Aws
@@ -218,107 +219,133 @@ namespace Model
 
 
     /**
-     * <p>The new DynamoDB configuration.</p>
+     * <p>The new Amazon DynamoDB configuration.</p>
      */
     inline const DynamodbDataSourceConfig& GetDynamodbConfig() const{ return m_dynamodbConfig; }
 
     /**
-     * <p>The new DynamoDB configuration.</p>
+     * <p>The new Amazon DynamoDB configuration.</p>
      */
     inline void SetDynamodbConfig(const DynamodbDataSourceConfig& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = value; }
 
     /**
-     * <p>The new DynamoDB configuration.</p>
+     * <p>The new Amazon DynamoDB configuration.</p>
      */
     inline void SetDynamodbConfig(DynamodbDataSourceConfig&& value) { m_dynamodbConfigHasBeenSet = true; m_dynamodbConfig = std::move(value); }
 
     /**
-     * <p>The new DynamoDB configuration.</p>
+     * <p>The new Amazon DynamoDB configuration.</p>
      */
     inline UpdateDataSourceRequest& WithDynamodbConfig(const DynamodbDataSourceConfig& value) { SetDynamodbConfig(value); return *this;}
 
     /**
-     * <p>The new DynamoDB configuration.</p>
+     * <p>The new Amazon DynamoDB configuration.</p>
      */
     inline UpdateDataSourceRequest& WithDynamodbConfig(DynamodbDataSourceConfig&& value) { SetDynamodbConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The new Lambda configuration.</p>
+     * <p>The new AWS Lambda configuration.</p>
      */
     inline const LambdaDataSourceConfig& GetLambdaConfig() const{ return m_lambdaConfig; }
 
     /**
-     * <p>The new Lambda configuration.</p>
+     * <p>The new AWS Lambda configuration.</p>
      */
     inline void SetLambdaConfig(const LambdaDataSourceConfig& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = value; }
 
     /**
-     * <p>The new Lambda configuration.</p>
+     * <p>The new AWS Lambda configuration.</p>
      */
     inline void SetLambdaConfig(LambdaDataSourceConfig&& value) { m_lambdaConfigHasBeenSet = true; m_lambdaConfig = std::move(value); }
 
     /**
-     * <p>The new Lambda configuration.</p>
+     * <p>The new AWS Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(const LambdaDataSourceConfig& value) { SetLambdaConfig(value); return *this;}
 
     /**
-     * <p>The new Lambda configuration.</p>
+     * <p>The new AWS Lambda configuration.</p>
      */
     inline UpdateDataSourceRequest& WithLambdaConfig(LambdaDataSourceConfig&& value) { SetLambdaConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The new Elasticsearch configuration.</p>
+     * <p>The new Elasticsearch Service configuration.</p>
      */
     inline const ElasticsearchDataSourceConfig& GetElasticsearchConfig() const{ return m_elasticsearchConfig; }
 
     /**
-     * <p>The new Elasticsearch configuration.</p>
+     * <p>The new Elasticsearch Service configuration.</p>
      */
     inline void SetElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = value; }
 
     /**
-     * <p>The new Elasticsearch configuration.</p>
+     * <p>The new Elasticsearch Service configuration.</p>
      */
     inline void SetElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { m_elasticsearchConfigHasBeenSet = true; m_elasticsearchConfig = std::move(value); }
 
     /**
-     * <p>The new Elasticsearch configuration.</p>
+     * <p>The new Elasticsearch Service configuration.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(const ElasticsearchDataSourceConfig& value) { SetElasticsearchConfig(value); return *this;}
 
     /**
-     * <p>The new Elasticsearch configuration.</p>
+     * <p>The new Elasticsearch Service configuration.</p>
      */
     inline UpdateDataSourceRequest& WithElasticsearchConfig(ElasticsearchDataSourceConfig&& value) { SetElasticsearchConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The new http endpoint configuration</p>
+     * <p>The new HTTP endpoint configuration.</p>
      */
     inline const HttpDataSourceConfig& GetHttpConfig() const{ return m_httpConfig; }
 
     /**
-     * <p>The new http endpoint configuration</p>
+     * <p>The new HTTP endpoint configuration.</p>
      */
     inline void SetHttpConfig(const HttpDataSourceConfig& value) { m_httpConfigHasBeenSet = true; m_httpConfig = value; }
 
     /**
-     * <p>The new http endpoint configuration</p>
+     * <p>The new HTTP endpoint configuration.</p>
      */
     inline void SetHttpConfig(HttpDataSourceConfig&& value) { m_httpConfigHasBeenSet = true; m_httpConfig = std::move(value); }
 
     /**
-     * <p>The new http endpoint configuration</p>
+     * <p>The new HTTP endpoint configuration.</p>
      */
     inline UpdateDataSourceRequest& WithHttpConfig(const HttpDataSourceConfig& value) { SetHttpConfig(value); return *this;}
 
     /**
-     * <p>The new http endpoint configuration</p>
+     * <p>The new HTTP endpoint configuration.</p>
      */
     inline UpdateDataSourceRequest& WithHttpConfig(HttpDataSourceConfig&& value) { SetHttpConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline const RelationalDatabaseDataSourceConfig& GetRelationalDatabaseConfig() const{ return m_relationalDatabaseConfig; }
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline void SetRelationalDatabaseConfig(const RelationalDatabaseDataSourceConfig& value) { m_relationalDatabaseConfigHasBeenSet = true; m_relationalDatabaseConfig = value; }
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline void SetRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { m_relationalDatabaseConfigHasBeenSet = true; m_relationalDatabaseConfig = std::move(value); }
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithRelationalDatabaseConfig(const RelationalDatabaseDataSourceConfig& value) { SetRelationalDatabaseConfig(value); return *this;}
+
+    /**
+     * <p>The new relational database configuration.</p>
+     */
+    inline UpdateDataSourceRequest& WithRelationalDatabaseConfig(RelationalDatabaseDataSourceConfig&& value) { SetRelationalDatabaseConfig(std::move(value)); return *this;}
 
   private:
 
@@ -348,6 +375,9 @@ namespace Model
 
     HttpDataSourceConfig m_httpConfig;
     bool m_httpConfigHasBeenSet;
+
+    RelationalDatabaseDataSourceConfig m_relationalDatabaseConfig;
+    bool m_relationalDatabaseConfigHasBeenSet;
   };
 
 } // namespace Model

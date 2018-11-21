@@ -89,17 +89,17 @@ namespace Model
 
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline ScalingPlanResource& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 
@@ -137,9 +137,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -158,9 +158,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -179,9 +179,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -200,9 +200,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -221,9 +221,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -242,9 +242,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -263,9 +263,9 @@ namespace Model
      * Scaling group. Example: <code>autoScalingGroup/my-asg</code>.</p> </li> <li>
      * <p>ECS service - The resource type is <code>service</code> and the unique
      * identifier is the cluster name and service name. Example:
-     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot fleet request
+     * <code>service/default/sample-webapp</code>.</p> </li> <li> <p>Spot Fleet request
      * - The resource type is <code>spot-fleet-request</code> and the unique identifier
-     * is the Spot fleet request ID. Example:
+     * is the Spot Fleet request ID. Example:
      * <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
      * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
@@ -284,7 +284,7 @@ namespace Model
      * of an Auto Scaling group.</p> </li> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
@@ -305,7 +305,7 @@ namespace Model
      * of an Auto Scaling group.</p> </li> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
@@ -326,7 +326,7 @@ namespace Model
      * of an Auto Scaling group.</p> </li> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
@@ -347,7 +347,7 @@ namespace Model
      * of an Auto Scaling group.</p> </li> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity
@@ -368,7 +368,7 @@ namespace Model
      * of an Auto Scaling group.</p> </li> <li> <p>
      * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
      * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
-     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
+     * The target capacity of a Spot Fleet request.</p> </li> <li> <p>
      * <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity
      * for a DynamoDB table.</p> </li> <li> <p>
      * <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity

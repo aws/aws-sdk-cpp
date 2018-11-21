@@ -34,7 +34,10 @@ Resolver::Resolver() :
     m_dataSourceNameHasBeenSet(false),
     m_resolverArnHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false)
+    m_responseMappingTemplateHasBeenSet(false),
+    m_kind(ResolverKind::NOT_SET),
+    m_kindHasBeenSet(false),
+    m_pipelineConfigHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ Resolver::Resolver(JsonView jsonValue) :
     m_dataSourceNameHasBeenSet(false),
     m_resolverArnHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false)
+    m_responseMappingTemplateHasBeenSet(false),
+    m_kind(ResolverKind::NOT_SET),
+    m_kindHasBeenSet(false),
+    m_pipelineConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +99,20 @@ Resolver& Resolver::operator =(JsonView jsonValue)
     m_responseMappingTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("kind"))
+  {
+    m_kind = ResolverKindMapper::GetResolverKindForName(jsonValue.GetString("kind"));
+
+    m_kindHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pipelineConfig"))
+  {
+    m_pipelineConfig = jsonValue.GetObject("pipelineConfig");
+
+    m_pipelineConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +153,17 @@ JsonValue Resolver::Jsonize() const
   if(m_responseMappingTemplateHasBeenSet)
   {
    payload.WithString("responseMappingTemplate", m_responseMappingTemplate);
+
+  }
+
+  if(m_kindHasBeenSet)
+  {
+   payload.WithString("kind", ResolverKindMapper::GetNameForResolverKind(m_kind));
+  }
+
+  if(m_pipelineConfigHasBeenSet)
+  {
+   payload.WithObject("pipelineConfig", m_pipelineConfig.Jsonize());
 
   }
 

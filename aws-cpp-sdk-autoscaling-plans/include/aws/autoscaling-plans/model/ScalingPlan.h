@@ -89,17 +89,17 @@ namespace Model
 
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline ScalingPlan& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 
@@ -175,7 +175,9 @@ namespace Model
      * The scaling plan could not be created.</p> </li> <li> <p>
      * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
      * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
      */
     inline const ScalingPlanStatusCode& GetStatusCode() const{ return m_statusCode; }
 
@@ -188,7 +190,9 @@ namespace Model
      * The scaling plan could not be created.</p> </li> <li> <p>
      * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
      * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
      */
     inline void SetStatusCode(const ScalingPlanStatusCode& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
@@ -201,7 +205,9 @@ namespace Model
      * The scaling plan could not be created.</p> </li> <li> <p>
      * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
      * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
      */
     inline void SetStatusCode(ScalingPlanStatusCode&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
 
@@ -214,7 +220,9 @@ namespace Model
      * The scaling plan could not be created.</p> </li> <li> <p>
      * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
      * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
      */
     inline ScalingPlan& WithStatusCode(const ScalingPlanStatusCode& value) { SetStatusCode(value); return *this;}
 
@@ -227,7 +235,9 @@ namespace Model
      * The scaling plan could not be created.</p> </li> <li> <p>
      * <code>DeletionInProgress</code> - The scaling plan is being deleted.</p> </li>
      * <li> <p> <code>DeletionFailed</code> - The scaling plan could not be
-     * deleted.</p> </li> </ul>
+     * deleted.</p> </li> <li> <p> <code>UpdateInProgress</code> - The scaling plan is
+     * being updated.</p> </li> <li> <p> <code>UpdateFailed</code> - The scaling plan
+     * could not be updated.</p> </li> </ul>
      */
     inline ScalingPlan& WithStatusCode(ScalingPlanStatusCode&& value) { SetStatusCode(std::move(value)); return *this;}
 
@@ -269,53 +279,53 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
     inline const Aws::Utils::DateTime& GetStatusStartTime() const{ return m_statusStartTime; }
 
     /**
-     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
     inline void SetStatusStartTime(const Aws::Utils::DateTime& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = value; }
 
     /**
-     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
     inline void SetStatusStartTime(Aws::Utils::DateTime&& value) { m_statusStartTimeHasBeenSet = true; m_statusStartTime = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
     inline ScalingPlan& WithStatusStartTime(const Aws::Utils::DateTime& value) { SetStatusStartTime(value); return *this;}
 
     /**
-     * <p>The Unix timestamp when the scaling plan entered the current status.</p>
+     * <p>The Unix time stamp when the scaling plan entered the current status.</p>
      */
     inline ScalingPlan& WithStatusStartTime(Aws::Utils::DateTime&& value) { SetStatusStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp when the scaling plan was created.</p>
+     * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The Unix timestamp when the scaling plan was created.</p>
+     * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The Unix timestamp when the scaling plan was created.</p>
+     * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the scaling plan was created.</p>
+     * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline ScalingPlan& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The Unix timestamp when the scaling plan was created.</p>
+     * <p>The Unix time stamp when the scaling plan was created.</p>
      */
     inline ScalingPlan& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 

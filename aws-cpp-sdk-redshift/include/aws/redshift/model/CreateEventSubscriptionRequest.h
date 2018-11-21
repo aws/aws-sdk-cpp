@@ -418,20 +418,20 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value; set to <code>true</code> to activate the subscription, set
-     * to <code>false</code> to create the subscription but not active it. </p>
+     * <p>A boolean value; set to <code>true</code> to activate the subscription, and
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>A Boolean value; set to <code>true</code> to activate the subscription, set
-     * to <code>false</code> to create the subscription but not active it. </p>
+     * <p>A boolean value; set to <code>true</code> to activate the subscription, and
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>A Boolean value; set to <code>true</code> to activate the subscription, set
-     * to <code>false</code> to create the subscription but not active it. </p>
+     * <p>A boolean value; set to <code>true</code> to activate the subscription, and
+     * set to <code>false</code> to create the subscription but not activate it. </p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

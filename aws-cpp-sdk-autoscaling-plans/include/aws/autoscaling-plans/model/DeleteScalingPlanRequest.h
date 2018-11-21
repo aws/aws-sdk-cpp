@@ -81,17 +81,17 @@ namespace Model
 
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline DeleteScalingPlanRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 

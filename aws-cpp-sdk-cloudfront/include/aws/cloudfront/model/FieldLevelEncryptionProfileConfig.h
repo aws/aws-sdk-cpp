@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex data type of profiles for the field-level encryption.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionProfileConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionProfileConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig
@@ -86,37 +86,37 @@ namespace Model
 
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 

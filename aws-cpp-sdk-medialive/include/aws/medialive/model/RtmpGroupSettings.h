@@ -18,6 +18,7 @@
 #include <aws/medialive/model/AuthenticationScheme.h>
 #include <aws/medialive/model/RtmpCacheFullBehavior.h>
 #include <aws/medialive/model/RtmpCaptionData.h>
+#include <aws/medialive/model/InputLossActionForRtmpOut.h>
 #include <utility>
 
 namespace Aws
@@ -194,6 +195,57 @@ namespace Model
 
 
     /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline const InputLossActionForRtmpOut& GetInputLossAction() const{ return m_inputLossAction; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline void SetInputLossAction(const InputLossActionForRtmpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline void SetInputLossAction(InputLossActionForRtmpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline RtmpGroupSettings& WithInputLossAction(const InputLossActionForRtmpOut& value) { SetInputLossAction(value); return *this;}
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline RtmpGroupSettings& WithInputLossAction(InputLossActionForRtmpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+
+
+    /**
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
@@ -224,6 +276,9 @@ namespace Model
 
     RtmpCaptionData m_captionData;
     bool m_captionDataHasBeenSet;
+
+    InputLossActionForRtmpOut m_inputLossAction;
+    bool m_inputLossActionHasBeenSet;
 
     int m_restartDelay;
     bool m_restartDelayHasBeenSet;

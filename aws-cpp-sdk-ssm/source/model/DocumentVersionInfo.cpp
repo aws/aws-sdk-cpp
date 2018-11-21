@@ -31,22 +31,30 @@ namespace Model
 DocumentVersionInfo::DocumentVersionInfo() : 
     m_nameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_isDefaultVersion(false),
     m_isDefaultVersionHasBeenSet(false),
     m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false)
+    m_documentFormatHasBeenSet(false),
+    m_status(DocumentStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusInformationHasBeenSet(false)
 {
 }
 
 DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_versionNameHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_isDefaultVersion(false),
     m_isDefaultVersionHasBeenSet(false),
     m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false)
+    m_documentFormatHasBeenSet(false),
+    m_status(DocumentStatus::NOT_SET),
+    m_statusHasBeenSet(false),
+    m_statusInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +73,13 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
     m_documentVersion = jsonValue.GetString("DocumentVersion");
 
     m_documentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VersionName"))
+  {
+    m_versionName = jsonValue.GetString("VersionName");
+
+    m_versionNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedDate"))
@@ -88,6 +103,20 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
     m_documentFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StatusInformation"))
+  {
+    m_statusInformation = jsonValue.GetString("StatusInformation");
+
+    m_statusInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -107,6 +136,12 @@ JsonValue DocumentVersionInfo::Jsonize() const
 
   }
 
+  if(m_versionNameHasBeenSet)
+  {
+   payload.WithString("VersionName", m_versionName);
+
+  }
+
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
@@ -121,6 +156,17 @@ JsonValue DocumentVersionInfo::Jsonize() const
   if(m_documentFormatHasBeenSet)
   {
    payload.WithString("DocumentFormat", DocumentFormatMapper::GetNameForDocumentFormat(m_documentFormat));
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", DocumentStatusMapper::GetNameForDocumentStatus(m_status));
+  }
+
+  if(m_statusInformationHasBeenSet)
+  {
+   payload.WithString("StatusInformation", m_statusInformation);
+
   }
 
   return payload;

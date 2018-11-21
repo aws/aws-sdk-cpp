@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS region.</p>
+     * <p>The AWS Region.</p>
      */
     inline ElasticsearchDataSourceConfig& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
 

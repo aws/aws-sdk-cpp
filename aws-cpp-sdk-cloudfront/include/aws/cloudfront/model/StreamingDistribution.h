@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>A streaming distribution. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistribution">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistribution">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistribution
@@ -93,25 +93,53 @@ namespace Model
     inline StreamingDistribution& WithId(const char* value) { SetId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline const Aws::String& GetARN() const{ return m_aRN; }
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline StreamingDistribution& WithARN(const Aws::String& value) { SetARN(value); return *this;}
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline StreamingDistribution& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ARN (Amazon Resource Name) for the distribution. For example:
+     * <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
+     * where <code>123456789012</code> is your AWS account ID.</p>
+     */
     inline StreamingDistribution& WithARN(const char* value) { SetARN(value); return *this;}
 
 

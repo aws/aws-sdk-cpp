@@ -100,56 +100,63 @@ namespace Model
 
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
     inline EnableSnapshotCopyRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The destination region that you want to copy snapshots to.</p>
-     * <p>Constraints: Must be the name of a valid region. For more information, see <a
+     * <p>The destination AWS Region that you want to copy snapshots to.</p>
+     * <p>Constraints: Must be the name of a valid AWS Region. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region">Regions
      * and Endpoints</a> in the Amazon Web Services General Reference. </p>
      */
@@ -222,26 +229,26 @@ namespace Model
 
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination region
-     * after they are copied from the source region. If the value is -1, the manual
-     * snapshot is retained indefinitely. </p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination AWS
+     * Region after they are copied from the source AWS Region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
      */
     inline int GetManualSnapshotRetentionPeriod() const{ return m_manualSnapshotRetentionPeriod; }
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination region
-     * after they are copied from the source region. If the value is -1, the manual
-     * snapshot is retained indefinitely. </p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination AWS
+     * Region after they are copied from the source AWS Region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
      */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
-     * <p>The number of days to retain newly copied snapshots in the destination region
-     * after they are copied from the source region. If the value is -1, the manual
-     * snapshot is retained indefinitely. </p> <p>The value must be either -1 or an
-     * integer between 1 and 3,653.</p>
+     * <p>The number of days to retain newly copied snapshots in the destination AWS
+     * Region after they are copied from the source AWS Region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
      */
     inline EnableSnapshotCopyRequest& WithManualSnapshotRetentionPeriod(int value) { SetManualSnapshotRetentionPeriod(value); return *this;}
 

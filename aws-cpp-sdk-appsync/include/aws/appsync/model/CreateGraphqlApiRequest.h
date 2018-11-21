@@ -83,105 +83,105 @@ namespace Model
 
 
     /**
-     * <p>The Amazon CloudWatch logs configuration.</p>
+     * <p>The Amazon CloudWatch Logs configuration.</p>
      */
     inline const LogConfig& GetLogConfig() const{ return m_logConfig; }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration.</p>
+     * <p>The Amazon CloudWatch Logs configuration.</p>
      */
     inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration.</p>
+     * <p>The Amazon CloudWatch Logs configuration.</p>
      */
     inline void SetLogConfig(LogConfig&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
 
     /**
-     * <p>The Amazon CloudWatch logs configuration.</p>
+     * <p>The Amazon CloudWatch Logs configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithLogConfig(const LogConfig& value) { SetLogConfig(value); return *this;}
 
     /**
-     * <p>The Amazon CloudWatch logs configuration.</p>
+     * <p>The Amazon CloudWatch Logs configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithLogConfig(LogConfig&& value) { SetLogConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline CreateGraphqlApiRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>The authentication type: API key, IAM, or Amazon Cognito User Pools.</p>
+     * <p>The authentication type: API key, AWS IAM, or Amazon Cognito user pools.</p>
      */
     inline CreateGraphqlApiRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Open Id Connect configuration configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
 
     /**
-     * <p>The Open Id Connect configuration configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
 
     /**
-     * <p>The Open Id Connect configuration configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
 
     /**
-     * <p>The Open Id Connect configuration configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
 
     /**
-     * <p>The Open Id Connect configuration configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline CreateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 

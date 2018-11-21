@@ -112,27 +112,27 @@ namespace Model
 
 
     /**
-     * <p>The target tracking scaling policy.</p>
+     * <p>The target tracking scaling policy. </p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>The target tracking scaling policy.</p>
+     * <p>The target tracking scaling policy. </p>
      */
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>The target tracking scaling policy.</p>
+     * <p>The target tracking scaling policy. </p>
      */
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>The target tracking scaling policy.</p>
+     * <p>The target tracking scaling policy. </p>
      */
     inline ScalingPolicy& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>The target tracking scaling policy.</p>
+     * <p>The target tracking scaling policy. </p>
      */
     inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 

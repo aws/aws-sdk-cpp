@@ -568,7 +568,7 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p>If you authorize access
+         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
          * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
          * blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -593,7 +593,7 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p>If you authorize access
+         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
          * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
          * blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -620,7 +620,7 @@ namespace Model
          * Redshift security group.</p> <p>If you authorize access to an Amazon EC2
          * security group, specify <i>EC2SecurityGroupName</i> and
          * <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon
-         * Redshift cluster must be in the same AWS region. </p> <p>If you authorize access
+         * Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access
          * to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR
          * blocks, see the Wikipedia article on <a
          * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
@@ -2509,7 +2509,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS region that you can specify, and the
+         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -2525,7 +2525,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS region that you can specify, and the
+         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -2543,7 +2543,7 @@ namespace Model
         /**
          * <p>Returns a list of orderable cluster options. Before you create a new cluster
          * you can use this operation to find what options are available, such as the EC2
-         * Availability Zones (AZ) in the specific AWS region that you can specify, and the
+         * Availability Zones (AZ) in the specific AWS Region that you can specify, and the
          * node types you can request. The node types differ by available storage, memory,
          * CPU and price. With the cost involved you might want to obtain a list of cluster
          * options in the specific region and specify values when creating a cluster. For
@@ -3434,13 +3434,13 @@ namespace Model
         virtual void ModifyEventSubscriptionAsync(const Model::ModifyEventSubscriptionRequest& request, const ModifyEventSubscriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination region
-         * after they are copied from the source region. By default, this only changes the
-         * retention period of copied automated snapshots. The retention periods for both
-         * new and existing copied automated snapshots will be updated with the new
-         * retention period. You can set the manual option to change only the retention
-         * periods of copied manual snapshots. If you set this option only newly copied
-         * manual snapshots will have the new retention period </p><p><h3>See Also:</h3>  
+         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
+         * after they are copied from the source AWS Region. By default, this operation
+         * only changes the retention period of copied automated snapshots. The retention
+         * periods for both new and existing copied automated snapshots are updated with
+         * the new retention period. You can set the manual option to change only the
+         * retention periods of copied manual snapshots. If you set this option, only newly
+         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
@@ -3448,13 +3448,13 @@ namespace Model
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcome ModifySnapshotCopyRetentionPeriod(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination region
-         * after they are copied from the source region. By default, this only changes the
-         * retention period of copied automated snapshots. The retention periods for both
-         * new and existing copied automated snapshots will be updated with the new
-         * retention period. You can set the manual option to change only the retention
-         * periods of copied manual snapshots. If you set this option only newly copied
-         * manual snapshots will have the new retention period </p><p><h3>See Also:</h3>  
+         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
+         * after they are copied from the source AWS Region. By default, this operation
+         * only changes the retention period of copied automated snapshots. The retention
+         * periods for both new and existing copied automated snapshots are updated with
+         * the new retention period. You can set the manual option to change only the
+         * retention periods of copied manual snapshots. If you set this option, only newly
+         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
@@ -3464,13 +3464,13 @@ namespace Model
         virtual Model::ModifySnapshotCopyRetentionPeriodOutcomeCallable ModifySnapshotCopyRetentionPeriodCallable(const Model::ModifySnapshotCopyRetentionPeriodRequest& request) const;
 
         /**
-         * <p>Modifies the number of days to retain snapshots in the destination region
-         * after they are copied from the source region. By default, this only changes the
-         * retention period of copied automated snapshots. The retention periods for both
-         * new and existing copied automated snapshots will be updated with the new
-         * retention period. You can set the manual option to change only the retention
-         * periods of copied manual snapshots. If you set this option only newly copied
-         * manual snapshots will have the new retention period </p><p><h3>See Also:</h3>  
+         * <p>Modifies the number of days to retain snapshots in the destination AWS Region
+         * after they are copied from the source AWS Region. By default, this operation
+         * only changes the retention period of copied automated snapshots. The retention
+         * periods for both new and existing copied automated snapshots are updated with
+         * the new retention period. You can set the manual option to change only the
+         * retention periods of copied manual snapshots. If you set this option, only newly
+         * copied manual snapshots have the new retention period. </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotCopyRetentionPeriod">AWS
          * API Reference</a></p>
@@ -3480,7 +3480,7 @@ namespace Model
         virtual void ModifySnapshotCopyRetentionPeriodAsync(const Model::ModifySnapshotCopyRetentionPeriodRequest& request, const ModifySnapshotCopyRetentionPeriodResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies a snapshot schedule. Any schedule associate with a cluster will be
+         * <p>Modifies a snapshot schedule. Any schedule associated with a cluster is
          * modified asynchronously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">AWS
          * API Reference</a></p>
@@ -3488,7 +3488,7 @@ namespace Model
         virtual Model::ModifySnapshotScheduleOutcome ModifySnapshotSchedule(const Model::ModifySnapshotScheduleRequest& request) const;
 
         /**
-         * <p>Modifies a snapshot schedule. Any schedule associate with a cluster will be
+         * <p>Modifies a snapshot schedule. Any schedule associated with a cluster is
          * modified asynchronously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">AWS
          * API Reference</a></p>
@@ -3498,7 +3498,7 @@ namespace Model
         virtual Model::ModifySnapshotScheduleOutcomeCallable ModifySnapshotScheduleCallable(const Model::ModifySnapshotScheduleRequest& request) const;
 
         /**
-         * <p>Modifies a snapshot schedule. Any schedule associate with a cluster will be
+         * <p>Modifies a snapshot schedule. Any schedule associated with a cluster is
          * modified asynchronously.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifySnapshotSchedule">AWS
          * API Reference</a></p>
