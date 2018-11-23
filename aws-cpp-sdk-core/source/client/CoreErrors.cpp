@@ -28,20 +28,27 @@ static const int INCOMPLETE_SIGNATURE_HASH = HashingUtils::HashString("Incomplet
 static const int INVALID_SIGNATURE_EXCEPTION_HASH = HashingUtils::HashString("InvalidSignatureException");
 static const int INVALID_SIGNATURE_HASH = HashingUtils::HashString("InvalidSignature");
 static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("InternalFailure");
+static const int INTERNAL_FAILURE_EXCEPTION_HASH = HashingUtils::HashString("InternalFailureException");
 static const int INTERNAL_SERVER_ERROR_HASH = HashingUtils::HashString("InternalServerError");
 static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("InternalError");
+static const int INVALID_ACTION_EXCEPTION_HASH = HashingUtils::HashString("InvalidActionException");
 static const int INVALID_ACTION_HASH = HashingUtils::HashString("InvalidAction");
 static const int INVALID_CLIENT_TOKEN_ID_HASH = HashingUtils::HashString("InvalidClientTokenId");
 static const int INVALID_CLIENT_TOKEN_ID_EXCEPTION_HASH = HashingUtils::HashString("InvalidClientTokenIdException");
+static const int INVALID_PARAMETER_COMBINATION_EXCEPTION_HASH = HashingUtils::HashString("InvalidParameterCombinationException");
 static const int INVALID_PARAMETER_COMBINATION_HASH = HashingUtils::HashString("InvalidParameterCombination");
+static const int INVALID_PARAMETER_VALUE_EXCEPTION_HASH = HashingUtils::HashString("InvalidParameterValueException");
 static const int INVALID_PARAMETER_VALUE_HASH = HashingUtils::HashString("InvalidParameterValue");
 static const int INVALID_QUERY_PARAMETER_HASH = HashingUtils::HashString("InvalidQueryParameter");
 static const int INVALID_QUERY_PARAMETER_EXCEPTION_HASH = HashingUtils::HashString("InvalidQueryParameterException");
 static const int MALFORMED_QUERY_STRING_HASH = HashingUtils::HashString("MalformedQueryString");
+static const int MISSING_ACTION_HASH = HashingUtils::HashString("MissingAction");
+static const int MISSING_ACTION_EXCEPTION_HASH = HashingUtils::HashString("MissingActionException");
 static const int MALFORMED_QUERY_STRING_EXCEPTION_HASH = HashingUtils::HashString("MalformedQueryStringException");
 static const int MISSING_AUTHENTICATION_TOKEN_HASH = HashingUtils::HashString("MissingAuthenticationToken");
 static const int MISSING_AUTHENTICATION_TOKEN_EXCEPTION_HASH = HashingUtils::HashString("MissingAuthenticationTokenException");
-static const int MISSING_PARAMETER_HASH = HashingUtils::HashString("MissingParameterException");
+static const int MISSING_PARAMETER_EXCEPTION_HASH = HashingUtils::HashString("MissingParameterException");
+static const int MISSING_PARAMETER_HASH = HashingUtils::HashString("MissingParameter");
 static const int OPT_IN_REQUIRED_HASH = HashingUtils::HashString("OptInRequired");
 static const int REQUEST_EXPIRED_HASH = HashingUtils::HashString("RequestExpired");
 static const int REQUEST_EXPIRED_EXCEPTION_HASH = HashingUtils::HashString("RequestExpiredException");
@@ -69,6 +76,7 @@ static const int INVALID_ACCESS_KEY_ID_EXCEPTION_HASH = HashingUtils::HashString
 static const int REQUEST_TIME_TOO_SKEWED_HASH = HashingUtils::HashString("RequestTimeTooSkewed");
 static const int REQUEST_TIME_TOO_SKEWED_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeTooSkewedException");
 static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
+static const int REQUEST_TIMEOUT_EXCEPTION_HASH = HashingUtils::HashString("RequestTimeoutException");
 
 AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
 {
@@ -82,11 +90,11 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
       return AWSError<CoreErrors>(CoreErrors::INVALID_SIGNATURE, false);
   }
-  else if (errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH || errorHash == INTERNAL_ERROR_HASH)
+  else if (errorHash ==  INTERNAL_FAILURE_EXCEPTION_HASH || errorHash == INTERNAL_FAILURE_HASH || errorHash == INTERNAL_SERVER_ERROR_HASH || errorHash == INTERNAL_ERROR_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, true);
   }
-  else if (errorHash == INVALID_ACTION_HASH)
+  else if (errorHash == INVALID_ACTION_EXCEPTION_HASH || errorHash == INVALID_ACTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INVALID_ACTION, false);
   }
@@ -94,11 +102,11 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::INVALID_CLIENT_TOKEN_ID, false);
   }
-  else if (errorHash == INVALID_PARAMETER_COMBINATION_HASH)
+  else if (errorHash == INVALID_PARAMETER_COMBINATION_EXCEPTION_HASH || errorHash == INVALID_PARAMETER_COMBINATION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INVALID_PARAMETER_COMBINATION, false);
   }
-  else if (errorHash == INVALID_PARAMETER_VALUE_HASH)
+  else if (errorHash == INVALID_PARAMETER_VALUE_EXCEPTION_HASH || errorHash == INVALID_PARAMETER_VALUE_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::INVALID_PARAMETER_VALUE, false);
   }
@@ -110,11 +118,15 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::MALFORMED_QUERY_STRING, false);
   }
+  else if (errorHash == MISSING_ACTION_EXCEPTION_HASH || errorHash == MISSING_ACTION_HASH)
+  {
+    return AWSError<CoreErrors>(CoreErrors::MISSING_ACTION, false);
+  }
   else if (errorHash == MISSING_AUTHENTICATION_TOKEN_HASH || errorHash == MISSING_AUTHENTICATION_TOKEN_EXCEPTION_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::MISSING_AUTHENTICATION_TOKEN, false);
   }
-  else if (errorHash == MISSING_PARAMETER_HASH)
+  else if (errorHash == MISSING_PARAMETER_EXCEPTION_HASH || errorHash == MISSING_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::MISSING_PARAMETER, false);
   }
@@ -166,7 +178,7 @@ AWSError<CoreErrors> CoreErrorsMapper::GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_TIME_TOO_SKEWED, true);
   }
-  else if (errorHash == REQUEST_TIMEOUT_HASH)
+  else if (errorHash == REQUEST_TIMEOUT_EXCEPTION_HASH || errorHash == REQUEST_TIMEOUT_HASH)
   {
     return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, true);
   }

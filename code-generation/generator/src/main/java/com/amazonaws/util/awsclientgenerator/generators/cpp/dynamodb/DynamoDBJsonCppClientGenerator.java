@@ -79,6 +79,6 @@ public class DynamoDBJsonCppClientGenerator extends JsonCppClientGenerator {
 
     @Override
     protected Set<String> getRetryableErrors() {
-        return new HashSet<>(Arrays.asList(new String[]{"LimitExceededException", "ProvisionedThroughputExceededException", "ResourceInUseException"}));
+        return new HashSet<>(Arrays.asList(new String[]{"LimitExceededException", "ProvisionedThroughputExceededException", "ResourceInUseException", "TransactionInProgressException"}));
     }
 }
