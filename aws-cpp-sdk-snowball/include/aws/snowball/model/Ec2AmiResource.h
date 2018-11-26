@@ -87,37 +87,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline const Aws::String& GetSnowballAmiId() const{ return m_snowballAmiId; }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline void SetSnowballAmiId(const Aws::String& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = value; }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline void SetSnowballAmiId(Aws::String&& value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline void SetSnowballAmiId(const char* value) { m_snowballAmiIdHasBeenSet = true; m_snowballAmiId.assign(value); }
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(const Aws::String& value) { SetSnowballAmiId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(Aws::String&& value) { SetSnowballAmiId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI on the Snowball Edge device.</p>
+     * <p>The ID of the AMI on the supported device.</p>
      */
     inline Ec2AmiResource& WithSnowballAmiId(const char* value) { SetSnowballAmiId(value); return *this;}
 

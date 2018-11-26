@@ -53,111 +53,141 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket whose Public Access Block configuration you
-     * want to set.</p>
+     * <p>The name of the Amazon S3 bucket whose <code>PublicAccessBlock</code>
+     * configuration you want to set.</p>
      */
     inline PutPublicAccessBlockRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline PutPublicAccessBlockRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline PutPublicAccessBlockRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p> The MD5 hash of the <code>PutPublicBlock</code> request body. </p>
+     * <p>The MD5 hash of the <code>PutPublicAccessBlock</code> request body. </p>
      */
     inline PutPublicAccessBlockRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
     /**
-     * <p>The Public Access Block configuration that you want to apply to this Amazon
-     * S3 bucket.</p>
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when &amp;S3; considers a bucket or
+     * object public, see For more information about when Amazon S3 considers a bucket
+     * or object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline const PublicAccessBlockConfiguration& GetPublicAccessBlockConfiguration() const{ return m_publicAccessBlockConfiguration; }
 
     /**
-     * <p>The Public Access Block configuration that you want to apply to this Amazon
-     * S3 bucket.</p>
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when &amp;S3; considers a bucket or
+     * object public, see For more information about when Amazon S3 considers a bucket
+     * or object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
     /**
-     * <p>The Public Access Block configuration that you want to apply to this Amazon
-     * S3 bucket.</p>
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when &amp;S3; considers a bucket or
+     * object public, see For more information about when Amazon S3 considers a bucket
+     * or object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline void SetPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = std::move(value); }
 
     /**
-     * <p>The Public Access Block configuration that you want to apply to this Amazon
-     * S3 bucket.</p>
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when &amp;S3; considers a bucket or
+     * object public, see For more information about when Amazon S3 considers a bucket
+     * or object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { SetPublicAccessBlockConfiguration(value); return *this;}
 
     /**
-     * <p>The Public Access Block configuration that you want to apply to this Amazon
-     * S3 bucket.</p>
+     * <p>The <code>PublicAccessBlock</code> configuration that you want to apply to
+     * this Amazon S3 bucket. You can enable the configuration options in any
+     * combination. For more information about when &amp;S3; considers a bucket or
+     * object public, see For more information about when Amazon S3 considers a bucket
+     * or object public, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+     * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p>
      */
     inline PutPublicAccessBlockRequest& WithPublicAccessBlockConfiguration(PublicAccessBlockConfiguration&& value) { SetPublicAccessBlockConfiguration(std::move(value)); return *this;}
 

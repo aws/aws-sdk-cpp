@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     STANDARD,
-    EDGE
+    EDGE,
+    EDGE_C,
+    EDGE_CG
   };
 
 namespace SnowballTypeMapper

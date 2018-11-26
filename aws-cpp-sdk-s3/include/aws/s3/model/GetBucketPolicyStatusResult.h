@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The public-policy status for this bucket.</p>
+     * <p>The policy status for the specified bucket.</p>
      */
     inline const PolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
 
     /**
-     * <p>The public-policy status for this bucket.</p>
+     * <p>The policy status for the specified bucket.</p>
      */
     inline void SetPolicyStatus(const PolicyStatus& value) { m_policyStatus = value; }
 
     /**
-     * <p>The public-policy status for this bucket.</p>
+     * <p>The policy status for the specified bucket.</p>
      */
     inline void SetPolicyStatus(PolicyStatus&& value) { m_policyStatus = std::move(value); }
 
     /**
-     * <p>The public-policy status for this bucket.</p>
+     * <p>The policy status for the specified bucket.</p>
      */
     inline GetBucketPolicyStatusResult& WithPolicyStatus(const PolicyStatus& value) { SetPolicyStatus(value); return *this;}
 
     /**
-     * <p>The public-policy status for this bucket.</p>
+     * <p>The policy status for the specified bucket.</p>
      */
     inline GetBucketPolicyStatusResult& WithPolicyStatus(PolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
 

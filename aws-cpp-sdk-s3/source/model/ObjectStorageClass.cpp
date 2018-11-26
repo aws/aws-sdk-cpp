@@ -35,6 +35,7 @@ namespace Aws
         static const int GLACIER_HASH = HashingUtils::HashString("GLACIER");
         static const int STANDARD_IA_HASH = HashingUtils::HashString("STANDARD_IA");
         static const int ONEZONE_IA_HASH = HashingUtils::HashString("ONEZONE_IA");
+        static const int INTELLIGENT_TIERING_HASH = HashingUtils::HashString("INTELLIGENT_TIERING");
 
 
         ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return ObjectStorageClass::ONEZONE_IA;
           }
+          else if (hashCode == INTELLIGENT_TIERING_HASH)
+          {
+            return ObjectStorageClass::INTELLIGENT_TIERING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "STANDARD_IA";
           case ObjectStorageClass::ONEZONE_IA:
             return "ONEZONE_IA";
+          case ObjectStorageClass::INTELLIGENT_TIERING:
+            return "INTELLIGENT_TIERING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

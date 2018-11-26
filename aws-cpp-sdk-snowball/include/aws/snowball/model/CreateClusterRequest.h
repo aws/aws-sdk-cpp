@@ -310,32 +310,37 @@ namespace Model
 
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
      */
     inline const SnowballType& GetSnowballType() const{ return m_snowballType; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
      */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
      */
     inline void SetSnowballType(SnowballType&& value) { m_snowballTypeHasBeenSet = true; m_snowballType = std::move(value); }
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
      */
     inline CreateClusterRequest& WithSnowballType(const SnowballType& value) { SetSnowballType(value); return *this;}
 
     /**
-     * <p>The type of AWS Snowball device to use for this cluster. Currently, the only
-     * supported device type for cluster jobs is <code>EDGE</code>.</p>
+     * <p>The type of AWS Snowball device to use for this cluster. The only supported
+     * device types for cluster jobs are <code>EDGE</code>, <code>EDGE_C</code>, and
+     * <code>EDGE_CG</code>.</p>
      */
     inline CreateClusterRequest& WithSnowballType(SnowballType&& value) { SetSnowballType(std::move(value)); return *this;}
 
@@ -349,9 +354,9 @@ namespace Model
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
      * Typically, Snowball Edges shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
-     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
-     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
 
@@ -364,9 +369,9 @@ namespace Model
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
      * Typically, Snowball Edges shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
-     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
-     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
@@ -379,9 +384,9 @@ namespace Model
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
      * Typically, Snowball Edges shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
-     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
-     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
 
@@ -394,9 +399,9 @@ namespace Model
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
      * Typically, Snowball Edges shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
-     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
-     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
 
@@ -409,9 +414,9 @@ namespace Model
      * </li> <li> <p>In the European Union (EU), you have access to express shipping.
      * Typically, Snowball Edges shipped express are delivered in about a day. In
      * addition, most countries in the EU have access to standard shipping, which
-     * typically takes less than a week, one way.</p> </li> <li> <p>In India, Snowball
-     * Edges are delivered in one to seven days.</p> </li> <li> <p>In the US, you have
-     * access to one-day shipping and two-day shipping.</p> </li> </ul>
+     * typically takes less than a week, one way.</p> </li> <li> <p>In India, devices
+     * are delivered in one to seven days.</p> </li> <li> <p>In the US, you have access
+     * to one-day shipping and two-day shipping.</p> </li> </ul>
      */
     inline CreateClusterRequest& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
 

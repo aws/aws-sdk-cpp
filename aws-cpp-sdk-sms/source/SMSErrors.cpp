@@ -33,7 +33,6 @@ static const int REPLICATION_RUN_LIMIT_EXCEEDED_HASH = HashingUtils::HashString(
 static const int NO_CONNECTORS_AVAILABLE_HASH = HashingUtils::HashString("NoConnectorsAvailableException");
 static const int UNAUTHORIZED_OPERATION_HASH = HashingUtils::HashString("UnauthorizedOperationException");
 static const int REPLICATION_JOB_NOT_FOUND_HASH = HashingUtils::HashString("ReplicationJobNotFoundException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalError");
 static const int REPLICATION_JOB_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReplicationJobAlreadyExistsException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
@@ -63,10 +62,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPLICATION_JOB_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_NOT_FOUND), false);
-  }
-  else if (hashCode == INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::INTERNAL), false);
   }
   else if (hashCode == REPLICATION_JOB_ALREADY_EXISTS_HASH)
   {

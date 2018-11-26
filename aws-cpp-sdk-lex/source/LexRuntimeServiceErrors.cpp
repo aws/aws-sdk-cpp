@@ -28,7 +28,6 @@ namespace LexRuntimeService
 namespace LexRuntimeServiceErrorMapper
 {
 
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
 static const int DEPENDENCY_FAILED_HASH = HashingUtils::HashString("DependencyFailedException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int BAD_GATEWAY_HASH = HashingUtils::HashString("BadGatewayException");
@@ -44,11 +43,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_TIMEOUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::REQUEST_TIMEOUT), false);
-  }
-  else if (hashCode == DEPENDENCY_FAILED_HASH)
+  if (hashCode == DEPENDENCY_FAILED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LexRuntimeServiceErrors::DEPENDENCY_FAILED), false);
   }

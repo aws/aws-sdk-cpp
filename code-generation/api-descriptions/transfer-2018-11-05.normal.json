@@ -5,6 +5,7 @@
     "endpointPrefix":"transfer",
     "jsonVersion":"1.1",
     "protocol":"json",
+    "serviceAbbreviation":"AWS Transfer",
     "serviceFullName":"AWS Transfer for SFTP",
     "serviceId":"Transfer",
     "signatureVersion":"v4",

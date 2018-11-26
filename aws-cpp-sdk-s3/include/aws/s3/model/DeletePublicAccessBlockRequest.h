@@ -50,44 +50,44 @@ namespace Model
 
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

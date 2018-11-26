@@ -1024,7 +1024,7 @@ namespace Aws
         virtual void DeleteObjectsAsync(const Model::DeleteObjectsRequest& request, const DeleteObjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * <p>Removes the <code>PublicAccessBlock</code> configuration from an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
@@ -1032,7 +1032,7 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * <p>Removes the <code>PublicAccessBlock</code> configuration from an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
@@ -1042,7 +1042,7 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Removes the Public Access Block configuration for an Amazon S3
+         * <p>Removes the <code>PublicAccessBlock</code> configuration from an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
@@ -1644,7 +1644,7 @@ namespace Aws
         virtual void GetObjectTorrentAsync(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
          * API Reference</a></p>
@@ -1652,7 +1652,7 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
          * API Reference</a></p>
@@ -1662,7 +1662,7 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Retrieves the Public Access Block configuration for an Amazon S3
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon S3
          * bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetPublicAccessBlock">AWS
          * API Reference</a></p>
@@ -2541,16 +2541,16 @@ namespace Aws
         virtual void PutObjectTaggingAsync(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::PutPublicAccessBlockOutcome PutPublicAccessBlock(const Model::PutPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -2559,8 +2559,8 @@ namespace Aws
         virtual Model::PutPublicAccessBlockOutcomeCallable PutPublicAccessBlockCallable(const Model::PutPublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Creates or modifies the Public Access Block configuration for an Amazon S3
-         * bucket.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          *
