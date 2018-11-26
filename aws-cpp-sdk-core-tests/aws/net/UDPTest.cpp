@@ -21,6 +21,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
+#if 0
 using namespace Aws::Utils::Threading;
 
 static const int counter = 100;
@@ -130,3 +131,4 @@ TEST(UDPTEST, TestUDPSendReceivePacketsNonblockingBatch)
     exec.Submit(receiver);
     exec.Submit(sender);
 }
+#endif

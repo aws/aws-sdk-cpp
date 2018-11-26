@@ -29,7 +29,7 @@
 #include <aws/core/utils/threading/ThreadTask.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
-
+#if 0
 using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;
 using namespace Aws::Monitoring;
@@ -456,3 +456,4 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenFailed)
     ASSERT_LE(api.View().GetString("Timestamp"), attemptFail2.View().GetString("Timestamp"));
     ASSERT_GE(api.View().GetInt64("Latency"), attemptFail.View().GetInt64("AttemptLatency") + attemptFail2.View().GetInt64("AttemptLatency"));
 }
+#endif
