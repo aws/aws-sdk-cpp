@@ -48,6 +48,42 @@ namespace Model
 
 
     /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline const Aws::String& GetConnectorDefinitionVersionArn() const{ return m_connectorDefinitionVersionArn; }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline void SetConnectorDefinitionVersionArn(const Aws::String& value) { m_connectorDefinitionVersionArnHasBeenSet = true; m_connectorDefinitionVersionArn = value; }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline void SetConnectorDefinitionVersionArn(Aws::String&& value) { m_connectorDefinitionVersionArnHasBeenSet = true; m_connectorDefinitionVersionArn = std::move(value); }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline void SetConnectorDefinitionVersionArn(const char* value) { m_connectorDefinitionVersionArnHasBeenSet = true; m_connectorDefinitionVersionArn.assign(value); }
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline GroupVersion& WithConnectorDefinitionVersionArn(const Aws::String& value) { SetConnectorDefinitionVersionArn(value); return *this;}
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline GroupVersion& WithConnectorDefinitionVersionArn(Aws::String&& value) { SetConnectorDefinitionVersionArn(std::move(value)); return *this;}
+
+    /**
+     * The ARN of the connector definition version for this group.
+     */
+    inline GroupVersion& WithConnectorDefinitionVersionArn(const char* value) { SetConnectorDefinitionVersionArn(value); return *this;}
+
+
+    /**
      * The ARN of the core definition version for this group.
      */
     inline const Aws::String& GetCoreDefinitionVersionArn() const{ return m_coreDefinitionVersionArn; }
@@ -192,37 +228,37 @@ namespace Model
 
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline const Aws::String& GetResourceDefinitionVersionArn() const{ return m_resourceDefinitionVersionArn; }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline void SetResourceDefinitionVersionArn(const Aws::String& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = value; }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline void SetResourceDefinitionVersionArn(Aws::String&& value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn = std::move(value); }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline void SetResourceDefinitionVersionArn(const char* value) { m_resourceDefinitionVersionArnHasBeenSet = true; m_resourceDefinitionVersionArn.assign(value); }
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline GroupVersion& WithResourceDefinitionVersionArn(const Aws::String& value) { SetResourceDefinitionVersionArn(value); return *this;}
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline GroupVersion& WithResourceDefinitionVersionArn(Aws::String&& value) { SetResourceDefinitionVersionArn(std::move(value)); return *this;}
 
     /**
-     * The resource definition version ARN for this group.
+     * The ARN of the resource definition version for this group.
      */
     inline GroupVersion& WithResourceDefinitionVersionArn(const char* value) { SetResourceDefinitionVersionArn(value); return *this;}
 
@@ -263,6 +299,9 @@ namespace Model
     inline GroupVersion& WithSubscriptionDefinitionVersionArn(const char* value) { SetSubscriptionDefinitionVersionArn(value); return *this;}
 
   private:
+
+    Aws::String m_connectorDefinitionVersionArn;
+    bool m_connectorDefinitionVersionArnHasBeenSet;
 
     Aws::String m_coreDefinitionVersionArn;
     bool m_coreDefinitionVersionArnHasBeenSet;

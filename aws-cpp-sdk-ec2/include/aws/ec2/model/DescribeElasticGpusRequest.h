@@ -49,42 +49,42 @@ namespace Model
   public:
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetElasticGpuIds() const{ return m_elasticGpuIds; }
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline void SetElasticGpuIds(const Aws::Vector<Aws::String>& value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds = value; }
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline void SetElasticGpuIds(Aws::Vector<Aws::String>&& value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds = std::move(value); }
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline DescribeElasticGpusRequest& WithElasticGpuIds(const Aws::Vector<Aws::String>& value) { SetElasticGpuIds(value); return *this;}
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline DescribeElasticGpusRequest& WithElasticGpuIds(Aws::Vector<Aws::String>&& value) { SetElasticGpuIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline DescribeElasticGpusRequest& AddElasticGpuIds(const Aws::String& value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline DescribeElasticGpusRequest& AddElasticGpuIds(Aws::String&& value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Elastic GPU IDs.</p>
+     * <p>One or more Elastic Graphics accelerator IDs.</p>
      */
     inline DescribeElasticGpusRequest& AddElasticGpuIds(const char* value) { m_elasticGpuIdsHasBeenSet = true; m_elasticGpuIds.push_back(value); return *this; }
 
@@ -116,85 +116,92 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline DescribeElasticGpusRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline DescribeElasticGpusRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline DescribeElasticGpusRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
-     * Availability Zone in which the Elastic GPU resides.</p> </li> <li> <p>
-     * <code>elastic-gpu-health</code> - The status of the Elastic GPU (<code>OK</code>
-     * | <code>IMPAIRED</code>).</p> </li> <li> <p> <code>elastic-gpu-state</code> -
-     * The state of the Elastic GPU (<code>ATTACHED</code>).</p> </li> <li> <p>
-     * <code>elastic-gpu-type</code> - The type of Elastic GPU; for example,
-     * <code>eg1.medium</code>.</p> </li> <li> <p> <code>instance-id</code> - The ID of
-     * the instance to which the Elastic GPU is associated.</p> </li> </ul>
+     * Availability Zone in which the Elastic Graphics accelerator resides.</p> </li>
+     * <li> <p> <code>elastic-gpu-health</code> - The status of the Elastic Graphics
+     * accelerator (<code>OK</code> | <code>IMPAIRED</code>).</p> </li> <li> <p>
+     * <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator
+     * (<code>ATTACHED</code>).</p> </li> <li> <p> <code>elastic-gpu-type</code> - The
+     * type of Elastic Graphics accelerator; for example, <code>eg1.medium</code>.</p>
+     * </li> <li> <p> <code>instance-id</code> - The ID of the instance to which the
+     * Elastic Graphics accelerator is associated.</p> </li> </ul>
      */
     inline DescribeElasticGpusRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

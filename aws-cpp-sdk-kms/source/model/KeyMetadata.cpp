@@ -44,6 +44,8 @@ KeyMetadata::KeyMetadata() :
     m_validToHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
+    m_customKeyStoreIdHasBeenSet(false),
+    m_cloudHsmClusterIdHasBeenSet(false),
     m_expirationModel(ExpirationModelType::NOT_SET),
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
@@ -67,6 +69,8 @@ KeyMetadata::KeyMetadata(JsonView jsonValue) :
     m_validToHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
+    m_customKeyStoreIdHasBeenSet(false),
+    m_cloudHsmClusterIdHasBeenSet(false),
     m_expirationModel(ExpirationModelType::NOT_SET),
     m_expirationModelHasBeenSet(false),
     m_keyManager(KeyManagerType::NOT_SET),
@@ -154,6 +158,20 @@ KeyMetadata& KeyMetadata::operator =(JsonView jsonValue)
     m_originHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomKeyStoreId"))
+  {
+    m_customKeyStoreId = jsonValue.GetString("CustomKeyStoreId");
+
+    m_customKeyStoreIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CloudHsmClusterId"))
+  {
+    m_cloudHsmClusterId = jsonValue.GetString("CloudHsmClusterId");
+
+    m_cloudHsmClusterIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ExpirationModel"))
   {
     m_expirationModel = ExpirationModelTypeMapper::GetExpirationModelTypeForName(jsonValue.GetString("ExpirationModel"));
@@ -233,6 +251,18 @@ JsonValue KeyMetadata::Jsonize() const
   if(m_originHasBeenSet)
   {
    payload.WithString("Origin", OriginTypeMapper::GetNameForOriginType(m_origin));
+  }
+
+  if(m_customKeyStoreIdHasBeenSet)
+  {
+   payload.WithString("CustomKeyStoreId", m_customKeyStoreId);
+
+  }
+
+  if(m_cloudHsmClusterIdHasBeenSet)
+  {
+   payload.WithString("CloudHsmClusterId", m_cloudHsmClusterId);
+
   }
 
   if(m_expirationModelHasBeenSet)

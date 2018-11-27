@@ -349,36 +349,31 @@ namespace Model
 
     /**
      * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this
-     * value is omitted.</p>
+     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetDeletionDate() const{ return m_deletionDate; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this
-     * value is omitted.</p>
+     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
      */
     inline void SetDeletionDate(const Aws::Utils::DateTime& value) { m_deletionDateHasBeenSet = true; m_deletionDate = value; }
 
     /**
      * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this
-     * value is omitted.</p>
+     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
      */
     inline void SetDeletionDate(Aws::Utils::DateTime&& value) { m_deletionDateHasBeenSet = true; m_deletionDate = std::move(value); }
 
     /**
      * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this
-     * value is omitted.</p>
+     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
      */
     inline KeyMetadata& WithDeletionDate(const Aws::Utils::DateTime& value) { SetDeletionDate(value); return *this;}
 
     /**
      * <p>The date and time after which AWS KMS deletes the CMK. This value is present
-     * only when <code>KeyState</code> is <code>PendingDeletion</code>, otherwise this
-     * value is omitted.</p>
+     * only when <code>KeyState</code> is <code>PendingDeletion</code>.</p>
      */
     inline KeyMetadata& WithDeletionDate(Aws::Utils::DateTime&& value) { SetDeletionDate(std::move(value)); return *this;}
 
@@ -433,7 +428,9 @@ namespace Model
      * <p>The source of the CMK's key material. When this value is
      * <code>AWS_KMS</code>, AWS KMS created the key material. When this value is
      * <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p>
+     * management infrastructure or the CMK lacks key material. When this value is
+     * <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * cluster associated with a custom key store.</p>
      */
     inline const OriginType& GetOrigin() const{ return m_origin; }
 
@@ -441,7 +438,9 @@ namespace Model
      * <p>The source of the CMK's key material. When this value is
      * <code>AWS_KMS</code>, AWS KMS created the key material. When this value is
      * <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p>
+     * management infrastructure or the CMK lacks key material. When this value is
+     * <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
 
@@ -449,7 +448,9 @@ namespace Model
      * <p>The source of the CMK's key material. When this value is
      * <code>AWS_KMS</code>, AWS KMS created the key material. When this value is
      * <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p>
+     * management infrastructure or the CMK lacks key material. When this value is
+     * <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * cluster associated with a custom key store.</p>
      */
     inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
@@ -457,7 +458,9 @@ namespace Model
      * <p>The source of the CMK's key material. When this value is
      * <code>AWS_KMS</code>, AWS KMS created the key material. When this value is
      * <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p>
+     * management infrastructure or the CMK lacks key material. When this value is
+     * <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * cluster associated with a custom key store.</p>
      */
     inline KeyMetadata& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
 
@@ -465,9 +468,139 @@ namespace Model
      * <p>The source of the CMK's key material. When this value is
      * <code>AWS_KMS</code>, AWS KMS created the key material. When this value is
      * <code>EXTERNAL</code>, the key material was imported from your existing key
-     * management infrastructure or the CMK lacks key material.</p>
+     * management infrastructure or the CMK lacks key material. When this value is
+     * <code>AWS_CLOUDHSM</code>, the key material was created in the AWS CloudHSM
+     * cluster associated with a custom key store.</p>
      */
     inline KeyMetadata& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline KeyMetadata& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline KeyMetadata& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a> that contains the CMK. This value is present only when the CMK is
+     * created in a custom key store.</p>
+     */
+    inline KeyMetadata& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline KeyMetadata& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline KeyMetadata& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
+
+    /**
+     * <p>The cluster ID of the AWS CloudHSM cluster that contains the key material for
+     * the CMK. When you create a CMK in a <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>, AWS KMS creates the key material for the CMK in the associated
+     * AWS CloudHSM cluster. This value is present only when the CMK is created in a
+     * custom key store.</p>
+     */
+    inline KeyMetadata& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
 
 
     /**
@@ -507,7 +640,7 @@ namespace Model
 
 
     /**
-     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -515,7 +648,7 @@ namespace Model
     inline const KeyManagerType& GetKeyManager() const{ return m_keyManager; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -523,7 +656,7 @@ namespace Model
     inline void SetKeyManager(const KeyManagerType& value) { m_keyManagerHasBeenSet = true; m_keyManager = value; }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -531,7 +664,7 @@ namespace Model
     inline void SetKeyManager(KeyManagerType&& value) { m_keyManagerHasBeenSet = true; m_keyManager = std::move(value); }
 
     /**
-     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -539,7 +672,7 @@ namespace Model
     inline KeyMetadata& WithKeyManager(const KeyManagerType& value) { SetKeyManager(value); return *this;}
 
     /**
-     * <p>The CMK's manager. CMKs are either customer managed or AWS managed. For more
+     * <p>The CMK's manager. CMKs are either customer-managed or AWS-managed. For more
      * information about the difference, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
      * Master Keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
@@ -580,6 +713,12 @@ namespace Model
 
     OriginType m_origin;
     bool m_originHasBeenSet;
+
+    Aws::String m_customKeyStoreId;
+    bool m_customKeyStoreIdHasBeenSet;
+
+    Aws::String m_cloudHsmClusterId;
+    bool m_cloudHsmClusterIdHasBeenSet;
 
     ExpirationModelType m_expirationModel;
     bool m_expirationModelHasBeenSet;

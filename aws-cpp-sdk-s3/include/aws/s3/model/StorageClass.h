@@ -30,7 +30,8 @@ namespace Model
     REDUCED_REDUNDANCY,
     STANDARD_IA,
     ONEZONE_IA,
-    INTELLIGENT_TIERING
+    INTELLIGENT_TIERING,
+    GLACIER
   };
 
 namespace StorageClassMapper

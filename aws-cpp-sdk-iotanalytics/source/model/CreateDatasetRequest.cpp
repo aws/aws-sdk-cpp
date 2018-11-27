@@ -26,6 +26,7 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetNameHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -60,6 +61,17 @@ Aws::String CreateDatasetRequest::SerializePayload() const
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
    }
    payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_contentDeliveryRulesHasBeenSet)
+  {
+   Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
+   for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+   {
+     contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject(m_contentDeliveryRules[contentDeliveryRulesIndex].Jsonize());
+   }
+   payload.WithArray("contentDeliveryRules", std::move(contentDeliveryRulesJsonList));
 
   }
 

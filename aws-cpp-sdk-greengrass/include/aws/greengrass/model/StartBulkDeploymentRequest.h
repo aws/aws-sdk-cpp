@@ -142,8 +142,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline const Aws::String& GetInputFileUri() const{ return m_inputFileUri; }
 
@@ -152,8 +152,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(const Aws::String& value) { m_inputFileUriHasBeenSet = true; m_inputFileUri = value; }
 
@@ -162,8 +162,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(Aws::String&& value) { m_inputFileUriHasBeenSet = true; m_inputFileUri = std::move(value); }
 
@@ -172,8 +172,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(const char* value) { m_inputFileUriHasBeenSet = true; m_inputFileUri.assign(value); }
 
@@ -182,8 +182,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(const Aws::String& value) { SetInputFileUri(value); return *this;}
 
@@ -192,8 +192,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(Aws::String&& value) { SetInputFileUri(std::move(value)); return *this;}
 
@@ -202,8 +202,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(const char* value) { SetInputFileUri(value); return *this;}
 

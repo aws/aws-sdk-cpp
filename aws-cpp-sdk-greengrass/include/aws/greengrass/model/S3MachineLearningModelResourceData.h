@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Attributes that define an S3 machine learning resource.<p><h3>See Also:</h3>  
-   * <a
+   * Attributes that define an Amazon S3 machine learning resource.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/S3MachineLearningModelResourceData">AWS
    * API Reference</a></p>
    */

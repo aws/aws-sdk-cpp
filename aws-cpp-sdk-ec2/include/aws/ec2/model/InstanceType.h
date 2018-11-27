@@ -139,6 +139,12 @@ namespace Model
     c5d_4xlarge,
     c5d_9xlarge,
     c5d_18xlarge,
+    c5n_large,
+    c5n_xlarge,
+    c5n_2xlarge,
+    c5n_4xlarge,
+    c5n_9xlarge,
+    c5n_18xlarge,
     cc1_4xlarge,
     cc2_8xlarge,
     g2_2xlarge,
@@ -191,7 +197,12 @@ namespace Model
     z1d_12xlarge,
     u_6tb1_metal,
     u_9tb1_metal,
-    u_12tb1_metal
+    u_12tb1_metal,
+    a1_medium,
+    a1_large,
+    a1_xlarge,
+    a1_2xlarge,
+    a1_4xlarge
   };
 
 namespace InstanceTypeMapper

@@ -27,10 +27,17 @@ CreateReplicationJobRequest::CreateReplicationJobRequest() :
     m_seedReplicationTimeHasBeenSet(false),
     m_frequency(0),
     m_frequencyHasBeenSet(false),
+    m_runOnce(false),
+    m_runOnceHasBeenSet(false),
     m_licenseType(LicenseType::NOT_SET),
     m_licenseTypeHasBeenSet(false),
     m_roleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_numberOfRecentAmisToKeep(0),
+    m_numberOfRecentAmisToKeepHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -55,6 +62,12 @@ Aws::String CreateReplicationJobRequest::SerializePayload() const
 
   }
 
+  if(m_runOnceHasBeenSet)
+  {
+   payload.WithBool("runOnce", m_runOnce);
+
+  }
+
   if(m_licenseTypeHasBeenSet)
   {
    payload.WithString("licenseType", LicenseTypeMapper::GetNameForLicenseType(m_licenseType));
@@ -69,6 +82,24 @@ Aws::String CreateReplicationJobRequest::SerializePayload() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_numberOfRecentAmisToKeepHasBeenSet)
+  {
+   payload.WithInteger("numberOfRecentAmisToKeep", m_numberOfRecentAmisToKeep);
+
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+   payload.WithBool("encrypted", m_encrypted);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

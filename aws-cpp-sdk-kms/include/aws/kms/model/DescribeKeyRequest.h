@@ -52,9 +52,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -72,9 +72,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -92,9 +92,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -112,9 +112,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -132,9 +132,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -152,9 +152,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
@@ -172,9 +172,9 @@ namespace Model
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
      * managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
      * response.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
-     * alias name, or alias ARN. When using an alias name, prefix it with
-     * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
-     * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * alias name, or alias ARN. When using an alias name, prefix it with "alias/". To
+     * specify a CMK in a different AWS account, you must use the key ARN or alias
+     * ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>

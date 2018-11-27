@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/kms/KMSRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
 
 namespace Aws
 {
@@ -57,10 +59,77 @@ namespace Model
      */
     inline GenerateRandomRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
 
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline GenerateRandomRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline GenerateRandomRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>Generates the random byte string in the AWS CloudHSM cluster that is
+     * associated with the specified <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-store-overview.html">custom
+     * key store</a>. To find the ID of a custom key store, use the
+     * <a>DescribeCustomKeyStores</a> operation.</p>
+     */
+    inline GenerateRandomRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+
   private:
 
     int m_numberOfBytes;
     bool m_numberOfBytesHasBeenSet;
+
+    Aws::String m_customKeyStoreId;
+    bool m_customKeyStoreIdHasBeenSet;
   };
 
 } // namespace Model

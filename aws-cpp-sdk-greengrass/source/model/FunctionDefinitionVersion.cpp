@@ -29,11 +29,13 @@ namespace Model
 {
 
 FunctionDefinitionVersion::FunctionDefinitionVersion() : 
+    m_defaultConfigHasBeenSet(false),
     m_functionsHasBeenSet(false)
 {
 }
 
 FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue) : 
+    m_defaultConfigHasBeenSet(false),
     m_functionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,13 @@ FunctionDefinitionVersion::FunctionDefinitionVersion(JsonView jsonValue) :
 
 FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DefaultConfig"))
+  {
+    m_defaultConfig = jsonValue.GetObject("DefaultConfig");
+
+    m_defaultConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Functions"))
   {
     Array<JsonView> functionsJsonList = jsonValue.GetArray("Functions");
@@ -57,6 +66,12 @@ FunctionDefinitionVersion& FunctionDefinitionVersion::operator =(JsonView jsonVa
 JsonValue FunctionDefinitionVersion::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_defaultConfigHasBeenSet)
+  {
+   payload.WithObject("DefaultConfig", m_defaultConfig.Jsonize());
+
+  }
 
   if(m_functionsHasBeenSet)
   {

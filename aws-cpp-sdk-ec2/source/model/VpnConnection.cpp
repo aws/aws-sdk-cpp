@@ -40,6 +40,7 @@ VpnConnection::VpnConnection() :
     m_typeHasBeenSet(false),
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -57,6 +58,7 @@ VpnConnection::VpnConnection(const XmlNode& xmlNode) :
     m_typeHasBeenSet(false),
     m_vpnConnectionIdHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_routesHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -112,6 +114,12 @@ VpnConnection& VpnConnection::operator =(const XmlNode& xmlNode)
     {
       m_vpnGatewayId = StringUtils::Trim(vpnGatewayIdNode.GetText().c_str());
       m_vpnGatewayIdHasBeenSet = true;
+    }
+    XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
+    if(!transitGatewayIdNode.IsNull())
+    {
+      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode optionsNode = resultNode.FirstChild("options");
     if(!optionsNode.IsNull())
@@ -197,6 +205,11 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
   }
 
+  if(m_transitGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+
   if(m_optionsHasBeenSet)
   {
       Aws::StringStream optionsLocationAndMemberSs;
@@ -268,6 +281,10 @@ void VpnConnection::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_vpnGatewayIdHasBeenSet)
   {
       oStream << location << ".VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+  }
+  if(m_transitGatewayIdHasBeenSet)
+  {
+      oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
   if(m_optionsHasBeenSet)
   {

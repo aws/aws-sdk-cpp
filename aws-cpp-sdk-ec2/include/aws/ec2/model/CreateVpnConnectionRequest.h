@@ -124,39 +124,89 @@ namespace Model
 
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline const Aws::String& GetVpnGatewayId() const{ return m_vpnGatewayId; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline void SetVpnGatewayId(const Aws::String& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = value; }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline void SetVpnGatewayId(Aws::String&& value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline void SetVpnGatewayId(const char* value) { m_vpnGatewayIdHasBeenSet = true; m_vpnGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline CreateVpnConnectionRequest& WithVpnGatewayId(const Aws::String& value) { SetVpnGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline CreateVpnConnectionRequest& WithVpnGatewayId(Aws::String&& value) { SetVpnGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the virtual private gateway.</p>
+     * <p>The ID of the virtual private gateway. If you specify a virtual private
+     * gateway, you cannot specify a transit gateway.</p>
      */
     inline CreateVpnConnectionRequest& WithVpnGatewayId(const char* value) { SetVpnGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway. If you specify a transit gateway, you cannot
+     * specify a virtual private gateway.</p>
+     */
+    inline CreateVpnConnectionRequest& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 
 
     /**
@@ -219,6 +269,9 @@ namespace Model
 
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Attributes that define an SageMaker machine learning resource.<p><h3>See
+   * Attributes that define an Amazon SageMaker machine learning resource.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/SageMakerMachineLearningModelResourceData">AWS
    * API Reference</a></p>
@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline const Aws::String& GetSageMakerJobArn() const{ return m_sageMakerJobArn; }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline void SetSageMakerJobArn(const Aws::String& value) { m_sageMakerJobArnHasBeenSet = true; m_sageMakerJobArn = value; }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline void SetSageMakerJobArn(Aws::String&& value) { m_sageMakerJobArnHasBeenSet = true; m_sageMakerJobArn = std::move(value); }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline void SetSageMakerJobArn(const char* value) { m_sageMakerJobArnHasBeenSet = true; m_sageMakerJobArn.assign(value); }
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline SageMakerMachineLearningModelResourceData& WithSageMakerJobArn(const Aws::String& value) { SetSageMakerJobArn(value); return *this;}
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline SageMakerMachineLearningModelResourceData& WithSageMakerJobArn(Aws::String&& value) { SetSageMakerJobArn(std::move(value)); return *this;}
 
     /**
-     * The ARN of the SageMaker training job that represents the source model.
+     * The ARN of the Amazon SageMaker training job that represents the source model.
      */
     inline SageMakerMachineLearningModelResourceData& WithSageMakerJobArn(const char* value) { SetSageMakerJobArn(value); return *this;}
 

@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline const Aws::Vector<ElasticGpus>& GetElasticGpuSet() const{ return m_elasticGpuSet; }
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline void SetElasticGpuSet(const Aws::Vector<ElasticGpus>& value) { m_elasticGpuSet = value; }
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline void SetElasticGpuSet(Aws::Vector<ElasticGpus>&& value) { m_elasticGpuSet = std::move(value); }
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline DescribeElasticGpusResponse& WithElasticGpuSet(const Aws::Vector<ElasticGpus>& value) { SetElasticGpuSet(value); return *this;}
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline DescribeElasticGpusResponse& WithElasticGpuSet(Aws::Vector<ElasticGpus>&& value) { SetElasticGpuSet(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline DescribeElasticGpusResponse& AddElasticGpuSet(const ElasticGpus& value) { m_elasticGpuSet.push_back(value); return *this; }
 
     /**
-     * <p>Information about the Elastic GPUs.</p>
+     * <p>Information about the Elastic Graphics accelerators.</p>
      */
     inline DescribeElasticGpusResponse& AddElasticGpuSet(ElasticGpus&& value) { m_elasticGpuSet.push_back(std::move(value)); return *this; }
 

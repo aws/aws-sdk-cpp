@@ -49,6 +49,9 @@ namespace Aws
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
         static const int subnet_HASH = HashingUtils::HashString("subnet");
+        static const int transit_gateway_HASH = HashingUtils::HashString("transit-gateway");
+        static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
+        static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
         static const int vpc_peering_connection_HASH = HashingUtils::HashString("vpc-peering-connection");
@@ -135,6 +138,18 @@ namespace Aws
           {
             return ResourceType::subnet;
           }
+          else if (hashCode == transit_gateway_HASH)
+          {
+            return ResourceType::transit_gateway;
+          }
+          else if (hashCode == transit_gateway_attachment_HASH)
+          {
+            return ResourceType::transit_gateway_attachment;
+          }
+          else if (hashCode == transit_gateway_route_table_HASH)
+          {
+            return ResourceType::transit_gateway_route_table;
+          }
           else if (hashCode == volume_HASH)
           {
             return ResourceType::volume;
@@ -207,6 +222,12 @@ namespace Aws
             return "spot-instances-request";
           case ResourceType::subnet:
             return "subnet";
+          case ResourceType::transit_gateway:
+            return "transit-gateway";
+          case ResourceType::transit_gateway_attachment:
+            return "transit-gateway-attachment";
+          case ResourceType::transit_gateway_route_table:
+            return "transit-gateway-route-table";
           case ResourceType::volume:
             return "volume";
           case ResourceType::vpc:

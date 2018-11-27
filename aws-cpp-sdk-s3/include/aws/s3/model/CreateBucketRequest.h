@@ -304,6 +304,25 @@ namespace Model
     inline CreateBucketRequest& WithGrantWriteACP(const char* value) { SetGrantWriteACP(value); return *this;}
 
 
+    /**
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * bucket.</p>
+     */
+    inline bool GetObjectLockEnabledForBucket() const{ return m_objectLockEnabledForBucket; }
+
+    /**
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * bucket.</p>
+     */
+    inline void SetObjectLockEnabledForBucket(bool value) { m_objectLockEnabledForBucketHasBeenSet = true; m_objectLockEnabledForBucket = value; }
+
+    /**
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
+     * bucket.</p>
+     */
+    inline CreateBucketRequest& WithObjectLockEnabledForBucket(bool value) { SetObjectLockEnabledForBucket(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -365,6 +384,9 @@ namespace Model
 
     Aws::String m_grantWriteACP;
     bool m_grantWriteACPHasBeenSet;
+
+    bool m_objectLockEnabledForBucket;
+    bool m_objectLockEnabledForBucketHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

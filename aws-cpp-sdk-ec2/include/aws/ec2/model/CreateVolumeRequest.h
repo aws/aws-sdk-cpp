@@ -141,8 +141,11 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
-     * most regions. For exceptions, see <a
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
@@ -151,8 +154,11 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
-     * most regions. For exceptions, see <a
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
@@ -161,8 +167,11 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in
-     * most regions. For exceptions, see <a
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      * <p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
@@ -333,32 +342,35 @@ namespace Model
 
 
     /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16,384 for
+     * <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for
+     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for
+     * <code>standard</code>. If you specify a snapshot, the volume size must be equal
+     * to or larger than the snapshot size.</p> <p>Default: If you're creating the
+     * volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16,384 for
+     * <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for
+     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for
+     * <code>standard</code>. If you specify a snapshot, the volume size must be equal
+     * to or larger than the snapshot size.</p> <p>Default: If you're creating the
+     * volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16384 for
-     * <code>gp2</code>, 4-16384 for <code>io1</code>, 500-16384 for <code>st1</code>,
-     * 500-16384 for <code>sc1</code>, and 1-1024 for <code>standard</code>. If you
-     * specify a snapshot, the volume size must be equal to or larger than the snapshot
-     * size.</p> <p>Default: If you're creating the volume from a snapshot and don't
-     * specify a volume size, the default is the snapshot size.</p>
+     * <p>The size of the volume, in GiBs.</p> <p>Constraints: 1-16,384 for
+     * <code>gp2</code>, 4-16,384 for <code>io1</code>, 500-16,384 for
+     * <code>st1</code>, 500-16,384 for <code>sc1</code>, and 1-1,024 for
+     * <code>standard</code>. If you specify a snapshot, the volume size must be equal
+     * to or larger than the snapshot size.</p> <p>Default: If you're creating the
+     * volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.</p>
      */
     inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 

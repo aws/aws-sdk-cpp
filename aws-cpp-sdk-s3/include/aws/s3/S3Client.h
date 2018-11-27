@@ -51,6 +51,9 @@
 #include <aws/s3/model/GetBucketWebsiteResult.h>
 #include <aws/s3/model/GetObjectResult.h>
 #include <aws/s3/model/GetObjectAclResult.h>
+#include <aws/s3/model/GetObjectLegalHoldResult.h>
+#include <aws/s3/model/GetObjectLockConfigurationResult.h>
+#include <aws/s3/model/GetObjectRetentionResult.h>
 #include <aws/s3/model/GetObjectTaggingResult.h>
 #include <aws/s3/model/GetObjectTorrentResult.h>
 #include <aws/s3/model/GetPublicAccessBlockResult.h>
@@ -66,6 +69,9 @@
 #include <aws/s3/model/ListPartsResult.h>
 #include <aws/s3/model/PutObjectResult.h>
 #include <aws/s3/model/PutObjectAclResult.h>
+#include <aws/s3/model/PutObjectLegalHoldResult.h>
+#include <aws/s3/model/PutObjectLockConfigurationResult.h>
+#include <aws/s3/model/PutObjectRetentionResult.h>
 #include <aws/s3/model/PutObjectTaggingResult.h>
 #include <aws/s3/model/RestoreObjectResult.h>
 #include <aws/s3/model/UploadPartResult.h>
@@ -154,6 +160,9 @@ namespace Aws
         class GetBucketWebsiteRequest;
         class GetObjectRequest;
         class GetObjectAclRequest;
+        class GetObjectLegalHoldRequest;
+        class GetObjectLockConfigurationRequest;
+        class GetObjectRetentionRequest;
         class GetObjectTaggingRequest;
         class GetObjectTorrentRequest;
         class GetPublicAccessBlockRequest;
@@ -185,6 +194,9 @@ namespace Aws
         class PutBucketWebsiteRequest;
         class PutObjectRequest;
         class PutObjectAclRequest;
+        class PutObjectLegalHoldRequest;
+        class PutObjectLockConfigurationRequest;
+        class PutObjectRetentionRequest;
         class PutObjectTaggingRequest;
         class PutPublicAccessBlockRequest;
         class RestoreObjectRequest;
@@ -232,6 +244,9 @@ namespace Aws
         typedef Aws::Utils::Outcome<GetBucketWebsiteResult, Aws::Client::AWSError<S3Errors>> GetBucketWebsiteOutcome;
         typedef Aws::Utils::Outcome<GetObjectResult, Aws::Client::AWSError<S3Errors>> GetObjectOutcome;
         typedef Aws::Utils::Outcome<GetObjectAclResult, Aws::Client::AWSError<S3Errors>> GetObjectAclOutcome;
+        typedef Aws::Utils::Outcome<GetObjectLegalHoldResult, Aws::Client::AWSError<S3Errors>> GetObjectLegalHoldOutcome;
+        typedef Aws::Utils::Outcome<GetObjectLockConfigurationResult, Aws::Client::AWSError<S3Errors>> GetObjectLockConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetObjectRetentionResult, Aws::Client::AWSError<S3Errors>> GetObjectRetentionOutcome;
         typedef Aws::Utils::Outcome<GetObjectTaggingResult, Aws::Client::AWSError<S3Errors>> GetObjectTaggingOutcome;
         typedef Aws::Utils::Outcome<GetObjectTorrentResult, Aws::Client::AWSError<S3Errors>> GetObjectTorrentOutcome;
         typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, Aws::Client::AWSError<S3Errors>> GetPublicAccessBlockOutcome;
@@ -264,6 +279,9 @@ namespace Aws
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> PutBucketWebsiteOutcome;
         typedef Aws::Utils::Outcome<PutObjectResult, Aws::Client::AWSError<S3Errors>> PutObjectOutcome;
         typedef Aws::Utils::Outcome<PutObjectAclResult, Aws::Client::AWSError<S3Errors>> PutObjectAclOutcome;
+        typedef Aws::Utils::Outcome<PutObjectLegalHoldResult, Aws::Client::AWSError<S3Errors>> PutObjectLegalHoldOutcome;
+        typedef Aws::Utils::Outcome<PutObjectLockConfigurationResult, Aws::Client::AWSError<S3Errors>> PutObjectLockConfigurationOutcome;
+        typedef Aws::Utils::Outcome<PutObjectRetentionResult, Aws::Client::AWSError<S3Errors>> PutObjectRetentionOutcome;
         typedef Aws::Utils::Outcome<PutObjectTaggingResult, Aws::Client::AWSError<S3Errors>> PutObjectTaggingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3Errors>> PutPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<RestoreObjectResult, Aws::Client::AWSError<S3Errors>> RestoreObjectOutcome;
@@ -311,6 +329,9 @@ namespace Aws
         typedef std::future<GetBucketWebsiteOutcome> GetBucketWebsiteOutcomeCallable;
         typedef std::future<GetObjectOutcome> GetObjectOutcomeCallable;
         typedef std::future<GetObjectAclOutcome> GetObjectAclOutcomeCallable;
+        typedef std::future<GetObjectLegalHoldOutcome> GetObjectLegalHoldOutcomeCallable;
+        typedef std::future<GetObjectLockConfigurationOutcome> GetObjectLockConfigurationOutcomeCallable;
+        typedef std::future<GetObjectRetentionOutcome> GetObjectRetentionOutcomeCallable;
         typedef std::future<GetObjectTaggingOutcome> GetObjectTaggingOutcomeCallable;
         typedef std::future<GetObjectTorrentOutcome> GetObjectTorrentOutcomeCallable;
         typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
@@ -343,6 +364,9 @@ namespace Aws
         typedef std::future<PutBucketWebsiteOutcome> PutBucketWebsiteOutcomeCallable;
         typedef std::future<PutObjectOutcome> PutObjectOutcomeCallable;
         typedef std::future<PutObjectAclOutcome> PutObjectAclOutcomeCallable;
+        typedef std::future<PutObjectLegalHoldOutcome> PutObjectLegalHoldOutcomeCallable;
+        typedef std::future<PutObjectLockConfigurationOutcome> PutObjectLockConfigurationOutcomeCallable;
+        typedef std::future<PutObjectRetentionOutcome> PutObjectRetentionOutcomeCallable;
         typedef std::future<PutObjectTaggingOutcome> PutObjectTaggingOutcomeCallable;
         typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
         typedef std::future<RestoreObjectOutcome> RestoreObjectOutcomeCallable;
@@ -402,6 +426,9 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::GetBucketWebsiteRequest&, const Model::GetBucketWebsiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBucketWebsiteResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectRequest&, const Model::GetObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectAclRequest&, const Model::GetObjectAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectAclResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetObjectLegalHoldRequest&, const Model::GetObjectLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectLegalHoldResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetObjectLockConfigurationRequest&, const Model::GetObjectLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectLockConfigurationResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::GetObjectRetentionRequest&, const Model::GetObjectRetentionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectRetentionResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectTaggingRequest&, const Model::GetObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetObjectTorrentRequest&, const Model::GetObjectTorrentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetObjectTorrentResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::GetPublicAccessBlockRequest&, const Model::GetPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockResponseReceivedHandler;
@@ -434,6 +461,9 @@ namespace Aws
     typedef std::function<void(const S3Client*, const Model::PutBucketWebsiteRequest&, const Model::PutBucketWebsiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutBucketWebsiteResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutObjectRequest&, const Model::PutObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutObjectAclRequest&, const Model::PutObjectAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectAclResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutObjectLegalHoldRequest&, const Model::PutObjectLegalHoldOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectLegalHoldResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutObjectLockConfigurationRequest&, const Model::PutObjectLockConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectLockConfigurationResponseReceivedHandler;
+    typedef std::function<void(const S3Client*, const Model::PutObjectRetentionRequest&, const Model::PutObjectRetentionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectRetentionResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutObjectTaggingRequest&, const Model::PutObjectTaggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutObjectTaggingResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3Client*, const Model::RestoreObjectRequest&, const Model::RestoreObjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreObjectResponseReceivedHandler;
@@ -1594,6 +1624,87 @@ namespace Aws
         virtual void GetObjectAclAsync(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets an object's current Legal Hold status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetObjectLegalHoldOutcome GetObjectLegalHold(const Model::GetObjectLegalHoldRequest& request) const;
+
+        /**
+         * <p>Gets an object's current Legal Hold status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetObjectLegalHoldOutcomeCallable GetObjectLegalHoldCallable(const Model::GetObjectLegalHoldRequest& request) const;
+
+        /**
+         * <p>Gets an object's current Legal Hold status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLegalHold">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetObjectLegalHoldAsync(const Model::GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
+         * Object Lock configuration will be applied by default to every new object placed
+         * in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetObjectLockConfigurationOutcome GetObjectLockConfiguration(const Model::GetObjectLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
+         * Object Lock configuration will be applied by default to every new object placed
+         * in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetObjectLockConfigurationOutcomeCallable GetObjectLockConfigurationCallable(const Model::GetObjectLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Gets the Object Lock configuration for a bucket. The rule specified in the
+         * Object Lock configuration will be applied by default to every new object placed
+         * in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetObjectLockConfigurationAsync(const Model::GetObjectLockConfigurationRequest& request, const GetObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves an object's retention settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetObjectRetentionOutcome GetObjectRetention(const Model::GetObjectRetentionRequest& request) const;
+
+        /**
+         * <p>Retrieves an object's retention settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetObjectRetentionOutcomeCallable GetObjectRetentionCallable(const Model::GetObjectRetentionRequest& request) const;
+
+        /**
+         * <p>Retrieves an object's retention settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetObjectRetentionAsync(const Model::GetObjectRetentionRequest& request, const GetObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the tag-set of an object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectTagging">AWS
          * API Reference</a></p>
@@ -2513,6 +2624,93 @@ namespace Aws
         virtual void PutObjectAclAsync(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Applies a Legal Hold configuration to the specified object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutObjectLegalHoldOutcome PutObjectLegalHold(const Model::PutObjectLegalHoldRequest& request) const;
+
+        /**
+         * <p>Applies a Legal Hold configuration to the specified object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutObjectLegalHoldOutcomeCallable PutObjectLegalHoldCallable(const Model::PutObjectLegalHoldRequest& request) const;
+
+        /**
+         * <p>Applies a Legal Hold configuration to the specified object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLegalHold">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutObjectLegalHoldAsync(const Model::PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Places an Object Lock configuration on the specified bucket. The rule
+         * specified in the Object Lock configuration will be applied by default to every
+         * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutObjectLockConfigurationOutcome PutObjectLockConfiguration(const Model::PutObjectLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Places an Object Lock configuration on the specified bucket. The rule
+         * specified in the Object Lock configuration will be applied by default to every
+         * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutObjectLockConfigurationOutcomeCallable PutObjectLockConfigurationCallable(const Model::PutObjectLockConfigurationRequest& request) const;
+
+        /**
+         * <p>Places an Object Lock configuration on the specified bucket. The rule
+         * specified in the Object Lock configuration will be applied by default to every
+         * new object placed in the specified bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectLockConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutObjectLockConfigurationAsync(const Model::PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Places an Object Retention configuration on an object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutObjectRetentionOutcome PutObjectRetention(const Model::PutObjectRetentionRequest& request) const;
+
+        /**
+         * <p>Places an Object Retention configuration on an object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutObjectRetentionOutcomeCallable PutObjectRetentionCallable(const Model::PutObjectRetentionRequest& request) const;
+
+        /**
+         * <p>Places an Object Retention configuration on an object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectRetention">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutObjectRetentionAsync(const Model::PutObjectRetentionRequest& request, const PutObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets the supplied tag-set to an object that already exists in a
          * bucket</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutObjectTagging">AWS
@@ -2803,6 +3001,9 @@ namespace Aws
         void GetBucketWebsiteAsyncHelper(const Model::GetBucketWebsiteRequest& request, const GetBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectAsyncHelper(const Model::GetObjectRequest& request, const GetObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectAclAsyncHelper(const Model::GetObjectAclRequest& request, const GetObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetObjectLegalHoldAsyncHelper(const Model::GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetObjectLockConfigurationAsyncHelper(const Model::GetObjectLockConfigurationRequest& request, const GetObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetObjectRetentionAsyncHelper(const Model::GetObjectRetentionRequest& request, const GetObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectTaggingAsyncHelper(const Model::GetObjectTaggingRequest& request, const GetObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetObjectTorrentAsyncHelper(const Model::GetObjectTorrentRequest& request, const GetObjectTorrentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPublicAccessBlockAsyncHelper(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2835,6 +3036,9 @@ namespace Aws
         void PutBucketWebsiteAsyncHelper(const Model::PutBucketWebsiteRequest& request, const PutBucketWebsiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutObjectAsyncHelper(const Model::PutObjectRequest& request, const PutObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutObjectAclAsyncHelper(const Model::PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutObjectLegalHoldAsyncHelper(const Model::PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutObjectLockConfigurationAsyncHelper(const Model::PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutObjectRetentionAsyncHelper(const Model::PutObjectRetentionRequest& request, const PutObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutObjectTaggingAsyncHelper(const Model::PutObjectTaggingRequest& request, const PutObjectTaggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPublicAccessBlockAsyncHelper(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreObjectAsyncHelper(const Model::RestoreObjectRequest& request, const RestoreObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

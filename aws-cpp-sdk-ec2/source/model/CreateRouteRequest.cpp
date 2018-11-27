@@ -29,6 +29,7 @@ CreateRouteRequest::CreateRouteRequest() :
     m_gatewayIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false)
@@ -72,6 +73,11 @@ Aws::String CreateRouteRequest::SerializePayload() const
   if(m_natGatewayIdHasBeenSet)
   {
     ss << "NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
+  }
+
+  if(m_transitGatewayIdHasBeenSet)
+  {
+    ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
   if(m_networkInterfaceIdHasBeenSet)

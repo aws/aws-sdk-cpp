@@ -21,6 +21,7 @@
 #include <aws/iotanalytics/model/RetentionPeriod.h>
 #include <aws/iotanalytics/model/DatasetAction.h>
 #include <aws/iotanalytics/model/DatasetTrigger.h>
+#include <aws/iotanalytics/model/DatasetContentDeliveryRule.h>
 #include <aws/iotanalytics/model/Tag.h>
 #include <utility>
 
@@ -176,6 +177,28 @@ namespace Model
     inline CreateDatasetRequest& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const Aws::Vector<DatasetContentDeliveryRule>& GetContentDeliveryRules() const{ return m_contentDeliveryRules; }
+
+    
+    inline void SetContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = value; }
+
+    
+    inline void SetContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = std::move(value); }
+
+    
+    inline CreateDatasetRequest& WithContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { SetContentDeliveryRules(value); return *this;}
+
+    
+    inline CreateDatasetRequest& WithContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { SetContentDeliveryRules(std::move(value)); return *this;}
+
+    
+    inline CreateDatasetRequest& AddContentDeliveryRules(const DatasetContentDeliveryRule& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(value); return *this; }
+
+    
+    inline CreateDatasetRequest& AddContentDeliveryRules(DatasetContentDeliveryRule&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(std::move(value)); return *this; }
+
+
     /**
      * <p>[Optional] How long, in days, message data is kept for the data set. If not
      * given or set to null, the latest version of the dataset content plus the latest
@@ -257,6 +280,9 @@ namespace Model
 
     Aws::Vector<DatasetTrigger> m_triggers;
     bool m_triggersHasBeenSet;
+
+    Aws::Vector<DatasetContentDeliveryRule> m_contentDeliveryRules;
+    bool m_contentDeliveryRulesHasBeenSet;
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet;

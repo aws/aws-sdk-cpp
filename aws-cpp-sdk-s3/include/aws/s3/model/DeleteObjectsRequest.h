@@ -152,6 +152,28 @@ namespace Model
     inline DeleteObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline DeleteObjectsRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -201,6 +223,9 @@ namespace Model
 
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

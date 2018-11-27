@@ -42,25 +42,39 @@ namespace Model
     CreateReplicationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobId = std::move(value); }
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const char* value) { m_replicationJobId.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline CreateReplicationJobResult& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline CreateReplicationJobResult& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the replication job.</p>
+     */
     inline CreateReplicationJobResult& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
   private:

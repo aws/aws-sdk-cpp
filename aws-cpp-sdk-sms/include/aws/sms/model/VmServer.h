@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Object representing a VM server<p><h3>See Also:</h3>   <a
+   * <p>Represents a VM server.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/VmServer">AWS API
    * Reference</a></p>
    */
@@ -49,101 +49,163 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline const VmServerAddress& GetVmServerAddress() const{ return m_vmServerAddress; }
 
-    
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline void SetVmServerAddress(const VmServerAddress& value) { m_vmServerAddressHasBeenSet = true; m_vmServerAddress = value; }
 
-    
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline void SetVmServerAddress(VmServerAddress&& value) { m_vmServerAddressHasBeenSet = true; m_vmServerAddress = std::move(value); }
 
-    
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline VmServer& WithVmServerAddress(const VmServerAddress& value) { SetVmServerAddress(value); return *this;}
 
-    
+    /**
+     * <p>Information about the VM server location.</p>
+     */
     inline VmServer& WithVmServerAddress(VmServerAddress&& value) { SetVmServerAddress(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline const Aws::String& GetVmName() const{ return m_vmName; }
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline void SetVmName(const Aws::String& value) { m_vmNameHasBeenSet = true; m_vmName = value; }
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline void SetVmName(Aws::String&& value) { m_vmNameHasBeenSet = true; m_vmName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline void SetVmName(const char* value) { m_vmNameHasBeenSet = true; m_vmName.assign(value); }
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline VmServer& WithVmName(const Aws::String& value) { SetVmName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline VmServer& WithVmName(Aws::String&& value) { SetVmName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the VM.</p>
+     */
     inline VmServer& WithVmName(const char* value) { SetVmName(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline const Aws::String& GetVmManagerName() const{ return m_vmManagerName; }
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline void SetVmManagerName(const Aws::String& value) { m_vmManagerNameHasBeenSet = true; m_vmManagerName = value; }
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline void SetVmManagerName(Aws::String&& value) { m_vmManagerNameHasBeenSet = true; m_vmManagerName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline void SetVmManagerName(const char* value) { m_vmManagerNameHasBeenSet = true; m_vmManagerName.assign(value); }
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline VmServer& WithVmManagerName(const Aws::String& value) { SetVmManagerName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline VmServer& WithVmManagerName(Aws::String&& value) { SetVmManagerName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the VM manager.</p>
+     */
     inline VmServer& WithVmManagerName(const char* value) { SetVmManagerName(value); return *this;}
 
 
-    
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline const VmManagerType& GetVmManagerType() const{ return m_vmManagerType; }
 
-    
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline void SetVmManagerType(const VmManagerType& value) { m_vmManagerTypeHasBeenSet = true; m_vmManagerType = value; }
 
-    
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline void SetVmManagerType(VmManagerType&& value) { m_vmManagerTypeHasBeenSet = true; m_vmManagerType = std::move(value); }
 
-    
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline VmServer& WithVmManagerType(const VmManagerType& value) { SetVmManagerType(value); return *this;}
 
-    
+    /**
+     * <p>The type of VM management product.</p>
+     */
     inline VmServer& WithVmManagerType(VmManagerType&& value) { SetVmManagerType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline const Aws::String& GetVmPath() const{ return m_vmPath; }
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline void SetVmPath(const Aws::String& value) { m_vmPathHasBeenSet = true; m_vmPath = value; }
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline void SetVmPath(Aws::String&& value) { m_vmPathHasBeenSet = true; m_vmPath = std::move(value); }
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline void SetVmPath(const char* value) { m_vmPathHasBeenSet = true; m_vmPath.assign(value); }
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline VmServer& WithVmPath(const Aws::String& value) { SetVmPath(value); return *this;}
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline VmServer& WithVmPath(Aws::String&& value) { SetVmPath(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The VM folder path in the vCenter Server virtual machine inventory tree.</p>
+     */
     inline VmServer& WithVmPath(const char* value) { SetVmPath(value); return *this;}
 
   private:

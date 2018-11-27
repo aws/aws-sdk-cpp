@@ -17,6 +17,7 @@
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/greengrass/GreengrassRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/FunctionDefaultConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/greengrass/model/Function.h>
 #include <utility>
@@ -84,6 +85,37 @@ namespace Model
      * A client token used to correlate requests and responses.
      */
     inline CreateFunctionDefinitionVersionRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline const FunctionDefaultConfig& GetDefaultConfig() const{ return m_defaultConfig; }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline void SetDefaultConfig(FunctionDefaultConfig&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline CreateFunctionDefinitionVersionRequest& WithDefaultConfig(const FunctionDefaultConfig& value) { SetDefaultConfig(value); return *this;}
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline CreateFunctionDefinitionVersionRequest& WithDefaultConfig(FunctionDefaultConfig&& value) { SetDefaultConfig(std::move(value)); return *this;}
 
 
     /**
@@ -161,6 +193,9 @@ namespace Model
 
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
+    FunctionDefaultConfig m_defaultConfig;
+    bool m_defaultConfigHasBeenSet;
 
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;

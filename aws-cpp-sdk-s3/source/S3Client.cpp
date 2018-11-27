@@ -68,6 +68,9 @@
 #include <aws/s3/model/GetBucketWebsiteRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/GetObjectAclRequest.h>
+#include <aws/s3/model/GetObjectLegalHoldRequest.h>
+#include <aws/s3/model/GetObjectLockConfigurationRequest.h>
+#include <aws/s3/model/GetObjectRetentionRequest.h>
 #include <aws/s3/model/GetObjectTaggingRequest.h>
 #include <aws/s3/model/GetObjectTorrentRequest.h>
 #include <aws/s3/model/GetPublicAccessBlockRequest.h>
@@ -99,6 +102,9 @@
 #include <aws/s3/model/PutBucketWebsiteRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/PutObjectAclRequest.h>
+#include <aws/s3/model/PutObjectLegalHoldRequest.h>
+#include <aws/s3/model/PutObjectLockConfigurationRequest.h>
+#include <aws/s3/model/PutObjectRetentionRequest.h>
 #include <aws/s3/model/PutObjectTaggingRequest.h>
 #include <aws/s3/model/PutPublicAccessBlockRequest.h>
 #include <aws/s3/model/RestoreObjectRequest.h>
@@ -1581,6 +1587,117 @@ void S3Client::GetObjectAclAsyncHelper(const GetObjectAclRequest& request, const
   handler(this, request, GetObjectAcl(request), context);
 }
 
+GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss << "/";
+  ss << request.GetKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?legal-hold");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectLegalHoldOutcome(GetObjectLegalHoldResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectLegalHoldOutcome(outcome.GetError());
+  }
+}
+
+GetObjectLegalHoldOutcomeCallable S3Client::GetObjectLegalHoldCallable(const GetObjectLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetObjectLegalHoldAsync(const GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectLegalHoldAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetObjectLegalHoldAsyncHelper(const GetObjectLegalHoldRequest& request, const GetObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectLegalHold(request), context);
+}
+
+GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const GetObjectLockConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?object-lock");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectLockConfigurationOutcome(GetObjectLockConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectLockConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetObjectLockConfigurationOutcomeCallable S3Client::GetObjectLockConfigurationCallable(const GetObjectLockConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectLockConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectLockConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetObjectLockConfigurationAsync(const GetObjectLockConfigurationRequest& request, const GetObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectLockConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetObjectLockConfigurationAsyncHelper(const GetObjectLockConfigurationRequest& request, const GetObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectLockConfiguration(request), context);
+}
+
+GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss << "/";
+  ss << request.GetKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?retention");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
+  if(outcome.IsSuccess())
+  {
+    return GetObjectRetentionOutcome(GetObjectRetentionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetObjectRetentionOutcome(outcome.GetError());
+  }
+}
+
+GetObjectRetentionOutcomeCallable S3Client::GetObjectRetentionCallable(const GetObjectRetentionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetObjectRetentionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetObjectRetention(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::GetObjectRetentionAsync(const GetObjectRetentionRequest& request, const GetObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetObjectRetentionAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::GetObjectRetentionAsyncHelper(const GetObjectRetentionRequest& request, const GetObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetObjectRetention(request), context);
+}
+
 GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest& request) const
 {
   Aws::StringStream ss;
@@ -2707,6 +2824,117 @@ void S3Client::PutObjectAclAsync(const PutObjectAclRequest& request, const PutOb
 void S3Client::PutObjectAclAsyncHelper(const PutObjectAclRequest& request, const PutObjectAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutObjectAcl(request), context);
+}
+
+PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss << "/";
+  ss << request.GetKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?legal-hold");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectLegalHoldOutcome(PutObjectLegalHoldResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectLegalHoldOutcome(outcome.GetError());
+  }
+}
+
+PutObjectLegalHoldOutcomeCallable S3Client::PutObjectLegalHoldCallable(const PutObjectLegalHoldRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutObjectLegalHoldOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObjectLegalHold(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutObjectLegalHoldAsync(const PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectLegalHoldAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutObjectLegalHoldAsyncHelper(const PutObjectLegalHoldRequest& request, const PutObjectLegalHoldResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutObjectLegalHold(request), context);
+}
+
+PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const PutObjectLockConfigurationRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss.str("?object-lock");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectLockConfigurationOutcome(PutObjectLockConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectLockConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutObjectLockConfigurationOutcomeCallable S3Client::PutObjectLockConfigurationCallable(const PutObjectLockConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutObjectLockConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObjectLockConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutObjectLockConfigurationAsync(const PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectLockConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutObjectLockConfigurationAsyncHelper(const PutObjectLockConfigurationRequest& request, const PutObjectLockConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutObjectLockConfiguration(request), context);
+}
+
+PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ss << "/";
+  ss << request.GetKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?retention");
+  uri.SetQueryString(ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
+  if(outcome.IsSuccess())
+  {
+    return PutObjectRetentionOutcome(PutObjectRetentionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutObjectRetentionOutcome(outcome.GetError());
+  }
+}
+
+PutObjectRetentionOutcomeCallable S3Client::PutObjectRetentionCallable(const PutObjectRetentionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutObjectRetentionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutObjectRetention(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void S3Client::PutObjectRetentionAsync(const PutObjectRetentionRequest& request, const PutObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutObjectRetentionAsyncHelper( request, handler, context ); } );
+}
+
+void S3Client::PutObjectRetentionAsyncHelper(const PutObjectRetentionRequest& request, const PutObjectRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutObjectRetention(request), context);
 }
 
 PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest& request) const

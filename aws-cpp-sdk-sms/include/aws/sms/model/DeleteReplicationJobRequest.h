@@ -44,25 +44,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The identifier of the replication job.</p>
+     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
 
   private:

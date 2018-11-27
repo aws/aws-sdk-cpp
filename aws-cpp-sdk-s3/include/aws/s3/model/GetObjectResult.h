@@ -24,6 +24,8 @@
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestCharged.h>
 #include <aws/s3/model/ReplicationStatus.h>
+#include <aws/s3/model/ObjectLockMode.h>
+#include <aws/s3/model/ObjectLockLegalHoldStatus.h>
 #include <utility>
 
 namespace Aws
@@ -972,6 +974,84 @@ namespace Model
     inline GetObjectResult& WithTagCount(int value) { SetTagCount(value); return *this;}
 
 
+    /**
+     * <p>The Object Lock mode currently in place for this object.</p>
+     */
+    inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
+
+    /**
+     * <p>The Object Lock mode currently in place for this object.</p>
+     */
+    inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockMode = value; }
+
+    /**
+     * <p>The Object Lock mode currently in place for this object.</p>
+     */
+    inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockMode = std::move(value); }
+
+    /**
+     * <p>The Object Lock mode currently in place for this object.</p>
+     */
+    inline GetObjectResult& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
+
+    /**
+     * <p>The Object Lock mode currently in place for this object.</p>
+     */
+    inline GetObjectResult& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time when this object's Object Lock will expire.</p>
+     */
+    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
+
+    /**
+     * <p>The date and time when this object's Object Lock will expire.</p>
+     */
+    inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDate = value; }
+
+    /**
+     * <p>The date and time when this object's Object Lock will expire.</p>
+     */
+    inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDate = std::move(value); }
+
+    /**
+     * <p>The date and time when this object's Object Lock will expire.</p>
+     */
+    inline GetObjectResult& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
+
+    /**
+     * <p>The date and time when this object's Object Lock will expire.</p>
+     */
+    inline GetObjectResult& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
+
+    /**
+     * <p/>
+     */
+    inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatus = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatus = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline GetObjectResult& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetObjectResult& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetId2() const{ return m_id2; }
 
@@ -1072,6 +1152,12 @@ namespace Model
     int m_partsCount;
 
     int m_tagCount;
+
+    ObjectLockMode m_objectLockMode;
+
+    Aws::Utils::DateTime m_objectLockRetainUntilDate;
+
+    ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
 
     Aws::String m_id2;
 

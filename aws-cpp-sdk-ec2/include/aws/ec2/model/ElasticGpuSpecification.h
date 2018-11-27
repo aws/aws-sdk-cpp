@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A specification for an Elastic GPU.</p><p><h3>See Also:</h3>   <a
+   * <p>A specification for an Elastic Graphics accelerator.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuSpecification">AWS
    * API Reference</a></p>
    */
@@ -50,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline ElasticGpuSpecification& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline ElasticGpuSpecification& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of Elastic GPU.</p>
+     * <p>The type of Elastic Graphics accelerator.</p>
      */
     inline ElasticGpuSpecification& WithType(const char* value) { SetType(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/greengrass/model/LocalVolumeResourceData.h>
 #include <aws/greengrass/model/S3MachineLearningModelResourceData.h>
 #include <aws/greengrass/model/SageMakerMachineLearningModelResourceData.h>
+#include <aws/greengrass/model/SecretsManagerSecretResourceData.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +41,8 @@ namespace Model
    * A container for resource data. The container takes only one of the following
    * supported resource data types: ''LocalDeviceResourceData'',
    * ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'',
-   * ''S3MachineLearningModelResourceData''.<p><h3>See Also:</h3>   <a
+   * ''S3MachineLearningModelResourceData'',
+   * ''SecretsManagerSecretResourceData''.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResourceDataContainer">AWS
    * API Reference</a></p>
    */
@@ -106,55 +108,86 @@ namespace Model
 
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      */
     inline const S3MachineLearningModelResourceData& GetS3MachineLearningModelResourceData() const{ return m_s3MachineLearningModelResourceData; }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      */
     inline void SetS3MachineLearningModelResourceData(const S3MachineLearningModelResourceData& value) { m_s3MachineLearningModelResourceDataHasBeenSet = true; m_s3MachineLearningModelResourceData = value; }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      */
     inline void SetS3MachineLearningModelResourceData(S3MachineLearningModelResourceData&& value) { m_s3MachineLearningModelResourceDataHasBeenSet = true; m_s3MachineLearningModelResourceData = std::move(value); }
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      */
     inline ResourceDataContainer& WithS3MachineLearningModelResourceData(const S3MachineLearningModelResourceData& value) { SetS3MachineLearningModelResourceData(value); return *this;}
 
     /**
-     * Attributes that define an S3 machine learning resource.
+     * Attributes that define an Amazon S3 machine learning resource.
      */
     inline ResourceDataContainer& WithS3MachineLearningModelResourceData(S3MachineLearningModelResourceData&& value) { SetS3MachineLearningModelResourceData(std::move(value)); return *this;}
 
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline const SageMakerMachineLearningModelResourceData& GetSageMakerMachineLearningModelResourceData() const{ return m_sageMakerMachineLearningModelResourceData; }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline void SetSageMakerMachineLearningModelResourceData(const SageMakerMachineLearningModelResourceData& value) { m_sageMakerMachineLearningModelResourceDataHasBeenSet = true; m_sageMakerMachineLearningModelResourceData = value; }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline void SetSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData&& value) { m_sageMakerMachineLearningModelResourceDataHasBeenSet = true; m_sageMakerMachineLearningModelResourceData = std::move(value); }
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline ResourceDataContainer& WithSageMakerMachineLearningModelResourceData(const SageMakerMachineLearningModelResourceData& value) { SetSageMakerMachineLearningModelResourceData(value); return *this;}
 
     /**
-     * Attributes that define an SageMaker machine learning resource.
+     * Attributes that define an Amazon SageMaker machine learning resource.
      */
     inline ResourceDataContainer& WithSageMakerMachineLearningModelResourceData(SageMakerMachineLearningModelResourceData&& value) { SetSageMakerMachineLearningModelResourceData(std::move(value)); return *this;}
+
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline const SecretsManagerSecretResourceData& GetSecretsManagerSecretResourceData() const{ return m_secretsManagerSecretResourceData; }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline void SetSecretsManagerSecretResourceData(const SecretsManagerSecretResourceData& value) { m_secretsManagerSecretResourceDataHasBeenSet = true; m_secretsManagerSecretResourceData = value; }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline void SetSecretsManagerSecretResourceData(SecretsManagerSecretResourceData&& value) { m_secretsManagerSecretResourceDataHasBeenSet = true; m_secretsManagerSecretResourceData = std::move(value); }
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline ResourceDataContainer& WithSecretsManagerSecretResourceData(const SecretsManagerSecretResourceData& value) { SetSecretsManagerSecretResourceData(value); return *this;}
+
+    /**
+     * Attributes that define a secret resource, which references a secret from AWS
+     * Secrets Manager.
+     */
+    inline ResourceDataContainer& WithSecretsManagerSecretResourceData(SecretsManagerSecretResourceData&& value) { SetSecretsManagerSecretResourceData(std::move(value)); return *this;}
 
   private:
 
@@ -169,6 +202,9 @@ namespace Model
 
     SageMakerMachineLearningModelResourceData m_sageMakerMachineLearningModelResourceData;
     bool m_sageMakerMachineLearningModelResourceDataHasBeenSet;
+
+    SecretsManagerSecretResourceData m_secretsManagerSecretResourceData;
+    bool m_secretsManagerSecretResourceDataHasBeenSet;
   };
 
 } // namespace Model

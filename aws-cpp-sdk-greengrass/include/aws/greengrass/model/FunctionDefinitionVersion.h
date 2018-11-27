@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
+#include <aws/greengrass/model/FunctionDefaultConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/greengrass/model/Function.h>
 #include <utility>
@@ -46,6 +47,37 @@ namespace Model
     FunctionDefinitionVersion(Aws::Utils::Json::JsonView jsonValue);
     FunctionDefinitionVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline const FunctionDefaultConfig& GetDefaultConfig() const{ return m_defaultConfig; }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline void SetDefaultConfig(FunctionDefaultConfig&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline FunctionDefinitionVersion& WithDefaultConfig(const FunctionDefaultConfig& value) { SetDefaultConfig(value); return *this;}
+
+    /**
+     * Default configuration that will apply to all Lambda functions in this function
+     * definition version
+     */
+    inline FunctionDefinitionVersion& WithDefaultConfig(FunctionDefaultConfig&& value) { SetDefaultConfig(std::move(value)); return *this;}
 
 
     /**
@@ -84,6 +116,9 @@ namespace Model
     inline FunctionDefinitionVersion& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
 
   private:
+
+    FunctionDefaultConfig m_defaultConfig;
+    bool m_defaultConfigHasBeenSet;
 
     Aws::Vector<Function> m_functions;
     bool m_functionsHasBeenSet;

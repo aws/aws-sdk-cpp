@@ -25,6 +25,8 @@
 #include <aws/s3/model/ServerSideEncryption.h>
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/RequestPayer.h>
+#include <aws/s3/model/ObjectLockMode.h>
+#include <aws/s3/model/ObjectLockLegalHoldStatus.h>
 #include <utility>
 
 namespace Aws
@@ -1333,6 +1335,89 @@ namespace Model
     inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
 
 
+    /**
+     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     */
+    inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
+
+    /**
+     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     */
+    inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
+
+    /**
+     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     */
+    inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
+
+    /**
+     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
+
+    /**
+     * <p>The Object Lock mode that you want to apply to the copied object.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time when you want the copied object's Object Lock to
+     * expire.</p>
+     */
+    inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
+
+    /**
+     * <p>The date and time when you want the copied object's Object Lock to
+     * expire.</p>
+     */
+    inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
+
+    /**
+     * <p>The date and time when you want the copied object's Object Lock to
+     * expire.</p>
+     */
+    inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
+
+    /**
+     * <p>The date and time when you want the copied object's Object Lock to
+     * expire.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
+
+    /**
+     * <p>The date and time when you want the copied object's Object Lock to
+     * expire.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+     */
+    inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
+
+    /**
+     * <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+     */
+    inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
+
+    /**
+     * <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+     */
+    inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether you want to apply a Legal Hold to the copied object.</p>
+     */
+    inline CopyObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
 
@@ -1469,6 +1554,15 @@ namespace Model
 
     Aws::String m_tagging;
     bool m_taggingHasBeenSet;
+
+    ObjectLockMode m_objectLockMode;
+    bool m_objectLockModeHasBeenSet;
+
+    Aws::Utils::DateTime m_objectLockRetainUntilDate;
+    bool m_objectLockRetainUntilDateHasBeenSet;
+
+    ObjectLockLegalHoldStatus m_objectLockLegalHoldStatus;
+    bool m_objectLockLegalHoldStatusHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

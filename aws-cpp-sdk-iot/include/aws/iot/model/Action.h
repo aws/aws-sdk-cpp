@@ -29,6 +29,7 @@
 #include <aws/iot/model/ElasticsearchAction.h>
 #include <aws/iot/model/SalesforceAction.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
+#include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/StepFunctionsAction.h>
 #include <utility>
 
@@ -436,6 +437,32 @@ namespace Model
 
 
     /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
+    inline const IotEventsAction& GetIotEvents() const{ return m_iotEvents; }
+
+    /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
+    inline void SetIotEvents(const IotEventsAction& value) { m_iotEventsHasBeenSet = true; m_iotEvents = value; }
+
+    /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
+    inline void SetIotEvents(IotEventsAction&& value) { m_iotEventsHasBeenSet = true; m_iotEvents = std::move(value); }
+
+    /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
+    inline Action& WithIotEvents(const IotEventsAction& value) { SetIotEvents(value); return *this;}
+
+    /**
+     * <p>Sends an input to an AWS IoT Events detector.</p>
+     */
+    inline Action& WithIotEvents(IotEventsAction&& value) { SetIotEvents(std::move(value)); return *this;}
+
+
+    /**
      * <p>Starts execution of a Step Functions state machine.</p>
      */
     inline const StepFunctionsAction& GetStepFunctions() const{ return m_stepFunctions; }
@@ -503,6 +530,9 @@ namespace Model
 
     IotAnalyticsAction m_iotAnalytics;
     bool m_iotAnalyticsHasBeenSet;
+
+    IotEventsAction m_iotEvents;
+    bool m_iotEventsHasBeenSet;
 
     StepFunctionsAction m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;

@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Information about a bulk deployment.<p><h3>See Also:</h3>   <a
+   * Information about a bulk deployment. You cannot start a new bulk deployment
+   * while another one is still running or in a non-terminal state.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeployment">AWS
    * API Reference</a></p>
    */

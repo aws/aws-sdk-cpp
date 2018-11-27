@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline void SetDestinationPath(const Aws::String& value) { m_destinationPathHasBeenSet = true; m_destinationPath = value; }
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline void SetDestinationPath(Aws::String&& value) { m_destinationPathHasBeenSet = true; m_destinationPath = std::move(value); }
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline void SetDestinationPath(const char* value) { m_destinationPathHasBeenSet = true; m_destinationPath.assign(value); }
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(const Aws::String& value) { SetDestinationPath(value); return *this;}
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(Aws::String&& value) { SetDestinationPath(std::move(value)); return *this;}
 
     /**
-     * The absolute local path of the resource inside the lambda environment.
+     * The absolute local path of the resource inside the Lambda environment.
      */
     inline LocalVolumeResourceData& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
 
@@ -117,43 +117,43 @@ namespace Model
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
 
     /**
      * The local absolute path of the volume resource on the host. The source path for
-     * a volume resource type cannot start with ''/proc'' or ''/sys''.
+     * a volume resource type cannot start with ''/sys''.
      */
     inline LocalVolumeResourceData& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
 

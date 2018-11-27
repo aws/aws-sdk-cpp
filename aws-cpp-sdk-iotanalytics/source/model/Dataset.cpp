@@ -33,6 +33,7 @@ Dataset::Dataset() :
     m_arnHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -46,6 +47,7 @@ Dataset::Dataset(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
@@ -89,6 +91,16 @@ Dataset& Dataset::operator =(JsonView jsonValue)
       m_triggers.push_back(triggersJsonList[triggersIndex].AsObject());
     }
     m_triggersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("contentDeliveryRules"))
+  {
+    Array<JsonView> contentDeliveryRulesJsonList = jsonValue.GetArray("contentDeliveryRules");
+    for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+    {
+      m_contentDeliveryRules.push_back(contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject());
+    }
+    m_contentDeliveryRulesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -157,6 +169,17 @@ JsonValue Dataset::Jsonize() const
      triggersJsonList[triggersIndex].AsObject(m_triggers[triggersIndex].Jsonize());
    }
    payload.WithArray("triggers", std::move(triggersJsonList));
+
+  }
+
+  if(m_contentDeliveryRulesHasBeenSet)
+  {
+   Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
+   for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+   {
+     contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject(m_contentDeliveryRules[contentDeliveryRulesIndex].Jsonize());
+   }
+   payload.WithArray("contentDeliveryRules", std::move(contentDeliveryRulesJsonList));
 
   }
 

@@ -340,6 +340,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline Route& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline Route& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of a transit gateway.</p>
+     */
+    inline Route& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
@@ -463,37 +499,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline Route& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline Route& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the VPC peering connection.</p>
+     * <p>The ID of a VPC peering connection.</p>
      */
     inline Route& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
 
@@ -522,6 +558,9 @@ namespace Model
 
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

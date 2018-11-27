@@ -359,6 +359,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline VpnConnection& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline VpnConnection& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the transit gateway associated with the VPN connection.</p>
+     */
+    inline VpnConnection& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
      * <p>The VPN connection options.</p>
      */
     inline const VpnConnectionOptions& GetOptions() const{ return m_options; }
@@ -513,6 +549,9 @@ namespace Model
 
     Aws::String m_vpnGatewayId;
     bool m_vpnGatewayIdHasBeenSet;
+
+    Aws::String m_transitGatewayId;
+    bool m_transitGatewayIdHasBeenSet;
 
     VpnConnectionOptions m_options;
     bool m_optionsHasBeenSet;

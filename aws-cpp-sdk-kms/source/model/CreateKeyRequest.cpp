@@ -29,6 +29,7 @@ CreateKeyRequest::CreateKeyRequest() :
     m_keyUsageHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
+    m_customKeyStoreIdHasBeenSet(false),
     m_bypassPolicyLockoutSafetyCheck(false),
     m_bypassPolicyLockoutSafetyCheckHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -59,6 +60,12 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_originHasBeenSet)
   {
    payload.WithString("Origin", OriginTypeMapper::GetNameForOriginType(m_origin));
+  }
+
+  if(m_customKeyStoreIdHasBeenSet)
+  {
+   payload.WithString("CustomKeyStoreId", m_customKeyStoreId);
+
   }
 
   if(m_bypassPolicyLockoutSafetyCheckHasBeenSet)

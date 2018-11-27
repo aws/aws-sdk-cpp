@@ -34,11 +34,15 @@ ReplicationRun::ReplicationRun() :
     m_stateHasBeenSet(false),
     m_type(ReplicationRunType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_stageDetailsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_amiIdHasBeenSet(false),
     m_scheduledStartTimeHasBeenSet(false),
     m_completedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -48,11 +52,15 @@ ReplicationRun::ReplicationRun(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_type(ReplicationRunType::NOT_SET),
     m_typeHasBeenSet(false),
+    m_stageDetailsHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_amiIdHasBeenSet(false),
     m_scheduledStartTimeHasBeenSet(false),
     m_completedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_encrypted(false),
+    m_encryptedHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +86,13 @@ ReplicationRun& ReplicationRun::operator =(JsonView jsonValue)
     m_type = ReplicationRunTypeMapper::GetReplicationRunTypeForName(jsonValue.GetString("type"));
 
     m_typeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stageDetails"))
+  {
+    m_stageDetails = jsonValue.GetObject("stageDetails");
+
+    m_stageDetailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("statusMessage"))
@@ -115,6 +130,20 @@ ReplicationRun& ReplicationRun::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encrypted"))
+  {
+    m_encrypted = jsonValue.GetBool("encrypted");
+
+    m_encryptedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsKeyId"))
+  {
+    m_kmsKeyId = jsonValue.GetString("kmsKeyId");
+
+    m_kmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +165,12 @@ JsonValue ReplicationRun::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", ReplicationRunTypeMapper::GetNameForReplicationRunType(m_type));
+  }
+
+  if(m_stageDetailsHasBeenSet)
+  {
+   payload.WithObject("stageDetails", m_stageDetails.Jsonize());
+
   }
 
   if(m_statusMessageHasBeenSet)
@@ -163,6 +198,18 @@ JsonValue ReplicationRun::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_encryptedHasBeenSet)
+  {
+   payload.WithBool("encrypted", m_encrypted);
+
+  }
+
+  if(m_kmsKeyIdHasBeenSet)
+  {
+   payload.WithString("kmsKeyId", m_kmsKeyId);
 
   }
 

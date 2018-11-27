@@ -45,58 +45,51 @@ namespace Model
 
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline CreateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline CreateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by the alias name, such as <code>alias/ExampleAlias</code>. The alias
-     * name cannot begin with <code>aws/</code>. The <code>alias/aws/</code> prefix is
-     * reserved for AWS managed CMKs.</p>
+     * <p>String that contains the display name. The name must start with the word
+     * "alias" followed by a forward slash (alias/). Aliases that begin with
+     * "alias/AWS" are reserved.</p>
      */
     inline CreateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

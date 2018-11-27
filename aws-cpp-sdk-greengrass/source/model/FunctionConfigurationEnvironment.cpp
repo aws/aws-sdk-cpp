@@ -31,6 +31,7 @@ namespace Model
 FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() : 
     m_accessSysfs(false),
     m_accessSysfsHasBeenSet(false),
+    m_executionHasBeenSet(false),
     m_resourceAccessPoliciesHasBeenSet(false),
     m_variablesHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ FunctionConfigurationEnvironment::FunctionConfigurationEnvironment() :
 FunctionConfigurationEnvironment::FunctionConfigurationEnvironment(JsonView jsonValue) : 
     m_accessSysfs(false),
     m_accessSysfsHasBeenSet(false),
+    m_executionHasBeenSet(false),
     m_resourceAccessPoliciesHasBeenSet(false),
     m_variablesHasBeenSet(false)
 {
@@ -52,6 +54,13 @@ FunctionConfigurationEnvironment& FunctionConfigurationEnvironment::operator =(J
     m_accessSysfs = jsonValue.GetBool("AccessSysfs");
 
     m_accessSysfsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Execution"))
+  {
+    m_execution = jsonValue.GetObject("Execution");
+
+    m_executionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ResourceAccessPolicies"))
@@ -84,6 +93,12 @@ JsonValue FunctionConfigurationEnvironment::Jsonize() const
   if(m_accessSysfsHasBeenSet)
   {
    payload.WithBool("AccessSysfs", m_accessSysfs);
+
+  }
+
+  if(m_executionHasBeenSet)
+  {
+   payload.WithObject("Execution", m_execution.Jsonize());
 
   }
 
