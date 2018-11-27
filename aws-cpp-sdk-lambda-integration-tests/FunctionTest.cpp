@@ -47,6 +47,8 @@
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 
 #include <aws/iam/IAMClient.h>
+#include <aws/iam/model/GetRoleRequest.h>
+
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -58,6 +60,8 @@ using namespace Aws::Lambda;
 using namespace Aws::Lambda::Model;
 using namespace Aws::Kinesis;
 using namespace Aws::Kinesis::Model;
+using namespace Aws::IAM;
+using namespace Aws::IAM::Model;
 using namespace Aws::CognitoIdentity;
 
 
@@ -92,6 +96,7 @@ public:
     static std::shared_ptr<KinesisClient> m_kinesis_client;
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
     static std::shared_ptr<Aws::IAM::Model::Role> m_role;
+    static std::shared_ptr<Aws::IAM::IAMClient> m_iamClient;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
     static std::map<Aws::String, Aws::String> functionArnMapping;
 
@@ -125,9 +130,9 @@ protected:
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
         ClientConfiguration clientConfig;
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+        m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
-        m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, iamClient, cognitoClient);
+        m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
         
         DeleteIAMRole();
         CreateIAMRole();
@@ -152,6 +157,7 @@ protected:
         m_client = nullptr;
         m_kinesis_client = nullptr;
         m_role = nullptr;
+        m_iamClient = nullptr;
         m_accessManagementClient = nullptr;
     }
 
@@ -343,6 +349,24 @@ protected:
         WaitForKinesisStream(streamName, ResourceStatusType::NOT_FOUND);
     }
 
+    static bool WaitForRolesToBeActive(const Aws::String& roleName)
+    {
+        unsigned timeoutCount = 0;
+        const unsigned maxRetries = 10;
+        while (timeoutCount++ < maxRetries)
+        {
+            GetRoleRequest getRoleRequest;
+            getRoleRequest.SetRoleName(roleName);
+            GetRoleOutcome getRoleOutcome = m_iamClient->GetRole(getRoleRequest);
+            if (getRoleOutcome.IsSuccess())
+            {
+                return true;
+            }
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+        return false;
+    }
+
     static void CreateIAMRole()
     {
         //Who can assume this role, and what access conditions exist?
@@ -364,6 +388,7 @@ protected:
         Aws::String iamRoleName = BuildResourceName(BASE_IAM_ROLE_NAME);
         const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(iamRoleName, trustRelationship, *m_role);
         ASSERT_TRUE(roleCreationSuccessful);
+        ASSERT_TRUE(WaitForRolesToBeActive(iamRoleName));
 
         //Apply the policy ARN saying what this role is allowed to do.
         const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, iamRoleName);
@@ -382,6 +407,7 @@ std::shared_ptr<LambdaClient> FunctionTest::m_client(nullptr);
 std::shared_ptr<KinesisClient> FunctionTest::m_kinesis_client(nullptr);
 std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> FunctionTest::m_limiter(nullptr);
 std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
+std::shared_ptr<Aws::IAM::IAMClient> FunctionTest::m_iamClient(nullptr);
 std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
 std::map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
 
@@ -560,12 +586,12 @@ TEST_F(FunctionTest, TestPermissions)
     EXPECT_NE(std::string::npos, statement.View().GetString("Resource").find(simpleFunctionName));
 
 
-    GetPolicyRequest getPolicyRequest;
+    Aws::Lambda::Model::GetPolicyRequest getPolicyRequest;
     getPolicyRequest.SetFunctionName(simpleFunctionName);
     auto getPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
     //If this fails, stop.
     ASSERT_TRUE(getPolicyOutcome.IsSuccess());
-    GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
+    Aws::Lambda::Model::GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
     auto getPolicyStatement = Aws::Utils::Json::JsonValue(getPolicyResult.GetPolicy());
 
     EXPECT_EQ("12345", getPolicyStatement.View().GetArray("Statement").GetItem(0).GetString("Sid"));
@@ -588,7 +614,7 @@ TEST_F(FunctionTest, TestPermissions)
     //Now we should get an empty policy a GetPolicy because we just removed it
     else
     {
-        GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
+        Aws::Lambda::Model::GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
         auto getNewPolicy = Aws::Utils::Json::JsonValue(getRemovedPolicyResult.GetPolicy());
         EXPECT_EQ(0uL, getNewPolicy.View().GetArray("Statement").GetLength());
     }
