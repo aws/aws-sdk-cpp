@@ -40,7 +40,7 @@ namespace Model
    * specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind
    * mount host volume, specify a <code>host</code> and optional
    * <code>sourcePath</code>. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
    * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
@@ -117,7 +117,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -133,7 +133,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -149,7 +149,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -165,7 +165,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -181,7 +181,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a

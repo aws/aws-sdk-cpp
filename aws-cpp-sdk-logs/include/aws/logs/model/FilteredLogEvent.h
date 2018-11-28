@@ -48,37 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline const Aws::String& GetLogStreamName() const{ return m_logStreamName; }
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline void SetLogStreamName(Aws::String&& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = std::move(value); }
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline void SetLogStreamName(const char* value) { m_logStreamNameHasBeenSet = true; m_logStreamName.assign(value); }
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline FilteredLogEvent& WithLogStreamName(const Aws::String& value) { SetLogStreamName(value); return *this;}
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline FilteredLogEvent& WithLogStreamName(Aws::String&& value) { SetLogStreamName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the log stream this event belongs to.</p>
+     * <p>The name of the log stream to which this event belongs.</p>
      */
     inline FilteredLogEvent& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
 

@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a BatchGetDeployments operation.</p><p><h3>See
+   * <p> Represents the input of a BatchGetDeployments operation. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentsInput">AWS
    * API Reference</a></p>
@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline void SetDeploymentIds(const Aws::Vector<Aws::String>& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::move(value); }
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline BatchGetDeploymentsRequest& WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const Aws::String& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of deployment IDs, separated by spaces.</p>
+     * <p> A list of deployment IDs, separated by spaces. </p>
      */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
 

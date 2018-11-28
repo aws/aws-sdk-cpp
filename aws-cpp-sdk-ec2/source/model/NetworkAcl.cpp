@@ -37,7 +37,8 @@ NetworkAcl::NetworkAcl() :
     m_isDefaultHasBeenSet(false),
     m_networkAclIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ NetworkAcl::NetworkAcl(const XmlNode& xmlNode) :
     m_isDefaultHasBeenSet(false),
     m_networkAclIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +115,12 @@ NetworkAcl& NetworkAcl::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -168,6 +176,11 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
 }
 
 void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -213,6 +226,10 @@ void NetworkAcl::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 }
 

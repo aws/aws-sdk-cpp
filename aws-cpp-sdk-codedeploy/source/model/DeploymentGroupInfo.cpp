@@ -49,7 +49,8 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_ec2TagSetHasBeenSet(false),
     m_onPremisesTagSetHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_ecsServicesHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) :
     m_ec2TagSetHasBeenSet(false),
     m_onPremisesTagSetHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_ecsServicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -233,6 +235,16 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     m_computePlatformHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ecsServices"))
+  {
+    Array<JsonView> ecsServicesJsonList = jsonValue.GetArray("ecsServices");
+    for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
+    {
+      m_ecsServices.push_back(ecsServicesJsonList[ecsServicesIndex].AsObject());
+    }
+    m_ecsServicesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -377,6 +389,17 @@ JsonValue DeploymentGroupInfo::Jsonize() const
   if(m_computePlatformHasBeenSet)
   {
    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  }
+
+  if(m_ecsServicesHasBeenSet)
+  {
+   Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
+   for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
+   {
+     ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
+   }
+   payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
+
   }
 
   return payload;

@@ -35,7 +35,7 @@ namespace CodeDeploy
 namespace Model
 {
   /**
-   * <p>Represents the output of a CreateDeployment operation.</p><p><h3>See
+   * <p> Represents the output of a CreateDeployment operation. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentOutput">AWS
    * API Reference</a></p>
@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline CreateDeploymentResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline CreateDeploymentResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline CreateDeploymentResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 

@@ -94,43 +94,50 @@ namespace Model
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline void SetRoleARNUpdate(const Aws::String& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = value; }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline void SetRoleARNUpdate(Aws::String&& value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate = std::move(value); }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline void SetRoleARNUpdate(const char* value) { m_roleARNUpdateHasBeenSet = true; m_roleARNUpdate.assign(value); }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline KinesisFirehoseOutputUpdate& WithRoleARNUpdate(const Aws::String& value) { SetRoleARNUpdate(value); return *this;}
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline KinesisFirehoseOutputUpdate& WithRoleARNUpdate(Aws::String&& value) { SetRoleARNUpdate(std::move(value)); return *this;}
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
-     * stream on your behalf. You need to grant necessary permissions to this role.</p>
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
      */
     inline KinesisFirehoseOutputUpdate& WithRoleARNUpdate(const char* value) { SetRoleARNUpdate(value); return *this;}
 

@@ -49,51 +49,51 @@ namespace Model
 
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline ListDeploymentConfigsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline ListDeploymentConfigsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier returned from the previous list deployment configurations call.
-     * It can be used to return the next set of deployment configurations in the list.
-     * </p>
+     * <p>An identifier returned from the previous <code>ListDeploymentConfigs</code>
+     * call. It can be used to return the next set of deployment configurations in the
+     * list. </p>
      */
     inline ListDeploymentConfigsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

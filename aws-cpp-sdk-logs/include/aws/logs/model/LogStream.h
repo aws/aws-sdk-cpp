@@ -123,29 +123,29 @@ namespace Model
 
 
     /**
-     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
      * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in
-     * some rare situations.</p>
+     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * consistency basis. It typically updates in less than an hour from ingestion, but
+     * may take longer in some rare situations.</p>
      */
     inline long long GetLastEventTimestamp() const{ return m_lastEventTimestamp; }
 
     /**
-     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
      * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in
-     * some rare situations.</p>
+     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * consistency basis. It typically updates in less than an hour from ingestion, but
+     * may take longer in some rare situations.</p>
      */
     inline void SetLastEventTimestamp(long long value) { m_lastEventTimestampHasBeenSet = true; m_lastEventTimestamp = value; }
 
     /**
-     * <p> the time of the most recent log event in the log stream in CloudWatch Logs.
+     * <p>The time of the most recent log event in the log stream in CloudWatch Logs.
      * This number is expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. lastEventTime updates on an eventual consistency basis. It
-     * typically updates in less than an hour from ingestion, but may take longer in
-     * some rare situations.</p>
+     * 00:00:00 UTC. The <code>lastEventTime</code> value updates on an eventual
+     * consistency basis. It typically updates in less than an hour from ingestion, but
+     * may take longer in some rare situations.</p>
      */
     inline LogStream& WithLastEventTimestamp(long long value) { SetLastEventTimestamp(value); return *this;}
 

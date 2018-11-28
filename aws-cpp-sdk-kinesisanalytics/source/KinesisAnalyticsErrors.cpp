@@ -35,6 +35,7 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int UNABLE_TO_DETECT_SCHEMA_HASH = HashingUtils::HashString("UnableToDetectSchemaException");
 static const int RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ResourceProvisionedThroughputExceededException");
+static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperationException");
 static const int CODE_VALIDATION_HASH = HashingUtils::HashString("CodeValidationException");
 
 
@@ -69,6 +70,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::RESOURCE_PROVISIONED_THROUGHPUT_EXCEEDED), false);
+  }
+  else if (hashCode == UNSUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisAnalyticsErrors::UNSUPPORTED_OPERATION), false);
   }
   else if (hashCode == CODE_VALIDATION_HASH)
   {

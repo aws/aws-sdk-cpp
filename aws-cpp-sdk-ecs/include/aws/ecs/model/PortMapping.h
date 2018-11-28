@@ -119,10 +119,10 @@ namespace Model
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 100 reserved ports
-     * limit).</p>
+     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * 100 reserved ports at a time, including the default reserved ports.
+     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * limit.</p>
      */
     inline int GetHostPort() const{ return m_hostPort; }
 
@@ -149,10 +149,10 @@ namespace Model
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 100 reserved ports
-     * limit).</p>
+     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * 100 reserved ports at a time, including the default reserved ports.
+     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * limit.</p>
      */
     inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
 
@@ -179,10 +179,10 @@ namespace Model
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output, and a container instance may have up
-     * to 100 reserved ports at a time, including the default reserved ports
-     * (automatically assigned ports do not count toward the 100 reserved ports
-     * limit).</p>
+     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * 100 reserved ports at a time, including the default reserved ports.
+     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * limit.</p>
      */
     inline PortMapping& WithHostPort(int value) { SetHostPort(value); return *this;}
 

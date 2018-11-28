@@ -30,13 +30,15 @@ namespace Model
 
 LoadBalancerInfo::LoadBalancerInfo() : 
     m_elbInfoListHasBeenSet(false),
-    m_targetGroupInfoListHasBeenSet(false)
+    m_targetGroupInfoListHasBeenSet(false),
+    m_targetGroupPairInfoListHasBeenSet(false)
 {
 }
 
 LoadBalancerInfo::LoadBalancerInfo(JsonView jsonValue) : 
     m_elbInfoListHasBeenSet(false),
-    m_targetGroupInfoListHasBeenSet(false)
+    m_targetGroupInfoListHasBeenSet(false),
+    m_targetGroupPairInfoListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -61,6 +63,16 @@ LoadBalancerInfo& LoadBalancerInfo::operator =(JsonView jsonValue)
       m_targetGroupInfoList.push_back(targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject());
     }
     m_targetGroupInfoListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetGroupPairInfoList"))
+  {
+    Array<JsonView> targetGroupPairInfoListJsonList = jsonValue.GetArray("targetGroupPairInfoList");
+    for(unsigned targetGroupPairInfoListIndex = 0; targetGroupPairInfoListIndex < targetGroupPairInfoListJsonList.GetLength(); ++targetGroupPairInfoListIndex)
+    {
+      m_targetGroupPairInfoList.push_back(targetGroupPairInfoListJsonList[targetGroupPairInfoListIndex].AsObject());
+    }
+    m_targetGroupPairInfoListHasBeenSet = true;
   }
 
   return *this;
@@ -89,6 +101,17 @@ JsonValue LoadBalancerInfo::Jsonize() const
      targetGroupInfoListJsonList[targetGroupInfoListIndex].AsObject(m_targetGroupInfoList[targetGroupInfoListIndex].Jsonize());
    }
    payload.WithArray("targetGroupInfoList", std::move(targetGroupInfoListJsonList));
+
+  }
+
+  if(m_targetGroupPairInfoListHasBeenSet)
+  {
+   Array<JsonValue> targetGroupPairInfoListJsonList(m_targetGroupPairInfoList.size());
+   for(unsigned targetGroupPairInfoListIndex = 0; targetGroupPairInfoListIndex < targetGroupPairInfoListJsonList.GetLength(); ++targetGroupPairInfoListIndex)
+   {
+     targetGroupPairInfoListJsonList[targetGroupPairInfoListIndex].AsObject(m_targetGroupPairInfoList[targetGroupPairInfoListIndex].Jsonize());
+   }
+   payload.WithArray("targetGroupPairInfoList", std::move(targetGroupPairInfoListJsonList));
 
   }
 

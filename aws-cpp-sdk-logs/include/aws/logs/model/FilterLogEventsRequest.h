@@ -84,72 +84,64 @@ namespace Model
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline void SetLogStreamNames(const Aws::Vector<Aws::String>& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
@@ -227,21 +219,21 @@ namespace Model
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -249,21 +241,21 @@ namespace Model
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}

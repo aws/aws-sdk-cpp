@@ -97,6 +97,42 @@ namespace Model
 
 
     /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+
+
+    /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
@@ -246,6 +282,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet;
 
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;

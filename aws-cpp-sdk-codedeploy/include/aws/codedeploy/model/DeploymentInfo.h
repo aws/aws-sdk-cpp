@@ -99,109 +99,109 @@ namespace Model
 
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline DeploymentInfo& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline DeploymentInfo& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment group name.</p>
+     * <p> The deployment group name. </p>
      */
     inline DeploymentInfo& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline DeploymentInfo& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline DeploymentInfo& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment configuration name.</p>
+     * <p> The deployment configuration name. </p>
      */
     inline DeploymentInfo& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline DeploymentInfo& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline DeploymentInfo& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline DeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
@@ -915,32 +915,32 @@ namespace Model
 
 
     /**
-     * <p>The destination platform type for the deployment (<code>Lambda</code> or
-     * <code>Server</code>).</p>
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>). </p>
      */
     inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
 
     /**
-     * <p>The destination platform type for the deployment (<code>Lambda</code> or
-     * <code>Server</code>).</p>
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>). </p>
      */
     inline void SetComputePlatform(const ComputePlatform& value) { m_computePlatformHasBeenSet = true; m_computePlatform = value; }
 
     /**
-     * <p>The destination platform type for the deployment (<code>Lambda</code> or
-     * <code>Server</code>).</p>
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>). </p>
      */
     inline void SetComputePlatform(ComputePlatform&& value) { m_computePlatformHasBeenSet = true; m_computePlatform = std::move(value); }
 
     /**
-     * <p>The destination platform type for the deployment (<code>Lambda</code> or
-     * <code>Server</code>).</p>
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>). </p>
      */
     inline DeploymentInfo& WithComputePlatform(const ComputePlatform& value) { SetComputePlatform(value); return *this;}
 
     /**
-     * <p>The destination platform type for the deployment (<code>Lambda</code> or
-     * <code>Server</code>).</p>
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>). </p>
      */
     inline DeploymentInfo& WithComputePlatform(ComputePlatform&& value) { SetComputePlatform(std::move(value)); return *this;}
 

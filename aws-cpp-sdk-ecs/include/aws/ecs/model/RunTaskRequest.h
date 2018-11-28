@@ -473,70 +473,120 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which to run your task.</p>
+     * <p>The launch type on which to run your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which to run your task.</p>
+     * <p>The launch type on which to run your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which to run your task.</p>
+     * <p>The launch type on which to run your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which to run your task.</p>
+     * <p>The launch type on which to run your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which to run your task.</p>
+     * <p>The launch type on which to run your task. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline RunTaskRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which to run your task. If one is not specified, the
-     * latest version is used by default.</p>
+     * <p>The platform version the task should run. A platform version is only
+     * specified for tasks using the Fargate launch type. If one is not specified, the
+     * <code>LATEST</code> platform version is used by default. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline RunTaskRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

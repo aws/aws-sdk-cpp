@@ -330,37 +330,79 @@ namespace Model
 
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version that your service should run.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline UpdateServiceRequest& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 
@@ -399,10 +441,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
-     * Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have
-     * time to come up.</p>
+     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
+     * Elastic Load Balancing health check status. This grace period can prevent the
+     * ECS service scheduler from marking tasks as unhealthy and stopping them before
+     * they have time to come up.</p>
      */
     inline int GetHealthCheckGracePeriodSeconds() const{ return m_healthCheckGracePeriodSeconds; }
 
@@ -412,10 +454,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
-     * Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have
-     * time to come up.</p>
+     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
+     * Elastic Load Balancing health check status. This grace period can prevent the
+     * ECS service scheduler from marking tasks as unhealthy and stopping them before
+     * they have time to come up.</p>
      */
     inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
 
@@ -425,10 +467,10 @@ namespace Model
      * first started. This is only valid if your service is configured to use a load
      * balancer. If your service's tasks take a while to start and respond to Elastic
      * Load Balancing health checks, you can specify a health check grace period of up
-     * to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load
-     * Balancing health check status. This grace period can prevent the ECS service
-     * scheduler from marking tasks as unhealthy and stopping them before they have
-     * time to come up.</p>
+     * to 1,800 seconds. During that time, the ECS service scheduler ignores the
+     * Elastic Load Balancing health check status. This grace period can prevent the
+     * ECS service scheduler from marking tasks as unhealthy and stopping them before
+     * they have time to come up.</p>
      */
     inline UpdateServiceRequest& WithHealthCheckGracePeriodSeconds(int value) { SetHealthCheckGracePeriodSeconds(value); return *this;}
 

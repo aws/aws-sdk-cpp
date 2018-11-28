@@ -246,7 +246,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -263,7 +263,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -280,7 +280,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -297,7 +297,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -314,7 +314,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -331,7 +331,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when
@@ -348,7 +348,7 @@ namespace Model
     /**
      * <p>You can configure application output to write data from any of the
      * in-application streams to up to three destinations.</p> <p>These destinations
-     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, Amazon
+     * can be Amazon Kinesis streams, Amazon Kinesis Firehose delivery streams, AWS
      * Lambda destinations, or any combination of the three.</p> <p>In the
      * configuration, you specify the in-application stream name, the destination
      * stream or Lambda function Amazon Resource Name (ARN), and the format to use when

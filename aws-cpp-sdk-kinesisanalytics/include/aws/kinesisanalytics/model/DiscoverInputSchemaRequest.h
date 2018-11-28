@@ -158,27 +158,32 @@ namespace Model
 
 
     /**
-     * <p>Specify this parameter to discover a schema from data in an S3 object.</p>
+     * <p>Specify this parameter to discover a schema from data in an Amazon S3
+     * object.</p>
      */
     inline const S3Configuration& GetS3Configuration() const{ return m_s3Configuration; }
 
     /**
-     * <p>Specify this parameter to discover a schema from data in an S3 object.</p>
+     * <p>Specify this parameter to discover a schema from data in an Amazon S3
+     * object.</p>
      */
     inline void SetS3Configuration(const S3Configuration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
-     * <p>Specify this parameter to discover a schema from data in an S3 object.</p>
+     * <p>Specify this parameter to discover a schema from data in an Amazon S3
+     * object.</p>
      */
     inline void SetS3Configuration(S3Configuration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
 
     /**
-     * <p>Specify this parameter to discover a schema from data in an S3 object.</p>
+     * <p>Specify this parameter to discover a schema from data in an Amazon S3
+     * object.</p>
      */
     inline DiscoverInputSchemaRequest& WithS3Configuration(const S3Configuration& value) { SetS3Configuration(value); return *this;}
 
     /**
-     * <p>Specify this parameter to discover a schema from data in an S3 object.</p>
+     * <p>Specify this parameter to discover a schema from data in an Amazon S3
+     * object.</p>
      */
     inline DiscoverInputSchemaRequest& WithS3Configuration(S3Configuration&& value) { SetS3Configuration(std::move(value)); return *this;}
 

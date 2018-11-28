@@ -33,6 +33,7 @@ namespace Model
 DhcpOptions::DhcpOptions() : 
     m_dhcpConfigurationsHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ DhcpOptions::DhcpOptions() :
 DhcpOptions::DhcpOptions(const XmlNode& xmlNode) : 
     m_dhcpConfigurationsHasBeenSet(false),
     m_dhcpOptionsIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -68,6 +70,12 @@ DhcpOptions& DhcpOptions::operator =(const XmlNode& xmlNode)
     {
       m_dhcpOptionsId = StringUtils::Trim(dhcpOptionsIdNode.GetText().c_str());
       m_dhcpOptionsIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -104,6 +112,11 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -132,6 +145,10 @@ void DhcpOptions::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_dhcpOptionsIdHasBeenSet)
   {
       oStream << location << ".DhcpOptionsId=" << StringUtils::URLEncode(m_dhcpOptionsId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

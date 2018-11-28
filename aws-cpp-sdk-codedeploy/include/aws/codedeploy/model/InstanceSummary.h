@@ -53,37 +53,37 @@ namespace Model
 
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 

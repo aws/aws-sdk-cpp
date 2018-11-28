@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codedeploy/model/ELBInfo.h>
 #include <aws/codedeploy/model/TargetGroupInfo.h>
+#include <aws/codedeploy/model/TargetGroupPairInfo.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,49 @@ namespace Model
      */
     inline LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfo&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline const Aws::Vector<TargetGroupPairInfo>& GetTargetGroupPairInfoList() const{ return m_targetGroupPairInfoList; }
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline void SetTargetGroupPairInfoList(const Aws::Vector<TargetGroupPairInfo>& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList = value; }
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline void SetTargetGroupPairInfoList(Aws::Vector<TargetGroupPairInfo>&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList = std::move(value); }
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline LoadBalancerInfo& WithTargetGroupPairInfoList(const Aws::Vector<TargetGroupPairInfo>& value) { SetTargetGroupPairInfoList(value); return *this;}
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline LoadBalancerInfo& WithTargetGroupPairInfoList(Aws::Vector<TargetGroupPairInfo>&& value) { SetTargetGroupPairInfoList(std::move(value)); return *this;}
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline LoadBalancerInfo& AddTargetGroupPairInfoList(const TargetGroupPairInfo& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList.push_back(value); return *this; }
+
+    /**
+     * <p> The target group pair information. This is an array of
+     * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
+     */
+    inline LoadBalancerInfo& AddTargetGroupPairInfoList(TargetGroupPairInfo&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ELBInfo> m_elbInfoList;
@@ -170,6 +214,9 @@ namespace Model
 
     Aws::Vector<TargetGroupInfo> m_targetGroupInfoList;
     bool m_targetGroupInfoListHasBeenSet;
+
+    Aws::Vector<TargetGroupPairInfo> m_targetGroupPairInfoList;
+    bool m_targetGroupPairInfoListHasBeenSet;
   };
 
 } // namespace Model

@@ -125,6 +125,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline InternetGateway& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline InternetGateway& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the internet gateway.</p>
+     */
+    inline InternetGateway& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the internet gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -166,6 +202,9 @@ namespace Model
 
     Aws::String m_internetGatewayId;
     bool m_internetGatewayIdHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a StopDeployment operation.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p> Represents the input of a StopDeployment operation. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/StopDeploymentInput">AWS
    * API Reference</a></p>
    */
@@ -49,59 +49,59 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline StopDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline StopDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of a deployment.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline StopDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
 
     /**
-     * <p>Indicates, when a deployment is stopped, whether instances that have been
+     * <p> Indicates, when a deployment is stopped, whether instances that have been
      * updated should be rolled back to the previous version of the application
-     * revision.</p>
+     * revision. </p>
      */
     inline bool GetAutoRollbackEnabled() const{ return m_autoRollbackEnabled; }
 
     /**
-     * <p>Indicates, when a deployment is stopped, whether instances that have been
+     * <p> Indicates, when a deployment is stopped, whether instances that have been
      * updated should be rolled back to the previous version of the application
-     * revision.</p>
+     * revision. </p>
      */
     inline void SetAutoRollbackEnabled(bool value) { m_autoRollbackEnabledHasBeenSet = true; m_autoRollbackEnabled = value; }
 
     /**
-     * <p>Indicates, when a deployment is stopped, whether instances that have been
+     * <p> Indicates, when a deployment is stopped, whether instances that have been
      * updated should be rolled back to the previous version of the application
-     * revision.</p>
+     * revision. </p>
      */
     inline StopDeploymentRequest& WithAutoRollbackEnabled(bool value) { SetAutoRollbackEnabled(value); return *this;}
 

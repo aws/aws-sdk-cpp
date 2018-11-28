@@ -121,19 +121,19 @@ namespace Model
 
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetLastUpdatedTime(long long value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline ResourcePolicy& WithLastUpdatedTime(long long value) { SetLastUpdatedTime(value); return *this;}

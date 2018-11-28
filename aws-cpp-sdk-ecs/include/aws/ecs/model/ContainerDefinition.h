@@ -455,7 +455,7 @@ namespace Model
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
      * equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
-     * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
+     * as 1, which the Linux kernel converts to two CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
@@ -507,7 +507,7 @@ namespace Model
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
      * equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
-     * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
+     * as 1, which the Linux kernel converts to two CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows
@@ -559,7 +559,7 @@ namespace Model
      * ECS container agent version:</p> <ul> <li> <p> <b>Agent versions less than or
      * equal to 1.1.0:</b> Null and zero CPU values are passed to Docker as 0, which
      * Docker then converts to 1,024 CPU shares. CPU values of 1 are passed to Docker
-     * as 1, which the Linux kernel converts to 2 CPU shares.</p> </li> <li> <p>
+     * as 1, which the Linux kernel converts to two CPU shares.</p> </li> <li> <p>
      * <b>Agent versions greater than or equal to 1.2.0:</b> Null, zero, and CPU values
      * of 1 are passed to Docker as 2.</p> </li> </ul> <p>On Windows container
      * instances, the CPU limit is enforced as an absolute limit, or a quota. Windows

@@ -19,6 +19,7 @@
 #include <aws/codedeploy/model/S3Location.h>
 #include <aws/codedeploy/model/GitHubLocation.h>
 #include <aws/codedeploy/model/RawString.h>
+#include <aws/codedeploy/model/AppSpecContent.h>
 #include <utility>
 
 namespace Aws
@@ -179,6 +180,37 @@ namespace Model
      */
     inline RevisionLocation& WithString(RawString&& value) { SetString(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline const AppSpecContent& GetAppSpecContent() const{ return m_appSpecContent; }
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline void SetAppSpecContent(const AppSpecContent& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = value; }
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline void SetAppSpecContent(AppSpecContent&& value) { m_appSpecContentHasBeenSet = true; m_appSpecContent = std::move(value); }
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline RevisionLocation& WithAppSpecContent(const AppSpecContent& value) { SetAppSpecContent(value); return *this;}
+
+    /**
+     * <p> The content of an AppSpec file for an AWS Lambda or Amazon ECS deployment.
+     * The content is formatted as JSON or YAML and stored as a RawString. </p>
+     */
+    inline RevisionLocation& WithAppSpecContent(AppSpecContent&& value) { SetAppSpecContent(std::move(value)); return *this;}
+
   private:
 
     RevisionLocationType m_revisionType;
@@ -192,6 +224,9 @@ namespace Model
 
     RawString m_string;
     bool m_stringHasBeenSet;
+
+    AppSpecContent m_appSpecContent;
+    bool m_appSpecContentHasBeenSet;
   };
 
 } // namespace Model

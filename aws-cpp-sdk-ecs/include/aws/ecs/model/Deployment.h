@@ -37,9 +37,11 @@ namespace Model
 {
 
   /**
-   * <p>The details of an Amazon ECS service deployment.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment">AWS
-   * API Reference</a></p>
+   * <p>The details of an Amazon ECS service deployment. This is used when a service
+   * uses the <code>CODE_DEPLOY</code> deployment controller type.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Deployment">AWS API
+   * Reference</a></p>
    */
   class AWS_ECS_API Deployment
   {
@@ -87,108 +89,115 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline Deployment& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline Deployment& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the deployment. Valid values are <code>PRIMARY</code> for the
-     * most recent deployment, <code>ACTIVE</code> for previous deployments that still
-     * have tasks running, but are being replaced with the <code>PRIMARY</code>
-     * deployment, and <code>INACTIVE</code> for deployments that have been completely
-     * replaced.</p>
+     * <p>The status of the deployment. The following describes each state:</p> <dl>
+     * <dt>PRIMARY</dt> <dd> <p>The most recent deployment of a service.</p> </dd>
+     * <dt>ACTIVE</dt> <dd> <p>A service deployment that still has running tasks, but
+     * are in the process of being replaced with a new <code>PRIMARY</code>
+     * deployment.</p> </dd> <dt>INACTIVE</dt> <dd> <p>A deployment that has been
+     * completely replaced.</p> </dd> </dl>
      */
     inline Deployment& WithStatus(const char* value) { SetStatus(value); return *this;}
 
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline Deployment& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline Deployment& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The most recent task definition that was specified for the service to
-     * use.</p>
+     * <p>The most recent task definition that was specified for the tasks in the
+     * service to use.</p>
      */
     inline Deployment& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -251,115 +260,177 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline Deployment& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the service was created.</p>
+     * <p>The Unix timestamp for when the service deployment was created.</p>
      */
     inline Deployment& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix timestamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp for when the service was last updated.</p>
+     * <p>The Unix timestamp for when the service deployment was last updated.</p>
      */
     inline Deployment& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Deployment& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type the tasks in the service are using. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Deployment& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your service is running.</p>
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
      */
     inline Deployment& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

@@ -132,27 +132,27 @@ namespace Model
 
 
     /**
-     * <p>The type and location of the revision to deploy.</p>
+     * <p> The type and location of the revision to deploy. </p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
 
     /**
-     * <p>The type and location of the revision to deploy.</p>
+     * <p> The type and location of the revision to deploy. </p>
      */
     inline void SetRevision(const RevisionLocation& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p>The type and location of the revision to deploy.</p>
+     * <p> The type and location of the revision to deploy. </p>
      */
     inline void SetRevision(RevisionLocation&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
-     * <p>The type and location of the revision to deploy.</p>
+     * <p> The type and location of the revision to deploy. </p>
      */
     inline CreateDeploymentRequest& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
 
     /**
-     * <p>The type and location of the revision to deploy.</p>
+     * <p> The type and location of the revision to deploy. </p>
      */
     inline CreateDeploymentRequest& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
 
@@ -258,66 +258,69 @@ namespace Model
 
 
     /**
-     * <p>If set to true, then if the deployment causes the ApplicationStop deployment
+     * <p> If set to true, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to an instance to fail, the deployment to that instance will not
      * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * BeforeInstall deployment lifecycle event. </p> <p> If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to fail to an instance, the deployment to that instance will
-     * stop, and the deployment to that instance will be considered to have failed.</p>
+     * stop, and the deployment to that instance will be considered to have failed.
+     * </p>
      */
     inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
 
     /**
-     * <p>If set to true, then if the deployment causes the ApplicationStop deployment
+     * <p> If set to true, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to an instance to fail, the deployment to that instance will not
      * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * BeforeInstall deployment lifecycle event. </p> <p> If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to fail to an instance, the deployment to that instance will
-     * stop, and the deployment to that instance will be considered to have failed.</p>
+     * stop, and the deployment to that instance will be considered to have failed.
+     * </p>
      */
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
 
     /**
-     * <p>If set to true, then if the deployment causes the ApplicationStop deployment
+     * <p> If set to true, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to an instance to fail, the deployment to that instance will not
      * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If set to false or not
+     * BeforeInstall deployment lifecycle event. </p> <p> If set to false or not
      * specified, then if the deployment causes the ApplicationStop deployment
      * lifecycle event to fail to an instance, the deployment to that instance will
-     * stop, and the deployment to that instance will be considered to have failed.</p>
+     * stop, and the deployment to that instance will be considered to have failed.
+     * </p>
      */
     inline CreateDeploymentRequest& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
 
     /**
-     * <p>Information about the instances that will belong to the replacement
-     * environment in a blue/green deployment.</p>
+     * <p> Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment. </p>
      */
     inline const TargetInstances& GetTargetInstances() const{ return m_targetInstances; }
 
     /**
-     * <p>Information about the instances that will belong to the replacement
-     * environment in a blue/green deployment.</p>
+     * <p> Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment. </p>
      */
     inline void SetTargetInstances(const TargetInstances& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
 
     /**
-     * <p>Information about the instances that will belong to the replacement
-     * environment in a blue/green deployment.</p>
+     * <p> Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment. </p>
      */
     inline void SetTargetInstances(TargetInstances&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
 
     /**
-     * <p>Information about the instances that will belong to the replacement
-     * environment in a blue/green deployment.</p>
+     * <p> Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment. </p>
      */
     inline CreateDeploymentRequest& WithTargetInstances(const TargetInstances& value) { SetTargetInstances(value); return *this;}
 
     /**
-     * <p>Information about the instances that will belong to the replacement
-     * environment in a blue/green deployment.</p>
+     * <p> Information about the instances that will belong to the replacement
+     * environment in a blue/green deployment. </p>
      */
     inline CreateDeploymentRequest& WithTargetInstances(TargetInstances&& value) { SetTargetInstances(std::move(value)); return *this;}
 
@@ -354,20 +357,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether to deploy to all instances or only to instances that are
-     * not running the latest application revision.</p>
+     * <p> Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision. </p>
      */
     inline bool GetUpdateOutdatedInstancesOnly() const{ return m_updateOutdatedInstancesOnly; }
 
     /**
-     * <p>Indicates whether to deploy to all instances or only to instances that are
-     * not running the latest application revision.</p>
+     * <p> Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision. </p>
      */
     inline void SetUpdateOutdatedInstancesOnly(bool value) { m_updateOutdatedInstancesOnlyHasBeenSet = true; m_updateOutdatedInstancesOnly = value; }
 
     /**
-     * <p>Indicates whether to deploy to all instances or only to instances that are
-     * not running the latest application revision.</p>
+     * <p> Indicates whether to deploy to all instances or only to instances that are
+     * not running the latest application revision. </p>
      */
     inline CreateDeploymentRequest& WithUpdateOutdatedInstancesOnly(bool value) { SetUpdateOutdatedInstancesOnly(value); return *this;}
 

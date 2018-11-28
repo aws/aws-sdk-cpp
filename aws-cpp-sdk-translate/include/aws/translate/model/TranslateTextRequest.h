@@ -17,6 +17,7 @@
 #include <aws/translate/Translate_EXPORTS.h>
 #include <aws/translate/TranslateRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -45,158 +46,207 @@ namespace Model
 
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>The text to translate.</p>
+     * <p>The text to translate. The text string can be a maximum of 5,000 bytes long.
+     * Depending on your character set, this may be fewer than 5,000 characters.</p>
      */
     inline TranslateTextRequest& WithText(const char* value) { SetText(value); return *this;}
 
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline void SetTerminologyNames(const Aws::Vector<Aws::String>& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = value; }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline void SetTerminologyNames(Aws::Vector<Aws::String>&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::move(value); }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline TranslateTextRequest& WithTerminologyNames(const Aws::Vector<Aws::String>& value) { SetTerminologyNames(value); return *this;}
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline TranslateTextRequest& WithTerminologyNames(Aws::Vector<Aws::String>&& value) { SetTerminologyNames(std::move(value)); return *this;}
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline TranslateTextRequest& AddTerminologyNames(const Aws::String& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline TranslateTextRequest& AddTerminologyNames(Aws::String&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The TerminologyNames list that is taken as input to the TranslateText
+     * request. This has a minimum length of 0 and a maximum length of 1.</p>
+     */
+    inline TranslateTextRequest& AddTerminologyNames(const char* value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>One of the supported language codes for the source text. If the
-     * <code>TargetLanguageCode</code> is not "en", the <code>SourceLanguageCode</code>
-     * must be "en".</p> <p>To have Amazon Translate determine the source language of
-     * your text, you can specify <code>auto</code> in the
-     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
-     * Translate will call Amazon Comprehend to determine the source language.</p>
+     * <p>The language code for the language of the source text. The language must be a
+     * language supported by Amazon Translate. </p> <p>To have Amazon Translate
+     * determine the source language of your text, you can specify <code>auto</code> in
+     * the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
+     * Amazon Translate will call Amazon Comprehend to determine the source
+     * language.</p>
      */
     inline TranslateTextRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline const Aws::String& GetTargetLanguageCode() const{ return m_targetLanguageCode; }
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline void SetTargetLanguageCode(const Aws::String& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = value; }
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline void SetTargetLanguageCode(Aws::String&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::move(value); }
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline void SetTargetLanguageCode(const char* value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode.assign(value); }
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(const Aws::String& value) { SetTargetLanguageCode(value); return *this;}
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(Aws::String&& value) { SetTargetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>One of the supported language codes for the target text. If the
-     * <code>SourceLanguageCode</code> is not "en", the <code>TargetLanguageCode</code>
-     * must be "en".</p>
+     * <p>The language code requested for the language of the target text. The language
+     * must be a language supported by Amazon Translate.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
 
@@ -204,6 +254,9 @@ namespace Model
 
     Aws::String m_text;
     bool m_textHasBeenSet;
+
+    Aws::Vector<Aws::String> m_terminologyNames;
+    bool m_terminologyNamesHasBeenSet;
 
     Aws::String m_sourceLanguageCode;
     bool m_sourceLanguageCodeHasBeenSet;

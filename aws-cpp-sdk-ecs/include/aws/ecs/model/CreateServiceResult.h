@@ -43,27 +43,57 @@ namespace Model
 
 
     /**
-     * <p>The full description of your service following the create call.</p>
+     * <p>The full description of your service following the create call.</p> <p>If a
+     * service is using the <code>ECS</code> deployment controller, the
+     * <code>deploymentController</code> and <code>taskSets</code> parameters will not
+     * be returned.</p> <p>If the service is using the <code>CODE_DEPLOY</code>
+     * deployment controller, the <code>deploymentController</code>,
+     * <code>taskSets</code> and <code>deployments</code> parameters will be returned,
+     * however the <code>deployments</code> parameter will be an empty list.</p>
      */
     inline const Service& GetService() const{ return m_service; }
 
     /**
-     * <p>The full description of your service following the create call.</p>
+     * <p>The full description of your service following the create call.</p> <p>If a
+     * service is using the <code>ECS</code> deployment controller, the
+     * <code>deploymentController</code> and <code>taskSets</code> parameters will not
+     * be returned.</p> <p>If the service is using the <code>CODE_DEPLOY</code>
+     * deployment controller, the <code>deploymentController</code>,
+     * <code>taskSets</code> and <code>deployments</code> parameters will be returned,
+     * however the <code>deployments</code> parameter will be an empty list.</p>
      */
     inline void SetService(const Service& value) { m_service = value; }
 
     /**
-     * <p>The full description of your service following the create call.</p>
+     * <p>The full description of your service following the create call.</p> <p>If a
+     * service is using the <code>ECS</code> deployment controller, the
+     * <code>deploymentController</code> and <code>taskSets</code> parameters will not
+     * be returned.</p> <p>If the service is using the <code>CODE_DEPLOY</code>
+     * deployment controller, the <code>deploymentController</code>,
+     * <code>taskSets</code> and <code>deployments</code> parameters will be returned,
+     * however the <code>deployments</code> parameter will be an empty list.</p>
      */
     inline void SetService(Service&& value) { m_service = std::move(value); }
 
     /**
-     * <p>The full description of your service following the create call.</p>
+     * <p>The full description of your service following the create call.</p> <p>If a
+     * service is using the <code>ECS</code> deployment controller, the
+     * <code>deploymentController</code> and <code>taskSets</code> parameters will not
+     * be returned.</p> <p>If the service is using the <code>CODE_DEPLOY</code>
+     * deployment controller, the <code>deploymentController</code>,
+     * <code>taskSets</code> and <code>deployments</code> parameters will be returned,
+     * however the <code>deployments</code> parameter will be an empty list.</p>
      */
     inline CreateServiceResult& WithService(const Service& value) { SetService(value); return *this;}
 
     /**
-     * <p>The full description of your service following the create call.</p>
+     * <p>The full description of your service following the create call.</p> <p>If a
+     * service is using the <code>ECS</code> deployment controller, the
+     * <code>deploymentController</code> and <code>taskSets</code> parameters will not
+     * be returned.</p> <p>If the service is using the <code>CODE_DEPLOY</code>
+     * deployment controller, the <code>deploymentController</code>,
+     * <code>taskSets</code> and <code>deployments</code> parameters will be returned,
+     * however the <code>deployments</code> parameter will be an empty list.</p>
      */
     inline CreateServiceResult& WithService(Service&& value) { SetService(std::move(value)); return *this;}
 

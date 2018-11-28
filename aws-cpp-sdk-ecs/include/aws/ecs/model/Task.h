@@ -734,9 +734,9 @@ namespace Model
      * <p>The version counter for the task. Every time a task experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are
      * replicating your Amazon ECS task state with CloudWatch Events, you can compare
-     * the version of a task reported by the Amazon ECS APIs with the version reported
-     * in CloudWatch Events for the task (inside the <code>detail</code> object) to
-     * verify that the version in your event stream is current.</p>
+     * the version of a task reported by the Amazon ECS API actionss with the version
+     * reported in CloudWatch Events for the task (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
      */
     inline long long GetVersion() const{ return m_version; }
 
@@ -744,9 +744,9 @@ namespace Model
      * <p>The version counter for the task. Every time a task experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are
      * replicating your Amazon ECS task state with CloudWatch Events, you can compare
-     * the version of a task reported by the Amazon ECS APIs with the version reported
-     * in CloudWatch Events for the task (inside the <code>detail</code> object) to
-     * verify that the version in your event stream is current.</p>
+     * the version of a task reported by the Amazon ECS API actionss with the version
+     * reported in CloudWatch Events for the task (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
      */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
@@ -754,45 +754,45 @@ namespace Model
      * <p>The version counter for the task. Every time a task experiences a change that
      * triggers a CloudWatch event, the version counter is incremented. If you are
      * replicating your Amazon ECS task state with CloudWatch Events, you can compare
-     * the version of a task reported by the Amazon ECS APIs with the version reported
-     * in CloudWatch Events for the task (inside the <code>detail</code> object) to
-     * verify that the version in your event stream is current.</p>
+     * the version of a task reported by the Amazon ECS API actionss with the version
+     * reported in CloudWatch Events for the task (inside the <code>detail</code>
+     * object) to verify that the version in your event stream is current.</p>
      */
     inline Task& WithVersion(long long value) { SetVersion(value); return *this;}
 
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline const Aws::String& GetStoppedReason() const{ return m_stoppedReason; }
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline void SetStoppedReason(const Aws::String& value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason = value; }
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline void SetStoppedReason(Aws::String&& value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason = std::move(value); }
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline void SetStoppedReason(const char* value) { m_stoppedReasonHasBeenSet = true; m_stoppedReason.assign(value); }
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline Task& WithStoppedReason(const Aws::String& value) { SetStoppedReason(value); return *this;}
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline Task& WithStoppedReason(Aws::String&& value) { SetStoppedReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason the task was stopped.</p>
+     * <p>The reason that the task was stopped.</p>
      */
     inline Task& WithStoppedReason(const char* value) { SetStoppedReason(value); return *this;}
 
@@ -1124,34 +1124,51 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your task is running.</p>
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your task is running.</p>
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your task is running.</p>
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your task is running.</p>
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Task& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your task is running.</p>
+     * <p>The launch type on which your task is running. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Task& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1159,8 +1176,10 @@ namespace Model
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1168,8 +1187,10 @@ namespace Model
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1177,8 +1198,10 @@ namespace Model
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1186,8 +1209,10 @@ namespace Model
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1195,8 +1220,10 @@ namespace Model
     inline Task& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
@@ -1204,8 +1231,10 @@ namespace Model
     inline Task& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
+     * <p>The platform version on which your task is running. A platform version is
+     * only specified for tasks using the Fargate launch type. If one is not specified,
+     * the <code>LATEST</code> platform version is used by default. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>

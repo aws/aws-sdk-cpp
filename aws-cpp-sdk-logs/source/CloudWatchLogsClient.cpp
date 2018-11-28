@@ -44,11 +44,15 @@
 #include <aws/logs/model/DescribeLogGroupsRequest.h>
 #include <aws/logs/model/DescribeLogStreamsRequest.h>
 #include <aws/logs/model/DescribeMetricFiltersRequest.h>
+#include <aws/logs/model/DescribeQueriesRequest.h>
 #include <aws/logs/model/DescribeResourcePoliciesRequest.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersRequest.h>
 #include <aws/logs/model/DisassociateKmsKeyRequest.h>
 #include <aws/logs/model/FilterLogEventsRequest.h>
 #include <aws/logs/model/GetLogEventsRequest.h>
+#include <aws/logs/model/GetLogGroupFieldsRequest.h>
+#include <aws/logs/model/GetLogRecordRequest.h>
+#include <aws/logs/model/GetQueryResultsRequest.h>
 #include <aws/logs/model/ListTagsLogGroupRequest.h>
 #include <aws/logs/model/PutDestinationRequest.h>
 #include <aws/logs/model/PutDestinationPolicyRequest.h>
@@ -57,6 +61,8 @@
 #include <aws/logs/model/PutResourcePolicyRequest.h>
 #include <aws/logs/model/PutRetentionPolicyRequest.h>
 #include <aws/logs/model/PutSubscriptionFilterRequest.h>
+#include <aws/logs/model/StartQueryRequest.h>
+#include <aws/logs/model/StopQueryRequest.h>
 #include <aws/logs/model/TagLogGroupRequest.h>
 #include <aws/logs/model/TestMetricFilterRequest.h>
 #include <aws/logs/model/UntagLogGroupRequest.h>
@@ -720,6 +726,41 @@ void CloudWatchLogsClient::DescribeMetricFiltersAsyncHelper(const DescribeMetric
   handler(this, request, DescribeMetricFilters(request), context);
 }
 
+DescribeQueriesOutcome CloudWatchLogsClient::DescribeQueries(const DescribeQueriesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeQueriesOutcome(DescribeQueriesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeQueriesOutcome(outcome.GetError());
+  }
+}
+
+DescribeQueriesOutcomeCallable CloudWatchLogsClient::DescribeQueriesCallable(const DescribeQueriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeQueriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeQueries(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::DescribeQueriesAsync(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeQueriesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::DescribeQueriesAsyncHelper(const DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeQueries(request), context);
+}
+
 DescribeResourcePoliciesOutcome CloudWatchLogsClient::DescribeResourcePolicies(const DescribeResourcePoliciesRequest& request) const
 {
   Aws::StringStream ss;
@@ -893,6 +934,111 @@ void CloudWatchLogsClient::GetLogEventsAsync(const GetLogEventsRequest& request,
 void CloudWatchLogsClient::GetLogEventsAsyncHelper(const GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetLogEvents(request), context);
+}
+
+GetLogGroupFieldsOutcome CloudWatchLogsClient::GetLogGroupFields(const GetLogGroupFieldsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLogGroupFieldsOutcome(GetLogGroupFieldsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLogGroupFieldsOutcome(outcome.GetError());
+  }
+}
+
+GetLogGroupFieldsOutcomeCallable CloudWatchLogsClient::GetLogGroupFieldsCallable(const GetLogGroupFieldsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLogGroupFieldsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLogGroupFields(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::GetLogGroupFieldsAsync(const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLogGroupFieldsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::GetLogGroupFieldsAsyncHelper(const GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLogGroupFields(request), context);
+}
+
+GetLogRecordOutcome CloudWatchLogsClient::GetLogRecord(const GetLogRecordRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLogRecordOutcome(GetLogRecordResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLogRecordOutcome(outcome.GetError());
+  }
+}
+
+GetLogRecordOutcomeCallable CloudWatchLogsClient::GetLogRecordCallable(const GetLogRecordRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLogRecordOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLogRecord(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::GetLogRecordAsync(const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLogRecordAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::GetLogRecordAsyncHelper(const GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLogRecord(request), context);
+}
+
+GetQueryResultsOutcome CloudWatchLogsClient::GetQueryResults(const GetQueryResultsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetQueryResultsOutcome(GetQueryResultsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetQueryResultsOutcome(outcome.GetError());
+  }
+}
+
+GetQueryResultsOutcomeCallable CloudWatchLogsClient::GetQueryResultsCallable(const GetQueryResultsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetQueryResultsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetQueryResults(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::GetQueryResultsAsync(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetQueryResultsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::GetQueryResultsAsyncHelper(const GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetQueryResults(request), context);
 }
 
 ListTagsLogGroupOutcome CloudWatchLogsClient::ListTagsLogGroup(const ListTagsLogGroupRequest& request) const
@@ -1173,6 +1319,76 @@ void CloudWatchLogsClient::PutSubscriptionFilterAsync(const PutSubscriptionFilte
 void CloudWatchLogsClient::PutSubscriptionFilterAsyncHelper(const PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutSubscriptionFilter(request), context);
+}
+
+StartQueryOutcome CloudWatchLogsClient::StartQuery(const StartQueryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartQueryOutcome(StartQueryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartQueryOutcome(outcome.GetError());
+  }
+}
+
+StartQueryOutcomeCallable CloudWatchLogsClient::StartQueryCallable(const StartQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::StartQueryAsync(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartQueryAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::StartQueryAsyncHelper(const StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartQuery(request), context);
+}
+
+StopQueryOutcome CloudWatchLogsClient::StopQuery(const StopQueryRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopQueryOutcome(StopQueryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopQueryOutcome(outcome.GetError());
+  }
+}
+
+StopQueryOutcomeCallable CloudWatchLogsClient::StopQueryCallable(const StopQueryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopQueryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopQuery(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudWatchLogsClient::StopQueryAsync(const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopQueryAsyncHelper( request, handler, context ); } );
+}
+
+void CloudWatchLogsClient::StopQueryAsyncHelper(const StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopQuery(request), context);
 }
 
 TagLogGroupOutcome CloudWatchLogsClient::TagLogGroup(const TagLogGroupRequest& request) const

@@ -100,37 +100,37 @@ namespace Model
 
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline const Aws::String& GetSha256() const{ return m_sha256; }
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline void SetSha256(const Aws::String& value) { m_sha256HasBeenSet = true; m_sha256 = value; }
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline void SetSha256(Aws::String&& value) { m_sha256HasBeenSet = true; m_sha256 = std::move(value); }
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline void SetSha256(const char* value) { m_sha256HasBeenSet = true; m_sha256.assign(value); }
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline RawString& WithSha256(const Aws::String& value) { SetSha256(value); return *this;}
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline RawString& WithSha256(Aws::String&& value) { SetSha256(std::move(value)); return *this;}
 
     /**
-     * <p>The SHA256 hash value of the revision that is specified as a RawString.</p>
+     * <p>The SHA256 hash value of the revision content.</p>
      */
     inline RawString& WithSha256(const char* value) { SetSha256(value); return *this;}
 

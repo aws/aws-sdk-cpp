@@ -197,6 +197,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline Vpc& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline Vpc& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the VPC.</p>
+     */
+    inline Vpc& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
      * <p>The allowed tenancy of instances launched into the VPC.</p>
      */
     inline const Tenancy& GetInstanceTenancy() const{ return m_instanceTenancy; }
@@ -358,6 +394,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
 
     Tenancy m_instanceTenancy;
     bool m_instanceTenancyHasBeenSet;

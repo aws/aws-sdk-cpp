@@ -46,87 +46,87 @@ namespace Model
 
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the deployment. Pass this ID to a Lambda function that validates a
-     * deployment lifecycle event.</p>
+     * <p> The unique ID of a deployment. Pass this ID to a Lambda function that
+     * validates a deployment lifecycle event. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline const Aws::String& GetLifecycleEventHookExecutionId() const{ return m_lifecycleEventHookExecutionId; }
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline void SetLifecycleEventHookExecutionId(const Aws::String& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = value; }
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline void SetLifecycleEventHookExecutionId(Aws::String&& value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId = std::move(value); }
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline void SetLifecycleEventHookExecutionId(const char* value) { m_lifecycleEventHookExecutionIdHasBeenSet = true; m_lifecycleEventHookExecutionId.assign(value); }
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(const Aws::String& value) { SetLifecycleEventHookExecutionId(value); return *this;}
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(Aws::String&& value) { SetLifecycleEventHookExecutionId(std::move(value)); return *this;}
 
     /**
-     * <p>The execution ID of a deployment's lifecycle hook. A deployment lifecycle
-     * hook is specified in the <code>hooks</code> section of the AppSpec file.</p>
+     * <p> The execution ID of a deployment's lifecycle hook. A deployment lifecycle
+     * hook is specified in the <code>hooks</code> section of the AppSpec file. </p>
      */
     inline PutLifecycleEventHookExecutionStatusRequest& WithLifecycleEventHookExecutionId(const char* value) { SetLifecycleEventHookExecutionId(value); return *this;}
 

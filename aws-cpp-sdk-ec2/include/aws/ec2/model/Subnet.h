@@ -90,6 +90,42 @@ namespace Model
 
 
     /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+
+
+    /**
      * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
      * for any stopped instances are considered unavailable.</p>
      */
@@ -278,6 +314,42 @@ namespace Model
 
 
     /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
      * <p>Indicates whether a network interface created in this subnet (including a
      * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
      */
@@ -367,10 +439,49 @@ namespace Model
      */
     inline Subnet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet;
 
     int m_availableIpAddressCount;
     bool m_availableIpAddressCountHasBeenSet;
@@ -393,6 +504,9 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
 
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
+
     bool m_assignIpv6AddressOnCreation;
     bool m_assignIpv6AddressOnCreationHasBeenSet;
 
@@ -401,6 +515,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_subnetArn;
+    bool m_subnetArnHasBeenSet;
   };
 
 } // namespace Model

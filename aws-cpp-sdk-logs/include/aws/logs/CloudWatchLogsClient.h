@@ -27,14 +27,20 @@
 #include <aws/logs/model/DescribeLogGroupsResult.h>
 #include <aws/logs/model/DescribeLogStreamsResult.h>
 #include <aws/logs/model/DescribeMetricFiltersResult.h>
+#include <aws/logs/model/DescribeQueriesResult.h>
 #include <aws/logs/model/DescribeResourcePoliciesResult.h>
 #include <aws/logs/model/DescribeSubscriptionFiltersResult.h>
 #include <aws/logs/model/FilterLogEventsResult.h>
 #include <aws/logs/model/GetLogEventsResult.h>
+#include <aws/logs/model/GetLogGroupFieldsResult.h>
+#include <aws/logs/model/GetLogRecordResult.h>
+#include <aws/logs/model/GetQueryResultsResult.h>
 #include <aws/logs/model/ListTagsLogGroupResult.h>
 #include <aws/logs/model/PutDestinationResult.h>
 #include <aws/logs/model/PutLogEventsResult.h>
 #include <aws/logs/model/PutResourcePolicyResult.h>
+#include <aws/logs/model/StartQueryResult.h>
+#include <aws/logs/model/StopQueryResult.h>
 #include <aws/logs/model/TestMetricFilterResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -94,11 +100,15 @@ namespace Model
         class DescribeLogGroupsRequest;
         class DescribeLogStreamsRequest;
         class DescribeMetricFiltersRequest;
+        class DescribeQueriesRequest;
         class DescribeResourcePoliciesRequest;
         class DescribeSubscriptionFiltersRequest;
         class DisassociateKmsKeyRequest;
         class FilterLogEventsRequest;
         class GetLogEventsRequest;
+        class GetLogGroupFieldsRequest;
+        class GetLogRecordRequest;
+        class GetQueryResultsRequest;
         class ListTagsLogGroupRequest;
         class PutDestinationRequest;
         class PutDestinationPolicyRequest;
@@ -107,6 +117,8 @@ namespace Model
         class PutResourcePolicyRequest;
         class PutRetentionPolicyRequest;
         class PutSubscriptionFilterRequest;
+        class StartQueryRequest;
+        class StopQueryRequest;
         class TagLogGroupRequest;
         class TestMetricFilterRequest;
         class UntagLogGroupRequest;
@@ -128,11 +140,15 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeLogGroupsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeLogStreamsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeLogStreamsOutcome;
         typedef Aws::Utils::Outcome<DescribeMetricFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeMetricFiltersOutcome;
+        typedef Aws::Utils::Outcome<DescribeQueriesResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeQueriesOutcome;
         typedef Aws::Utils::Outcome<DescribeResourcePoliciesResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeResourcePoliciesOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscriptionFiltersResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DescribeSubscriptionFiltersOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> DisassociateKmsKeyOutcome;
         typedef Aws::Utils::Outcome<FilterLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> FilterLogEventsOutcome;
         typedef Aws::Utils::Outcome<GetLogEventsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogEventsOutcome;
+        typedef Aws::Utils::Outcome<GetLogGroupFieldsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogGroupFieldsOutcome;
+        typedef Aws::Utils::Outcome<GetLogRecordResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetLogRecordOutcome;
+        typedef Aws::Utils::Outcome<GetQueryResultsResult, Aws::Client::AWSError<CloudWatchLogsErrors>> GetQueryResultsOutcome;
         typedef Aws::Utils::Outcome<ListTagsLogGroupResult, Aws::Client::AWSError<CloudWatchLogsErrors>> ListTagsLogGroupOutcome;
         typedef Aws::Utils::Outcome<PutDestinationResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutDestinationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutDestinationPolicyOutcome;
@@ -141,6 +157,8 @@ namespace Model
         typedef Aws::Utils::Outcome<PutResourcePolicyResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutRetentionPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> PutSubscriptionFilterOutcome;
+        typedef Aws::Utils::Outcome<StartQueryResult, Aws::Client::AWSError<CloudWatchLogsErrors>> StartQueryOutcome;
+        typedef Aws::Utils::Outcome<StopQueryResult, Aws::Client::AWSError<CloudWatchLogsErrors>> StopQueryOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TagLogGroupOutcome;
         typedef Aws::Utils::Outcome<TestMetricFilterResult, Aws::Client::AWSError<CloudWatchLogsErrors>> TestMetricFilterOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudWatchLogsErrors>> UntagLogGroupOutcome;
@@ -162,11 +180,15 @@ namespace Model
         typedef std::future<DescribeLogGroupsOutcome> DescribeLogGroupsOutcomeCallable;
         typedef std::future<DescribeLogStreamsOutcome> DescribeLogStreamsOutcomeCallable;
         typedef std::future<DescribeMetricFiltersOutcome> DescribeMetricFiltersOutcomeCallable;
+        typedef std::future<DescribeQueriesOutcome> DescribeQueriesOutcomeCallable;
         typedef std::future<DescribeResourcePoliciesOutcome> DescribeResourcePoliciesOutcomeCallable;
         typedef std::future<DescribeSubscriptionFiltersOutcome> DescribeSubscriptionFiltersOutcomeCallable;
         typedef std::future<DisassociateKmsKeyOutcome> DisassociateKmsKeyOutcomeCallable;
         typedef std::future<FilterLogEventsOutcome> FilterLogEventsOutcomeCallable;
         typedef std::future<GetLogEventsOutcome> GetLogEventsOutcomeCallable;
+        typedef std::future<GetLogGroupFieldsOutcome> GetLogGroupFieldsOutcomeCallable;
+        typedef std::future<GetLogRecordOutcome> GetLogRecordOutcomeCallable;
+        typedef std::future<GetQueryResultsOutcome> GetQueryResultsOutcomeCallable;
         typedef std::future<ListTagsLogGroupOutcome> ListTagsLogGroupOutcomeCallable;
         typedef std::future<PutDestinationOutcome> PutDestinationOutcomeCallable;
         typedef std::future<PutDestinationPolicyOutcome> PutDestinationPolicyOutcomeCallable;
@@ -175,6 +197,8 @@ namespace Model
         typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<PutRetentionPolicyOutcome> PutRetentionPolicyOutcomeCallable;
         typedef std::future<PutSubscriptionFilterOutcome> PutSubscriptionFilterOutcomeCallable;
+        typedef std::future<StartQueryOutcome> StartQueryOutcomeCallable;
+        typedef std::future<StopQueryOutcome> StopQueryOutcomeCallable;
         typedef std::future<TagLogGroupOutcome> TagLogGroupOutcomeCallable;
         typedef std::future<TestMetricFilterOutcome> TestMetricFilterOutcomeCallable;
         typedef std::future<UntagLogGroupOutcome> UntagLogGroupOutcomeCallable;
@@ -199,11 +223,15 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogGroupsRequest&, const Model::DescribeLogGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogGroupsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeLogStreamsRequest&, const Model::DescribeLogStreamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLogStreamsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeMetricFiltersRequest&, const Model::DescribeMetricFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMetricFiltersResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeQueriesRequest&, const Model::DescribeQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQueriesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeResourcePoliciesRequest&, const Model::DescribeResourcePoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeResourcePoliciesResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DescribeSubscriptionFiltersRequest&, const Model::DescribeSubscriptionFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscriptionFiltersResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::DisassociateKmsKeyRequest&, const Model::DisassociateKmsKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateKmsKeyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::FilterLogEventsRequest&, const Model::FilterLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FilterLogEventsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogEventsRequest&, const Model::GetLogEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogEventsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogGroupFieldsRequest&, const Model::GetLogGroupFieldsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogGroupFieldsResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetLogRecordRequest&, const Model::GetLogRecordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLogRecordResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::GetQueryResultsRequest&, const Model::GetQueryResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetQueryResultsResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::ListTagsLogGroupRequest&, const Model::ListTagsLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationRequest&, const Model::PutDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutDestinationPolicyRequest&, const Model::PutDestinationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDestinationPolicyResponseReceivedHandler;
@@ -212,6 +240,8 @@ namespace Model
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutRetentionPolicyRequest&, const Model::PutRetentionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionPolicyResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::PutSubscriptionFilterRequest&, const Model::PutSubscriptionFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSubscriptionFilterResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::StartQueryRequest&, const Model::StartQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryResponseReceivedHandler;
+    typedef std::function<void(const CloudWatchLogsClient*, const Model::StopQueryRequest&, const Model::StopQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TagLogGroupRequest&, const Model::TagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagLogGroupResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::TestMetricFilterRequest&, const Model::TestMetricFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TestMetricFilterResponseReceivedHandler;
     typedef std::function<void(const CloudWatchLogsClient*, const Model::UntagLogGroupRequest&, const Model::UntagLogGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagLogGroupResponseReceivedHandler;
@@ -874,6 +904,40 @@ namespace Model
         virtual void DescribeMetricFiltersAsync(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
+         * executing, or have been executed recently in this account. You can request all
+         * queries, or limit it to queries of a specific log group or queries with a
+         * certain status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeQueriesOutcome DescribeQueries(const Model::DescribeQueriesRequest& request) const;
+
+        /**
+         * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
+         * executing, or have been executed recently in this account. You can request all
+         * queries, or limit it to queries of a specific log group or queries with a
+         * certain status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeQueriesOutcomeCallable DescribeQueriesCallable(const Model::DescribeQueriesRequest& request) const;
+
+        /**
+         * <p>Returns a list of CloudWatch Logs Insights queries that are scheduled,
+         * executing, or have been executed recently in this account. You can request all
+         * queries, or limit it to queries of a specific log group or queries with a
+         * certain status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeQueries">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeQueriesAsync(const Model::DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the resource policies in this account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeResourcePolicies">AWS
          * API Reference</a></p>
@@ -1053,6 +1117,123 @@ namespace Model
         virtual void GetLogEventsAsync(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of the fields that are included in log events in the specified
+         * log group, along with the percentage of log events that contain each field. The
+         * search is limited to a time period that you specify.</p> <p>In the results,
+         * fields that start with @ are fields generated by CloudWatch Logs. For example,
+         * <code>@timestamp</code> is the timestamp of each log event.</p> <p>The response
+         * results are sorted by the frequency percentage, starting with the highest
+         * percentage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLogGroupFieldsOutcome GetLogGroupFields(const Model::GetLogGroupFieldsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the fields that are included in log events in the specified
+         * log group, along with the percentage of log events that contain each field. The
+         * search is limited to a time period that you specify.</p> <p>In the results,
+         * fields that start with @ are fields generated by CloudWatch Logs. For example,
+         * <code>@timestamp</code> is the timestamp of each log event.</p> <p>The response
+         * results are sorted by the frequency percentage, starting with the highest
+         * percentage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLogGroupFieldsOutcomeCallable GetLogGroupFieldsCallable(const Model::GetLogGroupFieldsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the fields that are included in log events in the specified
+         * log group, along with the percentage of log events that contain each field. The
+         * search is limited to a time period that you specify.</p> <p>In the results,
+         * fields that start with @ are fields generated by CloudWatch Logs. For example,
+         * <code>@timestamp</code> is the timestamp of each log event.</p> <p>The response
+         * results are sorted by the frequency percentage, starting with the highest
+         * percentage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogGroupFields">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLogGroupFieldsAsync(const Model::GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all the fields and values of a single log event. All fields are
+         * retrieved, even if the original query that produced the
+         * <code>logRecordPointer</code> retrieved only a subset of fields. Fields are
+         * returned as field name/field value pairs.</p> <p>Additionally, the entire
+         * unparsed log event is returned within <code>@message</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogRecord">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLogRecordOutcome GetLogRecord(const Model::GetLogRecordRequest& request) const;
+
+        /**
+         * <p>Retrieves all the fields and values of a single log event. All fields are
+         * retrieved, even if the original query that produced the
+         * <code>logRecordPointer</code> retrieved only a subset of fields. Fields are
+         * returned as field name/field value pairs.</p> <p>Additionally, the entire
+         * unparsed log event is returned within <code>@message</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogRecord">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLogRecordOutcomeCallable GetLogRecordCallable(const Model::GetLogRecordRequest& request) const;
+
+        /**
+         * <p>Retrieves all the fields and values of a single log event. All fields are
+         * retrieved, even if the original query that produced the
+         * <code>logRecordPointer</code> retrieved only a subset of fields. Fields are
+         * returned as field name/field value pairs.</p> <p>Additionally, the entire
+         * unparsed log event is returned within <code>@message</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetLogRecord">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLogRecordAsync(const Model::GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the results from the specified query. If the query is in progress,
+         * partial results of that current execution are returned. Only the fields
+         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
+         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetQueryResultsOutcome GetQueryResults(const Model::GetQueryResultsRequest& request) const;
+
+        /**
+         * <p>Returns the results from the specified query. If the query is in progress,
+         * partial results of that current execution are returned. Only the fields
+         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
+         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetQueryResultsOutcomeCallable GetQueryResultsCallable(const Model::GetQueryResultsRequest& request) const;
+
+        /**
+         * <p>Returns the results from the specified query. If the query is in progress,
+         * partial results of that current execution are returned. Only the fields
+         * requested in the query are returned.</p> <p> <code>GetQueryResults</code> does
+         * not start a query execution. To run a query, use .</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetQueryResults">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags for the specified log group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup">AWS
          * API Reference</a></p>
@@ -1182,9 +1363,9 @@ namespace Model
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
          * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their time
-         * stamp. The time stamp is the time the event occurred, expressed as the number of
-         * milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
+         * <p>The log events in the batch must be in chronological ordered by their
+         * timestamp. The timestamp is the time the event occurred, expressed as the number
+         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
          * the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
@@ -1210,9 +1391,9 @@ namespace Model
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
          * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their time
-         * stamp. The time stamp is the time the event occurred, expressed as the number of
-         * milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
+         * <p>The log events in the batch must be in chronological ordered by their
+         * timestamp. The timestamp is the time the event occurred, expressed as the number
+         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
          * the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
@@ -1240,9 +1421,9 @@ namespace Model
          * event.</p> </li> <li> <p>None of the log events in the batch can be more than 2
          * hours in the future.</p> </li> <li> <p>None of the log events in the batch can
          * be older than 14 days or the retention period of the log group.</p> </li> <li>
-         * <p>The log events in the batch must be in chronological ordered by their time
-         * stamp. The time stamp is the time the event occurred, expressed as the number of
-         * milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
+         * <p>The log events in the batch must be in chronological ordered by their
+         * timestamp. The timestamp is the time the event occurred, expressed as the number
+         * of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for PowerShell and
          * the AWS SDK for .NET, the timestamp is specified in .NET format:
          * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.) </p> </li> <li> <p>The
          * maximum number of log events in a batch is 10,000.</p> </li> <li> <p>A batch of
@@ -1424,6 +1605,74 @@ namespace Model
         virtual void PutSubscriptionFilterAsync(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
+         * the log group to query, the query string to use, and the time to query.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::StartQueryOutcome StartQuery(const Model::StartQueryRequest& request) const;
+
+        /**
+         * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
+         * the log group to query, the query string to use, and the time to query.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartQueryOutcomeCallable StartQueryCallable(const Model::StartQueryRequest& request) const;
+
+        /**
+         * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
+         * the log group to query, the query string to use, and the time to query.</p>
+         * <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+         * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartQueryAsync(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has
+         * already ended, the operation returns an error indicating that the specified
+         * query is not running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StopQuery">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::StopQueryOutcome StopQuery(const Model::StopQueryRequest& request) const;
+
+        /**
+         * <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has
+         * already ended, the operation returns an error indicating that the specified
+         * query is not running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StopQuery">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopQueryOutcomeCallable StopQueryCallable(const Model::StopQueryRequest& request) const;
+
+        /**
+         * <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has
+         * already ended, the operation returns an error indicating that the specified
+         * query is not running.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StopQuery">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopQueryAsync(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds or updates the specified tags for the specified log group.</p> <p>To
          * list the tags for a log group, use <a>ListTagsLogGroup</a>. To remove tags, use
          * <a>UntagLogGroup</a>.</p> <p>For more information about tags, see <a
@@ -1547,11 +1796,15 @@ namespace Model
         void DescribeLogGroupsAsyncHelper(const Model::DescribeLogGroupsRequest& request, const DescribeLogGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLogStreamsAsyncHelper(const Model::DescribeLogStreamsRequest& request, const DescribeLogStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMetricFiltersAsyncHelper(const Model::DescribeMetricFiltersRequest& request, const DescribeMetricFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeQueriesAsyncHelper(const Model::DescribeQueriesRequest& request, const DescribeQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeResourcePoliciesAsyncHelper(const Model::DescribeResourcePoliciesRequest& request, const DescribeResourcePoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscriptionFiltersAsyncHelper(const Model::DescribeSubscriptionFiltersRequest& request, const DescribeSubscriptionFiltersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateKmsKeyAsyncHelper(const Model::DisassociateKmsKeyRequest& request, const DisassociateKmsKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void FilterLogEventsAsyncHelper(const Model::FilterLogEventsRequest& request, const FilterLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLogEventsAsyncHelper(const Model::GetLogEventsRequest& request, const GetLogEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLogGroupFieldsAsyncHelper(const Model::GetLogGroupFieldsRequest& request, const GetLogGroupFieldsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLogRecordAsyncHelper(const Model::GetLogRecordRequest& request, const GetLogRecordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetQueryResultsAsyncHelper(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsLogGroupAsyncHelper(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDestinationAsyncHelper(const Model::PutDestinationRequest& request, const PutDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDestinationPolicyAsyncHelper(const Model::PutDestinationPolicyRequest& request, const PutDestinationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1560,6 +1813,8 @@ namespace Model
         void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionPolicyAsyncHelper(const Model::PutRetentionPolicyRequest& request, const PutRetentionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSubscriptionFilterAsyncHelper(const Model::PutSubscriptionFilterRequest& request, const PutSubscriptionFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartQueryAsyncHelper(const Model::StartQueryRequest& request, const StartQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopQueryAsyncHelper(const Model::StopQueryRequest& request, const StopQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagLogGroupAsyncHelper(const Model::TagLogGroupRequest& request, const TagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TestMetricFilterAsyncHelper(const Model::TestMetricFilterRequest& request, const TestMetricFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagLogGroupAsyncHelper(const Model::UntagLogGroupRequest& request, const UntagLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

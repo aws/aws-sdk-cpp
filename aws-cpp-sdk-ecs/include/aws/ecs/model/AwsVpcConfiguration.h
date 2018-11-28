@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -146,7 +146,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The security groups associated with the task or service. If you do not
      * specify a security group, the default security group for the VPC is used. There
-     * is a limit of 5 security groups able to be specified per
+     * is a limit of five security groups able to be specified per
      * <code>AwsVpcConfiguration</code>.</p> <note> <p>All specified security groups
      * must be from the same VPC.</p> </note>
      */

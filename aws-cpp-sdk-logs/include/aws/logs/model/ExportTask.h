@@ -159,41 +159,38 @@ namespace Model
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
 

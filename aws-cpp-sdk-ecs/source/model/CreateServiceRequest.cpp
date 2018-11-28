@@ -43,6 +43,7 @@ CreateServiceRequest::CreateServiceRequest() :
     m_healthCheckGracePeriodSecondsHasBeenSet(false),
     m_schedulingStrategy(SchedulingStrategy::NOT_SET),
     m_schedulingStrategyHasBeenSet(false),
+    m_deploymentControllerHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
@@ -167,6 +168,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_schedulingStrategyHasBeenSet)
   {
    payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
+  }
+
+  if(m_deploymentControllerHasBeenSet)
+  {
+   payload.WithObject("deploymentController", m_deploymentController.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

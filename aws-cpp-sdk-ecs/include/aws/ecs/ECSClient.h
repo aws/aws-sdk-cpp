@@ -370,53 +370,64 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
+         * service. The deployment is triggered by changing properties, such as the task
+         * definition or the desired count of a service, with an <a>UpdateService</a>
+         * operation.</p> <p>If a service is using the <code>ECS</code> deployment
+         * controller, the <b>minimum healthy percent</b> represents a lower limit on the
+         * number of tasks in a service that must remain in the <code>RUNNING</code> state
+         * during a deployment, as a percentage of the desired number of tasks (rounded up
+         * to the nearest integer), and while any container instances are in the
+         * <code>DRAINING</code> state if the service contains tasks using the EC2 launch
+         * type. This parameter enables you to deploy without using additional cluster
+         * capacity. For example, if your service has a desired number of four tasks and a
+         * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
+         * free up cluster capacity before starting two new tasks. Tasks for services that
+         * <i>do not</i> use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
+         * balancer are considered healthy if they are in the <code>RUNNING</code> state
+         * and they are reported as healthy by the load balancer. The default value for
+         * minimum healthy percent is 100%.</p> <p>If a service is using the
+         * <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter
+         * represents an upper limit on the number of tasks in a service that are allowed
          * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
-         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
-         * service scheduler attempts to balance tasks across Availability Zones in this
-         * manner (although you can choose a different placement strategy) with the
-         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances, giving priority to instances that have the fewest number of
-         * running tasks for this service in their respective Availability Zone. For
-         * example, if zone A has one running service task and zones B and C each have
-         * zero, valid container instances in either zone B or C are considered optimal for
-         * placement.</p> </li> <li> <p>Place the new service task on a valid container
-         * instance in an optimal Availability Zone (based on the previous steps), favoring
-         * container instances with the fewest number of running tasks for this
-         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * as a percentage of the desired number of tasks (rounded down to the nearest
+         * integer), and while any container instances are in the <code>DRAINING</code>
+         * state if the service contains tasks using the EC2 launch type. This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a desired number of four tasks and a maximum percent value of 200%, the
+         * scheduler may start four new tasks before stopping the four older tasks
+         * (provided that the cluster resources required to do this are available). The
+         * default value for maximum percent is 200%.</p> <p>If a service is using the
+         * <code>CODE_DEPLOY</code> deployment controller and tasks that use the EC2 launch
+         * type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+         * only used to define the lower and upper limit on the number of the tasks in the
+         * service that remain in the <code>RUNNING</code> state while the container
+         * instances are in the <code>DRAINING</code> state. If the tasks in the service
+         * use the Fargate launch type, the minimum healthy percent and maximum percent
+         * values are not used, although they are currently visible when describing your
+         * service.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they are in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they are
+         * in the <code>RUNNING</code> state and the container instance they are hosted on
+         * is reported as healthy by the load balancer. The default value for a replica
+         * service for <code>minimumHealthyPercent</code> is 100%. The default value for a
+         * daemon service for <code>minimumHealthyPercent</code> is 0%.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster using the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy) with the <code>placementStrategy</code>
+         * parameter):</p> <ul> <li> <p>Sort the valid container instances, giving priority
+         * to instances that have the fewest number of running tasks for this service in
+         * their respective Availability Zone. For example, if zone A has one running
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          */
@@ -434,53 +445,64 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
+         * service. The deployment is triggered by changing properties, such as the task
+         * definition or the desired count of a service, with an <a>UpdateService</a>
+         * operation.</p> <p>If a service is using the <code>ECS</code> deployment
+         * controller, the <b>minimum healthy percent</b> represents a lower limit on the
+         * number of tasks in a service that must remain in the <code>RUNNING</code> state
+         * during a deployment, as a percentage of the desired number of tasks (rounded up
+         * to the nearest integer), and while any container instances are in the
+         * <code>DRAINING</code> state if the service contains tasks using the EC2 launch
+         * type. This parameter enables you to deploy without using additional cluster
+         * capacity. For example, if your service has a desired number of four tasks and a
+         * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
+         * free up cluster capacity before starting two new tasks. Tasks for services that
+         * <i>do not</i> use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
+         * balancer are considered healthy if they are in the <code>RUNNING</code> state
+         * and they are reported as healthy by the load balancer. The default value for
+         * minimum healthy percent is 100%.</p> <p>If a service is using the
+         * <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter
+         * represents an upper limit on the number of tasks in a service that are allowed
          * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
-         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
-         * service scheduler attempts to balance tasks across Availability Zones in this
-         * manner (although you can choose a different placement strategy) with the
-         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances, giving priority to instances that have the fewest number of
-         * running tasks for this service in their respective Availability Zone. For
-         * example, if zone A has one running service task and zones B and C each have
-         * zero, valid container instances in either zone B or C are considered optimal for
-         * placement.</p> </li> <li> <p>Place the new service task on a valid container
-         * instance in an optimal Availability Zone (based on the previous steps), favoring
-         * container instances with the fewest number of running tasks for this
-         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * as a percentage of the desired number of tasks (rounded down to the nearest
+         * integer), and while any container instances are in the <code>DRAINING</code>
+         * state if the service contains tasks using the EC2 launch type. This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a desired number of four tasks and a maximum percent value of 200%, the
+         * scheduler may start four new tasks before stopping the four older tasks
+         * (provided that the cluster resources required to do this are available). The
+         * default value for maximum percent is 200%.</p> <p>If a service is using the
+         * <code>CODE_DEPLOY</code> deployment controller and tasks that use the EC2 launch
+         * type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+         * only used to define the lower and upper limit on the number of the tasks in the
+         * service that remain in the <code>RUNNING</code> state while the container
+         * instances are in the <code>DRAINING</code> state. If the tasks in the service
+         * use the Fargate launch type, the minimum healthy percent and maximum percent
+         * values are not used, although they are currently visible when describing your
+         * service.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they are in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they are
+         * in the <code>RUNNING</code> state and the container instance they are hosted on
+         * is reported as healthy by the load balancer. The default value for a replica
+         * service for <code>minimumHealthyPercent</code> is 100%. The default value for a
+         * daemon service for <code>minimumHealthyPercent</code> is 0%.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster using the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy) with the <code>placementStrategy</code>
+         * parameter):</p> <ul> <li> <p>Sort the valid container instances, giving priority
+         * to instances that have the fewest number of running tasks for this service in
+         * their respective Availability Zone. For example, if zone A has one running
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *
@@ -500,53 +522,64 @@ namespace Model
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
+         * service. The deployment is triggered by changing properties, such as the task
+         * definition or the desired count of a service, with an <a>UpdateService</a>
+         * operation.</p> <p>If a service is using the <code>ECS</code> deployment
+         * controller, the <b>minimum healthy percent</b> represents a lower limit on the
+         * number of tasks in a service that must remain in the <code>RUNNING</code> state
+         * during a deployment, as a percentage of the desired number of tasks (rounded up
+         * to the nearest integer), and while any container instances are in the
+         * <code>DRAINING</code> state if the service contains tasks using the EC2 launch
+         * type. This parameter enables you to deploy without using additional cluster
+         * capacity. For example, if your service has a desired number of four tasks and a
+         * minimum healthy percent of 50%, the scheduler may stop two existing tasks to
+         * free up cluster capacity before starting two new tasks. Tasks for services that
+         * <i>do not</i> use a load balancer are considered healthy if they are in the
+         * <code>RUNNING</code> state; tasks for services that <i>do</i> use a load
+         * balancer are considered healthy if they are in the <code>RUNNING</code> state
+         * and they are reported as healthy by the load balancer. The default value for
+         * minimum healthy percent is 100%.</p> <p>If a service is using the
+         * <code>ECS</code> deployment controller, the <b>maximum percent</b> parameter
+         * represents an upper limit on the number of tasks in a service that are allowed
          * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
-         * ports, and container instance attributes).</p> </li> <li> <p>By default, the
-         * service scheduler attempts to balance tasks across Availability Zones in this
-         * manner (although you can choose a different placement strategy) with the
-         * <code>placementStrategy</code> parameter):</p> <ul> <li> <p>Sort the valid
-         * container instances, giving priority to instances that have the fewest number of
-         * running tasks for this service in their respective Availability Zone. For
-         * example, if zone A has one running service task and zones B and C each have
-         * zero, valid container instances in either zone B or C are considered optimal for
-         * placement.</p> </li> <li> <p>Place the new service task on a valid container
-         * instance in an optimal Availability Zone (based on the previous steps), favoring
-         * container instances with the fewest number of running tasks for this
-         * service.</p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+         * as a percentage of the desired number of tasks (rounded down to the nearest
+         * integer), and while any container instances are in the <code>DRAINING</code>
+         * state if the service contains tasks using the EC2 launch type. This parameter
+         * enables you to define the deployment batch size. For example, if your service
+         * has a desired number of four tasks and a maximum percent value of 200%, the
+         * scheduler may start four new tasks before stopping the four older tasks
+         * (provided that the cluster resources required to do this are available). The
+         * default value for maximum percent is 200%.</p> <p>If a service is using the
+         * <code>CODE_DEPLOY</code> deployment controller and tasks that use the EC2 launch
+         * type, the <b>minimum healthy percent</b> and <b>maximum percent</b> values are
+         * only used to define the lower and upper limit on the number of the tasks in the
+         * service that remain in the <code>RUNNING</code> state while the container
+         * instances are in the <code>DRAINING</code> state. If the tasks in the service
+         * use the Fargate launch type, the minimum healthy percent and maximum percent
+         * values are not used, although they are currently visible when describing your
+         * service.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they are in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they are
+         * in the <code>RUNNING</code> state and the container instance they are hosted on
+         * is reported as healthy by the load balancer. The default value for a replica
+         * service for <code>minimumHealthyPercent</code> is 100%. The default value for a
+         * daemon service for <code>minimumHealthyPercent</code> is 0%.</p> <p>When the
+         * service scheduler launches new tasks, it determines task placement in your
+         * cluster using the following logic:</p> <ul> <li> <p>Determine which of the
+         * container instances in your cluster can support your service's task definition
+         * (for example, they have the required CPU, memory, ports, and container instance
+         * attributes).</p> </li> <li> <p>By default, the service scheduler attempts to
+         * balance tasks across Availability Zones in this manner (although you can choose
+         * a different placement strategy) with the <code>placementStrategy</code>
+         * parameter):</p> <ul> <li> <p>Sort the valid container instances, giving priority
+         * to instances that have the fewest number of running tasks for this service in
+         * their respective Availability Zone. For example, if zone A has one running
+         * service task and zones B and C each have zero, valid container instances in
+         * either zone B or C are considered optimal for placement.</p> </li> <li> <p>Place
+         * the new service task on a valid container instance in an optimal Availability
+         * Zone (based on the previous steps), favoring container instances with the fewest
+         * number of running tasks for this service.</p> </li> </ul> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService">AWS
          * API Reference</a></p>
          *
@@ -792,9 +825,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -813,9 +846,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -836,9 +869,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -1686,13 +1719,13 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -1705,13 +1738,13 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -1726,13 +1759,13 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
@@ -1946,9 +1979,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -1989,9 +2022,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -2034,9 +2067,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -2053,23 +2086,31 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -2121,23 +2162,31 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily
@@ -2191,23 +2240,31 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
-         * <code>my_image:latest</code>), you do not need to create a new revision of your
-         * task definition. You can update the service using the
-         * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
-         * pull the current image/tag combination from your repository when they start.</p>
-         * </note> <p>You can also update the deployment configuration of a service. When a
-         * deployment is triggered by updating the task definition of a service, the
-         * service scheduler uses the deployment configuration parameters,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>You can add to or subtract
+         * from the number of instantiations of a task definition in a service by
+         * specifying the cluster that the service is running in and a new
+         * <code>desiredCount</code> parameter.</p> <p>If you have updated the Docker image
+         * of your application, you can create a new task definition with that image and
+         * deploy it to your service. The service scheduler uses the minimum healthy
+         * percent and maximum percent parameters (in the service's deployment
+         * configuration) to determine the deployment strategy.</p> <note> <p>If your
+         * updated Docker image uses the same tag as what is in the existing task
+         * definition for your service (for example, <code>my_image:latest</code>), you do
+         * not need to create a new revision of your task definition. You can update the
+         * service using the <code>forceNewDeployment</code> option. The new tasks launched
+         * by the deployment pull the current image/tag combination from your repository
+         * when they start.</p> </note> <p>You can also update the deployment configuration
+         * of a service. When a deployment is triggered by updating the task definition of
+         * a service, the service scheduler uses the deployment configuration parameters,
          * <code>minimumHealthyPercent</code> and <code>maximumPercent</code>, to determine
          * the deployment strategy.</p> <ul> <li> <p>If <code>minimumHealthyPercent</code>
          * is below 100%, the scheduler can ignore <code>desiredCount</code> temporarily

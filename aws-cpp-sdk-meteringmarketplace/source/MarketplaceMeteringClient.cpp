@@ -29,6 +29,7 @@
 #include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>
+#include <aws/meteringmarketplace/model/RegisterUsageRequest.h>
 #include <aws/meteringmarketplace/model/ResolveCustomerRequest.h>
 
 using namespace Aws;
@@ -163,6 +164,41 @@ void MarketplaceMeteringClient::MeterUsageAsync(const MeterUsageRequest& request
 void MarketplaceMeteringClient::MeterUsageAsyncHelper(const MeterUsageRequest& request, const MeterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, MeterUsage(request), context);
+}
+
+RegisterUsageOutcome MarketplaceMeteringClient::RegisterUsage(const RegisterUsageRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterUsageOutcome(RegisterUsageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterUsageOutcome(outcome.GetError());
+  }
+}
+
+RegisterUsageOutcomeCallable MarketplaceMeteringClient::RegisterUsageCallable(const RegisterUsageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterUsage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MarketplaceMeteringClient::RegisterUsageAsync(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterUsageAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceMeteringClient::RegisterUsageAsyncHelper(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterUsage(request), context);
 }
 
 ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const
