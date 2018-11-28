@@ -69,29 +69,58 @@ ${className}::~${className}()
 
 void ${className}::init(const ClientConfiguration& config)
 {
-#if($virtualAddressingSupported || $accountIdInHostnameSupported)
-    if(config.endpointOverride.empty())
-    {
-        m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
-    }
-    else
-    {
-        m_baseUri = config.endpointOverride;
-    }
-    m_scheme = SchemeMapper::ToString(config.scheme);
-#else
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+#if($virtualAddressingSupported || $accountIdInHostnameSupported || $metadata.hasEndpointTrait)
+  m_scheme = m_configScheme;
+  if (config.endpointOverride.empty())
   {
-    ss << ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+      m_baseUri = ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
+#else
+  if (config.endpointOverride.empty())
+  {
+      m_uri = m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(config.region, config.useDualStack);
+  }
+  else
+  {
+      OverrideEndpoint(config.endpointOverride);
+  }
+#end
+#if($metadata.hasEndpointTrait)
+  m_enableHostPrefixInjection = config.enableHostPrefixInjection;
+#end
+}
 
-  m_uri = ss.str();
+void ${className}::OverrideEndpoint(const Aws::String& endpoint)
+{
+#if($virtualAddressingSupported || $accountIdInHostnameSupported || $metadata.hasEndpointTrait)
+  if (endpoint.compare(0, 7, "http://") == 0)
+  {
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
+  }
+  else
+  {
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
+  }
+#else
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
 #end
 }

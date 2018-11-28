@@ -14,6 +14,7 @@
 */
 
 #include <aws/core/utils/DNS.h>
+#include <aws/core/utils/StringUtils.h>
 #include <ctype.h>
 
 namespace Aws
@@ -48,6 +49,18 @@ namespace Aws
             }
 
             return true;
+        }
+
+        bool IsValidHost(const Aws::String& host)
+        {
+            // Valid DNS hostnames are composed of valid DNS labels separated by a period.
+            auto labels = StringUtils::Split(host, '.');
+            if (labels.empty()) 
+            {
+                return false;
+            }
+
+            return !std::any_of(labels.begin(), labels.end(), [](const Aws::String& label){ return !IsValidDnsLabel(label); });
         }
     }
 }

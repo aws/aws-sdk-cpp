@@ -39,4 +39,5 @@ public class Metadata {
     private Map<String, String> additionalHeaders;
     private boolean standalone;
     private String serviceId;
+    private boolean hasEndpointTrait;
 }

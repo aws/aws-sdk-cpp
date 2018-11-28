@@ -1,3 +1,8 @@
+#if($metadata.hasEndpointTrait)
+#set($uriName = "m_baseUri")
+#else
+#set($uriName = "m_uri")
+#end
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
@@ -6,7 +11,31 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
-  Aws::Http::URI uri = m_uri;
+#if($metadata.hasEndpointTrait)
+#if($operation.hasEndpointTrait)
+  Aws::Http::URI uri = ${uriName};
+  if (!m_enableHostPrefixInjection)
+  {
+#foreach($member in $operation.endpoint.getMemberReferences())
+    if (request.Get${member}().empty())
+    {
+      AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
+      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+#end
+    uri = m_scheme + "://" + ${operation.endpoint.constructHostPrefixString("request")} + ${uriName};
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
+      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+  }
+#else
+  Aws::Http::URI uri = m_configScheme + "://" + ${uriName};
+#end
+#else
+  Aws::Http::URI uri = ${uriName};
+#end
 #set($uriPartString = "${uriParts.get(0)}")
 #set($queryStart = false)
 #if($uriPartString.contains("?"))
@@ -94,7 +123,7 @@ void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
   Aws::StringStream ss;
-  ss << m_uri << "${operation.http.requestUri}";
+  ss << ${uriName} << "${operation.http.requestUri}";
 
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");

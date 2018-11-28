@@ -58,7 +58,8 @@ ClientConfiguration::ClientConfiguration() :
     httpLibOverride(Aws::Http::TransferLibType::DEFAULT_CLIENT),
     followRedirects(true),
     disableExpectHeader(false),
-    enableClockSkewAdjustment(true)
+    enableClockSkewAdjustment(true),
+    enableHostPrefixInjection(true)
 {
 }
 

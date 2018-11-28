@@ -35,4 +35,6 @@ public class Operation {
     private String authtype;
     private String authorizer;
     private boolean eventStream;
+    private boolean hasEndpointTrait;
+    private Endpoint endpoint;
 }

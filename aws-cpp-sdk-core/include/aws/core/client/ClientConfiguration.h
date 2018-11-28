@@ -174,6 +174,11 @@ namespace Aws
              * If set to true clock skew will be adjusted after each http attempt, default to true.
              */
             bool enableClockSkewAdjustment;
+
+            /**
+             * enable host prefix injection (for service whose endpoint is injectable. e.g. servicediscovery, you can dsiable it for testing purpose). Default to true, enabled.
+             */
+            bool enableHostPrefixInjection;
         };
 
     } // namespace Client

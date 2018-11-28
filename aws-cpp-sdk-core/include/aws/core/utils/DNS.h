@@ -22,5 +22,7 @@ namespace Aws
     namespace Utils
     {
         AWS_CORE_API bool IsValidDnsLabel(const Aws::String& label);
+
+        AWS_CORE_API bool IsValidHost(const Aws::String& host);
     }
 }

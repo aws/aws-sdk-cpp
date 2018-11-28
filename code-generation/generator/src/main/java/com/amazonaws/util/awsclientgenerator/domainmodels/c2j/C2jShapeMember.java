@@ -30,4 +30,5 @@ public class C2jShapeMember {
     boolean deprecated;
     boolean flattened;
     boolean eventpayload;
+    boolean hostLabel;
 }

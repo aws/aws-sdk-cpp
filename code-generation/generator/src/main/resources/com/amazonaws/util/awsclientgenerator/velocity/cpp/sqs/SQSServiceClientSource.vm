@@ -13,6 +13,9 @@
 \#include <aws/core/utils/xml/XmlSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -29,16 +32,47 @@ static const char* ALLOCATION_TAG = "${className}";
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
+#if($metadata.hasEndpointTrait)
+#set($uriName = "m_baseUri")
+#else
+#set($uriName = "m_uri")
+#end
+
 #foreach($operation in $serviceModel.operations)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
 #if($operation.name == "CreateQueue" || $operation.name == "ListQueues" || $operation.name == "GetQueueUrl")
-
   Aws::StringStream ss;
+#if($metadata.hasEndpointTrait)
+#if($operation.hasEndpointTrait)
+  if (!m_enableHostPrefixInjection)
+  {
+#foreach($member in $operation.endpoint.getMemberReferences())
+    if (request.Get${member}().empty())
+    {
+      AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
+      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+    }
+#end
+    Aws::Http::URI uri = m_scheme + "://" + ${operation.endpoint.constructHostPrefixString("request")} + ${uriName};
+    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+    {
+      AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
+      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+    }
+    ss << uri.GetURIString();
+  }
+#else
+  ss << m_configScheme << "://" << ${uriName};
+#end
+#else
+  ss << ${uriName};
+#end
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
-  ss << m_uri << "${uriParts.get(0)}";
+
+  ss << "${uriParts.get(0)}";
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
   ss << request.Get${CppViewHelper.convertToUpperCamel($uriVars.get($varIndex))}();

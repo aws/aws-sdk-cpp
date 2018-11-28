@@ -31,6 +31,7 @@ public class ShapeMember {
     boolean isFlattened;
     boolean isCustomizedQuery;
     boolean isEventPayload;
+    boolean hostLabel;
 
     public boolean isUsedForHeader() {
         return "header".equals(location) || "headers".equals(location);
