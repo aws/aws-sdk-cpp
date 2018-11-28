@@ -961,74 +961,74 @@ namespace Model
 
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p> <p>
-     * <b>Amazon Aurora</b> </p> <p>Not applicable. The associated list of EC2 VPC
-     * security groups is managed by the DB cluster. For more information, see
-     * <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC security group for
-     * the DB subnet group's VPC.</p>
+     * <p>A list of Amazon EC2 VPC security groups to associate with this DB
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. The associated
+     * list of EC2 VPC security groups is managed by the DB cluster. For more
+     * information, see <a>CreateDBCluster</a>.</p> <p>Default: The default EC2 VPC
+     * security group for the DB subnet group's VPC.</p>
      */
     inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
 
@@ -1548,20 +1548,23 @@ namespace Model
 
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
+     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
+     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
-     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     * <p>A value that specifies whether the DB instance is a Multi-AZ deployment. You
+     * can't set the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.</p>
      */
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

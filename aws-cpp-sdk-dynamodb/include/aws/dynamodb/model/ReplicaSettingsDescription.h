@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ReplicaStatus.h>
+#include <aws/dynamodb/model/BillingModeSummary.h>
 #include <aws/dynamodb/model/AutoScalingSettingsDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsDescription.h>
@@ -131,6 +132,32 @@ namespace Model
      * for use.</p> </li> </ul>
      */
     inline ReplicaSettingsDescription& WithReplicaStatus(ReplicaStatus&& value) { SetReplicaStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline const BillingModeSummary& GetReplicaBillingModeSummary() const{ return m_replicaBillingModeSummary; }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline void SetReplicaBillingModeSummary(const BillingModeSummary& value) { m_replicaBillingModeSummaryHasBeenSet = true; m_replicaBillingModeSummary = value; }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline void SetReplicaBillingModeSummary(BillingModeSummary&& value) { m_replicaBillingModeSummaryHasBeenSet = true; m_replicaBillingModeSummary = std::move(value); }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaBillingModeSummary(const BillingModeSummary& value) { SetReplicaBillingModeSummary(value); return *this;}
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaBillingModeSummary(BillingModeSummary&& value) { SetReplicaBillingModeSummary(std::move(value)); return *this;}
 
 
     /**
@@ -286,6 +313,9 @@ namespace Model
 
     ReplicaStatus m_replicaStatus;
     bool m_replicaStatusHasBeenSet;
+
+    BillingModeSummary m_replicaBillingModeSummary;
+    bool m_replicaBillingModeSummaryHasBeenSet;
 
     long long m_replicaProvisionedReadCapacityUnits;
     bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;

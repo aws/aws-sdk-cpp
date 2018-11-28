@@ -1866,9 +1866,11 @@ namespace Model
          */
         virtual void UpdateStreamingDistribution2018_11_05Async(const Model::UpdateStreamingDistribution2018_11_05Request& request, const UpdateStreamingDistribution2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+      
+        void OverrideEndpoint(const Aws::String& endpoint);
 
   private:
-    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
         void CreateCloudFrontOriginAccessIdentity2018_11_05AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2018_11_05Request& request, const CreateCloudFrontOriginAccessIdentity2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1917,8 +1919,9 @@ namespace Model
         void UpdatePublicKey2018_11_05AsyncHelper(const Model::UpdatePublicKey2018_11_05Request& request, const UpdatePublicKey2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStreamingDistribution2018_11_05AsyncHelper(const Model::UpdateStreamingDistribution2018_11_05Request& request, const UpdateStreamingDistribution2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
-    Aws::String m_uri;
-    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+        Aws::String m_uri;
+        Aws::String m_configScheme;
+        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 
 } // namespace CloudFront

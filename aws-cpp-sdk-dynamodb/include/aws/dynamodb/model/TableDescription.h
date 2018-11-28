@@ -20,6 +20,7 @@
 #include <aws/dynamodb/model/TableStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/ProvisionedThroughputDescription.h>
+#include <aws/dynamodb/model/BillingModeSummary.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/RestoreSummary.h>
 #include <aws/dynamodb/model/SSEDescription.h>
@@ -514,6 +515,32 @@ namespace Model
      * <p>Unique identifier for the table for which the backup was created. </p>
      */
     inline TableDescription& WithTableId(const char* value) { SetTableId(value); return *this;}
+
+
+    /**
+     * <p>Contains the details for the read/write capacity mode.</p>
+     */
+    inline const BillingModeSummary& GetBillingModeSummary() const{ return m_billingModeSummary; }
+
+    /**
+     * <p>Contains the details for the read/write capacity mode.</p>
+     */
+    inline void SetBillingModeSummary(const BillingModeSummary& value) { m_billingModeSummaryHasBeenSet = true; m_billingModeSummary = value; }
+
+    /**
+     * <p>Contains the details for the read/write capacity mode.</p>
+     */
+    inline void SetBillingModeSummary(BillingModeSummary&& value) { m_billingModeSummaryHasBeenSet = true; m_billingModeSummary = std::move(value); }
+
+    /**
+     * <p>Contains the details for the read/write capacity mode.</p>
+     */
+    inline TableDescription& WithBillingModeSummary(const BillingModeSummary& value) { SetBillingModeSummary(value); return *this;}
+
+    /**
+     * <p>Contains the details for the read/write capacity mode.</p>
+     */
+    inline TableDescription& WithBillingModeSummary(BillingModeSummary&& value) { SetBillingModeSummary(std::move(value)); return *this;}
 
 
     /**
@@ -1305,6 +1332,9 @@ namespace Model
 
     Aws::String m_tableId;
     bool m_tableIdHasBeenSet;
+
+    BillingModeSummary m_billingModeSummary;
+    bool m_billingModeSummaryHasBeenSet;
 
     Aws::Vector<LocalSecondaryIndexDescription> m_localSecondaryIndexes;
     bool m_localSecondaryIndexesHasBeenSet;

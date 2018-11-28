@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 UpdateGlobalTableSettingsRequest::UpdateGlobalTableSettingsRequest() : 
     m_globalTableNameHasBeenSet(false),
+    m_globalTableBillingMode(BillingMode::NOT_SET),
+    m_globalTableBillingModeHasBeenSet(false),
     m_globalTableProvisionedWriteCapacityUnits(0),
     m_globalTableProvisionedWriteCapacityUnitsHasBeenSet(false),
     m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet(false),
@@ -40,6 +42,11 @@ Aws::String UpdateGlobalTableSettingsRequest::SerializePayload() const
   {
    payload.WithString("GlobalTableName", m_globalTableName);
 
+  }
+
+  if(m_globalTableBillingModeHasBeenSet)
+  {
+   payload.WithString("GlobalTableBillingMode", BillingModeMapper::GetNameForBillingMode(m_globalTableBillingMode));
   }
 
   if(m_globalTableProvisionedWriteCapacityUnitsHasBeenSet)

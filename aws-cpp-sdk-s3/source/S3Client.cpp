@@ -24,6 +24,9 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3Endpoint.h>
@@ -162,17 +165,36 @@ S3Client::~S3Client()
 
 void S3Client::init(const ClientConfiguration& config)
 {
-    if(config.endpointOverride.empty())
-    {
-        m_baseUri = S3Endpoint::ForRegion(config.region, config.useDualStack);
-    }
-    else
-    {
-        m_baseUri = config.endpointOverride;
-    }
-    m_scheme = SchemeMapper::ToString(config.scheme);
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  m_scheme = m_configScheme;
+  if (config.endpointOverride.empty())
+  {
+      m_baseUri = S3Endpoint::ForRegion(config.region, config.useDualStack);
+  }
+  else
+  {
+      OverrideEndpoint(config.endpointOverride);
+  }
 }
 
+void S3Client::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0)
+  {
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
+  }
+  else
+  {
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
+  }
+}
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
   Aws::StringStream ss;

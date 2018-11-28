@@ -203,10 +203,12 @@ namespace Aws
          */
         virtual void PutPublicAccessBlockAsync(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        
+        void OverrideEndpoint(const Aws::String& endpoint);
 
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
-        Aws::String ComputeEndpointString(const Aws::String& bucket) const;
+        Aws::String ComputeEndpointString(const Aws::String& accountId) const;
         Aws::String ComputeEndpointString() const;
 
         /**Async helpers**/
@@ -216,6 +218,7 @@ namespace Aws
 
         Aws::String m_baseUri;
         Aws::String m_scheme;
+        Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
     };
 

@@ -108,6 +108,38 @@ namespace Model
 
 
     /**
+     * <p>The total number of read capacity units consumed by the operation.</p>
+     */
+    inline double GetReadCapacityUnits() const{ return m_readCapacityUnits; }
+
+    /**
+     * <p>The total number of read capacity units consumed by the operation.</p>
+     */
+    inline void SetReadCapacityUnits(double value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
+
+    /**
+     * <p>The total number of read capacity units consumed by the operation.</p>
+     */
+    inline ConsumedCapacity& WithReadCapacityUnits(double value) { SetReadCapacityUnits(value); return *this;}
+
+
+    /**
+     * <p>The total number of write capacity units consumed by the operation.</p>
+     */
+    inline double GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+
+    /**
+     * <p>The total number of write capacity units consumed by the operation.</p>
+     */
+    inline void SetWriteCapacityUnits(double value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
+
+    /**
+     * <p>The total number of write capacity units consumed by the operation.</p>
+     */
+    inline ConsumedCapacity& WithWriteCapacityUnits(double value) { SetWriteCapacityUnits(value); return *this;}
+
+
+    /**
      * <p>The amount of throughput consumed on the table affected by the operation.</p>
      */
     inline const Capacity& GetTable() const{ return m_table; }
@@ -273,6 +305,12 @@ namespace Model
 
     double m_capacityUnits;
     bool m_capacityUnitsHasBeenSet;
+
+    double m_readCapacityUnits;
+    bool m_readCapacityUnitsHasBeenSet;
+
+    double m_writeCapacityUnits;
+    bool m_writeCapacityUnitsHasBeenSet;
 
     Capacity m_table;
     bool m_tableHasBeenSet;

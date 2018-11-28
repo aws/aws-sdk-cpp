@@ -24,6 +24,9 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/sqs/SQSClient.h>
 #include <aws/sqs/SQSEndpoint.h>
 #include <aws/sqs/SQSErrorMarshaller.h>
@@ -98,19 +101,27 @@ SQSClient::~SQSClient()
 
 void SQSClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << SQSEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + SQSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
+}
 
-  m_uri = ss.str();
+void SQSClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
 }
 
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const
@@ -208,9 +219,10 @@ void SQSClient::ChangeMessageVisibilityBatchAsyncHelper(const ChangeMessageVisib
 
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
-
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+
+  ss << "/";
 
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -367,9 +379,10 @@ void SQSClient::GetQueueAttributesAsyncHelper(const GetQueueAttributesRequest& r
 
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
-
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+
+  ss << "/";
 
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
@@ -464,9 +477,10 @@ void SQSClient::ListQueueTagsAsyncHelper(const ListQueueTagsRequest& request, co
 
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
-
   Aws::StringStream ss;
-  ss << m_uri << "/";
+  ss << m_uri;
+
+  ss << "/";
 
   XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())

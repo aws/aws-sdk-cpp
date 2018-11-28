@@ -18,6 +18,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
@@ -720,10 +721,68 @@ namespace Model
 
 
     /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline CreateTableRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline CreateTableRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
-     * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-     * see <a
+     * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
+     * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
+     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -732,8 +791,10 @@ namespace Model
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
-     * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-     * see <a
+     * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
+     * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
+     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -742,8 +803,10 @@ namespace Model
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
-     * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-     * see <a
+     * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
+     * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
+     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -752,8 +815,10 @@ namespace Model
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
-     * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-     * see <a
+     * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
+     * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
+     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -762,8 +827,10 @@ namespace Model
     /**
      * <p>Represents the provisioned throughput settings for a specified table or
      * index. The settings can be modified using the <code>UpdateTable</code>
-     * operation.</p> <p>For current minimum and maximum provisioned throughput values,
-     * see <a
+     * operation.</p> <p> If you set BillingMode as <code>PROVISIONED</code>, you must
+     * specify this property. If you set BillingMode as <code>PAY_PER_REQUEST</code>,
+     * you cannot specify this property. </p> <p>For current minimum and maximum
+     * provisioned throughput values, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
@@ -897,6 +964,9 @@ namespace Model
 
     Aws::Vector<GlobalSecondaryIndex> m_globalSecondaryIndexes;
     bool m_globalSecondaryIndexesHasBeenSet;
+
+    BillingMode m_billingMode;
+    bool m_billingModeHasBeenSet;
 
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;

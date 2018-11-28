@@ -1520,43 +1520,43 @@ namespace Model
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, or <code>parallelquery</code>.</p>
+     * <code>serverless</code>, <code>parallelquery</code>, or <code>global</code>.</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
 
@@ -1612,6 +1612,49 @@ namespace Model
      * </p>
      */
     inline CreateDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p> The global cluster ID of an Aurora cluster that becomes the primary cluster
+     * in the new global database cluster. </p>
+     */
+    inline CreateDBClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 
   private:
 
@@ -1695,6 +1738,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::String m_globalClusterIdentifier;
+    bool m_globalClusterIdentifierHasBeenSet;
   };
 
 } // namespace Model

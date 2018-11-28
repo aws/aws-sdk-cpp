@@ -118,12 +118,12 @@ namespace Model
      * operation:</p> <ul> <li> <p>If <code>Exists</code> is <code>true</code>,
      * DynamoDB will check to see if that attribute value already exists in the table.
      * If it is found, then the operation succeeds. If it is not found, the operation
-     * fails with a <code>ConditionalCheckFailedException</code>.</p> </li> <li> <p>If
+     * fails with a <code>ConditionCheckFailedException</code>.</p> </li> <li> <p>If
      * <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute
      * value does not exist in the table. If in fact the value does not exist, then the
      * assumption is valid and the operation succeeds. If the value is found, despite
      * the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.</p> </li> </ul> <p>The default
+     * <code>ConditionCheckFailedException</code>.</p> </li> </ul> <p>The default
      * setting for <code>Exists</code> is <code>true</code>. If you supply a
      * <code>Value</code> all by itself, DynamoDB assumes the attribute exists: You
      * don't have to set <code>Exists</code> to <code>true</code>, because it is
@@ -142,12 +142,12 @@ namespace Model
      * operation:</p> <ul> <li> <p>If <code>Exists</code> is <code>true</code>,
      * DynamoDB will check to see if that attribute value already exists in the table.
      * If it is found, then the operation succeeds. If it is not found, the operation
-     * fails with a <code>ConditionalCheckFailedException</code>.</p> </li> <li> <p>If
+     * fails with a <code>ConditionCheckFailedException</code>.</p> </li> <li> <p>If
      * <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute
      * value does not exist in the table. If in fact the value does not exist, then the
      * assumption is valid and the operation succeeds. If the value is found, despite
      * the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.</p> </li> </ul> <p>The default
+     * <code>ConditionCheckFailedException</code>.</p> </li> </ul> <p>The default
      * setting for <code>Exists</code> is <code>true</code>. If you supply a
      * <code>Value</code> all by itself, DynamoDB assumes the attribute exists: You
      * don't have to set <code>Exists</code> to <code>true</code>, because it is
@@ -166,12 +166,12 @@ namespace Model
      * operation:</p> <ul> <li> <p>If <code>Exists</code> is <code>true</code>,
      * DynamoDB will check to see if that attribute value already exists in the table.
      * If it is found, then the operation succeeds. If it is not found, the operation
-     * fails with a <code>ConditionalCheckFailedException</code>.</p> </li> <li> <p>If
+     * fails with a <code>ConditionCheckFailedException</code>.</p> </li> <li> <p>If
      * <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute
      * value does not exist in the table. If in fact the value does not exist, then the
      * assumption is valid and the operation succeeds. If the value is found, despite
      * the assumption that it does not exist, the operation fails with a
-     * <code>ConditionalCheckFailedException</code>.</p> </li> </ul> <p>The default
+     * <code>ConditionCheckFailedException</code>.</p> </li> </ul> <p>The default
      * setting for <code>Exists</code> is <code>true</code>. If you supply a
      * <code>Value</code> all by itself, DynamoDB assumes the attribute exists: You
      * don't have to set <code>Exists</code> to <code>true</code>, because it is

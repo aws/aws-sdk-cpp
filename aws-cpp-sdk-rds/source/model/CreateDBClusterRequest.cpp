@@ -53,7 +53,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_globalClusterIdentifierHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_globalClusterIdentifierHasBeenSet)
+  {
+    ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/GlobalTableGlobalSecondaryIndexSettingsUpdate.h>
@@ -82,6 +83,42 @@ namespace Model
      * <p>The name of the global table</p>
      */
     inline UpdateGlobalTableSettingsRequest& WithGlobalTableName(const char* value) { SetGlobalTableName(value); return *this;}
+
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline const BillingMode& GetGlobalTableBillingMode() const{ return m_globalTableBillingMode; }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline void SetGlobalTableBillingMode(const BillingMode& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = value; }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline void SetGlobalTableBillingMode(BillingMode&& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = std::move(value); }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(const BillingMode& value) { SetGlobalTableBillingMode(value); return *this;}
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(BillingMode&& value) { SetGlobalTableBillingMode(std::move(value)); return *this;}
 
 
     /**
@@ -223,6 +260,9 @@ namespace Model
 
     Aws::String m_globalTableName;
     bool m_globalTableNameHasBeenSet;
+
+    BillingMode m_globalTableBillingMode;
+    bool m_globalTableBillingModeHasBeenSet;
 
     long long m_globalTableProvisionedWriteCapacityUnits;
     bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet;

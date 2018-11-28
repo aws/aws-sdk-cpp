@@ -84,7 +84,9 @@ DBCluster::DBCluster() :
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationInfoHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_httpEndpointEnabled(false),
+    m_httpEndpointEnabledHasBeenSet(false)
 {
 }
 
@@ -142,7 +144,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationInfoHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_httpEndpointEnabled(false),
+    m_httpEndpointEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -465,6 +469,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
+    XmlNode httpEndpointEnabledNode = resultNode.FirstChild("HttpEndpointEnabled");
+    if(!httpEndpointEnabledNode.IsNull())
+    {
+      m_httpEndpointEnabled = StringUtils::ConvertToBool(StringUtils::Trim(httpEndpointEnabledNode.GetText().c_str()).c_str());
+      m_httpEndpointEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -734,6 +744,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if(m_httpEndpointEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -955,6 +970,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if(m_httpEndpointEnabledHasBeenSet)
+  {
+      oStream << location << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
   }
 }
 

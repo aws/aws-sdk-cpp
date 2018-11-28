@@ -2955,6 +2955,8 @@ namespace Aws
 
         virtual bool MultipartUploadSupported() const;
 
+        void OverrideEndpoint(const Aws::String& endpoint);
+
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         Aws::String ComputeEndpointString(const Aws::String& bucket) const;
@@ -3048,6 +3050,7 @@ namespace Aws
 
         Aws::String m_baseUri;
         Aws::String m_scheme;
+        Aws::String m_configScheme;
         std::shared_ptr<Utils::Threading::Executor> m_executor;
         bool m_useVirtualAdressing;
     };

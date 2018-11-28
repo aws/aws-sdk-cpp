@@ -18,6 +18,7 @@
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/SSESpecification.h>
@@ -145,6 +146,77 @@ namespace Model
      * <p>The name of the table to be updated.</p>
      */
     inline UpdateTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline UpdateTableRequest& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. When switching from pay-per-request to provisioned capacity, initial
+     * provisioned capacity values must be set. The initial provisioned capacity values
+     * are estimated based on the consumed read and write capacity of your table and
+     * global secondary indexes over the past 30 minutes.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the billing mode to <code>PROVISIONED</code>. We
+     * recommend using <code>PROVISIONED</code> for predictable workloads.</p> </li>
+     * <li> <p> <code>PAY_PER_REQUEST</code> - Sets the billing mode to
+     * <code>PAY_PER_REQUEST</code>. We recommend using <code>PAY_PER_REQUEST</code>
+     * for unpredictable workloads. </p> </li> </ul>
+     */
+    inline UpdateTableRequest& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
 
 
     /**
@@ -338,6 +410,9 @@ namespace Model
 
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet;
+
+    BillingMode m_billingMode;
+    bool m_billingModeHasBeenSet;
 
     ProvisionedThroughput m_provisionedThroughput;
     bool m_provisionedThroughputHasBeenSet;

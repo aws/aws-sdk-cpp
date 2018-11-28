@@ -32,6 +32,10 @@ ConsumedCapacity::ConsumedCapacity() :
     m_tableNameHasBeenSet(false),
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false),
+    m_readCapacityUnits(0.0),
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0.0),
+    m_writeCapacityUnitsHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false)
@@ -42,6 +46,10 @@ ConsumedCapacity::ConsumedCapacity(JsonView jsonValue) :
     m_tableNameHasBeenSet(false),
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false),
+    m_readCapacityUnits(0.0),
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0.0),
+    m_writeCapacityUnitsHasBeenSet(false),
     m_tableHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false)
@@ -63,6 +71,20 @@ ConsumedCapacity& ConsumedCapacity::operator =(JsonView jsonValue)
     m_capacityUnits = jsonValue.GetDouble("CapacityUnits");
 
     m_capacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReadCapacityUnits"))
+  {
+    m_readCapacityUnits = jsonValue.GetDouble("ReadCapacityUnits");
+
+    m_readCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WriteCapacityUnits"))
+  {
+    m_writeCapacityUnits = jsonValue.GetDouble("WriteCapacityUnits");
+
+    m_writeCapacityUnitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Table"))
@@ -108,6 +130,18 @@ JsonValue ConsumedCapacity::Jsonize() const
   if(m_capacityUnitsHasBeenSet)
   {
    payload.WithDouble("CapacityUnits", m_capacityUnits);
+
+  }
+
+  if(m_readCapacityUnitsHasBeenSet)
+  {
+   payload.WithDouble("ReadCapacityUnits", m_readCapacityUnits);
+
+  }
+
+  if(m_writeCapacityUnitsHasBeenSet)
+  {
+   payload.WithDouble("WriteCapacityUnits", m_writeCapacityUnits);
 
   }
 

@@ -56,7 +56,8 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
 
@@ -66,7 +67,8 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
 
@@ -76,7 +78,8 @@ namespace Model
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline ProvisionedThroughput& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
 
@@ -86,7 +89,8 @@ namespace Model
      * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
 
@@ -95,7 +99,8 @@ namespace Model
      * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
 
@@ -104,7 +109,8 @@ namespace Model
      * <code>ThrottlingException</code>. For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If read/write capacity mode is <code>PAY_PER_REQUEST</code>
+     * the value is set to 0.</p>
      */
     inline ProvisionedThroughput& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
 

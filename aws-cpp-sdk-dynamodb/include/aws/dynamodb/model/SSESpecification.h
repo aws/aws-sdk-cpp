@@ -51,60 +51,71 @@ namespace Model
 
     /**
      * <p>Indicates whether server-side encryption is enabled (true) or disabled
-     * (false) on the table.</p>
+     * (false) on the table. If enabled (true), server-side encryption type is set to
+     * <code>KMS</code>. If disabled (false) or not specified, server-side encryption
+     * is set to AWS owned CMK.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
      * <p>Indicates whether server-side encryption is enabled (true) or disabled
-     * (false) on the table.</p>
+     * (false) on the table. If enabled (true), server-side encryption type is set to
+     * <code>KMS</code>. If disabled (false) or not specified, server-side encryption
+     * is set to AWS owned CMK.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
      * <p>Indicates whether server-side encryption is enabled (true) or disabled
-     * (false) on the table.</p>
+     * (false) on the table. If enabled (true), server-side encryption type is set to
+     * <code>KMS</code>. If disabled (false) or not specified, server-side encryption
+     * is set to AWS owned CMK.</p>
      */
     inline SSESpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
 
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * (default)</p> </li> </ul>
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
      */
     inline const SSEType& GetSSEType() const{ return m_sSEType; }
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * (default)</p> </li> </ul>
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
      */
     inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * (default)</p> </li> </ul>
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
      */
     inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * (default)</p> </li> </ul>
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
      */
     inline SSESpecification& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
 
     /**
      * <p>Server-side encryption type:</p> <ul> <li> <p> <code>AES256</code> -
-     * Server-side encryption which uses the AES256 algorithm.</p> </li> <li> <p>
-     * <code>KMS</code> - Server-side encryption which uses AWS Key Management Service.
-     * (default)</p> </li> </ul>
+     * Server-side encryption which uses the AES256 algorithm (not applicable).</p>
+     * </li> <li> <p> <code>KMS</code> - Server-side encryption which uses AWS Key
+     * Management Service. Key is stored in your account and is managed by AWS KMS (KMS
+     * charges apply).</p> </li> </ul>
      */
     inline SSESpecification& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
 

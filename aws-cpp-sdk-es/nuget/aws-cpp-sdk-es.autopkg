@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticsearchService;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20150101.7;
+        version : 1.7.20150101.8;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Elasticsearch Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.7
+            AWSSDKCPP-Core/1.7.8
        }
     }
 

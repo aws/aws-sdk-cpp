@@ -29,12 +29,20 @@ namespace Model
 {
 
 Capacity::Capacity() : 
+    m_readCapacityUnits(0.0),
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0.0),
+    m_writeCapacityUnitsHasBeenSet(false),
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false)
 {
 }
 
 Capacity::Capacity(JsonView jsonValue) : 
+    m_readCapacityUnits(0.0),
+    m_readCapacityUnitsHasBeenSet(false),
+    m_writeCapacityUnits(0.0),
+    m_writeCapacityUnitsHasBeenSet(false),
     m_capacityUnits(0.0),
     m_capacityUnitsHasBeenSet(false)
 {
@@ -43,6 +51,20 @@ Capacity::Capacity(JsonView jsonValue) :
 
 Capacity& Capacity::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("ReadCapacityUnits"))
+  {
+    m_readCapacityUnits = jsonValue.GetDouble("ReadCapacityUnits");
+
+    m_readCapacityUnitsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WriteCapacityUnits"))
+  {
+    m_writeCapacityUnits = jsonValue.GetDouble("WriteCapacityUnits");
+
+    m_writeCapacityUnitsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CapacityUnits"))
   {
     m_capacityUnits = jsonValue.GetDouble("CapacityUnits");
@@ -56,6 +78,18 @@ Capacity& Capacity::operator =(JsonView jsonValue)
 JsonValue Capacity::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_readCapacityUnitsHasBeenSet)
+  {
+   payload.WithDouble("ReadCapacityUnits", m_readCapacityUnits);
+
+  }
+
+  if(m_writeCapacityUnitsHasBeenSet)
+  {
+   payload.WithDouble("WriteCapacityUnits", m_writeCapacityUnits);
+
+  }
 
   if(m_capacityUnitsHasBeenSet)
   {

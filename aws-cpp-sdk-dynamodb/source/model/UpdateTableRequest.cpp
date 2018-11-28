@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 UpdateTableRequest::UpdateTableRequest() : 
     m_attributeDefinitionsHasBeenSet(false),
     m_tableNameHasBeenSet(false),
+    m_billingMode(BillingMode::NOT_SET),
+    m_billingModeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
@@ -51,6 +53,11 @@ Aws::String UpdateTableRequest::SerializePayload() const
   {
    payload.WithString("TableName", m_tableName);
 
+  }
+
+  if(m_billingModeHasBeenSet)
+  {
+   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   if(m_provisionedThroughputHasBeenSet)

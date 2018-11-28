@@ -43,7 +43,9 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_engineVersionHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_enableHttpEndpoint(false),
+    m_enableHttpEndpointHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,11 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_enableHttpEndpointHasBeenSet)
+  {
+    ss << "EnableHttpEndpoint=" << std::boolalpha << m_enableHttpEndpoint << "&";
   }
 
   ss << "Version=2014-10-31";
