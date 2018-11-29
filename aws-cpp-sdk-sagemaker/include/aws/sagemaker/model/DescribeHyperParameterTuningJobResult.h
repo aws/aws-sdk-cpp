@@ -392,47 +392,47 @@ namespace Model
 
 
     /**
-     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
      * the <a>TrainingJobSummary</a> for the training job with the best objective
      * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the incremental tuning job.</p>
+     * jobs specified for the warm start tuning job.</p>
      */
     inline const HyperParameterTrainingJobSummary& GetOverallBestTrainingJob() const{ return m_overallBestTrainingJob; }
 
     /**
-     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
      * the <a>TrainingJobSummary</a> for the training job with the best objective
      * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the incremental tuning job.</p>
+     * jobs specified for the warm start tuning job.</p>
      */
     inline void SetOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { m_overallBestTrainingJob = value; }
 
     /**
-     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
      * the <a>TrainingJobSummary</a> for the training job with the best objective
      * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the incremental tuning job.</p>
+     * jobs specified for the warm start tuning job.</p>
      */
     inline void SetOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { m_overallBestTrainingJob = std::move(value); }
 
     /**
-     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
      * the <a>TrainingJobSummary</a> for the training job with the best objective
      * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the incremental tuning job.</p>
+     * jobs specified for the warm start tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { SetOverallBestTrainingJob(value); return *this;}
 
     /**
-     * <p>If the hyperparameter tuning job is an incremental tuning job with a
+     * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
      * the <a>TrainingJobSummary</a> for the training job with the best objective
      * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the incremental tuning job.</p>
+     * jobs specified for the warm start tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { SetOverallBestTrainingJob(std::move(value)); return *this;}
 

@@ -115,6 +115,63 @@ namespace Model
 
 
     /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline AlgorithmSpecification& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline AlgorithmSpecification& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the algorithm resource to use for the training job. This must be
+     * an algorithm resource that you created or subscribe to on AWS Marketplace. If
+     * you specify a value for this parameter, you can't specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline AlgorithmSpecification& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
+
+
+    /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
@@ -278,6 +335,9 @@ namespace Model
 
     Aws::String m_trainingImage;
     bool m_trainingImageHasBeenSet;
+
+    Aws::String m_algorithmName;
+    bool m_algorithmNameHasBeenSet;
 
     TrainingInputMode m_trainingInputMode;
     bool m_trainingInputModeHasBeenSet;

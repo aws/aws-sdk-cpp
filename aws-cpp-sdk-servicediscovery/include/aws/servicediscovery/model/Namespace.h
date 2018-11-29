@@ -88,44 +88,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline Namespace& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline Namespace& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the namespace when
-     * you create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the namespace
+     * when you create it.</p>
      */
     inline Namespace& WithArn(const char* value) { SetArn(value); return *this;}
 

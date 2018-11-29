@@ -546,6 +546,49 @@ namespace Model
      */
     inline DescribeTransformJobResult& WithTransformEndTime(Aws::Utils::DateTime&& value) { SetTransformEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+
   private:
 
     Aws::String m_transformJobName;
@@ -577,6 +620,8 @@ namespace Model
     Aws::Utils::DateTime m_transformStartTime;
 
     Aws::Utils::DateTime m_transformEndTime;
+
+    Aws::String m_labelingJobArn;
   };
 
 } // namespace Model

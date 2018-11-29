@@ -36,6 +36,8 @@
 #include <aws/lightsail/model/AttachLoadBalancerTlsCertificateRequest.h>
 #include <aws/lightsail/model/AttachStaticIpRequest.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsRequest.h>
+#include <aws/lightsail/model/CopySnapshotRequest.h>
+#include <aws/lightsail/model/CreateCloudFormationStackRequest.h>
 #include <aws/lightsail/model/CreateDiskRequest.h>
 #include <aws/lightsail/model/CreateDiskFromSnapshotRequest.h>
 #include <aws/lightsail/model/CreateDiskSnapshotRequest.h>
@@ -65,15 +67,18 @@
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerRequest.h>
 #include <aws/lightsail/model/DetachStaticIpRequest.h>
 #include <aws/lightsail/model/DownloadDefaultKeyPairRequest.h>
+#include <aws/lightsail/model/ExportSnapshotRequest.h>
 #include <aws/lightsail/model/GetActiveNamesRequest.h>
 #include <aws/lightsail/model/GetBlueprintsRequest.h>
 #include <aws/lightsail/model/GetBundlesRequest.h>
+#include <aws/lightsail/model/GetCloudFormationStackRecordsRequest.h>
 #include <aws/lightsail/model/GetDiskRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotRequest.h>
 #include <aws/lightsail/model/GetDiskSnapshotsRequest.h>
 #include <aws/lightsail/model/GetDisksRequest.h>
 #include <aws/lightsail/model/GetDomainRequest.h>
 #include <aws/lightsail/model/GetDomainsRequest.h>
+#include <aws/lightsail/model/GetExportSnapshotRecordsRequest.h>
 #include <aws/lightsail/model/GetInstanceRequest.h>
 #include <aws/lightsail/model/GetInstanceAccessDetailsRequest.h>
 #include <aws/lightsail/model/GetInstanceMetricDataRequest.h>
@@ -118,7 +123,9 @@
 #include <aws/lightsail/model/StartRelationalDatabaseRequest.h>
 #include <aws/lightsail/model/StopInstanceRequest.h>
 #include <aws/lightsail/model/StopRelationalDatabaseRequest.h>
+#include <aws/lightsail/model/TagResourceRequest.h>
 #include <aws/lightsail/model/UnpeerVpcRequest.h>
+#include <aws/lightsail/model/UntagResourceRequest.h>
 #include <aws/lightsail/model/UpdateDomainEntryRequest.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeRequest.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseRequest.h>
@@ -403,6 +410,76 @@ void LightsailClient::CloseInstancePublicPortsAsync(const CloseInstancePublicPor
 void LightsailClient::CloseInstancePublicPortsAsyncHelper(const CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CloseInstancePublicPorts(request), context);
+}
+
+CopySnapshotOutcome LightsailClient::CopySnapshot(const CopySnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CopySnapshotOutcome(CopySnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CopySnapshotOutcome(outcome.GetError());
+  }
+}
+
+CopySnapshotOutcomeCallable LightsailClient::CopySnapshotCallable(const CopySnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CopySnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CopySnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CopySnapshotAsync(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CopySnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CopySnapshotAsyncHelper(const CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CopySnapshot(request), context);
+}
+
+CreateCloudFormationStackOutcome LightsailClient::CreateCloudFormationStack(const CreateCloudFormationStackRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateCloudFormationStackOutcome(CreateCloudFormationStackResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateCloudFormationStackOutcome(outcome.GetError());
+  }
+}
+
+CreateCloudFormationStackOutcomeCallable LightsailClient::CreateCloudFormationStackCallable(const CreateCloudFormationStackRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCloudFormationStackOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCloudFormationStack(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::CreateCloudFormationStackAsync(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCloudFormationStackAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::CreateCloudFormationStackAsyncHelper(const CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCloudFormationStack(request), context);
 }
 
 CreateDiskOutcome LightsailClient::CreateDisk(const CreateDiskRequest& request) const
@@ -1420,6 +1497,41 @@ void LightsailClient::DownloadDefaultKeyPairAsyncHelper(const DownloadDefaultKey
   handler(this, request, DownloadDefaultKeyPair(request), context);
 }
 
+ExportSnapshotOutcome LightsailClient::ExportSnapshot(const ExportSnapshotRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ExportSnapshotOutcome(ExportSnapshotResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ExportSnapshotOutcome(outcome.GetError());
+  }
+}
+
+ExportSnapshotOutcomeCallable LightsailClient::ExportSnapshotCallable(const ExportSnapshotRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ExportSnapshotOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ExportSnapshot(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::ExportSnapshotAsync(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ExportSnapshotAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::ExportSnapshotAsyncHelper(const ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ExportSnapshot(request), context);
+}
+
 GetActiveNamesOutcome LightsailClient::GetActiveNames(const GetActiveNamesRequest& request) const
 {
   Aws::StringStream ss;
@@ -1523,6 +1635,41 @@ void LightsailClient::GetBundlesAsync(const GetBundlesRequest& request, const Ge
 void LightsailClient::GetBundlesAsyncHelper(const GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetBundles(request), context);
+}
+
+GetCloudFormationStackRecordsOutcome LightsailClient::GetCloudFormationStackRecords(const GetCloudFormationStackRecordsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCloudFormationStackRecordsOutcome(GetCloudFormationStackRecordsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCloudFormationStackRecordsOutcome(outcome.GetError());
+  }
+}
+
+GetCloudFormationStackRecordsOutcomeCallable LightsailClient::GetCloudFormationStackRecordsCallable(const GetCloudFormationStackRecordsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCloudFormationStackRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCloudFormationStackRecords(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetCloudFormationStackRecordsAsync(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCloudFormationStackRecordsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetCloudFormationStackRecordsAsyncHelper(const GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCloudFormationStackRecords(request), context);
 }
 
 GetDiskOutcome LightsailClient::GetDisk(const GetDiskRequest& request) const
@@ -1733,6 +1880,41 @@ void LightsailClient::GetDomainsAsync(const GetDomainsRequest& request, const Ge
 void LightsailClient::GetDomainsAsyncHelper(const GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetDomains(request), context);
+}
+
+GetExportSnapshotRecordsOutcome LightsailClient::GetExportSnapshotRecords(const GetExportSnapshotRecordsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetExportSnapshotRecordsOutcome(GetExportSnapshotRecordsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetExportSnapshotRecordsOutcome(outcome.GetError());
+  }
+}
+
+GetExportSnapshotRecordsOutcomeCallable LightsailClient::GetExportSnapshotRecordsCallable(const GetExportSnapshotRecordsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetExportSnapshotRecordsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetExportSnapshotRecords(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::GetExportSnapshotRecordsAsync(const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetExportSnapshotRecordsAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::GetExportSnapshotRecordsAsyncHelper(const GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetExportSnapshotRecords(request), context);
 }
 
 GetInstanceOutcome LightsailClient::GetInstance(const GetInstanceRequest& request) const
@@ -3275,6 +3457,41 @@ void LightsailClient::StopRelationalDatabaseAsyncHelper(const StopRelationalData
   handler(this, request, StopRelationalDatabase(request), context);
 }
 
+TagResourceOutcome LightsailClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable LightsailClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 UnpeerVpcOutcome LightsailClient::UnpeerVpc(const UnpeerVpcRequest& request) const
 {
   Aws::StringStream ss;
@@ -3308,6 +3525,41 @@ void LightsailClient::UnpeerVpcAsync(const UnpeerVpcRequest& request, const Unpe
 void LightsailClient::UnpeerVpcAsyncHelper(const UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UnpeerVpc(request), context);
+}
+
+UntagResourceOutcome LightsailClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable LightsailClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LightsailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void LightsailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateDomainEntryOutcome LightsailClient::UpdateDomainEntry(const UpdateDomainEntryRequest& request) const

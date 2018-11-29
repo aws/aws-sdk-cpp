@@ -37,7 +37,8 @@ Channel::Channel() :
     m_recordWrapperType(RecordWrapper::NOT_SET),
     m_recordWrapperTypeHasBeenSet(false),
     m_inputMode(TrainingInputMode::NOT_SET),
-    m_inputModeHasBeenSet(false)
+    m_inputModeHasBeenSet(false),
+    m_shuffleConfigHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Channel::Channel(JsonView jsonValue) :
     m_recordWrapperType(RecordWrapper::NOT_SET),
     m_recordWrapperTypeHasBeenSet(false),
     m_inputMode(TrainingInputMode::NOT_SET),
-    m_inputModeHasBeenSet(false)
+    m_inputModeHasBeenSet(false),
+    m_shuffleConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_inputModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShuffleConfig"))
+  {
+    m_shuffleConfig = jsonValue.GetObject("ShuffleConfig");
+
+    m_shuffleConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +146,12 @@ JsonValue Channel::Jsonize() const
   if(m_inputModeHasBeenSet)
   {
    payload.WithString("InputMode", TrainingInputModeMapper::GetNameForTrainingInputMode(m_inputMode));
+  }
+
+  if(m_shuffleConfigHasBeenSet)
+  {
+   payload.WithObject("ShuffleConfig", m_shuffleConfig.Jsonize());
+
   }
 
   return payload;

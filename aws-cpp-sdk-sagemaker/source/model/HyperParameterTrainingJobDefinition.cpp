@@ -36,7 +36,9 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_vpcConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_vpcConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +121,13 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_stoppingConditionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableNetworkIsolation"))
+  {
+    m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
+
+    m_enableNetworkIsolationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +190,12 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_stoppingConditionHasBeenSet)
   {
    payload.WithObject("StoppingCondition", m_stoppingCondition.Jsonize());
+
+  }
+
+  if(m_enableNetworkIsolationHasBeenSet)
+  {
+   payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
 
   }
 

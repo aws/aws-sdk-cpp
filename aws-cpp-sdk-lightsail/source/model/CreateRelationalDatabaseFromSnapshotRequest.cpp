@@ -32,7 +32,8 @@ CreateRelationalDatabaseFromSnapshotRequest::CreateRelationalDatabaseFromSnapsho
     m_sourceRelationalDatabaseNameHasBeenSet(false),
     m_restoreTimeHasBeenSet(false),
     m_useLatestRestorableTime(false),
-    m_useLatestRestorableTimeHasBeenSet(false)
+    m_useLatestRestorableTimeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,17 @@ Aws::String CreateRelationalDatabaseFromSnapshotRequest::SerializePayload() cons
   if(m_useLatestRestorableTimeHasBeenSet)
   {
    payload.WithBool("useLatestRestorableTime", m_useLatestRestorableTime);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

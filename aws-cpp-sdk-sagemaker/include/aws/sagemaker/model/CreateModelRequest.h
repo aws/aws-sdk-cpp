@@ -121,6 +121,42 @@ namespace Model
 
 
     /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline const Aws::Vector<ContainerDefinition>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline void SetContainers(const Aws::Vector<ContainerDefinition>& value) { m_containersHasBeenSet = true; m_containers = value; }
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline void SetContainers(Aws::Vector<ContainerDefinition>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline CreateModelRequest& WithContainers(const Aws::Vector<ContainerDefinition>& value) { SetContainers(value); return *this;}
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline CreateModelRequest& WithContainers(Aws::Vector<ContainerDefinition>&& value) { SetContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline CreateModelRequest& AddContainers(const ContainerDefinition& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the containers in the inference pipeline.</p>
+     */
+    inline CreateModelRequest& AddContainers(ContainerDefinition&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
@@ -322,6 +358,28 @@ namespace Model
      */
     inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Isolates the model container. No inbound or outbound network calls can be
+     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
+     * built-in algorithm does not support network isolation.</p> </note>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Isolates the model container. No inbound or outbound network calls can be
+     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
+     * built-in algorithm does not support network isolation.</p> </note>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>Isolates the model container. No inbound or outbound network calls can be
+     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
+     * built-in algorithm does not support network isolation.</p> </note>
+     */
+    inline CreateModelRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -329,6 +387,9 @@ namespace Model
 
     ContainerDefinition m_primaryContainer;
     bool m_primaryContainerHasBeenSet;
+
+    Aws::Vector<ContainerDefinition> m_containers;
+    bool m_containersHasBeenSet;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet;
@@ -338,6 +399,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolationHasBeenSet;
   };
 
 } // namespace Model

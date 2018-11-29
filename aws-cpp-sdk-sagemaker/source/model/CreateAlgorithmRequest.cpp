@@ -1,0 +1,89 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/sagemaker/model/CreateAlgorithmRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::SageMaker::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+CreateAlgorithmRequest::CreateAlgorithmRequest() : 
+    m_algorithmNameHasBeenSet(false),
+    m_algorithmDescriptionHasBeenSet(false),
+    m_trainingSpecificationHasBeenSet(false),
+    m_inferenceSpecificationHasBeenSet(false),
+    m_validationSpecificationHasBeenSet(false),
+    m_certifyForMarketplace(false),
+    m_certifyForMarketplaceHasBeenSet(false)
+{
+}
+
+Aws::String CreateAlgorithmRequest::SerializePayload() const
+{
+  JsonValue payload;
+
+  if(m_algorithmNameHasBeenSet)
+  {
+   payload.WithString("AlgorithmName", m_algorithmName);
+
+  }
+
+  if(m_algorithmDescriptionHasBeenSet)
+  {
+   payload.WithString("AlgorithmDescription", m_algorithmDescription);
+
+  }
+
+  if(m_trainingSpecificationHasBeenSet)
+  {
+   payload.WithObject("TrainingSpecification", m_trainingSpecification.Jsonize());
+
+  }
+
+  if(m_inferenceSpecificationHasBeenSet)
+  {
+   payload.WithObject("InferenceSpecification", m_inferenceSpecification.Jsonize());
+
+  }
+
+  if(m_validationSpecificationHasBeenSet)
+  {
+   payload.WithObject("ValidationSpecification", m_validationSpecification.Jsonize());
+
+  }
+
+  if(m_certifyForMarketplaceHasBeenSet)
+  {
+   payload.WithBool("CertifyForMarketplace", m_certifyForMarketplace);
+
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection CreateAlgorithmRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "SageMaker.CreateAlgorithm"));
+  return headers;
+
+}
+
+
+
+

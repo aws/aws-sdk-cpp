@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     DNS_PUBLIC,
-    DNS_PRIVATE
+    DNS_PRIVATE,
+    HTTP
   };
 
 namespace NamespaceTypeMapper

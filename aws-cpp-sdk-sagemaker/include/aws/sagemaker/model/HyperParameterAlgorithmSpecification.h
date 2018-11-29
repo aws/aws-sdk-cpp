@@ -186,6 +186,56 @@ namespace Model
 
 
     /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the resource algorithm to use for the hyperparameter tuning job.
+     * If you specify a value for this parameter, do not specify a value for
+     * <code>TrainingImage</code>.</p>
+     */
+    inline HyperParameterAlgorithmSpecification& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
+
+
+    /**
      * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
      * algorithm emits.</p>
      */
@@ -234,6 +284,9 @@ namespace Model
 
     TrainingInputMode m_trainingInputMode;
     bool m_trainingInputModeHasBeenSet;
+
+    Aws::String m_algorithmName;
+    bool m_algorithmNameHasBeenSet;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
     bool m_metricDefinitionsHasBeenSet;

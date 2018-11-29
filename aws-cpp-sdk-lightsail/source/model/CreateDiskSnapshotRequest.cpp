@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateDiskSnapshotRequest::CreateDiskSnapshotRequest() : 
     m_diskNameHasBeenSet(false),
-    m_diskSnapshotNameHasBeenSet(false)
+    m_diskSnapshotNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateDiskSnapshotRequest::SerializePayload() const
   if(m_diskSnapshotNameHasBeenSet)
   {
    payload.WithString("diskSnapshotName", m_diskSnapshotName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

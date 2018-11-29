@@ -16,6 +16,10 @@
 #pragma once
 #include <aws/servicediscovery/ServiceDiscovery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/servicediscovery/model/DnsConfig.h>
+#include <aws/servicediscovery/model/HealthCheckConfig.h>
+#include <aws/servicediscovery/model/HealthCheckCustomConfig.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -49,80 +53,80 @@ namespace Model
 
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID that Route 53 assigned to the service when you created it.</p>
+     * <p>The ID that AWS Cloud Map assigned to the service when you created it.</p>
      */
     inline ServiceSummary& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline ServiceSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline ServiceSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) that Route 53 assigns to the service when you
-     * create it.</p>
+     * <p>The Amazon Resource Name (ARN) that AWS Cloud Map assigns to the service when
+     * you create it.</p>
      */
     inline ServiceSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -220,6 +224,80 @@ namespace Model
      */
     inline ServiceSummary& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
+
+    
+    inline const DnsConfig& GetDnsConfig() const{ return m_dnsConfig; }
+
+    
+    inline void SetDnsConfig(const DnsConfig& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = value; }
+
+    
+    inline void SetDnsConfig(DnsConfig&& value) { m_dnsConfigHasBeenSet = true; m_dnsConfig = std::move(value); }
+
+    
+    inline ServiceSummary& WithDnsConfig(const DnsConfig& value) { SetDnsConfig(value); return *this;}
+
+    
+    inline ServiceSummary& WithDnsConfig(DnsConfig&& value) { SetDnsConfig(std::move(value)); return *this;}
+
+
+    
+    inline const HealthCheckConfig& GetHealthCheckConfig() const{ return m_healthCheckConfig; }
+
+    
+    inline void SetHealthCheckConfig(const HealthCheckConfig& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = value; }
+
+    
+    inline void SetHealthCheckConfig(HealthCheckConfig&& value) { m_healthCheckConfigHasBeenSet = true; m_healthCheckConfig = std::move(value); }
+
+    
+    inline ServiceSummary& WithHealthCheckConfig(const HealthCheckConfig& value) { SetHealthCheckConfig(value); return *this;}
+
+    
+    inline ServiceSummary& WithHealthCheckConfig(HealthCheckConfig&& value) { SetHealthCheckConfig(std::move(value)); return *this;}
+
+
+    
+    inline const HealthCheckCustomConfig& GetHealthCheckCustomConfig() const{ return m_healthCheckCustomConfig; }
+
+    
+    inline void SetHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = value; }
+
+    
+    inline void SetHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { m_healthCheckCustomConfigHasBeenSet = true; m_healthCheckCustomConfig = std::move(value); }
+
+    
+    inline ServiceSummary& WithHealthCheckCustomConfig(const HealthCheckCustomConfig& value) { SetHealthCheckCustomConfig(value); return *this;}
+
+    
+    inline ServiceSummary& WithHealthCheckCustomConfig(HealthCheckCustomConfig&& value) { SetHealthCheckCustomConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline ServiceSummary& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
+
+    /**
+     * <p>The date and time that the service was created.</p>
+     */
+    inline ServiceSummary& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -236,6 +314,18 @@ namespace Model
 
     int m_instanceCount;
     bool m_instanceCountHasBeenSet;
+
+    DnsConfig m_dnsConfig;
+    bool m_dnsConfigHasBeenSet;
+
+    HealthCheckConfig m_healthCheckConfig;
+    bool m_healthCheckConfigHasBeenSet;
+
+    HealthCheckCustomConfig m_healthCheckCustomConfig;
+    bool m_healthCheckCustomConfigHasBeenSet;
+
+    Aws::Utils::DateTime m_createDate;
+    bool m_createDateHasBeenSet;
   };
 
 } // namespace Model

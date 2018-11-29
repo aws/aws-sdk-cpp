@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateInstanceSnapshotRequest::CreateInstanceSnapshotRequest() : 
     m_instanceSnapshotNameHasBeenSet(false),
-    m_instanceNameHasBeenSet(false)
+    m_instanceNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateInstanceSnapshotRequest::SerializePayload() const
   if(m_instanceNameHasBeenSet)
   {
    payload.WithString("instanceName", m_instanceName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -439,6 +439,40 @@ namespace Model
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specifed VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specifed VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specifed VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
@@ -464,6 +498,9 @@ namespace Model
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet;
+
+    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolationHasBeenSet;
   };
 
 } // namespace Model

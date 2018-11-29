@@ -33,7 +33,12 @@ NamespaceSummary::NamespaceSummary() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(NamespaceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_serviceCount(0),
+    m_serviceCountHasBeenSet(false),
+    m_propertiesHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
 }
 
@@ -42,7 +47,12 @@ NamespaceSummary::NamespaceSummary(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_type(NamespaceType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_serviceCount(0),
+    m_serviceCountHasBeenSet(false),
+    m_propertiesHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +87,34 @@ NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Description"))
+  {
+    m_description = jsonValue.GetString("Description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceCount"))
+  {
+    m_serviceCount = jsonValue.GetInteger("ServiceCount");
+
+    m_serviceCountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Properties"))
+  {
+    m_properties = jsonValue.GetObject("Properties");
+
+    m_propertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreateDate"))
+  {
+    m_createDate = jsonValue.GetDouble("CreateDate");
+
+    m_createDateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +143,29 @@ JsonValue NamespaceSummary::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", NamespaceTypeMapper::GetNameForNamespaceType(m_type));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("Description", m_description);
+
+  }
+
+  if(m_serviceCountHasBeenSet)
+  {
+   payload.WithInteger("ServiceCount", m_serviceCount);
+
+  }
+
+  if(m_propertiesHasBeenSet)
+  {
+   payload.WithObject("Properties", m_properties.Jsonize());
+
+  }
+
+  if(m_createDateHasBeenSet)
+  {
+   payload.WithDouble("CreateDate", m_createDate.SecondsWithMSPrecision());
   }
 
   return payload;

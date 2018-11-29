@@ -145,6 +145,30 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("AcceleratorTypes"))
+  {
+    Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("AcceleratorTypes");
+    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
+    {
+      m_acceleratorTypes.push_back(NotebookInstanceAcceleratorTypeMapper::GetNotebookInstanceAcceleratorTypeForName(acceleratorTypesJsonList[acceleratorTypesIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("DefaultCodeRepository"))
+  {
+    m_defaultCodeRepository = jsonValue.GetString("DefaultCodeRepository");
+
+  }
+
+  if(jsonValue.ValueExists("AdditionalCodeRepositories"))
+  {
+    Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
+    for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
+    {
+      m_additionalCodeRepositories.push_back(additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString());
+    }
+  }
+
 
 
   return *this;

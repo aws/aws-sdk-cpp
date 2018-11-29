@@ -125,25 +125,46 @@ namespace Model
     inline HyperParameterTrainingJobSummary& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline const Aws::String& GetTuningJobName() const{ return m_tuningJobName; }
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline void SetTuningJobName(const Aws::String& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = value; }
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline void SetTuningJobName(Aws::String&& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline void SetTuningJobName(const char* value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName.assign(value); }
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(const Aws::String& value) { SetTuningJobName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(Aws::String&& value) { SetTuningJobName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the hyperparameter tuning job that launched this training
+     * job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(const char* value) { SetTuningJobName(value); return *this;}
 
 

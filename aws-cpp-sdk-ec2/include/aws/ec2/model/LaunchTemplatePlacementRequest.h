@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The placement for the instance.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the placement of an instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/LaunchTemplatePlacementRequest">AWS
    * API Reference</a></p>
    */

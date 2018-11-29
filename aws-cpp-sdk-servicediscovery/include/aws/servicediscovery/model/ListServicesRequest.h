@@ -51,11 +51,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -64,11 +64,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -77,11 +77,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -90,11 +90,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -103,11 +103,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline ListServicesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -116,11 +116,11 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline ListServicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -129,33 +129,33 @@ namespace Model
      * the response contains <code>NextToken</code>, submit another
      * <code>ListServices</code> request to get the next group of results. Specify the
      * value of <code>NextToken</code> from the previous response in the next
-     * request.</p> <note> <p>Route 53 gets <code>MaxResults</code> services and then
-     * filters them based on the specified criteria. It's possible that no services in
-     * the first <code>MaxResults</code> services matched the specified criteria but
-     * that subsequent groups of <code>MaxResults</code> services do contain services
-     * that match the criteria.</p> </note>
+     * request.</p> <note> <p>AWS Cloud Map gets <code>MaxResults</code> services and
+     * then filters them based on the specified criteria. It's possible that no
+     * services in the first <code>MaxResults</code> services matched the specified
+     * criteria but that subsequent groups of <code>MaxResults</code> services do
+     * contain services that match the criteria.</p> </note>
      */
     inline ListServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
-     * <p>The maximum number of services that you want Amazon Route 53 to return in the
+     * <p>The maximum number of services that you want AWS Cloud Map to return in the
      * response to a <code>ListServices</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, Route 53 returns up to 100 services.</p>
+     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 services.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of services that you want Amazon Route 53 to return in the
+     * <p>The maximum number of services that you want AWS Cloud Map to return in the
      * response to a <code>ListServices</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, Route 53 returns up to 100 services.</p>
+     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 services.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of services that you want Amazon Route 53 to return in the
+     * <p>The maximum number of services that you want AWS Cloud Map to return in the
      * response to a <code>ListServices</code> request. If you don't specify a value
-     * for <code>MaxResults</code>, Route 53 returns up to 100 services.</p>
+     * for <code>MaxResults</code>, AWS Cloud Map returns up to 100 services.</p>
      */
     inline ListServicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -172,6 +172,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTrainingJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+
+
+    /**
      * <p>Information about the Amazon S3 location that is configured for storing model
      * artifacts. </p>
      */
@@ -1003,6 +1046,40 @@ namespace Model
      */
     inline DescribeTrainingJobResult& AddFinalMetricDataList(MetricData&& value) { m_finalMetricDataList.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If <code>True</code>, inbound or outbound network calls can be made, except
+     * for calls between peers within a training cluster for distributed training. If
+     * network isolation is used for training jobs that are configured to use a VPC,
+     * Amazon SageMaker downloads and uploads customer data and model artifacts through
+     * the specifed VPC, but the training container does not have network access.</p>
+     * <note> <p>The Semantic Segmentation built-in algorithm does not support network
+     * isolation.</p> </note>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>If <code>True</code>, inbound or outbound network calls can be made, except
+     * for calls between peers within a training cluster for distributed training. If
+     * network isolation is used for training jobs that are configured to use a VPC,
+     * Amazon SageMaker downloads and uploads customer data and model artifacts through
+     * the specifed VPC, but the training container does not have network access.</p>
+     * <note> <p>The Semantic Segmentation built-in algorithm does not support network
+     * isolation.</p> </note>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>If <code>True</code>, inbound or outbound network calls can be made, except
+     * for calls between peers within a training cluster for distributed training. If
+     * network isolation is used for training jobs that are configured to use a VPC,
+     * Amazon SageMaker downloads and uploads customer data and model artifacts through
+     * the specifed VPC, but the training container does not have network access.</p>
+     * <note> <p>The Semantic Segmentation built-in algorithm does not support network
+     * isolation.</p> </note>
+     */
+    inline DescribeTrainingJobResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1010,6 +1087,8 @@ namespace Model
     Aws::String m_trainingJobArn;
 
     Aws::String m_tuningJobArn;
+
+    Aws::String m_labelingJobArn;
 
     ModelArtifacts m_modelArtifacts;
 
@@ -1046,6 +1125,8 @@ namespace Model
     Aws::Vector<SecondaryStatusTransition> m_secondaryStatusTransitions;
 
     Aws::Vector<MetricData> m_finalMetricDataList;
+
+    bool m_enableNetworkIsolation;
   };
 
 } // namespace Model

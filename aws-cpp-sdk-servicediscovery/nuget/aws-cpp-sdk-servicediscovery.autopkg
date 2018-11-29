@@ -13,10 +13,10 @@ nuget {
         id = AWSSDKCPP-ServiceDiscovery;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20170314.8;
+        version : 1.7.20170314.9;
 
         // Display name for package.
-        title: AWS SDK for C++ (Amazon Route 53 Auto Naming);
+        title: AWS SDK for C++ (AWS Cloud Map);
 
         // List of package authors.  Braces may be ommited if only one author.
         authors: Amazon Web Services;
@@ -37,7 +37,7 @@ nuget {
         summary: "v120, v140 and v141 binary packages along with header files. No custom memory management. Standard Compiler flags used. For more info, see https://github.com/aws/aws-sdk-cpp/blob/master/README.md";
 
         // Extended description of the package contents.
-        description: "Amazon Route 53 Auto Naming Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
+        description: "AWS Cloud Map Client for the AWS SDK for C++. AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs, while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).";
 
         // Copyright notice.
         copyright: Copyright 2018;
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.8
+            AWSSDKCPP-Core/1.7.9
        }
     }
 

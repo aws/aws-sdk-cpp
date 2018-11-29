@@ -32,7 +32,9 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_resourceConfigHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),
     m_stoppingConditionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_enableNetworkIsolationHasBeenSet)
+  {
+   payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
 
   }
 

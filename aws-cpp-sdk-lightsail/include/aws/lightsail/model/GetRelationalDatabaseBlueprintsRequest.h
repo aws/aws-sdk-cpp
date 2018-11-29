@@ -45,44 +45,44 @@ namespace Model
 
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token used for advancing to a specific page of results for your get
-     * relational database blueprints request.</p>
+     * <p>A token used for advancing to a specific page of results for your <code>get
+     * relational database blueprints</code> request.</p>
      */
     inline GetRelationalDatabaseBlueprintsRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
 

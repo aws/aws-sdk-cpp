@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ProductionVariantInstanceType.h>
+#include <aws/sagemaker/model/ProductionVariantAcceleratorType.h>
 #include <utility>
 
 namespace Aws
@@ -199,6 +200,62 @@ namespace Model
      */
     inline ProductionVariant& WithInitialVariantWeight(double value) { SetInitialVariantWeight(value); return *this;}
 
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline const ProductionVariantAcceleratorType& GetAcceleratorType() const{ return m_acceleratorType; }
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline void SetAcceleratorType(const ProductionVariantAcceleratorType& value) { m_acceleratorTypeHasBeenSet = true; m_acceleratorType = value; }
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline void SetAcceleratorType(ProductionVariantAcceleratorType&& value) { m_acceleratorTypeHasBeenSet = true; m_acceleratorType = std::move(value); }
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline ProductionVariant& WithAcceleratorType(const ProductionVariantAcceleratorType& value) { SetAcceleratorType(value); return *this;}
+
+    /**
+     * <p>The size of the Elastic Inference (EI) instance to use for the production
+     * variant. EI instances provide on-demand GPU computing for inference. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline ProductionVariant& WithAcceleratorType(ProductionVariantAcceleratorType&& value) { SetAcceleratorType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -215,6 +272,9 @@ namespace Model
 
     double m_initialVariantWeight;
     bool m_initialVariantWeightHasBeenSet;
+
+    ProductionVariantAcceleratorType m_acceleratorType;
+    bool m_acceleratorTypeHasBeenSet;
   };
 
 } // namespace Model

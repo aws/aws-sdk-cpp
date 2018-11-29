@@ -31,7 +31,16 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_disassociateLifecycleConfig(false),
     m_disassociateLifecycleConfigHasBeenSet(false),
     m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
+    m_volumeSizeInGBHasBeenSet(false),
+    m_defaultCodeRepositoryHasBeenSet(false),
+    m_additionalCodeRepositoriesHasBeenSet(false),
+    m_acceleratorTypesHasBeenSet(false),
+    m_disassociateAcceleratorTypes(false),
+    m_disassociateAcceleratorTypesHasBeenSet(false),
+    m_disassociateDefaultCodeRepository(false),
+    m_disassociateDefaultCodeRepositoryHasBeenSet(false),
+    m_disassociateAdditionalCodeRepositories(false),
+    m_disassociateAdditionalCodeRepositoriesHasBeenSet(false)
 {
 }
 
@@ -71,6 +80,52 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
   if(m_volumeSizeInGBHasBeenSet)
   {
    payload.WithInteger("VolumeSizeInGB", m_volumeSizeInGB);
+
+  }
+
+  if(m_defaultCodeRepositoryHasBeenSet)
+  {
+   payload.WithString("DefaultCodeRepository", m_defaultCodeRepository);
+
+  }
+
+  if(m_additionalCodeRepositoriesHasBeenSet)
+  {
+   Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
+   for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
+   {
+     additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString(m_additionalCodeRepositories[additionalCodeRepositoriesIndex]);
+   }
+   payload.WithArray("AdditionalCodeRepositories", std::move(additionalCodeRepositoriesJsonList));
+
+  }
+
+  if(m_acceleratorTypesHasBeenSet)
+  {
+   Array<JsonValue> acceleratorTypesJsonList(m_acceleratorTypes.size());
+   for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
+   {
+     acceleratorTypesJsonList[acceleratorTypesIndex].AsString(NotebookInstanceAcceleratorTypeMapper::GetNameForNotebookInstanceAcceleratorType(m_acceleratorTypes[acceleratorTypesIndex]));
+   }
+   payload.WithArray("AcceleratorTypes", std::move(acceleratorTypesJsonList));
+
+  }
+
+  if(m_disassociateAcceleratorTypesHasBeenSet)
+  {
+   payload.WithBool("DisassociateAcceleratorTypes", m_disassociateAcceleratorTypes);
+
+  }
+
+  if(m_disassociateDefaultCodeRepositoryHasBeenSet)
+  {
+   payload.WithBool("DisassociateDefaultCodeRepository", m_disassociateDefaultCodeRepository);
+
+  }
+
+  if(m_disassociateAdditionalCodeRepositoriesHasBeenSet)
+  {
+   payload.WithBool("DisassociateAdditionalCodeRepositories", m_disassociateAdditionalCodeRepositories);
 
   }
 

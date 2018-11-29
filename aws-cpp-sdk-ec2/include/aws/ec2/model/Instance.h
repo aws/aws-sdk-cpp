@@ -33,12 +33,15 @@
 #include <aws/ec2/model/VirtualizationType.h>
 #include <aws/ec2/model/CpuOptions.h>
 #include <aws/ec2/model/CapacityReservationSpecificationResponse.h>
+#include <aws/ec2/model/HibernationOptions.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
+#include <aws/ec2/model/ElasticInferenceAcceleratorAssociation.h>
 #include <aws/ec2/model/InstanceNetworkInterface.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/Tag.h>
+#include <aws/ec2/model/LicenseConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1048,6 +1051,42 @@ namespace Model
 
 
     /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline const Aws::Vector<ElasticInferenceAcceleratorAssociation>& GetElasticInferenceAcceleratorAssociations() const{ return m_elasticInferenceAcceleratorAssociations; }
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline void SetElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = value; }
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline void SetElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = std::move(value); }
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline Instance& WithElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { SetElasticInferenceAcceleratorAssociations(value); return *this;}
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline Instance& WithElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { SetElasticInferenceAcceleratorAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline Instance& AddElasticInferenceAcceleratorAssociations(const ElasticInferenceAcceleratorAssociation& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(value); return *this; }
+
+    /**
+     * <p> The elastic inference accelerator associated with the instance. </p>
+     */
+    inline Instance& AddElasticInferenceAcceleratorAssociations(ElasticInferenceAcceleratorAssociation&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>[EC2-VPC] One or more network interfaces for the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
@@ -1481,6 +1520,68 @@ namespace Model
      */
     inline Instance& WithCapacityReservationSpecification(CapacityReservationSpecificationResponse&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
+    inline const HibernationOptions& GetHibernationOptions() const{ return m_hibernationOptions; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
+    inline void SetHibernationOptions(const HibernationOptions& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
+    inline void SetHibernationOptions(HibernationOptions&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
+    inline Instance& WithHibernationOptions(const HibernationOptions& value) { SetHibernationOptions(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance is enabled for hibernation.</p>
+     */
+    inline Instance& WithHibernationOptions(HibernationOptions&& value) { SetHibernationOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline const Aws::Vector<LicenseConfiguration>& GetLicenses() const{ return m_licenses; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline void SetLicenses(const Aws::Vector<LicenseConfiguration>& value) { m_licensesHasBeenSet = true; m_licenses = value; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline void SetLicenses(Aws::Vector<LicenseConfiguration>&& value) { m_licensesHasBeenSet = true; m_licenses = std::move(value); }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline Instance& WithLicenses(const Aws::Vector<LicenseConfiguration>& value) { SetLicenses(value); return *this;}
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline Instance& WithLicenses(Aws::Vector<LicenseConfiguration>&& value) { SetLicenses(std::move(value)); return *this;}
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline Instance& AddLicenses(const LicenseConfiguration& value) { m_licensesHasBeenSet = true; m_licenses.push_back(value); return *this; }
+
+    /**
+     * <p>The license configurations.</p>
+     */
+    inline Instance& AddLicenses(LicenseConfiguration&& value) { m_licensesHasBeenSet = true; m_licenses.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_amiLaunchIndex;
@@ -1570,6 +1671,9 @@ namespace Model
     Aws::Vector<ElasticGpuAssociation> m_elasticGpuAssociations;
     bool m_elasticGpuAssociationsHasBeenSet;
 
+    Aws::Vector<ElasticInferenceAcceleratorAssociation> m_elasticInferenceAcceleratorAssociations;
+    bool m_elasticInferenceAcceleratorAssociationsHasBeenSet;
+
     Aws::Vector<InstanceNetworkInterface> m_networkInterfaces;
     bool m_networkInterfacesHasBeenSet;
 
@@ -1608,6 +1712,12 @@ namespace Model
 
     CapacityReservationSpecificationResponse m_capacityReservationSpecification;
     bool m_capacityReservationSpecificationHasBeenSet;
+
+    HibernationOptions m_hibernationOptions;
+    bool m_hibernationOptionsHasBeenSet;
+
+    Aws::Vector<LicenseConfiguration> m_licenses;
+    bool m_licensesHasBeenSet;
   };
 
 } // namespace Model

@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/CompressionType.h>
 #include <aws/sagemaker/model/RecordWrapper.h>
 #include <aws/sagemaker/model/TrainingInputMode.h>
+#include <aws/sagemaker/model/ShuffleConfig.h>
 #include <utility>
 
 namespace Aws
@@ -188,61 +189,61 @@ namespace Model
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format, in which case, Amazon SageMaker
+     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
      * wraps each individual S3 object in a RecordIO record. If the input data is
      * already in RecordIO format, you don't need to set this attribute. For more
      * information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
-     * a Dataset Using RecordIO</a>. </p> <p>In FILE mode, leave this field unset or
-     * set it to None.</p> <p/>
+     * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
+     * set it to None.</p>
      */
     inline const RecordWrapper& GetRecordWrapperType() const{ return m_recordWrapperType; }
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format, in which case, Amazon SageMaker
+     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
      * wraps each individual S3 object in a RecordIO record. If the input data is
      * already in RecordIO format, you don't need to set this attribute. For more
      * information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
-     * a Dataset Using RecordIO</a>. </p> <p>In FILE mode, leave this field unset or
-     * set it to None.</p> <p/>
+     * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
+     * set it to None.</p>
      */
     inline void SetRecordWrapperType(const RecordWrapper& value) { m_recordWrapperTypeHasBeenSet = true; m_recordWrapperType = value; }
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format, in which case, Amazon SageMaker
+     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
      * wraps each individual S3 object in a RecordIO record. If the input data is
      * already in RecordIO format, you don't need to set this attribute. For more
      * information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
-     * a Dataset Using RecordIO</a>. </p> <p>In FILE mode, leave this field unset or
-     * set it to None.</p> <p/>
+     * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
+     * set it to None.</p>
      */
     inline void SetRecordWrapperType(RecordWrapper&& value) { m_recordWrapperTypeHasBeenSet = true; m_recordWrapperType = std::move(value); }
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format, in which case, Amazon SageMaker
+     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
      * wraps each individual S3 object in a RecordIO record. If the input data is
      * already in RecordIO format, you don't need to set this attribute. For more
      * information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
-     * a Dataset Using RecordIO</a>. </p> <p>In FILE mode, leave this field unset or
-     * set it to None.</p> <p/>
+     * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
+     * set it to None.</p>
      */
     inline Channel& WithRecordWrapperType(const RecordWrapper& value) { SetRecordWrapperType(value); return *this;}
 
     /**
      * <p/> <p>Specify RecordIO as the value when input data is in raw format but the
-     * training algorithm requires the RecordIO format, in which case, Amazon SageMaker
+     * training algorithm requires the RecordIO format. In this case, Amazon SageMaker
      * wraps each individual S3 object in a RecordIO record. If the input data is
      * already in RecordIO format, you don't need to set this attribute. For more
      * information, see <a
      * href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create
-     * a Dataset Using RecordIO</a>. </p> <p>In FILE mode, leave this field unset or
-     * set it to None.</p> <p/>
+     * a Dataset Using RecordIO</a>. </p> <p>In File mode, leave this field unset or
+     * set it to None.</p>
      */
     inline Channel& WithRecordWrapperType(RecordWrapper&& value) { SetRecordWrapperType(std::move(value)); return *this;}
 
@@ -322,6 +323,97 @@ namespace Model
      */
     inline Channel& WithInputMode(TrainingInputMode&& value) { SetInputMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A configuration for a shuffle option for input data in a channel. If you use
+     * <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of
+     * the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of
+     * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
+     * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
+     * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
+     * shuffling is done at the start of every epoch. With large datasets this ensures
+     * that the order of the training data is different for each epoch, it helps reduce
+     * bias and possible overfitting. In a multi-node training job when ShuffleConfig
+     * is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
+     * content sent to a particular node on the first epoch might be sent to a
+     * different node on the second epoch.</p>
+     */
+    inline const ShuffleConfig& GetShuffleConfig() const{ return m_shuffleConfig; }
+
+    /**
+     * <p>A configuration for a shuffle option for input data in a channel. If you use
+     * <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of
+     * the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of
+     * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
+     * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
+     * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
+     * shuffling is done at the start of every epoch. With large datasets this ensures
+     * that the order of the training data is different for each epoch, it helps reduce
+     * bias and possible overfitting. In a multi-node training job when ShuffleConfig
+     * is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
+     * content sent to a particular node on the first epoch might be sent to a
+     * different node on the second epoch.</p>
+     */
+    inline void SetShuffleConfig(const ShuffleConfig& value) { m_shuffleConfigHasBeenSet = true; m_shuffleConfig = value; }
+
+    /**
+     * <p>A configuration for a shuffle option for input data in a channel. If you use
+     * <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of
+     * the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of
+     * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
+     * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
+     * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
+     * shuffling is done at the start of every epoch. With large datasets this ensures
+     * that the order of the training data is different for each epoch, it helps reduce
+     * bias and possible overfitting. In a multi-node training job when ShuffleConfig
+     * is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
+     * content sent to a particular node on the first epoch might be sent to a
+     * different node on the second epoch.</p>
+     */
+    inline void SetShuffleConfig(ShuffleConfig&& value) { m_shuffleConfigHasBeenSet = true; m_shuffleConfig = std::move(value); }
+
+    /**
+     * <p>A configuration for a shuffle option for input data in a channel. If you use
+     * <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of
+     * the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of
+     * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
+     * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
+     * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
+     * shuffling is done at the start of every epoch. With large datasets this ensures
+     * that the order of the training data is different for each epoch, it helps reduce
+     * bias and possible overfitting. In a multi-node training job when ShuffleConfig
+     * is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
+     * content sent to a particular node on the first epoch might be sent to a
+     * different node on the second epoch.</p>
+     */
+    inline Channel& WithShuffleConfig(const ShuffleConfig& value) { SetShuffleConfig(value); return *this;}
+
+    /**
+     * <p>A configuration for a shuffle option for input data in a channel. If you use
+     * <code>S3Prefix</code> for <code>S3DataType</code>, this shuffles the results of
+     * the S3 key prefix matches. If you use <code>ManifestFile</code>, the order of
+     * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
+     * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
+     * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
+     * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
+     * shuffling is done at the start of every epoch. With large datasets this ensures
+     * that the order of the training data is different for each epoch, it helps reduce
+     * bias and possible overfitting. In a multi-node training job when ShuffleConfig
+     * is combined with <code>S3DataDistributionType</code> of
+     * <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
+     * content sent to a particular node on the first epoch might be sent to a
+     * different node on the second epoch.</p>
+     */
+    inline Channel& WithShuffleConfig(ShuffleConfig&& value) { SetShuffleConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelName;
@@ -341,6 +433,9 @@ namespace Model
 
     TrainingInputMode m_inputMode;
     bool m_inputModeHasBeenSet;
+
+    ShuffleConfig m_shuffleConfig;
+    bool m_shuffleConfigHasBeenSet;
   };
 
 } // namespace Model

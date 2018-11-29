@@ -27,6 +27,8 @@
 #include <aws/lightsail/model/AttachLoadBalancerTlsCertificateResult.h>
 #include <aws/lightsail/model/AttachStaticIpResult.h>
 #include <aws/lightsail/model/CloseInstancePublicPortsResult.h>
+#include <aws/lightsail/model/CopySnapshotResult.h>
+#include <aws/lightsail/model/CreateCloudFormationStackResult.h>
 #include <aws/lightsail/model/CreateDiskResult.h>
 #include <aws/lightsail/model/CreateDiskFromSnapshotResult.h>
 #include <aws/lightsail/model/CreateDiskSnapshotResult.h>
@@ -56,15 +58,18 @@
 #include <aws/lightsail/model/DetachInstancesFromLoadBalancerResult.h>
 #include <aws/lightsail/model/DetachStaticIpResult.h>
 #include <aws/lightsail/model/DownloadDefaultKeyPairResult.h>
+#include <aws/lightsail/model/ExportSnapshotResult.h>
 #include <aws/lightsail/model/GetActiveNamesResult.h>
 #include <aws/lightsail/model/GetBlueprintsResult.h>
 #include <aws/lightsail/model/GetBundlesResult.h>
+#include <aws/lightsail/model/GetCloudFormationStackRecordsResult.h>
 #include <aws/lightsail/model/GetDiskResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotResult.h>
 #include <aws/lightsail/model/GetDiskSnapshotsResult.h>
 #include <aws/lightsail/model/GetDisksResult.h>
 #include <aws/lightsail/model/GetDomainResult.h>
 #include <aws/lightsail/model/GetDomainsResult.h>
+#include <aws/lightsail/model/GetExportSnapshotRecordsResult.h>
 #include <aws/lightsail/model/GetInstanceResult.h>
 #include <aws/lightsail/model/GetInstanceAccessDetailsResult.h>
 #include <aws/lightsail/model/GetInstanceMetricDataResult.h>
@@ -109,7 +114,9 @@
 #include <aws/lightsail/model/StartRelationalDatabaseResult.h>
 #include <aws/lightsail/model/StopInstanceResult.h>
 #include <aws/lightsail/model/StopRelationalDatabaseResult.h>
+#include <aws/lightsail/model/TagResourceResult.h>
 #include <aws/lightsail/model/UnpeerVpcResult.h>
+#include <aws/lightsail/model/UntagResourceResult.h>
 #include <aws/lightsail/model/UpdateDomainEntryResult.h>
 #include <aws/lightsail/model/UpdateLoadBalancerAttributeResult.h>
 #include <aws/lightsail/model/UpdateRelationalDatabaseResult.h>
@@ -160,6 +167,8 @@ namespace Model
         class AttachLoadBalancerTlsCertificateRequest;
         class AttachStaticIpRequest;
         class CloseInstancePublicPortsRequest;
+        class CopySnapshotRequest;
+        class CreateCloudFormationStackRequest;
         class CreateDiskRequest;
         class CreateDiskFromSnapshotRequest;
         class CreateDiskSnapshotRequest;
@@ -189,15 +198,18 @@ namespace Model
         class DetachInstancesFromLoadBalancerRequest;
         class DetachStaticIpRequest;
         class DownloadDefaultKeyPairRequest;
+        class ExportSnapshotRequest;
         class GetActiveNamesRequest;
         class GetBlueprintsRequest;
         class GetBundlesRequest;
+        class GetCloudFormationStackRecordsRequest;
         class GetDiskRequest;
         class GetDiskSnapshotRequest;
         class GetDiskSnapshotsRequest;
         class GetDisksRequest;
         class GetDomainRequest;
         class GetDomainsRequest;
+        class GetExportSnapshotRecordsRequest;
         class GetInstanceRequest;
         class GetInstanceAccessDetailsRequest;
         class GetInstanceMetricDataRequest;
@@ -242,7 +254,9 @@ namespace Model
         class StartRelationalDatabaseRequest;
         class StopInstanceRequest;
         class StopRelationalDatabaseRequest;
+        class TagResourceRequest;
         class UnpeerVpcRequest;
+        class UntagResourceRequest;
         class UpdateDomainEntryRequest;
         class UpdateLoadBalancerAttributeRequest;
         class UpdateRelationalDatabaseRequest;
@@ -254,6 +268,8 @@ namespace Model
         typedef Aws::Utils::Outcome<AttachLoadBalancerTlsCertificateResult, Aws::Client::AWSError<LightsailErrors>> AttachLoadBalancerTlsCertificateOutcome;
         typedef Aws::Utils::Outcome<AttachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> AttachStaticIpOutcome;
         typedef Aws::Utils::Outcome<CloseInstancePublicPortsResult, Aws::Client::AWSError<LightsailErrors>> CloseInstancePublicPortsOutcome;
+        typedef Aws::Utils::Outcome<CopySnapshotResult, Aws::Client::AWSError<LightsailErrors>> CopySnapshotOutcome;
+        typedef Aws::Utils::Outcome<CreateCloudFormationStackResult, Aws::Client::AWSError<LightsailErrors>> CreateCloudFormationStackOutcome;
         typedef Aws::Utils::Outcome<CreateDiskResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskOutcome;
         typedef Aws::Utils::Outcome<CreateDiskFromSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskFromSnapshotOutcome;
         typedef Aws::Utils::Outcome<CreateDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> CreateDiskSnapshotOutcome;
@@ -283,15 +299,18 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachInstancesFromLoadBalancerResult, Aws::Client::AWSError<LightsailErrors>> DetachInstancesFromLoadBalancerOutcome;
         typedef Aws::Utils::Outcome<DetachStaticIpResult, Aws::Client::AWSError<LightsailErrors>> DetachStaticIpOutcome;
         typedef Aws::Utils::Outcome<DownloadDefaultKeyPairResult, Aws::Client::AWSError<LightsailErrors>> DownloadDefaultKeyPairOutcome;
+        typedef Aws::Utils::Outcome<ExportSnapshotResult, Aws::Client::AWSError<LightsailErrors>> ExportSnapshotOutcome;
         typedef Aws::Utils::Outcome<GetActiveNamesResult, Aws::Client::AWSError<LightsailErrors>> GetActiveNamesOutcome;
         typedef Aws::Utils::Outcome<GetBlueprintsResult, Aws::Client::AWSError<LightsailErrors>> GetBlueprintsOutcome;
         typedef Aws::Utils::Outcome<GetBundlesResult, Aws::Client::AWSError<LightsailErrors>> GetBundlesOutcome;
+        typedef Aws::Utils::Outcome<GetCloudFormationStackRecordsResult, Aws::Client::AWSError<LightsailErrors>> GetCloudFormationStackRecordsOutcome;
         typedef Aws::Utils::Outcome<GetDiskResult, Aws::Client::AWSError<LightsailErrors>> GetDiskOutcome;
         typedef Aws::Utils::Outcome<GetDiskSnapshotResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotOutcome;
         typedef Aws::Utils::Outcome<GetDiskSnapshotsResult, Aws::Client::AWSError<LightsailErrors>> GetDiskSnapshotsOutcome;
         typedef Aws::Utils::Outcome<GetDisksResult, Aws::Client::AWSError<LightsailErrors>> GetDisksOutcome;
         typedef Aws::Utils::Outcome<GetDomainResult, Aws::Client::AWSError<LightsailErrors>> GetDomainOutcome;
         typedef Aws::Utils::Outcome<GetDomainsResult, Aws::Client::AWSError<LightsailErrors>> GetDomainsOutcome;
+        typedef Aws::Utils::Outcome<GetExportSnapshotRecordsResult, Aws::Client::AWSError<LightsailErrors>> GetExportSnapshotRecordsOutcome;
         typedef Aws::Utils::Outcome<GetInstanceResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceOutcome;
         typedef Aws::Utils::Outcome<GetInstanceAccessDetailsResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceAccessDetailsOutcome;
         typedef Aws::Utils::Outcome<GetInstanceMetricDataResult, Aws::Client::AWSError<LightsailErrors>> GetInstanceMetricDataOutcome;
@@ -336,7 +355,9 @@ namespace Model
         typedef Aws::Utils::Outcome<StartRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StartRelationalDatabaseOutcome;
         typedef Aws::Utils::Outcome<StopInstanceResult, Aws::Client::AWSError<LightsailErrors>> StopInstanceOutcome;
         typedef Aws::Utils::Outcome<StopRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> StopRelationalDatabaseOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<LightsailErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UnpeerVpcResult, Aws::Client::AWSError<LightsailErrors>> UnpeerVpcOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<LightsailErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateDomainEntryResult, Aws::Client::AWSError<LightsailErrors>> UpdateDomainEntryOutcome;
         typedef Aws::Utils::Outcome<UpdateLoadBalancerAttributeResult, Aws::Client::AWSError<LightsailErrors>> UpdateLoadBalancerAttributeOutcome;
         typedef Aws::Utils::Outcome<UpdateRelationalDatabaseResult, Aws::Client::AWSError<LightsailErrors>> UpdateRelationalDatabaseOutcome;
@@ -348,6 +369,8 @@ namespace Model
         typedef std::future<AttachLoadBalancerTlsCertificateOutcome> AttachLoadBalancerTlsCertificateOutcomeCallable;
         typedef std::future<AttachStaticIpOutcome> AttachStaticIpOutcomeCallable;
         typedef std::future<CloseInstancePublicPortsOutcome> CloseInstancePublicPortsOutcomeCallable;
+        typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
+        typedef std::future<CreateCloudFormationStackOutcome> CreateCloudFormationStackOutcomeCallable;
         typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
         typedef std::future<CreateDiskFromSnapshotOutcome> CreateDiskFromSnapshotOutcomeCallable;
         typedef std::future<CreateDiskSnapshotOutcome> CreateDiskSnapshotOutcomeCallable;
@@ -377,15 +400,18 @@ namespace Model
         typedef std::future<DetachInstancesFromLoadBalancerOutcome> DetachInstancesFromLoadBalancerOutcomeCallable;
         typedef std::future<DetachStaticIpOutcome> DetachStaticIpOutcomeCallable;
         typedef std::future<DownloadDefaultKeyPairOutcome> DownloadDefaultKeyPairOutcomeCallable;
+        typedef std::future<ExportSnapshotOutcome> ExportSnapshotOutcomeCallable;
         typedef std::future<GetActiveNamesOutcome> GetActiveNamesOutcomeCallable;
         typedef std::future<GetBlueprintsOutcome> GetBlueprintsOutcomeCallable;
         typedef std::future<GetBundlesOutcome> GetBundlesOutcomeCallable;
+        typedef std::future<GetCloudFormationStackRecordsOutcome> GetCloudFormationStackRecordsOutcomeCallable;
         typedef std::future<GetDiskOutcome> GetDiskOutcomeCallable;
         typedef std::future<GetDiskSnapshotOutcome> GetDiskSnapshotOutcomeCallable;
         typedef std::future<GetDiskSnapshotsOutcome> GetDiskSnapshotsOutcomeCallable;
         typedef std::future<GetDisksOutcome> GetDisksOutcomeCallable;
         typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
         typedef std::future<GetDomainsOutcome> GetDomainsOutcomeCallable;
+        typedef std::future<GetExportSnapshotRecordsOutcome> GetExportSnapshotRecordsOutcomeCallable;
         typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
         typedef std::future<GetInstanceAccessDetailsOutcome> GetInstanceAccessDetailsOutcomeCallable;
         typedef std::future<GetInstanceMetricDataOutcome> GetInstanceMetricDataOutcomeCallable;
@@ -430,7 +456,9 @@ namespace Model
         typedef std::future<StartRelationalDatabaseOutcome> StartRelationalDatabaseOutcomeCallable;
         typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
         typedef std::future<StopRelationalDatabaseOutcome> StopRelationalDatabaseOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UnpeerVpcOutcome> UnpeerVpcOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateDomainEntryOutcome> UpdateDomainEntryOutcomeCallable;
         typedef std::future<UpdateLoadBalancerAttributeOutcome> UpdateLoadBalancerAttributeOutcomeCallable;
         typedef std::future<UpdateRelationalDatabaseOutcome> UpdateRelationalDatabaseOutcomeCallable;
@@ -445,6 +473,8 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::AttachLoadBalancerTlsCertificateRequest&, const Model::AttachLoadBalancerTlsCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachLoadBalancerTlsCertificateResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::AttachStaticIpRequest&, const Model::AttachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CloseInstancePublicPortsRequest&, const Model::CloseInstancePublicPortsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CloseInstancePublicPortsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::CreateCloudFormationStackRequest&, const Model::CreateCloudFormationStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCloudFormationStackResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskRequest&, const Model::CreateDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskFromSnapshotRequest&, const Model::CreateDiskFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskFromSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::CreateDiskSnapshotRequest&, const Model::CreateDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDiskSnapshotResponseReceivedHandler;
@@ -474,15 +504,18 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::DetachInstancesFromLoadBalancerRequest&, const Model::DetachInstancesFromLoadBalancerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachInstancesFromLoadBalancerResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DetachStaticIpRequest&, const Model::DetachStaticIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachStaticIpResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::DownloadDefaultKeyPairRequest&, const Model::DownloadDefaultKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DownloadDefaultKeyPairResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::ExportSnapshotRequest&, const Model::ExportSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetActiveNamesRequest&, const Model::GetActiveNamesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetActiveNamesResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBlueprintsRequest&, const Model::GetBlueprintsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlueprintsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetBundlesRequest&, const Model::GetBundlesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBundlesResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetCloudFormationStackRecordsRequest&, const Model::GetCloudFormationStackRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFormationStackRecordsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskRequest&, const Model::GetDiskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotRequest&, const Model::GetDiskSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDiskSnapshotsRequest&, const Model::GetDiskSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiskSnapshotsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDisksRequest&, const Model::GetDisksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDisksResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetDomainsRequest&, const Model::GetDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainsResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::GetExportSnapshotRecordsRequest&, const Model::GetExportSnapshotRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetExportSnapshotRecordsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetInstanceRequest&, const Model::GetInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetInstanceAccessDetailsRequest&, const Model::GetInstanceAccessDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceAccessDetailsResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::GetInstanceMetricDataRequest&, const Model::GetInstanceMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInstanceMetricDataResponseReceivedHandler;
@@ -527,7 +560,9 @@ namespace Model
     typedef std::function<void(const LightsailClient*, const Model::StartRelationalDatabaseRequest&, const Model::StartRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRelationalDatabaseResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopInstanceRequest&, const Model::StopInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstanceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::StopRelationalDatabaseRequest&, const Model::StopRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopRelationalDatabaseResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UnpeerVpcRequest&, const Model::UnpeerVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UnpeerVpcResponseReceivedHandler;
+    typedef std::function<void(const LightsailClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateDomainEntryRequest&, const Model::UpdateDomainEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainEntryResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateLoadBalancerAttributeRequest&, const Model::UpdateLoadBalancerAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLoadBalancerAttributeResponseReceivedHandler;
     typedef std::function<void(const LightsailClient*, const Model::UpdateRelationalDatabaseRequest&, const Model::UpdateRelationalDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRelationalDatabaseResponseReceivedHandler;
@@ -604,8 +639,11 @@ namespace Model
 
         /**
          * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
-         * exposes it to the instance with the specified disk name.</p><p><h3>See
-         * Also:</h3>   <a
+         * exposes it to the instance with the specified disk name.</p> <p>The <code>attach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
          * API Reference</a></p>
          */
@@ -613,8 +651,11 @@ namespace Model
 
         /**
          * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
-         * exposes it to the instance with the specified disk name.</p><p><h3>See
-         * Also:</h3>   <a
+         * exposes it to the instance with the specified disk name.</p> <p>The <code>attach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
          * API Reference</a></p>
          *
@@ -624,8 +665,11 @@ namespace Model
 
         /**
          * <p>Attaches a block storage disk to a running or stopped Lightsail instance and
-         * exposes it to the instance with the specified disk name.</p><p><h3>See
-         * Also:</h3>   <a
+         * exposes it to the instance with the specified disk name.</p> <p>The <code>attach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachDisk">AWS
          * API Reference</a></p>
          *
@@ -636,7 +680,11 @@ namespace Model
         /**
          * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
          * some time, the instances are attached to the load balancer and the health check
-         * status is available.</p><p><h3>See Also:</h3>   <a
+         * status is available.</p> <p>The <code>attach instances to load balancer</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          */
@@ -645,7 +693,11 @@ namespace Model
         /**
          * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
          * some time, the instances are attached to the load balancer and the health check
-         * status is available.</p><p><h3>See Also:</h3>   <a
+         * status is available.</p> <p>The <code>attach instances to load balancer</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -656,7 +708,11 @@ namespace Model
         /**
          * <p>Attaches one or more Lightsail instances to a load balancer.</p> <p>After
          * some time, the instances are attached to the load balancer and the health check
-         * status is available.</p><p><h3>See Also:</h3>   <a
+         * status is available.</p> <p>The <code>attach instances to load balancer</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachInstancesToLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -671,7 +727,12 @@ namespace Model
          * balancer. You can also use this API to rotate the certificates on your account.
          * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p><p><h3>See Also:</h3>   <a
+         * attached certificate.</p> <p>The <code>attach load balancer tls
+         * certificate</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          */
@@ -684,7 +745,12 @@ namespace Model
          * balancer. You can also use this API to rotate the certificates on your account.
          * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p><p><h3>See Also:</h3>   <a
+         * attached certificate.</p> <p>The <code>attach load balancer tls
+         * certificate</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -699,7 +765,12 @@ namespace Model
          * balancer. You can also use this API to rotate the certificates on your account.
          * Use the <code>AttachLoadBalancerTlsCertificate</code> operation with the
          * non-attached certificate, and it will replace the existing one and become the
-         * attached certificate.</p><p><h3>See Also:</h3>   <a
+         * attached certificate.</p> <p>The <code>attach load balancer tls
+         * certificate</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -736,16 +807,24 @@ namespace Model
         virtual void AttachStaticIpAsync(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
+         * <code>close instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
          * API Reference</a></p>
          */
         virtual Model::CloseInstancePublicPortsOutcome CloseInstancePublicPorts(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
+         * <code>close instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -754,8 +833,12 @@ namespace Model
         virtual Model::CloseInstancePublicPortsOutcomeCallable CloseInstancePublicPortsCallable(const Model::CloseInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Closes the public ports on a specific Amazon Lightsail
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Closes the public ports on a specific Amazon Lightsail instance.</p> <p>The
+         * <code>close instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CloseInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -764,12 +847,90 @@ namespace Model
         virtual void CloseInstancePublicPortsAsync(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Copies an instance or disk snapshot from one AWS Region to another in Amazon
+         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
+
+        /**
+         * <p>Copies an instance or disk snapshot from one AWS Region to another in Amazon
+         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
+
+        /**
+         * <p>Copies an instance or disk snapshot from one AWS Region to another in Amazon
+         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CopySnapshotAsync(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
+         * from an exported Amazon Lightsail snapshot. This operation results in a
+         * CloudFormation stack record that can be used to track the AWS CloudFormation
+         * stack created. Use the <code>get cloud formation stack records</code> operation
+         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * until after your new Amazon EC2 instance is created before running the
+         * <code>create cloud formation stack</code> operation again with the same export
+         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCloudFormationStackOutcome CreateCloudFormationStack(const Model::CreateCloudFormationStackRequest& request) const;
+
+        /**
+         * <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
+         * from an exported Amazon Lightsail snapshot. This operation results in a
+         * CloudFormation stack record that can be used to track the AWS CloudFormation
+         * stack created. Use the <code>get cloud formation stack records</code> operation
+         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * until after your new Amazon EC2 instance is created before running the
+         * <code>create cloud formation stack</code> operation again with the same export
+         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCloudFormationStackOutcomeCallable CreateCloudFormationStackCallable(const Model::CreateCloudFormationStackRequest& request) const;
+
+        /**
+         * <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance
+         * from an exported Amazon Lightsail snapshot. This operation results in a
+         * CloudFormation stack record that can be used to track the AWS CloudFormation
+         * stack created. Use the <code>get cloud formation stack records</code> operation
+         * to get a list of the CloudFormation stacks created.</p> <important> <p>Wait
+         * until after your new Amazon EC2 instance is created before running the
+         * <code>create cloud formation stack</code> operation again with the same export
+         * snapshot record.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCloudFormationStack">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCloudFormationStackAsync(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a block storage disk that can be attached to a Lightsail instance in
          * the same Availability Zone (e.g., <code>us-east-2a</code>). The disk is created
          * in the regional endpoint that you send the HTTP request to. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
          * API Reference</a></p>
          */
@@ -781,7 +942,11 @@ namespace Model
          * in the regional endpoint that you send the HTTP request to. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
          * API Reference</a></p>
          *
@@ -795,7 +960,11 @@ namespace Model
          * in the regional endpoint that you send the HTTP request to. For more
          * information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDisk">AWS
          * API Reference</a></p>
          *
@@ -809,7 +978,12 @@ namespace Model
          * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
          * send the HTTP request to. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk from
+         * snapshot</code> operation supports tag-based access control via request tags and
+         * resource tags applied to the resource identified by diskSnapshotName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -821,7 +995,12 @@ namespace Model
          * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
          * send the HTTP request to. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk from
+         * snapshot</code> operation supports tag-based access control via request tags and
+         * resource tags applied to the resource identified by diskSnapshotName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -835,7 +1014,12 @@ namespace Model
          * <code>us-east-2a</code>). The disk is created in the regional endpoint that you
          * send the HTTP request to. For more information, see <a
          * href="https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail">Regions
-         * and Availability Zones in Lightsail</a>.</p><p><h3>See Also:</h3>   <a
+         * and Availability Zones in Lightsail</a>.</p> <p>The <code>create disk from
+         * snapshot</code> operation supports tag-based access control via request tags and
+         * resource tags applied to the resource identified by diskSnapshotName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -855,7 +1039,10 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p><p><h3>See Also:</h3>   <a
+         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
          * API Reference</a></p>
          */
@@ -873,7 +1060,10 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p><p><h3>See Also:</h3>   <a
+         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
          * API Reference</a></p>
          *
@@ -893,7 +1083,10 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p><p><h3>See Also:</h3>   <a
+         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDiskSnapshot">AWS
          * API Reference</a></p>
          *
@@ -902,16 +1095,22 @@ namespace Model
         virtual void CreateDiskSnapshotAsync(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g.,
-         * example.com).</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>The <code>create domain</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g.,
-         * example.com).</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>The <code>create domain</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -920,8 +1119,11 @@ namespace Model
         virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
 
         /**
-         * <p>Creates a domain resource for the specified domain (e.g.,
-         * example.com).</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+         * <p>The <code>create domain</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomain">AWS
          * API Reference</a></p>
          *
@@ -931,7 +1133,12 @@ namespace Model
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
+         * entry</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by domainName. For more information, see the
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
          * API Reference</a></p>
          */
@@ -939,7 +1146,12 @@ namespace Model
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
+         * entry</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by domainName. For more information, see the
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -949,7 +1161,12 @@ namespace Model
 
         /**
          * <p>Creates one of the following entry records associated with the domain: A
-         * record, CNAME record, TXT record, or MX record.</p><p><h3>See Also:</h3>   <a
+         * record, CNAME record, TXT record, or MX record.</p> <p>The <code>create domain
+         * entry</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by domainName. For more information, see the
+         * <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -960,7 +1177,10 @@ namespace Model
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * snapshot.</p> <p>The <code>create instance snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
          * API Reference</a></p>
          */
@@ -969,7 +1189,10 @@ namespace Model
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * snapshot.</p> <p>The <code>create instance snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
          * API Reference</a></p>
          *
@@ -980,7 +1203,10 @@ namespace Model
         /**
          * <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
          * You can use a snapshot to create a new instance that is based on that
-         * snapshot.</p><p><h3>See Also:</h3>   <a
+         * snapshot.</p> <p>The <code>create instance snapshot</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstanceSnapshot">AWS
          * API Reference</a></p>
          *
@@ -994,8 +1220,11 @@ namespace Model
          * are listed to support customers with existing instances but are not necessarily
          * available for launch of new instances. Blueprints are marked inactive when they
          * become outdated due to operating system updates or new application releases. Use
-         * the get blueprints operation to return a list of available
-         * blueprints.</p><p><h3>See Also:</h3>   <a
+         * the get blueprints operation to return a list of available blueprints.</p>
+         * <p>The <code>create instances</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
          * API Reference</a></p>
          */
@@ -1007,8 +1236,11 @@ namespace Model
          * are listed to support customers with existing instances but are not necessarily
          * available for launch of new instances. Blueprints are marked inactive when they
          * become outdated due to operating system updates or new application releases. Use
-         * the get blueprints operation to return a list of available
-         * blueprints.</p><p><h3>See Also:</h3>   <a
+         * the get blueprints operation to return a list of available blueprints.</p>
+         * <p>The <code>create instances</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
          * API Reference</a></p>
          *
@@ -1022,8 +1254,11 @@ namespace Model
          * are listed to support customers with existing instances but are not necessarily
          * available for launch of new instances. Blueprints are marked inactive when they
          * become outdated due to operating system updates or new application releases. Use
-         * the get blueprints operation to return a list of available
-         * blueprints.</p><p><h3>See Also:</h3>   <a
+         * the get blueprints operation to return a list of available blueprints.</p>
+         * <p>The <code>create instances</code> operation supports tag-based access control
+         * via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstances">AWS
          * API Reference</a></p>
          *
@@ -1033,8 +1268,12 @@ namespace Model
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * instances that are based on that identical configuration.</p> <p>The
+         * <code>create instances from snapshot</code> operation supports tag-based access
+         * control via request tags and resource tags applied to the resource identified by
+         * instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1042,8 +1281,12 @@ namespace Model
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * instances that are based on that identical configuration.</p> <p>The
+         * <code>create instances from snapshot</code> operation supports tag-based access
+         * control via request tags and resource tags applied to the resource identified by
+         * instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1053,8 +1296,12 @@ namespace Model
 
         /**
          * <p>Uses a specific snapshot as a blueprint for creating one or more new
-         * instances that are based on that identical configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * instances that are based on that identical configuration.</p> <p>The
+         * <code>create instances from snapshot</code> operation supports tag-based access
+         * control via request tags and resource tags applied to the resource identified by
+         * instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateInstancesFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1063,14 +1310,22 @@ namespace Model
         virtual void CreateInstancesFromSnapshotAsync(const Model::CreateInstancesFromSnapshotRequest& request, const CreateInstancesFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
+         * supports tag-based access control via request tags. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateKeyPairOutcome CreateKeyPair(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates an SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
+         * supports tag-based access control via request tags. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
          * API Reference</a></p>
          *
@@ -1079,7 +1334,11 @@ namespace Model
         virtual Model::CreateKeyPairOutcomeCallable CreateKeyPairCallable(const Model::CreateKeyPairRequest& request) const;
 
         /**
-         * <p>Creates an SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an SSH key pair.</p> <p>The <code>create key pair</code> operation
+         * supports tag-based access control via request tags. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateKeyPair">AWS
          * API Reference</a></p>
          *
@@ -1095,7 +1354,10 @@ namespace Model
          * balancers per AWS Region in your account.</p> <p>When you create a load
          * balancer, you can specify a unique name and port settings. To change additional
          * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>create load balancer</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          */
@@ -1109,7 +1371,10 @@ namespace Model
          * balancers per AWS Region in your account.</p> <p>When you create a load
          * balancer, you can specify a unique name and port settings. To change additional
          * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>create load balancer</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1125,7 +1390,10 @@ namespace Model
          * balancers per AWS Region in your account.</p> <p>When you create a load
          * balancer, you can specify a unique name and port settings. To change additional
          * load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>create load balancer</code> operation supports
+         * tag-based access control via request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1135,8 +1403,12 @@ namespace Model
 
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p><p><h3>See
-         * Also:</h3>   <a
+         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
+         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          */
@@ -1144,8 +1416,12 @@ namespace Model
 
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p><p><h3>See
-         * Also:</h3>   <a
+         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
+         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -1155,8 +1431,12 @@ namespace Model
 
         /**
          * <p>Creates a Lightsail load balancer TLS certificate.</p> <p>TLS is just an
-         * updated, more secure version of Secure Socket Layer (SSL).</p><p><h3>See
-         * Also:</h3>   <a
+         * updated, more secure version of Secure Socket Layer (SSL).</p> <p>The
+         * <code>create load balancer tls certificate</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -1165,14 +1445,22 @@ namespace Model
         virtual void CreateLoadBalancerTlsCertificateAsync(const Model::CreateLoadBalancerTlsCertificateRequest& request, const CreateLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new database in Amazon Lightsail.</p> <p>The <code>create
+         * relational database</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateRelationalDatabaseOutcome CreateRelationalDatabase(const Model::CreateRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Creates a new database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new database in Amazon Lightsail.</p> <p>The <code>create
+         * relational database</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -1181,7 +1469,11 @@ namespace Model
         virtual Model::CreateRelationalDatabaseOutcomeCallable CreateRelationalDatabaseCallable(const Model::CreateRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Creates a new database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new database in Amazon Lightsail.</p> <p>The <code>create
+         * relational database</code> operation supports tag-based access control via
+         * request tags. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -1193,7 +1485,12 @@ namespace Model
          * <p>Creates a new database from an existing database snapshot in Amazon
          * Lightsail.</p> <p>You can create a new database from a snapshot in if something
          * goes wrong with your original database, or to change it to a different plan,
-         * such as a high availability or standard plan.</p><p><h3>See Also:</h3>   <a
+         * such as a high availability or standard plan.</p> <p>The <code>create relational
+         * database from snapshot</code> operation supports tag-based access control via
+         * request tags and resource tags applied to the resource identified by
+         * relationalDatabaseSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1203,7 +1500,12 @@ namespace Model
          * <p>Creates a new database from an existing database snapshot in Amazon
          * Lightsail.</p> <p>You can create a new database from a snapshot in if something
          * goes wrong with your original database, or to change it to a different plan,
-         * such as a high availability or standard plan.</p><p><h3>See Also:</h3>   <a
+         * such as a high availability or standard plan.</p> <p>The <code>create relational
+         * database from snapshot</code> operation supports tag-based access control via
+         * request tags and resource tags applied to the resource identified by
+         * relationalDatabaseSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1215,7 +1517,12 @@ namespace Model
          * <p>Creates a new database from an existing database snapshot in Amazon
          * Lightsail.</p> <p>You can create a new database from a snapshot in if something
          * goes wrong with your original database, or to change it to a different plan,
-         * such as a high availability or standard plan.</p><p><h3>See Also:</h3>   <a
+         * such as a high availability or standard plan.</p> <p>The <code>create relational
+         * database from snapshot</code> operation supports tag-based access control via
+         * request tags and resource tags applied to the resource identified by
+         * relationalDatabaseSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseFromSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1226,7 +1533,11 @@ namespace Model
         /**
          * <p>Creates a snapshot of your database in Amazon Lightsail. You can use
          * snapshots for backups, to make copies of a database, and to save data before
-         * deleting a database.</p><p><h3>See Also:</h3>   <a
+         * deleting a database.</p> <p>The <code>create relational database snapshot</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1235,7 +1546,11 @@ namespace Model
         /**
          * <p>Creates a snapshot of your database in Amazon Lightsail. You can use
          * snapshots for backups, to make copies of a database, and to save data before
-         * deleting a database.</p><p><h3>See Also:</h3>   <a
+         * deleting a database.</p> <p>The <code>create relational database snapshot</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1246,7 +1561,11 @@ namespace Model
         /**
          * <p>Creates a snapshot of your database in Amazon Lightsail. You can use
          * snapshots for backups, to make copies of a database, and to save data before
-         * deleting a database.</p><p><h3>See Also:</h3>   <a
+         * deleting a database.</p> <p>The <code>create relational database snapshot</code>
+         * operation supports tag-based access control via request tags. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1258,7 +1577,11 @@ namespace Model
          * <p>Deletes the specified block storage disk. The disk must be in the
          * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
          * API Reference</a></p>
          */
@@ -1268,7 +1591,11 @@ namespace Model
          * <p>Deletes the specified block storage disk. The disk must be in the
          * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
          * API Reference</a></p>
          *
@@ -1280,7 +1607,11 @@ namespace Model
          * <p>Deletes the specified block storage disk. The disk must be in the
          * <code>available</code> state (not attached to a Lightsail instance).</p> <note>
          * <p>The disk may remain in the <code>deleting</code> state for several
-         * minutes.</p> </note><p><h3>See Also:</h3>   <a
+         * minutes.</p> </note> <p>The <code>delete disk</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDisk">AWS
          * API Reference</a></p>
          *
@@ -1294,8 +1625,12 @@ namespace Model
          * have changed since your last snapshot are saved in the new snapshot. When you
          * delete a snapshot, only the data not needed for any other snapshot is removed.
          * So regardless of which prior snapshots have been deleted, all active snapshots
-         * will have access to all the information needed to restore the
-         * disk.</p><p><h3>See Also:</h3>   <a
+         * will have access to all the information needed to restore the disk.</p> <p>The
+         * <code>delete disk snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by diskSnapshotName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1307,8 +1642,12 @@ namespace Model
          * have changed since your last snapshot are saved in the new snapshot. When you
          * delete a snapshot, only the data not needed for any other snapshot is removed.
          * So regardless of which prior snapshots have been deleted, all active snapshots
-         * will have access to all the information needed to restore the
-         * disk.</p><p><h3>See Also:</h3>   <a
+         * will have access to all the information needed to restore the disk.</p> <p>The
+         * <code>delete disk snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by diskSnapshotName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1322,8 +1661,12 @@ namespace Model
          * have changed since your last snapshot are saved in the new snapshot. When you
          * delete a snapshot, only the data not needed for any other snapshot is removed.
          * So regardless of which prior snapshots have been deleted, all active snapshots
-         * will have access to all the information needed to restore the
-         * disk.</p><p><h3>See Also:</h3>   <a
+         * will have access to all the information needed to restore the disk.</p> <p>The
+         * <code>delete disk snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by diskSnapshotName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDiskSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1332,16 +1675,24 @@ namespace Model
         virtual void DeleteDiskSnapshotAsync(const Model::DeleteDiskSnapshotRequest& request, const DeleteDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain
-         * records.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>The <code>delete domain</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain
-         * records.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>The <code>delete domain</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
          * API Reference</a></p>
          *
@@ -1350,8 +1701,12 @@ namespace Model
         virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
 
         /**
-         * <p>Deletes the specified domain recordset and all of its domain
-         * records.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified domain recordset and all of its domain records.</p>
+         * <p>The <code>delete domain</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by domainName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomain">AWS
          * API Reference</a></p>
          *
@@ -1360,14 +1715,22 @@ namespace Model
         virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific domain entry.</p> <p>The <code>delete domain entry</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by domainName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteDomainEntryOutcome DeleteDomainEntry(const Model::DeleteDomainEntryRequest& request) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific domain entry.</p> <p>The <code>delete domain entry</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by domainName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -1376,7 +1739,11 @@ namespace Model
         virtual Model::DeleteDomainEntryOutcomeCallable DeleteDomainEntryCallable(const Model::DeleteDomainEntryRequest& request) const;
 
         /**
-         * <p>Deletes a specific domain entry.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific domain entry.</p> <p>The <code>delete domain entry</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by domainName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -1386,7 +1753,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>.</p> <p>The <code>delete instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
          * API Reference</a></p>
          */
@@ -1394,7 +1765,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>.</p> <p>The <code>delete instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
          * API Reference</a></p>
          *
@@ -1404,7 +1779,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific Amazon Lightsail virtual private server, or
-         * <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>.</p> <p>The <code>delete instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstance">AWS
          * API Reference</a></p>
          *
@@ -1414,7 +1793,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>).</p> <p>The <code>delete instance snapshot</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
          * API Reference</a></p>
          */
@@ -1422,7 +1805,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>).</p> <p>The <code>delete instance snapshot</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1432,7 +1819,11 @@ namespace Model
 
         /**
          * <p>Deletes a specific snapshot of a virtual private server (or
-         * <i>instance</i>).</p><p><h3>See Also:</h3>   <a
+         * <i>instance</i>).</p> <p>The <code>delete instance snapshot</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by instanceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteInstanceSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1441,14 +1832,22 @@ namespace Model
         virtual void DeleteInstanceSnapshotAsync(const Model::DeleteInstanceSnapshotRequest& request, const DeleteInstanceSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by keyPairName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteKeyPairOutcome DeleteKeyPair(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by keyPairName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
          * API Reference</a></p>
          *
@@ -1457,7 +1856,11 @@ namespace Model
         virtual Model::DeleteKeyPairOutcomeCallable DeleteKeyPairCallable(const Model::DeleteKeyPairRequest& request) const;
 
         /**
-         * <p>Deletes a specific SSH key pair.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a specific SSH key pair.</p> <p>The <code>delete key pair</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by keyPairName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteKeyPair">AWS
          * API Reference</a></p>
          *
@@ -1468,8 +1871,12 @@ namespace Model
         /**
          * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
          * certificates. Once the load balancer is deleted, you will need to create a new
-         * load balancer, create a new certificate, and verify domain ownership
-         * again.</p><p><h3>See Also:</h3>   <a
+         * load balancer, create a new certificate, and verify domain ownership again.</p>
+         * <p>The <code>delete load balancer</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          */
@@ -1478,8 +1885,12 @@ namespace Model
         /**
          * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
          * certificates. Once the load balancer is deleted, you will need to create a new
-         * load balancer, create a new certificate, and verify domain ownership
-         * again.</p><p><h3>See Also:</h3>   <a
+         * load balancer, create a new certificate, and verify domain ownership again.</p>
+         * <p>The <code>delete load balancer</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1490,8 +1901,12 @@ namespace Model
         /**
          * <p>Deletes a Lightsail load balancer and all its associated SSL/TLS
          * certificates. Once the load balancer is deleted, you will need to create a new
-         * load balancer, create a new certificate, and verify domain ownership
-         * again.</p><p><h3>See Also:</h3>   <a
+         * load balancer, create a new certificate, and verify domain ownership again.</p>
+         * <p>The <code>delete load balancer</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1500,16 +1915,24 @@ namespace Model
         virtual void DeleteLoadBalancerAsync(const Model::DeleteLoadBalancerRequest& request, const DeleteLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
+         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLoadBalancerTlsCertificateOutcome DeleteLoadBalancerTlsCertificate(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
+         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -1518,8 +1941,12 @@ namespace Model
         virtual Model::DeleteLoadBalancerTlsCertificateOutcomeCallable DeleteLoadBalancerTlsCertificateCallable(const Model::DeleteLoadBalancerTlsCertificateRequest& request) const;
 
         /**
-         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load
-         * balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
+         * <p>The <code>delete load balancer tls certificate</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteLoadBalancerTlsCertificate">AWS
          * API Reference</a></p>
          *
@@ -1528,14 +1955,24 @@ namespace Model
         virtual void DeleteLoadBalancerTlsCertificateAsync(const Model::DeleteLoadBalancerTlsCertificateRequest& request, const DeleteLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a database in Amazon Lightsail.</p> <p>The <code>delete relational
+         * database</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by relationalDatabaseName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRelationalDatabaseOutcome DeleteRelationalDatabase(const Model::DeleteRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Deletes a database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a database in Amazon Lightsail.</p> <p>The <code>delete relational
+         * database</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by relationalDatabaseName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -1544,7 +1981,12 @@ namespace Model
         virtual Model::DeleteRelationalDatabaseOutcomeCallable DeleteRelationalDatabaseCallable(const Model::DeleteRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Deletes a database in Amazon Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a database in Amazon Lightsail.</p> <p>The <code>delete relational
+         * database</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by relationalDatabaseName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -1553,16 +1995,24 @@ namespace Model
         virtual void DeleteRelationalDatabaseAsync(const Model::DeleteRelationalDatabaseRequest& request, const DeleteRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a database snapshot in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a database snapshot in Amazon Lightsail.</p> <p>The <code>delete
+         * relational database snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by relationalDatabaseName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRelationalDatabaseSnapshotOutcome DeleteRelationalDatabaseSnapshot(const Model::DeleteRelationalDatabaseSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a database snapshot in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a database snapshot in Amazon Lightsail.</p> <p>The <code>delete
+         * relational database snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by relationalDatabaseName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1571,8 +2021,12 @@ namespace Model
         virtual Model::DeleteRelationalDatabaseSnapshotOutcomeCallable DeleteRelationalDatabaseSnapshotCallable(const Model::DeleteRelationalDatabaseSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes a database snapshot in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a database snapshot in Amazon Lightsail.</p> <p>The <code>delete
+         * relational database snapshot</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by relationalDatabaseName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteRelationalDatabaseSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1583,7 +2037,11 @@ namespace Model
         /**
          * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
          * unmount any file systems on the device within your operating system before
-         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * stopping the instance and detaching the disk.</p> <p>The <code>detach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
          * API Reference</a></p>
          */
@@ -1592,7 +2050,11 @@ namespace Model
         /**
          * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
          * unmount any file systems on the device within your operating system before
-         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * stopping the instance and detaching the disk.</p> <p>The <code>detach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
          * API Reference</a></p>
          *
@@ -1603,7 +2065,11 @@ namespace Model
         /**
          * <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to
          * unmount any file systems on the device within your operating system before
-         * stopping the instance and detaching the disk.</p><p><h3>See Also:</h3>   <a
+         * stopping the instance and detaching the disk.</p> <p>The <code>detach
+         * disk</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by diskName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachDisk">AWS
          * API Reference</a></p>
          *
@@ -1614,7 +2080,12 @@ namespace Model
         /**
          * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
          * operation waits until the instances are no longer needed before they are
-         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
+         * detached from the load balancer.</p> <p>The <code>detach instances from load
+         * balancer</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          */
@@ -1623,7 +2094,12 @@ namespace Model
         /**
          * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
          * operation waits until the instances are no longer needed before they are
-         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
+         * detached from the load balancer.</p> <p>The <code>detach instances from load
+         * balancer</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1634,7 +2110,12 @@ namespace Model
         /**
          * <p>Detaches the specified instances from a Lightsail load balancer.</p> <p>This
          * operation waits until the instances are no longer needed before they are
-         * detached from the load balancer.</p><p><h3>See Also:</h3>   <a
+         * detached from the load balancer.</p> <p>The <code>detach instances from load
+         * balancer</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by loadBalancerName. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachInstancesFromLoadBalancer">AWS
          * API Reference</a></p>
          *
@@ -1697,6 +2178,73 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DownloadDefaultKeyPairAsync(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
+         * record that can be used with the <code>create cloud formation stack</code>
+         * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
+         * appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system
+         * disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk
+         * snapshots appear in Amazon EC2 as Amazon EBS volumes. Snapshots are exported to
+         * the same Amazon Web Services Region in Amazon EC2 as the source Lightsail
+         * snapshot.</p> <p/> <p>The <code>export snapshot</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * sourceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * <code>get disk snapshots</code> operations to get a list of snapshots that you
+         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ExportSnapshotOutcome ExportSnapshot(const Model::ExportSnapshotRequest& request) const;
+
+        /**
+         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
+         * record that can be used with the <code>create cloud formation stack</code>
+         * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
+         * appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system
+         * disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk
+         * snapshots appear in Amazon EC2 as Amazon EBS volumes. Snapshots are exported to
+         * the same Amazon Web Services Region in Amazon EC2 as the source Lightsail
+         * snapshot.</p> <p/> <p>The <code>export snapshot</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * sourceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * <code>get disk snapshots</code> operations to get a list of snapshots that you
+         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ExportSnapshotOutcomeCallable ExportSnapshotCallable(const Model::ExportSnapshotRequest& request) const;
+
+        /**
+         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
+         * record that can be used with the <code>create cloud formation stack</code>
+         * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
+         * appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance system
+         * disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk
+         * snapshots appear in Amazon EC2 as Amazon EBS volumes. Snapshots are exported to
+         * the same Amazon Web Services Region in Amazon EC2 as the source Lightsail
+         * snapshot.</p> <p/> <p>The <code>export snapshot</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * sourceSnapshotName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p> <note> <p>Use the <code>get instance snapshots</code> or
+         * <code>get disk snapshots</code> operations to get a list of snapshots that you
+         * can export to Amazon EC2.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ExportSnapshot">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ExportSnapshotAsync(const Model::ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the names of all active (not deleted) resources.</p><p><h3>See
@@ -1793,6 +2341,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetBundlesAsync(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the CloudFormation stack record created as a result of the
+         * <code>create cloud formation stack</code> operation.</p> <p>An AWS
+         * CloudFormation stack is used to create a new Amazon EC2 instance from an
+         * exported Lightsail snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCloudFormationStackRecordsOutcome GetCloudFormationStackRecords(const Model::GetCloudFormationStackRecordsRequest& request) const;
+
+        /**
+         * <p>Returns the CloudFormation stack record created as a result of the
+         * <code>create cloud formation stack</code> operation.</p> <p>An AWS
+         * CloudFormation stack is used to create a new Amazon EC2 instance from an
+         * exported Lightsail snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCloudFormationStackRecordsOutcomeCallable GetCloudFormationStackRecordsCallable(const Model::GetCloudFormationStackRecordsRequest& request) const;
+
+        /**
+         * <p>Returns the CloudFormation stack record created as a result of the
+         * <code>create cloud formation stack</code> operation.</p> <p>An AWS
+         * CloudFormation stack is used to create a new Amazon EC2 instance from an
+         * exported Lightsail snapshot.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCloudFormationStackRecords">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCloudFormationStackRecordsAsync(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns information about a specific block storage disk.</p><p><h3>See
@@ -1981,6 +2563,40 @@ namespace Model
         virtual void GetDomainsAsync(const Model::GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns the export snapshot record created as a result of the <code>export
+         * snapshot</code> operation.</p> <p>An export snapshot record can be used to
+         * create a new Amazon EC2 instance and its related resources with the <code>create
+         * cloud formation stack</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetExportSnapshotRecordsOutcome GetExportSnapshotRecords(const Model::GetExportSnapshotRecordsRequest& request) const;
+
+        /**
+         * <p>Returns the export snapshot record created as a result of the <code>export
+         * snapshot</code> operation.</p> <p>An export snapshot record can be used to
+         * create a new Amazon EC2 instance and its related resources with the <code>create
+         * cloud formation stack</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetExportSnapshotRecordsOutcomeCallable GetExportSnapshotRecordsCallable(const Model::GetExportSnapshotRecordsRequest& request) const;
+
+        /**
+         * <p>Returns the export snapshot record created as a result of the <code>export
+         * snapshot</code> operation.</p> <p>An export snapshot record can be used to
+         * create a new Amazon EC2 instance and its related resources with the <code>create
+         * cloud formation stack</code> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetExportSnapshotRecords">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetExportSnapshotRecordsAsync(const Model::GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a specific Amazon Lightsail instance, which is a
          * virtual private server.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstance">AWS
@@ -2010,7 +2626,12 @@ namespace Model
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * private server, or <i>instance</i>.</p> <p>The <code>get instance access
+         * details</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
          * API Reference</a></p>
          */
@@ -2018,7 +2639,12 @@ namespace Model
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * private server, or <i>instance</i>.</p> <p>The <code>get instance access
+         * details</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
          * API Reference</a></p>
          *
@@ -2028,7 +2654,12 @@ namespace Model
 
         /**
          * <p>Returns temporary SSH keys you can use to connect to a specific virtual
-         * private server, or <i>instance</i>.</p><p><h3>See Also:</h3>   <a
+         * private server, or <i>instance</i>.</p> <p>The <code>get instance access
+         * details</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS
          * API Reference</a></p>
          *
@@ -2693,7 +3324,10 @@ namespace Model
 
         /**
          * <p>Returns the current, previous, or pending versions of the master user
-         * password for a Lightsail database.</p><p><h3>See Also:</h3>   <a
+         * password for a Lightsail database.</p> <p>The <code>asdf</code> operation
+         * GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+         * resource tags applied to the resource identified by
+         * relationalDatabaseName.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword">AWS
          * API Reference</a></p>
          */
@@ -2701,7 +3335,10 @@ namespace Model
 
         /**
          * <p>Returns the current, previous, or pending versions of the master user
-         * password for a Lightsail database.</p><p><h3>See Also:</h3>   <a
+         * password for a Lightsail database.</p> <p>The <code>asdf</code> operation
+         * GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+         * resource tags applied to the resource identified by
+         * relationalDatabaseName.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword">AWS
          * API Reference</a></p>
          *
@@ -2711,7 +3348,10 @@ namespace Model
 
         /**
          * <p>Returns the current, previous, or pending versions of the master user
-         * password for a Lightsail database.</p><p><h3>See Also:</h3>   <a
+         * password for a Lightsail database.</p> <p>The <code>asdf</code> operation
+         * GetRelationalDatabaseMasterUserPassword supports tag-based access control via
+         * resource tags applied to the resource identified by
+         * relationalDatabaseName.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMasterUserPassword">AWS
          * API Reference</a></p>
          *
@@ -2981,16 +3621,24 @@ namespace Model
         virtual void IsVpcPeeredAsync(const Model::IsVpcPeeredRequest& request, const IsVpcPeeredResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
+         * instance public ports</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
          * API Reference</a></p>
          */
         virtual Model::OpenInstancePublicPortsOutcome OpenInstancePublicPorts(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
+         * instance public ports</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -2999,8 +3647,12 @@ namespace Model
         virtual Model::OpenInstancePublicPortsOutcomeCallable OpenInstancePublicPortsCallable(const Model::OpenInstancePublicPortsRequest& request) const;
 
         /**
-         * <p>Adds public ports to an Amazon Lightsail instance.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Adds public ports to an Amazon Lightsail instance.</p> <p>The <code>open
+         * instance public ports</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/OpenInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -3038,8 +3690,12 @@ namespace Model
 
         /**
          * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p><p><h3>See
-         * Also:</h3>   <a
+         * all ports for every protocol not included in the current request.</p> <p>The
+         * <code>put instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
          * API Reference</a></p>
          */
@@ -3047,8 +3703,12 @@ namespace Model
 
         /**
          * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p><p><h3>See
-         * Also:</h3>   <a
+         * all ports for every protocol not included in the current request.</p> <p>The
+         * <code>put instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -3058,8 +3718,12 @@ namespace Model
 
         /**
          * <p>Sets the specified open ports for an Amazon Lightsail instance, and closes
-         * all ports for every protocol not included in the current request.</p><p><h3>See
-         * Also:</h3>   <a
+         * all ports for every protocol not included in the current request.</p> <p>The
+         * <code>put instance public ports</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by instanceName.
+         * For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/PutInstancePublicPorts">AWS
          * API Reference</a></p>
          *
@@ -3070,8 +3734,12 @@ namespace Model
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * after restarting, create a static IP address and attach it to the instance.</p>
+         * <p>The <code>reboot instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
          * API Reference</a></p>
          */
@@ -3080,8 +3748,12 @@ namespace Model
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * after restarting, create a static IP address and attach it to the instance.</p>
+         * <p>The <code>reboot instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
          * API Reference</a></p>
          *
@@ -3092,8 +3764,12 @@ namespace Model
         /**
          * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
          * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * after restarting, create a static IP address and attach it to the instance.</p>
+         * <p>The <code>reboot instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
          * API Reference</a></p>
          *
@@ -3102,16 +3778,24 @@ namespace Model
         virtual void RebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restarts a specific database in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Restarts a specific database in Amazon Lightsail.</p> <p>The <code>reboot
+         * relational database</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by relationalDatabaseName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">AWS
          * API Reference</a></p>
          */
         virtual Model::RebootRelationalDatabaseOutcome RebootRelationalDatabase(const Model::RebootRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Restarts a specific database in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Restarts a specific database in Amazon Lightsail.</p> <p>The <code>reboot
+         * relational database</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by relationalDatabaseName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3120,8 +3804,12 @@ namespace Model
         virtual Model::RebootRelationalDatabaseOutcomeCallable RebootRelationalDatabaseCallable(const Model::RebootRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Restarts a specific database in Amazon Lightsail.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Restarts a specific database in Amazon Lightsail.</p> <p>The <code>reboot
+         * relational database</code> operation supports tag-based access control via
+         * resource tags applied to the resource identified by relationalDatabaseName. For
+         * more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3156,7 +3844,12 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * an instance, use the reboot instance operation.</p> <p>The <code>start
+         * instance</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
          * API Reference</a></p>
          */
@@ -3164,7 +3857,12 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * an instance, use the reboot instance operation.</p> <p>The <code>start
+         * instance</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
          * API Reference</a></p>
          *
@@ -3174,7 +3872,12 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p><p><h3>See Also:</h3>   <a
+         * an instance, use the reboot instance operation.</p> <p>The <code>start
+         * instance</code> operation supports tag-based access control via resource tags
+         * applied to the resource identified by instanceName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
          * API Reference</a></p>
          *
@@ -3185,7 +3888,11 @@ namespace Model
         /**
          * <p>Starts a specific database from a stopped state in Amazon Lightsail. To
          * restart a database, use the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>start relational database</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">AWS
          * API Reference</a></p>
          */
@@ -3194,7 +3901,11 @@ namespace Model
         /**
          * <p>Starts a specific database from a stopped state in Amazon Lightsail. To
          * restart a database, use the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>start relational database</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3205,7 +3916,11 @@ namespace Model
         /**
          * <p>Starts a specific database from a stopped state in Amazon Lightsail. To
          * restart a database, use the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * operation.</p> <p>The <code>start relational database</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3214,16 +3929,24 @@ namespace Model
         virtual void StartRelationalDatabaseAsync(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>The <code>stop instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::StopInstanceOutcome StopInstance(const Model::StopInstanceRequest& request) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>The <code>stop instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
          * API Reference</a></p>
          *
@@ -3232,8 +3955,12 @@ namespace Model
         virtual Model::StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request) const;
 
         /**
-         * <p>Stops a specific Amazon Lightsail instance that is currently
-         * running.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+         * <p>The <code>stop instance</code> operation supports tag-based access control
+         * via resource tags applied to the resource identified by instanceName. For more
+         * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
          * API Reference</a></p>
          *
@@ -3242,16 +3969,24 @@ namespace Model
         virtual void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops a specific database that is currently running in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
+         * <p>The <code>stop relational database</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">AWS
          * API Reference</a></p>
          */
         virtual Model::StopRelationalDatabaseOutcome StopRelationalDatabase(const Model::StopRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Stops a specific database that is currently running in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
+         * <p>The <code>stop relational database</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3260,14 +3995,70 @@ namespace Model
         virtual Model::StopRelationalDatabaseOutcomeCallable StopRelationalDatabaseCallable(const Model::StopRelationalDatabaseRequest& request) const;
 
         /**
-         * <p>Stops a specific database that is currently running in Amazon
-         * Lightsail.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
+         * <p>The <code>stop relational database</code> operation supports tag-based access
+         * control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopRelationalDatabase">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopRelationalDatabaseAsync(const Model::StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds one or more tags to the specified Amazon Lightsail resource. Each
+         * resource can have a maximum of 50 tags. Each tag consists of a key and an
+         * optional value. Tag keys must be unique per resource. For more information about
+         * tags, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+         * Dev Guide</a>.</p> <p>The <code>tag resource</code> operation supports tag-based
+         * access control via request tags and resource tags applied to the resource
+         * identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to the specified Amazon Lightsail resource. Each
+         * resource can have a maximum of 50 tags. Each tag consists of a key and an
+         * optional value. Tag keys must be unique per resource. For more information about
+         * tags, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+         * Dev Guide</a>.</p> <p>The <code>tag resource</code> operation supports tag-based
+         * access control via request tags and resource tags applied to the resource
+         * identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to the specified Amazon Lightsail resource. Each
+         * resource can have a maximum of 50 tags. Each tag consists of a key and an
+         * optional value. Tag keys must be unique per resource. For more information about
+         * tags, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+         * Dev Guide</a>.</p> <p>The <code>tag resource</code> operation supports tag-based
+         * access control via request tags and resource tags applied to the resource
+         * identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Attempts to unpeer the Lightsail VPC from the user's default
@@ -3298,14 +4089,64 @@ namespace Model
         virtual void UnpeerVpcAsync(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified set of tag keys and their values from the specified
+         * Amazon Lightsail resource.</p> <p>The <code>untag resource</code> operation
+         * supports tag-based access control via request tags and resource tags applied to
+         * the resource identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified set of tag keys and their values from the specified
+         * Amazon Lightsail resource.</p> <p>The <code>untag resource</code> operation
+         * supports tag-based access control via request tags and resource tags applied to
+         * the resource identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Deletes the specified set of tag keys and their values from the specified
+         * Amazon Lightsail resource.</p> <p>The <code>untag resource</code> operation
+         * supports tag-based access control via request tags and resource tags applied to
+         * the resource identified by resourceName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a domain recordset after it is created.</p> <p>The <code>update
+         * domain entry</code> operation supports tag-based access control via resource
+         * tags applied to the resource identified by domainName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDomainEntryOutcome UpdateDomainEntry(const Model::UpdateDomainEntryRequest& request) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a domain recordset after it is created.</p> <p>The <code>update
+         * domain entry</code> operation supports tag-based access control via resource
+         * tags applied to the resource identified by domainName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -3314,7 +4155,12 @@ namespace Model
         virtual Model::UpdateDomainEntryOutcomeCallable UpdateDomainEntryCallable(const Model::UpdateDomainEntryRequest& request) const;
 
         /**
-         * <p>Updates a domain recordset after it is created.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a domain recordset after it is created.</p> <p>The <code>update
+         * domain entry</code> operation supports tag-based access control via resource
+         * tags applied to the resource identified by domainName. For more information, see
+         * the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDomainEntry">AWS
          * API Reference</a></p>
          *
@@ -3324,7 +4170,11 @@ namespace Model
 
         /**
          * <p>Updates the specified attribute for a load balancer. You can only update one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time.</p> <p>The <code>update load balancer attribute</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          */
@@ -3332,7 +4182,11 @@ namespace Model
 
         /**
          * <p>Updates the specified attribute for a load balancer. You can only update one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time.</p> <p>The <code>update load balancer attribute</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          *
@@ -3342,7 +4196,11 @@ namespace Model
 
         /**
          * <p>Updates the specified attribute for a load balancer. You can only update one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time.</p> <p>The <code>update load balancer attribute</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by loadBalancerName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateLoadBalancerAttribute">AWS
          * API Reference</a></p>
          *
@@ -3354,7 +4212,11 @@ namespace Model
          * <p>Allows the update of one or more attributes of a database in Amazon
          * Lightsail.</p> <p>Updates are applied immediately, or in cases where the updates
          * could result in an outage, are applied during the database's predefined
-         * maintenance window.</p><p><h3>See Also:</h3>   <a
+         * maintenance window.</p> <p>The <code>update relational database</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">AWS
          * API Reference</a></p>
          */
@@ -3364,7 +4226,11 @@ namespace Model
          * <p>Allows the update of one or more attributes of a database in Amazon
          * Lightsail.</p> <p>Updates are applied immediately, or in cases where the updates
          * could result in an outage, are applied during the database's predefined
-         * maintenance window.</p><p><h3>See Also:</h3>   <a
+         * maintenance window.</p> <p>The <code>update relational database</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3376,7 +4242,11 @@ namespace Model
          * <p>Allows the update of one or more attributes of a database in Amazon
          * Lightsail.</p> <p>Updates are applied immediately, or in cases where the updates
          * could result in an outage, are applied during the database's predefined
-         * maintenance window.</p><p><h3>See Also:</h3>   <a
+         * maintenance window.</p> <p>The <code>update relational database</code> operation
+         * supports tag-based access control via resource tags applied to the resource
+         * identified by relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabase">AWS
          * API Reference</a></p>
          *
@@ -3392,8 +4262,12 @@ namespace Model
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is
-         * rebooted using the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * rebooted using the <code>reboot relational database</code> operation.</p> <p>The
+         * <code>update relational database parameters</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">AWS
          * API Reference</a></p>
          */
@@ -3407,8 +4281,12 @@ namespace Model
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is
-         * rebooted using the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * rebooted using the <code>reboot relational database</code> operation.</p> <p>The
+         * <code>update relational database parameters</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">AWS
          * API Reference</a></p>
          *
@@ -3424,8 +4302,12 @@ namespace Model
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is
-         * rebooted using the <code>reboot relational database</code>
-         * operation.</p><p><h3>See Also:</h3>   <a
+         * rebooted using the <code>reboot relational database</code> operation.</p> <p>The
+         * <code>update relational database parameters</code> operation supports tag-based
+         * access control via resource tags applied to the resource identified by
+         * relationalDatabaseName. For more information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateRelationalDatabaseParameters">AWS
          * API Reference</a></p>
          *
@@ -3445,6 +4327,8 @@ namespace Model
         void AttachLoadBalancerTlsCertificateAsyncHelper(const Model::AttachLoadBalancerTlsCertificateRequest& request, const AttachLoadBalancerTlsCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachStaticIpAsyncHelper(const Model::AttachStaticIpRequest& request, const AttachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CloseInstancePublicPortsAsyncHelper(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CopySnapshotAsyncHelper(const Model::CopySnapshotRequest& request, const CopySnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCloudFormationStackAsyncHelper(const Model::CreateCloudFormationStackRequest& request, const CreateCloudFormationStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskAsyncHelper(const Model::CreateDiskRequest& request, const CreateDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskFromSnapshotAsyncHelper(const Model::CreateDiskFromSnapshotRequest& request, const CreateDiskFromSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDiskSnapshotAsyncHelper(const Model::CreateDiskSnapshotRequest& request, const CreateDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3474,15 +4358,18 @@ namespace Model
         void DetachInstancesFromLoadBalancerAsyncHelper(const Model::DetachInstancesFromLoadBalancerRequest& request, const DetachInstancesFromLoadBalancerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachStaticIpAsyncHelper(const Model::DetachStaticIpRequest& request, const DetachStaticIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DownloadDefaultKeyPairAsyncHelper(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ExportSnapshotAsyncHelper(const Model::ExportSnapshotRequest& request, const ExportSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetActiveNamesAsyncHelper(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlueprintsAsyncHelper(const Model::GetBlueprintsRequest& request, const GetBlueprintsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBundlesAsyncHelper(const Model::GetBundlesRequest& request, const GetBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCloudFormationStackRecordsAsyncHelper(const Model::GetCloudFormationStackRecordsRequest& request, const GetCloudFormationStackRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskAsyncHelper(const Model::GetDiskRequest& request, const GetDiskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotAsyncHelper(const Model::GetDiskSnapshotRequest& request, const GetDiskSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiskSnapshotsAsyncHelper(const Model::GetDiskSnapshotsRequest& request, const GetDiskSnapshotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDisksAsyncHelper(const Model::GetDisksRequest& request, const GetDisksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAsyncHelper(const Model::GetDomainRequest& request, const GetDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainsAsyncHelper(const Model::GetDomainsRequest& request, const GetDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetExportSnapshotRecordsAsyncHelper(const Model::GetExportSnapshotRecordsRequest& request, const GetExportSnapshotRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceAsyncHelper(const Model::GetInstanceRequest& request, const GetInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceAccessDetailsAsyncHelper(const Model::GetInstanceAccessDetailsRequest& request, const GetInstanceAccessDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetInstanceMetricDataAsyncHelper(const Model::GetInstanceMetricDataRequest& request, const GetInstanceMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3527,7 +4414,9 @@ namespace Model
         void StartRelationalDatabaseAsyncHelper(const Model::StartRelationalDatabaseRequest& request, const StartRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstanceAsyncHelper(const Model::StopInstanceRequest& request, const StopInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopRelationalDatabaseAsyncHelper(const Model::StopRelationalDatabaseRequest& request, const StopRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UnpeerVpcAsyncHelper(const Model::UnpeerVpcRequest& request, const UnpeerVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDomainEntryAsyncHelper(const Model::UpdateDomainEntryRequest& request, const UpdateDomainEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateLoadBalancerAttributeAsyncHelper(const Model::UpdateLoadBalancerAttributeRequest& request, const UpdateLoadBalancerAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRelationalDatabaseAsyncHelper(const Model::UpdateRelationalDatabaseRequest& request, const UpdateRelationalDatabaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

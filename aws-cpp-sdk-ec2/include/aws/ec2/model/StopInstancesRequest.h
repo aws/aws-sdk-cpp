@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for StopInstances.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstancesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API StopInstancesRequest : public EC2Request
   {
@@ -92,6 +89,37 @@ namespace Model
 
 
     /**
+     * <p>Hibernates the instance if the instance was enabled for hibernation at
+     * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * Default: <code>false</code> </p>
+     */
+    inline bool GetHibernate() const{ return m_hibernate; }
+
+    /**
+     * <p>Hibernates the instance if the instance was enabled for hibernation at
+     * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * Default: <code>false</code> </p>
+     */
+    inline void SetHibernate(bool value) { m_hibernateHasBeenSet = true; m_hibernate = value; }
+
+    /**
+     * <p>Hibernates the instance if the instance was enabled for hibernation at
+     * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
+     * Default: <code>false</code> </p>
+     */
+    inline StopInstancesRequest& WithHibernate(bool value) { SetHibernate(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -144,6 +172,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceIds;
     bool m_instanceIdsHasBeenSet;
+
+    bool m_hibernate;
+    bool m_hibernateHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

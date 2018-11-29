@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The status of the operation. Values include the following:</p> <ul> <li> <p>
      * <b>SUBMITTED</b>: This is the initial state immediately after you submit a
-     * request.</p> </li> <li> <p> <b>PENDING</b>: Route 53 is performing the
+     * request.</p> </li> <li> <p> <b>PENDING</b>: AWS Cloud Map is performing the
      * operation.</p> </li> <li> <p> <b>SUCCESS</b>: The operation succeeded.</p> </li>
      * <li> <p> <b>FAIL</b>: The operation failed. For the failure reason, see
      * <code>ErrorMessage</code>.</p> </li> </ul>

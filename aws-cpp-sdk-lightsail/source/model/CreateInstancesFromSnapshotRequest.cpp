@@ -29,7 +29,8 @@ CreateInstancesFromSnapshotRequest::CreateInstancesFromSnapshotRequest() :
     m_instanceSnapshotNameHasBeenSet(false),
     m_bundleIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_keyPairNameHasBeenSet(false)
+    m_keyPairNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,17 @@ Aws::String CreateInstancesFromSnapshotRequest::SerializePayload() const
   if(m_keyPairNameHasBeenSet)
   {
    payload.WithString("keyPairName", m_keyPairName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

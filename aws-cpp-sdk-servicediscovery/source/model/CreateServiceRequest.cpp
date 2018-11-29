@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateServiceRequest::CreateServiceRequest() : 
     m_nameHasBeenSet(false),
+    m_namespaceIdHasBeenSet(false),
     m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_descriptionHasBeenSet(false),
@@ -40,6 +41,12 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_namespaceIdHasBeenSet)
+  {
+   payload.WithString("NamespaceId", m_namespaceId);
 
   }
 

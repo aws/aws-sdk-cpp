@@ -436,6 +436,99 @@ namespace Model
      */
     inline ListNotebookInstancesRequest& WithNotebookInstanceLifecycleConfigNameContains(const char* value) { SetNotebookInstanceLifecycleConfigNameContains(value); return *this;}
 
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline const Aws::String& GetDefaultCodeRepositoryContains() const{ return m_defaultCodeRepositoryContains; }
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(const Aws::String& value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains = value; }
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(Aws::String&& value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains = std::move(value); }
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(const char* value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains.assign(value); }
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(const Aws::String& value) { SetDefaultCodeRepositoryContains(value); return *this;}
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(Aws::String&& value) { SetDefaultCodeRepositoryContains(std::move(value)); return *this;}
+
+    /**
+     * <p>A string in the name or URL of a git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(const char* value) { SetDefaultCodeRepositoryContains(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline const Aws::String& GetAdditionalCodeRepositoryEquals() const{ return m_additionalCodeRepositoryEquals; }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(const Aws::String& value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals = value; }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(Aws::String&& value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals = std::move(value); }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(const char* value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals.assign(value); }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(const Aws::String& value) { SetAdditionalCodeRepositoryEquals(value); return *this;}
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(Aws::String&& value) { SetAdditionalCodeRepositoryEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git respository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(const char* value) { SetAdditionalCodeRepositoryEquals(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -470,6 +563,12 @@ namespace Model
 
     Aws::String m_notebookInstanceLifecycleConfigNameContains;
     bool m_notebookInstanceLifecycleConfigNameContainsHasBeenSet;
+
+    Aws::String m_defaultCodeRepositoryContains;
+    bool m_defaultCodeRepositoryContainsHasBeenSet;
+
+    Aws::String m_additionalCodeRepositoryEquals;
+    bool m_additionalCodeRepositoryEqualsHasBeenSet;
   };
 
 } // namespace Model

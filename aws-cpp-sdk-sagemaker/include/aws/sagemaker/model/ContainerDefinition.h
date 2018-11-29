@@ -186,7 +186,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
@@ -200,7 +200,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
@@ -214,7 +214,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
@@ -228,7 +228,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
@@ -242,7 +242,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
@@ -256,7 +256,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
@@ -270,7 +270,7 @@ namespace Model
      * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
      * that region. For more information, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
      * Management User Guide</i>.</p>
      */
     inline ContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
@@ -360,6 +360,42 @@ namespace Model
      */
     inline ContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the model package in this container.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -373,6 +409,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::String m_modelPackageName;
+    bool m_modelPackageNameHasBeenSet;
   };
 
 } // namespace Model

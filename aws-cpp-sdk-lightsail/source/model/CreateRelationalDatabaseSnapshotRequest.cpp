@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateRelationalDatabaseSnapshotRequest::CreateRelationalDatabaseSnapshotRequest() : 
     m_relationalDatabaseNameHasBeenSet(false),
-    m_relationalDatabaseSnapshotNameHasBeenSet(false)
+    m_relationalDatabaseSnapshotNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateRelationalDatabaseSnapshotRequest::SerializePayload() const
   if(m_relationalDatabaseSnapshotNameHasBeenSet)
   {
    payload.WithString("relationalDatabaseSnapshotName", m_relationalDatabaseSnapshotName);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -18,6 +18,8 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/InstanceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
 
 namespace Aws
@@ -272,6 +274,324 @@ namespace Model
      */
     inline UpdateNotebookInstanceRequest& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
 
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline const Aws::String& GetDefaultCodeRepository() const{ return m_defaultCodeRepository; }
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline void SetDefaultCodeRepository(const Aws::String& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = value; }
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline void SetDefaultCodeRepository(Aws::String&& value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository = std::move(value); }
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline void SetDefaultCodeRepository(const char* value) { m_defaultCodeRepositoryHasBeenSet = true; m_defaultCodeRepository.assign(value); }
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(const Aws::String& value) { SetDefaultCodeRepository(value); return *this;}
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(Aws::String&& value) { SetDefaultCodeRepository(std::move(value)); return *this;}
+
+    /**
+     * <p>The git repository to associate with the notebook instance as its default
+     * code repository. This can be either the name of a git repository stored as a
+     * resource in your account, or the URL of a git repository in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository. When you open a notebook
+     * instance, it opens in the directory that contains this repository. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDefaultCodeRepository(const char* value) { SetDefaultCodeRepository(value); return *this;}
+
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAdditionalCodeRepositories() const{ return m_additionalCodeRepositories; }
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline void SetAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = value; }
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline void SetAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories = std::move(value); }
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithAdditionalCodeRepositories(const Aws::Vector<Aws::String>& value) { SetAdditionalCodeRepositories(value); return *this;}
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithAdditionalCodeRepositories(Aws::Vector<Aws::String>&& value) { SetAdditionalCodeRepositories(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(const Aws::String& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(Aws::String&& value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of up to 3 git repositories to associate with the notebook instance.
+     * These can be either the names of git repositories stored as resources in your
+     * account, or the URL of git repositories in <a
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
+     * CodeCommit</a> or in any other git repository.. These repositories are cloned at
+     * the same level as the default repository of your notebook instance. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
+     * Git Repositories with Amazon SageMaker Notebook Instances</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
+
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline const Aws::Vector<NotebookInstanceAcceleratorType>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline void SetAcceleratorTypes(const Aws::Vector<NotebookInstanceAcceleratorType>& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = value; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline void SetAcceleratorTypes(Aws::Vector<NotebookInstanceAcceleratorType>&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = std::move(value); }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithAcceleratorTypes(const Aws::Vector<NotebookInstanceAcceleratorType>& value) { SetAcceleratorTypes(value); return *this;}
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithAcceleratorTypes(Aws::Vector<NotebookInstanceAcceleratorType>&& value) { SetAcceleratorTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& AddAcceleratorTypes(const NotebookInstanceAcceleratorType& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to associate with this
+     * notebook instance. Currently only one EI instance type can be associated with a
+     * notebook instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
+     */
+    inline UpdateNotebookInstanceRequest& AddAcceleratorTypes(NotebookInstanceAcceleratorType&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to remove from this
+     * notebook instance.</p>
+     */
+    inline bool GetDisassociateAcceleratorTypes() const{ return m_disassociateAcceleratorTypes; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to remove from this
+     * notebook instance.</p>
+     */
+    inline void SetDisassociateAcceleratorTypes(bool value) { m_disassociateAcceleratorTypesHasBeenSet = true; m_disassociateAcceleratorTypes = value; }
+
+    /**
+     * <p>A list of the Elastic Inference (EI) instance types to remove from this
+     * notebook instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDisassociateAcceleratorTypes(bool value) { SetDisassociateAcceleratorTypes(value); return *this;}
+
+
+    /**
+     * <p>The name or URL of the default git repository to remove from this notebook
+     * instance.</p>
+     */
+    inline bool GetDisassociateDefaultCodeRepository() const{ return m_disassociateDefaultCodeRepository; }
+
+    /**
+     * <p>The name or URL of the default git repository to remove from this notebook
+     * instance.</p>
+     */
+    inline void SetDisassociateDefaultCodeRepository(bool value) { m_disassociateDefaultCodeRepositoryHasBeenSet = true; m_disassociateDefaultCodeRepository = value; }
+
+    /**
+     * <p>The name or URL of the default git repository to remove from this notebook
+     * instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDisassociateDefaultCodeRepository(bool value) { SetDisassociateDefaultCodeRepository(value); return *this;}
+
+
+    /**
+     * <p>A list of names or URLs of the default git repositories to remove from this
+     * notebook instance.</p>
+     */
+    inline bool GetDisassociateAdditionalCodeRepositories() const{ return m_disassociateAdditionalCodeRepositories; }
+
+    /**
+     * <p>A list of names or URLs of the default git repositories to remove from this
+     * notebook instance.</p>
+     */
+    inline void SetDisassociateAdditionalCodeRepositories(bool value) { m_disassociateAdditionalCodeRepositoriesHasBeenSet = true; m_disassociateAdditionalCodeRepositories = value; }
+
+    /**
+     * <p>A list of names or URLs of the default git repositories to remove from this
+     * notebook instance.</p>
+     */
+    inline UpdateNotebookInstanceRequest& WithDisassociateAdditionalCodeRepositories(bool value) { SetDisassociateAdditionalCodeRepositories(value); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -291,6 +611,24 @@ namespace Model
 
     int m_volumeSizeInGB;
     bool m_volumeSizeInGBHasBeenSet;
+
+    Aws::String m_defaultCodeRepository;
+    bool m_defaultCodeRepositoryHasBeenSet;
+
+    Aws::Vector<Aws::String> m_additionalCodeRepositories;
+    bool m_additionalCodeRepositoriesHasBeenSet;
+
+    Aws::Vector<NotebookInstanceAcceleratorType> m_acceleratorTypes;
+    bool m_acceleratorTypesHasBeenSet;
+
+    bool m_disassociateAcceleratorTypes;
+    bool m_disassociateAcceleratorTypesHasBeenSet;
+
+    bool m_disassociateDefaultCodeRepository;
+    bool m_disassociateDefaultCodeRepositoryHasBeenSet;
+
+    bool m_disassociateAdditionalCodeRepositories;
+    bool m_disassociateAdditionalCodeRepositoriesHasBeenSet;
   };
 
 } // namespace Model

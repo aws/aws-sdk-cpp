@@ -22,6 +22,8 @@ using namespace Aws::Utils;
 
 StopInstancesRequest::StopInstancesRequest() : 
     m_instanceIdsHasBeenSet(false),
+    m_hibernate(false),
+    m_hibernateHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_force(false),
@@ -42,6 +44,11 @@ Aws::String StopInstancesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       instanceIdsCount++;
     }
+  }
+
+  if(m_hibernateHasBeenSet)
+  {
+    ss << "Hibernate=" << std::boolalpha << m_hibernate << "&";
   }
 
   if(m_dryRunHasBeenSet)

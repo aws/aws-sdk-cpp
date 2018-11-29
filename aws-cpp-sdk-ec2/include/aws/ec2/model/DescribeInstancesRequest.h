@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeInstances.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstancesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeInstancesRequest : public EC2Request
   {
@@ -74,6 +71,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -242,6 +242,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -410,6 +413,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -578,6 +584,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -746,6 +755,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -914,6 +926,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
@@ -1082,6 +1097,9 @@ namespace Model
      * <code>group-id</code> - The ID of the security group for the instance.
      * EC2-Classic only.</p> </li> <li> <p> <code>group-name</code> - The name of the
      * security group for the instance. EC2-Classic only.</p> </li> <li> <p>
+     * <code>hibernation-options.configured</code> - A Boolean that indicates whether
+     * the instance is enabled for hibernation. A value of <code>true</code> means that
+     * the instance is enabled for hibernation. </p> </li> <li> <p>
      * <code>host-id</code> - The ID of the Dedicated Host on which the instance is
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>

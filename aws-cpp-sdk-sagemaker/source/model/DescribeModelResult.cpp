@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeModelResult::DescribeModelResult()
+DescribeModelResult::DescribeModelResult() : 
+    m_enableNetworkIsolation(false)
 {
 }
 
-DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeModelResult::DescribeModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_enableNetworkIsolation(false)
 {
   *this = result;
 }
@@ -48,6 +50,15 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   {
     m_primaryContainer = jsonValue.GetObject("PrimaryContainer");
 
+  }
+
+  if(jsonValue.ValueExists("Containers"))
+  {
+    Array<JsonView> containersJsonList = jsonValue.GetArray("Containers");
+    for(unsigned containersIndex = 0; containersIndex < containersJsonList.GetLength(); ++containersIndex)
+    {
+      m_containers.push_back(containersJsonList[containersIndex].AsObject());
+    }
   }
 
   if(jsonValue.ValueExists("ExecutionRoleArn"))
@@ -71,6 +82,12 @@ DescribeModelResult& DescribeModelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ModelArn"))
   {
     m_modelArn = jsonValue.GetString("ModelArn");
+
+  }
+
+  if(jsonValue.ValueExists("EnableNetworkIsolation"))
+  {
+    m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
 
   }
 
