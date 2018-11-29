@@ -137,7 +137,7 @@ namespace Aws
                     }
                 }
 
-                FlushProfileAndReset(line, 0, 0);
+                FlushProfileAndReset(line, std::string::npos, std::string::npos);
             }
 
         private:
