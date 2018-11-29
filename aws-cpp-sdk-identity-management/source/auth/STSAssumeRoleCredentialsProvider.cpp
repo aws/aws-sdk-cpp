@@ -24,11 +24,58 @@ using namespace Aws::STS;
 
 namespace Aws
 {
+    namespace Internal
+    {
+        static const char* ROLE_CREDENTIALS_SUPPLIER_TAG = "RoleCredentialsSupplier";
+
+        /**
+         * This implementation gets injected into core to enable ProfileConfigFileAWSCredentialsProvider to acquire role credentials.
+         */
+        class RoleCredentialsSupplier : public Aws::Auth::IRoleCredentialsSupplier
+        {
+        public:
+            Aws::Auth::AWSCredentials GetRoleCredentials(const Aws::Auth::AWSCredentials& sourceCredentials,
+                                                         const Aws::String& roleArn) override
+            {
+                auto stsClient = Aws::MakeShared<Aws::STS::STSClient>(ROLE_CREDENTIALS_SUPPLIER_TAG, sourceCredentials);
+                Aws::Auth::STSAssumeRoleCredentialsProvider provider(roleArn, sourceCredentials.GetAWSAccessKeyId(), Aws::String(),
+                                                                     Aws::Auth::DEFAULT_CREDS_LOAD_FREQ_SECONDS, stsClient);
+                return provider.GetAWSCredentials();
+            }
+        };
+
+        class RoleCredentialsProviderActivator
+        {
+        public:
+            RoleCredentialsProviderActivator()
+            {
+                Aws::Auth::ActivateRoleCredentialsProvider();
+            }
+        };
+
+        /**
+         * Instantiating a RoleCredentialsProviderActivator here will ensure that ActivateRoleCredentialsProvider gets called right away
+         */
+        static const RoleCredentialsProviderActivator __G_ROLE_CREDENTIALS_PROVIDER_ACTIVATOR__;
+    }
+
     namespace Auth
     {
         static const char* CLASS_TAG = "STSAssumeRoleCredentialsProvider";
         //60 seconds;
         static const int ACCOUNT_FOR_LATENCY = 60;
+
+        void ActivateRoleCredentialsProvider(void)
+        {
+            static bool wasEnabled = false;
+
+            if(!wasEnabled)
+            {
+                auto supplier = Aws::MakeShared<Aws::Internal::RoleCredentialsSupplier>(CLASS_TAG);
+                Aws::Auth::ProfileConfigFileAWSCredentialsProvider::SetRoleCredentialsSupplier(supplier);
+                wasEnabled = true;
+            }
+        }
 
         STSAssumeRoleCredentialsProvider::STSAssumeRoleCredentialsProvider(const Aws::String& roleArn, const Aws::String& sessionName,
             const Aws::String& externalId, int loadFrequency, const std::shared_ptr<Aws::STS::STSClient>& stsClient) :

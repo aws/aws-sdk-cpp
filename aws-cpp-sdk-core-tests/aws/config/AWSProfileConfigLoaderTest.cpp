@@ -41,6 +41,34 @@ static void WriteDefaultConfigFile(Aws::OStream& stream, bool useProfilePrefix =
     stream << "region = us-west-2" << std::endl;
 }
 
+TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileMerge)
+{
+    Aws::Config::Profile profile1, profile2;
+
+    profile1.SetName("name1");
+    Aws::Auth::AWSCredentials credentials1;
+    credentials1.SetAWSAccessKeyId("accessKey1");
+    credentials1.SetAWSSecretKey("secretKey1");
+    credentials1.SetSessionToken("token1");
+    profile1.SetCredentials(credentials1);
+
+    profile2.SetName("name2");
+    profile2.SetRegion("region2");
+    profile2.SetRoleArn("role2");
+    profile2.SetSourceProfile("source2");
+
+    profile1.MergeWith(profile2);
+
+    ASSERT_STREQ("name1", profile1.GetName().c_str());
+    ASSERT_STREQ("region2", profile1.GetRegion().c_str());
+    ASSERT_STREQ("accessKey1", profile1.GetCredentials().GetAWSAccessKeyId().c_str());
+    ASSERT_STREQ("secretKey1", profile1.GetCredentials().GetAWSSecretKey().c_str());
+    ASSERT_STREQ("token1", profile1.GetCredentials().GetSessionToken().c_str());
+    ASSERT_STREQ("role2", profile1.GetRoleArn().c_str());
+    ASSERT_STREQ("", profile1.GetExternalId().c_str());
+    ASSERT_STREQ("source2", profile1.GetSourceProfile().c_str());
+}
+
 TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);

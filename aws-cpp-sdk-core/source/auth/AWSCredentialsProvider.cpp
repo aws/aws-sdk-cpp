@@ -114,6 +114,8 @@ static Aws::String GetBaseDirectory()
     return Aws::FileSystem::GetHomeDirectory();
 }
 
+std::shared_ptr<IRoleCredentialsSupplier> ProfileConfigFileAWSCredentialsProvider::m_roleCredentialsSupplier;
+
 Aws::String ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename()
 {
     return GetBaseDirectory() + PROFILE_DIRECTORY + DIRECTORY_JOIN + CONFIG_FILENAME;
@@ -190,22 +192,62 @@ AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials()
 {
     RefreshIfExpired();
     ReaderLockGuard guard(m_reloadLock);
-    auto credsFileProfileIter = m_credentialsFileLoader->GetProfiles().find(m_profileToUse);
+    return GetAWSCredentials(m_profileToUse);
+}
 
-    if(credsFileProfileIter != m_credentialsFileLoader->GetProfiles().end())
+AWSCredentials ProfileConfigFileAWSCredentialsProvider::GetAWSCredentials(const Aws::String& profileName)
+{
+    Aws::Config::Profile profile;
+
+    if(!GetMergedProfile(profileName, profile))
     {
-        return credsFileProfileIter->second.GetCredentials();
+        AWS_LOGSTREAM_ERROR(PROFILE_LOG_TAG, "The profile \"" << profileName << "\" does not exist.");
+        return AWSCredentials();
     }
 
-    auto configFileProfileIter = m_configFileLoader->GetProfiles().find(m_profileToUse);
-    if(configFileProfileIter != m_configFileLoader->GetProfiles().end())
+    if(profile.GetRoleArn().empty() || profile.GetSourceProfile().empty())
     {
-        return configFileProfileIter->second.GetCredentials();
+        return profile.GetCredentials();
+    }
+
+    auto sourceCredentials = GetAWSCredentials(profile.GetSourceProfile());
+    if(sourceCredentials.GetAWSAccessKeyId().empty())
+    {
+        AWS_LOGSTREAM_ERROR(PROFILE_LOG_TAG, "The source_profile \"" << profile.GetSourceProfile() << "\" referenced in the profile \""
+                                      << profileName << "\" does not exist.");
+    }
+    else if(m_roleCredentialsSupplier)
+    {
+        return m_roleCredentialsSupplier->GetRoleCredentials(sourceCredentials, profile.GetRoleArn());
     }
 
     return AWSCredentials();
 }
 
+bool ProfileConfigFileAWSCredentialsProvider::GetMergedProfile(const Aws::String& profileName, Aws::Config::Profile& profile) const
+{
+    const auto& credentials = m_credentialsFileLoader->GetProfiles();
+    const auto& config = m_configFileLoader->GetProfiles();
+
+    if(credentials.count(profileName) == 0 && config.count(profileName) == 0)
+    {
+        return false;
+    }
+
+    profile = Aws::Config::Profile();
+
+    if(credentials.count(profileName))
+    {
+        profile.MergeWith(credentials.at(profileName));
+    }
+
+    if(config.count(profileName))
+    {
+        profile.MergeWith(config.at(profileName));
+    }
+
+    return true;
+}
 
 void ProfileConfigFileAWSCredentialsProvider::Reload()
 {

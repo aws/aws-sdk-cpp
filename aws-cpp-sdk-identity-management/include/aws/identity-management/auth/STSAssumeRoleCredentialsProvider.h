@@ -17,6 +17,7 @@
 
 #include <aws/identity-management/IdentityManagment_EXPORTS.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
+#include <aws/core/config/AWSProfileConfigLoader.h>
 
 #include <memory>
 #include <mutex>
@@ -35,6 +36,13 @@ namespace Aws
          * The default credential lifetime is 15 minutes
          */
         static const int DEFAULT_CREDS_LOAD_FREQ_SECONDS = 900;
+
+        /**
+         * A user who a) wants DefaultAWSCredentialsProviderChain to provide role credentials and b) is building static
+         * AWS libraries should call this function to ensure the linker includes STS.  If the user never uses any
+         * symbols in STS, the linker may optimize by excluding STS.
+         */
+        void ActivateRoleCredentialsProvider();
 
         /**
          * Credentials provider for STS Assume Role

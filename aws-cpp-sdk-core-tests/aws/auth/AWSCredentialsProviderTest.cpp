@@ -36,57 +36,140 @@ static const char *AllocationTag = "AWSCredentialsProviderTest";
 using namespace Aws::Auth;
 using namespace Aws::Utils;
 
-TEST(ProfileConfigFileAWSCredentialsProviderTest, TestDefaultConfig)
+static const char* gWrongRoleCredentialsAccessKeyId = "wrong_access_key";
+static const char* gWrongRoleCredentialsSecretKey = "wrong_secret_key";
+static const char* gRoleCredentialsAccessKeyId = "role_credentials_access_key";
+static const char* gRoleCredentialsSecretKey = "role_credentials_secret_key";
+
+
+class CredentialsFileModifyingTest : public ::testing::Test
+{
+public:
+
+    void SetUp()
+    {
+        auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
+
+        Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
+
+        m_tempFileName = CredentialsFilename() + "_tempMv";
+        Aws::FileSystem::RelocateFileOrDirectory(CredentialsFilename().c_str(), m_tempFileName.c_str());
+    }
+
+    void TearDown()
+    {
+        Aws::FileSystem::RelocateFileOrDirectory(m_tempFileName.c_str(), CredentialsFilename().c_str());
+    }
+
+    Aws::String CredentialsFilename(void)
+    {
+        return ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
+    }
+
+    void WriteToTempConfig(const char* config)
+    {
+        Aws::OFStream configFile(CredentialsFilename().c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+        configFile << config;
+
+        configFile.flush();
+        configFile.close();
+    }
+
+    Aws::String m_tempFileName;
+};
+
+static const char* gConfig1 = R"CONFIG(
+[Somebody Else ]
+aws_access_key_id = SomebodyElseAccessId
+something else to break the parser
+#test comment
+[default]
+aws_access_key_id = DefaultAccessKey
+aws_secret_access_key=DefaultSecretKey
+aws_session_token=DefaultSessionToken
+
+ [Somebody Else Again]
+aws_secret_access_key = SomebodyElseAgainAccessId
+ aws_secret_access_key=SomebodyElseAgainSecretKey
+aws_session_token=SomebodyElseAgainSessionToken
+)CONFIG";
+
+TEST_F(CredentialsFileModifyingTest, TestDefaultConfig)
 {
     struct ReloadableProfileConfigProvider : ProfileConfigFileAWSCredentialsProvider
     {
-        void ReloadNow() 
+        void ReloadNow()
         {
             Reload();
         }
     };
 
-    auto profileDirectory = ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
-
-    Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
-
-    Aws::String configFileName = ProfileConfigFileAWSCredentialsProvider::GetCredentialsProfileFilename();
-    Aws::String tempFileName = configFileName + "_tempMv";
-    Aws::FileSystem::RelocateFileOrDirectory(configFileName.c_str(), tempFileName.c_str());
-
-    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
-
-    configFile << std::endl;
-    configFile << "[Somebody Else ]" << std::endl;
-    configFile << "aws_access_key_id = SomebodyElseAccessId" << std::endl;
-    configFile << "something else to break the parser" << std::endl;
-    configFile << "#test comment" << std::endl;
-    configFile << "[default]" << std::endl;
-    configFile << "aws_access_key_id = DefaultAccessKey" << std::endl;
-    configFile << "aws_secret_access_key=DefaultSecretKey " << std::endl;
-    configFile << "aws_session_token=DefaultSessionToken" << std::endl;
-    configFile << std::endl;
-    configFile << " [Somebody Else Again]" << std::endl;
-    configFile << "aws_secret_access_key = SomebodyElseAgainAccessId" << std::endl;
-    configFile << " aws_secret_access_key=SomebodyElseAgainSecretKey" << std::endl;
-    configFile << "aws_session_token=SomebodyElseAgainSessionToken" << std::endl;
-
-    configFile.flush();
-    configFile.close();
-
-
+    WriteToTempConfig(gConfig1);
     ReloadableProfileConfigProvider provider;
     EXPECT_STREQ("DefaultAccessKey", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("DefaultSecretKey", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 
-    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+    Aws::FileSystem::RemoveFileIfExists(CredentialsFilename().c_str());
     provider.ReloadNow();
 
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
     EXPECT_STREQ("", provider.GetAWSCredentials().GetAWSSecretKey().c_str());
+}
 
-    Aws::FileSystem::RelocateFileOrDirectory(tempFileName.c_str(), configFileName.c_str());
+/**
+ * This test implementation gets injected into core to mock STS functionality
+ */
+class MockRoleCredentialsSupplier : public Aws::Auth::IRoleCredentialsSupplier
+{
+public:
+    Aws::Auth::AWSCredentials GetRoleCredentials(const Aws::Auth::AWSCredentials& sourceCredentials,
+                                                 const Aws::String& roleArn) override
+    {
+        Aws::Auth::AWSCredentials credentials;
 
+        if(sourceCredentials.GetAWSAccessKeyId().compare("SomebodyElseAccessId")
+           || sourceCredentials.GetAWSSecretKey().compare("SomebodyElseSecretKey")
+           || roleArn.compare("arn:aws:iam::123456789:role/foo"))
+        {
+            credentials.SetAWSAccessKeyId(gWrongRoleCredentialsAccessKeyId);
+            credentials.SetAWSSecretKey(gWrongRoleCredentialsSecretKey);
+        }
+        else
+        {
+            credentials.SetAWSAccessKeyId(gRoleCredentialsAccessKeyId);
+            credentials.SetAWSSecretKey(gRoleCredentialsSecretKey);
+        }
+
+        return credentials;
+    }
+};
+
+static const char* gConfig2 = R"CONFIG(
+[Somebody Else ]
+aws_access_key_id = SomebodyElseAccessId
+aws_secret_access_key = SomebodyElseSecretKey
+
+[default]
+role_arn = arn:aws:iam::123456789:role/foo
+source_profile = Somebody Else
+
+ [Somebody Else Again]
+aws_secret_access_key = SomebodyElseAgainAccessId
+ aws_secret_access_key=SomebodyElseAgainSecretKey
+aws_session_token=SomebodyElseAgainSessionToken
+)CONFIG";
+
+TEST_F(CredentialsFileModifyingTest, TestRoleCredentials)
+{
+    auto supplier = Aws::MakeShared<MockRoleCredentialsSupplier>(AllocationTag);
+    Aws::Auth::ProfileConfigFileAWSCredentialsProvider::SetRoleCredentialsSupplier(supplier);
+
+    WriteToTempConfig(gConfig2);
+
+    ProfileConfigFileAWSCredentialsProvider provider;
+    EXPECT_STREQ(gRoleCredentialsAccessKeyId, provider.GetAWSCredentials().GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ(gRoleCredentialsSecretKey, provider.GetAWSCredentials().GetAWSSecretKey().c_str());
 }
 
 class EnvironmentModifyingTest : public ::testing::Test

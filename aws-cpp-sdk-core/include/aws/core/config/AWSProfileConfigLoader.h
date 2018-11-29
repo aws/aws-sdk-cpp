@@ -54,6 +54,12 @@ namespace Aws
                 return iter->second;
             }
 
+            /**
+             * Merges 'source' profile fields into 'this', giving priority to the fields in 'this' (ie. if a field
+             * has been populated in 'this', it will not get overwritten).
+             */
+            void MergeWith(const Profile& source);
+
         private:
             Aws::String m_name;
             Aws::String m_region;

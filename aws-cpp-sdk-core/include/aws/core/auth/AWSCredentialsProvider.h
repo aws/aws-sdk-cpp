@@ -31,6 +31,7 @@ namespace Aws
     {
         class AWSProfileConfigLoader;
         class EC2InstanceProfileConfigLoader;
+        class Profile;
     }
 
     namespace Auth
@@ -232,6 +233,17 @@ namespace Aws
         };
 
         /**
+         * An interface that non-core libraries (specifically identity-management) can implement to enable core to acquire role credentials.
+         */
+        class IRoleCredentialsSupplier
+        {
+        public:
+            virtual ~IRoleCredentialsSupplier() = default;
+
+            virtual Aws::Auth::AWSCredentials GetRoleCredentials(const Aws::Auth::AWSCredentials& sourceCredentials, const Aws::String& roleArn) = 0;
+        };
+
+        /**
         * Reads credentials profile from the default Profile Config File. Refreshes at set interval for credential rotation.
         * Looks for environment variables AWS_SHARED_CREDENTIALS_FILE and AWS_PROFILE. If they aren't found, then it defaults
         * to ~/.aws/credentials and default; if nothing is found at that location, it will look for ~/.aws/config.
@@ -273,6 +285,12 @@ namespace Aws
              */
             static Aws::String GetProfileDirectory();
 
+            /**
+             * Enables non-core libraries (specifically identity-management) to inject an implementation of IRoleCredentialsSupplier
+             * into the core library, giving ProfileConfigFileAWSCredentialsProvider the ability to assume a role.
+             */
+            static void SetRoleCredentialsSupplier(std::shared_ptr<IRoleCredentialsSupplier> supplier) { m_roleCredentialsSupplier = supplier; }
+
         protected:
             void Reload() override;
         private:
@@ -282,10 +300,28 @@ namespace Aws
             */
             void RefreshIfExpired();
 
+            /**
+             * Get credentials for a specific named profile.  If the config/credentials file is incomplete/invalid, empty credentials
+             * may be returned.
+             */
+            AWSCredentials GetAWSCredentials(const Aws::String& profileName);
+
+            /**
+             * Gets profile information for an individual named profile from both the 'config' and 'credentials' files, and merges
+             * them together, giving priority to 'credentials' file fields.  Returns 'true' if the profile exists.
+             */
+            bool GetMergedProfile(const Aws::String& profileName, Aws::Config::Profile& profile) const;
+
             Aws::String m_profileToUse;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_configFileLoader;
             std::shared_ptr<Aws::Config::AWSProfileConfigLoader> m_credentialsFileLoader;
             long m_loadFrequencyMs;
+
+            /**
+             * An IRoleCredentialSupplier can be injected into this static variable by non-core libraries (specifically
+             * identity-management) by calling SetRoleCredentialsSupplier.
+             */
+            static std::shared_ptr<IRoleCredentialsSupplier> m_roleCredentialsSupplier;
         };
 
         /**

@@ -29,6 +29,50 @@ namespace Aws
         using namespace Aws::Utils;
         using namespace Aws::Auth;
 
+        static const char* const REGION_KEY = "region";
+        static const char* const ACCESS_KEY_ID_KEY = "aws_access_key_id";
+        static const char* const SECRET_KEY_KEY = "aws_secret_access_key";
+        static const char* const SESSION_TOKEN_KEY = "aws_session_token";
+        static const char* const ROLE_ARN_KEY = "role_arn";
+        static const char* const EXTERNAL_ID_KEY = "external_id";
+        static const char* const SOURCE_PROFILE_KEY = "source_profile";
+
+        void Profile::MergeWith(const Profile& source)
+        {
+            if(this->GetName().empty()) { this->SetName(source.GetName()); }
+            if(this->GetRegion().empty())
+            {
+                this->SetRegion(source.GetRegion());
+                this->m_allKeyValPairs[REGION_KEY] = source.GetRegion();
+            }
+
+            if(this->GetCredentials().GetAWSAccessKeyId().empty())
+            {
+                this->SetCredentials(source.GetCredentials());
+                this->m_allKeyValPairs[ACCESS_KEY_ID_KEY] = source.GetCredentials().GetAWSSecretKey();
+                this->m_allKeyValPairs[SECRET_KEY_KEY] = source.GetCredentials().GetAWSSecretKey();
+                this->m_allKeyValPairs[SESSION_TOKEN_KEY] = source.GetCredentials().GetSessionToken();
+            }
+
+            if(this->GetRoleArn().empty())
+            {
+                this->SetRoleArn(source.GetRoleArn());
+                this->m_allKeyValPairs[ROLE_ARN_KEY] = source.GetRoleArn();
+            }
+
+            if(this->GetExternalId().empty())
+            {
+                this->SetExternalId(source.GetExternalId());
+                this->m_allKeyValPairs[EXTERNAL_ID_KEY] = source.GetExternalId();
+            }
+
+            if(this->GetSourceProfile().empty())
+            {
+                this->SetSourceProfile(source.GetSourceProfile());
+                this->m_allKeyValPairs[SOURCE_PROFILE_KEY] = source.GetSourceProfile();
+            }
+        }
+
         static const char* const CONFIG_LOADER_TAG = "Aws::Config::AWSProfileConfigLoader";
 
         bool AWSProfileConfigLoader::Load()
@@ -62,13 +106,6 @@ namespace Aws
             return false;
         }
 
-        static const char* const REGION_KEY = "region";
-        static const char* const ACCESS_KEY_ID_KEY = "aws_access_key_id";
-        static const char* const SECRET_KEY_KEY = "aws_secret_access_key";
-        static const char* const SESSION_TOKEN_KEY = "aws_session_token";
-        static const char* const ROLE_ARN_KEY = "role_arn";
-        static const char* const EXTERNAL_ID_KEY = "external_id";
-        static const char* const SOURCE_PROFILE_KEY = "source_profile";
         static const char* const PROFILE_PREFIX = "profile ";
         static const char EQ = '=';
         static const char LEFT_BRACKET = '[';
