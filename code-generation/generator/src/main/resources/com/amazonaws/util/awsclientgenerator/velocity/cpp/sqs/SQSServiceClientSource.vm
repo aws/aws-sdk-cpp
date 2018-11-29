@@ -45,7 +45,7 @@ ${operation.name}Outcome ${className}::${operation.name}(const ${operation.reque
   Aws::StringStream ss;
 #if($metadata.hasEndpointTrait)
 #if($operation.hasEndpointTrait)
-  if (!m_enableHostPrefixInjection)
+  if (m_enableHostPrefixInjection)
   {
 #foreach($member in $operation.endpoint.getMemberReferences())
     if (request.Get${member}().empty())

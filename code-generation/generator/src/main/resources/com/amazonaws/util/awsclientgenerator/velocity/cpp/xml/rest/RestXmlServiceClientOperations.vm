@@ -36,7 +36,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #if($metadata.hasEndpointTrait)
 #if($operation.hasEndpointTrait)
   Aws::Http::URI uri = ${uriName};
-  if (!m_enableHostPrefixInjection)
+  if (m_enableHostPrefixInjection)
   {
 #foreach($member in $operation.endpoint.getMemberReferences())
     if (request.Get${member}().empty())

@@ -380,7 +380,7 @@ DiscoverInstancesOutcome ServiceDiscoveryClient::DiscoverInstances(const Discove
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_baseUri;
-  if (!m_enableHostPrefixInjection)
+  if (m_enableHostPrefixInjection)
   {
     uri = m_scheme + "://" + "data-" + m_baseUri;
     if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
