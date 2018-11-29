@@ -104,7 +104,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -116,6 +116,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -132,7 +138,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline const Aws::Vector<Aws::String>& GetCapabilities() const{ return m_capabilities; }
 
@@ -158,7 +165,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -170,6 +177,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -186,7 +199,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline void SetCapabilities(const Aws::Vector<Aws::String>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -212,7 +226,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -224,6 +238,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -240,7 +260,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline void SetCapabilities(Aws::Vector<Aws::String>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -266,7 +287,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -278,6 +299,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -294,7 +321,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateCloudFormationChangeSetRequest& WithCapabilities(const Aws::Vector<Aws::String>& value) { SetCapabilities(value); return *this;}
 
@@ -320,7 +348,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -332,6 +360,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -348,7 +382,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateCloudFormationChangeSetRequest& WithCapabilities(Aws::Vector<Aws::String>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -374,7 +409,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -386,6 +421,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -402,7 +443,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateCloudFormationChangeSetRequest& AddCapabilities(const Aws::String& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -428,7 +470,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -440,6 +482,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -456,7 +504,8 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateCloudFormationChangeSetRequest& AddCapabilities(Aws::String&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -482,7 +531,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -494,6 +543,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -510,359 +565,244 @@ namespace Model
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateCloudFormationChangeSetRequest& AddCapabilities(const char* value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetChangeSetName(Aws::String&& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetChangeSetName(const char* value) { m_changeSetNameHasBeenSet = true; m_changeSetName.assign(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithChangeSetName(const Aws::String& value) { SetChangeSetName(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithChangeSetName(Aws::String&& value) { SetChangeSetName(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithChangeSetName(const char* value) { SetChangeSetName(value); return *this;}
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationArns() const{ return m_notificationArns; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetNotificationArns(const Aws::Vector<Aws::String>& value) { m_notificationArnsHasBeenSet = true; m_notificationArns = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetNotificationArns(Aws::Vector<Aws::String>&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithNotificationArns(const Aws::Vector<Aws::String>& value) { SetNotificationArns(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithNotificationArns(Aws::Vector<Aws::String>&& value) { SetNotificationArns(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddNotificationArns(const Aws::String& value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(value); return *this; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddNotificationArns(Aws::String&& value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddNotificationArns(const char* value) { m_notificationArnsHasBeenSet = true; m_notificationArns.push_back(value); return *this; }
 
@@ -904,159 +844,107 @@ namespace Model
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const RollbackConfiguration& GetRollbackConfiguration() const{ return m_rollbackConfiguration; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetRollbackConfiguration(const RollbackConfiguration& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetRollbackConfiguration(RollbackConfiguration&& value) { m_rollbackConfigurationHasBeenSet = true; m_rollbackConfiguration = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithRollbackConfiguration(const RollbackConfiguration& value) { SetRollbackConfiguration(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithRollbackConfiguration(RollbackConfiguration&& value) { SetRollbackConfiguration(std::move(value)); return *this;}
 
@@ -1119,171 +1007,115 @@ namespace Model
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
 
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>This property corresponds to the parameter of the same name for the
- <i>AWS
-     * CloudFormation
- <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">
-
-     * CreateChangeSet</a></i>
- API.</p>
+     * <p>This property corresponds to the parameter of the same name for the <i>AWS
+     * CloudFormation <a
+     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a></i>
+     * API.</p>
      */
     inline CreateCloudFormationChangeSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

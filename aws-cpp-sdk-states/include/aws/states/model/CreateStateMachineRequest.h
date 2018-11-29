@@ -45,136 +45,122 @@ namespace Model
 
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline CreateStateMachineRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline CreateStateMachineRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the state machine. This name must be unique for your AWS account
-     * and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
-     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
-     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
-     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
-     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
-     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
-     * </li> </ul>
+     * <p>The name of the state machine. </p> <p>A name must <i>not</i> contain:</p>
+     * <ul> <li> <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [
+     * ]</code> </p> </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li>
+     * <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+     * <li> <p>control characters (<code>U+0000-001F</code>,
+     * <code>U+007F-009F</code>)</p> </li> </ul>
      */
     inline CreateStateMachineRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline const Aws::String& GetDefinition() const{ return m_definition; }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline CreateStateMachineRequest& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline CreateStateMachineRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline CreateStateMachineRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
 

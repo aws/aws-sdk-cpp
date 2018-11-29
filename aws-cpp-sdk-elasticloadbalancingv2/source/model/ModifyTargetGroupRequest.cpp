@@ -26,6 +26,8 @@ ModifyTargetGroupRequest::ModifyTargetGroupRequest() :
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
     m_healthCheckPathHasBeenSet(false),
+    m_healthCheckEnabled(false),
+    m_healthCheckEnabledHasBeenSet(false),
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_healthCheckTimeoutSeconds(0),
@@ -60,6 +62,11 @@ Aws::String ModifyTargetGroupRequest::SerializePayload() const
   if(m_healthCheckPathHasBeenSet)
   {
     ss << "HealthCheckPath=" << StringUtils::URLEncode(m_healthCheckPath.c_str()) << "&";
+  }
+
+  if(m_healthCheckEnabledHasBeenSet)
+  {
+    ss << "HealthCheckEnabled=" << std::boolalpha << m_healthCheckEnabled << "&";
   }
 
   if(m_healthCheckIntervalSecondsHasBeenSet)

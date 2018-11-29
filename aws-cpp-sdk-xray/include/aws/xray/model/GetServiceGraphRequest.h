@@ -70,27 +70,27 @@ namespace Model
 
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

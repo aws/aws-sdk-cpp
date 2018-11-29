@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     instance,
-    ip
+    ip,
+    lambda
   };
 
 namespace TargetTypeEnumMapper

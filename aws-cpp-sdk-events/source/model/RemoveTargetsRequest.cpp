@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 RemoveTargetsRequest::RemoveTargetsRequest() : 
     m_ruleHasBeenSet(false),
-    m_idsHasBeenSet(false)
+    m_idsHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,12 @@ Aws::String RemoveTargetsRequest::SerializePayload() const
      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
    }
    payload.WithArray("Ids", std::move(idsJsonList));
+
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("Force", m_force);
 
   }
 

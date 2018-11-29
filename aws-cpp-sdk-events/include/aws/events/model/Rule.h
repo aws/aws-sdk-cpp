@@ -318,6 +318,49 @@ namespace Model
      */
     inline Rule& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline void SetManagedBy(const Aws::String& value) { m_managedByHasBeenSet = true; m_managedBy = value; }
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline void SetManagedBy(Aws::String&& value) { m_managedByHasBeenSet = true; m_managedBy = std::move(value); }
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline void SetManagedBy(const char* value) { m_managedByHasBeenSet = true; m_managedBy.assign(value); }
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline Rule& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline Rule& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>If the rule was created on behalf of your account by an AWS service, this
+     * field displays the principal name of the service that created the rule.</p>
+     */
+    inline Rule& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -340,6 +383,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::String m_managedBy;
+    bool m_managedByHasBeenSet;
   };
 
 } // namespace Model

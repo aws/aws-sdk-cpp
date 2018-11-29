@@ -52,49 +52,56 @@ namespace Model
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline TargetDescription& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline TargetDescription& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the target. If the target type of the target group is
      * <code>instance</code>, specify an instance ID. If the target type is
-     * <code>ip</code>, specify an IP address.</p>
+     * <code>ip</code>, specify an IP address. If the target type is
+     * <code>lambda</code>, specify the ARN of the Lambda function.</p>
      */
     inline TargetDescription& WithId(const char* value) { SetId(value); return *this;}
 
@@ -120,11 +127,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
@@ -133,11 +143,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
@@ -146,11 +159,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
@@ -159,11 +175,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
@@ -172,11 +191,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline TargetDescription& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
@@ -185,11 +207,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline TargetDescription& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
@@ -198,11 +223,14 @@ namespace Model
      * receives traffic from the load balancer nodes in the specified Availability Zone
      * or from all enabled Availability Zones for the load balancer.</p> <p>This
      * parameter is not supported if the target type of the target group is
-     * <code>instance</code>. If the IP address is in a subnet of the VPC for the
-     * target group, the Availability Zone is automatically detected and this parameter
-     * is optional. If the IP address is outside the VPC, this parameter is
-     * required.</p> <p>With an Application Load Balancer, if the IP address is outside
+     * <code>instance</code>.</p> <p>If the target type is <code>ip</code> and the IP
+     * address is in a subnet of the VPC for the target group, the Availability Zone is
+     * automatically detected and this parameter is optional. If the IP address is
+     * outside the VPC, this parameter is required.</p> <p>With an Application Load
+     * Balancer, if the target type is <code>ip</code> and the IP address is outside
      * the VPC for the target group, the only supported value is <code>all</code>.</p>
+     * <p>If the target type is <code>lambda</code>, this parameter is optional and the
+     * only supported value is <code>all</code>.</p>
      */
     inline TargetDescription& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/AddLayerVersionPermissionResult.h>
 #include <aws/lambda/model/AddPermissionResult.h>
 #include <aws/lambda/model/CreateAliasResult.h>
 #include <aws/lambda/model/CreateEventSourceMappingResult.h>
@@ -31,13 +32,18 @@
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionResult.h>
 #include <aws/lambda/model/GetFunctionConfigurationResult.h>
+#include <aws/lambda/model/GetLayerVersionResult.h>
+#include <aws/lambda/model/GetLayerVersionPolicyResult.h>
 #include <aws/lambda/model/GetPolicyResult.h>
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListAliasesResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
 #include <aws/lambda/model/ListFunctionsResult.h>
+#include <aws/lambda/model/ListLayerVersionsResult.h>
+#include <aws/lambda/model/ListLayersResult.h>
 #include <aws/lambda/model/ListTagsResult.h>
 #include <aws/lambda/model/ListVersionsByFunctionResult.h>
+#include <aws/lambda/model/PublishLayerVersionResult.h>
 #include <aws/lambda/model/PublishVersionResult.h>
 #include <aws/lambda/model/PutFunctionConcurrencyResult.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
@@ -85,6 +91,7 @@ namespace Lambda
 
 namespace Model
 {
+        class AddLayerVersionPermissionRequest;
         class AddPermissionRequest;
         class CreateAliasRequest;
         class CreateEventSourceMappingRequest;
@@ -93,20 +100,27 @@ namespace Model
         class DeleteEventSourceMappingRequest;
         class DeleteFunctionRequest;
         class DeleteFunctionConcurrencyRequest;
+        class DeleteLayerVersionRequest;
         class GetAccountSettingsRequest;
         class GetAliasRequest;
         class GetEventSourceMappingRequest;
         class GetFunctionRequest;
         class GetFunctionConfigurationRequest;
+        class GetLayerVersionRequest;
+        class GetLayerVersionPolicyRequest;
         class GetPolicyRequest;
         class InvokeRequest;
         class ListAliasesRequest;
         class ListEventSourceMappingsRequest;
         class ListFunctionsRequest;
+        class ListLayerVersionsRequest;
+        class ListLayersRequest;
         class ListTagsRequest;
         class ListVersionsByFunctionRequest;
+        class PublishLayerVersionRequest;
         class PublishVersionRequest;
         class PutFunctionConcurrencyRequest;
+        class RemoveLayerVersionPermissionRequest;
         class RemovePermissionRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -115,6 +129,7 @@ namespace Model
         class UpdateFunctionCodeRequest;
         class UpdateFunctionConfigurationRequest;
 
+        typedef Aws::Utils::Outcome<AddLayerVersionPermissionResult, Aws::Client::AWSError<LambdaErrors>> AddLayerVersionPermissionOutcome;
         typedef Aws::Utils::Outcome<AddPermissionResult, Aws::Client::AWSError<LambdaErrors>> AddPermissionOutcome;
         typedef Aws::Utils::Outcome<CreateAliasResult, Aws::Client::AWSError<LambdaErrors>> CreateAliasOutcome;
         typedef Aws::Utils::Outcome<CreateEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> CreateEventSourceMappingOutcome;
@@ -123,20 +138,27 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> DeleteEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionConcurrencyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteLayerVersionOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<LambdaErrors>> GetAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<GetAliasResult, Aws::Client::AWSError<LambdaErrors>> GetAliasOutcome;
         typedef Aws::Utils::Outcome<GetEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> GetEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetLayerVersionResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionOutcome;
+        typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionPolicyOutcome;
         typedef Aws::Utils::Outcome<GetPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetPolicyOutcome;
         typedef Aws::Utils::Outcome<InvokeResult, Aws::Client::AWSError<LambdaErrors>> InvokeOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<LambdaErrors>> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, Aws::Client::AWSError<LambdaErrors>> ListEventSourceMappingsOutcome;
         typedef Aws::Utils::Outcome<ListFunctionsResult, Aws::Client::AWSError<LambdaErrors>> ListFunctionsOutcome;
+        typedef Aws::Utils::Outcome<ListLayerVersionsResult, Aws::Client::AWSError<LambdaErrors>> ListLayerVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListLayersResult, Aws::Client::AWSError<LambdaErrors>> ListLayersOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<LambdaErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<ListVersionsByFunctionResult, Aws::Client::AWSError<LambdaErrors>> ListVersionsByFunctionOutcome;
+        typedef Aws::Utils::Outcome<PublishLayerVersionResult, Aws::Client::AWSError<LambdaErrors>> PublishLayerVersionOutcome;
         typedef Aws::Utils::Outcome<PublishVersionResult, Aws::Client::AWSError<LambdaErrors>> PublishVersionOutcome;
         typedef Aws::Utils::Outcome<PutFunctionConcurrencyResult, Aws::Client::AWSError<LambdaErrors>> PutFunctionConcurrencyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> RemoveLayerVersionPermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> UntagResourceOutcome;
@@ -145,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFunctionCodeResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionCodeOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionConfigurationOutcome;
 
+        typedef std::future<AddLayerVersionPermissionOutcome> AddLayerVersionPermissionOutcomeCallable;
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
         typedef std::future<CreateAliasOutcome> CreateAliasOutcomeCallable;
         typedef std::future<CreateEventSourceMappingOutcome> CreateEventSourceMappingOutcomeCallable;
@@ -153,20 +176,27 @@ namespace Model
         typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
         typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
         typedef std::future<DeleteFunctionConcurrencyOutcome> DeleteFunctionConcurrencyOutcomeCallable;
+        typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
         typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
         typedef std::future<GetEventSourceMappingOutcome> GetEventSourceMappingOutcomeCallable;
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
+        typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
+        typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
         typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
         typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
         typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
+        typedef std::future<ListLayerVersionsOutcome> ListLayerVersionsOutcomeCallable;
+        typedef std::future<ListLayersOutcome> ListLayersOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<ListVersionsByFunctionOutcome> ListVersionsByFunctionOutcomeCallable;
+        typedef std::future<PublishLayerVersionOutcome> PublishLayerVersionOutcomeCallable;
         typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
         typedef std::future<PutFunctionConcurrencyOutcome> PutFunctionConcurrencyOutcomeCallable;
+        typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -178,6 +208,7 @@ namespace Model
 
   class LambdaClient;
 
+    typedef std::function<void(const LambdaClient*, const Model::AddLayerVersionPermissionRequest&, const Model::AddLayerVersionPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddLayerVersionPermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::AddPermissionRequest&, const Model::AddPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddPermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::CreateAliasRequest&, const Model::CreateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::CreateEventSourceMappingRequest&, const Model::CreateEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEventSourceMappingResponseReceivedHandler;
@@ -186,20 +217,27 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionConcurrencyRequest&, const Model::DeleteFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionConcurrencyResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::DeleteLayerVersionRequest&, const Model::DeleteLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionRequest&, const Model::GetLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionPolicyRequest&, const Model::GetLayerVersionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPolicyResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, const Model::InvokeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourceMappingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::ListLayerVersionsRequest&, const Model::ListLayerVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLayerVersionsResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::ListLayersRequest&, const Model::ListLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLayersResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListVersionsByFunctionRequest&, const Model::ListVersionsByFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVersionsByFunctionResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::PublishLayerVersionRequest&, const Model::PublishLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PublishVersionRequest&, const Model::PublishVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutFunctionConcurrencyRequest&, const Model::PutFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionConcurrencyResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::RemoveLayerVersionPermissionRequest&, const Model::RemoveLayerVersionPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveLayerVersionPermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -245,6 +283,46 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Lambda"; }
 
+
+        /**
+         * <p>Adds permissions to the resource-based policy of a version of a function
+         * layer. Use this action to grant layer usage permission to other accounts. You
+         * can grant permission to a single account, all AWS accounts, or all accounts in
+         * an organization.</p> <p>To revoke permission, call
+         * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
+         * when you added it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddLayerVersionPermissionOutcome AddLayerVersionPermission(const Model::AddLayerVersionPermissionRequest& request) const;
+
+        /**
+         * <p>Adds permissions to the resource-based policy of a version of a function
+         * layer. Use this action to grant layer usage permission to other accounts. You
+         * can grant permission to a single account, all AWS accounts, or all accounts in
+         * an organization.</p> <p>To revoke permission, call
+         * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
+         * when you added it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddLayerVersionPermissionOutcomeCallable AddLayerVersionPermissionCallable(const Model::AddLayerVersionPermissionRequest& request) const;
+
+        /**
+         * <p>Adds permissions to the resource-based policy of a version of a function
+         * layer. Use this action to grant layer usage permission to other accounts. You
+         * can grant permission to a single account, all AWS accounts, or all accounts in
+         * an organization.</p> <p>To revoke permission, call
+         * <a>RemoveLayerVersionPermission</a> with the statement ID that you specified
+         * when you added it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddLayerVersionPermissionAsync(const Model::AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds a permission to the resource policy associated with the specified AWS
@@ -564,6 +642,37 @@ namespace Model
         virtual void DeleteFunctionConcurrencyAsync(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a version of a function layer. Deleted versions can no longer be
+         * viewed or added to functions. However, a copy of the version remains in Lambda
+         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLayerVersionOutcome DeleteLayerVersion(const Model::DeleteLayerVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a function layer. Deleted versions can no longer be
+         * viewed or added to functions. However, a copy of the version remains in Lambda
+         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLayerVersionOutcomeCallable DeleteLayerVersionCallable(const Model::DeleteLayerVersionRequest& request) const;
+
+        /**
+         * <p>Deletes a version of a function layer. Deleted versions can no longer be
+         * viewed or added to functions. However, a copy of the version remains in Lambda
+         * until no functions refer to it.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLayerVersionAsync(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves details about your account's <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and
          * usage in a region.</p><p><h3>See Also:</h3>   <a
@@ -768,6 +877,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetFunctionConfigurationAsync(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about a version of a function layer, with a link to
+         * download the layer archive that's valid for 10 minutes.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLayerVersionOutcome GetLayerVersion(const Model::GetLayerVersionRequest& request) const;
+
+        /**
+         * <p>Returns information about a version of a function layer, with a link to
+         * download the layer archive that's valid for 10 minutes.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLayerVersionOutcomeCallable GetLayerVersionCallable(const Model::GetLayerVersionRequest& request) const;
+
+        /**
+         * <p>Returns information about a version of a function layer, with a link to
+         * download the layer archive that's valid for 10 minutes.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLayerVersionAsync(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the permission policy for a layer version. For more information, see
+         * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLayerVersionPolicyOutcome GetLayerVersionPolicy(const Model::GetLayerVersionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the permission policy for a layer version. For more information, see
+         * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLayerVersionPolicyOutcomeCallable GetLayerVersionPolicyCallable(const Model::GetLayerVersionPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the permission policy for a layer version. For more information, see
+         * <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLayerVersionPolicyAsync(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the resource policy associated with the specified Lambda
@@ -1012,6 +1180,80 @@ namespace Model
         virtual void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the versions of a function layer. Versions that have been deleted
+         * aren't listed. Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only versions that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLayerVersionsOutcome ListLayerVersions(const Model::ListLayerVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the versions of a function layer. Versions that have been deleted
+         * aren't listed. Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only versions that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLayerVersionsOutcomeCallable ListLayerVersionsCallable(const Model::ListLayerVersionsRequest& request) const;
+
+        /**
+         * <p>Lists the versions of a function layer. Versions that have been deleted
+         * aren't listed. Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only versions that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLayerVersionsAsync(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists function layers and shows information about the latest version of each.
+         * Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only layers that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListLayersOutcome ListLayers(const Model::ListLayersRequest& request) const;
+
+        /**
+         * <p>Lists function layers and shows information about the latest version of each.
+         * Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only layers that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListLayersOutcomeCallable ListLayersCallable(const Model::ListLayersRequest& request) const;
+
+        /**
+         * <p>Lists function layers and shows information about the latest version of each.
+         * Specify a <a
+         * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime
+         * identifier</a> to list only layers that indicate that they're compatible with
+         * that runtime.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListLayersAsync(const Model::ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a list of tags assigned to a function when supplied the function ARN
          * (Amazon Resource Name). For more information on Tagging, see <a
          * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
@@ -1075,6 +1317,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListVersionsByFunctionAsync(const Model::ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a function layer from a ZIP archive. Each time you call
+         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
+         * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PublishLayerVersionOutcome PublishLayerVersion(const Model::PublishLayerVersionRequest& request) const;
+
+        /**
+         * <p>Creates a function layer from a ZIP archive. Each time you call
+         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
+         * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PublishLayerVersionOutcomeCallable PublishLayerVersionCallable(const Model::PublishLayerVersionRequest& request) const;
+
+        /**
+         * <p>Creates a function layer from a ZIP archive. Each time you call
+         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
+         * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PublishLayerVersionAsync(const Model::PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Publishes a version of your function from the current snapshot of $LATEST.
@@ -1164,6 +1440,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutFunctionConcurrencyAsync(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a statement from the permissions policy for a layer version. For more
+         * information, see <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveLayerVersionPermissionOutcome RemoveLayerVersionPermission(const Model::RemoveLayerVersionPermissionRequest& request) const;
+
+        /**
+         * <p>Removes a statement from the permissions policy for a layer version. For more
+         * information, see <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RemoveLayerVersionPermissionOutcomeCallable RemoveLayerVersionPermissionCallable(const Model::RemoveLayerVersionPermissionRequest& request) const;
+
+        /**
+         * <p>Removes a statement from the permissions policy for a layer version. For more
+         * information, see <a>AddLayerVersionPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RemoveLayerVersionPermissionAsync(const Model::RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes permissions from a function. You can remove individual permissions
@@ -1478,6 +1782,7 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
 
         /**Async helpers**/
+        void AddLayerVersionPermissionAsyncHelper(const Model::AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddPermissionAsyncHelper(const Model::AddPermissionRequest& request, const AddPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAliasAsyncHelper(const Model::CreateAliasRequest& request, const CreateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEventSourceMappingAsyncHelper(const Model::CreateEventSourceMappingRequest& request, const CreateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1486,20 +1791,27 @@ namespace Model
         void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionConcurrencyAsyncHelper(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLayerVersionAsyncHelper(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAliasAsyncHelper(const Model::GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventSourceMappingAsyncHelper(const Model::GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLayerVersionAsyncHelper(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLayerVersionPolicyAsyncHelper(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPolicyAsyncHelper(const Model::GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvokeAsyncHelper(const Model::InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLayerVersionsAsyncHelper(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListLayersAsyncHelper(const Model::ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVersionsByFunctionAsyncHelper(const Model::ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PublishLayerVersionAsyncHelper(const Model::PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PublishVersionAsyncHelper(const Model::PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFunctionConcurrencyAsyncHelper(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RemoveLayerVersionPermissionAsyncHelper(const Model::RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

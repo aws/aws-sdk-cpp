@@ -87,35 +87,40 @@ namespace Model
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p>
+     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p>
+     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p>
+     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p>
+     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
      * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p>
+     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
@@ -200,42 +205,64 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline ModifyTargetGroupRequest& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
+
+
+    /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p> <p>If
+     * the protocol of the target group is TCP, you can't modify this setting.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p> <p>If
+     * the protocol of the target group is TCP, you can't modify this setting.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds.</p> <p>If
+     * the protocol of the target group is TCP, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
 
     /**
      * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
-     * response means a failed health check.</p>
+     * response means a failed health check.</p> <p>If the protocol of the target group
+     * is TCP, you can't modify this setting.</p>
      */
     inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
-     * response means a failed health check.</p>
+     * response means a failed health check.</p> <p>If the protocol of the target group
+     * is TCP, you can't modify this setting.</p>
      */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The amount of time, in seconds, during which no
-     * response means a failed health check.</p>
+     * response means a failed health check.</p> <p>If the protocol of the target group
+     * is TCP, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
@@ -283,31 +310,36 @@ namespace Model
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
      */
     inline void SetMatcher(const Matcher& value) { m_matcherHasBeenSet = true; m_matcher = value; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
      */
     inline void SetMatcher(Matcher&& value) { m_matcherHasBeenSet = true; m_matcher = std::move(value); }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(const Matcher& value) { SetMatcher(value); return *this;}
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
-     * successful response from a target.</p>
+     * successful response from a target.</p> <p>If the protocol of the target group is
+     * TCP, you can't modify this setting.</p>
      */
     inline ModifyTargetGroupRequest& WithMatcher(Matcher&& value) { SetMatcher(std::move(value)); return *this;}
 
@@ -324,6 +356,9 @@ namespace Model
 
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet;
+
+    bool m_healthCheckEnabled;
+    bool m_healthCheckEnabledHasBeenSet;
 
     int m_healthCheckIntervalSeconds;
     bool m_healthCheckIntervalSecondsHasBeenSet;

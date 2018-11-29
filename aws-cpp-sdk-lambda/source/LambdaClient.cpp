@@ -30,6 +30,7 @@
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaEndpoint.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
+#include <aws/lambda/model/AddLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
 #include <aws/lambda/model/CreateEventSourceMappingRequest.h>
@@ -38,20 +39,27 @@
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteFunctionRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
+#include <aws/lambda/model/GetLayerVersionRequest.h>
+#include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
+#include <aws/lambda/model/ListLayerVersionsRequest.h>
+#include <aws/lambda/model/ListLayersRequest.h>
 #include <aws/lambda/model/ListTagsRequest.h>
 #include <aws/lambda/model/ListVersionsByFunctionRequest.h>
+#include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/UntagResourceRequest.h>
@@ -131,6 +139,45 @@ void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
+AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const AddLayerVersionPermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddLayerVersionPermissionOutcome(AddLayerVersionPermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddLayerVersionPermissionOutcome(outcome.GetError());
+  }
+}
+
+AddLayerVersionPermissionOutcomeCallable LambdaClient::AddLayerVersionPermissionCallable(const AddLayerVersionPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddLayerVersionPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::AddLayerVersionPermissionAsync(const AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddLayerVersionPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::AddLayerVersionPermissionAsyncHelper(const AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddLayerVersionPermission(request), context);
+}
+
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
   Aws::StringStream ss;
@@ -422,6 +469,44 @@ void LambdaClient::DeleteFunctionConcurrencyAsyncHelper(const DeleteFunctionConc
   handler(this, request, DeleteFunctionConcurrency(request), context);
 }
 
+DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLayerVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteLayerVersionOutcomeCallable LambdaClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteLayerVersionAsyncHelper(const DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLayerVersion(request), context);
+}
+
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
   Aws::StringStream ss;
@@ -602,6 +687,83 @@ void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationR
 void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFunctionConfiguration(request), context);
+}
+
+GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLayerVersionOutcome(GetLayerVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+GetLayerVersionOutcomeCallable LambdaClient::GetLayerVersionCallable(const GetLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetLayerVersionAsyncHelper(const GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLayerVersion(request), context);
+}
+
+GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLayerVersionPolicyOutcome(GetLayerVersionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLayerVersionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetLayerVersionPolicyOutcomeCallable LambdaClient::GetLayerVersionPolicyCallable(const GetLayerVersionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetLayerVersionPolicyAsync(const GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLayerVersionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetLayerVersionPolicyAsyncHelper(const GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLayerVersionPolicy(request), context);
 }
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
@@ -785,6 +947,78 @@ void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request,
   handler(this, request, ListFunctions(request), context);
 }
 
+ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLayerVersionsOutcome(ListLayerVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLayerVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListLayerVersionsOutcomeCallable LambdaClient::ListLayerVersionsCallable(const ListLayerVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLayerVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayerVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLayerVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListLayerVersionsAsyncHelper(const ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLayerVersions(request), context);
+}
+
+ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLayersOutcome(ListLayersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLayersOutcome(outcome.GetError());
+  }
+}
+
+ListLayersOutcomeCallable LambdaClient::ListLayersCallable(const ListLayersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLayersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListLayersAsync(const ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLayersAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListLayersAsyncHelper(const ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLayers(request), context);
+}
+
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
   Aws::StringStream ss;
@@ -856,6 +1090,43 @@ void LambdaClient::ListVersionsByFunctionAsync(const ListVersionsByFunctionReque
 void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctionRequest& request, const ListVersionsByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListVersionsByFunction(request), context);
+}
+
+PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PublishLayerVersionOutcome(PublishLayerVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PublishLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+PublishLayerVersionOutcomeCallable LambdaClient::PublishLayerVersionCallable(const PublishLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::PublishLayerVersionAsyncHelper(const PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishLayerVersion(request), context);
 }
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
@@ -930,6 +1201,46 @@ void LambdaClient::PutFunctionConcurrencyAsync(const PutFunctionConcurrencyReque
 void LambdaClient::PutFunctionConcurrencyAsyncHelper(const PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutFunctionConcurrency(request), context);
+}
+
+RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy/";
+  ss << request.GetStatementId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveLayerVersionPermissionOutcome(NoResult());
+  }
+  else
+  {
+    return RemoveLayerVersionPermissionOutcome(outcome.GetError());
+  }
+}
+
+RemoveLayerVersionPermissionOutcomeCallable LambdaClient::RemoveLayerVersionPermissionCallable(const RemoveLayerVersionPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveLayerVersionPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::RemoveLayerVersionPermissionAsync(const RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveLayerVersionPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::RemoveLayerVersionPermissionAsyncHelper(const RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveLayerVersionPermission(request), context);
 }
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const

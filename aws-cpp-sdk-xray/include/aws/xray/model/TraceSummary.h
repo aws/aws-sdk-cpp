@@ -19,8 +19,14 @@
 #include <aws/xray/model/Http.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/xray/model/TraceUser.h>
 #include <aws/xray/model/ServiceId.h>
+#include <aws/xray/model/TraceUser.h>
+#include <aws/xray/model/ResourceARNDetail.h>
+#include <aws/xray/model/InstanceIdDetail.h>
+#include <aws/xray/model/AvailabilityZoneDetail.h>
+#include <aws/xray/model/FaultRootCause.h>
+#include <aws/xray/model/ErrorRootCause.h>
+#include <aws/xray/model/ResponseTimeRootCause.h>
 #include <aws/xray/model/ValueWithServiceIds.h>
 #include <utility>
 
@@ -358,6 +364,306 @@ namespace Model
      */
     inline TraceSummary& AddServiceIds(ServiceId&& value) { m_serviceIdsHasBeenSet = true; m_serviceIds.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<ResourceARNDetail>& GetResourceARNs() const{ return m_resourceARNs; }
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetResourceARNs(const Aws::Vector<ResourceARNDetail>& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs = value; }
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetResourceARNs(Aws::Vector<ResourceARNDetail>&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs = std::move(value); }
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithResourceARNs(const Aws::Vector<ResourceARNDetail>& value) { SetResourceARNs(value); return *this;}
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithResourceARNs(Aws::Vector<ResourceARNDetail>&& value) { SetResourceARNs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddResourceARNs(const ResourceARNDetail& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of resource ARNs for any resource corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddResourceARNs(ResourceARNDetail&& value) { m_resourceARNsHasBeenSet = true; m_resourceARNs.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<InstanceIdDetail>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetInstanceIds(const Aws::Vector<InstanceIdDetail>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetInstanceIds(Aws::Vector<InstanceIdDetail>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithInstanceIds(const Aws::Vector<InstanceIdDetail>& value) { SetInstanceIds(value); return *this;}
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithInstanceIds(Aws::Vector<InstanceIdDetail>&& value) { SetInstanceIds(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddInstanceIds(const InstanceIdDetail& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
+
+    /**
+     * <p>A list of EC2 instance IDs for any instance corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddInstanceIds(InstanceIdDetail&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<AvailabilityZoneDetail>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithAvailabilityZones(const Aws::Vector<AvailabilityZoneDetail>& value) { SetAvailabilityZones(value); return *this;}
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithAvailabilityZones(Aws::Vector<AvailabilityZoneDetail>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddAvailabilityZones(const AvailabilityZoneDetail& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>A list of availability zones for any zone corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddAvailabilityZones(AvailabilityZoneDetail&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The root of a trace.</p>
+     */
+    inline const ServiceId& GetEntryPoint() const{ return m_entryPoint; }
+
+    /**
+     * <p>The root of a trace.</p>
+     */
+    inline void SetEntryPoint(const ServiceId& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
+
+    /**
+     * <p>The root of a trace.</p>
+     */
+    inline void SetEntryPoint(ServiceId&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
+
+    /**
+     * <p>The root of a trace.</p>
+     */
+    inline TraceSummary& WithEntryPoint(const ServiceId& value) { SetEntryPoint(value); return *this;}
+
+    /**
+     * <p>The root of a trace.</p>
+     */
+    inline TraceSummary& WithEntryPoint(ServiceId&& value) { SetEntryPoint(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<FaultRootCause>& GetFaultRootCauses() const{ return m_faultRootCauses; }
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline void SetFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = value; }
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline void SetFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses = std::move(value); }
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithFaultRootCauses(const Aws::Vector<FaultRootCause>& value) { SetFaultRootCauses(value); return *this;}
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithFaultRootCauses(Aws::Vector<FaultRootCause>&& value) { SetFaultRootCauses(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddFaultRootCauses(const FaultRootCause& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of FaultRootCause structures corresponding to the the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddFaultRootCauses(FaultRootCause&& value) { m_faultRootCausesHasBeenSet = true; m_faultRootCauses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<ErrorRootCause>& GetErrorRootCauses() const{ return m_errorRootCauses; }
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetErrorRootCauses(const Aws::Vector<ErrorRootCause>& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses = value; }
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetErrorRootCauses(Aws::Vector<ErrorRootCause>&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses = std::move(value); }
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithErrorRootCauses(const Aws::Vector<ErrorRootCause>& value) { SetErrorRootCauses(value); return *this;}
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithErrorRootCauses(Aws::Vector<ErrorRootCause>&& value) { SetErrorRootCauses(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddErrorRootCauses(const ErrorRootCause& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of ErrorRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddErrorRootCauses(ErrorRootCause&& value) { m_errorRootCausesHasBeenSet = true; m_errorRootCauses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline const Aws::Vector<ResponseTimeRootCause>& GetResponseTimeRootCauses() const{ return m_responseTimeRootCauses; }
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetResponseTimeRootCauses(const Aws::Vector<ResponseTimeRootCause>& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses = value; }
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline void SetResponseTimeRootCauses(Aws::Vector<ResponseTimeRootCause>&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses = std::move(value); }
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithResponseTimeRootCauses(const Aws::Vector<ResponseTimeRootCause>& value) { SetResponseTimeRootCauses(value); return *this;}
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& WithResponseTimeRootCauses(Aws::Vector<ResponseTimeRootCause>&& value) { SetResponseTimeRootCauses(std::move(value)); return *this;}
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddResponseTimeRootCauses(const ResponseTimeRootCause& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses.push_back(value); return *this; }
+
+    /**
+     * <p>A collection of ResponseTimeRootCause structures corresponding to the trace
+     * segments.</p>
+     */
+    inline TraceSummary& AddResponseTimeRootCauses(ResponseTimeRootCause&& value) { m_responseTimeRootCausesHasBeenSet = true; m_responseTimeRootCauses.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The revision number of a trace.</p>
+     */
+    inline int GetRevision() const{ return m_revision; }
+
+    /**
+     * <p>The revision number of a trace.</p>
+     */
+    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
+
+    /**
+     * <p>The revision number of a trace.</p>
+     */
+    inline TraceSummary& WithRevision(int value) { SetRevision(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -392,6 +698,30 @@ namespace Model
 
     Aws::Vector<ServiceId> m_serviceIds;
     bool m_serviceIdsHasBeenSet;
+
+    Aws::Vector<ResourceARNDetail> m_resourceARNs;
+    bool m_resourceARNsHasBeenSet;
+
+    Aws::Vector<InstanceIdDetail> m_instanceIds;
+    bool m_instanceIdsHasBeenSet;
+
+    Aws::Vector<AvailabilityZoneDetail> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet;
+
+    ServiceId m_entryPoint;
+    bool m_entryPointHasBeenSet;
+
+    Aws::Vector<FaultRootCause> m_faultRootCauses;
+    bool m_faultRootCausesHasBeenSet;
+
+    Aws::Vector<ErrorRootCause> m_errorRootCauses;
+    bool m_errorRootCausesHasBeenSet;
+
+    Aws::Vector<ResponseTimeRootCause> m_responseTimeRootCauses;
+    bool m_responseTimeRootCausesHasBeenSet;
+
+    int m_revision;
+    bool m_revisionHasBeenSet;
   };
 
 } // namespace Model

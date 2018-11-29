@@ -38,7 +38,9 @@ namespace Model
     dotnetcore2_0,
     dotnetcore2_1,
     nodejs4_3_edge,
-    go1_x
+    go1_x,
+    ruby2_5,
+    provided
   };
 
 namespace RuntimeMapper

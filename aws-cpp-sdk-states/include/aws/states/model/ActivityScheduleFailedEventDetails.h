@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about an activity schedule failure which occurred during an
+   * <p>Contains details about an activity schedule failure that occurred during an
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivityScheduleFailedEventDetails">AWS
    * API Reference</a></p>

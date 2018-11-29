@@ -22,6 +22,7 @@
 #include <aws/lambda/model/Runtime.h>
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/TracingConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -48,7 +49,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -60,7 +61,7 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -72,7 +73,7 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -84,7 +85,7 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -96,7 +97,7 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -108,7 +109,7 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -120,7 +121,7 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -596,6 +597,63 @@ namespace Model
      */
     inline UpdateFunctionConfigurationRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLayers() const{ return m_layers; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline void SetLayers(const Aws::Vector<Aws::String>& value) { m_layersHasBeenSet = true; m_layers = value; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline void SetLayers(Aws::Vector<Aws::String>&& value) { m_layersHasBeenSet = true; m_layers = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithLayers(const Aws::Vector<Aws::String>& value) { SetLayers(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithLayers(Aws::Vector<Aws::String>&& value) { SetLayers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& AddLayers(const Aws::String& value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& AddLayers(Aws::String&& value) { m_layersHasBeenSet = true; m_layers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a> to add to the function's execution environment.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& AddLayers(const char* value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -636,6 +694,9 @@ namespace Model
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
+    Aws::Vector<Aws::String> m_layers;
+    bool m_layersHasBeenSet;
   };
 
 } // namespace Model

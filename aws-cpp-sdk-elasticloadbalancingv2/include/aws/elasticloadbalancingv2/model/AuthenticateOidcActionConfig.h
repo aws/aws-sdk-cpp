@@ -526,6 +526,16 @@ namespace Model
      */
     inline AuthenticateOidcActionConfig& WithOnUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum&& value) { SetOnUnauthenticatedRequest(std::move(value)); return *this;}
 
+
+    
+    inline bool GetUseExistingClientSecret() const{ return m_useExistingClientSecret; }
+
+    
+    inline void SetUseExistingClientSecret(bool value) { m_useExistingClientSecretHasBeenSet = true; m_useExistingClientSecret = value; }
+
+    
+    inline AuthenticateOidcActionConfig& WithUseExistingClientSecret(bool value) { SetUseExistingClientSecret(value); return *this;}
+
   private:
 
     Aws::String m_issuer;
@@ -560,6 +570,9 @@ namespace Model
 
     AuthenticateOidcActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
     bool m_onUnauthenticatedRequestHasBeenSet;
+
+    bool m_useExistingClientSecret;
+    bool m_useExistingClientSecretHasBeenSet;
   };
 
 } // namespace Model

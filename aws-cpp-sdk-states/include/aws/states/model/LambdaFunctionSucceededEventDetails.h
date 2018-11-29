@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about a lambda function which successfully terminated during
+   * <p>Contains details about a lambda function that successfully terminated during
    * an execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionSucceededEventDetails">AWS
    * API Reference</a></p>

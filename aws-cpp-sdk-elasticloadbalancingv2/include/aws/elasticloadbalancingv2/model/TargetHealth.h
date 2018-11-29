@@ -79,9 +79,9 @@ namespace Model
 
 
     /**
-     * <p>The reason code. If the target state is <code>healthy</code>, a reason code
-     * is not provided.</p> <p>If the target state is <code>initial</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
+     * <p>The reason code.</p> <p>If the target state is <code>healthy</code>, a reason
+     * code is not provided.</p> <p>If the target state is <code>initial</code>, the
+     * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Elb.RegistrationInProgress</code> - The target is in the process of being
      * registered with the load balancer.</p> </li> <li> <p>
      * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the
@@ -107,14 +107,17 @@ namespace Model
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
-     * </li> </ul>
+     * </li> </ul> <p>If the target state is <code>unavailable</code>, the reason code
+     * can be the following value:</p> <ul> <li> <p>
+     * <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the
+     * target group.</p> </li> </ul>
      */
     inline const TargetHealthReasonEnum& GetReason() const{ return m_reason; }
 
     /**
-     * <p>The reason code. If the target state is <code>healthy</code>, a reason code
-     * is not provided.</p> <p>If the target state is <code>initial</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
+     * <p>The reason code.</p> <p>If the target state is <code>healthy</code>, a reason
+     * code is not provided.</p> <p>If the target state is <code>initial</code>, the
+     * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Elb.RegistrationInProgress</code> - The target is in the process of being
      * registered with the load balancer.</p> </li> <li> <p>
      * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the
@@ -140,14 +143,17 @@ namespace Model
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
-     * </li> </ul>
+     * </li> </ul> <p>If the target state is <code>unavailable</code>, the reason code
+     * can be the following value:</p> <ul> <li> <p>
+     * <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the
+     * target group.</p> </li> </ul>
      */
     inline void SetReason(const TargetHealthReasonEnum& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>The reason code. If the target state is <code>healthy</code>, a reason code
-     * is not provided.</p> <p>If the target state is <code>initial</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
+     * <p>The reason code.</p> <p>If the target state is <code>healthy</code>, a reason
+     * code is not provided.</p> <p>If the target state is <code>initial</code>, the
+     * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Elb.RegistrationInProgress</code> - The target is in the process of being
      * registered with the load balancer.</p> </li> <li> <p>
      * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the
@@ -173,14 +179,17 @@ namespace Model
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
-     * </li> </ul>
+     * </li> </ul> <p>If the target state is <code>unavailable</code>, the reason code
+     * can be the following value:</p> <ul> <li> <p>
+     * <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the
+     * target group.</p> </li> </ul>
      */
     inline void SetReason(TargetHealthReasonEnum&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>The reason code. If the target state is <code>healthy</code>, a reason code
-     * is not provided.</p> <p>If the target state is <code>initial</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
+     * <p>The reason code.</p> <p>If the target state is <code>healthy</code>, a reason
+     * code is not provided.</p> <p>If the target state is <code>initial</code>, the
+     * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Elb.RegistrationInProgress</code> - The target is in the process of being
      * registered with the load balancer.</p> </li> <li> <p>
      * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the
@@ -206,14 +215,17 @@ namespace Model
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
-     * </li> </ul>
+     * </li> </ul> <p>If the target state is <code>unavailable</code>, the reason code
+     * can be the following value:</p> <ul> <li> <p>
+     * <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the
+     * target group.</p> </li> </ul>
      */
     inline TargetHealth& WithReason(const TargetHealthReasonEnum& value) { SetReason(value); return *this;}
 
     /**
-     * <p>The reason code. If the target state is <code>healthy</code>, a reason code
-     * is not provided.</p> <p>If the target state is <code>initial</code>, the reason
-     * code can be one of the following values:</p> <ul> <li> <p>
+     * <p>The reason code.</p> <p>If the target state is <code>healthy</code>, a reason
+     * code is not provided.</p> <p>If the target state is <code>initial</code>, the
+     * reason code can be one of the following values:</p> <ul> <li> <p>
      * <code>Elb.RegistrationInProgress</code> - The target is in the process of being
      * registered with the load balancer.</p> </li> <li> <p>
      * <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the
@@ -239,7 +251,10 @@ namespace Model
      * <code>draining</code>, the reason code can be the following value:</p> <ul> <li>
      * <p> <code>Target.DeregistrationInProgress</code> - The target is in the process
      * of being deregistered and the deregistration delay period has not expired.</p>
-     * </li> </ul>
+     * </li> </ul> <p>If the target state is <code>unavailable</code>, the reason code
+     * can be the following value:</p> <ul> <li> <p>
+     * <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the
+     * target group.</p> </li> </ul>
      */
     inline TargetHealth& WithReason(TargetHealthReasonEnum&& value) { SetReason(std::move(value)); return *this;}
 

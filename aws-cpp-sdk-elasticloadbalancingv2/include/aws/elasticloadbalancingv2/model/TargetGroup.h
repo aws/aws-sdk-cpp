@@ -266,6 +266,22 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
+
+    /**
+     * <p>Indicates whether health checks are enabled.</p>
+     */
+    inline TargetGroup& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
+
+
+    /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target.</p>
      */
@@ -519,6 +535,9 @@ namespace Model
 
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
+    bool m_healthCheckEnabled;
+    bool m_healthCheckEnabledHasBeenSet;
 
     int m_healthCheckIntervalSeconds;
     bool m_healthCheckIntervalSecondsHasBeenSet;

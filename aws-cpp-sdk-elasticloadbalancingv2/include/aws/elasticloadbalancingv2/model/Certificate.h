@@ -86,17 +86,20 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline Certificate& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 

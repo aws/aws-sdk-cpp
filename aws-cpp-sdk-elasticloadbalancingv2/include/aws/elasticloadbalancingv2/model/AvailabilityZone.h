@@ -158,6 +158,16 @@ namespace Model
      */
     inline AvailabilityZone& AddLoadBalancerAddresses(LoadBalancerAddress&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(std::move(value)); return *this; }
 
+
+    
+    inline bool GetStaticIp() const{ return m_staticIp; }
+
+    
+    inline void SetStaticIp(bool value) { m_staticIpHasBeenSet = true; m_staticIp = value; }
+
+    
+    inline AvailabilityZone& WithStaticIp(bool value) { SetStaticIp(value); return *this;}
+
   private:
 
     Aws::String m_zoneName;
@@ -168,6 +178,9 @@ namespace Model
 
     Aws::Vector<LoadBalancerAddress> m_loadBalancerAddresses;
     bool m_loadBalancerAddressesHasBeenSet;
+
+    bool m_staticIp;
+    bool m_staticIpHasBeenSet;
   };
 
 } // namespace Model

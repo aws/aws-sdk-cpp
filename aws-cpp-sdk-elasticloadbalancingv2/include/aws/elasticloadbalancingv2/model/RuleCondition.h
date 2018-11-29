@@ -18,6 +18,11 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticloadbalancingv2/model/HostHeaderConditionConfig.h>
+#include <aws/elasticloadbalancingv2/model/PathPatternConditionConfig.h>
+#include <aws/elasticloadbalancingv2/model/HttpHeaderConditionConfig.h>
+#include <aws/elasticloadbalancingv2/model/QueryStringConditionConfig.h>
+#include <aws/elasticloadbalancingv2/model/HttpRequestMethodConditionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -229,6 +234,86 @@ namespace Model
      */
     inline RuleCondition& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
+
+    
+    inline const HostHeaderConditionConfig& GetHostHeaderConfig() const{ return m_hostHeaderConfig; }
+
+    
+    inline void SetHostHeaderConfig(const HostHeaderConditionConfig& value) { m_hostHeaderConfigHasBeenSet = true; m_hostHeaderConfig = value; }
+
+    
+    inline void SetHostHeaderConfig(HostHeaderConditionConfig&& value) { m_hostHeaderConfigHasBeenSet = true; m_hostHeaderConfig = std::move(value); }
+
+    
+    inline RuleCondition& WithHostHeaderConfig(const HostHeaderConditionConfig& value) { SetHostHeaderConfig(value); return *this;}
+
+    
+    inline RuleCondition& WithHostHeaderConfig(HostHeaderConditionConfig&& value) { SetHostHeaderConfig(std::move(value)); return *this;}
+
+
+    
+    inline const PathPatternConditionConfig& GetPathPatternConfig() const{ return m_pathPatternConfig; }
+
+    
+    inline void SetPathPatternConfig(const PathPatternConditionConfig& value) { m_pathPatternConfigHasBeenSet = true; m_pathPatternConfig = value; }
+
+    
+    inline void SetPathPatternConfig(PathPatternConditionConfig&& value) { m_pathPatternConfigHasBeenSet = true; m_pathPatternConfig = std::move(value); }
+
+    
+    inline RuleCondition& WithPathPatternConfig(const PathPatternConditionConfig& value) { SetPathPatternConfig(value); return *this;}
+
+    
+    inline RuleCondition& WithPathPatternConfig(PathPatternConditionConfig&& value) { SetPathPatternConfig(std::move(value)); return *this;}
+
+
+    
+    inline const HttpHeaderConditionConfig& GetHttpHeaderConfig() const{ return m_httpHeaderConfig; }
+
+    
+    inline void SetHttpHeaderConfig(const HttpHeaderConditionConfig& value) { m_httpHeaderConfigHasBeenSet = true; m_httpHeaderConfig = value; }
+
+    
+    inline void SetHttpHeaderConfig(HttpHeaderConditionConfig&& value) { m_httpHeaderConfigHasBeenSet = true; m_httpHeaderConfig = std::move(value); }
+
+    
+    inline RuleCondition& WithHttpHeaderConfig(const HttpHeaderConditionConfig& value) { SetHttpHeaderConfig(value); return *this;}
+
+    
+    inline RuleCondition& WithHttpHeaderConfig(HttpHeaderConditionConfig&& value) { SetHttpHeaderConfig(std::move(value)); return *this;}
+
+
+    
+    inline const QueryStringConditionConfig& GetQueryStringConfig() const{ return m_queryStringConfig; }
+
+    
+    inline void SetQueryStringConfig(const QueryStringConditionConfig& value) { m_queryStringConfigHasBeenSet = true; m_queryStringConfig = value; }
+
+    
+    inline void SetQueryStringConfig(QueryStringConditionConfig&& value) { m_queryStringConfigHasBeenSet = true; m_queryStringConfig = std::move(value); }
+
+    
+    inline RuleCondition& WithQueryStringConfig(const QueryStringConditionConfig& value) { SetQueryStringConfig(value); return *this;}
+
+    
+    inline RuleCondition& WithQueryStringConfig(QueryStringConditionConfig&& value) { SetQueryStringConfig(std::move(value)); return *this;}
+
+
+    
+    inline const HttpRequestMethodConditionConfig& GetHttpRequestMethodConfig() const{ return m_httpRequestMethodConfig; }
+
+    
+    inline void SetHttpRequestMethodConfig(const HttpRequestMethodConditionConfig& value) { m_httpRequestMethodConfigHasBeenSet = true; m_httpRequestMethodConfig = value; }
+
+    
+    inline void SetHttpRequestMethodConfig(HttpRequestMethodConditionConfig&& value) { m_httpRequestMethodConfigHasBeenSet = true; m_httpRequestMethodConfig = std::move(value); }
+
+    
+    inline RuleCondition& WithHttpRequestMethodConfig(const HttpRequestMethodConditionConfig& value) { SetHttpRequestMethodConfig(value); return *this;}
+
+    
+    inline RuleCondition& WithHttpRequestMethodConfig(HttpRequestMethodConditionConfig&& value) { SetHttpRequestMethodConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_field;
@@ -236,6 +321,21 @@ namespace Model
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet;
+
+    HostHeaderConditionConfig m_hostHeaderConfig;
+    bool m_hostHeaderConfigHasBeenSet;
+
+    PathPatternConditionConfig m_pathPatternConfig;
+    bool m_pathPatternConfigHasBeenSet;
+
+    HttpHeaderConditionConfig m_httpHeaderConfig;
+    bool m_httpHeaderConfigHasBeenSet;
+
+    QueryStringConditionConfig m_queryStringConfig;
+    bool m_queryStringConfigHasBeenSet;
+
+    HttpRequestMethodConditionConfig m_httpRequestMethodConfig;
+    bool m_httpRequestMethodConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -38,7 +38,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_deadLetterConfigHasBeenSet(false),
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_layersHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,17 @@ Aws::String UpdateFunctionConfigurationRequest::SerializePayload() const
   if(m_revisionIdHasBeenSet)
   {
    payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  if(m_layersHasBeenSet)
+  {
+   Array<JsonValue> layersJsonList(m_layers.size());
+   for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
+   {
+     layersJsonList[layersIndex].AsString(m_layers[layersIndex]);
+   }
+   payload.WithArray("Layers", std::move(layersJsonList));
 
   }
 

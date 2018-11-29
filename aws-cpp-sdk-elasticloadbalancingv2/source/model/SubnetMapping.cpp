@@ -32,13 +32,17 @@ namespace Model
 
 SubnetMapping::SubnetMapping() : 
     m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_allocationIdHasBeenSet(false),
+    m_staticIp(false),
+    m_staticIpHasBeenSet(false)
 {
 }
 
 SubnetMapping::SubnetMapping(const XmlNode& xmlNode) : 
     m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_allocationIdHasBeenSet(false),
+    m_staticIp(false),
+    m_staticIpHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +65,12 @@ SubnetMapping& SubnetMapping::operator =(const XmlNode& xmlNode)
       m_allocationId = StringUtils::Trim(allocationIdNode.GetText().c_str());
       m_allocationIdHasBeenSet = true;
     }
+    XmlNode staticIpNode = resultNode.FirstChild("StaticIp");
+    if(!staticIpNode.IsNull())
+    {
+      m_staticIp = StringUtils::ConvertToBool(StringUtils::Trim(staticIpNode.GetText().c_str()).c_str());
+      m_staticIpHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +88,11 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
+  if(m_staticIpHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StaticIp=" << std::boolalpha << m_staticIp << "&";
+  }
+
 }
 
 void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -89,6 +104,10 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+  }
+  if(m_staticIpHasBeenSet)
+  {
+      oStream << location << ".StaticIp=" << std::boolalpha << m_staticIp << "&";
   }
 }
 

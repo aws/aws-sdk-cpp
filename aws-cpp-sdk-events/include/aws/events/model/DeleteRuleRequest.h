@@ -79,10 +79,44 @@ namespace Model
      */
     inline DeleteRuleRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
+     * specify <code>Force</code> as <code>True</code> to delete the rule. This
+     * parameter is ignored for rules that are not managed rules. You can check whether
+     * a rule is a managed rule by using <code>DescribeRule</code> or
+     * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
+     * response.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
+     * specify <code>Force</code> as <code>True</code> to delete the rule. This
+     * parameter is ignored for rules that are not managed rules. You can check whether
+     * a rule is a managed rule by using <code>DescribeRule</code> or
+     * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
+     * response.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>If this is a managed rule, created by an AWS service on your behalf, you must
+     * specify <code>Force</code> as <code>True</code> to delete the rule. This
+     * parameter is ignored for rules that are not managed rules. You can check whether
+     * a rule is a managed rule by using <code>DescribeRule</code> or
+     * <code>ListRules</code> and checking the <code>ManagedBy</code> field of the
+     * response.</p>
+     */
+    inline DeleteRuleRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

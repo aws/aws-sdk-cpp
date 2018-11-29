@@ -41,6 +41,8 @@ TargetGroup::TargetGroup() :
     m_healthCheckProtocol(ProtocolEnum::NOT_SET),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
+    m_healthCheckEnabled(false),
+    m_healthCheckEnabledHasBeenSet(false),
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_healthCheckTimeoutSeconds(0),
@@ -68,6 +70,8 @@ TargetGroup::TargetGroup(const XmlNode& xmlNode) :
     m_healthCheckProtocol(ProtocolEnum::NOT_SET),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
+    m_healthCheckEnabled(false),
+    m_healthCheckEnabledHasBeenSet(false),
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_healthCheckTimeoutSeconds(0),
@@ -132,6 +136,12 @@ TargetGroup& TargetGroup::operator =(const XmlNode& xmlNode)
     {
       m_healthCheckPort = StringUtils::Trim(healthCheckPortNode.GetText().c_str());
       m_healthCheckPortHasBeenSet = true;
+    }
+    XmlNode healthCheckEnabledNode = resultNode.FirstChild("HealthCheckEnabled");
+    if(!healthCheckEnabledNode.IsNull())
+    {
+      m_healthCheckEnabled = StringUtils::ConvertToBool(StringUtils::Trim(healthCheckEnabledNode.GetText().c_str()).c_str());
+      m_healthCheckEnabledHasBeenSet = true;
     }
     XmlNode healthCheckIntervalSecondsNode = resultNode.FirstChild("HealthCheckIntervalSeconds");
     if(!healthCheckIntervalSecondsNode.IsNull())
@@ -229,6 +239,11 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".HealthCheckPort=" << StringUtils::URLEncode(m_healthCheckPort.c_str()) << "&";
   }
 
+  if(m_healthCheckEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HealthCheckEnabled=" << std::boolalpha << m_healthCheckEnabled << "&";
+  }
+
   if(m_healthCheckIntervalSecondsHasBeenSet)
   {
       oStream << location << index << locationValue << ".HealthCheckIntervalSeconds=" << m_healthCheckIntervalSeconds << "&";
@@ -306,6 +321,10 @@ void TargetGroup::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_healthCheckPortHasBeenSet)
   {
       oStream << location << ".HealthCheckPort=" << StringUtils::URLEncode(m_healthCheckPort.c_str()) << "&";
+  }
+  if(m_healthCheckEnabledHasBeenSet)
+  {
+      oStream << location << ".HealthCheckEnabled=" << std::boolalpha << m_healthCheckEnabled << "&";
   }
   if(m_healthCheckIntervalSecondsHasBeenSet)
   {

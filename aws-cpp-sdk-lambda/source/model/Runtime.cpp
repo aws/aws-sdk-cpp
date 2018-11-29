@@ -43,6 +43,8 @@ namespace Aws
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
+        static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
+        static const int provided_HASH = HashingUtils::HashString("provided");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return Runtime::go1_x;
           }
+          else if (hashCode == ruby2_5_HASH)
+          {
+            return Runtime::ruby2_5;
+          }
+          else if (hashCode == provided_HASH)
+          {
+            return Runtime::provided;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +150,10 @@ namespace Aws
             return "nodejs4.3-edge";
           case Runtime::go1_x:
             return "go1.x";
+          case Runtime::ruby2_5:
+            return "ruby2.5";
+          case Runtime::provided:
+            return "provided";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

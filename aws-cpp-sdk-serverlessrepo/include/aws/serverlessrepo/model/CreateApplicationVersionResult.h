@@ -175,7 +175,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -187,6 +187,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -196,14 +202,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline const Aws::Vector<Capability>& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
 
@@ -229,7 +236,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -241,6 +248,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -250,14 +263,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline void SetRequiredCapabilities(const Aws::Vector<Capability>& value) { m_requiredCapabilities = value; }
 
@@ -283,7 +297,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -295,6 +309,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -304,14 +324,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline void SetRequiredCapabilities(Aws::Vector<Capability>&& value) { m_requiredCapabilities = std::move(value); }
 
@@ -337,7 +358,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -349,6 +370,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -358,14 +385,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateApplicationVersionResult& WithRequiredCapabilities(const Aws::Vector<Capability>& value) { SetRequiredCapabilities(value); return *this;}
 
@@ -391,7 +419,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -403,6 +431,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -412,14 +446,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateApplicationVersionResult& WithRequiredCapabilities(Aws::Vector<Capability>&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
 
@@ -445,7 +480,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -457,6 +492,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -466,14 +507,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateApplicationVersionResult& AddRequiredCapabilities(const Capability& value) { m_requiredCapabilities.push_back(value); return *this; }
 
@@ -499,7 +541,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>,
 
      * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM::Policy</a>,
      * and
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>.
@@ -511,6 +553,12 @@ namespace Model
  with custom names, you must specify CAPABILITY_NAMED_IAM.</p><p>The
      * following resources require you to specify CAPABILITY_RESOURCE_POLICY:
  <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html">AWS::Lambda::Permission</a>,
+
+     * <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html">AWS::IAM:Policy</a>,
+
+     * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html">AWS::ApplicationAutoScaling::ScalingPolicy</a>,
 
      * <a
@@ -520,14 +568,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS:TopicPolicy</a>.</p><p>If
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
      * your application template contains any of the above resources, we recommend that
      * you review
  all permissions associated with the application before deploying. If
      * you don't specify
  this parameter for an application that requires capabilities,
      * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY</p>
+     * CAPABILITY_RESOURCE_POLICY
+ </p>
      */
     inline CreateApplicationVersionResult& AddRequiredCapabilities(Capability&& value) { m_requiredCapabilities.push_back(std::move(value)); return *this; }
 

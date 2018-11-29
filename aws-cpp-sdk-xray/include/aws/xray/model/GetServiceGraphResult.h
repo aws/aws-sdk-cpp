@@ -141,23 +141,23 @@ namespace Model
 
 
     /**
-     * <p>A flag indicating whether or not the group's filter expression has been
-     * consistent, or if the returned service graph may show traces from an older
-     * version of the group's filter expression.</p>
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
      */
     inline bool GetContainsOldGroupVersions() const{ return m_containsOldGroupVersions; }
 
     /**
-     * <p>A flag indicating whether or not the group's filter expression has been
-     * consistent, or if the returned service graph may show traces from an older
-     * version of the group's filter expression.</p>
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
      */
     inline void SetContainsOldGroupVersions(bool value) { m_containsOldGroupVersions = value; }
 
     /**
-     * <p>A flag indicating whether or not the group's filter expression has been
-     * consistent, or if the returned service graph may show traces from an older
-     * version of the group's filter expression.</p>
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
      */
     inline GetServiceGraphResult& WithContainsOldGroupVersions(bool value) { SetContainsOldGroupVersions(value); return *this;}
 

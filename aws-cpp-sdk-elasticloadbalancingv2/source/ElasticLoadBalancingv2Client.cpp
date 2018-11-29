@@ -46,6 +46,7 @@
 #include <aws/elasticloadbalancingv2/model/DescribeListenersRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersRequest.h>
+#include <aws/elasticloadbalancingv2/model/DescribeProvisionedCapacityRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeRulesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeSSLPoliciesRequest.h>
 #include <aws/elasticloadbalancingv2/model/DescribeTagsRequest.h>
@@ -54,6 +55,7 @@
 #include <aws/elasticloadbalancingv2/model/DescribeTargetHealthRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesRequest.h>
+#include <aws/elasticloadbalancingv2/model/ModifyProvisionedCapacityRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyRuleRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupRequest.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesRequest.h>
@@ -707,6 +709,41 @@ void ElasticLoadBalancingv2Client::DescribeLoadBalancersAsyncHelper(const Descri
   handler(this, request, DescribeLoadBalancers(request), context);
 }
 
+DescribeProvisionedCapacityOutcome ElasticLoadBalancingv2Client::DescribeProvisionedCapacity(const DescribeProvisionedCapacityRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeProvisionedCapacityOutcome(DescribeProvisionedCapacityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeProvisionedCapacityOutcome(outcome.GetError());
+  }
+}
+
+DescribeProvisionedCapacityOutcomeCallable ElasticLoadBalancingv2Client::DescribeProvisionedCapacityCallable(const DescribeProvisionedCapacityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeProvisionedCapacityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeProvisionedCapacity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::DescribeProvisionedCapacityAsync(const DescribeProvisionedCapacityRequest& request, const DescribeProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeProvisionedCapacityAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::DescribeProvisionedCapacityAsyncHelper(const DescribeProvisionedCapacityRequest& request, const DescribeProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeProvisionedCapacity(request), context);
+}
+
 DescribeRulesOutcome ElasticLoadBalancingv2Client::DescribeRules(const DescribeRulesRequest& request) const
 {
   Aws::StringStream ss;
@@ -985,6 +1022,41 @@ void ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributesAsync(const Modif
 void ElasticLoadBalancingv2Client::ModifyLoadBalancerAttributesAsyncHelper(const ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyLoadBalancerAttributes(request), context);
+}
+
+ModifyProvisionedCapacityOutcome ElasticLoadBalancingv2Client::ModifyProvisionedCapacity(const ModifyProvisionedCapacityRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyProvisionedCapacityOutcome(ModifyProvisionedCapacityResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyProvisionedCapacityOutcome(outcome.GetError());
+  }
+}
+
+ModifyProvisionedCapacityOutcomeCallable ElasticLoadBalancingv2Client::ModifyProvisionedCapacityCallable(const ModifyProvisionedCapacityRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyProvisionedCapacityOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyProvisionedCapacity(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ElasticLoadBalancingv2Client::ModifyProvisionedCapacityAsync(const ModifyProvisionedCapacityRequest& request, const ModifyProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyProvisionedCapacityAsyncHelper( request, handler, context ); } );
+}
+
+void ElasticLoadBalancingv2Client::ModifyProvisionedCapacityAsyncHelper(const ModifyProvisionedCapacityRequest& request, const ModifyProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyProvisionedCapacity(request), context);
 }
 
 ModifyRuleOutcome ElasticLoadBalancingv2Client::ModifyRule(const ModifyRuleRequest& request) const

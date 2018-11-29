@@ -82,6 +82,12 @@ DescribeRuleResult& DescribeRuleResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("ManagedBy"))
+  {
+    m_managedBy = jsonValue.GetString("ManagedBy");
+
+  }
+
 
 
   return *this;

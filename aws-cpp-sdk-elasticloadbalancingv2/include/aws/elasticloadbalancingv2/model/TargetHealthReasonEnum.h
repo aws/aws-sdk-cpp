@@ -36,6 +36,7 @@ namespace Model
     Target_DeregistrationInProgress,
     Target_InvalidState,
     Target_IpUnusable,
+    Target_HealthCheckDisabled,
     Elb_InternalError
   };
 

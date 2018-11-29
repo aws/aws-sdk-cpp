@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline void SetGroupARN(Aws::String&& value) { m_groupARNHasBeenSet = true; m_groupARN = std::move(value); }
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline void SetGroupARN(const char* value) { m_groupARNHasBeenSet = true; m_groupARN.assign(value); }
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline UpdateGroupRequest& WithGroupARN(const Aws::String& value) { SetGroupARN(value); return *this;}
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline UpdateGroupRequest& WithGroupARN(Aws::String&& value) { SetGroupARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN that was generated upon create.</p>
+     * <p>The ARN that was generated upon creation.</p>
      */
     inline UpdateGroupRequest& WithGroupARN(const char* value) { SetGroupARN(value); return *this;}
 

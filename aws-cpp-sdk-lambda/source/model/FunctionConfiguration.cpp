@@ -51,7 +51,8 @@ FunctionConfiguration::FunctionConfiguration() :
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_masterArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_layersHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_kMSKeyArnHasBeenSet(false),
     m_tracingConfigHasBeenSet(false),
     m_masterArnHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
+    m_revisionIdHasBeenSet(false),
+    m_layersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -218,6 +220,16 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_revisionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Layers"))
+  {
+    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
+    {
+      m_layers.push_back(layersJsonList[layersIndex].AsObject());
+    }
+    m_layersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -335,6 +347,17 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_revisionIdHasBeenSet)
   {
    payload.WithString("RevisionId", m_revisionId);
+
+  }
+
+  if(m_layersHasBeenSet)
+  {
+   Array<JsonValue> layersJsonList(m_layers.size());
+   for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
+   {
+     layersJsonList[layersIndex].AsObject(m_layers[layersIndex].Jsonize());
+   }
+   payload.WithArray("Layers", std::move(layersJsonList));
 
   }
 

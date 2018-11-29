@@ -38,6 +38,7 @@
 #include <aws/serverlessrepo/model/GetApplicationRequest.h>
 #include <aws/serverlessrepo/model/GetApplicationPolicyRequest.h>
 #include <aws/serverlessrepo/model/GetCloudFormationTemplateRequest.h>
+#include <aws/serverlessrepo/model/ListApplicationDependenciesRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationVersionsRequest.h>
 #include <aws/serverlessrepo/model/ListApplicationsRequest.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyRequest.h>
@@ -406,6 +407,43 @@ void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsync(const
 void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsyncHelper(const GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetCloudFormationTemplate(request), context);
+}
+
+ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListApplicationDependencies(const ListApplicationDependenciesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/applications/";
+  ss << request.GetApplicationId();
+  ss << "/dependencies";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListApplicationDependenciesOutcome(ListApplicationDependenciesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListApplicationDependenciesOutcome(outcome.GetError());
+  }
+}
+
+ListApplicationDependenciesOutcomeCallable ServerlessApplicationRepositoryClient::ListApplicationDependenciesCallable(const ListApplicationDependenciesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationDependenciesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationDependencies(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsync(const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationDependenciesAsyncHelper( request, handler, context ); } );
+}
+
+void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsyncHelper(const ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApplicationDependencies(request), context);
 }
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const

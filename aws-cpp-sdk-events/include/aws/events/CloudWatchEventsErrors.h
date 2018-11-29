@@ -60,6 +60,7 @@ enum class CloudWatchEventsErrors
   INTERNAL,
   INVALID_EVENT_PATTERN,
   LIMIT_EXCEEDED,
+  MANAGED_RULE,
   POLICY_LENGTH_EXCEEDED
 };
 namespace CloudWatchEventsErrorMapper

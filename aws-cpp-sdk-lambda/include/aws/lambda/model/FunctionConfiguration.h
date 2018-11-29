@@ -21,6 +21,8 @@
 #include <aws/lambda/model/DeadLetterConfig.h>
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/TracingConfigResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/Layer.h>
 #include <utility>
 
 namespace Aws
@@ -312,49 +314,49 @@ namespace Model
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline const Aws::String& GetLastModified() const{ return m_lastModified; }
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline void SetLastModified(const Aws::String& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline void SetLastModified(Aws::String&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline void SetLastModified(const char* value) { m_lastModifiedHasBeenSet = true; m_lastModified.assign(value); }
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline FunctionConfiguration& WithLastModified(const Aws::String& value) { SetLastModified(value); return *this;}
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline FunctionConfiguration& WithLastModified(Aws::String&& value) { SetLastModified(std::move(value)); return *this;}
 
     /**
      * <p>The date and time that the function was last updated, in <a
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
-     * (YYYY-MM-DDThh:mm:ssTZD).</p>
+     * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
     inline FunctionConfiguration& WithLastModified(const char* value) { SetLastModified(value); return *this;}
 
@@ -649,6 +651,56 @@ namespace Model
      */
     inline FunctionConfiguration& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline void SetLayers(const Aws::Vector<Layer>& value) { m_layersHasBeenSet = true; m_layers = value; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline void SetLayers(Aws::Vector<Layer>&& value) { m_layersHasBeenSet = true; m_layers = std::move(value); }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline FunctionConfiguration& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline FunctionConfiguration& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline FunctionConfiguration& AddLayers(const Layer& value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
+     * layers</a>.</p>
+     */
+    inline FunctionConfiguration& AddLayers(Layer&& value) { m_layersHasBeenSet = true; m_layers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionName;
@@ -707,6 +759,9 @@ namespace Model
 
     Aws::String m_revisionId;
     bool m_revisionIdHasBeenSet;
+
+    Aws::Vector<Layer> m_layers;
+    bool m_layersHasBeenSet;
   };
 
 } // namespace Model
