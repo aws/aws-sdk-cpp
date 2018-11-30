@@ -75,27 +75,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline const Aws::Utils::DateTime& GetRetainUntilDate() const{ return m_retainUntilDate; }
 
     /**
-     * <p/>
+     * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline void SetRetainUntilDate(const Aws::Utils::DateTime& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = value; }
 
     /**
-     * <p/>
+     * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline void SetRetainUntilDate(Aws::Utils::DateTime&& value) { m_retainUntilDateHasBeenSet = true; m_retainUntilDate = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline ObjectLockRetention& WithRetainUntilDate(const Aws::Utils::DateTime& value) { SetRetainUntilDate(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The date on which this Object Lock Retention will expire.</p>
      */
     inline ObjectLockRetention& WithRetainUntilDate(Aws::Utils::DateTime&& value) { SetRetainUntilDate(std::move(value)); return *this;}
 

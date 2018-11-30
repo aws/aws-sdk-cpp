@@ -52,6 +52,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>The bucket containing the object that you want to place a Legal Hold on.</p>
@@ -209,37 +211,37 @@ namespace Model
 
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLegalHoldRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLegalHoldRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLegalHoldRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 

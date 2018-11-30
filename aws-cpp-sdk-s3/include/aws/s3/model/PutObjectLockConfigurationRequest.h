@@ -52,6 +52,8 @@ namespace Model
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
+    inline bool ShouldComputeContentMd5() const override { return true; }
+
 
     /**
      * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
@@ -136,74 +138,60 @@ namespace Model
     inline PutObjectLockConfigurationRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const Aws::String& GetToken() const{ return m_token; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline PutObjectLockConfigurationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline PutObjectLockConfigurationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline PutObjectLockConfigurationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLockConfigurationRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLockConfigurationRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The MD5 signature for the configuration included in your request.</p>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectLockConfigurationRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 

@@ -50,27 +50,27 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this object has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
     inline const ObjectLockEnabled& GetObjectLockEnabled() const{ return m_objectLockEnabled; }
 
     /**
-     * <p>Indicates whether this object has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
     inline void SetObjectLockEnabled(const ObjectLockEnabled& value) { m_objectLockEnabledHasBeenSet = true; m_objectLockEnabled = value; }
 
     /**
-     * <p>Indicates whether this object has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
     inline void SetObjectLockEnabled(ObjectLockEnabled&& value) { m_objectLockEnabledHasBeenSet = true; m_objectLockEnabled = std::move(value); }
 
     /**
-     * <p>Indicates whether this object has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
     inline ObjectLockConfiguration& WithObjectLockEnabled(const ObjectLockEnabled& value) { SetObjectLockEnabled(value); return *this;}
 
     /**
-     * <p>Indicates whether this object has an Object Lock configuration enabled.</p>
+     * <p>Indicates whether this bucket has an Object Lock configuration enabled.</p>
      */
     inline ObjectLockConfiguration& WithObjectLockEnabled(ObjectLockEnabled&& value) { SetObjectLockEnabled(std::move(value)); return *this;}
 

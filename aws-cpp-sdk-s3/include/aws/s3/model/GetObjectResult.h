@@ -1027,27 +1027,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Indicates whether this object has an active legal hold. This field is only
+     * returned if you have permission to view an object's legal hold status.</p>
      */
     inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
 
     /**
-     * <p/>
+     * <p>Indicates whether this object has an active legal hold. This field is only
+     * returned if you have permission to view an object's legal hold status.</p>
      */
     inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatus = value; }
 
     /**
-     * <p/>
+     * <p>Indicates whether this object has an active legal hold. This field is only
+     * returned if you have permission to view an object's legal hold status.</p>
      */
     inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatus = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Indicates whether this object has an active legal hold. This field is only
+     * returned if you have permission to view an object's legal hold status.</p>
      */
     inline GetObjectResult& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Indicates whether this object has an active legal hold. This field is only
+     * returned if you have permission to view an object's legal hold status.</p>
      */
     inline GetObjectResult& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 
