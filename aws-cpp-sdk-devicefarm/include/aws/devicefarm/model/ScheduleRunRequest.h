@@ -17,6 +17,7 @@
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/DeviceFarmRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/model/DeviceSelectionConfiguration.h>
 #include <aws/devicefarm/model/ScheduleRunTest.h>
 #include <aws/devicefarm/model/ScheduleRunConfiguration.h>
 #include <aws/devicefarm/model/ExecutionConfiguration.h>
@@ -124,39 +125,94 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline void SetDevicePoolArn(const Aws::String& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = value; }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline void SetDevicePoolArn(Aws::String&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::move(value); }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline void SetDevicePoolArn(const char* value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn.assign(value); }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(const Aws::String& value) { SetDevicePoolArn(value); return *this;}
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(Aws::String&& value) { SetDevicePoolArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
+     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
+     * </b> are required in a request.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
+
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> are required in a request.</p>
+     */
+    inline const DeviceSelectionConfiguration& GetDeviceSelectionConfiguration() const{ return m_deviceSelectionConfiguration; }
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> are required in a request.</p>
+     */
+    inline void SetDeviceSelectionConfiguration(const DeviceSelectionConfiguration& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = value; }
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> are required in a request.</p>
+     */
+    inline void SetDeviceSelectionConfiguration(DeviceSelectionConfiguration&& value) { m_deviceSelectionConfigurationHasBeenSet = true; m_deviceSelectionConfiguration = std::move(value); }
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> are required in a request.</p>
+     */
+    inline ScheduleRunRequest& WithDeviceSelectionConfiguration(const DeviceSelectionConfiguration& value) { SetDeviceSelectionConfiguration(value); return *this;}
+
+    /**
+     * <p>The filter criteria used to dynamically select a set of devices for a test
+     * run, as well as the maximum number of devices to be included in the run.</p>
+     * <p>Either <b> <code>devicePoolArn</code> </b> or <b>
+     * <code>deviceSelectionConfiguration</code> </b> are required in a request.</p>
+     */
+    inline ScheduleRunRequest& WithDeviceSelectionConfiguration(DeviceSelectionConfiguration&& value) { SetDeviceSelectionConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -287,6 +343,9 @@ namespace Model
 
     Aws::String m_devicePoolArn;
     bool m_devicePoolArnHasBeenSet;
+
+    DeviceSelectionConfiguration m_deviceSelectionConfiguration;
+    bool m_deviceSelectionConfigurationHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

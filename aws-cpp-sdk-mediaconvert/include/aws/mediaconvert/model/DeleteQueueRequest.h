@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline DeleteQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline DeleteQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * The name of the queue to be deleted.
+     * The name of the queue that you want to delete.
      */
     inline DeleteQueueRequest& WithName(const char* value) { SetName(value); return *this;}
 

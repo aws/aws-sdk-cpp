@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -33,6 +34,11 @@ namespace StorageGateway
 namespace Model
 {
 
+  /**
+   * <p>Represents a gateway's local disk.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/Disk">AWS
+   * API Reference</a></p>
+   */
   class AWS_STORAGEGATEWAY_API Disk
   {
   public:
@@ -42,101 +48,177 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline const Aws::String& GetDiskId() const{ return m_diskId; }
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline void SetDiskId(const Aws::String& value) { m_diskIdHasBeenSet = true; m_diskId = value; }
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline void SetDiskId(Aws::String&& value) { m_diskIdHasBeenSet = true; m_diskId = std::move(value); }
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline void SetDiskId(const char* value) { m_diskIdHasBeenSet = true; m_diskId.assign(value); }
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline Disk& WithDiskId(const Aws::String& value) { SetDiskId(value); return *this;}
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline Disk& WithDiskId(Aws::String&& value) { SetDiskId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The unique device ID or other distinguishing data that identifies a local
+     * disk.</p>
+     */
     inline Disk& WithDiskId(const char* value) { SetDiskId(value); return *this;}
 
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline const Aws::String& GetDiskPath() const{ return m_diskPath; }
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline void SetDiskPath(const Aws::String& value) { m_diskPathHasBeenSet = true; m_diskPath = value; }
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline void SetDiskPath(Aws::String&& value) { m_diskPathHasBeenSet = true; m_diskPath = std::move(value); }
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline void SetDiskPath(const char* value) { m_diskPathHasBeenSet = true; m_diskPath.assign(value); }
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline Disk& WithDiskPath(const Aws::String& value) { SetDiskPath(value); return *this;}
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline Disk& WithDiskPath(Aws::String&& value) { SetDiskPath(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The path of a local disk in the gateway virtual machine (VM).</p>
+     */
     inline Disk& WithDiskPath(const char* value) { SetDiskPath(value); return *this;}
 
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline const Aws::String& GetDiskNode() const{ return m_diskNode; }
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline void SetDiskNode(const Aws::String& value) { m_diskNodeHasBeenSet = true; m_diskNode = value; }
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline void SetDiskNode(Aws::String&& value) { m_diskNodeHasBeenSet = true; m_diskNode = std::move(value); }
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline void SetDiskNode(const char* value) { m_diskNodeHasBeenSet = true; m_diskNode.assign(value); }
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline Disk& WithDiskNode(const Aws::String& value) { SetDiskNode(value); return *this;}
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline Disk& WithDiskNode(Aws::String&& value) { SetDiskNode(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The device node of a local disk as assigned by the virtualization
+     * environment.</p>
+     */
     inline Disk& WithDiskNode(const char* value) { SetDiskNode(value); return *this;}
 
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline const Aws::String& GetDiskStatus() const{ return m_diskStatus; }
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline void SetDiskStatus(const Aws::String& value) { m_diskStatusHasBeenSet = true; m_diskStatus = value; }
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline void SetDiskStatus(Aws::String&& value) { m_diskStatusHasBeenSet = true; m_diskStatus = std::move(value); }
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline void SetDiskStatus(const char* value) { m_diskStatusHasBeenSet = true; m_diskStatus.assign(value); }
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline Disk& WithDiskStatus(const Aws::String& value) { SetDiskStatus(value); return *this;}
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline Disk& WithDiskStatus(Aws::String&& value) { SetDiskStatus(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A value that represents the status of a local disk.</p>
+     */
     inline Disk& WithDiskStatus(const char* value) { SetDiskStatus(value); return *this;}
 
 
-    
+    /**
+     * <p>The local disk size in bytes.</p>
+     */
     inline long long GetDiskSizeInBytes() const{ return m_diskSizeInBytes; }
 
-    
+    /**
+     * <p>The local disk size in bytes.</p>
+     */
     inline void SetDiskSizeInBytes(long long value) { m_diskSizeInBytesHasBeenSet = true; m_diskSizeInBytes = value; }
 
-    
+    /**
+     * <p>The local disk size in bytes.</p>
+     */
     inline Disk& WithDiskSizeInBytes(long long value) { SetDiskSizeInBytes(value); return *this;}
 
 
@@ -162,26 +244,79 @@ namespace Model
     inline Disk& WithDiskAllocationType(const char* value) { SetDiskAllocationType(value); return *this;}
 
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline const Aws::String& GetDiskAllocationResource() const{ return m_diskAllocationResource; }
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline void SetDiskAllocationResource(const Aws::String& value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource = value; }
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline void SetDiskAllocationResource(Aws::String&& value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource = std::move(value); }
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline void SetDiskAllocationResource(const char* value) { m_diskAllocationResourceHasBeenSet = true; m_diskAllocationResource.assign(value); }
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline Disk& WithDiskAllocationResource(const Aws::String& value) { SetDiskAllocationResource(value); return *this;}
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline Disk& WithDiskAllocationResource(Aws::String&& value) { SetDiskAllocationResource(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The iSCSI Qualified Name (IQN) that is defined for a disk. This field is not
+     * included in the response if the local disk is not defined as an iSCSI target.
+     * The format of this field is <i>targetIqn::LUNNumber::region-volumeId</i>. </p>
+     */
     inline Disk& WithDiskAllocationResource(const char* value) { SetDiskAllocationResource(value); return *this;}
+
+
+    
+    inline const Aws::Vector<Aws::String>& GetDiskAttributeList() const{ return m_diskAttributeList; }
+
+    
+    inline void SetDiskAttributeList(const Aws::Vector<Aws::String>& value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList = value; }
+
+    
+    inline void SetDiskAttributeList(Aws::Vector<Aws::String>&& value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList = std::move(value); }
+
+    
+    inline Disk& WithDiskAttributeList(const Aws::Vector<Aws::String>& value) { SetDiskAttributeList(value); return *this;}
+
+    
+    inline Disk& WithDiskAttributeList(Aws::Vector<Aws::String>&& value) { SetDiskAttributeList(std::move(value)); return *this;}
+
+    
+    inline Disk& AddDiskAttributeList(const Aws::String& value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList.push_back(value); return *this; }
+
+    
+    inline Disk& AddDiskAttributeList(Aws::String&& value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList.push_back(std::move(value)); return *this; }
+
+    
+    inline Disk& AddDiskAttributeList(const char* value) { m_diskAttributeListHasBeenSet = true; m_diskAttributeList.push_back(value); return *this; }
 
   private:
 
@@ -205,6 +340,9 @@ namespace Model
 
     Aws::String m_diskAllocationResource;
     bool m_diskAllocationResourceHasBeenSet;
+
+    Aws::Vector<Aws::String> m_diskAttributeList;
+    bool m_diskAttributeListHasBeenSet;
   };
 
 } // namespace Model

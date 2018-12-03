@@ -21,6 +21,7 @@
 #include <aws/devicefarm/model/CPU.h>
 #include <aws/devicefarm/model/Resolution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceAvailability.h>
 #include <aws/devicefarm/model/DeviceInstance.h>
 #include <utility>
 
@@ -686,6 +687,32 @@ namespace Model
      */
     inline Device& AddInstances(DeviceInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run.</p>
+     */
+    inline const DeviceAvailability& GetAvailability() const{ return m_availability; }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run.</p>
+     */
+    inline void SetAvailability(const DeviceAvailability& value) { m_availabilityHasBeenSet = true; m_availability = value; }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run.</p>
+     */
+    inline void SetAvailability(DeviceAvailability&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run.</p>
+     */
+    inline Device& WithAvailability(const DeviceAvailability& value) { SetAvailability(value); return *this;}
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run.</p>
+     */
+    inline Device& WithAvailability(DeviceAvailability&& value) { SetAvailability(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -747,6 +774,9 @@ namespace Model
 
     Aws::Vector<DeviceInstance> m_instances;
     bool m_instancesHasBeenSet;
+
+    DeviceAvailability m_availability;
+    bool m_availabilityHasBeenSet;
   };
 
 } // namespace Model

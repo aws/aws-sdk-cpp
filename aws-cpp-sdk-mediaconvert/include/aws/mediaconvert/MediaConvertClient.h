@@ -381,9 +381,9 @@ namespace Model
         virtual void CreatePresetAsync(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>
@@ -391,9 +391,9 @@ namespace Model
         virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>
@@ -403,9 +403,9 @@ namespace Model
         virtual Model::CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>

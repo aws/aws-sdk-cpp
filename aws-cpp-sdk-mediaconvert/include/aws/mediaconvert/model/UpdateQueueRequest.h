@@ -117,32 +117,47 @@ namespace Model
 
 
     /**
-     * Details about the pricing plan for your reserved queue. Required for reserved
-     * queues and not applicable to on-demand queues.
+     * The new details of your pricing plan for your reserved queue. When you set up a
+     * new pricing plan to replace an expired one, you enter into another 12-month
+     * commitment. When you add capacity to your queue by increasing the number of RTS,
+     * you extend the term of your commitment to 12 months from when you add capacity.
+     * After you make these commitments, you can't cancel them.
      */
     inline const ReservationPlanSettings& GetReservationPlanSettings() const{ return m_reservationPlanSettings; }
 
     /**
-     * Details about the pricing plan for your reserved queue. Required for reserved
-     * queues and not applicable to on-demand queues.
+     * The new details of your pricing plan for your reserved queue. When you set up a
+     * new pricing plan to replace an expired one, you enter into another 12-month
+     * commitment. When you add capacity to your queue by increasing the number of RTS,
+     * you extend the term of your commitment to 12 months from when you add capacity.
+     * After you make these commitments, you can't cancel them.
      */
     inline void SetReservationPlanSettings(const ReservationPlanSettings& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = value; }
 
     /**
-     * Details about the pricing plan for your reserved queue. Required for reserved
-     * queues and not applicable to on-demand queues.
+     * The new details of your pricing plan for your reserved queue. When you set up a
+     * new pricing plan to replace an expired one, you enter into another 12-month
+     * commitment. When you add capacity to your queue by increasing the number of RTS,
+     * you extend the term of your commitment to 12 months from when you add capacity.
+     * After you make these commitments, you can't cancel them.
      */
     inline void SetReservationPlanSettings(ReservationPlanSettings&& value) { m_reservationPlanSettingsHasBeenSet = true; m_reservationPlanSettings = std::move(value); }
 
     /**
-     * Details about the pricing plan for your reserved queue. Required for reserved
-     * queues and not applicable to on-demand queues.
+     * The new details of your pricing plan for your reserved queue. When you set up a
+     * new pricing plan to replace an expired one, you enter into another 12-month
+     * commitment. When you add capacity to your queue by increasing the number of RTS,
+     * you extend the term of your commitment to 12 months from when you add capacity.
+     * After you make these commitments, you can't cancel them.
      */
     inline UpdateQueueRequest& WithReservationPlanSettings(const ReservationPlanSettings& value) { SetReservationPlanSettings(value); return *this;}
 
     /**
-     * Details about the pricing plan for your reserved queue. Required for reserved
-     * queues and not applicable to on-demand queues.
+     * The new details of your pricing plan for your reserved queue. When you set up a
+     * new pricing plan to replace an expired one, you enter into another 12-month
+     * commitment. When you add capacity to your queue by increasing the number of RTS,
+     * you extend the term of your commitment to 12 months from when you add capacity.
+     * After you make these commitments, you can't cancel them.
      */
     inline UpdateQueueRequest& WithReservationPlanSettings(ReservationPlanSettings&& value) { SetReservationPlanSettings(std::move(value)); return *this;}
 

@@ -50,68 +50,68 @@ namespace Model
 
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract
-     * for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      */
     inline const Commitment& GetCommitment() const{ return m_commitment; }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract
-     * for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      */
     inline void SetCommitment(const Commitment& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract
-     * for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      */
     inline void SetCommitment(Commitment&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract
-     * for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      */
     inline ReservationPlanSettings& WithCommitment(const Commitment& value) { SetCommitment(value); return *this;}
 
     /**
-     * The length of time that you commit to when you set up a pricing plan contract
-     * for a reserved queue.
+     * The length of the term of your reserved queue pricing plan commitment.
      */
     inline ReservationPlanSettings& WithCommitment(Commitment&& value) { SetCommitment(std::move(value)); return *this;}
 
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue
-     * automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract
-     * period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term
+     * is auto renewed, you extend your commitment by 12 months from the auto renew
+     * date. You can cancel this commitment.
      */
     inline const RenewalType& GetRenewalType() const{ return m_renewalType; }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue
-     * automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract
-     * period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term
+     * is auto renewed, you extend your commitment by 12 months from the auto renew
+     * date. You can cancel this commitment.
      */
     inline void SetRenewalType(const RenewalType& value) { m_renewalTypeHasBeenSet = true; m_renewalType = value; }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue
-     * automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract
-     * period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term
+     * is auto renewed, you extend your commitment by 12 months from the auto renew
+     * date. You can cancel this commitment.
      */
     inline void SetRenewalType(RenewalType&& value) { m_renewalTypeHasBeenSet = true; m_renewalType = std::move(value); }
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue
-     * automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract
-     * period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term
+     * is auto renewed, you extend your commitment by 12 months from the auto renew
+     * date. You can cancel this commitment.
      */
     inline ReservationPlanSettings& WithRenewalType(const RenewalType& value) { SetRenewalType(value); return *this;}
 
     /**
-     * Specifies whether the pricing plan contract for your reserved queue
-     * automatically renews (AUTO_RENEW) or expires (EXPIRE) at the end of the contract
-     * period.
+     * Specifies whether the term of your reserved queue pricing plan is automatically
+     * extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. When your term
+     * is auto renewed, you extend your commitment by 12 months from the auto renew
+     * date. You can cancel this commitment.
      */
     inline ReservationPlanSettings& WithRenewalType(RenewalType&& value) { SetRenewalType(std::move(value)); return *this;}
 
@@ -119,24 +119,36 @@ namespace Model
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The
      * number of RTS determines how many jobs the queue can process in parallel; each
-     * RTS can process one job at a time. To increase this number, create a replacement
-     * contract through the AWS Elemental MediaConvert console.
+     * RTS can process one job at a time. You can't decrease the number of RTS in your
+     * reserved queue. You can increase the number of RTS by extending your existing
+     * commitment with a new 12-month commitment for the larger number. The new
+     * commitment begins when you purchase the additional capacity. You can't cancel
+     * your commitment or revert to your original commitment after you increase the
+     * capacity.
      */
     inline int GetReservedSlots() const{ return m_reservedSlots; }
 
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The
      * number of RTS determines how many jobs the queue can process in parallel; each
-     * RTS can process one job at a time. To increase this number, create a replacement
-     * contract through the AWS Elemental MediaConvert console.
+     * RTS can process one job at a time. You can't decrease the number of RTS in your
+     * reserved queue. You can increase the number of RTS by extending your existing
+     * commitment with a new 12-month commitment for the larger number. The new
+     * commitment begins when you purchase the additional capacity. You can't cancel
+     * your commitment or revert to your original commitment after you increase the
+     * capacity.
      */
     inline void SetReservedSlots(int value) { m_reservedSlotsHasBeenSet = true; m_reservedSlots = value; }
 
     /**
      * Specifies the number of reserved transcode slots (RTS) for this queue. The
      * number of RTS determines how many jobs the queue can process in parallel; each
-     * RTS can process one job at a time. To increase this number, create a replacement
-     * contract through the AWS Elemental MediaConvert console.
+     * RTS can process one job at a time. You can't decrease the number of RTS in your
+     * reserved queue. You can increase the number of RTS by extending your existing
+     * commitment with a new 12-month commitment for the larger number. The new
+     * commitment begins when you purchase the additional capacity. You can't cancel
+     * your commitment or revert to your original commitment after you increase the
+     * capacity.
      */
     inline ReservationPlanSettings& WithReservedSlots(int value) { SetReservedSlots(value); return *this;}
 

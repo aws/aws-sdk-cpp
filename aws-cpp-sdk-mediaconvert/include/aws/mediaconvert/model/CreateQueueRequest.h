@@ -118,47 +118,47 @@ namespace Model
 
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline CreateQueueRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline CreateQueueRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 

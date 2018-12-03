@@ -43,7 +43,7 @@ namespace Model
    * account for running multiple transcoding jobs at the same time. If you don't
    * specify a queue, the service sends all jobs through the default queue. For more
    * information, see
-   * https://docs.aws.amazon.com/mediaconvert/latest/ug/about-resource-allocation-and-job-prioritization.html.<p><h3>See
+   * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Queue">AWS
    * API Reference</a></p>
@@ -94,27 +94,27 @@ namespace Model
 
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      */
     inline Queue& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * The time stamp in epoch seconds for queue creation.
+     * The timestamp in epoch seconds for when you created the queue.
      */
     inline Queue& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -156,27 +156,27 @@ namespace Model
 
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      */
     inline Queue& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
     /**
-     * The time stamp in epoch seconds when the queue was last updated.
+     * The timestamp in epoch seconds for when you most recently updated the queue.
      */
     inline Queue& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 
@@ -225,47 +225,42 @@ namespace Model
 
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
-     * pricing plan for the queue determines whether you pay On-demand or Reserved
-     * pricing for the transcoding jobs that you run through the queue. For Reserved
-     * queue pricing, you must set up a contract. You can create a Reserved queue
-     * contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
-     * pricing plan for the queue determines whether you pay On-demand or Reserved
-     * pricing for the transcoding jobs that you run through the queue. For Reserved
-     * queue pricing, you must set up a contract. You can create a Reserved queue
-     * contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
-     * pricing plan for the queue determines whether you pay On-demand or Reserved
-     * pricing for the transcoding jobs that you run through the queue. For Reserved
-     * queue pricing, you must set up a contract. You can create a Reserved queue
-     * contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
-     * pricing plan for the queue determines whether you pay On-demand or Reserved
-     * pricing for the transcoding jobs that you run through the queue. For Reserved
-     * queue pricing, you must set up a contract. You can create a Reserved queue
-     * contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     inline Queue& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * Specifies whether the pricing plan for the queue is On-demand or Reserved. The
-     * pricing plan for the queue determines whether you pay On-demand or Reserved
-     * pricing for the transcoding jobs that you run through the queue. For Reserved
-     * queue pricing, you must set up a contract. You can create a Reserved queue
-     * contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment.
      */
     inline Queue& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 
@@ -370,37 +365,37 @@ namespace Model
 
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in.
-     * You can't modify or delete system queues. You can create and modify custom
-     * queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in.
-     * You can't modify or delete system queues. You can create and modify custom
-     * queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in.
-     * You can't modify or delete system queues. You can create and modify custom
-     * queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in.
-     * You can't modify or delete system queues. You can create and modify custom
-     * queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
      */
     inline Queue& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * Specifies whether this queue is system or custom. System queues are built in.
-     * You can't modify or delete system queues. You can create and modify custom
-     * queues.
+     * Specifies whether this on-demand queue is system or custom. System queues are
+     * built in. You can't modify or delete system queues. You can create and modify
+     * custom queues.
      */
     inline Queue& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 
