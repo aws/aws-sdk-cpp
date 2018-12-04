@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     CSV,
-    ORC
+    ORC,
+    Parquet
   };
 
 namespace InventoryFormatMapper

@@ -32,6 +32,7 @@ AffectedEntity::AffectedEntity() :
     m_entityArnHasBeenSet(false),
     m_eventArnHasBeenSet(false),
     m_entityValueHasBeenSet(false),
+    m_entityUrlHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EntityStatusCode::NOT_SET),
@@ -44,6 +45,7 @@ AffectedEntity::AffectedEntity(JsonView jsonValue) :
     m_entityArnHasBeenSet(false),
     m_eventArnHasBeenSet(false),
     m_entityValueHasBeenSet(false),
+    m_entityUrlHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_statusCode(EntityStatusCode::NOT_SET),
@@ -74,6 +76,13 @@ AffectedEntity& AffectedEntity::operator =(JsonView jsonValue)
     m_entityValue = jsonValue.GetString("entityValue");
 
     m_entityValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("entityUrl"))
+  {
+    m_entityUrl = jsonValue.GetString("entityUrl");
+
+    m_entityUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("awsAccountId"))
@@ -129,6 +138,12 @@ JsonValue AffectedEntity::Jsonize() const
   if(m_entityValueHasBeenSet)
   {
    payload.WithString("entityValue", m_entityValue);
+
+  }
+
+  if(m_entityUrlHasBeenSet)
+  {
+   payload.WithString("entityUrl", m_entityUrl);
 
   }
 

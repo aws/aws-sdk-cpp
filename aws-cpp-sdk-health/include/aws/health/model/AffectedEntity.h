@@ -215,6 +215,28 @@ namespace Model
     inline AffectedEntity& WithEntityValue(const char* value) { SetEntityValue(value); return *this;}
 
 
+    
+    inline const Aws::String& GetEntityUrl() const{ return m_entityUrl; }
+
+    
+    inline void SetEntityUrl(const Aws::String& value) { m_entityUrlHasBeenSet = true; m_entityUrl = value; }
+
+    
+    inline void SetEntityUrl(Aws::String&& value) { m_entityUrlHasBeenSet = true; m_entityUrl = std::move(value); }
+
+    
+    inline void SetEntityUrl(const char* value) { m_entityUrlHasBeenSet = true; m_entityUrl.assign(value); }
+
+    
+    inline AffectedEntity& WithEntityUrl(const Aws::String& value) { SetEntityUrl(value); return *this;}
+
+    
+    inline AffectedEntity& WithEntityUrl(Aws::String&& value) { SetEntityUrl(std::move(value)); return *this;}
+
+    
+    inline AffectedEntity& WithEntityUrl(const char* value) { SetEntityUrl(value); return *this;}
+
+
     /**
      * <p>The 12-digit AWS account number that contains the affected entity.</p>
      */
@@ -383,6 +405,9 @@ namespace Model
 
     Aws::String m_entityValue;
     bool m_entityValueHasBeenSet;
+
+    Aws::String m_entityUrl;
+    bool m_entityUrlHasBeenSet;
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet;

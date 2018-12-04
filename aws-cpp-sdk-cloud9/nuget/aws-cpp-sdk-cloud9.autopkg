@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Cloud9;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20170923.12;
+        version : 1.7.20170923.13;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Cloud9);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.12
+            AWSSDKCPP-Core/1.7.13
        }
     }
 
