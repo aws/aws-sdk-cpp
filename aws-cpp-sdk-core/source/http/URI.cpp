@@ -145,7 +145,7 @@ Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
                     ss << c;
                     break;
                 default:
-                    ss << '%' << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
+                    ss << '%' << std::setfill('0') << std::setw(2) << (int)((unsigned char)c) << std::setw(0);
             }
         }
     }
