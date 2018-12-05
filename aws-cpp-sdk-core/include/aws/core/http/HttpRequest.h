@@ -49,6 +49,7 @@ namespace Aws
         extern AWS_CORE_API const char* AMZ_TARGET_HEADER;
         extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
         extern AWS_CORE_API const char* CONTENT_MD5_HEADER;
+        extern AWS_CORE_API const char* API_VERSION_HEADER;
 
         class HttpRequest;
         class HttpResponse;
@@ -407,6 +408,30 @@ namespace Aws
             {
                 SetHeaderValue(VIA_HEADER, value);
             }
+
+            /**
+             * Has Api version header x-amz-api-version
+             */
+            inline bool HasApiVersion() const
+            {
+                return HasHeader(API_VERSION_HEADER);
+            }
+
+            /**
+            * Gets Api version header x-amz-api-version.
+            */
+            inline const Aws::String& GetApiVersion() const
+            {
+                return GetHeaderValue(API_VERSION_HEADER);
+            }
+            /**
+             * Sets Api version header x-amz-api-version.
+             */
+            inline void SetApiVersion(const Aws::String& value)
+            {
+                SetHeaderValue(API_VERSION_HEADER, value);
+            }
+
             /**
              * Sets the closure for receiving events when data is received from the server.
              */

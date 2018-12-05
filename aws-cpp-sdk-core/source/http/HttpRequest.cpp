@@ -37,6 +37,7 @@ const char* HOST_HEADER = "host";
 const char* AMZ_TARGET_HEADER = "x-amz-target";
 const char* X_AMZ_EXPIRES_HEADER = "X-Amz-Expires";
 const char* CONTENT_MD5_HEADER = "content-md5";
+const char* API_VERSION_HEADER = "x-amz-api-version";
 
 } // Http
 } // Aws

@@ -30,15 +30,17 @@ namespace ${serviceNamespace}
 
       if(headers.size() == 0 || (headers.size() > 0 && headers.count(Aws::Http::CONTENT_TYPE_HEADER) == 0))
       {
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
+        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::CONTENT_TYPE_HEADER, ${CppViewHelper.computeRequestContentType($metadata)} ));
 #if($metadata.acceptHeader)
-        headers.insert(Aws::Http::HeaderValuePair(Aws::Http::ACCEPT_HEADER, "${metadata.acceptHeader}"));
+        headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::ACCEPT_HEADER, "${metadata.acceptHeader}"));
 #end
       }
-
+#if($metadata.apiVersion)
+      headers.emplace(Aws::Http::HeaderValuePair(Aws::Http::API_VERSION_HEADER, "${metadata.apiVersion}"));
+#end
 #if($metadata.additionalHeaders)
 #foreach($headerEntry in $metadata.additionalHeaders.entrySet())
-      headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
+      headers.emplace(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
 #end
 
 #end
