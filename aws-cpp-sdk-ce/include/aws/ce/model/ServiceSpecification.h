@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-     * for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
      */
     inline const EC2Specification& GetEC2Specification() const{ return m_eC2Specification; }
 
     /**
-     * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-     * for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
      */
     inline void SetEC2Specification(const EC2Specification& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = value; }
 
     /**
-     * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-     * for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
      */
     inline void SetEC2Specification(EC2Specification&& value) { m_eC2SpecificationHasBeenSet = true; m_eC2Specification = std::move(value); }
 
     /**
-     * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-     * for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
      */
     inline ServiceSpecification& WithEC2Specification(const EC2Specification& value) { SetEC2Specification(value); return *this;}
 
     /**
-     * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-     * for.</p>
+     * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+     * recommendations for.</p>
      */
     inline ServiceSpecification& WithEC2Specification(EC2Specification&& value) { SetEC2Specification(std::move(value)); return *this;}
 

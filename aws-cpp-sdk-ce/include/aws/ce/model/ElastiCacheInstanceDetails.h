@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the ElastiCache instances that AWS recommends that you
+   * <p>Details about the Amazon ElastiCache instances that AWS recommends that you
    * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ElastiCacheInstanceDetails">AWS
    * API Reference</a></p>

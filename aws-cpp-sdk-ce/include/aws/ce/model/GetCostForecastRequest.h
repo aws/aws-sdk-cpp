@@ -137,30 +137,40 @@ namespace Model
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline GetCostForecastRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
     /**
      * <p>How granular you want the forecast to be. You can get 3 months of
      * <code>DAILY</code> forecasts or 12 months of <code>MONTHLY</code> forecasts.</p>
+     * <p>The <code>GetCostForecast</code> operation supports only <code>DAILY</code>
+     * and <code>MONTHLY</code> granularities.</p>
      */
     inline GetCostForecastRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 

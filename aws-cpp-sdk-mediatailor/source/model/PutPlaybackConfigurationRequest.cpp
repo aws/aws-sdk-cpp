@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_dashConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
@@ -45,6 +46,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_cdnConfigurationHasBeenSet)
   {
    payload.WithObject("CdnConfiguration", m_cdnConfiguration.Jsonize());
+
+  }
+
+  if(m_dashConfigurationHasBeenSet)
+  {
+   payload.WithObject("DashConfiguration", m_dashConfiguration.Jsonize());
 
   }
 

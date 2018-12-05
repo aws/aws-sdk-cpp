@@ -51,89 +51,89 @@ namespace Model
 
 
     /**
-     * <p>The period of time over which this utilization was used.</p>
+     * <p>The period of time that this utilization was used for.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period of time over which this utilization was used.</p>
+     * <p>The period of time that this utilization was used for.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period of time over which this utilization was used.</p>
+     * <p>The period of time that this utilization was used for.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period of time over which this utilization was used.</p>
+     * <p>The period of time that this utilization was used for.</p>
      */
     inline UtilizationByTime& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period of time over which this utilization was used.</p>
+     * <p>The period of time that this utilization was used for.</p>
      */
     inline UtilizationByTime& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline const Aws::Vector<ReservationUtilizationGroup>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline void SetGroups(const Aws::Vector<ReservationUtilizationGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline void SetGroups(Aws::Vector<ReservationUtilizationGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline UtilizationByTime& WithGroups(const Aws::Vector<ReservationUtilizationGroup>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline UtilizationByTime& WithGroups(Aws::Vector<ReservationUtilizationGroup>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline UtilizationByTime& AddGroups(const ReservationUtilizationGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>The groups that are included in this utilization result.</p>
+     * <p>The groups that this utilization result uses.</p>
      */
     inline UtilizationByTime& AddGroups(ReservationUtilizationGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The total number of RI hours that were used.</p>
+     * <p>The total number of reservation hours that were used.</p>
      */
     inline const ReservationAggregates& GetTotal() const{ return m_total; }
 
     /**
-     * <p>The total number of RI hours that were used.</p>
+     * <p>The total number of reservation hours that were used.</p>
      */
     inline void SetTotal(const ReservationAggregates& value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
-     * <p>The total number of RI hours that were used.</p>
+     * <p>The total number of reservation hours that were used.</p>
      */
     inline void SetTotal(ReservationAggregates&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
 
     /**
-     * <p>The total number of RI hours that were used.</p>
+     * <p>The total number of reservation hours that were used.</p>
      */
     inline UtilizationByTime& WithTotal(const ReservationAggregates& value) { SetTotal(value); return *this;}
 
     /**
-     * <p>The total number of RI hours that were used.</p>
+     * <p>The total number of reservation hours that were used.</p>
      */
     inline UtilizationByTime& WithTotal(ReservationAggregates&& value) { SetTotal(std::move(value)); return *this;}
 

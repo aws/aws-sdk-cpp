@@ -104,15 +104,16 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
 
   /**
-   * <p>The Cost Explorer API allows you to programmatically query your cost and
+   * <p>The Cost Explorer API enables you to programmatically query your cost and
    * usage data. You can query for aggregated data such as total monthly costs or
    * total daily usage. You can also query for granular data, such as the number of
    * daily write operations for Amazon DynamoDB database tables in your production
    * environment. </p> <p>Service Endpoint</p> <p>The Cost Explorer API provides the
-   * following endpoint:</p> <ul> <li> <p>https://ce.us-east-1.amazonaws.com</p>
-   * </li> </ul> <p>For information about costs associated with the Cost Explorer
-   * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost
-   * Management Pricing</a>.</p>
+   * following endpoint:</p> <ul> <li> <p>
+   * <code>https://ce.us-east-1.amazonaws.com</code> </p> </li> </ul> <p>For
+   * information about costs associated with the Cost Explorer API, see <a
+   * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management
+   * Pricing</a>.</p>
    */
   class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
   {
@@ -149,10 +150,10 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          */
@@ -164,10 +165,10 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
@@ -181,10 +182,10 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
@@ -255,7 +256,7 @@ namespace Model
         virtual void GetDimensionValuesAsync(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -274,7 +275,7 @@ namespace Model
         virtual Model::GetReservationCoverageOutcome GetReservationCoverage(const Model::GetReservationCoverageRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -295,7 +296,7 @@ namespace Model
         virtual Model::GetReservationCoverageOutcomeCallable GetReservationCoverageCallable(const Model::GetReservationCoverageRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -324,13 +325,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
@@ -347,13 +348,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
@@ -372,13 +373,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS

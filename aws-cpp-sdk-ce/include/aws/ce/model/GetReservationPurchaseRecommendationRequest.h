@@ -252,31 +252,31 @@ namespace Model
 
     /**
      * <p>The hardware specifications for the service instances that you want
-     * recommendations for, such as standard or convertible EC2 instances.</p>
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline const ServiceSpecification& GetServiceSpecification() const{ return m_serviceSpecification; }
 
     /**
      * <p>The hardware specifications for the service instances that you want
-     * recommendations for, such as standard or convertible EC2 instances.</p>
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline void SetServiceSpecification(const ServiceSpecification& value) { m_serviceSpecificationHasBeenSet = true; m_serviceSpecification = value; }
 
     /**
      * <p>The hardware specifications for the service instances that you want
-     * recommendations for, such as standard or convertible EC2 instances.</p>
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline void SetServiceSpecification(ServiceSpecification&& value) { m_serviceSpecificationHasBeenSet = true; m_serviceSpecification = std::move(value); }
 
     /**
      * <p>The hardware specifications for the service instances that you want
-     * recommendations for, such as standard or convertible EC2 instances.</p>
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithServiceSpecification(const ServiceSpecification& value) { SetServiceSpecification(value); return *this;}
 
     /**
      * <p>The hardware specifications for the service instances that you want
-     * recommendations for, such as standard or convertible EC2 instances.</p>
+     * recommendations for, such as standard or convertible Amazon EC2 instances.</p>
      */
     inline GetReservationPurchaseRecommendationRequest& WithServiceSpecification(ServiceSpecification&& value) { SetServiceSpecification(std::move(value)); return *this;}
 

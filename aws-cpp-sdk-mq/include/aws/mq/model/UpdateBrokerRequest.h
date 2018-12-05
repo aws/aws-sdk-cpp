@@ -153,44 +153,44 @@ namespace Model
 
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

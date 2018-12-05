@@ -157,17 +157,17 @@ namespace Model
 
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline bool GetCurrentGeneration() const{ return m_currentGeneration; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline RedshiftInstanceDetails& WithCurrentGeneration(bool value) { SetCurrentGeneration(value); return *this;}
 

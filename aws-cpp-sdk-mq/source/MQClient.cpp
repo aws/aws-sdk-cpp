@@ -32,8 +32,10 @@
 #include <aws/mq/MQErrorMarshaller.h>
 #include <aws/mq/model/CreateBrokerRequest.h>
 #include <aws/mq/model/CreateConfigurationRequest.h>
+#include <aws/mq/model/CreateTagsRequest.h>
 #include <aws/mq/model/CreateUserRequest.h>
 #include <aws/mq/model/DeleteBrokerRequest.h>
+#include <aws/mq/model/DeleteTagsRequest.h>
 #include <aws/mq/model/DeleteUserRequest.h>
 #include <aws/mq/model/DescribeBrokerRequest.h>
 #include <aws/mq/model/DescribeConfigurationRequest.h>
@@ -42,6 +44,7 @@
 #include <aws/mq/model/ListBrokersRequest.h>
 #include <aws/mq/model/ListConfigurationRevisionsRequest.h>
 #include <aws/mq/model/ListConfigurationsRequest.h>
+#include <aws/mq/model/ListTagsRequest.h>
 #include <aws/mq/model/ListUsersRequest.h>
 #include <aws/mq/model/RebootBrokerRequest.h>
 #include <aws/mq/model/UpdateBrokerRequest.h>
@@ -189,6 +192,41 @@ void MQClient::CreateConfigurationAsyncHelper(const CreateConfigurationRequest& 
   handler(this, request, CreateConfiguration(request), context);
 }
 
+CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/tags/{resource-arn}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateTagsOutcome(NoResult());
+  }
+  else
+  {
+    return CreateTagsOutcome(outcome.GetError());
+  }
+}
+
+CreateTagsOutcomeCallable MQClient::CreateTagsCallable(const CreateTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MQClient::CreateTagsAsync(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTagsAsyncHelper( request, handler, context ); } );
+}
+
+void MQClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTags(request), context);
+}
+
 CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const
 {
   Aws::StringStream ss;
@@ -258,6 +296,41 @@ void MQClient::DeleteBrokerAsync(const DeleteBrokerRequest& request, const Delet
 void MQClient::DeleteBrokerAsyncHelper(const DeleteBrokerRequest& request, const DeleteBrokerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteBroker(request), context);
+}
+
+DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/tags/{resource-arn}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTagsOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteTagsOutcome(outcome.GetError());
+  }
+}
+
+DeleteTagsOutcomeCallable MQClient::DeleteTagsCallable(const DeleteTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MQClient::DeleteTagsAsync(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTagsAsyncHelper( request, handler, context ); } );
+}
+
+void MQClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTags(request), context);
 }
 
 DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const
@@ -540,6 +613,41 @@ void MQClient::ListConfigurationsAsync(const ListConfigurationsRequest& request,
 void MQClient::ListConfigurationsAsyncHelper(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConfigurations(request), context);
+}
+
+ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/v1/tags/{resource-arn}";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsOutcome(ListTagsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsOutcome(outcome.GetError());
+  }
+}
+
+ListTagsOutcomeCallable MQClient::ListTagsCallable(const ListTagsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTags(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MQClient::ListTagsAsync(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsAsyncHelper( request, handler, context ); } );
+}
+
+void MQClient::ListTagsAsyncHelper(const ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTags(request), context);
 }
 
 ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const

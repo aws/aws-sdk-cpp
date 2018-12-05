@@ -82,27 +82,27 @@ namespace Model
 
 
     /**
-     * <p>The total amount of instance usage that is covered by a reservation.</p>
+     * <p>The total amount of instance usage that a reservation covered.</p>
      */
     inline const Coverage& GetTotal() const{ return m_total; }
 
     /**
-     * <p>The total amount of instance usage that is covered by a reservation.</p>
+     * <p>The total amount of instance usage that a reservation covered.</p>
      */
     inline void SetTotal(const Coverage& value) { m_total = value; }
 
     /**
-     * <p>The total amount of instance usage that is covered by a reservation.</p>
+     * <p>The total amount of instance usage that a reservation covered.</p>
      */
     inline void SetTotal(Coverage&& value) { m_total = std::move(value); }
 
     /**
-     * <p>The total amount of instance usage that is covered by a reservation.</p>
+     * <p>The total amount of instance usage that a reservation covered.</p>
      */
     inline GetReservationCoverageResult& WithTotal(const Coverage& value) { SetTotal(value); return *this;}
 
     /**
-     * <p>The total amount of instance usage that is covered by a reservation.</p>
+     * <p>The total amount of instance usage that a reservation covered.</p>
      */
     inline GetReservationCoverageResult& WithTotal(Coverage&& value) { SetTotal(std::move(value)); return *this;}
 

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a group when you specify a group by criteria, or in the response
-   * to a query with a specific grouping.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a group when you specify a group by criteria or in the response to
+   * a query with a specific grouping.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GroupDefinition">AWS
    * API Reference</a></p>
    */

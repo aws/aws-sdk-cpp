@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>One level of grouped data within the results.</p><p><h3>See Also:</h3>   <a
+   * <p>One level of grouped data in the results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Group">AWS API
    * Reference</a></p>
    */

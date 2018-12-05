@@ -28,6 +28,7 @@ GetReservationCoverageRequest::GetReservationCoverageRequest() :
     m_granularity(Granularity::NOT_SET),
     m_granularityHasBeenSet(false),
     m_filterHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_nextPageTokenHasBeenSet(false)
 {
 }
@@ -61,6 +62,17 @@ Aws::String GetReservationCoverageRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  if(m_metricsHasBeenSet)
+  {
+   Array<JsonValue> metricsJsonList(m_metrics.size());
+   for(unsigned metricsIndex = 0; metricsIndex < metricsJsonList.GetLength(); ++metricsIndex)
+   {
+     metricsJsonList[metricsIndex].AsString(m_metrics[metricsIndex]);
+   }
+   payload.WithArray("Metrics", std::move(metricsJsonList));
 
   }
 

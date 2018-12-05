@@ -18,6 +18,7 @@
 #include <aws/mediatailor/MediaTailorRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
+#include <aws/mediatailor/model/DashConfigurationForPut.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +137,32 @@ namespace Model
      * CloudFront, for content and ad segment management. </p>
      */
     inline PutPlaybackConfigurationRequest& WithCdnConfiguration(CdnConfiguration&& value) { SetCdnConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration object for DASH content. </p>
+     */
+    inline const DashConfigurationForPut& GetDashConfiguration() const{ return m_dashConfiguration; }
+
+    /**
+     * <p>The configuration object for DASH content. </p>
+     */
+    inline void SetDashConfiguration(const DashConfigurationForPut& value) { m_dashConfigurationHasBeenSet = true; m_dashConfiguration = value; }
+
+    /**
+     * <p>The configuration object for DASH content. </p>
+     */
+    inline void SetDashConfiguration(DashConfigurationForPut&& value) { m_dashConfigurationHasBeenSet = true; m_dashConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration object for DASH content. </p>
+     */
+    inline PutPlaybackConfigurationRequest& WithDashConfiguration(const DashConfigurationForPut& value) { SetDashConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration object for DASH content. </p>
+     */
+    inline PutPlaybackConfigurationRequest& WithDashConfiguration(DashConfigurationForPut&& value) { SetDashConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -344,6 +371,9 @@ namespace Model
 
     CdnConfiguration m_cdnConfiguration;
     bool m_cdnConfigurationHasBeenSet;
+
+    DashConfigurationForPut m_dashConfiguration;
+    bool m_dashConfigurationHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

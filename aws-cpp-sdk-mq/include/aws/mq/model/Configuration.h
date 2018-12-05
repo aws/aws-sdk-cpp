@@ -19,6 +19,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/ConfigurationRevision.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -180,37 +181,51 @@ namespace Model
 
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline Configuration& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline Configuration& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * Required. The version of the broker engine.
+     * Required. The version of the broker engine. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline Configuration& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -326,6 +341,67 @@ namespace Model
      */
     inline Configuration& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The list of all tags associated with this configuration.
+     */
+    inline Configuration& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -351,6 +427,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

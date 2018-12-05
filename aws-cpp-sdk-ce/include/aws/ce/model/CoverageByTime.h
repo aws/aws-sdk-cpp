@@ -52,63 +52,63 @@ namespace Model
 
 
     /**
-     * <p>The period over which this coverage was used.</p>
+     * <p>The period that this coverage was used over.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The period over which this coverage was used.</p>
+     * <p>The period that this coverage was used over.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The period over which this coverage was used.</p>
+     * <p>The period that this coverage was used over.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The period over which this coverage was used.</p>
+     * <p>The period that this coverage was used over.</p>
      */
     inline CoverageByTime& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The period over which this coverage was used.</p>
+     * <p>The period that this coverage was used over.</p>
      */
     inline CoverageByTime& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline const Aws::Vector<ReservationCoverageGroup>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline void SetGroups(const Aws::Vector<ReservationCoverageGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline void SetGroups(Aws::Vector<ReservationCoverageGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline CoverageByTime& WithGroups(const Aws::Vector<ReservationCoverageGroup>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline CoverageByTime& WithGroups(Aws::Vector<ReservationCoverageGroup>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline CoverageByTime& AddGroups(const ReservationCoverageGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>The groups of instances that are covered by a reservation.</p>
+     * <p>The groups of instances that the reservation covered.</p>
      */
     inline CoverageByTime& AddGroups(ReservationCoverageGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 

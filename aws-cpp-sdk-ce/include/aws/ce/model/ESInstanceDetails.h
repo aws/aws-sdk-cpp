@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the ES instances that AWS recommends that you
+   * <p>Details about the Amazon ES instances that AWS recommends that you
    * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ESInstanceDetails">AWS
    * API Reference</a></p>
@@ -157,17 +157,17 @@ namespace Model
 
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline bool GetCurrentGeneration() const{ return m_currentGeneration; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline ESInstanceDetails& WithCurrentGeneration(bool value) { SetCurrentGeneration(value); return *this;}
 

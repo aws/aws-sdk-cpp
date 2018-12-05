@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The EC2 hardware specifications that you want AWS to provide recommendations
-   * for.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon EC2 hardware specifications that you want AWS to provide
+   * recommendations for.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/EC2Specification">AWS
    * API Reference</a></p>
    */

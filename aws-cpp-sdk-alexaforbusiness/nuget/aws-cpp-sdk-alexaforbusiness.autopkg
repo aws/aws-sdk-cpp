@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-AlexaForBusiness;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20171109.13;
+        version : 1.7.20171109.14;
 
         // Display name for package.
         title: AWS SDK for C++ (Alexa For Business);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.13
+            AWSSDKCPP-Core/1.7.14
        }
     }
 

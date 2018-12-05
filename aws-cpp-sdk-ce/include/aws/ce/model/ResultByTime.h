@@ -53,27 +53,27 @@ namespace Model
 
 
     /**
-     * <p>The time period covered by a result.</p>
+     * <p>The time period that the result covers.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
 
     /**
-     * <p>The time period covered by a result.</p>
+     * <p>The time period that the result covers.</p>
      */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
 
     /**
-     * <p>The time period covered by a result.</p>
+     * <p>The time period that the result covers.</p>
      */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
 
     /**
-     * <p>The time period covered by a result.</p>
+     * <p>The time period that the result covers.</p>
      */
     inline ResultByTime& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
 
     /**
-     * <p>The time period covered by a result.</p>
+     * <p>The time period that the result covers.</p>
      */
     inline ResultByTime& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
 
@@ -135,53 +135,53 @@ namespace Model
 
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline const Aws::Vector<Group>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline void SetGroups(const Aws::Vector<Group>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline void SetGroups(Aws::Vector<Group>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline ResultByTime& WithGroups(const Aws::Vector<Group>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline ResultByTime& WithGroups(Aws::Vector<Group>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline ResultByTime& AddGroups(const Group& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>The groups that are included in this time period.</p>
+     * <p>The groups that this time period includes.</p>
      */
     inline ResultByTime& AddGroups(Group&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Whether this result is estimated.</p>
+     * <p>Whether the result is estimated.</p>
      */
     inline bool GetEstimated() const{ return m_estimated; }
 
     /**
-     * <p>Whether this result is estimated.</p>
+     * <p>Whether the result is estimated.</p>
      */
     inline void SetEstimated(bool value) { m_estimatedHasBeenSet = true; m_estimated = value; }
 
     /**
-     * <p>Whether this result is estimated.</p>
+     * <p>Whether the result is estimated.</p>
      */
     inline ResultByTime& WithEstimated(bool value) { SetEstimated(value); return *this;}
 
