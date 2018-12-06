@@ -25,9 +25,11 @@ using namespace Aws::Utils;
 CreateInputRequest::CreateInputRequest() : 
     m_destinationsHasBeenSet(false),
     m_inputSecurityGroupsHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
+    m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -60,6 +62,17 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   }
 
+  if(m_mediaConnectFlowsHasBeenSet)
+  {
+   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+   {
+     mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
+   }
+   payload.WithArray("mediaConnectFlows", std::move(mediaConnectFlowsJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -69,6 +82,12 @@ Aws::String CreateInputRequest::SerializePayload() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("requestId", m_requestId);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

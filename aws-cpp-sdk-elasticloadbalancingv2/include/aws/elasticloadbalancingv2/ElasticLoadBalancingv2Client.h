@@ -38,7 +38,6 @@
 #include <aws/elasticloadbalancingv2/model/DescribeListenersResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancerAttributesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeLoadBalancersResult.h>
-#include <aws/elasticloadbalancingv2/model/DescribeProvisionedCapacityResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeRulesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeSSLPoliciesResult.h>
 #include <aws/elasticloadbalancingv2/model/DescribeTagsResult.h>
@@ -47,7 +46,6 @@
 #include <aws/elasticloadbalancingv2/model/DescribeTargetHealthResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyListenerResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyLoadBalancerAttributesResult.h>
-#include <aws/elasticloadbalancingv2/model/ModifyProvisionedCapacityResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyRuleResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupResult.h>
 #include <aws/elasticloadbalancingv2/model/ModifyTargetGroupAttributesResult.h>
@@ -119,7 +117,6 @@ namespace Model
         class DescribeListenersRequest;
         class DescribeLoadBalancerAttributesRequest;
         class DescribeLoadBalancersRequest;
-        class DescribeProvisionedCapacityRequest;
         class DescribeRulesRequest;
         class DescribeSSLPoliciesRequest;
         class DescribeTagsRequest;
@@ -128,7 +125,6 @@ namespace Model
         class DescribeTargetHealthRequest;
         class ModifyListenerRequest;
         class ModifyLoadBalancerAttributesRequest;
-        class ModifyProvisionedCapacityRequest;
         class ModifyRuleRequest;
         class ModifyTargetGroupRequest;
         class ModifyTargetGroupAttributesRequest;
@@ -156,7 +152,6 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeListenersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeListenersOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancerAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeLoadBalancersResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeLoadBalancersOutcome;
-        typedef Aws::Utils::Outcome<DescribeProvisionedCapacityResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeProvisionedCapacityOutcome;
         typedef Aws::Utils::Outcome<DescribeRulesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeRulesOutcome;
         typedef Aws::Utils::Outcome<DescribeSSLPoliciesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeSSLPoliciesOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTagsOutcome;
@@ -165,7 +160,6 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTargetHealthResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> DescribeTargetHealthOutcome;
         typedef Aws::Utils::Outcome<ModifyListenerResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyListenerOutcome;
         typedef Aws::Utils::Outcome<ModifyLoadBalancerAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyLoadBalancerAttributesOutcome;
-        typedef Aws::Utils::Outcome<ModifyProvisionedCapacityResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyProvisionedCapacityOutcome;
         typedef Aws::Utils::Outcome<ModifyRuleResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyRuleOutcome;
         typedef Aws::Utils::Outcome<ModifyTargetGroupResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupOutcome;
         typedef Aws::Utils::Outcome<ModifyTargetGroupAttributesResult, Aws::Client::AWSError<ElasticLoadBalancingv2Errors>> ModifyTargetGroupAttributesOutcome;
@@ -193,7 +187,6 @@ namespace Model
         typedef std::future<DescribeListenersOutcome> DescribeListenersOutcomeCallable;
         typedef std::future<DescribeLoadBalancerAttributesOutcome> DescribeLoadBalancerAttributesOutcomeCallable;
         typedef std::future<DescribeLoadBalancersOutcome> DescribeLoadBalancersOutcomeCallable;
-        typedef std::future<DescribeProvisionedCapacityOutcome> DescribeProvisionedCapacityOutcomeCallable;
         typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
         typedef std::future<DescribeSSLPoliciesOutcome> DescribeSSLPoliciesOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
@@ -202,7 +195,6 @@ namespace Model
         typedef std::future<DescribeTargetHealthOutcome> DescribeTargetHealthOutcomeCallable;
         typedef std::future<ModifyListenerOutcome> ModifyListenerOutcomeCallable;
         typedef std::future<ModifyLoadBalancerAttributesOutcome> ModifyLoadBalancerAttributesOutcomeCallable;
-        typedef std::future<ModifyProvisionedCapacityOutcome> ModifyProvisionedCapacityOutcomeCallable;
         typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
         typedef std::future<ModifyTargetGroupOutcome> ModifyTargetGroupOutcomeCallable;
         typedef std::future<ModifyTargetGroupAttributesOutcome> ModifyTargetGroupAttributesOutcomeCallable;
@@ -233,7 +225,6 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeListenersRequest&, const Model::DescribeListenersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeListenersResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancerAttributesRequest&, const Model::DescribeLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancerAttributesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeLoadBalancersRequest&, const Model::DescribeLoadBalancersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLoadBalancersResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeProvisionedCapacityRequest&, const Model::DescribeProvisionedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProvisionedCapacityResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeRulesRequest&, const Model::DescribeRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRulesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeSSLPoliciesRequest&, const Model::DescribeSSLPoliciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSSLPoliciesResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
@@ -242,7 +233,6 @@ namespace Model
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::DescribeTargetHealthRequest&, const Model::DescribeTargetHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTargetHealthResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyListenerRequest&, const Model::ModifyListenerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyListenerResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyLoadBalancerAttributesRequest&, const Model::ModifyLoadBalancerAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLoadBalancerAttributesResponseReceivedHandler;
-    typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyProvisionedCapacityRequest&, const Model::ModifyProvisionedCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyProvisionedCapacityResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyRuleRequest&, const Model::ModifyRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyRuleResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupRequest&, const Model::ModifyTargetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupResponseReceivedHandler;
     typedef std::function<void(const ElasticLoadBalancingv2Client*, const Model::ModifyTargetGroupAttributesRequest&, const Model::ModifyTargetGroupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTargetGroupAttributesResponseReceivedHandler;
@@ -1027,25 +1017,6 @@ namespace Model
         virtual void DescribeLoadBalancersAsync(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
-         */
-        virtual Model::DescribeProvisionedCapacityOutcome DescribeProvisionedCapacity(const Model::DescribeProvisionedCapacityRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::DescribeProvisionedCapacityOutcomeCallable DescribeProvisionedCapacityCallable(const Model::DescribeProvisionedCapacityRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void DescribeProvisionedCapacityAsync(const Model::DescribeProvisionedCapacityRequest& request, const DescribeProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
          * <p>Describes the specified rules or the rules for the specified listener. You
          * must specify either a listener or one or more rules.</p><p><h3>See Also:</h3>  
          * <a
@@ -1328,25 +1299,6 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
-
-        /**
-         * 
-         */
-        virtual Model::ModifyProvisionedCapacityOutcome ModifyProvisionedCapacity(const Model::ModifyProvisionedCapacityRequest& request) const;
-
-        /**
-         * 
-         *
-         * returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        virtual Model::ModifyProvisionedCapacityOutcomeCallable ModifyProvisionedCapacityCallable(const Model::ModifyProvisionedCapacityRequest& request) const;
-
-        /**
-         * 
-         *
-         * Queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        virtual void ModifyProvisionedCapacityAsync(const Model::ModifyProvisionedCapacityRequest& request, const ModifyProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
@@ -1717,7 +1669,6 @@ namespace Model
         void DescribeListenersAsyncHelper(const Model::DescribeListenersRequest& request, const DescribeListenersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancerAttributesAsyncHelper(const Model::DescribeLoadBalancerAttributesRequest& request, const DescribeLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLoadBalancersAsyncHelper(const Model::DescribeLoadBalancersRequest& request, const DescribeLoadBalancersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeProvisionedCapacityAsyncHelper(const Model::DescribeProvisionedCapacityRequest& request, const DescribeProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeRulesAsyncHelper(const Model::DescribeRulesRequest& request, const DescribeRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSSLPoliciesAsyncHelper(const Model::DescribeSSLPoliciesRequest& request, const DescribeSSLPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1726,7 +1677,6 @@ namespace Model
         void DescribeTargetHealthAsyncHelper(const Model::DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyListenerAsyncHelper(const Model::ModifyListenerRequest& request, const ModifyListenerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLoadBalancerAttributesAsyncHelper(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void ModifyProvisionedCapacityAsyncHelper(const Model::ModifyProvisionedCapacityRequest& request, const ModifyProvisionedCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyRuleAsyncHelper(const Model::ModifyRuleRequest& request, const ModifyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyTargetGroupAsyncHelper(const Model::ModifyTargetGroupRequest& request, const ModifyTargetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyTargetGroupAttributesAsyncHelper(const Model::ModifyTargetGroupAttributesRequest& request, const ModifyTargetGroupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

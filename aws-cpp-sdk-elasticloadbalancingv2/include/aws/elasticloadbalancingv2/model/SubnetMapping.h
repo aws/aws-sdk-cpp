@@ -120,16 +120,6 @@ namespace Model
      */
     inline SubnetMapping& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
 
-
-    
-    inline bool GetStaticIp() const{ return m_staticIp; }
-
-    
-    inline void SetStaticIp(bool value) { m_staticIpHasBeenSet = true; m_staticIp = value; }
-
-    
-    inline SubnetMapping& WithStaticIp(bool value) { SetStaticIp(value); return *this;}
-
   private:
 
     Aws::String m_subnetId;
@@ -137,9 +127,6 @@ namespace Model
 
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
-
-    bool m_staticIp;
-    bool m_staticIpHasBeenSet;
   };
 
 } // namespace Model

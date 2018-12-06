@@ -971,7 +971,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetReadReplicaDBClusterIdentifiers() const{ return m_readReplicaDBClusterIdentifiers; }
 
@@ -980,7 +981,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline void SetReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = value; }
 
@@ -989,7 +991,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline void SetReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers = std::move(value); }
 
@@ -998,7 +1001,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(const Aws::Vector<Aws::String>& value) { SetReadReplicaDBClusterIdentifiers(value); return *this;}
 
@@ -1007,7 +1011,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline DBInstance& WithReadReplicaDBClusterIdentifiers(Aws::Vector<Aws::String>&& value) { SetReadReplicaDBClusterIdentifiers(std::move(value)); return *this;}
 
@@ -1016,7 +1021,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const Aws::String& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 
@@ -1025,7 +1031,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(Aws::String&& value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(std::move(value)); return *this; }
 
@@ -1034,7 +1041,8 @@ namespace Model
      * instance is replicated as a Read Replica. For example, when you create an Aurora
      * Read Replica of an RDS MySQL DB instance, the Aurora MySQL DB cluster for the
      * Aurora Read Replica is shown. This output does not contain information about
-     * cross region Aurora Read Replicas.</p>
+     * cross region Aurora Read Replicas.</p> <note> <p>Currently, each RDS DB instance
+     * can have only one Aurora Read Replica.</p> </note>
      */
     inline DBInstance& AddReadReplicaDBClusterIdentifiers(const char* value) { m_readReplicaDBClusterIdentifiersHasBeenSet = true; m_readReplicaDBClusterIdentifiers.push_back(value); return *this; }
 

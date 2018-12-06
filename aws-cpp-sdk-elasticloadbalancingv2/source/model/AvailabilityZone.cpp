@@ -33,18 +33,14 @@ namespace Model
 AvailabilityZone::AvailabilityZone() : 
     m_zoneNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_loadBalancerAddressesHasBeenSet(false),
-    m_staticIp(false),
-    m_staticIpHasBeenSet(false)
+    m_loadBalancerAddressesHasBeenSet(false)
 {
 }
 
 AvailabilityZone::AvailabilityZone(const XmlNode& xmlNode) : 
     m_zoneNameHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_loadBalancerAddressesHasBeenSet(false),
-    m_staticIp(false),
-    m_staticIpHasBeenSet(false)
+    m_loadBalancerAddressesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,12 +75,6 @@ AvailabilityZone& AvailabilityZone::operator =(const XmlNode& xmlNode)
 
       m_loadBalancerAddressesHasBeenSet = true;
     }
-    XmlNode staticIpNode = resultNode.FirstChild("StaticIp");
-    if(!staticIpNode.IsNull())
-    {
-      m_staticIp = StringUtils::ConvertToBool(StringUtils::Trim(staticIpNode.GetText().c_str()).c_str());
-      m_staticIpHasBeenSet = true;
-    }
   }
 
   return *this;
@@ -113,11 +103,6 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
-  if(m_staticIpHasBeenSet)
-  {
-      oStream << location << index << locationValue << ".StaticIp=" << std::boolalpha << m_staticIp << "&";
-  }
-
 }
 
 void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -139,10 +124,6 @@ void AvailabilityZone::OutputToStream(Aws::OStream& oStream, const char* locatio
         loadBalancerAddressesSs << location <<  ".LoadBalancerAddresses.member." << loadBalancerAddressesIdx++;
         item.OutputToStream(oStream, loadBalancerAddressesSs.str().c_str());
       }
-  }
-  if(m_staticIpHasBeenSet)
-  {
-      oStream << location << ".StaticIp=" << std::boolalpha << m_staticIp << "&";
   }
 }
 

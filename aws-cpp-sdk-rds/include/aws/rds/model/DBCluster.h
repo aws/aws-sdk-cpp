@@ -1581,13 +1581,31 @@ namespace Model
     inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * (zero) when the cluster is paused.</p> <p>For more information about Aurora
+     * Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
     inline int GetCapacity() const{ return m_capacity; }
 
-    
+    /**
+     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * (zero) when the cluster is paused.</p> <p>For more information about Aurora
+     * Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
 
-    
+    /**
+     * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
+     * (zero) when the cluster is paused.</p> <p>For more information about Aurora
+     * Serverless, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     */
     inline DBCluster& WithCapacity(int value) { SetCapacity(value); return *this;}
 
 

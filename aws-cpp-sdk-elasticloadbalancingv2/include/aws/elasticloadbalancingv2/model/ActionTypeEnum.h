@@ -28,8 +28,8 @@ namespace Model
     NOT_SET,
     forward,
     authenticate_oidc,
-    redirect,
     authenticate_cognito,
+    redirect,
     fixed_response
   };
 

@@ -14,35 +14,29 @@
 */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace ElasticLoadBalancingv2
+namespace CodeBuild
 {
 namespace Model
 {
-  enum class HttpRequestMethodEnum
+  enum class ServerType
   {
     NOT_SET,
-    GET_,
-    HEAD,
-    POST,
-    PUT,
-    DELETE_,
-    CONNECT,
-    OPTIONS,
-    TRACE,
-    PATCH
+    GITHUB,
+    BITBUCKET,
+    GITHUB_ENTERPRISE
   };
 
-namespace HttpRequestMethodEnumMapper
+namespace ServerTypeMapper
 {
-AWS_ELASTICLOADBALANCINGV2_API HttpRequestMethodEnum GetHttpRequestMethodEnumForName(const Aws::String& name);
+AWS_CODEBUILD_API ServerType GetServerTypeForName(const Aws::String& name);
 
-AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForHttpRequestMethodEnum(HttpRequestMethodEnum value);
-} // namespace HttpRequestMethodEnumMapper
+AWS_CODEBUILD_API Aws::String GetNameForServerType(ServerType value);
+} // namespace ServerTypeMapper
 } // namespace Model
-} // namespace ElasticLoadBalancingv2
+} // namespace CodeBuild
 } // namespace Aws

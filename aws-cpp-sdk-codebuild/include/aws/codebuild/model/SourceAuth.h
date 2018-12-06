@@ -37,9 +37,8 @@ namespace Model
   /**
    * <p>Information about the authorization settings for AWS CodeBuild to access the
    * source code to be built.</p> <p>This information is for the AWS CodeBuild
-   * console's use only. Your code should not get or set this information directly
-   * (unless the build project's source <code>type</code> value is
-   * <code>BITBUCKET</code> or <code>GITHUB</code>).</p><p><h3>See Also:</h3>   <a
+   * console's use only. Your code should not get or set this information
+   * directly.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/SourceAuth">AWS
    * API Reference</a></p>
    */
@@ -53,32 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
-     * which represents the OAuth authorization type.</p>
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline const SourceAuthType& GetType() const{ return m_type; }
 
     /**
-     * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
-     * which represents the OAuth authorization type.</p>
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(const SourceAuthType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
-     * which represents the OAuth authorization type.</p>
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline void SetType(SourceAuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
-     * which represents the OAuth authorization type.</p>
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(const SourceAuthType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The authorization type to use. The only valid value is <code>OAUTH</code>,
-     * which represents the OAuth authorization type.</p>
+     * <note> <p> This data type is deprecated and is no longer accurate or used. </p>
+     * </note> <p>The authorization type to use. The only valid value is
+     * <code>OAUTH</code>, which represents the OAuth authorization type.</p>
      */
     inline SourceAuth& WithType(SourceAuthType&& value) { SetType(std::move(value)); return *this;}
 

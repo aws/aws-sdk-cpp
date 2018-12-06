@@ -33,7 +33,9 @@ Input::Input() :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_state(InputState::NOT_SET),
@@ -48,7 +50,9 @@ Input::Input(JsonView jsonValue) :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_state(InputState::NOT_SET),
@@ -95,11 +99,28 @@ Input& Input::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mediaConnectFlows"))
+  {
+    Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
+    for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+    {
+      m_mediaConnectFlows.push_back(mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject());
+    }
+    m_mediaConnectFlowsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+    m_roleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("securityGroups"))
@@ -177,9 +198,26 @@ JsonValue Input::Jsonize() const
 
   }
 
+  if(m_mediaConnectFlowsHasBeenSet)
+  {
+   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+   {
+     mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
+   }
+   payload.WithArray("mediaConnectFlows", std::move(mediaConnectFlowsJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

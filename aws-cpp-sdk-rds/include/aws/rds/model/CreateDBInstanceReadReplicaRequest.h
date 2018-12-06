@@ -928,105 +928,105 @@ namespace Model
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The AWS KMS key ID for an encrypted Read Replica. The KMS key ID is the
      * Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS
-     * encryption key. </p> <p>If you specify this parameter when you create a Read
-     * Replica from an unencrypted DB instance, the Read Replica is encrypted. </p>
-     * <p>If you create an encrypted Read Replica in the same AWS Region as the source
-     * DB instance, then you do not have to specify a value for this parameter. The
-     * Read Replica is encrypted with the same KMS key as the source DB instance. </p>
-     * <p>If you create an encrypted Read Replica in a different AWS Region, then you
-     * must specify a KMS key for the destination AWS Region. KMS encryption keys are
-     * specific to the AWS Region that they are created in, and you can't use
-     * encryption keys from one AWS Region in another AWS Region. </p>
+     * encryption key. </p> <p>If you create an encrypted Read Replica in the same AWS
+     * Region as the source DB instance, then you do not have to specify a value for
+     * this parameter. The Read Replica is encrypted with the same KMS key as the
+     * source DB instance. </p> <p>If you create an encrypted Read Replica in a
+     * different AWS Region, then you must specify a KMS key for the destination AWS
+     * Region. KMS encryption keys are specific to the AWS Region that they are created
+     * in, and you can't use encryption keys from one AWS Region in another AWS Region.
+     * </p> <p>You can't create an encrypted Read Replica from an unencrypted DB
+     * instance. </p>
      */
     inline CreateDBInstanceReadReplicaRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

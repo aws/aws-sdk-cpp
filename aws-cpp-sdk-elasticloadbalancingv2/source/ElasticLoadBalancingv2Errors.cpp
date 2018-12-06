@@ -29,9 +29,7 @@ namespace ElasticLoadBalancingv2ErrorMapper
 {
 
 static const int INVALID_LOAD_BALANCER_ACTION_HASH = HashingUtils::HashString("InvalidLoadBalancerAction");
-static const int MINIMUM_L_B_CAPACITY_UNITS_DECREASE_THROTTLING_HASH = HashingUtils::HashString("MinimumLBCapacityUnitsDecreaseThrottling");
 static const int LOAD_BALANCER_NOT_FOUND_HASH = HashingUtils::HashString("LoadBalancerNotFound");
-static const int MINIMUM_L_B_CAPACITY_UNITS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MinimumLBCapacityUnitsLimitExceeded");
 static const int PRIORITY_IN_USE_HASH = HashingUtils::HashString("PriorityInUse");
 static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet");
 static const int TOO_MANY_TARGET_GROUPS_HASH = HashingUtils::HashString("TooManyTargetGroups");
@@ -49,7 +47,6 @@ static const int TARGET_GROUP_NOT_FOUND_HASH = HashingUtils::HashString("TargetG
 static const int SUBNET_NOT_FOUND_HASH = HashingUtils::HashString("SubnetNotFound");
 static const int AVAILABILITY_ZONE_NOT_SUPPORTED_HASH = HashingUtils::HashString("AvailabilityZoneNotSupported");
 static const int DUPLICATE_LISTENER_HASH = HashingUtils::HashString("DuplicateListener");
-static const int UNSUPPORTED_CERTIFICATE_HASH = HashingUtils::HashString("UnsupportedCertificate");
 static const int TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH = HashingUtils::HashString("TooManyRegistrationsForTargetId");
 static const int UNSUPPORTED_PROTOCOL_HASH = HashingUtils::HashString("UnsupportedProtocol");
 static const int RULE_NOT_FOUND_HASH = HashingUtils::HashString("RuleNotFound");
@@ -66,7 +63,6 @@ static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("Operat
 static const int TOO_MANY_RULES_HASH = HashingUtils::HashString("TooManyRules");
 static const int LISTENER_NOT_FOUND_HASH = HashingUtils::HashString("ListenerNotFound");
 static const int HEALTH_UNAVAILABLE_HASH = HashingUtils::HashString("HealthUnavailable");
-static const int INSUFFICIENT_CAPACITY_HASH = HashingUtils::HashString("InsufficientCapacity");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -77,17 +73,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::INVALID_LOAD_BALANCER_ACTION), false);
   }
-  else if (hashCode == MINIMUM_L_B_CAPACITY_UNITS_DECREASE_THROTTLING_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::MINIMUM_L_B_CAPACITY_UNITS_DECREASE_THROTTLING), false);
-  }
   else if (hashCode == LOAD_BALANCER_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::LOAD_BALANCER_NOT_FOUND), false);
-  }
-  else if (hashCode == MINIMUM_L_B_CAPACITY_UNITS_LIMIT_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::MINIMUM_L_B_CAPACITY_UNITS_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == PRIORITY_IN_USE_HASH)
   {
@@ -157,10 +145,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::DUPLICATE_LISTENER), false);
   }
-  else if (hashCode == UNSUPPORTED_CERTIFICATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::UNSUPPORTED_CERTIFICATE), false);
-  }
   else if (hashCode == TOO_MANY_REGISTRATIONS_FOR_TARGET_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::TOO_MANY_REGISTRATIONS_FOR_TARGET_ID), false);
@@ -224,10 +208,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == HEALTH_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::HEALTH_UNAVAILABLE), true);
-  }
-  else if (hashCode == INSUFFICIENT_CAPACITY_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticLoadBalancingv2Errors::INSUFFICIENT_CAPACITY), true);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

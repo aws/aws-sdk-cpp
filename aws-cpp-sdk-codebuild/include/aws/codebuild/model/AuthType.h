@@ -14,30 +14,29 @@
 */
 
 #pragma once
-#include <aws/elasticloadbalancingv2/ElasticLoadBalancingv2_EXPORTS.h>
+#include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace ElasticLoadBalancingv2
+namespace CodeBuild
 {
 namespace Model
 {
-  enum class ProvisionedCapacityStatus
+  enum class AuthType
   {
     NOT_SET,
-    disabled,
-    pending,
-    provisioned,
-    pre_warmed
+    OAUTH,
+    BASIC_AUTH,
+    PERSONAL_ACCESS_TOKEN
   };
 
-namespace ProvisionedCapacityStatusMapper
+namespace AuthTypeMapper
 {
-AWS_ELASTICLOADBALANCINGV2_API ProvisionedCapacityStatus GetProvisionedCapacityStatusForName(const Aws::String& name);
+AWS_CODEBUILD_API AuthType GetAuthTypeForName(const Aws::String& name);
 
-AWS_ELASTICLOADBALANCINGV2_API Aws::String GetNameForProvisionedCapacityStatus(ProvisionedCapacityStatus value);
-} // namespace ProvisionedCapacityStatusMapper
+AWS_CODEBUILD_API Aws::String GetNameForAuthType(AuthType value);
+} // namespace AuthTypeMapper
 } // namespace Model
-} // namespace ElasticLoadBalancingv2
+} // namespace CodeBuild
 } // namespace Aws

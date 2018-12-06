@@ -485,45 +485,40 @@ namespace Model
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
-     * console's use only. Your code should not get or set this information directly
-     * (unless the build project's source <code>type</code> value is
-     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
+     * console's use only. Your code should not get or set this information
+     * directly.</p>
      */
     inline const SourceAuth& GetAuth() const{ return m_auth; }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
-     * console's use only. Your code should not get or set this information directly
-     * (unless the build project's source <code>type</code> value is
-     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
+     * console's use only. Your code should not get or set this information
+     * directly.</p>
      */
     inline void SetAuth(const SourceAuth& value) { m_authHasBeenSet = true; m_auth = value; }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
-     * console's use only. Your code should not get or set this information directly
-     * (unless the build project's source <code>type</code> value is
-     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
+     * console's use only. Your code should not get or set this information
+     * directly.</p>
      */
     inline void SetAuth(SourceAuth&& value) { m_authHasBeenSet = true; m_auth = std::move(value); }
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
-     * console's use only. Your code should not get or set this information directly
-     * (unless the build project's source <code>type</code> value is
-     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
+     * console's use only. Your code should not get or set this information
+     * directly.</p>
      */
     inline ProjectSource& WithAuth(const SourceAuth& value) { SetAuth(value); return *this;}
 
     /**
      * <p>Information about the authorization settings for AWS CodeBuild to access the
      * source code to be built.</p> <p>This information is for the AWS CodeBuild
-     * console's use only. Your code should not get or set this information directly
-     * (unless the build project's source <code>type</code> value is
-     * <code>BITBUCKET</code> or <code>GITHUB</code>).</p>
+     * console's use only. Your code should not get or set this information
+     * directly.</p>
      */
     inline ProjectSource& WithAuth(SourceAuth&& value) { SetAuth(std::move(value)); return *this;}
 

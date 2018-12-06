@@ -20,6 +20,7 @@
 #include <aws/medialive/model/InputState.h>
 #include <aws/medialive/model/InputType.h>
 #include <aws/medialive/model/InputDestination.h>
+#include <aws/medialive/model/MediaConnectFlow.h>
 #include <aws/medialive/model/InputSource.h>
 #include <utility>
 
@@ -210,6 +211,42 @@ namespace Model
 
 
     /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline const Aws::Vector<MediaConnectFlow>& GetMediaConnectFlows() const{ return m_mediaConnectFlows; }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline void SetMediaConnectFlows(const Aws::Vector<MediaConnectFlow>& value) { m_mediaConnectFlows = value; }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline void SetMediaConnectFlows(Aws::Vector<MediaConnectFlow>&& value) { m_mediaConnectFlows = std::move(value); }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline DescribeInputResult& WithMediaConnectFlows(const Aws::Vector<MediaConnectFlow>& value) { SetMediaConnectFlows(value); return *this;}
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline DescribeInputResult& WithMediaConnectFlows(Aws::Vector<MediaConnectFlow>&& value) { SetMediaConnectFlows(std::move(value)); return *this;}
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline DescribeInputResult& AddMediaConnectFlows(const MediaConnectFlow& value) { m_mediaConnectFlows.push_back(value); return *this; }
+
+    /**
+     * A list of MediaConnect Flows for this input.
+     */
+    inline DescribeInputResult& AddMediaConnectFlows(MediaConnectFlow&& value) { m_mediaConnectFlows.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The user-assigned name (This is a mutable value).
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -243,6 +280,49 @@ namespace Model
      * The user-assigned name (This is a mutable value).
      */
     inline DescribeInputResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline DescribeInputResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline DescribeInputResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * The Amazon Resource Name (ARN) of the role this input assumes during and after
+     * creation.
+     */
+    inline DescribeInputResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
@@ -363,7 +443,11 @@ namespace Model
 
     Aws::String m_id;
 
+    Aws::Vector<MediaConnectFlow> m_mediaConnectFlows;
+
     Aws::String m_name;
+
+    Aws::String m_roleArn;
 
     Aws::Vector<Aws::String> m_securityGroups;
 

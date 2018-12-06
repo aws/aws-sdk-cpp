@@ -27,12 +27,15 @@
 #include <aws/codebuild/model/CreateProjectResult.h>
 #include <aws/codebuild/model/CreateWebhookResult.h>
 #include <aws/codebuild/model/DeleteProjectResult.h>
+#include <aws/codebuild/model/DeleteSourceCredentialsResult.h>
 #include <aws/codebuild/model/DeleteWebhookResult.h>
+#include <aws/codebuild/model/ImportSourceCredentialsResult.h>
 #include <aws/codebuild/model/InvalidateProjectCacheResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
 #include <aws/codebuild/model/ListProjectsResult.h>
+#include <aws/codebuild/model/ListSourceCredentialsResult.h>
 #include <aws/codebuild/model/StartBuildResult.h>
 #include <aws/codebuild/model/StopBuildResult.h>
 #include <aws/codebuild/model/UpdateProjectResult.h>
@@ -83,12 +86,15 @@ namespace Model
         class CreateProjectRequest;
         class CreateWebhookRequest;
         class DeleteProjectRequest;
+        class DeleteSourceCredentialsRequest;
         class DeleteWebhookRequest;
+        class ImportSourceCredentialsRequest;
         class InvalidateProjectCacheRequest;
         class ListBuildsRequest;
         class ListBuildsForProjectRequest;
         class ListCuratedEnvironmentImagesRequest;
         class ListProjectsRequest;
+        class ListSourceCredentialsRequest;
         class StartBuildRequest;
         class StopBuildRequest;
         class UpdateProjectRequest;
@@ -100,12 +106,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> CreateWebhookOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<ImportSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ImportSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, Aws::Client::AWSError<CodeBuildErrors>> InvalidateProjectCacheOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListBuildsForProjectResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, Aws::Client::AWSError<CodeBuildErrors>> ListCuratedEnvironmentImagesOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ListSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<StartBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StartBuildOutcome;
         typedef Aws::Utils::Outcome<StopBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StopBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateProjectOutcome;
@@ -117,12 +126,15 @@ namespace Model
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteSourceCredentialsOutcome> DeleteSourceCredentialsOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
+        typedef std::future<ImportSourceCredentialsOutcome> ImportSourceCredentialsOutcomeCallable;
         typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
         typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+        typedef std::future<ListSourceCredentialsOutcome> ListSourceCredentialsOutcomeCallable;
         typedef std::future<StartBuildOutcome> StartBuildOutcomeCallable;
         typedef std::future<StopBuildOutcome> StopBuildOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
@@ -137,12 +149,15 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteSourceCredentialsRequest&, const Model::DeleteSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ImportSourceCredentialsRequest&, const Model::ImportSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListSourceCredentialsRequest&, const Model::ListSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildRequest&, const Model::StartBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildRequest&, const Model::StopBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
@@ -189,7 +204,17 @@ namespace Model
    * <p> <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
    * <code>StopBuild</code>: Attempts to stop running a build.</p> </li> <li> <p>
    * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images
-   * that are managed by AWS CodeBuild.</p> </li> </ul>
+   * that are managed by AWS CodeBuild.</p> </li> <li> <p>
+   * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub
+   * Enterprise, or Bitbucket source credentials.</p> </li> <li> <p>
+   * <code>ImportSourceCredentials</code>: Imports the source repository credentials
+   * for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub
+   * Enterprise, or Bitbucket repository.</p> </li> <li> <p>
+   * <code>ListSourceCredentials</code>: Returns a list of
+   * <code>SourceCredentialsInfo</code> objects. Each
+   * <code>SourceCredentialsInfo</code> object includes the authentication type,
+   * token ARN, and type of source provider for one set of credentials.</p> </li>
+   * </ul>
    */
   class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient
   {
@@ -404,6 +429,34 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSourceCredentialsOutcome DeleteSourceCredentials(const Model::DeleteSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSourceCredentialsOutcomeCallable DeleteSourceCredentialsCallable(const Model::DeleteSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSourceCredentialsAsync(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
          * in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the
          * source code every time a code change is pushed to the repository.</p><p><h3>See
@@ -436,6 +489,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Imports the source repository credentials for an AWS CodeBuild project that
+         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
+         * repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ImportSourceCredentialsOutcome ImportSourceCredentials(const Model::ImportSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Imports the source repository credentials for an AWS CodeBuild project that
+         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
+         * repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ImportSourceCredentialsOutcomeCallable ImportSourceCredentialsCallable(const Model::ImportSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Imports the source repository credentials for an AWS CodeBuild project that
+         * has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
+         * repository. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ImportSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ImportSourceCredentialsAsync(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Resets the cache for a project.</p><p><h3>See Also:</h3>   <a
@@ -575,6 +659,34 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSourceCredentialsOutcome ListSourceCredentials(const Model::ListSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSourceCredentialsOutcomeCallable ListSourceCredentialsCallable(const Model::ListSourceCredentialsRequest& request) const;
+
+        /**
+         * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSourceCredentialsAsync(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts running a build.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">AWS
          * API Reference</a></p>
@@ -692,12 +804,15 @@ namespace Model
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSourceCredentialsAsyncHelper(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ImportSourceCredentialsAsyncHelper(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsForProjectAsyncHelper(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCuratedEnvironmentImagesAsyncHelper(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSourceCredentialsAsyncHelper(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBuildAsyncHelper(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopBuildAsyncHelper(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
