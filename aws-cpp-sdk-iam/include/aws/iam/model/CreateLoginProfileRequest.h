@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to create a password for. The user must already
-     * exist.</p> <p>This parameter allows (per its <a
+     * exist.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>

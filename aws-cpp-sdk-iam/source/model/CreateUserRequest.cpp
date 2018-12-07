@@ -23,8 +23,8 @@ using namespace Aws::Utils;
 CreateUserRequest::CreateUserRequest() : 
     m_pathHasBeenSet(false),
     m_userNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,6 +42,11 @@ Aws::String CreateUserRequest::SerializePayload() const
     ss << "UserName=" << StringUtils::URLEncode(m_userName.c_str()) << "&";
   }
 
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+    ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
     unsigned tagsCount = 1;
@@ -50,11 +55,6 @@ Aws::String CreateUserRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
-  }
-
-  if(m_permissionsBoundaryHasBeenSet)
-  {
-    ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
   }
 
   ss << "Version=2010-05-08";

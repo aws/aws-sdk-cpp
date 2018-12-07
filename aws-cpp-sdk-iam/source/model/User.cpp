@@ -37,8 +37,8 @@ User::User() :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_passwordLastUsedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -49,8 +49,8 @@ User::User(const XmlNode& xmlNode) :
     m_arnHasBeenSet(false),
     m_createDateHasBeenSet(false),
     m_passwordLastUsedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -97,6 +97,12 @@ User& User::operator =(const XmlNode& xmlNode)
       m_passwordLastUsed = DateTime(StringUtils::Trim(passwordLastUsedNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_passwordLastUsedHasBeenSet = true;
     }
+    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
+    if(!permissionsBoundaryNode.IsNull())
+    {
+      m_permissionsBoundary = permissionsBoundaryNode;
+      m_permissionsBoundaryHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
@@ -108,12 +114,6 @@ User& User::operator =(const XmlNode& xmlNode)
       }
 
       m_tagsHasBeenSet = true;
-    }
-    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
-    if(!permissionsBoundaryNode.IsNull())
-    {
-      m_permissionsBoundary = permissionsBoundaryNode;
-      m_permissionsBoundaryHasBeenSet = true;
     }
   }
 
@@ -152,6 +152,13 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
+      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -161,13 +168,6 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
         tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
-  }
-
-  if(m_permissionsBoundaryHasBeenSet)
-  {
-      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
-      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
-      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -198,6 +198,12 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".PasswordLastUsed=" << StringUtils::URLEncode(m_passwordLastUsed.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::String permissionsBoundaryLocationAndMember(location);
+      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -207,12 +213,6 @@ void User::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
-  }
-  if(m_permissionsBoundaryHasBeenSet)
-  {
-      Aws::String permissionsBoundaryLocationAndMember(location);
-      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
-      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
   }
 }
 

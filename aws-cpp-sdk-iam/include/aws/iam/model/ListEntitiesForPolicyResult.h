@@ -167,7 +167,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
@@ -178,7 +178,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
@@ -189,7 +189,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline ListEntitiesForPolicyResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}

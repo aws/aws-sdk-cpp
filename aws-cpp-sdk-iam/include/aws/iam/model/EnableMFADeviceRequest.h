@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user for whom you want to enable the MFA device.</p>
-     * <p>This parameter allows (per its <a
+     * <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -112,64 +112,71 @@ namespace Model
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline void SetSerialNumber(Aws::String&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::move(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline void SetSerialNumber(const char* value) { m_serialNumberHasBeenSet = true; m_serialNumber.assign(value); }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
-     * devices, the serial number is the device ARN.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: =,.@:/-</p>
+     * devices, the serial number is the device ARN.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * =,.@:/-</p>
      */
     inline EnableMFADeviceRequest& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
 

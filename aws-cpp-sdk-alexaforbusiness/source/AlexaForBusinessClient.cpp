@@ -36,6 +36,7 @@
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomRequest.h>
 #include <aws/alexaforbusiness/model/AssociateSkillWithSkillGroupRequest.h>
 #include <aws/alexaforbusiness/model/CreateAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/CreateBusinessReportScheduleRequest.h>
 #include <aws/alexaforbusiness/model/CreateConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/CreateContactRequest.h>
 #include <aws/alexaforbusiness/model/CreateProfileRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/alexaforbusiness/model/CreateSkillGroupRequest.h>
 #include <aws/alexaforbusiness/model/CreateUserRequest.h>
 #include <aws/alexaforbusiness/model/DeleteAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/DeleteBusinessReportScheduleRequest.h>
 #include <aws/alexaforbusiness/model/DeleteConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/DeleteContactRequest.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceRequest.h>
@@ -66,6 +68,7 @@
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterRequest.h>
 #include <aws/alexaforbusiness/model/GetSkillGroupRequest.h>
+#include <aws/alexaforbusiness/model/ListBusinessReportSchedulesRequest.h>
 #include <aws/alexaforbusiness/model/ListConferenceProvidersRequest.h>
 #include <aws/alexaforbusiness/model/ListDeviceEventsRequest.h>
 #include <aws/alexaforbusiness/model/ListSkillsRequest.h>
@@ -93,6 +96,7 @@
 #include <aws/alexaforbusiness/model/TagResourceRequest.h>
 #include <aws/alexaforbusiness/model/UntagResourceRequest.h>
 #include <aws/alexaforbusiness/model/UpdateAddressBookRequest.h>
+#include <aws/alexaforbusiness/model/UpdateBusinessReportScheduleRequest.h>
 #include <aws/alexaforbusiness/model/UpdateConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/UpdateContactRequest.h>
 #include <aws/alexaforbusiness/model/UpdateDeviceRequest.h>
@@ -381,6 +385,41 @@ void AlexaForBusinessClient::CreateAddressBookAsyncHelper(const CreateAddressBoo
   handler(this, request, CreateAddressBook(request), context);
 }
 
+CreateBusinessReportScheduleOutcome AlexaForBusinessClient::CreateBusinessReportSchedule(const CreateBusinessReportScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateBusinessReportScheduleOutcome(CreateBusinessReportScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBusinessReportScheduleOutcome(outcome.GetError());
+  }
+}
+
+CreateBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::CreateBusinessReportScheduleCallable(const CreateBusinessReportScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBusinessReportScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBusinessReportSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::CreateBusinessReportScheduleAsync(const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::CreateBusinessReportScheduleAsyncHelper(const CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBusinessReportSchedule(request), context);
+}
+
 CreateConferenceProviderOutcome AlexaForBusinessClient::CreateConferenceProvider(const CreateConferenceProviderRequest& request) const
 {
   Aws::StringStream ss;
@@ -624,6 +663,41 @@ void AlexaForBusinessClient::DeleteAddressBookAsync(const DeleteAddressBookReque
 void AlexaForBusinessClient::DeleteAddressBookAsyncHelper(const DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteAddressBook(request), context);
+}
+
+DeleteBusinessReportScheduleOutcome AlexaForBusinessClient::DeleteBusinessReportSchedule(const DeleteBusinessReportScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBusinessReportScheduleOutcome(DeleteBusinessReportScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBusinessReportScheduleOutcome(outcome.GetError());
+  }
+}
+
+DeleteBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::DeleteBusinessReportScheduleCallable(const DeleteBusinessReportScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBusinessReportScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBusinessReportSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::DeleteBusinessReportScheduleAsync(const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::DeleteBusinessReportScheduleAsyncHelper(const DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBusinessReportSchedule(request), context);
 }
 
 DeleteConferenceProviderOutcome AlexaForBusinessClient::DeleteConferenceProvider(const DeleteConferenceProviderRequest& request) const
@@ -1429,6 +1503,41 @@ void AlexaForBusinessClient::GetSkillGroupAsync(const GetSkillGroupRequest& requ
 void AlexaForBusinessClient::GetSkillGroupAsyncHelper(const GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetSkillGroup(request), context);
+}
+
+ListBusinessReportSchedulesOutcome AlexaForBusinessClient::ListBusinessReportSchedules(const ListBusinessReportSchedulesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBusinessReportSchedulesOutcome(ListBusinessReportSchedulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBusinessReportSchedulesOutcome(outcome.GetError());
+  }
+}
+
+ListBusinessReportSchedulesOutcomeCallable AlexaForBusinessClient::ListBusinessReportSchedulesCallable(const ListBusinessReportSchedulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBusinessReportSchedulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBusinessReportSchedules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::ListBusinessReportSchedulesAsync(const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBusinessReportSchedulesAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::ListBusinessReportSchedulesAsyncHelper(const ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBusinessReportSchedules(request), context);
 }
 
 ListConferenceProvidersOutcome AlexaForBusinessClient::ListConferenceProviders(const ListConferenceProvidersRequest& request) const
@@ -2374,6 +2483,41 @@ void AlexaForBusinessClient::UpdateAddressBookAsync(const UpdateAddressBookReque
 void AlexaForBusinessClient::UpdateAddressBookAsyncHelper(const UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateAddressBook(request), context);
+}
+
+UpdateBusinessReportScheduleOutcome AlexaForBusinessClient::UpdateBusinessReportSchedule(const UpdateBusinessReportScheduleRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateBusinessReportScheduleOutcome(UpdateBusinessReportScheduleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateBusinessReportScheduleOutcome(outcome.GetError());
+  }
+}
+
+UpdateBusinessReportScheduleOutcomeCallable AlexaForBusinessClient::UpdateBusinessReportScheduleCallable(const UpdateBusinessReportScheduleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBusinessReportScheduleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBusinessReportSchedule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::UpdateBusinessReportScheduleAsync(const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBusinessReportScheduleAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::UpdateBusinessReportScheduleAsyncHelper(const UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBusinessReportSchedule(request), context);
 }
 
 UpdateConferenceProviderOutcome AlexaForBusinessClient::UpdateConferenceProvider(const UpdateConferenceProviderRequest& request) const

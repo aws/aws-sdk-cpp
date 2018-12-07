@@ -80,6 +80,7 @@
 #include <aws/iam/model/DetachUserPolicyRequest.h>
 #include <aws/iam/model/EnableMFADeviceRequest.h>
 #include <aws/iam/model/GenerateCredentialReportRequest.h>
+#include <aws/iam/model/GenerateServiceLastAccessedDetailsRequest.h>
 #include <aws/iam/model/GetAccessKeyLastUsedRequest.h>
 #include <aws/iam/model/GetAccountAuthorizationDetailsRequest.h>
 #include <aws/iam/model/GetAccountPasswordPolicyRequest.h>
@@ -99,6 +100,8 @@
 #include <aws/iam/model/GetSAMLProviderRequest.h>
 #include <aws/iam/model/GetSSHPublicKeyRequest.h>
 #include <aws/iam/model/GetServerCertificateRequest.h>
+#include <aws/iam/model/GetServiceLastAccessedDetailsRequest.h>
+#include <aws/iam/model/GetServiceLastAccessedDetailsWithEntitiesRequest.h>
 #include <aws/iam/model/GetServiceLinkedRoleDeletionStatusRequest.h>
 #include <aws/iam/model/GetUserRequest.h>
 #include <aws/iam/model/GetUserPolicyRequest.h>
@@ -116,6 +119,7 @@
 #include <aws/iam/model/ListMFADevicesRequest.h>
 #include <aws/iam/model/ListOpenIDConnectProvidersRequest.h>
 #include <aws/iam/model/ListPoliciesRequest.h>
+#include <aws/iam/model/ListPoliciesGrantingServiceAccessRequest.h>
 #include <aws/iam/model/ListPolicyVersionsRequest.h>
 #include <aws/iam/model/ListRolePoliciesRequest.h>
 #include <aws/iam/model/ListRoleTagsRequest.h>
@@ -1996,6 +2000,41 @@ void IAMClient::GenerateCredentialReportAsyncHelper(const GenerateCredentialRepo
   handler(this, request, GenerateCredentialReport(request), context);
 }
 
+GenerateServiceLastAccessedDetailsOutcome IAMClient::GenerateServiceLastAccessedDetails(const GenerateServiceLastAccessedDetailsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GenerateServiceLastAccessedDetailsOutcome(GenerateServiceLastAccessedDetailsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GenerateServiceLastAccessedDetailsOutcome(outcome.GetError());
+  }
+}
+
+GenerateServiceLastAccessedDetailsOutcomeCallable IAMClient::GenerateServiceLastAccessedDetailsCallable(const GenerateServiceLastAccessedDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GenerateServiceLastAccessedDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GenerateServiceLastAccessedDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GenerateServiceLastAccessedDetailsAsync(const GenerateServiceLastAccessedDetailsRequest& request, const GenerateServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GenerateServiceLastAccessedDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GenerateServiceLastAccessedDetailsAsyncHelper(const GenerateServiceLastAccessedDetailsRequest& request, const GenerateServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GenerateServiceLastAccessedDetails(request), context);
+}
+
 GetAccessKeyLastUsedOutcome IAMClient::GetAccessKeyLastUsed(const GetAccessKeyLastUsedRequest& request) const
 {
   Aws::StringStream ss;
@@ -2661,6 +2700,76 @@ void IAMClient::GetServerCertificateAsyncHelper(const GetServerCertificateReques
   handler(this, request, GetServerCertificate(request), context);
 }
 
+GetServiceLastAccessedDetailsOutcome IAMClient::GetServiceLastAccessedDetails(const GetServiceLastAccessedDetailsRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetServiceLastAccessedDetailsOutcome(GetServiceLastAccessedDetailsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetServiceLastAccessedDetailsOutcome(outcome.GetError());
+  }
+}
+
+GetServiceLastAccessedDetailsOutcomeCallable IAMClient::GetServiceLastAccessedDetailsCallable(const GetServiceLastAccessedDetailsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceLastAccessedDetailsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceLastAccessedDetails(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GetServiceLastAccessedDetailsAsync(const GetServiceLastAccessedDetailsRequest& request, const GetServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceLastAccessedDetailsAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GetServiceLastAccessedDetailsAsyncHelper(const GetServiceLastAccessedDetailsRequest& request, const GetServiceLastAccessedDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceLastAccessedDetails(request), context);
+}
+
+GetServiceLastAccessedDetailsWithEntitiesOutcome IAMClient::GetServiceLastAccessedDetailsWithEntities(const GetServiceLastAccessedDetailsWithEntitiesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetServiceLastAccessedDetailsWithEntitiesOutcome(GetServiceLastAccessedDetailsWithEntitiesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetServiceLastAccessedDetailsWithEntitiesOutcome(outcome.GetError());
+  }
+}
+
+GetServiceLastAccessedDetailsWithEntitiesOutcomeCallable IAMClient::GetServiceLastAccessedDetailsWithEntitiesCallable(const GetServiceLastAccessedDetailsWithEntitiesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceLastAccessedDetailsWithEntitiesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceLastAccessedDetailsWithEntities(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::GetServiceLastAccessedDetailsWithEntitiesAsync(const GetServiceLastAccessedDetailsWithEntitiesRequest& request, const GetServiceLastAccessedDetailsWithEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceLastAccessedDetailsWithEntitiesAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::GetServiceLastAccessedDetailsWithEntitiesAsyncHelper(const GetServiceLastAccessedDetailsWithEntitiesRequest& request, const GetServiceLastAccessedDetailsWithEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceLastAccessedDetailsWithEntities(request), context);
+}
+
 GetServiceLinkedRoleDeletionStatusOutcome IAMClient::GetServiceLinkedRoleDeletionStatus(const GetServiceLinkedRoleDeletionStatusRequest& request) const
 {
   Aws::StringStream ss;
@@ -3254,6 +3363,41 @@ void IAMClient::ListPoliciesAsync(const ListPoliciesRequest& request, const List
 void IAMClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, const ListPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListPolicies(request), context);
+}
+
+ListPoliciesGrantingServiceAccessOutcome IAMClient::ListPoliciesGrantingServiceAccess(const ListPoliciesGrantingServiceAccessRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListPoliciesGrantingServiceAccessOutcome(ListPoliciesGrantingServiceAccessResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPoliciesGrantingServiceAccessOutcome(outcome.GetError());
+  }
+}
+
+ListPoliciesGrantingServiceAccessOutcomeCallable IAMClient::ListPoliciesGrantingServiceAccessCallable(const ListPoliciesGrantingServiceAccessRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPoliciesGrantingServiceAccessOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPoliciesGrantingServiceAccess(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IAMClient::ListPoliciesGrantingServiceAccessAsync(const ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPoliciesGrantingServiceAccessAsyncHelper( request, handler, context ); } );
+}
+
+void IAMClient::ListPoliciesGrantingServiceAccessAsyncHelper(const ListPoliciesGrantingServiceAccessRequest& request, const ListPoliciesGrantingServiceAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPoliciesGrantingServiceAccess(request), context);
 }
 
 ListPolicyVersionsOutcome IAMClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const

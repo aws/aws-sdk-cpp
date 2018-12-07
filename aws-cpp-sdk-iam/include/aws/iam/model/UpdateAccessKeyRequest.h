@@ -49,8 +49,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -58,8 +58,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -67,8 +67,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -76,8 +76,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -85,8 +85,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -94,8 +94,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -103,8 +103,8 @@ namespace Model
 
     /**
      * <p>The name of the user whose key you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -113,7 +113,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -121,7 +121,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -145,7 +145,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -153,7 +153,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
 
     /**
      * <p>The access key ID of the secret access key you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */

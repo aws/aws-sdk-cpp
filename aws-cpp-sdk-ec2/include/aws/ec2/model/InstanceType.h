@@ -160,6 +160,7 @@ namespace Model
     p3_2xlarge,
     p3_8xlarge,
     p3_16xlarge,
+    p3dn_24xlarge,
     d2_xlarge,
     d2_2xlarge,
     d2_4xlarge,

@@ -47,58 +47,65 @@ namespace Model
   public:
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListRolePoliciesRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListRolePoliciesRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the role to list policies for.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * <p>The name of the role to list policies for.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ListRolePoliciesRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
@@ -161,37 +168,37 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline ListRolePoliciesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}

@@ -126,8 +126,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
 
@@ -135,8 +135,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
 
@@ -144,8 +144,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
 
@@ -153,8 +153,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline ResourceSpecificResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
 
@@ -162,8 +162,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline ResourceSpecificResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
 
@@ -171,8 +171,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline ResourceSpecificResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
 
@@ -180,8 +180,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this part of the simulation. Remember that even if multiple statements allow the
      * operation on the resource, if <i>any</i> statement denies that operation, then
-     * the explicit deny overrides any allow, and the deny statement is the only entry
-     * included in the result.</p>
+     * the explicit deny overrides any allow. In addition, the deny statement is the
+     * only entry included in the result.</p>
      */
     inline ResourceSpecificResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
 

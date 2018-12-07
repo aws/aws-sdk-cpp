@@ -39,7 +39,7 @@ namespace Model
    * attached permissions boundary is a managed policy that has been attached to a
    * user or role to set the permissions boundary.</p> <p>For more information about
    * permissions boundaries, see <a
-   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
    * Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachedPermissionsBoundary">AWS

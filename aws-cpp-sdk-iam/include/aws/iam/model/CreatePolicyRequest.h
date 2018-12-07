@@ -47,7 +47,7 @@ namespace Model
   public:
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -55,7 +55,7 @@ namespace Model
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -63,7 +63,7 @@ namespace Model
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -71,7 +71,7 @@ namespace Model
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -79,7 +79,7 @@ namespace Model
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -87,7 +87,7 @@ namespace Model
     inline CreatePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -95,7 +95,7 @@ namespace Model
     inline CreatePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the policy.</p> <p>This parameter allows (per its <a
+     * <p>The friendly name of the policy.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -108,10 +108,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -122,10 +122,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -136,10 +136,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -150,10 +150,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -164,10 +164,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -178,10 +178,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -192,10 +192,10 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */

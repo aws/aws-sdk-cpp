@@ -39,8 +39,8 @@ UserDetail::UserDetail() :
     m_userPolicyListHasBeenSet(false),
     m_groupListHasBeenSet(false),
     m_attachedManagedPoliciesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,8 +53,8 @@ UserDetail::UserDetail(const XmlNode& xmlNode) :
     m_userPolicyListHasBeenSet(false),
     m_groupListHasBeenSet(false),
     m_attachedManagedPoliciesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -131,6 +131,12 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
 
       m_attachedManagedPoliciesHasBeenSet = true;
     }
+    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
+    if(!permissionsBoundaryNode.IsNull())
+    {
+      m_permissionsBoundary = permissionsBoundaryNode;
+      m_permissionsBoundaryHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
@@ -142,12 +148,6 @@ UserDetail& UserDetail::operator =(const XmlNode& xmlNode)
       }
 
       m_tagsHasBeenSet = true;
-    }
-    XmlNode permissionsBoundaryNode = resultNode.FirstChild("PermissionsBoundary");
-    if(!permissionsBoundaryNode.IsNull())
-    {
-      m_permissionsBoundary = permissionsBoundaryNode;
-      m_permissionsBoundaryHasBeenSet = true;
     }
   }
 
@@ -212,6 +212,13 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
+      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -221,13 +228,6 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location, uns
         tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
-  }
-
-  if(m_permissionsBoundaryHasBeenSet)
-  {
-      Aws::StringStream permissionsBoundaryLocationAndMemberSs;
-      permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
-      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -282,6 +282,12 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
         item.OutputToStream(oStream, attachedManagedPoliciesSs.str().c_str());
       }
   }
+  if(m_permissionsBoundaryHasBeenSet)
+  {
+      Aws::String permissionsBoundaryLocationAndMember(location);
+      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
+      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
+  }
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -291,12 +297,6 @@ void UserDetail::OutputToStream(Aws::OStream& oStream, const char* location) con
         tagsSs << location <<  ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
-  }
-  if(m_permissionsBoundaryHasBeenSet)
-  {
-      Aws::String permissionsBoundaryLocationAndMember(location);
-      permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
-      m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
   }
 }
 

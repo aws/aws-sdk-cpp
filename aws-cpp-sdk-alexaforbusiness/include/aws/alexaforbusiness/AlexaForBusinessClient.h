@@ -27,6 +27,7 @@
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomResult.h>
 #include <aws/alexaforbusiness/model/AssociateSkillWithSkillGroupResult.h>
 #include <aws/alexaforbusiness/model/CreateAddressBookResult.h>
+#include <aws/alexaforbusiness/model/CreateBusinessReportScheduleResult.h>
 #include <aws/alexaforbusiness/model/CreateConferenceProviderResult.h>
 #include <aws/alexaforbusiness/model/CreateContactResult.h>
 #include <aws/alexaforbusiness/model/CreateProfileResult.h>
@@ -34,6 +35,7 @@
 #include <aws/alexaforbusiness/model/CreateSkillGroupResult.h>
 #include <aws/alexaforbusiness/model/CreateUserResult.h>
 #include <aws/alexaforbusiness/model/DeleteAddressBookResult.h>
+#include <aws/alexaforbusiness/model/DeleteBusinessReportScheduleResult.h>
 #include <aws/alexaforbusiness/model/DeleteConferenceProviderResult.h>
 #include <aws/alexaforbusiness/model/DeleteContactResult.h>
 #include <aws/alexaforbusiness/model/DeleteDeviceResult.h>
@@ -57,6 +59,7 @@
 #include <aws/alexaforbusiness/model/GetRoomResult.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterResult.h>
 #include <aws/alexaforbusiness/model/GetSkillGroupResult.h>
+#include <aws/alexaforbusiness/model/ListBusinessReportSchedulesResult.h>
 #include <aws/alexaforbusiness/model/ListConferenceProvidersResult.h>
 #include <aws/alexaforbusiness/model/ListDeviceEventsResult.h>
 #include <aws/alexaforbusiness/model/ListSkillsResult.h>
@@ -84,6 +87,7 @@
 #include <aws/alexaforbusiness/model/TagResourceResult.h>
 #include <aws/alexaforbusiness/model/UntagResourceResult.h>
 #include <aws/alexaforbusiness/model/UpdateAddressBookResult.h>
+#include <aws/alexaforbusiness/model/UpdateBusinessReportScheduleResult.h>
 #include <aws/alexaforbusiness/model/UpdateConferenceProviderResult.h>
 #include <aws/alexaforbusiness/model/UpdateContactResult.h>
 #include <aws/alexaforbusiness/model/UpdateDeviceResult.h>
@@ -136,6 +140,7 @@ namespace Model
         class AssociateSkillGroupWithRoomRequest;
         class AssociateSkillWithSkillGroupRequest;
         class CreateAddressBookRequest;
+        class CreateBusinessReportScheduleRequest;
         class CreateConferenceProviderRequest;
         class CreateContactRequest;
         class CreateProfileRequest;
@@ -143,6 +148,7 @@ namespace Model
         class CreateSkillGroupRequest;
         class CreateUserRequest;
         class DeleteAddressBookRequest;
+        class DeleteBusinessReportScheduleRequest;
         class DeleteConferenceProviderRequest;
         class DeleteContactRequest;
         class DeleteDeviceRequest;
@@ -166,6 +172,7 @@ namespace Model
         class GetRoomRequest;
         class GetRoomSkillParameterRequest;
         class GetSkillGroupRequest;
+        class ListBusinessReportSchedulesRequest;
         class ListConferenceProvidersRequest;
         class ListDeviceEventsRequest;
         class ListSkillsRequest;
@@ -193,6 +200,7 @@ namespace Model
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateAddressBookRequest;
+        class UpdateBusinessReportScheduleRequest;
         class UpdateConferenceProviderRequest;
         class UpdateContactRequest;
         class UpdateDeviceRequest;
@@ -206,6 +214,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateSkillGroupWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillGroupWithRoomOutcome;
         typedef Aws::Utils::Outcome<AssociateSkillWithSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithSkillGroupOutcome;
         typedef Aws::Utils::Outcome<CreateAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateAddressBookOutcome;
+        typedef Aws::Utils::Outcome<CreateBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateBusinessReportScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateConferenceProviderOutcome;
         typedef Aws::Utils::Outcome<CreateContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateContactOutcome;
         typedef Aws::Utils::Outcome<CreateProfileResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateProfileOutcome;
@@ -213,6 +222,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateSkillGroupOutcome;
         typedef Aws::Utils::Outcome<CreateUserResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateUserOutcome;
         typedef Aws::Utils::Outcome<DeleteAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteAddressBookOutcome;
+        typedef Aws::Utils::Outcome<DeleteBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteBusinessReportScheduleOutcome;
         typedef Aws::Utils::Outcome<DeleteConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteConferenceProviderOutcome;
         typedef Aws::Utils::Outcome<DeleteContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteContactOutcome;
         typedef Aws::Utils::Outcome<DeleteDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DeleteDeviceOutcome;
@@ -236,6 +246,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetRoomSkillParameterResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetRoomSkillParameterOutcome;
         typedef Aws::Utils::Outcome<GetSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<ListBusinessReportSchedulesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListBusinessReportSchedulesOutcome;
         typedef Aws::Utils::Outcome<ListConferenceProvidersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListConferenceProvidersOutcome;
         typedef Aws::Utils::Outcome<ListDeviceEventsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListDeviceEventsOutcome;
         typedef Aws::Utils::Outcome<ListSkillsResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ListSkillsOutcome;
@@ -263,6 +274,7 @@ namespace Model
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateAddressBookOutcome;
+        typedef Aws::Utils::Outcome<UpdateBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateBusinessReportScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateConferenceProviderOutcome;
         typedef Aws::Utils::Outcome<UpdateContactResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateContactOutcome;
         typedef Aws::Utils::Outcome<UpdateDeviceResult, Aws::Client::AWSError<AlexaForBusinessErrors>> UpdateDeviceOutcome;
@@ -276,6 +288,7 @@ namespace Model
         typedef std::future<AssociateSkillGroupWithRoomOutcome> AssociateSkillGroupWithRoomOutcomeCallable;
         typedef std::future<AssociateSkillWithSkillGroupOutcome> AssociateSkillWithSkillGroupOutcomeCallable;
         typedef std::future<CreateAddressBookOutcome> CreateAddressBookOutcomeCallable;
+        typedef std::future<CreateBusinessReportScheduleOutcome> CreateBusinessReportScheduleOutcomeCallable;
         typedef std::future<CreateConferenceProviderOutcome> CreateConferenceProviderOutcomeCallable;
         typedef std::future<CreateContactOutcome> CreateContactOutcomeCallable;
         typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
@@ -283,6 +296,7 @@ namespace Model
         typedef std::future<CreateSkillGroupOutcome> CreateSkillGroupOutcomeCallable;
         typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
         typedef std::future<DeleteAddressBookOutcome> DeleteAddressBookOutcomeCallable;
+        typedef std::future<DeleteBusinessReportScheduleOutcome> DeleteBusinessReportScheduleOutcomeCallable;
         typedef std::future<DeleteConferenceProviderOutcome> DeleteConferenceProviderOutcomeCallable;
         typedef std::future<DeleteContactOutcome> DeleteContactOutcomeCallable;
         typedef std::future<DeleteDeviceOutcome> DeleteDeviceOutcomeCallable;
@@ -306,6 +320,7 @@ namespace Model
         typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetRoomSkillParameterOutcome> GetRoomSkillParameterOutcomeCallable;
         typedef std::future<GetSkillGroupOutcome> GetSkillGroupOutcomeCallable;
+        typedef std::future<ListBusinessReportSchedulesOutcome> ListBusinessReportSchedulesOutcomeCallable;
         typedef std::future<ListConferenceProvidersOutcome> ListConferenceProvidersOutcomeCallable;
         typedef std::future<ListDeviceEventsOutcome> ListDeviceEventsOutcomeCallable;
         typedef std::future<ListSkillsOutcome> ListSkillsOutcomeCallable;
@@ -333,6 +348,7 @@ namespace Model
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateAddressBookOutcome> UpdateAddressBookOutcomeCallable;
+        typedef std::future<UpdateBusinessReportScheduleOutcome> UpdateBusinessReportScheduleOutcomeCallable;
         typedef std::future<UpdateConferenceProviderOutcome> UpdateConferenceProviderOutcomeCallable;
         typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
         typedef std::future<UpdateDeviceOutcome> UpdateDeviceOutcomeCallable;
@@ -349,6 +365,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillGroupWithRoomRequest&, const Model::AssociateSkillGroupWithRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillGroupWithRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillWithSkillGroupRequest&, const Model::AssociateSkillWithSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillWithSkillGroupResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateAddressBookRequest&, const Model::CreateAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddressBookResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateBusinessReportScheduleRequest&, const Model::CreateBusinessReportScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBusinessReportScheduleResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateConferenceProviderRequest&, const Model::CreateConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConferenceProviderResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateContactRequest&, const Model::CreateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateContactResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
@@ -356,6 +373,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateSkillGroupRequest&, const Model::CreateSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSkillGroupResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteAddressBookRequest&, const Model::DeleteAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAddressBookResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteBusinessReportScheduleRequest&, const Model::DeleteBusinessReportScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBusinessReportScheduleResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteConferenceProviderRequest&, const Model::DeleteConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConferenceProviderResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteContactRequest&, const Model::DeleteContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContactResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DeleteDeviceRequest&, const Model::DeleteDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDeviceResponseReceivedHandler;
@@ -379,6 +397,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetRoomSkillParameterRequest&, const Model::GetRoomSkillParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomSkillParameterResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetSkillGroupRequest&, const Model::GetSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSkillGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::ListBusinessReportSchedulesRequest&, const Model::ListBusinessReportSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBusinessReportSchedulesResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ListConferenceProvidersRequest&, const Model::ListConferenceProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConferenceProvidersResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ListDeviceEventsRequest&, const Model::ListDeviceEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeviceEventsResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ListSkillsRequest&, const Model::ListSkillsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSkillsResponseReceivedHandler;
@@ -406,6 +425,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateAddressBookRequest&, const Model::UpdateAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAddressBookResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateBusinessReportScheduleRequest&, const Model::UpdateBusinessReportScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBusinessReportScheduleResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateConferenceProviderRequest&, const Model::UpdateConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConferenceProviderResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateContactRequest&, const Model::UpdateContactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContactResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::UpdateDeviceRequest&, const Model::UpdateDeviceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDeviceResponseReceivedHandler;
@@ -626,6 +646,37 @@ namespace Model
         virtual void CreateAddressBookAsync(const Model::CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a recurring schedule for usage reports to deliver to the specified S3
+         * location with a specified daily or weekly interval.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBusinessReportScheduleOutcome CreateBusinessReportSchedule(const Model::CreateBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a recurring schedule for usage reports to deliver to the specified S3
+         * location with a specified daily or weekly interval.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBusinessReportScheduleOutcomeCallable CreateBusinessReportScheduleCallable(const Model::CreateBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a recurring schedule for usage reports to deliver to the specified S3
+         * location with a specified daily or weekly interval.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBusinessReportScheduleAsync(const Model::CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds a new conference provider under the user's AWS account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">AWS
@@ -811,6 +862,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAddressBookAsync(const Model::DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the recurring report delivery schedule with the specified schedule
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBusinessReportScheduleOutcome DeleteBusinessReportSchedule(const Model::DeleteBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes the recurring report delivery schedule with the specified schedule
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBusinessReportScheduleOutcomeCallable DeleteBusinessReportScheduleCallable(const Model::DeleteBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes the recurring report delivery schedule with the specified schedule
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBusinessReportScheduleAsync(const Model::DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a conference provider.</p><p><h3>See Also:</h3>   <a
@@ -1422,6 +1501,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetSkillGroupAsync(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBusinessReportSchedulesOutcome ListBusinessReportSchedules(const Model::ListBusinessReportSchedulesRequest& request) const;
+
+        /**
+         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBusinessReportSchedulesOutcomeCallable ListBusinessReportSchedulesCallable(const Model::ListBusinessReportSchedulesRequest& request) const;
+
+        /**
+         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBusinessReportSchedulesAsync(const Model::ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists conference providers under a specific AWS account.</p><p><h3>See
@@ -2189,6 +2296,34 @@ namespace Model
         virtual void UpdateAddressBookAsync(const Model::UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the configuration of the report delivery schedule with the specified
+         * schedule ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBusinessReportScheduleOutcome UpdateBusinessReportSchedule(const Model::UpdateBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Updates the configuration of the report delivery schedule with the specified
+         * schedule ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateBusinessReportScheduleOutcomeCallable UpdateBusinessReportScheduleCallable(const Model::UpdateBusinessReportScheduleRequest& request) const;
+
+        /**
+         * <p>Updates the configuration of the report delivery schedule with the specified
+         * schedule ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateBusinessReportScheduleAsync(const Model::UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing conference provider's settings.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">AWS
@@ -2356,6 +2491,7 @@ namespace Model
         void AssociateSkillGroupWithRoomAsyncHelper(const Model::AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSkillWithSkillGroupAsyncHelper(const Model::AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAddressBookAsyncHelper(const Model::CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBusinessReportScheduleAsyncHelper(const Model::CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConferenceProviderAsyncHelper(const Model::CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateContactAsyncHelper(const Model::CreateContactRequest& request, const CreateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProfileAsyncHelper(const Model::CreateProfileRequest& request, const CreateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2363,6 +2499,7 @@ namespace Model
         void CreateSkillGroupAsyncHelper(const Model::CreateSkillGroupRequest& request, const CreateSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAddressBookAsyncHelper(const Model::DeleteAddressBookRequest& request, const DeleteAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBusinessReportScheduleAsyncHelper(const Model::DeleteBusinessReportScheduleRequest& request, const DeleteBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConferenceProviderAsyncHelper(const Model::DeleteConferenceProviderRequest& request, const DeleteConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContactAsyncHelper(const Model::DeleteContactRequest& request, const DeleteContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDeviceAsyncHelper(const Model::DeleteDeviceRequest& request, const DeleteDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2386,6 +2523,7 @@ namespace Model
         void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetRoomSkillParameterAsyncHelper(const Model::GetRoomSkillParameterRequest& request, const GetRoomSkillParameterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSkillGroupAsyncHelper(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBusinessReportSchedulesAsyncHelper(const Model::ListBusinessReportSchedulesRequest& request, const ListBusinessReportSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConferenceProvidersAsyncHelper(const Model::ListConferenceProvidersRequest& request, const ListConferenceProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeviceEventsAsyncHelper(const Model::ListDeviceEventsRequest& request, const ListDeviceEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSkillsAsyncHelper(const Model::ListSkillsRequest& request, const ListSkillsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2413,6 +2551,7 @@ namespace Model
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateAddressBookAsyncHelper(const Model::UpdateAddressBookRequest& request, const UpdateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateBusinessReportScheduleAsyncHelper(const Model::UpdateBusinessReportScheduleRequest& request, const UpdateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConferenceProviderAsyncHelper(const Model::UpdateConferenceProviderRequest& request, const UpdateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContactAsyncHelper(const Model::UpdateContactRequest& request, const UpdateContactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDeviceAsyncHelper(const Model::UpdateDeviceRequest& request, const UpdateDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

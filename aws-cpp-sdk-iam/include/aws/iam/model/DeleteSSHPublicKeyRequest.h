@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user associated with the SSH public key.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -112,50 +112,57 @@ namespace Model
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline const Aws::String& GetSSHPublicKeyId() const{ return m_sSHPublicKeyId; }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline void SetSSHPublicKeyId(const Aws::String& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = value; }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline void SetSSHPublicKeyId(Aws::String&& value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId = std::move(value); }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline void SetSSHPublicKeyId(const char* value) { m_sSHPublicKeyIdHasBeenSet = true; m_sSHPublicKeyId.assign(value); }
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(const Aws::String& value) { SetSSHPublicKeyId(value); return *this;}
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(Aws::String&& value) { SetSSHPublicKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier for the SSH public key.</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters that can consist of any upper or lowercased letter or digit.</p>
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
      */
     inline DeleteSSHPublicKeyRequest& WithSSHPublicKeyId(const char* value) { SetSSHPublicKeyId(value); return *this;}
 

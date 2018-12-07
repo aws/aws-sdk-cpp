@@ -50,40 +50,40 @@ namespace Model
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
-     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
-     * MFA devices.</p>
+     * defaults to <code>Any</code>, which lists both assigned and unassigned virtual
+     * MFA devices.,</p>
      */
     inline const AssignmentStatusType& GetAssignmentStatus() const{ return m_assignmentStatus; }
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
-     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
-     * MFA devices.</p>
+     * defaults to <code>Any</code>, which lists both assigned and unassigned virtual
+     * MFA devices.,</p>
      */
     inline void SetAssignmentStatus(const AssignmentStatusType& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
-     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
-     * MFA devices.</p>
+     * defaults to <code>Any</code>, which lists both assigned and unassigned virtual
+     * MFA devices.,</p>
      */
     inline void SetAssignmentStatus(AssignmentStatusType&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
-     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
-     * MFA devices.</p>
+     * defaults to <code>Any</code>, which lists both assigned and unassigned virtual
+     * MFA devices.,</p>
      */
     inline ListVirtualMFADevicesRequest& WithAssignmentStatus(const AssignmentStatusType& value) { SetAssignmentStatus(value); return *this;}
 
     /**
      * <p> The status (<code>Unassigned</code> or <code>Assigned</code>) of the devices
      * to list. If you do not specify an <code>AssignmentStatus</code>, the operation
-     * defaults to <code>Any</code> which lists both assigned and unassigned virtual
-     * MFA devices.</p>
+     * defaults to <code>Any</code>, which lists both assigned and unassigned virtual
+     * MFA devices.,</p>
      */
     inline ListVirtualMFADevicesRequest& WithAssignmentStatus(AssignmentStatusType&& value) { SetAssignmentStatus(std::move(value)); return *this;}
 
@@ -146,37 +146,37 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline ListVirtualMFADevicesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}

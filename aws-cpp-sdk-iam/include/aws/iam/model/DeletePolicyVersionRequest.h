@@ -111,7 +111,7 @@ namespace Model
 
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -122,7 +122,7 @@ namespace Model
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -133,7 +133,7 @@ namespace Model
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -144,7 +144,7 @@ namespace Model
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -155,7 +155,7 @@ namespace Model
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -166,7 +166,7 @@ namespace Model
     inline DeletePolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>
@@ -177,7 +177,7 @@ namespace Model
     inline DeletePolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>The policy version to delete.</p> <p>This parameter allows (per its <a
+     * <p>The policy version to delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that consists of the lowercase letter 'v' followed by one or two digits, and
      * optionally followed by a period '.' and a string of letters and digits.</p>

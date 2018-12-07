@@ -836,22 +836,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline const Aws::String& GetResourceHandlingOption() const{ return m_resourceHandlingOption; }
 
@@ -864,22 +864,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const Aws::String& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
 
@@ -892,22 +892,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::move(value); }
 
@@ -920,22 +920,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline void SetResourceHandlingOption(const char* value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption.assign(value); }
 
@@ -948,22 +948,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(const Aws::String& value) { SetResourceHandlingOption(value); return *this;}
 
@@ -976,22 +976,22 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(std::move(value)); return *this;}
 
@@ -1004,58 +1004,58 @@ namespace Model
      * you can omit this parameter. The following list shows each of the supported
      * scenario values and the resources that you must define to run the
      * simulation.</p> <p>Each of the EC2 scenarios requires that you specify instance,
-     * image, and security-group resources. If your scenario includes an EBS volume,
+     * image, and security group resources. If your scenario includes an EBS volume,
      * then you must specify that volume as a resource. If the EC2 scenario includes
-     * VPC, then you must supply the network-interface resource. If it includes an IP
+     * VPC, then you must supply the network interface resource. If it includes an IP
      * subnet, then you must specify the subnet resource. For more information on the
      * EC2 scenario options, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a> in the <i>Amazon EC2 User Guide</i>.</p> <ul> <li> <p>
-     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security-group</p>
-     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security-group,
+     * <b>EC2-Classic-InstanceStore</b> </p> <p>instance, image, security group</p>
+     * </li> <li> <p> <b>EC2-Classic-EBS</b> </p> <p>instance, image, security group,
      * volume</p> </li> <li> <p> <b>EC2-VPC-InstanceStore</b> </p> <p>instance, image,
-     * security-group, network-interface</p> </li> <li> <p>
-     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
-     * <p>instance, image, security-group, network-interface, volume</p> </li> <li> <p>
-     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security-group,
-     * network-interface, subnet, volume</p> </li> </ul>
+     * security group, network interface</p> </li> <li> <p>
+     * <b>EC2-VPC-InstanceStore-Subnet</b> </p> <p>instance, image, security group,
+     * network interface, subnet</p> </li> <li> <p> <b>EC2-VPC-EBS</b> </p>
+     * <p>instance, image, security group, network interface, volume</p> </li> <li> <p>
+     * <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image, security group, network
+     * interface, subnet, volume</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourceHandlingOption(const char* value) { SetResourceHandlingOption(value); return *this;}
 
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Use this only when paginating results to indicate the maximum
-     * number of items you want in the response. If additional items exist beyond the
-     * maximum you specify, the <code>IsTruncated</code> response element is
-     * <code>true</code>.</p> <p>If you do not include this parameter, it defaults to
-     * 100. Note that IAM might return fewer results, even when there are more results
+     * <p>Use this only when paginating results to indicate the maximum number of items
+     * you want in the response. If additional items exist beyond the maximum you
+     * specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
+     * <p>If you do not include this parameter, the number of items defaults to 100.
+     * Note that IAM might return fewer results, even when there are more results
      * available. In that case, the <code>IsTruncated</code> response element returns
-     * <code>true</code> and <code>Marker</code> contains a value to include in the
+     * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
     inline SimulatePrincipalPolicyRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}

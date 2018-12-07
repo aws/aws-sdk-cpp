@@ -38,10 +38,10 @@ Role::Role() :
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_maxSessionDuration(0),
     m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,10 +53,10 @@ Role::Role(const XmlNode& xmlNode) :
     m_createDateHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_maxSessionDuration(0),
     m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -109,18 +109,6 @@ Role& Role::operator =(const XmlNode& xmlNode)
       m_description = StringUtils::Trim(descriptionNode.GetText().c_str());
       m_descriptionHasBeenSet = true;
     }
-    XmlNode tagsNode = resultNode.FirstChild("Tags");
-    if(!tagsNode.IsNull())
-    {
-      XmlNode tagsMember = tagsNode.FirstChild("member");
-      while(!tagsMember.IsNull())
-      {
-        m_tags.push_back(tagsMember);
-        tagsMember = tagsMember.NextNode("member");
-      }
-
-      m_tagsHasBeenSet = true;
-    }
     XmlNode maxSessionDurationNode = resultNode.FirstChild("MaxSessionDuration");
     if(!maxSessionDurationNode.IsNull())
     {
@@ -132,6 +120,18 @@ Role& Role::operator =(const XmlNode& xmlNode)
     {
       m_permissionsBoundary = permissionsBoundaryNode;
       m_permissionsBoundaryHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("Tags");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("member");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("member");
+      }
+
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -175,17 +175,6 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
-
   if(m_maxSessionDurationHasBeenSet)
   {
       oStream << location << index << locationValue << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
@@ -196,6 +185,17 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       Aws::StringStream permissionsBoundaryLocationAndMemberSs;
       permissionsBoundaryLocationAndMemberSs << location << index << locationValue << ".PermissionsBoundary";
       m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 
 }
@@ -230,16 +230,6 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
-  if(m_tagsHasBeenSet)
-  {
-      unsigned tagsIdx = 1;
-      for(auto& item : m_tags)
-      {
-        Aws::StringStream tagsSs;
-        tagsSs << location <<  ".Tags.member." << tagsIdx++;
-        item.OutputToStream(oStream, tagsSs.str().c_str());
-      }
-  }
   if(m_maxSessionDurationHasBeenSet)
   {
       oStream << location << ".MaxSessionDuration=" << m_maxSessionDuration << "&";
@@ -249,6 +239,16 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
       Aws::String permissionsBoundaryLocationAndMember(location);
       permissionsBoundaryLocationAndMember += ".PermissionsBoundary";
       m_permissionsBoundary.OutputToStream(oStream, permissionsBoundaryLocationAndMember.c_str());
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".Tags.member." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

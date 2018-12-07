@@ -126,32 +126,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls; <code>Inactive</code> means it is not.</p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls; <code>Inactive</code> means it is not.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls; <code>Inactive</code> means it is not.</p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls; <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls; <code>Inactive</code> means it is not.</p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls; <code>Inactive</code> means it is not.</p>
      */
     inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls; <code>Inactive</code> means it is not.</p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls; <code>Inactive</code> means it is not.</p>
      */
     inline AccessKeyMetadata& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the access key. <code>Active</code> means the key is valid for
-     * API calls; <code>Inactive</code> means it is not.</p>
+     * <p>The status of the access key. <code>Active</code> means that the key is valid
+     * for API calls; <code>Inactive</code> means it is not.</p>
      */
     inline AccessKeyMetadata& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
 

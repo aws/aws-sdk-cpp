@@ -47,7 +47,7 @@ namespace Model
   public:
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -55,7 +55,7 @@ namespace Model
     inline const Aws::String& GetAccountAlias() const{ return m_accountAlias; }
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -63,7 +63,7 @@ namespace Model
     inline void SetAccountAlias(const Aws::String& value) { m_accountAliasHasBeenSet = true; m_accountAlias = value; }
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -71,7 +71,7 @@ namespace Model
     inline void SetAccountAlias(Aws::String&& value) { m_accountAliasHasBeenSet = true; m_accountAlias = std::move(value); }
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -79,7 +79,7 @@ namespace Model
     inline void SetAccountAlias(const char* value) { m_accountAliasHasBeenSet = true; m_accountAlias.assign(value); }
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -87,7 +87,7 @@ namespace Model
     inline CreateAccountAliasRequest& WithAccountAlias(const Aws::String& value) { SetAccountAlias(value); return *this;}
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>
@@ -95,7 +95,7 @@ namespace Model
     inline CreateAccountAliasRequest& WithAccountAlias(Aws::String&& value) { SetAccountAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The account alias to create.</p> <p>This parameter allows (per its <a
+     * <p>The account alias to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of lowercase letters, digits, and dashes. You cannot start or finish
      * with a dash, nor can you have two dashes in a row.</p>

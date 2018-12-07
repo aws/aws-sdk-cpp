@@ -49,70 +49,70 @@ namespace Model
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the user to get information about.</p> <p>This parameter is
      * optional. If it is not included, it defaults to the user making the request.
-     * This parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
+     * This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
      */
     inline GetUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

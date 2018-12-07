@@ -48,8 +48,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -57,8 +57,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -66,8 +66,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -75,8 +75,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -84,8 +84,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -93,8 +93,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -102,8 +102,8 @@ namespace Model
 
     /**
      * <p>The name of the user who the policy is associated with.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -111,56 +111,56 @@ namespace Model
 
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline GetUserPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */
     inline GetUserPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the policy document to get.</p> <p>This parameter allows (per its
-     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * <p>The name of the policy document to get.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
      * characters consisting of upper and lowercase alphanumeric characters with no
      * spaces. You can also include any of the following characters: _+=,.@-</p>
      */

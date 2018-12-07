@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user to associate the SSH public key with.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -140,7 +140,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -154,7 +154,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -168,7 +168,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -182,7 +182,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the
@@ -196,7 +196,7 @@ namespace Model
 
     /**
      * <p>The SSH public key. The public key must be encoded in ssh-rsa format or PEM
-     * format. The miminum bit-length of the public key is 2048 bits. For example, you
+     * format. The minimum bit-length of the public key is 2048 bits. For example, you
      * can generate a 2048-bit key, and the resulting PEM file is 1679 bytes long.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to
      * validate this parameter is a string of characters consisting of the

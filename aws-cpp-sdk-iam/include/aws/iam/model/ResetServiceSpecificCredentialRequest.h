@@ -49,77 +49,84 @@ namespace Model
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResetServiceSpecificCredentialRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResetServiceSpecificCredentialRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the IAM user associated with the service-specific credential. If
      * this value is not specified, then the operation assumes the user whose
-     * credentials are used to call the operation.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of upper and lowercase alphanumeric characters with no
-     * spaces. You can also include any of the following characters: _+=,.@-</p>
+     * credentials are used to call the operation.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
      */
     inline ResetServiceSpecificCredentialRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -127,7 +134,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -135,7 +142,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -143,7 +150,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -151,7 +158,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -159,7 +166,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */
@@ -167,7 +174,7 @@ namespace Model
 
     /**
      * <p>The unique identifier of the service-specific credential.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters that can consist of any upper or lowercased
      * letter or digit.</p>
      */

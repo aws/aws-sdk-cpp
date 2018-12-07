@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the server certificate that you want to update.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -112,77 +112,77 @@ namespace Model
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetNewPath() const{ return m_newPath; }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
 
     /**
      * <p>The new path for the server certificate. Include this only if you are
-     * updating the server certificate's path.</p> <p>This parameter allows (per its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of either a forward slash (/) by itself or a string that must begin
-     * and end with forward slashes. In addition, it can contain any ASCII character
-     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * updating the server certificate's path.</p> <p>This parameter allows (through
+     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
+     * characters consisting of either a forward slash (/) by itself or a string that
+     * must begin and end with forward slashes. In addition, it can contain any ASCII
+     * character from the ! (\u0021) through the DEL character (\u007F), including most
      * punctuation characters, digits, and upper and lowercased letters.</p>
      */
     inline UpdateServerCertificateRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -201,7 +201,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -221,7 +221,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -231,7 +231,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -241,7 +241,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -251,7 +251,7 @@ namespace Model
     /**
      * <p>The new name for the server certificate. Include this only if you are
      * updating the server certificate's name. The name of the certificate cannot
-     * contain any spaces.</p> <p>This parameter allows (per its <a
+     * contain any spaces.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>

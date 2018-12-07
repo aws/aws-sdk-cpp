@@ -50,16 +50,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -67,16 +68,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -84,16 +86,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -101,16 +104,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -118,16 +122,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -135,16 +140,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -152,16 +158,17 @@ namespace Model
      * <p>The path for the server certificate. For more information about paths, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
-     * If it is not included, it defaults to a slash (/). This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters consisting of either a forward slash (/) by itself or a string that
-     * must begin and end with forward slashes. In addition, it can contain any ASCII
-     * character from the ! (\u0021) through the DEL character (\u007F), including most
-     * punctuation characters, digits, and upper and lowercased letters.</p> <note> <p>
-     * If you are uploading a server certificate specifically for use with Amazon
-     * CloudFront distributions, you must specify a path using the <code>path</code>
-     * parameter. The path must begin with <code>/cloudfront</code> and must include a
-     * trailing slash (for example, <code>/cloudfront/test/</code>).</p> </note>
+     * If it is not included, it defaults to a slash (/). This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p> <note> <p> If you are uploading a server certificate specifically
+     * for use with Amazon CloudFront distributions, you must specify a path using the
+     * <code>path</code> parameter. The path must begin with <code>/cloudfront</code>
+     * and must include a trailing slash (for example,
+     * <code>/cloudfront/test/</code>).</p> </note>
      */
     inline UploadServerCertificateRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -169,8 +176,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -179,8 +186,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -189,8 +196,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -199,8 +206,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -209,8 +216,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -219,8 +226,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -229,8 +236,8 @@ namespace Model
     /**
      * <p>The name for the server certificate. Do not include the path in this value.
      * The name of the certificate cannot contain any spaces.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */

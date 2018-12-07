@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -57,7 +57,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -84,7 +84,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -93,7 +93,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>Name of the IAM group to update. If you're changing the name of the group,
-     * this is the original name.</p> <p>This parameter allows (per its <a
+     * this is the original name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -145,7 +145,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -156,7 +156,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -178,7 +178,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM group. Only include this if changing the group's
-     * path.</p> <p>This parameter allows (per its <a
+     * path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -190,7 +190,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -208,7 +208,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -217,7 +217,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -226,7 +226,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -235,7 +235,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -244,7 +244,7 @@ namespace Model
 
     /**
      * <p>New name for the IAM group. Only include this if changing the group's
-     * name.</p> <p>This parameter allows (per its <a
+     * name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
