@@ -98,7 +98,7 @@ TEST(CacheTests, TestPutWithSameKey)
 TEST(ConcurrentCacheTest, TestPutAndGetConcurrently)
 {
     // No assertions in this test. The point of this test is to flush out any memory safety bugs when using -fsanitize
-    const std::array<const char*, 8> words =  { "The", "brown", "Fox", "Jumped", "Over", "the", "lazy", "dog" };
+    const std::array<const char*, 8> words {{ "The", "brown", "Fox", "Jumped", "Over", "the", "lazy", "dog" }};
     ConcurrentCache<Aws::String, Aws::String> cache;
     auto DoPut = [&]
     {

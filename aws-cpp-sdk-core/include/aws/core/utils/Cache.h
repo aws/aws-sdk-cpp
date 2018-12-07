@@ -75,7 +75,7 @@ namespace Aws
             void Put(TKey&& key, TValue&& val, std::chrono::milliseconds duration)
             {
                 auto it = m_entries.find(key);
-                const DateTime expiration = DateTime::Now().Millis() + duration.count();
+                const DateTime expiration = DateTime::Now() + duration;
                 if (it != m_entries.end())
                 {
                     it->second.val = std::forward<TValue>(val);
