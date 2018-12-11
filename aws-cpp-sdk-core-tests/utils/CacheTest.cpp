@@ -84,7 +84,7 @@ TEST(CacheTests, TestPutPrunesExpiringEntries)
 TEST(CacheTests, TestPutWithSameKey)
 {
     Cache<Aws::String, float> cache(2);
-    cache.Put("one", 1, std::chrono::minutes(5));
+    cache.Put("one", 1.0f, std::chrono::minutes(5));
     cache.Put("one", 1.1f, std::chrono::seconds(1));
 
     float out;
@@ -93,6 +93,28 @@ TEST(CacheTests, TestPutWithSameKey)
 
     cache.Put("one", 1.1f, std::chrono::seconds(-1));
     ASSERT_FALSE(cache.Get("one", out));
+}
+
+TEST(CacheTests, TestPutByConstRef)
+{
+    Cache<Aws::String, int> cache;
+    const Aws::String one = "one";
+    cache.Put(one, 42, std::chrono::minutes(5));
+
+    int out;
+    ASSERT_TRUE(cache.Get("one", out));
+    ASSERT_EQ(42, out);
+}
+
+TEST(ConcurrentCacheTest, TestPutByConstRef)
+{
+    ConcurrentCache<Aws::String, int> cache;
+    const Aws::String one = "one";
+    cache.Put(one, 42, std::chrono::minutes(5));
+
+    int out;
+    ASSERT_TRUE(cache.Get("one", out));
+    ASSERT_EQ(42, out);
 }
 
 TEST(ConcurrentCacheTest, TestPutAndGetConcurrently)

@@ -1,17 +1,17 @@
 /*
-  * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  *
-  * Licensed under the Apache License, Version 2.0 (the "License").
-  * You may not use this file except in compliance with the License.
-  * A copy of the License is located at
-  *
-  *  http://aws.amazon.com/apache2.0
-  *
-  * or in the "license" file accompanying this file. This file is distributed
-  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
-  * express or implied. See the License for the specific language governing
-  * permissions and limitations under the License.
-  */
+ * Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ *
+ *  http://aws.amazon.com/apache2.0
+ *
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
 
 #pragma once
 
@@ -72,13 +72,14 @@ namespace Aws
              * @param val The value of the entry to associate with the given key.
              * @param duration The duration after which the cache entry will expire and become a candidate for eviction.
              */
-            void Put(TKey&& key, TValue&& val, std::chrono::milliseconds duration)
+            template<typename UValue>
+            void Put(TKey&& key, UValue&& val, std::chrono::milliseconds duration)
             {
                 auto it = m_entries.find(key);
                 const DateTime expiration = DateTime::Now() + duration;
                 if (it != m_entries.end())
                 {
-                    it->second.val = std::forward<TValue>(val);
+                    it->second.val = std::forward<UValue>(val);
                     it->second.expiration = expiration;
                     return;
                 }
@@ -88,8 +89,27 @@ namespace Aws
                     Prune(); // removes expired/expiring elements
                 }
 
-                m_entries.emplace(std::make_pair(std::forward<TKey>(key),
-                            Value{ expiration, std::forward<TValue>(val) }));
+                m_entries.emplace(std::move(key), Value { expiration, std::forward<UValue>(val) });
+            }
+
+            template<typename UValue>
+            void Put(const TKey& key, UValue&& val, std::chrono::milliseconds duration)
+            {
+                auto it = m_entries.find(key);
+                const DateTime expiration = DateTime::Now() + duration;
+                if (it != m_entries.end())
+                {
+                    it->second.val = std::forward<UValue>(val);
+                    it->second.expiration = expiration;
+                    return;
+                }
+
+                if (m_entries.size() >= m_maxSize)
+                {
+                    Prune(); // removes expired/expiring elements
+                }
+
+                m_entries.emplace(key, Value { expiration, std::forward<UValue>(val) });
             }
 
         private:

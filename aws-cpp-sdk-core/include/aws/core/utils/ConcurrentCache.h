@@ -35,10 +35,18 @@ namespace Aws
                 return m_cache.Get(key, value);
             }
 
-            void Put(TKey&& key, TValue&& val, std::chrono::milliseconds duration)
+            template<typename UValue>
+            void Put(const TKey& key, UValue&& val, std::chrono::milliseconds duration)
             {
                 Aws::Utils::Threading::WriterLockGuard g(m_rwlock);
-                m_cache.Put(std::forward<TKey>(key), std::forward<TValue>(val), duration);
+                m_cache.Put(key, std::forward<UValue>(val), duration);
+            }
+
+            template<typename UValue>
+            void Put(TKey&& key, UValue&& val, std::chrono::milliseconds duration)
+            {
+                Aws::Utils::Threading::WriterLockGuard g(m_rwlock);
+                m_cache.Put(std::move(key), std::forward<UValue>(val), duration);
             }
 
         private:
