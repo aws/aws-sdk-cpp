@@ -15,7 +15,6 @@
 
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/StringUtils.h>
-#include <ctype.h>
 
 namespace Aws
 {
@@ -35,16 +34,16 @@ namespace Aws
             if (label.size() > 63)
                 return false;
 
-            if (!isalnum(label.front()))
+            if (!StringUtils::IsAlnum(label.front()))
                 return false; // '-' is not acceptable as the first character
 
-            if (!isalnum(label.back()))
+            if (!StringUtils::IsAlnum(label.back()))
                 return false; // '-' is not acceptable as the last  character
 
             for (size_t i = 1, e = label.size() - 1; i < e; ++i)
             {
                 auto c = label[i];
-                if (c != '-' && !isalnum(c))
+                if (c != '-' && !StringUtils::IsAlnum(c))
                     return false;
             }
 

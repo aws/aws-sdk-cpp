@@ -15,6 +15,7 @@
 
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/base64/Base64.h>
 #include <aws/core/utils/crypto/Sha256.h>
 #include <aws/core/utils/crypto/Sha256HMAC.h>
@@ -184,7 +185,7 @@ ByteBuffer HashingUtils::HexDecode(const Aws::String& str)
 
     for (size_t i = readIndex; i < str.length(); i += 2)
     {
-        if(!isalnum(str[i]) || !isalnum(str[i + 1]))
+        if(!StringUtils::IsAlnum(str[i]) || !StringUtils::IsAlnum(str[i + 1]))
         {
             //contains non-hex characters
             assert(0);

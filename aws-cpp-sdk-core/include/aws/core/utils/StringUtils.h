@@ -163,6 +163,13 @@ namespace Aws
                 return os.str();
             }
 
+            /**
+             * locale agnostic implementation of std::isalnum
+             */
+            static bool IsAlnum(char c)
+            {
+                return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9');
+            }
         };
 
 

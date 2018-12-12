@@ -127,7 +127,8 @@ Aws::String URI::URLEncodePathRFC3986(const Aws::String& path)
         ss << '/';
         for(unsigned char c : segment) // alnum results in UB if the value of c is not unsigned char & is not EOF
         {
-            if(std::isalnum(c)) // §2.3 unreserved characters
+            // §2.3 unreserved characters
+            if (StringUtils::IsAlnum(c))
             {
                 ss << c;
                 continue;
