@@ -18,6 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSSet.h>
 #include <aws/external/gtest.h>
 #include <fstream>
+#if defined(HAS_PATHCONF)
+#include <unistd.h>
+#include <climits>
+#endif
 
 using namespace Aws;
 using namespace Aws::Utils;
@@ -270,10 +274,21 @@ TEST_F(DirectoryTreeTest, TestPathUtilsGetFileNameWithoutExt)
 
 TEST_F(DirectoryTreeTest, CreateDirectoryIfNotExistedTest)
 {
+#if defined(HAS_PATHCONF)
+    errno = 0;
+    long longNameLength = pathconf(".", _PC_NAME_MAX);
+    ASSERT_TRUE(longNameLength >= 0 || errno == 0);
+    if (longNameLength <= 0)
+    {
+        longNameLength = NAME_MAX;
+    }
+#else
     // Path compoments on Windows can't exceed 255(_MAX_FNAME) chars.
     // To cover the Windows case where the path with length over 260(MAX_PATH) chars,
     // set one path part to be 255 characters, so dir1/dir2/dir3/[longDirName] is over 260 chars.
-    Aws::String longDirName(255, 'a');
+    long longNameLength = 255;
+#endif
+    Aws::String longDirName(longNameLength, 'a');
     // The directory is created under root directory "dir1", "dir1" will be deleted during TearDown().
     ASSERT_TRUE(FileSystem::CreateDirectoryIfNotExists(FileSystem::Join(FileSystem::Join(dir2, "dir3"), longDirName).c_str(), true/*create all intermediate directories on the path*/));
 }

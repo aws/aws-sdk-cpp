@@ -236,6 +236,18 @@ if (ENABLE_ADDRESS_SANITIZER)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
 endif()
 
+include(CheckCXXSymbolExists)
+
+check_cxx_symbol_exists("pathconf" "unistd.h" HAS_PATHCONF)
+if (HAS_PATHCONF)
+    add_definitions(-DHAS_PATHCONF)
+endif()
+
+check_cxx_symbol_exists("umask" "sys/stat.h" HAS_UMASK)
+if (HAS_UMASK)
+    add_definitions(-DHAS_UMASK)
+endif()
+
 add_sdks()
 
 # for user friendly cmake usage
