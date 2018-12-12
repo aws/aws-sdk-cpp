@@ -19,6 +19,7 @@
 #include <aws/sagemaker/model/HyperParameterTuningJobObjective.h>
 #include <aws/sagemaker/model/ResourceLimits.h>
 #include <aws/sagemaker/model/ParameterRanges.h>
+#include <aws/sagemaker/model/TrainingJobEarlyStoppingType.h>
 #include <utility>
 
 namespace Aws
@@ -173,6 +174,57 @@ namespace Model
      */
     inline HyperParameterTuningJobConfig& WithParameterRanges(ParameterRanges&& value) { SetParameterRanges(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. One of the following values:</p> <dl> <dt>OFF</dt>
+     * <dd> <p>Training jobs launched by the hyperparameter tuning job do not use early
+     * stopping.</p> </dd> <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs
+     * launched by the hyperparameter tuning job when they are no longer improving as
+     * measured by the objective metric of the tuning job.</p> </dd> </dl>
+     */
+    inline const TrainingJobEarlyStoppingType& GetTrainingJobEarlyStoppingType() const{ return m_trainingJobEarlyStoppingType; }
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. One of the following values:</p> <dl> <dt>OFF</dt>
+     * <dd> <p>Training jobs launched by the hyperparameter tuning job do not use early
+     * stopping.</p> </dd> <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs
+     * launched by the hyperparameter tuning job when they are no longer improving as
+     * measured by the objective metric of the tuning job.</p> </dd> </dl>
+     */
+    inline void SetTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = value; }
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. One of the following values:</p> <dl> <dt>OFF</dt>
+     * <dd> <p>Training jobs launched by the hyperparameter tuning job do not use early
+     * stopping.</p> </dd> <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs
+     * launched by the hyperparameter tuning job when they are no longer improving as
+     * measured by the objective metric of the tuning job.</p> </dd> </dl>
+     */
+    inline void SetTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { m_trainingJobEarlyStoppingTypeHasBeenSet = true; m_trainingJobEarlyStoppingType = std::move(value); }
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. One of the following values:</p> <dl> <dt>OFF</dt>
+     * <dd> <p>Training jobs launched by the hyperparameter tuning job do not use early
+     * stopping.</p> </dd> <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs
+     * launched by the hyperparameter tuning job when they are no longer improving as
+     * measured by the objective metric of the tuning job.</p> </dd> </dl>
+     */
+    inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(const TrainingJobEarlyStoppingType& value) { SetTrainingJobEarlyStoppingType(value); return *this;}
+
+    /**
+     * <p>Specifies whether to use early stopping for training jobs launched by the
+     * hyperparameter tuning job. One of the following values:</p> <dl> <dt>OFF</dt>
+     * <dd> <p>Training jobs launched by the hyperparameter tuning job do not use early
+     * stopping.</p> </dd> <dt>AUTO</dt> <dd> <p>Amazon SageMaker stops training jobs
+     * launched by the hyperparameter tuning job when they are no longer improving as
+     * measured by the objective metric of the tuning job.</p> </dd> </dl>
+     */
+    inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { SetTrainingJobEarlyStoppingType(std::move(value)); return *this;}
+
   private:
 
     HyperParameterTuningJobStrategyType m_strategy;
@@ -186,6 +238,9 @@ namespace Model
 
     ParameterRanges m_parameterRanges;
     bool m_parameterRangesHasBeenSet;
+
+    TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType;
+    bool m_trainingJobEarlyStoppingTypeHasBeenSet;
   };
 
 } // namespace Model

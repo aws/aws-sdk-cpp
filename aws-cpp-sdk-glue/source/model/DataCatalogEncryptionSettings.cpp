@@ -29,12 +29,14 @@ namespace Model
 {
 
 DataCatalogEncryptionSettings::DataCatalogEncryptionSettings() : 
-    m_encryptionAtRestHasBeenSet(false)
+    m_encryptionAtRestHasBeenSet(false),
+    m_connectionPasswordEncryptionHasBeenSet(false)
 {
 }
 
 DataCatalogEncryptionSettings::DataCatalogEncryptionSettings(JsonView jsonValue) : 
-    m_encryptionAtRestHasBeenSet(false)
+    m_encryptionAtRestHasBeenSet(false),
+    m_connectionPasswordEncryptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DataCatalogEncryptionSettings& DataCatalogEncryptionSettings::operator =(JsonVie
     m_encryptionAtRestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionPasswordEncryption"))
+  {
+    m_connectionPasswordEncryption = jsonValue.GetObject("ConnectionPasswordEncryption");
+
+    m_connectionPasswordEncryptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DataCatalogEncryptionSettings::Jsonize() const
   if(m_encryptionAtRestHasBeenSet)
   {
    payload.WithObject("EncryptionAtRest", m_encryptionAtRest.Jsonize());
+
+  }
+
+  if(m_connectionPasswordEncryptionHasBeenSet)
+  {
+   payload.WithObject("ConnectionPasswordEncryption", m_connectionPasswordEncryption.Jsonize());
 
   }
 

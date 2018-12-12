@@ -369,43 +369,64 @@ namespace Model
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline const Aws::Vector<Column>& GetPartitionKeys() const{ return m_partitionKeys; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(const Aws::Vector<Column>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(Aws::Vector<Column>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& WithPartitionKeys(const Aws::Vector<Column>& value) { SetPartitionKeys(value); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& WithPartitionKeys(Aws::Vector<Column>&& value) { SetPartitionKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& AddPartitionKeys(const Column& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& AddPartitionKeys(Column&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
 

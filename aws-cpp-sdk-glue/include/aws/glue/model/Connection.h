@@ -206,8 +206,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -229,8 +232,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -252,8 +258,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -275,8 +284,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -298,8 +310,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -321,8 +336,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -344,8 +362,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -367,8 +388,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -390,8 +414,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -413,8 +440,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -436,8 +466,11 @@ namespace Model
      * - The name under which to log in to the database. The value string for
      * <code>USER_NAME</code> is "<code>USERNAME</code>".</p> </li> <li> <p>
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
-     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path of the a jar file that
-     * contains the JDBC driver to use.</p> </li> <li> <p>
+     * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
+     * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
+     * Catalog encryption settings, this field stores the key you designate to encrypt
+     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
+     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the

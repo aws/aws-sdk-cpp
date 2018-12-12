@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/glue/model/EncryptionAtRest.h>
+#include <aws/glue/model/ConnectionPasswordEncryption.h>
 #include <utility>
 
 namespace Aws
@@ -73,10 +74,59 @@ namespace Model
      */
     inline DataCatalogEncryptionSettings& WithEncryptionAtRest(EncryptionAtRest&& value) { SetEncryptionAtRest(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline const ConnectionPasswordEncryption& GetConnectionPasswordEncryption() const{ return m_connectionPasswordEncryption; }
+
+    /**
+     * <p>When password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline void SetConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = value; }
+
+    /**
+     * <p>When password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline void SetConnectionPasswordEncryption(ConnectionPasswordEncryption&& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = std::move(value); }
+
+    /**
+     * <p>When password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { SetConnectionPasswordEncryption(value); return *this;}
+
+    /**
+     * <p>When password protection is enabled, the Data Catalog uses a
+     * customer-provided key to encrypt the password as part of
+     * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
+     * enable catalog encryption or only password encryption.</p>
+     */
+    inline DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(ConnectionPasswordEncryption&& value) { SetConnectionPasswordEncryption(std::move(value)); return *this;}
+
   private:
 
     EncryptionAtRest m_encryptionAtRest;
     bool m_encryptionAtRestHasBeenSet;
+
+    ConnectionPasswordEncryption m_connectionPasswordEncryption;
+    bool m_connectionPasswordEncryptionHasBeenSet;
   };
 
 } // namespace Model

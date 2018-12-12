@@ -124,27 +124,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch time stamp in seconds for when the cluster was created.</p>
+     * <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch time stamp in seconds for when the cluster was created.</p>
+     * <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch time stamp in seconds for when the cluster was created.</p>
+     * <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch time stamp in seconds for when the cluster was created.</p>
+     * <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
      */
     inline Cluster& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch time stamp in seconds for when the cluster was created.</p>
+     * <p>The Unix epoch timestamp in seconds for when the cluster was created.</p>
      */
     inline Cluster& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -380,94 +380,94 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline Cluster& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline Cluster& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline Cluster& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
      * <p>The platform version of your Amazon EKS cluster. For more information, see <a
-     * href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the
-     * <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     * href="http://docs.aws.amazon.com/eks/latest/userguide/platform-versions.html">Platform
+     * Versions</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline Cluster& WithPlatformVersion(const char* value) { SetPlatformVersion(value); return *this;}
 

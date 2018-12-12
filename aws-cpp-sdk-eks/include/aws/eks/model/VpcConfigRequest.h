@@ -109,56 +109,64 @@ namespace Model
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

@@ -472,11 +472,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -490,7 +492,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -558,11 +560,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -576,7 +580,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -644,11 +648,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -662,7 +668,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -730,11 +736,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -748,7 +756,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -816,11 +824,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -834,7 +844,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -902,11 +912,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -920,7 +932,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services
@@ -988,11 +1000,13 @@ namespace Model
      * API, or the AWS CLI. </p> <ul> <li> <p> <b>AWS Management Console</b>: Go to the
      * EC2 page, choose <b>Load Balancers</b> in the navigation pane, choose the load
      * balancer, choose the <b>Description</b> tab, and get the value of the <b>DNS
-     * name</b> field. (If you're routing traffic to a Classic Load Balancer, get the
-     * value that begins with <b>dualstack</b>.) </p> </li> <li> <p> <b>Elastic Load
-     * Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get the value of
-     * <code>DNSName</code>. For more information, see the applicable guide:</p> <ul>
-     * <li> <p>Classic Load Balancers: <a
+     * name</b> field. </p> <p>If you're routing traffic to a Classic Load Balancer,
+     * get the value that begins with <b>dualstack</b>. If you're routing traffic to
+     * another type of load balancer, get the value that applies to the record type, A
+     * or AAAA.</p> </li> <li> <p> <b>Elastic Load Balancing API</b>: Use
+     * <code>DescribeLoadBalancers</code> to get the value of <code>DNSName</code>. For
+     * more information, see the applicable guide:</p> <ul> <li> <p>Classic Load
+     * Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
      * </p> </li> <li> <p>Application and Network Load Balancers: <a
      * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
@@ -1006,7 +1020,7 @@ namespace Model
      * </p> </li> </ul> </li> </ul> </dd> <dt>Amazon S3 bucket that is configured as a
      * static website</dt> <dd> <p>Specify the domain name of the Amazon S3 website
      * endpoint that you created the bucket in, for example,
-     * <code>s3-website-us-east-2.amazonaws.com</code>. For more information about
+     * <code>s3-website.us-east-2.amazonaws.com</code>. For more information about
      * valid values, see the table <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Amazon
      * Simple Storage Service (S3) Website Endpoints</a> in the <i>Amazon Web Services

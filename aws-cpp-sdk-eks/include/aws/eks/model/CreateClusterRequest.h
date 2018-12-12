@@ -195,7 +195,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -209,7 +209,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -223,7 +223,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -237,7 +237,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -251,7 +251,7 @@ namespace Model
      * VPC Considerations</a> and <a
      * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -259,44 +259,44 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

@@ -122,6 +122,37 @@ namespace Model
      */
     inline GetConnectionRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline bool GetHidePassword() const{ return m_hidePassword; }
+
+    /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
+
+    /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline GetConnectionRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
+
   private:
 
     Aws::String m_catalogId;
@@ -129,6 +160,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    bool m_hidePassword;
+    bool m_hidePasswordHasBeenSet;
   };
 
 } // namespace Model

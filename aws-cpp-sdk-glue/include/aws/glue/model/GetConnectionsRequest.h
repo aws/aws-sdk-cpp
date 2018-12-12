@@ -115,6 +115,37 @@ namespace Model
 
 
     /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline bool GetHidePassword() const{ return m_hidePassword; }
+
+    /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
+
+    /**
+     * <p>Allow you to retrieve the connection metadata without displaying the
+     * password. For instance, the AWS Glue console uses this flag to retrieve
+     * connections, since the console does not display passwords. Set this parameter
+     * where the caller may not have permission to use the KMS key to decrypt the
+     * password, but does have permission to access the rest of the connection metadata
+     * (that is, the other connection properties).</p>
+     */
+    inline GetConnectionsRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
+
+
+    /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -172,6 +203,9 @@ namespace Model
 
     GetConnectionsFilter m_filter;
     bool m_filterHasBeenSet;
+
+    bool m_hidePassword;
+    bool m_hidePasswordHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
