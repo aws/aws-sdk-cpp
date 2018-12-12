@@ -25,12 +25,15 @@
 #include <aws/mediastore/model/DeleteContainerResult.h>
 #include <aws/mediastore/model/DeleteContainerPolicyResult.h>
 #include <aws/mediastore/model/DeleteCorsPolicyResult.h>
+#include <aws/mediastore/model/DeleteLifecyclePolicyResult.h>
 #include <aws/mediastore/model/DescribeContainerResult.h>
 #include <aws/mediastore/model/GetContainerPolicyResult.h>
 #include <aws/mediastore/model/GetCorsPolicyResult.h>
+#include <aws/mediastore/model/GetLifecyclePolicyResult.h>
 #include <aws/mediastore/model/ListContainersResult.h>
 #include <aws/mediastore/model/PutContainerPolicyResult.h>
 #include <aws/mediastore/model/PutCorsPolicyResult.h>
+#include <aws/mediastore/model/PutLifecyclePolicyResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -75,34 +78,43 @@ namespace Model
         class DeleteContainerRequest;
         class DeleteContainerPolicyRequest;
         class DeleteCorsPolicyRequest;
+        class DeleteLifecyclePolicyRequest;
         class DescribeContainerRequest;
         class GetContainerPolicyRequest;
         class GetCorsPolicyRequest;
+        class GetLifecyclePolicyRequest;
         class ListContainersRequest;
         class PutContainerPolicyRequest;
         class PutCorsPolicyRequest;
+        class PutLifecyclePolicyRequest;
 
         typedef Aws::Utils::Outcome<CreateContainerResult, Aws::Client::AWSError<MediaStoreErrors>> CreateContainerOutcome;
         typedef Aws::Utils::Outcome<DeleteContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerOutcome;
         typedef Aws::Utils::Outcome<DeleteContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<DeleteLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> DeleteLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeContainerResult, Aws::Client::AWSError<MediaStoreErrors>> DescribeContainerOutcome;
         typedef Aws::Utils::Outcome<GetContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<GetCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> GetLifecyclePolicyOutcome;
         typedef Aws::Utils::Outcome<ListContainersResult, Aws::Client::AWSError<MediaStoreErrors>> ListContainersOutcome;
         typedef Aws::Utils::Outcome<PutContainerPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutContainerPolicyOutcome;
         typedef Aws::Utils::Outcome<PutCorsPolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutCorsPolicyOutcome;
+        typedef Aws::Utils::Outcome<PutLifecyclePolicyResult, Aws::Client::AWSError<MediaStoreErrors>> PutLifecyclePolicyOutcome;
 
         typedef std::future<CreateContainerOutcome> CreateContainerOutcomeCallable;
         typedef std::future<DeleteContainerOutcome> DeleteContainerOutcomeCallable;
         typedef std::future<DeleteContainerPolicyOutcome> DeleteContainerPolicyOutcomeCallable;
         typedef std::future<DeleteCorsPolicyOutcome> DeleteCorsPolicyOutcomeCallable;
+        typedef std::future<DeleteLifecyclePolicyOutcome> DeleteLifecyclePolicyOutcomeCallable;
         typedef std::future<DescribeContainerOutcome> DescribeContainerOutcomeCallable;
         typedef std::future<GetContainerPolicyOutcome> GetContainerPolicyOutcomeCallable;
         typedef std::future<GetCorsPolicyOutcome> GetCorsPolicyOutcomeCallable;
+        typedef std::future<GetLifecyclePolicyOutcome> GetLifecyclePolicyOutcomeCallable;
         typedef std::future<ListContainersOutcome> ListContainersOutcomeCallable;
         typedef std::future<PutContainerPolicyOutcome> PutContainerPolicyOutcomeCallable;
         typedef std::future<PutCorsPolicyOutcome> PutCorsPolicyOutcomeCallable;
+        typedef std::future<PutLifecyclePolicyOutcome> PutLifecyclePolicyOutcomeCallable;
 } // namespace Model
 
   class MediaStoreClient;
@@ -111,12 +123,15 @@ namespace Model
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteContainerRequest&, const Model::DeleteContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteContainerPolicyRequest&, const Model::DeleteContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DeleteCorsPolicyRequest&, const Model::DeleteCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCorsPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::DeleteLifecyclePolicyRequest&, const Model::DeleteLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::DescribeContainerRequest&, const Model::DescribeContainerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetContainerPolicyRequest&, const Model::GetContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::GetCorsPolicyRequest&, const Model::GetCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCorsPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::GetLifecyclePolicyRequest&, const Model::GetLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLifecyclePolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::ListContainersRequest&, const Model::ListContainersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListContainersResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutContainerPolicyRequest&, const Model::PutContainerPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutContainerPolicyResponseReceivedHandler;
     typedef std::function<void(const MediaStoreClient*, const Model::PutCorsPolicyRequest&, const Model::PutCorsPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCorsPolicyResponseReceivedHandler;
+    typedef std::function<void(const MediaStoreClient*, const Model::PutLifecyclePolicyRequest&, const Model::PutLifecyclePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecyclePolicyResponseReceivedHandler;
 
   /**
    * <p>An AWS Elemental MediaStore container is a namespace that holds folders and
@@ -279,6 +294,34 @@ namespace Model
         virtual void DeleteCorsPolicyAsync(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes an object lifecycle policy from a container.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLifecyclePolicyOutcome DeleteLifecyclePolicy(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Removes an object lifecycle policy from a container.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLifecyclePolicyOutcomeCallable DeleteLifecyclePolicyCallable(const Model::DeleteLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Removes an object lifecycle policy from a container.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/DeleteLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLifecyclePolicyAsync(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves the properties of the requested container. This request is commonly
          * used to retrieve the endpoint of a container. An endpoint is a value assigned by
          * the service when a new container is created. A container's endpoint does not
@@ -394,6 +437,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCorsPolicyAsync(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the object lifecycle policy that is assigned to a
+         * container.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetLifecyclePolicyOutcome GetLifecyclePolicy(const Model::GetLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the object lifecycle policy that is assigned to a
+         * container.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetLifecyclePolicyOutcomeCallable GetLifecyclePolicyCallable(const Model::GetLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Retrieves the object lifecycle policy that is assigned to a
+         * container.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/GetLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetLifecyclePolicyAsync(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>
@@ -542,6 +613,37 @@ namespace Model
          */
         virtual void PutCorsPolicyAsync(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Writes an object lifecycle policy to a container. If the container already
+         * has an object lifecycle policy, the service replaces the existing policy with
+         * the new policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLifecyclePolicyOutcome PutLifecyclePolicy(const Model::PutLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Writes an object lifecycle policy to a container. If the container already
+         * has an object lifecycle policy, the service replaces the existing policy with
+         * the new policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutLifecyclePolicyOutcomeCallable PutLifecyclePolicyCallable(const Model::PutLifecyclePolicyRequest& request) const;
+
+        /**
+         * <p>Writes an object lifecycle policy to a container. If the container already
+         * has an object lifecycle policy, the service replaces the existing policy with
+         * the new policy. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutLifecyclePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutLifecyclePolicyAsync(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -552,12 +654,15 @@ namespace Model
         void DeleteContainerAsyncHelper(const Model::DeleteContainerRequest& request, const DeleteContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteContainerPolicyAsyncHelper(const Model::DeleteContainerPolicyRequest& request, const DeleteContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCorsPolicyAsyncHelper(const Model::DeleteCorsPolicyRequest& request, const DeleteCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLifecyclePolicyAsyncHelper(const Model::DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContainerAsyncHelper(const Model::DescribeContainerRequest& request, const DescribeContainerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetContainerPolicyAsyncHelper(const Model::GetContainerPolicyRequest& request, const GetContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCorsPolicyAsyncHelper(const Model::GetCorsPolicyRequest& request, const GetCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetLifecyclePolicyAsyncHelper(const Model::GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListContainersAsyncHelper(const Model::ListContainersRequest& request, const ListContainersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutContainerPolicyAsyncHelper(const Model::PutContainerPolicyRequest& request, const PutContainerPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutCorsPolicyAsyncHelper(const Model::PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutLifecyclePolicyAsyncHelper(const Model::PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

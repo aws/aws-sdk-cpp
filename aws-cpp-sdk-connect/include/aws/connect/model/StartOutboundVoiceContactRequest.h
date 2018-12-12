@@ -411,10 +411,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -422,10 +422,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -433,10 +433,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -444,10 +444,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -455,10 +455,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -466,10 +466,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -477,10 +477,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -488,10 +488,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -499,10 +499,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -510,10 +510,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -521,10 +521,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -532,10 +532,10 @@ namespace Model
      * <p>Specify a custom key-value pair using an attribute map. The attributes are
      * standard Amazon Connect attributes, and can be accessed in contact flows just
      * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
-     * across all key-value pairs. Attribute keys can include only alphanumeric, dash,
-     * and underscore characters.</p> <p>For example, if you want play a greeting when
-     * the customer answers the call, you can pass the customer name in attributes
-     * similar to the following:</p>
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p> <p>For example, if you want
+     * play a greeting when the customer answers the call, you can pass the customer
+     * name in attributes similar to the following:</p>
      */
     inline StartOutboundVoiceContactRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

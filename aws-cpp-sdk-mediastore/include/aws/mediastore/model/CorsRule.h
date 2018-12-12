@@ -54,80 +54,88 @@ namespace Model
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAllowedOrigins() const{ return m_allowedOrigins; }
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline void SetAllowedOrigins(const Aws::Vector<Aws::String>& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = value; }
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline void SetAllowedOrigins(Aws::Vector<Aws::String>&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins = std::move(value); }
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline CorsRule& WithAllowedOrigins(const Aws::Vector<Aws::String>& value) { SetAllowedOrigins(value); return *this;}
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline CorsRule& WithAllowedOrigins(Aws::Vector<Aws::String>&& value) { SetAllowedOrigins(std::move(value)); return *this;}
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline CorsRule& AddAllowedOrigins(const Aws::String& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline CorsRule& AddAllowedOrigins(Aws::String&& value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more response headers that you want users to be able to access from
      * their applications (for example, from a JavaScript <code>XMLHttpRequest</code>
-     * object).</p> <p>Each CORS rule must have at least one <code>AllowedOrigin</code>
-     * element. The string value can include only one wildcard character (*), for
-     * example, http:// *.example.com. Additionally, you can specify only one wildcard
-     * character to allow cross-origin access for all origins.</p>
+     * object).</p> <p>Each CORS rule must have at least one
+     * <code>AllowedOrigins</code> element. The string value can include only one
+     * wildcard character (*), for example, http:// *.example.com. Additionally, you can
+     * specify only one wildcard character to allow cross-origin access for all
+     * origins.</p>
      */
     inline CorsRule& AddAllowedOrigins(const char* value) { m_allowedOriginsHasBeenSet = true; m_allowedOrigins.push_back(value); return *this; }
 
@@ -135,49 +143,49 @@ namespace Model
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline const Aws::Vector<MethodName>& GetAllowedMethods() const{ return m_allowedMethods; }
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline void SetAllowedMethods(const Aws::Vector<MethodName>& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = value; }
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline void SetAllowedMethods(Aws::Vector<MethodName>&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods = std::move(value); }
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline CorsRule& WithAllowedMethods(const Aws::Vector<MethodName>& value) { SetAllowedMethods(value); return *this;}
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline CorsRule& WithAllowedMethods(Aws::Vector<MethodName>&& value) { SetAllowedMethods(std::move(value)); return *this;}
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline CorsRule& AddAllowedMethods(const MethodName& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(value); return *this; }
 
     /**
      * <p>Identifies an HTTP method that the origin that is specified in the rule is
      * allowed to execute.</p> <p>Each CORS rule must contain at least one
-     * <code>AllowedMethod</code> and one <code>AllowedOrigin</code> element.</p>
+     * <code>AllowedMethods</code> and one <code>AllowedOrigins</code> element.</p>
      */
     inline CorsRule& AddAllowedMethods(MethodName&& value) { m_allowedMethodsHasBeenSet = true; m_allowedMethods.push_back(std::move(value)); return *this; }
 

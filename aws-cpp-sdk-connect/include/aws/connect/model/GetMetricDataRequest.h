@@ -371,22 +371,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -414,22 +414,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -457,22 +457,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -500,22 +500,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -543,22 +543,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -586,22 +586,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
@@ -629,22 +629,22 @@ namespace Model
      * <p>A list of <code>HistoricalMetric</code> objects that contain the metrics to
      * retrieve with the request.</p> <p>A <code>HistoricalMetric</code> object
      * contains: <code>HistoricalMetricName</code>, <code>Statistic</code>,
-     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>For each historical metric
-     * you include in the request, you must include a <code>Unit</code> and a
-     * <code>Statistic</code>. </p> <p>The following historical metrics are
-     * available:</p> <dl> <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistic: SUM</p> </dd> <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
-     * SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> <p>Unit: COUNT</p>
-     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt> <dd> <p>Unit:
-     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd>
-     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
-     * <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
+     * <code>Threshold</code>, and <code>Unit</code>.</p> <p>You must list each metric
+     * to retrieve data for in the request. For each historical metric you include in
+     * the request, you must include a <code>Unit</code> and a <code>Statistic</code>.
+     * </p> <p>The following historical metrics are available:</p> <dl>
+     * <dt>CONTACTS_QUEUED</dt> <dd> <p>Unit: COUNT</p> <p>Statistic: SUM</p> </dd>
+     * <dt>CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_ABANDONED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_CONSULTED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_AGENT_HUNG_UP_FIRST</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:
+     * SUM</p> </dd> <dt>CONTACTS_HANDLED_INCOMING</dt> <dd> <p>Unit: COUNT</p>
+     * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HANDLED_OUTBOUND</dt> <dd> <p>Unit:
+     * COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd>
+     * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_IN</dt>
+     * <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
+     * <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> <p>Unit: COUNT</p> <p>Statistics: SUM</p>
+     * </dd> <dt>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</dt> <dd> <p>Unit: COUNT</p>
      * <p>Statistics: SUM</p> </dd> <dt>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</dt> <dd>
      * <p>Unit: COUNT</p> <p>Statistics: SUM</p> </dd>
      * <dt>CALLBACK_CONTACTS_HANDLED</dt> <dd> <p>Unit: COUNT</p> <p>Statistics:

@@ -34,12 +34,15 @@
 #include <aws/mediastore/model/DeleteContainerRequest.h>
 #include <aws/mediastore/model/DeleteContainerPolicyRequest.h>
 #include <aws/mediastore/model/DeleteCorsPolicyRequest.h>
+#include <aws/mediastore/model/DeleteLifecyclePolicyRequest.h>
 #include <aws/mediastore/model/DescribeContainerRequest.h>
 #include <aws/mediastore/model/GetContainerPolicyRequest.h>
 #include <aws/mediastore/model/GetCorsPolicyRequest.h>
+#include <aws/mediastore/model/GetLifecyclePolicyRequest.h>
 #include <aws/mediastore/model/ListContainersRequest.h>
 #include <aws/mediastore/model/PutContainerPolicyRequest.h>
 #include <aws/mediastore/model/PutCorsPolicyRequest.h>
+#include <aws/mediastore/model/PutLifecyclePolicyRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -252,6 +255,41 @@ void MediaStoreClient::DeleteCorsPolicyAsyncHelper(const DeleteCorsPolicyRequest
   handler(this, request, DeleteCorsPolicy(request), context);
 }
 
+DeleteLifecyclePolicyOutcome MediaStoreClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLifecyclePolicyOutcome(DeleteLifecyclePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLifecyclePolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteLifecyclePolicyOutcomeCallable MediaStoreClient::DeleteLifecyclePolicyCallable(const DeleteLifecyclePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLifecyclePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLifecyclePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::DeleteLifecyclePolicyAsync(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLifecyclePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequest& request, const DeleteLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLifecyclePolicy(request), context);
+}
+
 DescribeContainerOutcome MediaStoreClient::DescribeContainer(const DescribeContainerRequest& request) const
 {
   Aws::StringStream ss;
@@ -357,6 +395,41 @@ void MediaStoreClient::GetCorsPolicyAsyncHelper(const GetCorsPolicyRequest& requ
   handler(this, request, GetCorsPolicy(request), context);
 }
 
+GetLifecyclePolicyOutcome MediaStoreClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLifecyclePolicyOutcome(GetLifecyclePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLifecyclePolicyOutcome(outcome.GetError());
+  }
+}
+
+GetLifecyclePolicyOutcomeCallable MediaStoreClient::GetLifecyclePolicyCallable(const GetLifecyclePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLifecyclePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLifecyclePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::GetLifecyclePolicyAsync(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLifecyclePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& request, const GetLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLifecyclePolicy(request), context);
+}
+
 ListContainersOutcome MediaStoreClient::ListContainers(const ListContainersRequest& request) const
 {
   Aws::StringStream ss;
@@ -460,5 +533,40 @@ void MediaStoreClient::PutCorsPolicyAsync(const PutCorsPolicyRequest& request, c
 void MediaStoreClient::PutCorsPolicyAsyncHelper(const PutCorsPolicyRequest& request, const PutCorsPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutCorsPolicy(request), context);
+}
+
+PutLifecyclePolicyOutcome MediaStoreClient::PutLifecyclePolicy(const PutLifecyclePolicyRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutLifecyclePolicyOutcome(PutLifecyclePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutLifecyclePolicyOutcome(outcome.GetError());
+  }
+}
+
+PutLifecyclePolicyOutcomeCallable MediaStoreClient::PutLifecyclePolicyCallable(const PutLifecyclePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutLifecyclePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLifecyclePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::PutLifecyclePolicyAsync(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutLifecyclePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutLifecyclePolicy(request), context);
 }
 

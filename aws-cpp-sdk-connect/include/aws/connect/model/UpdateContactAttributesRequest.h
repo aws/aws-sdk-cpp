@@ -165,62 +165,110 @@ namespace Model
 
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The key-value pairs for the attribute to update.</p>
+     * <p>Specify a custom key-value pair using an attribute map. The attributes are
+     * standard Amazon Connect attributes, and can be accessed in contact flows just
+     * like any other contact attributes.</p> <p>There can be up to 32,768 UTF-8 bytes
+     * across all key-value pairs per contact. Attribute keys can include only
+     * alphanumeric, dash, and underscore characters.</p>
      */
     inline UpdateContactAttributesRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

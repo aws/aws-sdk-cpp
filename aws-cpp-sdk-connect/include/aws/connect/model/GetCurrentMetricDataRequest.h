@@ -203,7 +203,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline const Aws::Vector<Grouping>& GetGroupings() const{ return m_groupings; }
 
@@ -212,7 +212,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline void SetGroupings(const Aws::Vector<Grouping>& value) { m_groupingsHasBeenSet = true; m_groupings = value; }
 
@@ -221,7 +221,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline void SetGroupings(Aws::Vector<Grouping>&& value) { m_groupingsHasBeenSet = true; m_groupings = std::move(value); }
 
@@ -230,7 +230,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(const Aws::Vector<Grouping>& value) { SetGroupings(value); return *this;}
 
@@ -239,7 +239,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline GetCurrentMetricDataRequest& WithGroupings(Aws::Vector<Grouping>&& value) { SetGroupings(std::move(value)); return *this;}
 
@@ -248,7 +248,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(const Grouping& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(value); return *this; }
 
@@ -257,7 +257,7 @@ namespace Model
      * QUEUE, the metrics returned apply to each queue rather than aggregated for all
      * queues. If you group by CHANNEL, you should include a Channels filter. The only
      * supported channel is VOICE.</p> <p>If no <code>Grouping</code> is included in
-     * the request, a summary of <code>CurrentMetrics</code> is returned. </p>
+     * the request, a summary of <code>CurrentMetrics</code> is returned.</p>
      */
     inline GetCurrentMetricDataRequest& AddGroupings(Grouping&& value) { m_groupingsHasBeenSet = true; m_groupings.push_back(std::move(value)); return *this; }
 
@@ -265,7 +265,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -281,7 +282,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -297,7 +299,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -313,7 +316,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -329,7 +333,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -345,7 +350,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>
@@ -361,7 +367,8 @@ namespace Model
     /**
      * <p>A list of <code>CurrentMetric</code> objects for the metrics to retrieve.
      * Each <code>CurrentMetric</code> includes a name of a metric to retrieve and the
-     * unit to use for it.</p> <p>The following metrics are available:</p> <dl>
+     * unit to use for it. You must list each metric to retrieve data for in the
+     * request.</p> <p>The following metrics are available:</p> <dl>
      * <dt>AGENTS_AVAILABLE</dt> <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ONLINE</dt>
      * <dd> <p>Unit: COUNT</p> </dd> <dt>AGENTS_ON_CALL</dt> <dd> <p>Unit: COUNT</p>
      * </dd> <dt>AGENTS_STAFFED</dt> <dd> <p>Unit: COUNT</p> </dd>

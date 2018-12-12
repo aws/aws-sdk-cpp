@@ -46,37 +46,58 @@ namespace Model
 
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name in Amazon Connect for the account to create.</p>
+     * <p>The user name in Amazon Connect for the account to create. If you are using
+     * SAML for identity management in your Amazon Connect, the value for
+     * <code>Username</code> can include up to 64 characters from
+     * [a-zA-Z0-9_-.\@]+.</p>
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 
@@ -171,31 +192,36 @@ namespace Model
 
     /**
      * <p>Specifies the phone settings for the user, including
-     * AfterContactWorkTimeLimit, AutoAccept, DeskPhoneNumber, and PhoneType.</p>
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline const UserPhoneConfig& GetPhoneConfig() const{ return m_phoneConfig; }
 
     /**
      * <p>Specifies the phone settings for the user, including
-     * AfterContactWorkTimeLimit, AutoAccept, DeskPhoneNumber, and PhoneType.</p>
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline void SetPhoneConfig(const UserPhoneConfig& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = value; }
 
     /**
      * <p>Specifies the phone settings for the user, including
-     * AfterContactWorkTimeLimit, AutoAccept, DeskPhoneNumber, and PhoneType.</p>
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline void SetPhoneConfig(UserPhoneConfig&& value) { m_phoneConfigHasBeenSet = true; m_phoneConfig = std::move(value); }
 
     /**
      * <p>Specifies the phone settings for the user, including
-     * AfterContactWorkTimeLimit, AutoAccept, DeskPhoneNumber, and PhoneType.</p>
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline CreateUserRequest& WithPhoneConfig(const UserPhoneConfig& value) { SetPhoneConfig(value); return *this;}
 
     /**
      * <p>Specifies the phone settings for the user, including
-     * AfterContactWorkTimeLimit, AutoAccept, DeskPhoneNumber, and PhoneType.</p>
+     * <code>AfterContactWorkTimeLimit</code>, <code>AutoAccept</code>,
+     * <code>DeskPhoneNumber</code>, and <code>PhoneType</code>.</p>
      */
     inline CreateUserRequest& WithPhoneConfig(UserPhoneConfig&& value) { SetPhoneConfig(std::move(value)); return *this;}
 
@@ -205,12 +231,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline const Aws::String& GetDirectoryUserId() const{ return m_directoryUserId; }
 
@@ -219,12 +246,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline void SetDirectoryUserId(const Aws::String& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = value; }
 
@@ -233,12 +261,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline void SetDirectoryUserId(Aws::String&& value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId = std::move(value); }
 
@@ -247,12 +276,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline void SetDirectoryUserId(const char* value) { m_directoryUserIdHasBeenSet = true; m_directoryUserId.assign(value); }
 
@@ -261,12 +291,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(const Aws::String& value) { SetDirectoryUserId(value); return *this;}
 
@@ -275,12 +306,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(Aws::String&& value) { SetDirectoryUserId(std::move(value)); return *this;}
 
@@ -289,12 +321,13 @@ namespace Model
      * used for identity management. If Amazon Connect is unable to access the existing
      * directory, you can use the <code>DirectoryUserId</code> to authenticate users.
      * If you include the parameter, it is assumed that Amazon Connect cannot access
-     * the directory. If the parameter is not included, the UserIdentityInfo is used to
-     * authenticate users from your existing directory.</p> <p>This parameter is
-     * required if you are using an existing directory for identity management in
-     * Amazon Connect when Amazon Connect cannot access your directory to authenticate
-     * users. If you are using SAML for identity management and include this parameter,
-     * an <code>InvalidRequestException</code> is returned.</p>
+     * the directory. If the parameter is not included, the
+     * <code>UserIdentityInfo</code> is used to authenticate users from your existing
+     * directory.</p> <p>This parameter is required if you are using an existing
+     * directory for identity management in Amazon Connect when Amazon Connect cannot
+     * access your directory to authenticate users. If you are using SAML for identity
+     * management and include this parameter, an <code>InvalidRequestException</code>
+     * is returned.</p>
      */
     inline CreateUserRequest& WithDirectoryUserId(const char* value) { SetDirectoryUserId(value); return *this;}
 

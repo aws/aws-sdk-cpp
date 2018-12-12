@@ -35,6 +35,7 @@
 #include <aws/connect/model/DescribeUserRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupRequest.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureRequest.h>
+#include <aws/connect/model/GetContactAttributesRequest.h>
 #include <aws/connect/model/GetCurrentMetricDataRequest.h>
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
@@ -306,6 +307,44 @@ void ConnectClient::DescribeUserHierarchyStructureAsync(const DescribeUserHierar
 void ConnectClient::DescribeUserHierarchyStructureAsyncHelper(const DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeUserHierarchyStructure(request), context);
+}
+
+GetContactAttributesOutcome ConnectClient::GetContactAttributes(const GetContactAttributesRequest& request) const
+{
+  Aws::StringStream ss;
+  Aws::Http::URI uri = m_uri;
+  ss << "/contact/attributes/";
+  ss << request.GetInstanceId();
+  ss << "/";
+  ss << request.GetInitialContactId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetContactAttributesOutcome(GetContactAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetContactAttributesOutcome(outcome.GetError());
+  }
+}
+
+GetContactAttributesOutcomeCallable ConnectClient::GetContactAttributesCallable(const GetContactAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetContactAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetContactAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConnectClient::GetContactAttributesAsync(const GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetContactAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void ConnectClient::GetContactAttributesAsyncHelper(const GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetContactAttributes(request), context);
 }
 
 GetCurrentMetricDataOutcome ConnectClient::GetCurrentMetricData(const GetCurrentMetricDataRequest& request) const
