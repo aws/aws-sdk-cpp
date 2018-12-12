@@ -66,7 +66,7 @@ using namespace Aws::CognitoIdentity;
 
 
 #define TEST_FUNCTION_PREFIX  "IntegrationTest_"
-#define BASE_KINESIS_STREAM_NAME  "AWSNativeSDKIntegrationTest"
+static const char* BASE_KINESIS_STREAM_NAME = "AWSNativeSDKIntegrationTest";
 
 //fill these in before running the test.
 static const char* BASE_SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
@@ -78,7 +78,6 @@ static const char* HANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/handled.zip";
 static const char* ALLOCATION_TAG = "FunctionTest";
 
 static const char* BASE_IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
-static const char* IAM_POLICY_ARN = "arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole";
 
 
 namespace {
@@ -133,12 +132,7 @@ protected:
         m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
         m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
-        
-        DeleteIAMRole();
-        CreateIAMRole();
-
-        DeleteKinesisStream();
-        CreateKinesisStream();
+        m_accessManagementClient->GetRole(BASE_IAM_ROLE_NAME, *m_role);
 
         // delete all functions, just in case
         DeleteAllFunctions();
@@ -148,8 +142,6 @@ protected:
     static void TearDownTestCase()
     {
         DeleteAllFunctions();
-        DeleteKinesisStream();
-        DeleteIAMRole();
         // Return the memory claimed for static variables to memory manager before shutting down memory manager.
         // Otherwise there will be double free crash.
         functionArnMapping.clear();
@@ -284,122 +276,6 @@ protected:
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
-    }
-
-    static void CreateKinesisStream()
-    {
-        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
-
-        CreateStreamRequest createStreamRequest;
-        createStreamRequest.SetStreamName(streamName);
-        createStreamRequest.SetShardCount(1);
-        CreateStreamOutcome createOutcome = m_kinesis_client->CreateStream(createStreamRequest);
-        if(!createOutcome.IsSuccess())
-        {
-            ASSERT_EQ(KinesisErrors::RESOURCE_IN_USE, createOutcome.GetError().GetErrorType());
-        }
-
-        WaitForKinesisStream(streamName, ResourceStatusType::READY);
-
-    }
-
-    static void WaitForKinesisStream(const Aws::String& streamName, ResourceStatusType status)
-    {
-        DescribeStreamRequest describeStreamRequest;
-        describeStreamRequest.SetStreamName(streamName);
-
-        bool done = false;
-        while(!done)
-        {
-            DescribeStreamOutcome describeStreamOutcome = m_kinesis_client->DescribeStream(describeStreamRequest);
-
-            switch(status)
-            {
-            case ResourceStatusType::NOT_FOUND:
-                if(!describeStreamOutcome.IsSuccess())
-                {
-                    return;
-                }
-                break;
-
-            case ResourceStatusType::READY:
-                if(describeStreamOutcome.IsSuccess())
-                {
-                    auto streamStatus = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamStatus();
-                    if(streamStatus == StreamStatus::ACTIVE)
-                    {
-                        return;
-                    }
-                }
-                break;
-            }
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    }
-
-    static void DeleteKinesisStream()
-    {
-        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
-
-        DeleteStreamRequest deleteStreamRequest;
-        deleteStreamRequest.SetStreamName(streamName);
-        m_kinesis_client->DeleteStream(deleteStreamRequest);
-
-        WaitForKinesisStream(streamName, ResourceStatusType::NOT_FOUND);
-    }
-
-    static bool WaitForRolesToBeActive(const Aws::String& roleName)
-    {
-        unsigned timeoutCount = 0;
-        const unsigned maxRetries = 10;
-        while (timeoutCount++ < maxRetries)
-        {
-            GetRoleRequest getRoleRequest;
-            getRoleRequest.SetRoleName(roleName);
-            GetRoleOutcome getRoleOutcome = m_iamClient->GetRole(getRoleRequest);
-            if (getRoleOutcome.IsSuccess())
-            {
-                return true;
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-        return false;
-    }
-
-    static void CreateIAMRole()
-    {
-        //Who can assume this role, and what access conditions exist?
-        char const * trustRelationship = 
-            "{"
-              "\"Version\": \"2012-10-17\","
-              "\"Statement\": ["
-                "{"
-                   "\"Sid\": \"\","
-                   "\"Effect\": \"Allow\","
-                   "\"Principal\": {"
-                     "\"Service\": \"lambda.amazonaws.com\""
-                   "},"
-                   "\"Action\": \"sts:AssumeRole\""
-                "}"
-              "]"
-            "}";
-
-        Aws::String iamRoleName = BuildResourceName(BASE_IAM_ROLE_NAME);
-        const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(iamRoleName, trustRelationship, *m_role);
-        ASSERT_TRUE(roleCreationSuccessful);
-        ASSERT_TRUE(WaitForRolesToBeActive(iamRoleName));
-
-        //Apply the policy ARN saying what this role is allowed to do.
-        const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, iamRoleName);
-        ASSERT_TRUE(policyApplied);
-    }
-
-    static void DeleteIAMRole()
-    {
-        //This will return true even if the IAM role never existed.
-        const bool removedSuccessfully = m_accessManagementClient->DeleteRole(BuildResourceName(BASE_IAM_ROLE_NAME));
-        ASSERT_TRUE(removedSuccessfully);
     }
 };
 
@@ -623,11 +499,10 @@ TEST_F(FunctionTest, TestPermissions)
 TEST_F(FunctionTest, TestEventSources) 
 {
     Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
-    Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
 
     //Attempt to get the ARN of the stream we created during the init.
     DescribeStreamRequest describeStreamRequest;
-    describeStreamRequest.SetStreamName(streamName);
+    describeStreamRequest.SetStreamName(BASE_KINESIS_STREAM_NAME);
 
     Aws::String streamARN;
     bool done = false;
