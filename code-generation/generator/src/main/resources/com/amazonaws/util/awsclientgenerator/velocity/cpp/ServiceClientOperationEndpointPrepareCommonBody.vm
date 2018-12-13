@@ -50,7 +50,7 @@
     }
     else
     {
-      AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoint discovery is required and there is no usable endpoint in cache. Discovering endpoints from service...");
+      AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
       ${metadata.endpointOperationName}Request endpointRequest;
 #if($hasId)
       endpointRequest.WithOperation("${operation.name}");
@@ -70,8 +70,12 @@
       }
       else 
       {
+#if($operation.requireEndpointDiscovery)
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
         return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+#else
+        AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+#end
       }
     }
   }
