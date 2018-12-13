@@ -13,6 +13,7 @@
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/logging/LogMacros.h>
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;
@@ -33,21 +34,54 @@ static const char* ALLOCATION_TAG = "${className}";
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
 #if($operation.name != "Predict")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
-  ss << m_uri << "${uriParts.get(0)}";
+#set($uriPartString = "${uriParts.get(0)}")
+#set($queryStart = false)
+#if($uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+  uri.SetPath(uri.GetPath() + ss.str());
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
-  ss << request.Get${CppViewHelper.convertToUpperCamel($uriVars.get($varIndex))}();
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#if($partShapeMember.shape.enum)
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#else
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#end
 #if($uriParts.size() > $partIndex)
-  ss << "${uriParts.get($partIndex)}";
+#set($uriPartString = "${uriParts.get($partIndex)}")
+#if(!$queryStart && $uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+#end
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
 #end
 #set($partIndex = $partIndex + 1)
 #end
-
-  JsonOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_${operation.http.method});
+#if(!$queryStart)
+  uri.SetPath(uri.GetPath() + ss.str());
+#else
+  uri.SetQueryString(ss.str());
+#end
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
 #else
   JsonOutcome outcome = MakeRequest(request.GetPredictEndpoint(), request, HttpMethod::HTTP_${operation.http.method});
 #end

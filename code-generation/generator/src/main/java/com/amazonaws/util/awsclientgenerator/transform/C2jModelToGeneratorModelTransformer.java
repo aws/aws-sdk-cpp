@@ -34,6 +34,8 @@ public class C2jModelToGeneratorModelTransformer {
     Set<Error> allErrors;
     boolean standalone;
     boolean hasEndpointTrait;
+    boolean hasEndpointDiscoveryTrait;
+    String endpointOperationName;
 
     public C2jModelToGeneratorModelTransformer(C2jServiceModel c2jServiceModel, boolean standalone) {
         this.c2jServiceModel = c2jServiceModel;
@@ -56,6 +58,9 @@ public class C2jModelToGeneratorModelTransformer {
         serviceModel.setOperations(operations);
         serviceModel.setServiceErrors(filterOutCoreErrors(allErrors));
         serviceModel.getMetadata().setHasEndpointTrait(hasEndpointTrait);
+        serviceModel.getMetadata().setHasEndpointDiscoveryTrait(hasEndpointDiscoveryTrait && !endpointOperationName.isEmpty());
+        serviceModel.getMetadata().setEndpointOperationName(endpointOperationName);
+
         return serviceModel;
     }
 
@@ -237,8 +242,10 @@ public class C2jModelToGeneratorModelTransformer {
                 ShapeMember shapeMember = convertMember(entry.getValue(), shape, required.contains(entry.getKey()));
                 shapeMemberMap.put(entry.getKey(), shapeMember);
                 if (shapeMember.isHostLabel() && !shapeMember.getShape().isString()) {
-                    //System.out.println(shape.getType());
-                    throw new RuntimeException("Shape marked with 'hostLabel' should be 'string' typed: " + shape.getName());
+                    throw new RuntimeException("Shape marked with 'hostLabel' should be of type 'string': " + shape.getName());
+                }
+                if (shapeMember.isEndpointDiscoveryId() && !shapeMember.getShape().isString()) {
+                    throw new RuntimeException("Shape marked with 'endpointdiscoveryid' should be of type 'string': " + shape.getName());
                 }
             });
         }
@@ -275,6 +282,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setIdempotencyToken(c2jShapeMember.isIdempotencyToken());
         shapeMember.setEventPayload(c2jShapeMember.isEventpayload());
         shapeMember.setHostLabel(c2jShapeMember.isHostLabel());
+        shapeMember.setEndpointDiscoveryId(c2jShapeMember.isEndpointdiscoveryid());
         if(shapeMember.isStreaming()) {
             shapeMember.setRequired(true);
         }
@@ -347,6 +355,18 @@ public class C2jModelToGeneratorModelTransformer {
 
         // name
         operation.setName(c2jOperation.getName());
+
+        operation.setEndpointOperation(c2jOperation.isEndpointoperation());
+        operation.setHasEndpointDiscoveryTrait(c2jOperation.getEndpointdiscovery() == null ? false :true);
+        operation.setRequireEndpointDiscovery(operation.hasEndpointDiscoveryTrait() ? c2jOperation.getEndpointdiscovery().isRequired() : false);
+
+        if (operation.isEndpointOperation()) {
+            endpointOperationName = operation.getName();
+        }
+        if (operation.hasEndpointDiscoveryTrait()) {
+            hasEndpointDiscoveryTrait = true;
+        }
+
         // Documentation
         String crossLinkedShapeDocs =
                 addDocCrossLinks(c2jOperation.getDocumentation(), c2jServiceModel.getMetadata().getUid(), c2jOperation.getName());

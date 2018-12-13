@@ -32,57 +32,58 @@ static const char* ALLOCATION_TAG = "${className}";
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 
-#if($metadata.hasEndpointTrait)
-#set($uriName = "m_baseUri")
-#else
-#set($uriName = "m_uri")
-#end
-
 #foreach($operation in $serviceModel.operations)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
 #if($operation.name == "CreateQueue" || $operation.name == "ListQueues" || $operation.name == "GetQueueUrl")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;
-#if($metadata.hasEndpointTrait)
-#if($operation.hasEndpointTrait)
-  if (m_enableHostPrefixInjection)
-  {
-#foreach($member in $operation.endpoint.getMemberReferences())
-    if (request.Get${member}().empty())
-    {
-      AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
-      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
-    }
-#end
-    Aws::Http::URI uri = m_scheme + "://" + ${operation.endpoint.constructHostPrefixString("request")} + ${uriName};
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
-      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-    ss << uri.GetURIString();
-  }
-#else
-  ss << m_configScheme << "://" << ${uriName};
-#end
-#else
-  ss << ${uriName};
-#end
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
-
-  ss << "${uriParts.get(0)}";
+#set($uriPartString = "${uriParts.get(0)}")
+#set($queryStart = false)
+#if($uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+  uri.SetPath(uri.GetPath() + ss.str());
+#end
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
 #foreach($var in $uriVars)
 #set($varIndex = $partIndex - 1)
-  ss << request.Get${CppViewHelper.convertToUpperCamel($uriVars.get($varIndex))}();
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVars.get($varIndex)))
+#if($partShapeMember.shape.enum)
+  ss << ${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}());
+#else
+  ss << request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVars.get($varIndex)))}();
+#end
 #if($uriParts.size() > $partIndex)
-  ss << "${uriParts.get($partIndex)}";
+#set($uriPartString = "${uriParts.get($partIndex)}")
+#if(!$queryStart && $uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+  ss << "${pathAndQuery.get(0)}";
+#end
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("${pathAndQuery.get(1)}");
+#else
+  ss << "$uriPartString";
+#end
 #end
 #set($partIndex = $partIndex + 1)
 #end
-
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_${operation.http.method});
+#if(!$queryStart)
+  uri.SetPath(uri.GetPath() + ss.str());
+#else
+  uri.SetQueryString(ss.str());
+#end
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_${operation.http.method});
 #else
   XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_${operation.http.method});
 #end

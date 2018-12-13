@@ -1,5 +1,5 @@
 /*
-* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2010-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License").
 * You may not use this file except in compliance with the License.
@@ -18,18 +18,6 @@ package com.amazonaws.util.awsclientgenerator.domainmodels.c2j;
 import lombok.Data;
 
 @Data
-public class C2jShapeMember {
-    String shape;
-    boolean idempotencyToken;
-    boolean streaming;
-    String documentation;
-    String location;
-    String locationName;
-    String queryName;
-    C2jXmlNamespace xmlNamespace;
-    boolean deprecated;
-    boolean flattened;
-    boolean eventpayload;
-    boolean hostLabel;
-    boolean endpointdiscoveryid;
+public class C2jEndpointDiscovery {
+    private boolean required;
 }

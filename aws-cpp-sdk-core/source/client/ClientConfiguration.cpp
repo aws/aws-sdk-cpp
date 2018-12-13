@@ -59,7 +59,8 @@ ClientConfiguration::ClientConfiguration() :
     followRedirects(true),
     disableExpectHeader(false),
     enableClockSkewAdjustment(true),
-    enableHostPrefixInjection(true)
+    enableHostPrefixInjection(true),
+    enableEndpointDiscovery(false)
 {
 }
 

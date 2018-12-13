@@ -1,8 +1,3 @@
-#if($metadata.hasEndpointTrait)
-#set($uriName = "m_baseUri")
-#else
-#set($uriName = "m_uri")
-#end
 #foreach($operation in $serviceModel.operations)
 #if($operation.result.shape.hasEventStreamMembers())
 #set($constText = "")
@@ -14,51 +9,8 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;
-#set($startIndex = 0)
-#set($skipFirst = false)
-#if($virtualAddressingSupported || $accountIdInHostnameSupported)
-#if($operation.virtualAddressAllowed)
-  Aws::Http::URI uri = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
-#set($startIndex = 1)
-#set($skipFirst = true)
-#elseif($operation.hasAccountIdInHostname)
-  Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
-  if (endpointString.empty())
-  {
-      return ${operation.name}Outcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
-  }
-  Aws::Http::URI uri = endpointString;
-#else
-  Aws::Http::URI uri = ComputeEndpointString();
-#end
-#else
-#if($metadata.hasEndpointTrait)
-#if($operation.hasEndpointTrait)
-  Aws::Http::URI uri = ${uriName};
-  if (m_enableHostPrefixInjection)
-  {
-#foreach($member in $operation.endpoint.getMemberReferences())
-    if (request.Get${member}().empty())
-    {
-      AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
-      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
-    }
-#end
-    Aws::Http::URI uri = m_scheme + "://" + ${operation.endpoint.constructHostPrefixString("request")} + ${uriName};
-    if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
-    {
-      AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
-      return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
-    }
-  }
-#else
-  Aws::Http::URI uri = m_configScheme + "://" + ${uriName};
-#end
-#else
-  Aws::Http::URI uri = ${uriName};
-#end
-#end
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
@@ -165,7 +117,11 @@ ${operation.name}Outcome ${className}::${operation.name}() const
 #if($virtualAddressingSupported || $accountIdInHostnameSupported)
   ss << ComputeEndpointString();
 #else
-  ss << ${uriName} << "${operation.http.requestUri}";
+#if($metadata.hasEndpointTrait)
+  ss << m_baseUri << "${operation.http.requestUri}";
+#else
+  ss << m_uri << "${operation.http.requestUri}";
+#end
 #end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");

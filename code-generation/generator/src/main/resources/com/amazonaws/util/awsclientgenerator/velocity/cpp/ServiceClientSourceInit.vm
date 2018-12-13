@@ -93,6 +93,16 @@ void ${className}::init(const ClientConfiguration& config)
 #if($metadata.hasEndpointTrait)
   m_enableHostPrefixInjection = config.enableHostPrefixInjection;
 #end
+#if($metadata.hasEndpointDiscoveryTrait)
+  if (!config.endpointOverride.empty())
+  {
+    m_enableEndpointDiscovery = false;
+  }
+  else
+  {
+    m_enableEndpointDiscovery = config.enableEndpointDiscovery;
+  }
+#end
 }
 
 void ${className}::OverrideEndpoint(const Aws::String& endpoint)
@@ -122,5 +132,8 @@ void ${className}::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+#end
+#if($metadata.hasEndpointDiscoveryTrait)
+  m_enableEndpointDiscovery = false;
 #end
 }

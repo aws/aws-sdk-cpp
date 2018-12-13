@@ -176,9 +176,20 @@ namespace Aws
             bool enableClockSkewAdjustment;
 
             /**
-             * enable host prefix injection (for service whose endpoint is injectable. e.g. servicediscovery, you can disable it for testing purpose). Default to true, enabled.
+             * Enable host prefix injection. 
+             * For services whose endpoint is injectable. e.g. servicediscovery, you can modify the http host's prefix so as to add "data-" prefix for DiscoverInstances request.
+             * Default to true, enabled. You can disable it for testing purpose. 
              */
             bool enableHostPrefixInjection;
+
+            /**
+             * Enable endpoint discovery 
+             * For some services to dynamically set up their endpoints for different requests. 
+             * Defaults to false, it's an opt-in feature.
+             * If disabled, regional or overriden endpoint will be used instead.
+             * If a request requires endpoint discovery but you disabled it. The request will never succeed.
+             */
+            bool enableEndpointDiscovery;
         };
 
     } // namespace Client
