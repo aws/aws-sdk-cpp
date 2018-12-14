@@ -66,6 +66,7 @@ enum class AlexaForBusinessErrors
   NAME_IN_USE,
   NOT_FOUND,
   RESOURCE_IN_USE,
+  SKILL_NOT_LINKED,
   UNAUTHORIZED
 };
 namespace AlexaForBusinessErrorMapper

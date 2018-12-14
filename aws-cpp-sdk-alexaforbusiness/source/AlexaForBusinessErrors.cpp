@@ -32,6 +32,7 @@ static const int INVALID_CERTIFICATE_AUTHORITY_HASH = HashingUtils::HashString("
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
+static const int SKILL_NOT_LINKED_HASH = HashingUtils::HashString("SkillNotLinkedException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int INVALID_USER_STATUS_HASH = HashingUtils::HashString("InvalidUserStatusException");
 static const int DEVICE_NOT_REGISTERED_HASH = HashingUtils::HashString("DeviceNotRegisteredException");
@@ -60,6 +61,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(AlexaForBusinessErrors::NOT_FOUND), false);
+  }
+  else if (hashCode == SKILL_NOT_LINKED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AlexaForBusinessErrors::SKILL_NOT_LINKED), false);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

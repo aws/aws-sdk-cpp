@@ -26,6 +26,7 @@
 #include <aws/alexaforbusiness/model/AssociateDeviceWithRoomResult.h>
 #include <aws/alexaforbusiness/model/AssociateSkillGroupWithRoomResult.h>
 #include <aws/alexaforbusiness/model/AssociateSkillWithSkillGroupResult.h>
+#include <aws/alexaforbusiness/model/AssociateSkillWithUsersResult.h>
 #include <aws/alexaforbusiness/model/CreateAddressBookResult.h>
 #include <aws/alexaforbusiness/model/CreateBusinessReportScheduleResult.h>
 #include <aws/alexaforbusiness/model/CreateConferenceProviderResult.h>
@@ -48,6 +49,7 @@
 #include <aws/alexaforbusiness/model/DisassociateContactFromAddressBookResult.h>
 #include <aws/alexaforbusiness/model/DisassociateDeviceFromRoomResult.h>
 #include <aws/alexaforbusiness/model/DisassociateSkillFromSkillGroupResult.h>
+#include <aws/alexaforbusiness/model/DisassociateSkillFromUsersResult.h>
 #include <aws/alexaforbusiness/model/DisassociateSkillGroupFromRoomResult.h>
 #include <aws/alexaforbusiness/model/ForgetSmartHomeAppliancesResult.h>
 #include <aws/alexaforbusiness/model/GetAddressBookResult.h>
@@ -139,6 +141,7 @@ namespace Model
         class AssociateDeviceWithRoomRequest;
         class AssociateSkillGroupWithRoomRequest;
         class AssociateSkillWithSkillGroupRequest;
+        class AssociateSkillWithUsersRequest;
         class CreateAddressBookRequest;
         class CreateBusinessReportScheduleRequest;
         class CreateConferenceProviderRequest;
@@ -161,6 +164,7 @@ namespace Model
         class DisassociateContactFromAddressBookRequest;
         class DisassociateDeviceFromRoomRequest;
         class DisassociateSkillFromSkillGroupRequest;
+        class DisassociateSkillFromUsersRequest;
         class DisassociateSkillGroupFromRoomRequest;
         class ForgetSmartHomeAppliancesRequest;
         class GetAddressBookRequest;
@@ -213,6 +217,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateDeviceWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateDeviceWithRoomOutcome;
         typedef Aws::Utils::Outcome<AssociateSkillGroupWithRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillGroupWithRoomOutcome;
         typedef Aws::Utils::Outcome<AssociateSkillWithSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<AssociateSkillWithUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> AssociateSkillWithUsersOutcome;
         typedef Aws::Utils::Outcome<CreateAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateAddressBookOutcome;
         typedef Aws::Utils::Outcome<CreateBusinessReportScheduleResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateBusinessReportScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateConferenceProviderResult, Aws::Client::AWSError<AlexaForBusinessErrors>> CreateConferenceProviderOutcome;
@@ -235,6 +240,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateContactFromAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateContactFromAddressBookOutcome;
         typedef Aws::Utils::Outcome<DisassociateDeviceFromRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateDeviceFromRoomOutcome;
         typedef Aws::Utils::Outcome<DisassociateSkillFromSkillGroupResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillFromSkillGroupOutcome;
+        typedef Aws::Utils::Outcome<DisassociateSkillFromUsersResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillFromUsersOutcome;
         typedef Aws::Utils::Outcome<DisassociateSkillGroupFromRoomResult, Aws::Client::AWSError<AlexaForBusinessErrors>> DisassociateSkillGroupFromRoomOutcome;
         typedef Aws::Utils::Outcome<ForgetSmartHomeAppliancesResult, Aws::Client::AWSError<AlexaForBusinessErrors>> ForgetSmartHomeAppliancesOutcome;
         typedef Aws::Utils::Outcome<GetAddressBookResult, Aws::Client::AWSError<AlexaForBusinessErrors>> GetAddressBookOutcome;
@@ -287,6 +293,7 @@ namespace Model
         typedef std::future<AssociateDeviceWithRoomOutcome> AssociateDeviceWithRoomOutcomeCallable;
         typedef std::future<AssociateSkillGroupWithRoomOutcome> AssociateSkillGroupWithRoomOutcomeCallable;
         typedef std::future<AssociateSkillWithSkillGroupOutcome> AssociateSkillWithSkillGroupOutcomeCallable;
+        typedef std::future<AssociateSkillWithUsersOutcome> AssociateSkillWithUsersOutcomeCallable;
         typedef std::future<CreateAddressBookOutcome> CreateAddressBookOutcomeCallable;
         typedef std::future<CreateBusinessReportScheduleOutcome> CreateBusinessReportScheduleOutcomeCallable;
         typedef std::future<CreateConferenceProviderOutcome> CreateConferenceProviderOutcomeCallable;
@@ -309,6 +316,7 @@ namespace Model
         typedef std::future<DisassociateContactFromAddressBookOutcome> DisassociateContactFromAddressBookOutcomeCallable;
         typedef std::future<DisassociateDeviceFromRoomOutcome> DisassociateDeviceFromRoomOutcomeCallable;
         typedef std::future<DisassociateSkillFromSkillGroupOutcome> DisassociateSkillFromSkillGroupOutcomeCallable;
+        typedef std::future<DisassociateSkillFromUsersOutcome> DisassociateSkillFromUsersOutcomeCallable;
         typedef std::future<DisassociateSkillGroupFromRoomOutcome> DisassociateSkillGroupFromRoomOutcomeCallable;
         typedef std::future<ForgetSmartHomeAppliancesOutcome> ForgetSmartHomeAppliancesOutcomeCallable;
         typedef std::future<GetAddressBookOutcome> GetAddressBookOutcomeCallable;
@@ -364,6 +372,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateDeviceWithRoomRequest&, const Model::AssociateDeviceWithRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateDeviceWithRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillGroupWithRoomRequest&, const Model::AssociateSkillGroupWithRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillGroupWithRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillWithSkillGroupRequest&, const Model::AssociateSkillWithSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillWithSkillGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::AssociateSkillWithUsersRequest&, const Model::AssociateSkillWithUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSkillWithUsersResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateAddressBookRequest&, const Model::CreateAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAddressBookResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateBusinessReportScheduleRequest&, const Model::CreateBusinessReportScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBusinessReportScheduleResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::CreateConferenceProviderRequest&, const Model::CreateConferenceProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConferenceProviderResponseReceivedHandler;
@@ -386,6 +395,7 @@ namespace Model
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DisassociateContactFromAddressBookRequest&, const Model::DisassociateContactFromAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateContactFromAddressBookResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DisassociateDeviceFromRoomRequest&, const Model::DisassociateDeviceFromRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDeviceFromRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DisassociateSkillFromSkillGroupRequest&, const Model::DisassociateSkillFromSkillGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSkillFromSkillGroupResponseReceivedHandler;
+    typedef std::function<void(const AlexaForBusinessClient*, const Model::DisassociateSkillFromUsersRequest&, const Model::DisassociateSkillFromUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSkillFromUsersResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::DisassociateSkillGroupFromRoomRequest&, const Model::DisassociateSkillGroupFromRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSkillGroupFromRoomResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::ForgetSmartHomeAppliancesRequest&, const Model::ForgetSmartHomeAppliancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ForgetSmartHomeAppliancesResponseReceivedHandler;
     typedef std::function<void(const AlexaForBusinessClient*, const Model::GetAddressBookRequest&, const Model::GetAddressBookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAddressBookResponseReceivedHandler;
@@ -435,15 +445,15 @@ namespace Model
 
   /**
    * <p>Alexa for Business helps you use Alexa in your organization. Alexa for
-   * Business provides the tools you to manage Alexa devices, enroll your users, and
-   * assign skills, at scale. You can build your own context-aware voice skills using
-   * the Alexa Skills Kit and the Alexa for Business API operations. You can also
-   * make these available as private skills for your organization. Alexa for Business
-   * makes it efficient to voice-enable your products and services, thus providing
-   * context-aware voice experiences for your customers. In addition, Alexa for
-   * Business enables Alexa Voice Services (AVS) device manufacturers to centrally
-   * deploy and manage their devices in Alexa for Business as shared devices as a
-   * part of their existing management flow. </p>
+   * Business provides you with the tools to manage Alexa devices, enroll your users,
+   * and assign skills, at scale. You can build your own context-aware voice skills
+   * using the Alexa Skills Kit and the Alexa for Business API operations. You can
+   * also make these available as private skills for your organization. Alexa for
+   * Business makes it efficient to voice-enable your products and services, thus
+   * providing context-aware voice experiences for your customers. Device makers
+   * building with the Alexa Voice Service (AVS) can create fully integrated
+   * solutions, register their products with Alexa for Business, and manage them as
+   * shared devices in their organization. </p>
    */
   class AWS_ALEXAFORBUSINESS_API AlexaForBusinessClient : public Aws::Client::AWSJsonClient
   {
@@ -616,6 +626,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateSkillWithSkillGroupAsync(const Model::AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Makes a private skill available for enrolled users to enable on their
+         * devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSkillWithUsersOutcome AssociateSkillWithUsers(const Model::AssociateSkillWithUsersRequest& request) const;
+
+        /**
+         * <p>Makes a private skill available for enrolled users to enable on their
+         * devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateSkillWithUsersOutcomeCallable AssociateSkillWithUsersCallable(const Model::AssociateSkillWithUsersRequest& request) const;
+
+        /**
+         * <p>Makes a private skill available for enrolled users to enable on their
+         * devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateSkillWithUsersAsync(const Model::AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an address book with the specified details.</p><p><h3>See Also:</h3> 
@@ -1208,6 +1246,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DisassociateSkillFromSkillGroupAsync(const Model::DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Makes a private skill unavailable for enrolled users and prevents them from
+         * enabling it on their devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSkillFromUsersOutcome DisassociateSkillFromUsers(const Model::DisassociateSkillFromUsersRequest& request) const;
+
+        /**
+         * <p>Makes a private skill unavailable for enrolled users and prevents them from
+         * enabling it on their devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateSkillFromUsersOutcomeCallable DisassociateSkillFromUsersCallable(const Model::DisassociateSkillFromUsersRequest& request) const;
+
+        /**
+         * <p>Makes a private skill unavailable for enrolled users and prevents them from
+         * enabling it on their devices.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateSkillFromUsersAsync(const Model::DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates a skill group from a specified room. This disables all skills
@@ -2489,6 +2555,7 @@ namespace Model
         void AssociateDeviceWithRoomAsyncHelper(const Model::AssociateDeviceWithRoomRequest& request, const AssociateDeviceWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSkillGroupWithRoomAsyncHelper(const Model::AssociateSkillGroupWithRoomRequest& request, const AssociateSkillGroupWithRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSkillWithSkillGroupAsyncHelper(const Model::AssociateSkillWithSkillGroupRequest& request, const AssociateSkillWithSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateSkillWithUsersAsyncHelper(const Model::AssociateSkillWithUsersRequest& request, const AssociateSkillWithUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAddressBookAsyncHelper(const Model::CreateAddressBookRequest& request, const CreateAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBusinessReportScheduleAsyncHelper(const Model::CreateBusinessReportScheduleRequest& request, const CreateBusinessReportScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConferenceProviderAsyncHelper(const Model::CreateConferenceProviderRequest& request, const CreateConferenceProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2511,6 +2578,7 @@ namespace Model
         void DisassociateContactFromAddressBookAsyncHelper(const Model::DisassociateContactFromAddressBookRequest& request, const DisassociateContactFromAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDeviceFromRoomAsyncHelper(const Model::DisassociateDeviceFromRoomRequest& request, const DisassociateDeviceFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSkillFromSkillGroupAsyncHelper(const Model::DisassociateSkillFromSkillGroupRequest& request, const DisassociateSkillFromSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateSkillFromUsersAsyncHelper(const Model::DisassociateSkillFromUsersRequest& request, const DisassociateSkillFromUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSkillGroupFromRoomAsyncHelper(const Model::DisassociateSkillGroupFromRoomRequest& request, const DisassociateSkillGroupFromRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ForgetSmartHomeAppliancesAsyncHelper(const Model::ForgetSmartHomeAppliancesRequest& request, const ForgetSmartHomeAppliancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAddressBookAsyncHelper(const Model::GetAddressBookRequest& request, const GetAddressBookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

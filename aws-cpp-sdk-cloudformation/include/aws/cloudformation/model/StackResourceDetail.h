@@ -440,7 +440,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline const StackResourceDriftInformation& GetDriftInformation() const{ return m_driftInformation; }
@@ -450,7 +450,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline void SetDriftInformation(const StackResourceDriftInformation& value) { m_driftInformationHasBeenSet = true; m_driftInformation = value; }
@@ -460,7 +460,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline void SetDriftInformation(StackResourceDriftInformation&& value) { m_driftInformationHasBeenSet = true; m_driftInformation = std::move(value); }
@@ -470,7 +470,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline StackResourceDetail& WithDriftInformation(const StackResourceDriftInformation& value) { SetDriftInformation(value); return *this;}
@@ -480,7 +480,7 @@ namespace Model
      * <i>drifted</i>, from its expected configuration, as defined in the stack
      * template and any values specified as template parameters. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
      * Unregulated Configuration Changes to Stacks and Resources</a>.</p>
      */
     inline StackResourceDetail& WithDriftInformation(StackResourceDriftInformation&& value) { SetDriftInformation(std::move(value)); return *this;}

@@ -594,27 +594,54 @@ namespace Model
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
      * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * existing cluster, that is, a cluster that has not been deleted. </p> <ul> <li>
+     * <p>If <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is not specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline bool GetClusterExists() const{ return m_clusterExists; }
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
      * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * existing cluster, that is, a cluster that has not been deleted. </p> <ul> <li>
+     * <p>If <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is not specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline void SetClusterExists(bool value) { m_clusterExistsHasBeenSet = true; m_clusterExists = value; }
 
     /**
      * <p>A value that indicates whether to return snapshots only for an existing
      * cluster. Table-level restore can be performed only using a snapshot of an
-     * existing cluster, that is, a cluster that has not been deleted. If
-     * <code>ClusterExists</code> is set to <code>true</code>,
-     * <code>ClusterIdentifier</code> is required.</p>
+     * existing cluster, that is, a cluster that has not been deleted. </p> <ul> <li>
+     * <p>If <code>ClusterExists</code> is set to <code>true</code>,
+     * <code>ClusterIdentifier</code> is required.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is not specified, all snapshots associated with
+     * deleted clusters (orphaned snapshots) are returned. </p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for a deleted cluster, snapshots
+     * associated with that cluster are returned.</p> </li> <li> <p>If
+     * <code>ClusterExists</code> is set to <code>false</code> and
+     * <code>ClusterIdentifier</code> is specified for an existing cluster, no
+     * snapshots are returned. </p> </li> </ul>
      */
     inline DescribeClusterSnapshotsRequest& WithClusterExists(bool value) { SetClusterExists(value); return *this;}
 
