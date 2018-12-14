@@ -215,7 +215,7 @@ CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns";
+  ss << "/v1/apps/"  << request.GetApplicationId() << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -250,7 +250,7 @@ CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -285,7 +285,7 @@ CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -320,7 +320,7 @@ CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -355,7 +355,7 @@ DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -390,7 +390,7 @@ DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChann
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -425,7 +425,7 @@ DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const D
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -460,7 +460,7 @@ DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteA
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -495,7 +495,7 @@ DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -530,7 +530,7 @@ DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) cons
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}";
+  ss << "/v1/apps/" << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -565,7 +565,7 @@ DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -600,7 +600,7 @@ DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -635,7 +635,7 @@ DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -670,7 +670,7 @@ DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/endpoints/{endpoint-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -705,7 +705,7 @@ DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStre
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -740,7 +740,7 @@ DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -775,7 +775,7 @@ DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/{segment-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -810,7 +810,7 @@ DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -845,7 +845,7 @@ DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserE
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users/{user-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/users/{user-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -880,7 +880,7 @@ DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -915,7 +915,7 @@ GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -950,7 +950,7 @@ GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -985,7 +985,7 @@ GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApns
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1020,7 +1020,7 @@ GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1055,7 +1055,7 @@ GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1090,7 +1090,7 @@ GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}";
+  ss << "/v1/apps/" << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1125,7 +1125,7 @@ GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetAp
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/settings";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1195,7 +1195,7 @@ GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1230,7 +1230,7 @@ GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1265,7 +1265,7 @@ GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCamp
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/activities";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}/activities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1300,7 +1300,7 @@ GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVe
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1336,7 +1336,7 @@ GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaign
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/versions";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}/versions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1371,7 +1371,7 @@ GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& requ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1406,7 +1406,7 @@ GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1441,7 +1441,7 @@ GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1476,7 +1476,7 @@ GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/endpoints/{endpoint-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1511,7 +1511,7 @@ GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1546,7 +1546,7 @@ GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& requ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export/{job-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/export/" << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1581,7 +1581,7 @@ GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1616,7 +1616,7 @@ GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1651,7 +1651,7 @@ GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& requ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import/{job-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/import/" << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1686,7 +1686,7 @@ GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1721,7 +1721,7 @@ GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) c
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1756,7 +1756,7 @@ GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmen
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/jobs/export";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId() << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1791,7 +1791,7 @@ GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmen
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/jobs/import";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId() << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1826,7 +1826,7 @@ GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersi
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/versions/";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId() << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1862,7 +1862,7 @@ GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVer
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/versions";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId() << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1897,7 +1897,7 @@ GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1932,7 +1932,7 @@ GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1967,7 +1967,7 @@ GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users/{user-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/users/" << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2002,7 +2002,7 @@ GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2072,7 +2072,7 @@ PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2107,7 +2107,7 @@ PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) cons
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/events";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/events";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2142,7 +2142,7 @@ RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/attributes/{attribute-type}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/attributes/" << request.GetAttributeType();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2177,7 +2177,7 @@ SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& requ
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/messages";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/messages";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2212,7 +2212,7 @@ SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessag
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users-messages";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/users-messages";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2247,7 +2247,7 @@ UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2282,7 +2282,7 @@ UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChann
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2317,7 +2317,7 @@ UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const U
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2352,7 +2352,7 @@ UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateA
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2387,7 +2387,7 @@ UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2422,7 +2422,7 @@ UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/settings";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2457,7 +2457,7 @@ UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2492,7 +2492,7 @@ UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/campaigns/{campaign-id}";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2527,7 +2527,7 @@ UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2562,7 +2562,7 @@ UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/endpoints/" << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2597,7 +2597,7 @@ UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEnd
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2632,7 +2632,7 @@ UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2667,7 +2667,7 @@ UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& r
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/segments/" << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2702,7 +2702,7 @@ UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelR
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2737,7 +2737,7 @@ UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceCh
 {
   Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  ss << "/v1/apps/" << request.GetApplicationId() << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
