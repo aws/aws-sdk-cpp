@@ -123,8 +123,8 @@ void AppMeshClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -158,8 +158,8 @@ void AppMeshClient::CreateMeshAsyncHelper(const CreateMeshRequest& request, cons
 
 CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
@@ -197,8 +197,8 @@ void AppMeshClient::CreateRouteAsyncHelper(const CreateRouteRequest& request, co
 
 CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes";
@@ -234,8 +234,8 @@ void AppMeshClient::CreateVirtualNodeAsyncHelper(const CreateVirtualNodeRequest&
 
 CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtualRouterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters";
@@ -271,8 +271,8 @@ void AppMeshClient::CreateVirtualRouterAsyncHelper(const CreateVirtualRouterRequ
 
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -307,8 +307,8 @@ void AppMeshClient::DeleteMeshAsyncHelper(const DeleteMeshRequest& request, cons
 
 DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
@@ -347,8 +347,8 @@ void AppMeshClient::DeleteRouteAsyncHelper(const DeleteRouteRequest& request, co
 
 DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
@@ -385,8 +385,8 @@ void AppMeshClient::DeleteVirtualNodeAsyncHelper(const DeleteVirtualNodeRequest&
 
 DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtualRouterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";
@@ -423,8 +423,8 @@ void AppMeshClient::DeleteVirtualRouterAsyncHelper(const DeleteVirtualRouterRequ
 
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -459,8 +459,8 @@ void AppMeshClient::DescribeMeshAsyncHelper(const DescribeMeshRequest& request, 
 
 DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
@@ -499,8 +499,8 @@ void AppMeshClient::DescribeRouteAsyncHelper(const DescribeRouteRequest& request
 
 DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirtualNodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
@@ -537,8 +537,8 @@ void AppMeshClient::DescribeVirtualNodeAsyncHelper(const DescribeVirtualNodeRequ
 
 DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const DescribeVirtualRouterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";
@@ -575,8 +575,8 @@ void AppMeshClient::DescribeVirtualRouterAsyncHelper(const DescribeVirtualRouter
 
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -610,8 +610,8 @@ void AppMeshClient::ListMeshesAsyncHelper(const ListMeshesRequest& request, cons
 
 ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
@@ -649,8 +649,8 @@ void AppMeshClient::ListRoutesAsyncHelper(const ListRoutesRequest& request, cons
 
 ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes";
@@ -686,8 +686,8 @@ void AppMeshClient::ListVirtualNodesAsyncHelper(const ListVirtualNodesRequest& r
 
 ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRoutersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters";
@@ -723,8 +723,8 @@ void AppMeshClient::ListVirtualRoutersAsyncHelper(const ListVirtualRoutersReques
 
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
@@ -763,8 +763,8 @@ void AppMeshClient::UpdateRouteAsyncHelper(const UpdateRouteRequest& request, co
 
 UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
@@ -801,8 +801,8 @@ void AppMeshClient::UpdateVirtualNodeAsyncHelper(const UpdateVirtualNodeRequest&
 
 UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtualRouterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";

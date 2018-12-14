@@ -113,8 +113,8 @@ void SignerClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -149,8 +149,8 @@ void SignerClient::CancelSigningProfileAsyncHelper(const CancelSigningProfileReq
 
 DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigningJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -185,8 +185,8 @@ void SignerClient::DescribeSigningJobAsyncHelper(const DescribeSigningJobRequest
 
 GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatformRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-platforms/";
   ss << request.GetPlatformId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -221,8 +221,8 @@ void SignerClient::GetSigningPlatformAsyncHelper(const GetSigningPlatformRequest
 
 GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -257,8 +257,8 @@ void SignerClient::GetSigningProfileAsyncHelper(const GetSigningProfileRequest& 
 
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -292,8 +292,8 @@ void SignerClient::ListSigningJobsAsyncHelper(const ListSigningJobsRequest& requ
 
 ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigningPlatformsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-platforms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -327,8 +327,8 @@ void SignerClient::ListSigningPlatformsAsyncHelper(const ListSigningPlatformsReq
 
 ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningProfilesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -362,8 +362,8 @@ void SignerClient::ListSigningProfilesAsyncHelper(const ListSigningProfilesReque
 
 PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -398,8 +398,8 @@ void SignerClient::PutSigningProfileAsyncHelper(const PutSigningProfileRequest& 
 
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

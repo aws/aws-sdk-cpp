@@ -191,8 +191,8 @@ void GreengrassClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AssociateRoleToGroupOutcome GreengrassClient::AssociateRoleToGroup(const AssociateRoleToGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -228,8 +228,8 @@ void GreengrassClient::AssociateRoleToGroupAsyncHelper(const AssociateRoleToGrou
 
 AssociateServiceRoleToAccountOutcome GreengrassClient::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -263,8 +263,8 @@ void GreengrassClient::AssociateServiceRoleToAccountAsyncHelper(const AssociateS
 
 CreateConnectorDefinitionOutcome GreengrassClient::CreateConnectorDefinition(const CreateConnectorDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -298,8 +298,8 @@ void GreengrassClient::CreateConnectorDefinitionAsyncHelper(const CreateConnecto
 
 CreateConnectorDefinitionVersionOutcome GreengrassClient::CreateConnectorDefinitionVersion(const CreateConnectorDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   ss << "/versions";
@@ -335,8 +335,8 @@ void GreengrassClient::CreateConnectorDefinitionVersionAsyncHelper(const CreateC
 
 CreateCoreDefinitionOutcome GreengrassClient::CreateCoreDefinition(const CreateCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -370,8 +370,8 @@ void GreengrassClient::CreateCoreDefinitionAsyncHelper(const CreateCoreDefinitio
 
 CreateCoreDefinitionVersionOutcome GreengrassClient::CreateCoreDefinitionVersion(const CreateCoreDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
@@ -407,8 +407,8 @@ void GreengrassClient::CreateCoreDefinitionVersionAsyncHelper(const CreateCoreDe
 
 CreateDeploymentOutcome GreengrassClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments";
@@ -444,8 +444,8 @@ void GreengrassClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest
 
 CreateDeviceDefinitionOutcome GreengrassClient::CreateDeviceDefinition(const CreateDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -479,8 +479,8 @@ void GreengrassClient::CreateDeviceDefinitionAsyncHelper(const CreateDeviceDefin
 
 CreateDeviceDefinitionVersionOutcome GreengrassClient::CreateDeviceDefinitionVersion(const CreateDeviceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
@@ -516,8 +516,8 @@ void GreengrassClient::CreateDeviceDefinitionVersionAsyncHelper(const CreateDevi
 
 CreateFunctionDefinitionOutcome GreengrassClient::CreateFunctionDefinition(const CreateFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -551,8 +551,8 @@ void GreengrassClient::CreateFunctionDefinitionAsyncHelper(const CreateFunctionD
 
 CreateFunctionDefinitionVersionOutcome GreengrassClient::CreateFunctionDefinitionVersion(const CreateFunctionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
@@ -588,8 +588,8 @@ void GreengrassClient::CreateFunctionDefinitionVersionAsyncHelper(const CreateFu
 
 CreateGroupOutcome GreengrassClient::CreateGroup(const CreateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -623,8 +623,8 @@ void GreengrassClient::CreateGroupAsyncHelper(const CreateGroupRequest& request,
 
 CreateGroupCertificateAuthorityOutcome GreengrassClient::CreateGroupCertificateAuthority(const CreateGroupCertificateAuthorityRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
@@ -660,8 +660,8 @@ void GreengrassClient::CreateGroupCertificateAuthorityAsyncHelper(const CreateGr
 
 CreateGroupVersionOutcome GreengrassClient::CreateGroupVersion(const CreateGroupVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions";
@@ -697,8 +697,8 @@ void GreengrassClient::CreateGroupVersionAsyncHelper(const CreateGroupVersionReq
 
 CreateLoggerDefinitionOutcome GreengrassClient::CreateLoggerDefinition(const CreateLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -732,8 +732,8 @@ void GreengrassClient::CreateLoggerDefinitionAsyncHelper(const CreateLoggerDefin
 
 CreateLoggerDefinitionVersionOutcome GreengrassClient::CreateLoggerDefinitionVersion(const CreateLoggerDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
@@ -769,8 +769,8 @@ void GreengrassClient::CreateLoggerDefinitionVersionAsyncHelper(const CreateLogg
 
 CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const CreateResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -804,8 +804,8 @@ void GreengrassClient::CreateResourceDefinitionAsyncHelper(const CreateResourceD
 
 CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitionVersion(const CreateResourceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
@@ -841,8 +841,8 @@ void GreengrassClient::CreateResourceDefinitionVersionAsyncHelper(const CreateRe
 
 CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const CreateSoftwareUpdateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/updates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -876,8 +876,8 @@ void GreengrassClient::CreateSoftwareUpdateJobAsyncHelper(const CreateSoftwareUp
 
 CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefinition(const CreateSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -911,8 +911,8 @@ void GreengrassClient::CreateSubscriptionDefinitionAsyncHelper(const CreateSubsc
 
 CreateSubscriptionDefinitionVersionOutcome GreengrassClient::CreateSubscriptionDefinitionVersion(const CreateSubscriptionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
@@ -948,8 +948,8 @@ void GreengrassClient::CreateSubscriptionDefinitionVersionAsyncHelper(const Crea
 
 DeleteConnectorDefinitionOutcome GreengrassClient::DeleteConnectorDefinition(const DeleteConnectorDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -984,8 +984,8 @@ void GreengrassClient::DeleteConnectorDefinitionAsyncHelper(const DeleteConnecto
 
 DeleteCoreDefinitionOutcome GreengrassClient::DeleteCoreDefinition(const DeleteCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1020,8 +1020,8 @@ void GreengrassClient::DeleteCoreDefinitionAsyncHelper(const DeleteCoreDefinitio
 
 DeleteDeviceDefinitionOutcome GreengrassClient::DeleteDeviceDefinition(const DeleteDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1056,8 +1056,8 @@ void GreengrassClient::DeleteDeviceDefinitionAsyncHelper(const DeleteDeviceDefin
 
 DeleteFunctionDefinitionOutcome GreengrassClient::DeleteFunctionDefinition(const DeleteFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1092,8 +1092,8 @@ void GreengrassClient::DeleteFunctionDefinitionAsyncHelper(const DeleteFunctionD
 
 DeleteGroupOutcome GreengrassClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1128,8 +1128,8 @@ void GreengrassClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request,
 
 DeleteLoggerDefinitionOutcome GreengrassClient::DeleteLoggerDefinition(const DeleteLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1164,8 +1164,8 @@ void GreengrassClient::DeleteLoggerDefinitionAsyncHelper(const DeleteLoggerDefin
 
 DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const DeleteResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1200,8 +1200,8 @@ void GreengrassClient::DeleteResourceDefinitionAsyncHelper(const DeleteResourceD
 
 DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefinition(const DeleteSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1236,8 +1236,8 @@ void GreengrassClient::DeleteSubscriptionDefinitionAsyncHelper(const DeleteSubsc
 
 DisassociateRoleFromGroupOutcome GreengrassClient::DisassociateRoleFromGroup(const DisassociateRoleFromGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -1273,8 +1273,8 @@ void GreengrassClient::DisassociateRoleFromGroupAsyncHelper(const DisassociateRo
 
 DisassociateServiceRoleFromAccountOutcome GreengrassClient::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1308,8 +1308,8 @@ void GreengrassClient::DisassociateServiceRoleFromAccountAsyncHelper(const Disas
 
 GetAssociatedRoleOutcome GreengrassClient::GetAssociatedRole(const GetAssociatedRoleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -1345,8 +1345,8 @@ void GreengrassClient::GetAssociatedRoleAsyncHelper(const GetAssociatedRoleReque
 
 GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const GetBulkDeploymentStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/status";
@@ -1382,8 +1382,8 @@ void GreengrassClient::GetBulkDeploymentStatusAsyncHelper(const GetBulkDeploymen
 
 GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/things/";
   ss << request.GetThingName();
   ss << "/connectivityInfo";
@@ -1419,8 +1419,8 @@ void GreengrassClient::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoR
 
 GetConnectorDefinitionOutcome GreengrassClient::GetConnectorDefinition(const GetConnectorDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1455,8 +1455,8 @@ void GreengrassClient::GetConnectorDefinitionAsyncHelper(const GetConnectorDefin
 
 GetConnectorDefinitionVersionOutcome GreengrassClient::GetConnectorDefinitionVersion(const GetConnectorDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   ss << "/versions/";
@@ -1493,8 +1493,8 @@ void GreengrassClient::GetConnectorDefinitionVersionAsyncHelper(const GetConnect
 
 GetCoreDefinitionOutcome GreengrassClient::GetCoreDefinition(const GetCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1529,8 +1529,8 @@ void GreengrassClient::GetCoreDefinitionAsyncHelper(const GetCoreDefinitionReque
 
 GetCoreDefinitionVersionOutcome GreengrassClient::GetCoreDefinitionVersion(const GetCoreDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions/";
@@ -1567,8 +1567,8 @@ void GreengrassClient::GetCoreDefinitionVersionAsyncHelper(const GetCoreDefiniti
 
 GetDeploymentStatusOutcome GreengrassClient::GetDeploymentStatus(const GetDeploymentStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments/";
@@ -1606,8 +1606,8 @@ void GreengrassClient::GetDeploymentStatusAsyncHelper(const GetDeploymentStatusR
 
 GetDeviceDefinitionOutcome GreengrassClient::GetDeviceDefinition(const GetDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1642,8 +1642,8 @@ void GreengrassClient::GetDeviceDefinitionAsyncHelper(const GetDeviceDefinitionR
 
 GetDeviceDefinitionVersionOutcome GreengrassClient::GetDeviceDefinitionVersion(const GetDeviceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions/";
@@ -1680,8 +1680,8 @@ void GreengrassClient::GetDeviceDefinitionVersionAsyncHelper(const GetDeviceDefi
 
 GetFunctionDefinitionOutcome GreengrassClient::GetFunctionDefinition(const GetFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1716,8 +1716,8 @@ void GreengrassClient::GetFunctionDefinitionAsyncHelper(const GetFunctionDefinit
 
 GetFunctionDefinitionVersionOutcome GreengrassClient::GetFunctionDefinitionVersion(const GetFunctionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions/";
@@ -1754,8 +1754,8 @@ void GreengrassClient::GetFunctionDefinitionVersionAsyncHelper(const GetFunction
 
 GetGroupOutcome GreengrassClient::GetGroup(const GetGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1790,8 +1790,8 @@ void GreengrassClient::GetGroupAsyncHelper(const GetGroupRequest& request, const
 
 GetGroupCertificateAuthorityOutcome GreengrassClient::GetGroupCertificateAuthority(const GetGroupCertificateAuthorityRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/";
@@ -1828,8 +1828,8 @@ void GreengrassClient::GetGroupCertificateAuthorityAsyncHelper(const GetGroupCer
 
 GetGroupCertificateConfigurationOutcome GreengrassClient::GetGroupCertificateConfiguration(const GetGroupCertificateConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
@@ -1865,8 +1865,8 @@ void GreengrassClient::GetGroupCertificateConfigurationAsyncHelper(const GetGrou
 
 GetGroupVersionOutcome GreengrassClient::GetGroupVersion(const GetGroupVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions/";
@@ -1903,8 +1903,8 @@ void GreengrassClient::GetGroupVersionAsyncHelper(const GetGroupVersionRequest& 
 
 GetLoggerDefinitionOutcome GreengrassClient::GetLoggerDefinition(const GetLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1939,8 +1939,8 @@ void GreengrassClient::GetLoggerDefinitionAsyncHelper(const GetLoggerDefinitionR
 
 GetLoggerDefinitionVersionOutcome GreengrassClient::GetLoggerDefinitionVersion(const GetLoggerDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions/";
@@ -1977,8 +1977,8 @@ void GreengrassClient::GetLoggerDefinitionVersionAsyncHelper(const GetLoggerDefi
 
 GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2013,8 +2013,8 @@ void GreengrassClient::GetResourceDefinitionAsyncHelper(const GetResourceDefinit
 
 GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersion(const GetResourceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions/";
@@ -2051,8 +2051,8 @@ void GreengrassClient::GetResourceDefinitionVersionAsyncHelper(const GetResource
 
 GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2086,8 +2086,8 @@ void GreengrassClient::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleF
 
 GetSubscriptionDefinitionOutcome GreengrassClient::GetSubscriptionDefinition(const GetSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2122,8 +2122,8 @@ void GreengrassClient::GetSubscriptionDefinitionAsyncHelper(const GetSubscriptio
 
 GetSubscriptionDefinitionVersionOutcome GreengrassClient::GetSubscriptionDefinitionVersion(const GetSubscriptionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions/";
@@ -2160,8 +2160,8 @@ void GreengrassClient::GetSubscriptionDefinitionVersionAsyncHelper(const GetSubs
 
 ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDetailedReports(const ListBulkDeploymentDetailedReportsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/detailed-reports";
@@ -2197,8 +2197,8 @@ void GreengrassClient::ListBulkDeploymentDetailedReportsAsyncHelper(const ListBu
 
 ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2232,8 +2232,8 @@ void GreengrassClient::ListBulkDeploymentsAsyncHelper(const ListBulkDeploymentsR
 
 ListConnectorDefinitionVersionsOutcome GreengrassClient::ListConnectorDefinitionVersions(const ListConnectorDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   ss << "/versions";
@@ -2269,8 +2269,8 @@ void GreengrassClient::ListConnectorDefinitionVersionsAsyncHelper(const ListConn
 
 ListConnectorDefinitionsOutcome GreengrassClient::ListConnectorDefinitions(const ListConnectorDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2304,8 +2304,8 @@ void GreengrassClient::ListConnectorDefinitionsAsyncHelper(const ListConnectorDe
 
 ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(const ListCoreDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
@@ -2341,8 +2341,8 @@ void GreengrassClient::ListCoreDefinitionVersionsAsyncHelper(const ListCoreDefin
 
 ListCoreDefinitionsOutcome GreengrassClient::ListCoreDefinitions(const ListCoreDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2376,8 +2376,8 @@ void GreengrassClient::ListCoreDefinitionsAsyncHelper(const ListCoreDefinitionsR
 
 ListDeploymentsOutcome GreengrassClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments";
@@ -2413,8 +2413,8 @@ void GreengrassClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& 
 
 ListDeviceDefinitionVersionsOutcome GreengrassClient::ListDeviceDefinitionVersions(const ListDeviceDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
@@ -2450,8 +2450,8 @@ void GreengrassClient::ListDeviceDefinitionVersionsAsyncHelper(const ListDeviceD
 
 ListDeviceDefinitionsOutcome GreengrassClient::ListDeviceDefinitions(const ListDeviceDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2485,8 +2485,8 @@ void GreengrassClient::ListDeviceDefinitionsAsyncHelper(const ListDeviceDefiniti
 
 ListFunctionDefinitionVersionsOutcome GreengrassClient::ListFunctionDefinitionVersions(const ListFunctionDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
@@ -2522,8 +2522,8 @@ void GreengrassClient::ListFunctionDefinitionVersionsAsyncHelper(const ListFunct
 
 ListFunctionDefinitionsOutcome GreengrassClient::ListFunctionDefinitions(const ListFunctionDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2557,8 +2557,8 @@ void GreengrassClient::ListFunctionDefinitionsAsyncHelper(const ListFunctionDefi
 
 ListGroupCertificateAuthoritiesOutcome GreengrassClient::ListGroupCertificateAuthorities(const ListGroupCertificateAuthoritiesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
@@ -2594,8 +2594,8 @@ void GreengrassClient::ListGroupCertificateAuthoritiesAsyncHelper(const ListGrou
 
 ListGroupVersionsOutcome GreengrassClient::ListGroupVersions(const ListGroupVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions";
@@ -2631,8 +2631,8 @@ void GreengrassClient::ListGroupVersionsAsyncHelper(const ListGroupVersionsReque
 
 ListGroupsOutcome GreengrassClient::ListGroups(const ListGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2666,8 +2666,8 @@ void GreengrassClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, c
 
 ListLoggerDefinitionVersionsOutcome GreengrassClient::ListLoggerDefinitionVersions(const ListLoggerDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
@@ -2703,8 +2703,8 @@ void GreengrassClient::ListLoggerDefinitionVersionsAsyncHelper(const ListLoggerD
 
 ListLoggerDefinitionsOutcome GreengrassClient::ListLoggerDefinitions(const ListLoggerDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2738,8 +2738,8 @@ void GreengrassClient::ListLoggerDefinitionsAsyncHelper(const ListLoggerDefiniti
 
 ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVersions(const ListResourceDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
@@ -2775,8 +2775,8 @@ void GreengrassClient::ListResourceDefinitionVersionsAsyncHelper(const ListResou
 
 ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const ListResourceDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2810,8 +2810,8 @@ void GreengrassClient::ListResourceDefinitionsAsyncHelper(const ListResourceDefi
 
 ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefinitionVersions(const ListSubscriptionDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
@@ -2847,8 +2847,8 @@ void GreengrassClient::ListSubscriptionDefinitionVersionsAsyncHelper(const ListS
 
 ListSubscriptionDefinitionsOutcome GreengrassClient::ListSubscriptionDefinitions(const ListSubscriptionDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2882,8 +2882,8 @@ void GreengrassClient::ListSubscriptionDefinitionsAsyncHelper(const ListSubscrip
 
 ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments/$reset";
@@ -2919,8 +2919,8 @@ void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest
 
 StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulkDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -2954,8 +2954,8 @@ void GreengrassClient::StartBulkDeploymentAsyncHelper(const StartBulkDeploymentR
 
 StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/$stop";
@@ -2991,8 +2991,8 @@ void GreengrassClient::StopBulkDeploymentAsyncHelper(const StopBulkDeploymentReq
 
 UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/things/";
   ss << request.GetThingName();
   ss << "/connectivityInfo";
@@ -3028,8 +3028,8 @@ void GreengrassClient::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivit
 
 UpdateConnectorDefinitionOutcome GreengrassClient::UpdateConnectorDefinition(const UpdateConnectorDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/connectors/";
   ss << request.GetConnectorDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3064,8 +3064,8 @@ void GreengrassClient::UpdateConnectorDefinitionAsyncHelper(const UpdateConnecto
 
 UpdateCoreDefinitionOutcome GreengrassClient::UpdateCoreDefinition(const UpdateCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3100,8 +3100,8 @@ void GreengrassClient::UpdateCoreDefinitionAsyncHelper(const UpdateCoreDefinitio
 
 UpdateDeviceDefinitionOutcome GreengrassClient::UpdateDeviceDefinition(const UpdateDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3136,8 +3136,8 @@ void GreengrassClient::UpdateDeviceDefinitionAsyncHelper(const UpdateDeviceDefin
 
 UpdateFunctionDefinitionOutcome GreengrassClient::UpdateFunctionDefinition(const UpdateFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3172,8 +3172,8 @@ void GreengrassClient::UpdateFunctionDefinitionAsyncHelper(const UpdateFunctionD
 
 UpdateGroupOutcome GreengrassClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3208,8 +3208,8 @@ void GreengrassClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request,
 
 UpdateGroupCertificateConfigurationOutcome GreengrassClient::UpdateGroupCertificateConfiguration(const UpdateGroupCertificateConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
@@ -3245,8 +3245,8 @@ void GreengrassClient::UpdateGroupCertificateConfigurationAsyncHelper(const Upda
 
 UpdateLoggerDefinitionOutcome GreengrassClient::UpdateLoggerDefinition(const UpdateLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3281,8 +3281,8 @@ void GreengrassClient::UpdateLoggerDefinitionAsyncHelper(const UpdateLoggerDefin
 
 UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const UpdateResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3317,8 +3317,8 @@ void GreengrassClient::UpdateResourceDefinitionAsyncHelper(const UpdateResourceD
 
 UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefinition(const UpdateSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());

@@ -117,8 +117,8 @@ void IoT1ClickProjectsClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AssociateDeviceWithPlacementOutcome IoT1ClickProjectsClient::AssociateDeviceWithPlacement(const AssociateDeviceWithPlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -157,8 +157,8 @@ void IoT1ClickProjectsClient::AssociateDeviceWithPlacementAsyncHelper(const Asso
 
 CreatePlacementOutcome IoT1ClickProjectsClient::CreatePlacement(const CreatePlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements";
@@ -194,8 +194,8 @@ void IoT1ClickProjectsClient::CreatePlacementAsyncHelper(const CreatePlacementRe
 
 CreateProjectOutcome IoT1ClickProjectsClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -229,8 +229,8 @@ void IoT1ClickProjectsClient::CreateProjectAsyncHelper(const CreateProjectReques
 
 DeletePlacementOutcome IoT1ClickProjectsClient::DeletePlacement(const DeletePlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -267,8 +267,8 @@ void IoT1ClickProjectsClient::DeletePlacementAsyncHelper(const DeletePlacementRe
 
 DeleteProjectOutcome IoT1ClickProjectsClient::DeleteProject(const DeleteProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -303,8 +303,8 @@ void IoT1ClickProjectsClient::DeleteProjectAsyncHelper(const DeleteProjectReques
 
 DescribePlacementOutcome IoT1ClickProjectsClient::DescribePlacement(const DescribePlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -341,8 +341,8 @@ void IoT1ClickProjectsClient::DescribePlacementAsyncHelper(const DescribePlaceme
 
 DescribeProjectOutcome IoT1ClickProjectsClient::DescribeProject(const DescribeProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -377,8 +377,8 @@ void IoT1ClickProjectsClient::DescribeProjectAsyncHelper(const DescribeProjectRe
 
 DisassociateDeviceFromPlacementOutcome IoT1ClickProjectsClient::DisassociateDeviceFromPlacement(const DisassociateDeviceFromPlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -417,8 +417,8 @@ void IoT1ClickProjectsClient::DisassociateDeviceFromPlacementAsyncHelper(const D
 
 GetDevicesInPlacementOutcome IoT1ClickProjectsClient::GetDevicesInPlacement(const GetDevicesInPlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -456,8 +456,8 @@ void IoT1ClickProjectsClient::GetDevicesInPlacementAsyncHelper(const GetDevicesI
 
 ListPlacementsOutcome IoT1ClickProjectsClient::ListPlacements(const ListPlacementsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements";
@@ -493,8 +493,8 @@ void IoT1ClickProjectsClient::ListPlacementsAsyncHelper(const ListPlacementsRequ
 
 ListProjectsOutcome IoT1ClickProjectsClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -528,8 +528,8 @@ void IoT1ClickProjectsClient::ListProjectsAsyncHelper(const ListProjectsRequest&
 
 UpdatePlacementOutcome IoT1ClickProjectsClient::UpdatePlacement(const UpdatePlacementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   ss << "/placements/";
@@ -566,8 +566,8 @@ void IoT1ClickProjectsClient::UpdatePlacementAsyncHelper(const UpdatePlacementRe
 
 UpdateProjectOutcome IoT1ClickProjectsClient::UpdateProject(const UpdateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectName();
   uri.SetPath(uri.GetPath() + ss.str());

@@ -150,8 +150,8 @@ void CloudFrontClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::CreateCloudFrontOriginAccessIdentity2018_11_05(const CreateCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -185,8 +185,8 @@ void CloudFrontClient::CreateCloudFrontOriginAccessIdentity2018_11_05AsyncHelper
 
 CreateDistribution2018_11_05Outcome CloudFrontClient::CreateDistribution2018_11_05(const CreateDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -220,8 +220,8 @@ void CloudFrontClient::CreateDistribution2018_11_05AsyncHelper(const CreateDistr
 
 CreateDistributionWithTags2018_11_05Outcome CloudFrontClient::CreateDistributionWithTags2018_11_05(const CreateDistributionWithTags2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
@@ -257,8 +257,8 @@ void CloudFrontClient::CreateDistributionWithTags2018_11_05AsyncHelper(const Cre
 
 CreateFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::CreateFieldLevelEncryptionConfig2018_11_05(const CreateFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -292,8 +292,8 @@ void CloudFrontClient::CreateFieldLevelEncryptionConfig2018_11_05AsyncHelper(con
 
 CreateFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::CreateFieldLevelEncryptionProfile2018_11_05(const CreateFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -327,8 +327,8 @@ void CloudFrontClient::CreateFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 CreateInvalidation2018_11_05Outcome CloudFrontClient::CreateInvalidation2018_11_05(const CreateInvalidation2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
@@ -364,8 +364,8 @@ void CloudFrontClient::CreateInvalidation2018_11_05AsyncHelper(const CreateInval
 
 CreatePublicKey2018_11_05Outcome CloudFrontClient::CreatePublicKey2018_11_05(const CreatePublicKey2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -399,8 +399,8 @@ void CloudFrontClient::CreatePublicKey2018_11_05AsyncHelper(const CreatePublicKe
 
 CreateStreamingDistribution2018_11_05Outcome CloudFrontClient::CreateStreamingDistribution2018_11_05(const CreateStreamingDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -434,8 +434,8 @@ void CloudFrontClient::CreateStreamingDistribution2018_11_05AsyncHelper(const Cr
 
 CreateStreamingDistributionWithTags2018_11_05Outcome CloudFrontClient::CreateStreamingDistributionWithTags2018_11_05(const CreateStreamingDistributionWithTags2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?WithTags");
@@ -471,8 +471,8 @@ void CloudFrontClient::CreateStreamingDistributionWithTags2018_11_05AsyncHelper(
 
 DeleteCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2018_11_05(const DeleteCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -507,8 +507,8 @@ void CloudFrontClient::DeleteCloudFrontOriginAccessIdentity2018_11_05AsyncHelper
 
 DeleteDistribution2018_11_05Outcome CloudFrontClient::DeleteDistribution2018_11_05(const DeleteDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -543,8 +543,8 @@ void CloudFrontClient::DeleteDistribution2018_11_05AsyncHelper(const DeleteDistr
 
 DeleteFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::DeleteFieldLevelEncryptionConfig2018_11_05(const DeleteFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -579,8 +579,8 @@ void CloudFrontClient::DeleteFieldLevelEncryptionConfig2018_11_05AsyncHelper(con
 
 DeleteFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::DeleteFieldLevelEncryptionProfile2018_11_05(const DeleteFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -615,8 +615,8 @@ void CloudFrontClient::DeleteFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 DeletePublicKey2018_11_05Outcome CloudFrontClient::DeletePublicKey2018_11_05(const DeletePublicKey2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -651,8 +651,8 @@ void CloudFrontClient::DeletePublicKey2018_11_05AsyncHelper(const DeletePublicKe
 
 DeleteStreamingDistribution2018_11_05Outcome CloudFrontClient::DeleteStreamingDistribution2018_11_05(const DeleteStreamingDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -687,8 +687,8 @@ void CloudFrontClient::DeleteStreamingDistribution2018_11_05AsyncHelper(const De
 
 GetCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentity2018_11_05(const GetCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -723,8 +723,8 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentity2018_11_05AsyncHelper(co
 
 GetCloudFrontOriginAccessIdentityConfig2018_11_05Outcome CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2018_11_05(const GetCloudFrontOriginAccessIdentityConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
@@ -760,8 +760,8 @@ void CloudFrontClient::GetCloudFrontOriginAccessIdentityConfig2018_11_05AsyncHel
 
 GetDistribution2018_11_05Outcome CloudFrontClient::GetDistribution2018_11_05(const GetDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -796,8 +796,8 @@ void CloudFrontClient::GetDistribution2018_11_05AsyncHelper(const GetDistributio
 
 GetDistributionConfig2018_11_05Outcome CloudFrontClient::GetDistributionConfig2018_11_05(const GetDistributionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetId();
   ss << "/config";
@@ -833,8 +833,8 @@ void CloudFrontClient::GetDistributionConfig2018_11_05AsyncHelper(const GetDistr
 
 GetFieldLevelEncryption2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryption2018_11_05(const GetFieldLevelEncryption2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -869,8 +869,8 @@ void CloudFrontClient::GetFieldLevelEncryption2018_11_05AsyncHelper(const GetFie
 
 GetFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionConfig2018_11_05(const GetFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
   ss << request.GetId();
   ss << "/config";
@@ -906,8 +906,8 @@ void CloudFrontClient::GetFieldLevelEncryptionConfig2018_11_05AsyncHelper(const 
 
 GetFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionProfile2018_11_05(const GetFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -942,8 +942,8 @@ void CloudFrontClient::GetFieldLevelEncryptionProfile2018_11_05AsyncHelper(const
 
 GetFieldLevelEncryptionProfileConfig2018_11_05Outcome CloudFrontClient::GetFieldLevelEncryptionProfileConfig2018_11_05(const GetFieldLevelEncryptionProfileConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
   ss << request.GetId();
   ss << "/config";
@@ -979,8 +979,8 @@ void CloudFrontClient::GetFieldLevelEncryptionProfileConfig2018_11_05AsyncHelper
 
 GetInvalidation2018_11_05Outcome CloudFrontClient::GetInvalidation2018_11_05(const GetInvalidation2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation/";
@@ -1017,8 +1017,8 @@ void CloudFrontClient::GetInvalidation2018_11_05AsyncHelper(const GetInvalidatio
 
 GetPublicKey2018_11_05Outcome CloudFrontClient::GetPublicKey2018_11_05(const GetPublicKey2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1053,8 +1053,8 @@ void CloudFrontClient::GetPublicKey2018_11_05AsyncHelper(const GetPublicKey2018_
 
 GetPublicKeyConfig2018_11_05Outcome CloudFrontClient::GetPublicKeyConfig2018_11_05(const GetPublicKeyConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
   ss << request.GetId();
   ss << "/config";
@@ -1090,8 +1090,8 @@ void CloudFrontClient::GetPublicKeyConfig2018_11_05AsyncHelper(const GetPublicKe
 
 GetStreamingDistribution2018_11_05Outcome CloudFrontClient::GetStreamingDistribution2018_11_05(const GetStreamingDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1126,8 +1126,8 @@ void CloudFrontClient::GetStreamingDistribution2018_11_05AsyncHelper(const GetSt
 
 GetStreamingDistributionConfig2018_11_05Outcome CloudFrontClient::GetStreamingDistributionConfig2018_11_05(const GetStreamingDistributionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";
@@ -1163,8 +1163,8 @@ void CloudFrontClient::GetStreamingDistributionConfig2018_11_05AsyncHelper(const
 
 ListCloudFrontOriginAccessIdentities2018_11_05Outcome CloudFrontClient::ListCloudFrontOriginAccessIdentities2018_11_05(const ListCloudFrontOriginAccessIdentities2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1198,8 +1198,8 @@ void CloudFrontClient::ListCloudFrontOriginAccessIdentities2018_11_05AsyncHelper
 
 ListDistributions2018_11_05Outcome CloudFrontClient::ListDistributions2018_11_05(const ListDistributions2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1233,8 +1233,8 @@ void CloudFrontClient::ListDistributions2018_11_05AsyncHelper(const ListDistribu
 
 ListDistributionsByWebACLId2018_11_05Outcome CloudFrontClient::ListDistributionsByWebACLId2018_11_05(const ListDistributionsByWebACLId2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distributionsByWebACLId/";
   ss << request.GetWebACLId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1269,8 +1269,8 @@ void CloudFrontClient::ListDistributionsByWebACLId2018_11_05AsyncHelper(const Li
 
 ListFieldLevelEncryptionConfigs2018_11_05Outcome CloudFrontClient::ListFieldLevelEncryptionConfigs2018_11_05(const ListFieldLevelEncryptionConfigs2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1304,8 +1304,8 @@ void CloudFrontClient::ListFieldLevelEncryptionConfigs2018_11_05AsyncHelper(cons
 
 ListFieldLevelEncryptionProfiles2018_11_05Outcome CloudFrontClient::ListFieldLevelEncryptionProfiles2018_11_05(const ListFieldLevelEncryptionProfiles2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1339,8 +1339,8 @@ void CloudFrontClient::ListFieldLevelEncryptionProfiles2018_11_05AsyncHelper(con
 
 ListInvalidations2018_11_05Outcome CloudFrontClient::ListInvalidations2018_11_05(const ListInvalidations2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetDistributionId();
   ss << "/invalidation";
@@ -1376,8 +1376,8 @@ void CloudFrontClient::ListInvalidations2018_11_05AsyncHelper(const ListInvalida
 
 ListPublicKeys2018_11_05Outcome CloudFrontClient::ListPublicKeys2018_11_05(const ListPublicKeys2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1411,8 +1411,8 @@ void CloudFrontClient::ListPublicKeys2018_11_05AsyncHelper(const ListPublicKeys2
 
 ListStreamingDistributions2018_11_05Outcome CloudFrontClient::ListStreamingDistributions2018_11_05(const ListStreamingDistributions2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1446,8 +1446,8 @@ void CloudFrontClient::ListStreamingDistributions2018_11_05AsyncHelper(const Lis
 
 ListTagsForResource2018_11_05Outcome CloudFrontClient::ListTagsForResource2018_11_05(const ListTagsForResource2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -1481,8 +1481,8 @@ void CloudFrontClient::ListTagsForResource2018_11_05AsyncHelper(const ListTagsFo
 
 TagResource2018_11_05Outcome CloudFrontClient::TagResource2018_11_05(const TagResource2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Tag");
@@ -1518,8 +1518,8 @@ void CloudFrontClient::TagResource2018_11_05AsyncHelper(const TagResource2018_11
 
 UntagResource2018_11_05Outcome CloudFrontClient::UntagResource2018_11_05(const UntagResource2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/tagging";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=Untag");
@@ -1555,8 +1555,8 @@ void CloudFrontClient::UntagResource2018_11_05AsyncHelper(const UntagResource201
 
 UpdateCloudFrontOriginAccessIdentity2018_11_05Outcome CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2018_11_05(const UpdateCloudFrontOriginAccessIdentity2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/origin-access-identity/cloudfront/";
   ss << request.GetId();
   ss << "/config";
@@ -1592,8 +1592,8 @@ void CloudFrontClient::UpdateCloudFrontOriginAccessIdentity2018_11_05AsyncHelper
 
 UpdateDistribution2018_11_05Outcome CloudFrontClient::UpdateDistribution2018_11_05(const UpdateDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/distribution/";
   ss << request.GetId();
   ss << "/config";
@@ -1629,8 +1629,8 @@ void CloudFrontClient::UpdateDistribution2018_11_05AsyncHelper(const UpdateDistr
 
 UpdateFieldLevelEncryptionConfig2018_11_05Outcome CloudFrontClient::UpdateFieldLevelEncryptionConfig2018_11_05(const UpdateFieldLevelEncryptionConfig2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption/";
   ss << request.GetId();
   ss << "/config";
@@ -1666,8 +1666,8 @@ void CloudFrontClient::UpdateFieldLevelEncryptionConfig2018_11_05AsyncHelper(con
 
 UpdateFieldLevelEncryptionProfile2018_11_05Outcome CloudFrontClient::UpdateFieldLevelEncryptionProfile2018_11_05(const UpdateFieldLevelEncryptionProfile2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/field-level-encryption-profile/";
   ss << request.GetId();
   ss << "/config";
@@ -1703,8 +1703,8 @@ void CloudFrontClient::UpdateFieldLevelEncryptionProfile2018_11_05AsyncHelper(co
 
 UpdatePublicKey2018_11_05Outcome CloudFrontClient::UpdatePublicKey2018_11_05(const UpdatePublicKey2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/public-key/";
   ss << request.GetId();
   ss << "/config";
@@ -1740,8 +1740,8 @@ void CloudFrontClient::UpdatePublicKey2018_11_05AsyncHelper(const UpdatePublicKe
 
 UpdateStreamingDistribution2018_11_05Outcome CloudFrontClient::UpdateStreamingDistribution2018_11_05(const UpdateStreamingDistribution2018_11_05Request& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-11-05/streaming-distribution/";
   ss << request.GetId();
   ss << "/config";

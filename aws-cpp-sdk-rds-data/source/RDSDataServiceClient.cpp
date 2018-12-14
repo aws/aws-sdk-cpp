@@ -105,8 +105,8 @@ void RDSDataServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 ExecuteSqlOutcome RDSDataServiceClient::ExecuteSql(const ExecuteSqlRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/ExecuteSql";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

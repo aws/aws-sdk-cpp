@@ -146,8 +146,8 @@ void GuardDutyClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AcceptInvitationOutcome GuardDutyClient::AcceptInvitation(const AcceptInvitationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/master";
@@ -183,8 +183,8 @@ void GuardDutyClient::AcceptInvitationAsyncHelper(const AcceptInvitationRequest&
 
 ArchiveFindingsOutcome GuardDutyClient::ArchiveFindings(const ArchiveFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/archive";
@@ -220,8 +220,8 @@ void GuardDutyClient::ArchiveFindingsAsyncHelper(const ArchiveFindingsRequest& r
 
 CreateDetectorOutcome GuardDutyClient::CreateDetector(const CreateDetectorRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -255,8 +255,8 @@ void GuardDutyClient::CreateDetectorAsyncHelper(const CreateDetectorRequest& req
 
 CreateFilterOutcome GuardDutyClient::CreateFilter(const CreateFilterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/filter";
@@ -292,8 +292,8 @@ void GuardDutyClient::CreateFilterAsyncHelper(const CreateFilterRequest& request
 
 CreateIPSetOutcome GuardDutyClient::CreateIPSet(const CreateIPSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/ipset";
@@ -329,8 +329,8 @@ void GuardDutyClient::CreateIPSetAsyncHelper(const CreateIPSetRequest& request, 
 
 CreateMembersOutcome GuardDutyClient::CreateMembers(const CreateMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member";
@@ -366,8 +366,8 @@ void GuardDutyClient::CreateMembersAsyncHelper(const CreateMembersRequest& reque
 
 CreateSampleFindingsOutcome GuardDutyClient::CreateSampleFindings(const CreateSampleFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/create";
@@ -403,8 +403,8 @@ void GuardDutyClient::CreateSampleFindingsAsyncHelper(const CreateSampleFindings
 
 CreateThreatIntelSetOutcome GuardDutyClient::CreateThreatIntelSet(const CreateThreatIntelSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/threatintelset";
@@ -440,8 +440,8 @@ void GuardDutyClient::CreateThreatIntelSetAsyncHelper(const CreateThreatIntelSet
 
 DeclineInvitationsOutcome GuardDutyClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitation/decline";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -475,8 +475,8 @@ void GuardDutyClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRequ
 
 DeleteDetectorOutcome GuardDutyClient::DeleteDetector(const DeleteDetectorRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -511,8 +511,8 @@ void GuardDutyClient::DeleteDetectorAsyncHelper(const DeleteDetectorRequest& req
 
 DeleteFilterOutcome GuardDutyClient::DeleteFilter(const DeleteFilterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/filter/";
@@ -549,8 +549,8 @@ void GuardDutyClient::DeleteFilterAsyncHelper(const DeleteFilterRequest& request
 
 DeleteIPSetOutcome GuardDutyClient::DeleteIPSet(const DeleteIPSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/ipset/";
@@ -587,8 +587,8 @@ void GuardDutyClient::DeleteIPSetAsyncHelper(const DeleteIPSetRequest& request, 
 
 DeleteInvitationsOutcome GuardDutyClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitation/delete";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -622,8 +622,8 @@ void GuardDutyClient::DeleteInvitationsAsyncHelper(const DeleteInvitationsReques
 
 DeleteMembersOutcome GuardDutyClient::DeleteMembers(const DeleteMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/delete";
@@ -659,8 +659,8 @@ void GuardDutyClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& reque
 
 DeleteThreatIntelSetOutcome GuardDutyClient::DeleteThreatIntelSet(const DeleteThreatIntelSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/threatintelset/";
@@ -697,8 +697,8 @@ void GuardDutyClient::DeleteThreatIntelSetAsyncHelper(const DeleteThreatIntelSet
 
 DisassociateFromMasterAccountOutcome GuardDutyClient::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/master/disassociate";
@@ -734,8 +734,8 @@ void GuardDutyClient::DisassociateFromMasterAccountAsyncHelper(const Disassociat
 
 DisassociateMembersOutcome GuardDutyClient::DisassociateMembers(const DisassociateMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/disassociate";
@@ -771,8 +771,8 @@ void GuardDutyClient::DisassociateMembersAsyncHelper(const DisassociateMembersRe
 
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -807,8 +807,8 @@ void GuardDutyClient::GetDetectorAsyncHelper(const GetDetectorRequest& request, 
 
 GetFilterOutcome GuardDutyClient::GetFilter(const GetFilterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/filter/";
@@ -845,8 +845,8 @@ void GuardDutyClient::GetFilterAsyncHelper(const GetFilterRequest& request, cons
 
 GetFindingsOutcome GuardDutyClient::GetFindings(const GetFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/get";
@@ -882,8 +882,8 @@ void GuardDutyClient::GetFindingsAsyncHelper(const GetFindingsRequest& request, 
 
 GetFindingsStatisticsOutcome GuardDutyClient::GetFindingsStatistics(const GetFindingsStatisticsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/statistics";
@@ -919,8 +919,8 @@ void GuardDutyClient::GetFindingsStatisticsAsyncHelper(const GetFindingsStatisti
 
 GetIPSetOutcome GuardDutyClient::GetIPSet(const GetIPSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/ipset/";
@@ -957,8 +957,8 @@ void GuardDutyClient::GetIPSetAsyncHelper(const GetIPSetRequest& request, const 
 
 GetInvitationsCountOutcome GuardDutyClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitation/count";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -992,8 +992,8 @@ void GuardDutyClient::GetInvitationsCountAsyncHelper(const GetInvitationsCountRe
 
 GetMasterAccountOutcome GuardDutyClient::GetMasterAccount(const GetMasterAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/master";
@@ -1029,8 +1029,8 @@ void GuardDutyClient::GetMasterAccountAsyncHelper(const GetMasterAccountRequest&
 
 GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/get";
@@ -1066,8 +1066,8 @@ void GuardDutyClient::GetMembersAsyncHelper(const GetMembersRequest& request, co
 
 GetThreatIntelSetOutcome GuardDutyClient::GetThreatIntelSet(const GetThreatIntelSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/threatintelset/";
@@ -1104,8 +1104,8 @@ void GuardDutyClient::GetThreatIntelSetAsyncHelper(const GetThreatIntelSetReques
 
 InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/invite";
@@ -1141,8 +1141,8 @@ void GuardDutyClient::InviteMembersAsyncHelper(const InviteMembersRequest& reque
 
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1176,8 +1176,8 @@ void GuardDutyClient::ListDetectorsAsyncHelper(const ListDetectorsRequest& reque
 
 ListFiltersOutcome GuardDutyClient::ListFilters(const ListFiltersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/filter";
@@ -1213,8 +1213,8 @@ void GuardDutyClient::ListFiltersAsyncHelper(const ListFiltersRequest& request, 
 
 ListFindingsOutcome GuardDutyClient::ListFindings(const ListFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings";
@@ -1250,8 +1250,8 @@ void GuardDutyClient::ListFindingsAsyncHelper(const ListFindingsRequest& request
 
 ListIPSetsOutcome GuardDutyClient::ListIPSets(const ListIPSetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/ipset";
@@ -1287,8 +1287,8 @@ void GuardDutyClient::ListIPSetsAsyncHelper(const ListIPSetsRequest& request, co
 
 ListInvitationsOutcome GuardDutyClient::ListInvitations(const ListInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitation";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1322,8 +1322,8 @@ void GuardDutyClient::ListInvitationsAsyncHelper(const ListInvitationsRequest& r
 
 ListMembersOutcome GuardDutyClient::ListMembers(const ListMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member";
@@ -1359,8 +1359,8 @@ void GuardDutyClient::ListMembersAsyncHelper(const ListMembersRequest& request, 
 
 ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreatIntelSetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/threatintelset";
@@ -1396,8 +1396,8 @@ void GuardDutyClient::ListThreatIntelSetsAsyncHelper(const ListThreatIntelSetsRe
 
 StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const StartMonitoringMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/start";
@@ -1433,8 +1433,8 @@ void GuardDutyClient::StartMonitoringMembersAsyncHelper(const StartMonitoringMem
 
 StopMonitoringMembersOutcome GuardDutyClient::StopMonitoringMembers(const StopMonitoringMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/member/stop";
@@ -1470,8 +1470,8 @@ void GuardDutyClient::StopMonitoringMembersAsyncHelper(const StopMonitoringMembe
 
 UnarchiveFindingsOutcome GuardDutyClient::UnarchiveFindings(const UnarchiveFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/unarchive";
@@ -1507,8 +1507,8 @@ void GuardDutyClient::UnarchiveFindingsAsyncHelper(const UnarchiveFindingsReques
 
 UpdateDetectorOutcome GuardDutyClient::UpdateDetector(const UpdateDetectorRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1543,8 +1543,8 @@ void GuardDutyClient::UpdateDetectorAsyncHelper(const UpdateDetectorRequest& req
 
 UpdateFilterOutcome GuardDutyClient::UpdateFilter(const UpdateFilterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/filter/";
@@ -1581,8 +1581,8 @@ void GuardDutyClient::UpdateFilterAsyncHelper(const UpdateFilterRequest& request
 
 UpdateFindingsFeedbackOutcome GuardDutyClient::UpdateFindingsFeedback(const UpdateFindingsFeedbackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/findings/feedback";
@@ -1618,8 +1618,8 @@ void GuardDutyClient::UpdateFindingsFeedbackAsyncHelper(const UpdateFindingsFeed
 
 UpdateIPSetOutcome GuardDutyClient::UpdateIPSet(const UpdateIPSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/ipset/";
@@ -1656,8 +1656,8 @@ void GuardDutyClient::UpdateIPSetAsyncHelper(const UpdateIPSetRequest& request, 
 
 UpdateThreatIntelSetOutcome GuardDutyClient::UpdateThreatIntelSet(const UpdateThreatIntelSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/detector/";
   ss << request.GetDetectorId();
   ss << "/threatintelset/";

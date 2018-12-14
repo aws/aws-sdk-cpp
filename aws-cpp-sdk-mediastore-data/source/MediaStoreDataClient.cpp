@@ -109,8 +109,8 @@ void MediaStoreDataClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteObjectOutcome MediaStoreDataClient::DeleteObject(const DeleteObjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -145,8 +145,8 @@ void MediaStoreDataClient::DeleteObjectAsyncHelper(const DeleteObjectRequest& re
 
 DescribeObjectOutcome MediaStoreDataClient::DescribeObject(const DescribeObjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -181,8 +181,8 @@ void MediaStoreDataClient::DescribeObjectAsyncHelper(const DescribeObjectRequest
 
 GetObjectOutcome MediaStoreDataClient::GetObject(const GetObjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -217,8 +217,8 @@ void MediaStoreDataClient::GetObjectAsyncHelper(const GetObjectRequest& request,
 
 ListItemsOutcome MediaStoreDataClient::ListItems(const ListItemsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -252,8 +252,8 @@ void MediaStoreDataClient::ListItemsAsyncHelper(const ListItemsRequest& request,
 
 PutObjectOutcome MediaStoreDataClient::PutObject(const PutObjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetPath();
   uri.SetPath(uri.GetPath() + ss.str());

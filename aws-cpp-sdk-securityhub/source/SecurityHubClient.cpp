@@ -133,8 +133,8 @@ void SecurityHubClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AcceptInvitationOutcome SecurityHubClient::AcceptInvitation(const AcceptInvitationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/master";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -168,8 +168,8 @@ void SecurityHubClient::AcceptInvitationAsyncHelper(const AcceptInvitationReques
 
 BatchDisableStandardsOutcome SecurityHubClient::BatchDisableStandards(const BatchDisableStandardsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/standards/deregister";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -203,8 +203,8 @@ void SecurityHubClient::BatchDisableStandardsAsyncHelper(const BatchDisableStand
 
 BatchEnableStandardsOutcome SecurityHubClient::BatchEnableStandards(const BatchEnableStandardsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/standards/register";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -238,8 +238,8 @@ void SecurityHubClient::BatchEnableStandardsAsyncHelper(const BatchEnableStandar
 
 BatchImportFindingsOutcome SecurityHubClient::BatchImportFindings(const BatchImportFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/findings/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -273,8 +273,8 @@ void SecurityHubClient::BatchImportFindingsAsyncHelper(const BatchImportFindings
 
 CreateInsightOutcome SecurityHubClient::CreateInsight(const CreateInsightRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/insights";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -308,8 +308,8 @@ void SecurityHubClient::CreateInsightAsyncHelper(const CreateInsightRequest& req
 
 CreateMembersOutcome SecurityHubClient::CreateMembers(const CreateMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -343,8 +343,8 @@ void SecurityHubClient::CreateMembersAsyncHelper(const CreateMembersRequest& req
 
 DeclineInvitationsOutcome SecurityHubClient::DeclineInvitations(const DeclineInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitations/decline";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -378,8 +378,8 @@ void SecurityHubClient::DeclineInvitationsAsyncHelper(const DeclineInvitationsRe
 
 DeleteInsightOutcome SecurityHubClient::DeleteInsight(const DeleteInsightRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/insights/";
   ss << request.GetInsightArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -414,8 +414,8 @@ void SecurityHubClient::DeleteInsightAsyncHelper(const DeleteInsightRequest& req
 
 DeleteInvitationsOutcome SecurityHubClient::DeleteInvitations(const DeleteInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitations/delete";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -449,8 +449,8 @@ void SecurityHubClient::DeleteInvitationsAsyncHelper(const DeleteInvitationsRequ
 
 DeleteMembersOutcome SecurityHubClient::DeleteMembers(const DeleteMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members/delete";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -484,8 +484,8 @@ void SecurityHubClient::DeleteMembersAsyncHelper(const DeleteMembersRequest& req
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/productSubscriptions/";
   ss << request.GetProductSubscriptionArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -520,8 +520,8 @@ void SecurityHubClient::DisableImportFindingsForProductAsyncHelper(const Disable
 
 DisableSecurityHubOutcome SecurityHubClient::DisableSecurityHub(const DisableSecurityHubRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -555,8 +555,8 @@ void SecurityHubClient::DisableSecurityHubAsyncHelper(const DisableSecurityHubRe
 
 DisassociateFromMasterAccountOutcome SecurityHubClient::DisassociateFromMasterAccount(const DisassociateFromMasterAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/master/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -590,8 +590,8 @@ void SecurityHubClient::DisassociateFromMasterAccountAsyncHelper(const Disassoci
 
 DisassociateMembersOutcome SecurityHubClient::DisassociateMembers(const DisassociateMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members/disassociate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -625,8 +625,8 @@ void SecurityHubClient::DisassociateMembersAsyncHelper(const DisassociateMembers
 
 EnableImportFindingsForProductOutcome SecurityHubClient::EnableImportFindingsForProduct(const EnableImportFindingsForProductRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/productSubscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -660,8 +660,8 @@ void SecurityHubClient::EnableImportFindingsForProductAsyncHelper(const EnableIm
 
 EnableSecurityHubOutcome SecurityHubClient::EnableSecurityHub(const EnableSecurityHubRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -695,8 +695,8 @@ void SecurityHubClient::EnableSecurityHubAsyncHelper(const EnableSecurityHubRequ
 
 GetEnabledStandardsOutcome SecurityHubClient::GetEnabledStandards(const GetEnabledStandardsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/standards/get";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -730,8 +730,8 @@ void SecurityHubClient::GetEnabledStandardsAsyncHelper(const GetEnabledStandards
 
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/findings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -765,8 +765,8 @@ void SecurityHubClient::GetFindingsAsyncHelper(const GetFindingsRequest& request
 
 GetInsightResultsOutcome SecurityHubClient::GetInsightResults(const GetInsightResultsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/insights/results/";
   ss << request.GetInsightArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -801,8 +801,8 @@ void SecurityHubClient::GetInsightResultsAsyncHelper(const GetInsightResultsRequ
 
 GetInsightsOutcome SecurityHubClient::GetInsights(const GetInsightsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/insights/get";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -836,8 +836,8 @@ void SecurityHubClient::GetInsightsAsyncHelper(const GetInsightsRequest& request
 
 GetInvitationsCountOutcome SecurityHubClient::GetInvitationsCount(const GetInvitationsCountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitations/count";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -871,8 +871,8 @@ void SecurityHubClient::GetInvitationsCountAsyncHelper(const GetInvitationsCount
 
 GetMasterAccountOutcome SecurityHubClient::GetMasterAccount(const GetMasterAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/master";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -906,8 +906,8 @@ void SecurityHubClient::GetMasterAccountAsyncHelper(const GetMasterAccountReques
 
 GetMembersOutcome SecurityHubClient::GetMembers(const GetMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members/get";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -941,8 +941,8 @@ void SecurityHubClient::GetMembersAsyncHelper(const GetMembersRequest& request, 
 
 InviteMembersOutcome SecurityHubClient::InviteMembers(const InviteMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members/invite";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -976,8 +976,8 @@ void SecurityHubClient::InviteMembersAsyncHelper(const InviteMembersRequest& req
 
 ListEnabledProductsForImportOutcome SecurityHubClient::ListEnabledProductsForImport(const ListEnabledProductsForImportRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/productSubscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1011,8 +1011,8 @@ void SecurityHubClient::ListEnabledProductsForImportAsyncHelper(const ListEnable
 
 ListInvitationsOutcome SecurityHubClient::ListInvitations(const ListInvitationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/invitations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1046,8 +1046,8 @@ void SecurityHubClient::ListInvitationsAsyncHelper(const ListInvitationsRequest&
 
 ListMembersOutcome SecurityHubClient::ListMembers(const ListMembersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/members";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1081,8 +1081,8 @@ void SecurityHubClient::ListMembersAsyncHelper(const ListMembersRequest& request
 
 UpdateFindingsOutcome SecurityHubClient::UpdateFindings(const UpdateFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/findings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
@@ -1116,8 +1116,8 @@ void SecurityHubClient::UpdateFindingsAsyncHelper(const UpdateFindingsRequest& r
 
 UpdateInsightOutcome SecurityHubClient::UpdateInsight(const UpdateInsightRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/insights/";
   ss << request.GetInsightArn();
   uri.SetPath(uri.GetPath() + ss.str());

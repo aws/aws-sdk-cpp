@@ -105,8 +105,8 @@ void SageMakerRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 InvokeEndpointOutcome SageMakerRuntimeClient::InvokeEndpoint(const InvokeEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/endpoints/";
   ss << request.GetEndpointName();
   ss << "/invocations";

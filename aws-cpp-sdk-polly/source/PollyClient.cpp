@@ -113,8 +113,8 @@ void PollyClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteLexiconOutcome PollyClient::DeleteLexicon(const DeleteLexiconRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -149,8 +149,8 @@ void PollyClient::DeleteLexiconAsyncHelper(const DeleteLexiconRequest& request, 
 
 DescribeVoicesOutcome PollyClient::DescribeVoices(const DescribeVoicesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/voices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -184,8 +184,8 @@ void PollyClient::DescribeVoicesAsyncHelper(const DescribeVoicesRequest& request
 
 GetLexiconOutcome PollyClient::GetLexicon(const GetLexiconRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -220,8 +220,8 @@ void PollyClient::GetLexiconAsyncHelper(const GetLexiconRequest& request, const 
 
 GetSpeechSynthesisTaskOutcome PollyClient::GetSpeechSynthesisTask(const GetSpeechSynthesisTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/synthesisTasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -256,8 +256,8 @@ void PollyClient::GetSpeechSynthesisTaskAsyncHelper(const GetSpeechSynthesisTask
 
 ListLexiconsOutcome PollyClient::ListLexicons(const ListLexiconsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/lexicons";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -291,8 +291,8 @@ void PollyClient::ListLexiconsAsyncHelper(const ListLexiconsRequest& request, co
 
 ListSpeechSynthesisTasksOutcome PollyClient::ListSpeechSynthesisTasks(const ListSpeechSynthesisTasksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -326,8 +326,8 @@ void PollyClient::ListSpeechSynthesisTasksAsyncHelper(const ListSpeechSynthesisT
 
 PutLexiconOutcome PollyClient::PutLexicon(const PutLexiconRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/lexicons/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -362,8 +362,8 @@ void PollyClient::PutLexiconAsyncHelper(const PutLexiconRequest& request, const 
 
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/synthesisTasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -397,8 +397,8 @@ void PollyClient::StartSpeechSynthesisTaskAsyncHelper(const StartSpeechSynthesis
 
 SynthesizeSpeechOutcome PollyClient::SynthesizeSpeech(const SynthesizeSpeechRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/speech";
   uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);

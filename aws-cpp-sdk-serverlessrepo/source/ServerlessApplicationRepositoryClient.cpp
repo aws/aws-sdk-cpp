@@ -117,8 +117,8 @@ void ServerlessApplicationRepositoryClient::OverrideEndpoint(const Aws::String& 
 }
 CreateApplicationOutcome ServerlessApplicationRepositoryClient::CreateApplication(const CreateApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -152,8 +152,8 @@ void ServerlessApplicationRepositoryClient::CreateApplicationAsyncHelper(const C
 
 CreateApplicationVersionOutcome ServerlessApplicationRepositoryClient::CreateApplicationVersion(const CreateApplicationVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/versions/";
@@ -190,8 +190,8 @@ void ServerlessApplicationRepositoryClient::CreateApplicationVersionAsyncHelper(
 
 CreateCloudFormationChangeSetOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSet(const CreateCloudFormationChangeSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/changesets";
@@ -227,8 +227,8 @@ void ServerlessApplicationRepositoryClient::CreateCloudFormationChangeSetAsyncHe
 
 CreateCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::CreateCloudFormationTemplate(const CreateCloudFormationTemplateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/templates";
@@ -264,8 +264,8 @@ void ServerlessApplicationRepositoryClient::CreateCloudFormationTemplateAsyncHel
 
 DeleteApplicationOutcome ServerlessApplicationRepositoryClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -300,8 +300,8 @@ void ServerlessApplicationRepositoryClient::DeleteApplicationAsyncHelper(const D
 
 GetApplicationOutcome ServerlessApplicationRepositoryClient::GetApplication(const GetApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -336,8 +336,8 @@ void ServerlessApplicationRepositoryClient::GetApplicationAsyncHelper(const GetA
 
 GetApplicationPolicyOutcome ServerlessApplicationRepositoryClient::GetApplicationPolicy(const GetApplicationPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/policy";
@@ -373,8 +373,8 @@ void ServerlessApplicationRepositoryClient::GetApplicationPolicyAsyncHelper(cons
 
 GetCloudFormationTemplateOutcome ServerlessApplicationRepositoryClient::GetCloudFormationTemplate(const GetCloudFormationTemplateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/templates/";
@@ -411,8 +411,8 @@ void ServerlessApplicationRepositoryClient::GetCloudFormationTemplateAsyncHelper
 
 ListApplicationDependenciesOutcome ServerlessApplicationRepositoryClient::ListApplicationDependencies(const ListApplicationDependenciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/dependencies";
@@ -448,8 +448,8 @@ void ServerlessApplicationRepositoryClient::ListApplicationDependenciesAsyncHelp
 
 ListApplicationVersionsOutcome ServerlessApplicationRepositoryClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/versions";
@@ -485,8 +485,8 @@ void ServerlessApplicationRepositoryClient::ListApplicationVersionsAsyncHelper(c
 
 ListApplicationsOutcome ServerlessApplicationRepositoryClient::ListApplications(const ListApplicationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -520,8 +520,8 @@ void ServerlessApplicationRepositoryClient::ListApplicationsAsyncHelper(const Li
 
 PutApplicationPolicyOutcome ServerlessApplicationRepositoryClient::PutApplicationPolicy(const PutApplicationPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   ss << "/policy";
@@ -557,8 +557,8 @@ void ServerlessApplicationRepositoryClient::PutApplicationPolicyAsyncHelper(cons
 
 UpdateApplicationOutcome ServerlessApplicationRepositoryClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/applications/";
   ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());

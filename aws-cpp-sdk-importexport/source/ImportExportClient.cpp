@@ -121,8 +121,8 @@ Aws::String ImportExportClient::ConvertRequestToPresignedUrl(const AmazonSeriali
 
 CancelJobOutcome ImportExportClient::CancelJob(const CancelJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CancelJob");
@@ -158,8 +158,8 @@ void ImportExportClient::CancelJobAsyncHelper(const CancelJobRequest& request, c
 
 CreateJobOutcome ImportExportClient::CreateJob(const CreateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=CreateJob");
@@ -195,8 +195,8 @@ void ImportExportClient::CreateJobAsyncHelper(const CreateJobRequest& request, c
 
 GetShippingLabelOutcome ImportExportClient::GetShippingLabel(const GetShippingLabelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetShippingLabel");
@@ -232,8 +232,8 @@ void ImportExportClient::GetShippingLabelAsyncHelper(const GetShippingLabelReque
 
 GetStatusOutcome ImportExportClient::GetStatus(const GetStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=GetStatus");
@@ -269,8 +269,8 @@ void ImportExportClient::GetStatusAsyncHelper(const GetStatusRequest& request, c
 
 ListJobsOutcome ImportExportClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=ListJobs");
@@ -306,8 +306,8 @@ void ImportExportClient::ListJobsAsyncHelper(const ListJobsRequest& request, con
 
 UpdateJobOutcome ImportExportClient::UpdateJob(const UpdateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?Operation=UpdateJob");

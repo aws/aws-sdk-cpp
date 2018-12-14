@@ -24,19 +24,25 @@
 #include <aws/pinpoint-email/model/CreateConfigurationSetResult.h>
 #include <aws/pinpoint-email/model/CreateConfigurationSetEventDestinationResult.h>
 #include <aws/pinpoint-email/model/CreateDedicatedIpPoolResult.h>
+#include <aws/pinpoint-email/model/CreateDeliverabilityTestReportResult.h>
 #include <aws/pinpoint-email/model/CreateEmailIdentityResult.h>
 #include <aws/pinpoint-email/model/DeleteConfigurationSetResult.h>
 #include <aws/pinpoint-email/model/DeleteConfigurationSetEventDestinationResult.h>
 #include <aws/pinpoint-email/model/DeleteDedicatedIpPoolResult.h>
 #include <aws/pinpoint-email/model/DeleteEmailIdentityResult.h>
 #include <aws/pinpoint-email/model/GetAccountResult.h>
+#include <aws/pinpoint-email/model/GetBlacklistReportsResult.h>
 #include <aws/pinpoint-email/model/GetConfigurationSetResult.h>
 #include <aws/pinpoint-email/model/GetConfigurationSetEventDestinationsResult.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpResult.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpsResult.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsResult.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityTestReportResult.h>
+#include <aws/pinpoint-email/model/GetDomainStatisticsReportResult.h>
 #include <aws/pinpoint-email/model/GetEmailIdentityResult.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsResult.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsResult.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsResult.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesResult.h>
 #include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/pinpoint-email/model/PutAccountSendingAttributesResult.h>
@@ -46,6 +52,7 @@
 #include <aws/pinpoint-email/model/PutConfigurationSetTrackingOptionsResult.h>
 #include <aws/pinpoint-email/model/PutDedicatedIpInPoolResult.h>
 #include <aws/pinpoint-email/model/PutDedicatedIpWarmupAttributesResult.h>
+#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionResult.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityDkimAttributesResult.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityFeedbackAttributesResult.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityMailFromAttributesResult.h>
@@ -94,19 +101,25 @@ namespace Model
         class CreateConfigurationSetRequest;
         class CreateConfigurationSetEventDestinationRequest;
         class CreateDedicatedIpPoolRequest;
+        class CreateDeliverabilityTestReportRequest;
         class CreateEmailIdentityRequest;
         class DeleteConfigurationSetRequest;
         class DeleteConfigurationSetEventDestinationRequest;
         class DeleteDedicatedIpPoolRequest;
         class DeleteEmailIdentityRequest;
         class GetAccountRequest;
+        class GetBlacklistReportsRequest;
         class GetConfigurationSetRequest;
         class GetConfigurationSetEventDestinationsRequest;
         class GetDedicatedIpRequest;
         class GetDedicatedIpsRequest;
+        class GetDeliverabilityDashboardOptionsRequest;
+        class GetDeliverabilityTestReportRequest;
+        class GetDomainStatisticsReportRequest;
         class GetEmailIdentityRequest;
         class ListConfigurationSetsRequest;
         class ListDedicatedIpPoolsRequest;
+        class ListDeliverabilityTestReportsRequest;
         class ListEmailIdentitiesRequest;
         class PutAccountDedicatedIpWarmupAttributesRequest;
         class PutAccountSendingAttributesRequest;
@@ -116,6 +129,7 @@ namespace Model
         class PutConfigurationSetTrackingOptionsRequest;
         class PutDedicatedIpInPoolRequest;
         class PutDedicatedIpWarmupAttributesRequest;
+        class PutDeliverabilityDashboardOptionRequest;
         class PutEmailIdentityDkimAttributesRequest;
         class PutEmailIdentityFeedbackAttributesRequest;
         class PutEmailIdentityMailFromAttributesRequest;
@@ -125,19 +139,25 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateConfigurationSetResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<CreateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateConfigurationSetEventDestinationOutcome;
         typedef Aws::Utils::Outcome<CreateDedicatedIpPoolResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateDedicatedIpPoolOutcome;
+        typedef Aws::Utils::Outcome<CreateDeliverabilityTestReportResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateDeliverabilityTestReportOutcome;
         typedef Aws::Utils::Outcome<CreateEmailIdentityResult, Aws::Client::AWSError<PinpointEmailErrors>> CreateEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, Aws::Client::AWSError<PinpointEmailErrors>> DeleteConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointEmailErrors>> DeleteConfigurationSetEventDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteDedicatedIpPoolResult, Aws::Client::AWSError<PinpointEmailErrors>> DeleteDedicatedIpPoolOutcome;
         typedef Aws::Utils::Outcome<DeleteEmailIdentityResult, Aws::Client::AWSError<PinpointEmailErrors>> DeleteEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, Aws::Client::AWSError<PinpointEmailErrors>> GetAccountOutcome;
+        typedef Aws::Utils::Outcome<GetBlacklistReportsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetBlacklistReportsOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetResult, Aws::Client::AWSError<PinpointEmailErrors>> GetConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetConfigurationSetEventDestinationsOutcome;
         typedef Aws::Utils::Outcome<GetDedicatedIpResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDedicatedIpOutcome;
         typedef Aws::Utils::Outcome<GetDedicatedIpsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDedicatedIpsOutcome;
+        typedef Aws::Utils::Outcome<GetDeliverabilityDashboardOptionsResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDeliverabilityDashboardOptionsOutcome;
+        typedef Aws::Utils::Outcome<GetDeliverabilityTestReportResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDeliverabilityTestReportOutcome;
+        typedef Aws::Utils::Outcome<GetDomainStatisticsReportResult, Aws::Client::AWSError<PinpointEmailErrors>> GetDomainStatisticsReportOutcome;
         typedef Aws::Utils::Outcome<GetEmailIdentityResult, Aws::Client::AWSError<PinpointEmailErrors>> GetEmailIdentityOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListConfigurationSetsOutcome;
         typedef Aws::Utils::Outcome<ListDedicatedIpPoolsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDedicatedIpPoolsOutcome;
+        typedef Aws::Utils::Outcome<ListDeliverabilityTestReportsResult, Aws::Client::AWSError<PinpointEmailErrors>> ListDeliverabilityTestReportsOutcome;
         typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, Aws::Client::AWSError<PinpointEmailErrors>> ListEmailIdentitiesOutcome;
         typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutAccountDedicatedIpWarmupAttributesOutcome;
         typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutAccountSendingAttributesOutcome;
@@ -147,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<PinpointEmailErrors>> PutConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<PutDedicatedIpInPoolResult, Aws::Client::AWSError<PinpointEmailErrors>> PutDedicatedIpInPoolOutcome;
         typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutDedicatedIpWarmupAttributesOutcome;
+        typedef Aws::Utils::Outcome<PutDeliverabilityDashboardOptionResult, Aws::Client::AWSError<PinpointEmailErrors>> PutDeliverabilityDashboardOptionOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityDkimAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutEmailIdentityDkimAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutEmailIdentityFeedbackAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityMailFromAttributesResult, Aws::Client::AWSError<PinpointEmailErrors>> PutEmailIdentityMailFromAttributesOutcome;
@@ -156,19 +177,25 @@ namespace Model
         typedef std::future<CreateConfigurationSetOutcome> CreateConfigurationSetOutcomeCallable;
         typedef std::future<CreateConfigurationSetEventDestinationOutcome> CreateConfigurationSetEventDestinationOutcomeCallable;
         typedef std::future<CreateDedicatedIpPoolOutcome> CreateDedicatedIpPoolOutcomeCallable;
+        typedef std::future<CreateDeliverabilityTestReportOutcome> CreateDeliverabilityTestReportOutcomeCallable;
         typedef std::future<CreateEmailIdentityOutcome> CreateEmailIdentityOutcomeCallable;
         typedef std::future<DeleteConfigurationSetOutcome> DeleteConfigurationSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
         typedef std::future<DeleteDedicatedIpPoolOutcome> DeleteDedicatedIpPoolOutcomeCallable;
         typedef std::future<DeleteEmailIdentityOutcome> DeleteEmailIdentityOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
+        typedef std::future<GetBlacklistReportsOutcome> GetBlacklistReportsOutcomeCallable;
         typedef std::future<GetConfigurationSetOutcome> GetConfigurationSetOutcomeCallable;
         typedef std::future<GetConfigurationSetEventDestinationsOutcome> GetConfigurationSetEventDestinationsOutcomeCallable;
         typedef std::future<GetDedicatedIpOutcome> GetDedicatedIpOutcomeCallable;
         typedef std::future<GetDedicatedIpsOutcome> GetDedicatedIpsOutcomeCallable;
+        typedef std::future<GetDeliverabilityDashboardOptionsOutcome> GetDeliverabilityDashboardOptionsOutcomeCallable;
+        typedef std::future<GetDeliverabilityTestReportOutcome> GetDeliverabilityTestReportOutcomeCallable;
+        typedef std::future<GetDomainStatisticsReportOutcome> GetDomainStatisticsReportOutcomeCallable;
         typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
         typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
         typedef std::future<ListDedicatedIpPoolsOutcome> ListDedicatedIpPoolsOutcomeCallable;
+        typedef std::future<ListDeliverabilityTestReportsOutcome> ListDeliverabilityTestReportsOutcomeCallable;
         typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
         typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
         typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
@@ -178,6 +205,7 @@ namespace Model
         typedef std::future<PutConfigurationSetTrackingOptionsOutcome> PutConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<PutDedicatedIpInPoolOutcome> PutDedicatedIpInPoolOutcomeCallable;
         typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
+        typedef std::future<PutDeliverabilityDashboardOptionOutcome> PutDeliverabilityDashboardOptionOutcomeCallable;
         typedef std::future<PutEmailIdentityDkimAttributesOutcome> PutEmailIdentityDkimAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityMailFromAttributesOutcome> PutEmailIdentityMailFromAttributesOutcomeCallable;
@@ -190,19 +218,25 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::CreateConfigurationSetRequest&, const Model::CreateConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::CreateConfigurationSetEventDestinationRequest&, const Model::CreateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::CreateDedicatedIpPoolRequest&, const Model::CreateDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDedicatedIpPoolResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::CreateDeliverabilityTestReportRequest&, const Model::CreateDeliverabilityTestReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeliverabilityTestReportResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::CreateEmailIdentityRequest&, const Model::CreateEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::DeleteConfigurationSetRequest&, const Model::DeleteConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::DeleteDedicatedIpPoolRequest&, const Model::DeleteDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDedicatedIpPoolResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::DeleteEmailIdentityRequest&, const Model::DeleteEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::GetBlacklistReportsRequest&, const Model::GetBlacklistReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlacklistReportsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetConfigurationSetRequest&, const Model::GetConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetConfigurationSetEventDestinationsRequest&, const Model::GetConfigurationSetEventDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetEventDestinationsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDedicatedIpRequest&, const Model::GetDedicatedIpOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetDedicatedIpsRequest&, const Model::GetDedicatedIpsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDedicatedIpsResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::GetDeliverabilityDashboardOptionsRequest&, const Model::GetDeliverabilityDashboardOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityDashboardOptionsResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::GetDeliverabilityTestReportRequest&, const Model::GetDeliverabilityTestReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDeliverabilityTestReportResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::GetDomainStatisticsReportRequest&, const Model::GetDomainStatisticsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainStatisticsReportResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::GetEmailIdentityRequest&, const Model::GetEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailIdentityResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListDedicatedIpPoolsRequest&, const Model::ListDedicatedIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDedicatedIpPoolsResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::ListDeliverabilityTestReportsRequest&, const Model::ListDeliverabilityTestReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliverabilityTestReportsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutAccountSendingAttributesRequest&, const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSendingAttributesResponseReceivedHandler;
@@ -212,6 +246,7 @@ namespace Model
     typedef std::function<void(const PinpointEmailClient*, const Model::PutConfigurationSetTrackingOptionsRequest&, const Model::PutConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutDedicatedIpInPoolRequest&, const Model::PutDedicatedIpInPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpInPoolResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
+    typedef std::function<void(const PinpointEmailClient*, const Model::PutDeliverabilityDashboardOptionRequest&, const Model::PutDeliverabilityDashboardOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliverabilityDashboardOptionResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutEmailIdentityDkimAttributesRequest&, const Model::PutEmailIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutEmailIdentityFeedbackAttributesRequest&, const Model::PutEmailIdentityFeedbackAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityFeedbackAttributesResponseReceivedHandler;
     typedef std::function<void(const PinpointEmailClient*, const Model::PutEmailIdentityMailFromAttributesRequest&, const Model::PutEmailIdentityMailFromAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityMailFromAttributesResponseReceivedHandler;
@@ -224,9 +259,12 @@ namespace Model
    * Pinpoint</a> Email API, version 1.0. This document is best used in conjunction
    * with the <a
    * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon
-   * Pinpoint Developer Guide</a>.</p> <p>The Amazon Pinpoint API is available in the
-   * US East (N. Virginia) Region at the following endpoint:
-   * <code>email.us-east-1.amazonaws.com</code> </p>
+   * Pinpoint Developer Guide</a>.</p> <p>The Amazon Pinpoint Email API is available
+   * in the US East (N. Virginia), US West (Oregon) and the EU (Ireland) Regions at
+   * the following endpoints:</p> <ul> <li> <p> <b>US East (N. Virginia)</b>:
+   * <code>email.us-east-1.amazonaws.com</code> </p> </li> <li> <p> <b>US West
+   * (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code> </p> </li> <li> <p>
+   * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code> </p> </li> </ul>
    */
   class AWS_PINPOINTEMAIL_API PinpointEmailClient : public Aws::Client::AWSJsonClient
   {
@@ -376,6 +414,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDedicatedIpPoolAsync(const Model::CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create a new predictive inbox placement test. Predictive inbox placement
+         * tests can help you predict how your messages will be handled by various email
+         * providers around the world. When you perform a predictive inbox placement test,
+         * you provide a sample message that contains the content that you plan to send to
+         * your customers. Amazon Pinpoint then sends that message to special email
+         * addresses spread across several major email providers. After about 24 hours, the
+         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDeliverabilityTestReportOutcome CreateDeliverabilityTestReport(const Model::CreateDeliverabilityTestReportRequest& request) const;
+
+        /**
+         * <p>Create a new predictive inbox placement test. Predictive inbox placement
+         * tests can help you predict how your messages will be handled by various email
+         * providers around the world. When you perform a predictive inbox placement test,
+         * you provide a sample message that contains the content that you plan to send to
+         * your customers. Amazon Pinpoint then sends that message to special email
+         * addresses spread across several major email providers. After about 24 hours, the
+         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDeliverabilityTestReportOutcomeCallable CreateDeliverabilityTestReportCallable(const Model::CreateDeliverabilityTestReportRequest& request) const;
+
+        /**
+         * <p>Create a new predictive inbox placement test. Predictive inbox placement
+         * tests can help you predict how your messages will be handled by various email
+         * providers around the world. When you perform a predictive inbox placement test,
+         * you provide a sample message that contains the content that you plan to send to
+         * your customers. Amazon Pinpoint then sends that message to special email
+         * addresses spread across several major email providers. After about 24 hours, the
+         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDeliverabilityTestReportAsync(const Model::CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint,
@@ -603,6 +687,34 @@ namespace Model
         virtual void GetAccountAsync(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieve a list of the blacklists that your dedicated IP addresses appear
+         * on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBlacklistReportsOutcome GetBlacklistReports(const Model::GetBlacklistReportsRequest& request) const;
+
+        /**
+         * <p>Retrieve a list of the blacklists that your dedicated IP addresses appear
+         * on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBlacklistReportsOutcomeCallable GetBlacklistReportsCallable(const Model::GetBlacklistReportsRequest& request) const;
+
+        /**
+         * <p>Retrieve a list of the blacklists that your dedicated IP addresses appear
+         * on.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBlacklistReportsAsync(const Model::GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Get information about an existing configuration set, including the dedicated
          * IP pool that it's associated with, whether or not it's enabled for sending
          * email, and more.</p> <p>In Amazon Pinpoint, <i>configuration sets</i> are groups
@@ -751,6 +863,111 @@ namespace Model
         virtual void GetDedicatedIpsAsync(const Model::GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Show the status of the Deliverability dashboard. When the Deliverability
+         * dashboard is enabled, you gain access to reputation metrics for the domains that
+         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, AWS prorates the monthly
+         * charge based on how many days have elapsed in the current calendar
+         * month.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliverabilityDashboardOptionsOutcome GetDeliverabilityDashboardOptions(const Model::GetDeliverabilityDashboardOptionsRequest& request) const;
+
+        /**
+         * <p>Show the status of the Deliverability dashboard. When the Deliverability
+         * dashboard is enabled, you gain access to reputation metrics for the domains that
+         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, AWS prorates the monthly
+         * charge based on how many days have elapsed in the current calendar
+         * month.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeliverabilityDashboardOptionsOutcomeCallable GetDeliverabilityDashboardOptionsCallable(const Model::GetDeliverabilityDashboardOptionsRequest& request) const;
+
+        /**
+         * <p>Show the status of the Deliverability dashboard. When the Deliverability
+         * dashboard is enabled, you gain access to reputation metrics for the domains that
+         * you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, AWS prorates the monthly
+         * charge based on how many days have elapsed in the current calendar
+         * month.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeliverabilityDashboardOptionsAsync(const Model::GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve the results of a predictive inbox placement test.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDeliverabilityTestReportOutcome GetDeliverabilityTestReport(const Model::GetDeliverabilityTestReportRequest& request) const;
+
+        /**
+         * <p>Retrieve the results of a predictive inbox placement test.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDeliverabilityTestReportOutcomeCallable GetDeliverabilityTestReportCallable(const Model::GetDeliverabilityTestReportRequest& request) const;
+
+        /**
+         * <p>Retrieve the results of a predictive inbox placement test.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDeliverabilityTestReportAsync(const Model::GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieve inbox placement and engagement rates for the domains that you use to
+         * send email.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDomainStatisticsReportOutcome GetDomainStatisticsReport(const Model::GetDomainStatisticsReportRequest& request) const;
+
+        /**
+         * <p>Retrieve inbox placement and engagement rates for the domains that you use to
+         * send email.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDomainStatisticsReportOutcomeCallable GetDomainStatisticsReportCallable(const Model::GetDomainStatisticsReportRequest& request) const;
+
+        /**
+         * <p>Retrieve inbox placement and engagement rates for the domains that you use to
+         * send email.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDomainStatisticsReportAsync(const Model::GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information about a specific identity associated with your Amazon
          * Pinpoint account, including the identity's verification status, its DKIM
          * authentication status, and its custom Mail-From settings.</p><p><h3>See
@@ -854,6 +1071,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListDedicatedIpPoolsAsync(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Show a list of the predictive inbox placement tests that you've performed,
+         * regardless of their statuses. For predictive inbox placement tests that are
+         * complete, you can use the <code>GetDeliverabilityTestReport</code> operation to
+         * view the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDeliverabilityTestReportsOutcome ListDeliverabilityTestReports(const Model::ListDeliverabilityTestReportsRequest& request) const;
+
+        /**
+         * <p>Show a list of the predictive inbox placement tests that you've performed,
+         * regardless of their statuses. For predictive inbox placement tests that are
+         * complete, you can use the <code>GetDeliverabilityTestReport</code> operation to
+         * view the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDeliverabilityTestReportsOutcomeCallable ListDeliverabilityTestReportsCallable(const Model::ListDeliverabilityTestReportsRequest& request) const;
+
+        /**
+         * <p>Show a list of the predictive inbox placement tests that you've performed,
+         * regardless of their statuses. For predictive inbox placement tests that are
+         * complete, you can use the <code>GetDeliverabilityTestReport</code> operation to
+         * view the results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDeliverabilityTestReportsAsync(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of all of the email identities that are associated with your
@@ -1129,6 +1380,55 @@ namespace Model
         virtual void PutDedicatedIpWarmupAttributesAsync(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enable or disable the Deliverability dashboard. When you enable the
+         * Deliverability dashboard, you gain access to reputation metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, we prorate the monthly charge
+         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDeliverabilityDashboardOptionOutcome PutDeliverabilityDashboardOption(const Model::PutDeliverabilityDashboardOptionRequest& request) const;
+
+        /**
+         * <p>Enable or disable the Deliverability dashboard. When you enable the
+         * Deliverability dashboard, you gain access to reputation metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, we prorate the monthly charge
+         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutDeliverabilityDashboardOptionOutcomeCallable PutDeliverabilityDashboardOptionCallable(const Model::PutDeliverabilityDashboardOptionRequest& request) const;
+
+        /**
+         * <p>Enable or disable the Deliverability dashboard. When you enable the
+         * Deliverability dashboard, you gain access to reputation metrics for the domains
+         * that you use to send email using Amazon Pinpoint. You also gain the ability to
+         * perform predictive inbox placement tests.</p> <p>When you use the Deliverability
+         * dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+         * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability
+         * dashboard after the first day of a calendar month, we prorate the monthly charge
+         * based on how many days have elapsed in the current calendar month.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutDeliverabilityDashboardOptionAsync(const Model::PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Used to enable or disable DKIM authentication for an email
          * identity.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutEmailIdentityDkimAttributes">AWS
@@ -1338,24 +1638,29 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateConfigurationSetAsyncHelper(const Model::CreateConfigurationSetRequest& request, const CreateConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateConfigurationSetEventDestinationAsyncHelper(const Model::CreateConfigurationSetEventDestinationRequest& request, const CreateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDedicatedIpPoolAsyncHelper(const Model::CreateDedicatedIpPoolRequest& request, const CreateDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDeliverabilityTestReportAsyncHelper(const Model::CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEmailIdentityAsyncHelper(const Model::CreateEmailIdentityRequest& request, const CreateEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetAsyncHelper(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDedicatedIpPoolAsyncHelper(const Model::DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEmailIdentityAsyncHelper(const Model::DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBlacklistReportsAsyncHelper(const Model::GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetAsyncHelper(const Model::GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetEventDestinationsAsyncHelper(const Model::GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDedicatedIpAsyncHelper(const Model::GetDedicatedIpRequest& request, const GetDedicatedIpResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDedicatedIpsAsyncHelper(const Model::GetDedicatedIpsRequest& request, const GetDedicatedIpsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDeliverabilityDashboardOptionsAsyncHelper(const Model::GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDeliverabilityTestReportAsyncHelper(const Model::GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDomainStatisticsReportAsyncHelper(const Model::GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailIdentityAsyncHelper(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDedicatedIpPoolsAsyncHelper(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDeliverabilityTestReportsAsyncHelper(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailIdentitiesAsyncHelper(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountDedicatedIpWarmupAttributesAsyncHelper(const Model::PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountSendingAttributesAsyncHelper(const Model::PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1365,6 +1670,7 @@ namespace Model
         void PutConfigurationSetTrackingOptionsAsyncHelper(const Model::PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDedicatedIpInPoolAsyncHelper(const Model::PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDedicatedIpWarmupAttributesAsyncHelper(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutDeliverabilityDashboardOptionAsyncHelper(const Model::PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityDkimAttributesAsyncHelper(const Model::PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityFeedbackAttributesAsyncHelper(const Model::PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityMailFromAttributesAsyncHelper(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

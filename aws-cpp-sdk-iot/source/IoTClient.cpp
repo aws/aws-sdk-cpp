@@ -266,8 +266,8 @@ void IoTClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const AcceptCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accept-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -302,8 +302,8 @@ void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTran
 
 AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingToBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/addThingToBillingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -337,8 +337,8 @@ void IoTClient::AddThingToBillingGroupAsyncHelper(const AddThingToBillingGroupRe
 
 AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/addThingToThingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -372,8 +372,8 @@ void IoTClient::AddThingToThingGroupAsyncHelper(const AddThingToThingGroupReques
 
 AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const AssociateTargetsWithJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/targets";
@@ -409,8 +409,8 @@ void IoTClient::AssociateTargetsWithJobAsyncHelper(const AssociateTargetsWithJob
 
 AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/target-policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -445,8 +445,8 @@ void IoTClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, cons
 
 AttachSecurityProfileOutcome IoTClient::AttachSecurityProfile(const AttachSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -482,8 +482,8 @@ void IoTClient::AttachSecurityProfileAsyncHelper(const AttachSecurityProfileRequ
 
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -519,8 +519,8 @@ void IoTClient::AttachThingPrincipalAsyncHelper(const AttachThingPrincipalReques
 
 CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks/";
   ss << request.GetTaskId();
   ss << "/cancel";
@@ -556,8 +556,8 @@ void IoTClient::CancelAuditTaskAsyncHelper(const CancelAuditTaskRequest& request
 
 CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const CancelCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cancel-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -592,8 +592,8 @@ void IoTClient::CancelCertificateTransferAsyncHelper(const CancelCertificateTran
 
 CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/cancel";
@@ -629,8 +629,8 @@ void IoTClient::CancelJobAsyncHelper(const CancelJobRequest& request, const Canc
 
 CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -668,8 +668,8 @@ void IoTClient::CancelJobExecutionAsyncHelper(const CancelJobExecutionRequest& r
 
 ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -703,8 +703,8 @@ void IoTClient::ClearDefaultAuthorizerAsyncHelper(const ClearDefaultAuthorizerRe
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -739,8 +739,8 @@ void IoTClient::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& reque
 
 CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/";
   ss << request.GetBillingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -775,8 +775,8 @@ void IoTClient::CreateBillingGroupAsyncHelper(const CreateBillingGroupRequest& r
 
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -810,8 +810,8 @@ void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromC
 
 CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDynamicThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/dynamic-thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -846,8 +846,8 @@ void IoTClient::CreateDynamicThingGroupAsyncHelper(const CreateDynamicThingGroup
 
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -882,8 +882,8 @@ void IoTClient::CreateJobAsyncHelper(const CreateJobRequest& request, const Crea
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/keys-and-certificate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -917,8 +917,8 @@ void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertifica
 
 CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -953,8 +953,8 @@ void IoTClient::CreateOTAUpdateAsyncHelper(const CreateOTAUpdateRequest& request
 
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -989,8 +989,8 @@ void IoTClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, cons
 
 CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
@@ -1026,8 +1026,8 @@ void IoTClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest&
 
 CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1062,8 +1062,8 @@ void IoTClient::CreateRoleAliasAsyncHelper(const CreateRoleAliasRequest& request
 
 CreateScheduledAuditOutcome IoTClient::CreateScheduledAudit(const CreateScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1098,8 +1098,8 @@ void IoTClient::CreateScheduledAuditAsyncHelper(const CreateScheduledAuditReques
 
 CreateSecurityProfileOutcome IoTClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1134,8 +1134,8 @@ void IoTClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfileRequ
 
 CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1170,8 +1170,8 @@ void IoTClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, cons
 
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1206,8 +1206,8 @@ void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const 
 
 CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1242,8 +1242,8 @@ void IoTClient::CreateThingGroupAsyncHelper(const CreateThingGroupRequest& reque
 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1278,8 +1278,8 @@ void IoTClient::CreateThingTypeAsyncHelper(const CreateThingTypeRequest& request
 
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1314,8 +1314,8 @@ void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request
 
 DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguration(const DeleteAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1349,8 +1349,8 @@ void IoTClient::DeleteAccountAuditConfigurationAsyncHelper(const DeleteAccountAu
 
 DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1385,8 +1385,8 @@ void IoTClient::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& reque
 
 DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/";
   ss << request.GetBillingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1421,8 +1421,8 @@ void IoTClient::DeleteBillingGroupAsyncHelper(const DeleteBillingGroupRequest& r
 
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1457,8 +1457,8 @@ void IoTClient::DeleteCACertificateAsyncHelper(const DeleteCACertificateRequest&
 
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1493,8 +1493,8 @@ void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& req
 
 DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDynamicThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/dynamic-thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1529,8 +1529,8 @@ void IoTClient::DeleteDynamicThingGroupAsyncHelper(const DeleteDynamicThingGroup
 
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1565,8 +1565,8 @@ void IoTClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const Dele
 
 DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -1605,8 +1605,8 @@ void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& r
 
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1641,8 +1641,8 @@ void IoTClient::DeleteOTAUpdateAsyncHelper(const DeleteOTAUpdateRequest& request
 
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1677,8 +1677,8 @@ void IoTClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, cons
 
 DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -1715,8 +1715,8 @@ void IoTClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest&
 
 DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/registrationcode";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1750,8 +1750,8 @@ void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRe
 
 DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1786,8 +1786,8 @@ void IoTClient::DeleteRoleAliasAsyncHelper(const DeleteRoleAliasRequest& request
 
 DeleteScheduledAuditOutcome IoTClient::DeleteScheduledAudit(const DeleteScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1822,8 +1822,8 @@ void IoTClient::DeleteScheduledAuditAsyncHelper(const DeleteScheduledAuditReques
 
 DeleteSecurityProfileOutcome IoTClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1858,8 +1858,8 @@ void IoTClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequ
 
 DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1894,8 +1894,8 @@ void IoTClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, cons
 
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1930,8 +1930,8 @@ void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const 
 
 DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1966,8 +1966,8 @@ void IoTClient::DeleteThingGroupAsyncHelper(const DeleteThingGroupRequest& reque
 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2002,8 +2002,8 @@ void IoTClient::DeleteThingTypeAsyncHelper(const DeleteThingTypeRequest& request
 
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2038,8 +2038,8 @@ void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request
 
 DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -2073,8 +2073,8 @@ void IoTClient::DeleteV2LoggingLevelAsyncHelper(const DeleteV2LoggingLevelReques
 
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   ss << "/deprecate";
@@ -2110,8 +2110,8 @@ void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& r
 
 DescribeAccountAuditConfigurationOutcome IoTClient::DescribeAccountAuditConfiguration(const DescribeAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2145,8 +2145,8 @@ void IoTClient::DescribeAccountAuditConfigurationAsyncHelper(const DescribeAccou
 
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2181,8 +2181,8 @@ void IoTClient::DescribeAuditTaskAsyncHelper(const DescribeAuditTaskRequest& req
 
 DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2217,8 +2217,8 @@ void IoTClient::DescribeAuthorizerAsyncHelper(const DescribeAuthorizerRequest& r
 
 DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/";
   ss << request.GetBillingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2253,8 +2253,8 @@ void IoTClient::DescribeBillingGroupAsyncHelper(const DescribeBillingGroupReques
 
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2289,8 +2289,8 @@ void IoTClient::DescribeCACertificateAsyncHelper(const DescribeCACertificateRequ
 
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2325,8 +2325,8 @@ void IoTClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest&
 
 DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const DescribeDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2360,8 +2360,8 @@ void IoTClient::DescribeDefaultAuthorizerAsyncHelper(const DescribeDefaultAuthor
 
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/endpoint";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2395,8 +2395,8 @@ void IoTClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& reque
 
 DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/event-configurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2430,8 +2430,8 @@ void IoTClient::DescribeEventConfigurationsAsyncHelper(const DescribeEventConfig
 
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices/";
   ss << request.GetIndexName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2466,8 +2466,8 @@ void IoTClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, co
 
 DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2502,8 +2502,8 @@ void IoTClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const 
 
 DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -2540,8 +2540,8 @@ void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionReques
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2576,8 +2576,8 @@ void IoTClient::DescribeRoleAliasAsyncHelper(const DescribeRoleAliasRequest& req
 
 DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2612,8 +2612,8 @@ void IoTClient::DescribeScheduledAuditAsyncHelper(const DescribeScheduledAuditRe
 
 DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2648,8 +2648,8 @@ void IoTClient::DescribeSecurityProfileAsyncHelper(const DescribeSecurityProfile
 
 DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2684,8 +2684,8 @@ void IoTClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, 
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2720,8 +2720,8 @@ void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, co
 
 DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2756,8 +2756,8 @@ void IoTClient::DescribeThingGroupAsyncHelper(const DescribeThingGroupRequest& r
 
 DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2792,8 +2792,8 @@ void IoTClient::DescribeThingRegistrationTaskAsyncHelper(const DescribeThingRegi
 
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2828,8 +2828,8 @@ void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& req
 
 DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/target-policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2864,8 +2864,8 @@ void IoTClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, cons
 
 DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -2901,8 +2901,8 @@ void IoTClient::DetachSecurityProfileAsyncHelper(const DetachSecurityProfileRequ
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -2938,8 +2938,8 @@ void IoTClient::DetachThingPrincipalAsyncHelper(const DetachThingPrincipalReques
 
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/disable";
@@ -2975,8 +2975,8 @@ void IoTClient::DisableTopicRuleAsyncHelper(const DisableTopicRuleRequest& reque
 
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/enable";
@@ -3012,8 +3012,8 @@ void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request
 
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/effective-policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -3047,8 +3047,8 @@ void IoTClient::GetEffectivePoliciesAsyncHelper(const GetEffectivePoliciesReques
 
 GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indexing/config";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3082,8 +3082,8 @@ void IoTClient::GetIndexingConfigurationAsyncHelper(const GetIndexingConfigurati
 
 GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/job-document";
@@ -3119,8 +3119,8 @@ void IoTClient::GetJobDocumentAsyncHelper(const GetJobDocumentRequest& request, 
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/loggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3154,8 +3154,8 @@ void IoTClient::GetLoggingOptionsAsyncHelper(const GetLoggingOptionsRequest& req
 
 GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3190,8 +3190,8 @@ void IoTClient::GetOTAUpdateAsyncHelper(const GetOTAUpdateRequest& request, cons
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3226,8 +3226,8 @@ void IoTClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetP
 
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -3264,8 +3264,8 @@ void IoTClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& reque
 
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/registrationcode";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3299,8 +3299,8 @@ void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest&
 
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3335,8 +3335,8 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
 
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3370,8 +3370,8 @@ void IoTClient::GetV2LoggingOptionsAsyncHelper(const GetV2LoggingOptionsRequest&
 
 ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViolationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/active-violations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3405,8 +3405,8 @@ void IoTClient::ListActiveViolationsAsyncHelper(const ListActiveViolationsReques
 
 ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/attached-policies/";
   ss << request.GetTarget();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3441,8 +3441,8 @@ void IoTClient::ListAttachedPoliciesAsyncHelper(const ListAttachedPoliciesReques
 
 ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/findings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -3476,8 +3476,8 @@ void IoTClient::ListAuditFindingsAsyncHelper(const ListAuditFindingsRequest& req
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3511,8 +3511,8 @@ void IoTClient::ListAuditTasksAsyncHelper(const ListAuditTasksRequest& request, 
 
 ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizers/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3546,8 +3546,8 @@ void IoTClient::ListAuthorizersAsyncHelper(const ListAuthorizersRequest& request
 
 ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3581,8 +3581,8 @@ void IoTClient::ListBillingGroupsAsyncHelper(const ListBillingGroupsRequest& req
 
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3616,8 +3616,8 @@ void IoTClient::ListCACertificatesAsyncHelper(const ListCACertificatesRequest& r
 
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3651,8 +3651,8 @@ void IoTClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& reque
 
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates-by-ca/";
   ss << request.GetCaCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3687,8 +3687,8 @@ void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCAReques
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3722,8 +3722,8 @@ void IoTClient::ListIndicesAsyncHelper(const ListIndicesRequest& request, const 
 
 ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/things";
@@ -3759,8 +3759,8 @@ void IoTClient::ListJobExecutionsForJobAsyncHelper(const ListJobExecutionsForJob
 
 ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs";
@@ -3796,8 +3796,8 @@ void IoTClient::ListJobExecutionsForThingAsyncHelper(const ListJobExecutionsForT
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3831,8 +3831,8 @@ void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJo
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3866,8 +3866,8 @@ void IoTClient::ListOTAUpdatesAsyncHelper(const ListOTAUpdatesRequest& request, 
 
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates-out-going";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3901,8 +3901,8 @@ void IoTClient::ListOutgoingCertificatesAsyncHelper(const ListOutgoingCertificat
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3936,8 +3936,8 @@ void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, cons
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
@@ -3973,8 +3973,8 @@ void IoTClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& r
 
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/principals/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4008,8 +4008,8 @@ void IoTClient::ListPrincipalThingsAsyncHelper(const ListPrincipalThingsRequest&
 
 ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4043,8 +4043,8 @@ void IoTClient::ListRoleAliasesAsyncHelper(const ListRoleAliasesRequest& request
 
 ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAuditsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4078,8 +4078,8 @@ void IoTClient::ListScheduledAuditsAsyncHelper(const ListScheduledAuditsRequest&
 
 ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4113,8 +4113,8 @@ void IoTClient::ListSecurityProfilesAsyncHelper(const ListSecurityProfilesReques
 
 ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(const ListSecurityProfilesForTargetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles-for-target";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4148,8 +4148,8 @@ void IoTClient::ListSecurityProfilesForTargetAsyncHelper(const ListSecurityProfi
 
 ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4183,8 +4183,8 @@ void IoTClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const 
 
 ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4218,8 +4218,8 @@ void IoTClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest&
 
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policy-targets/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4254,8 +4254,8 @@ void IoTClient::ListTargetsForPolicyAsyncHelper(const ListTargetsForPolicyReques
 
 ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(const ListTargetsForSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -4291,8 +4291,8 @@ void IoTClient::ListTargetsForSecurityProfileAsyncHelper(const ListTargetsForSec
 
 ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4326,8 +4326,8 @@ void IoTClient::ListThingGroupsAsyncHelper(const ListThingGroupsRequest& request
 
 ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/thing-groups";
@@ -4363,8 +4363,8 @@ void IoTClient::ListThingGroupsForThingAsyncHelper(const ListThingGroupsForThing
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -4400,8 +4400,8 @@ void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest&
 
 ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   ss << "/reports";
@@ -4437,8 +4437,8 @@ void IoTClient::ListThingRegistrationTaskReportsAsyncHelper(const ListThingRegis
 
 ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const ListThingRegistrationTasksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4472,8 +4472,8 @@ void IoTClient::ListThingRegistrationTasksAsyncHelper(const ListThingRegistratio
 
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4507,8 +4507,8 @@ void IoTClient::ListThingTypesAsyncHelper(const ListThingTypesRequest& request, 
 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4542,8 +4542,8 @@ void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const Li
 
 ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListThingsInBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/";
   ss << request.GetBillingGroupName();
   ss << "/things";
@@ -4579,8 +4579,8 @@ void IoTClient::ListThingsInBillingGroupAsyncHelper(const ListThingsInBillingGro
 
 ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   ss << "/things";
@@ -4616,8 +4616,8 @@ void IoTClient::ListThingsInThingGroupAsyncHelper(const ListThingsInThingGroupRe
 
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4651,8 +4651,8 @@ void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, 
 
 ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLevelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4686,8 +4686,8 @@ void IoTClient::ListV2LoggingLevelsAsyncHelper(const ListV2LoggingLevelsRequest&
 
 ListViolationEventsOutcome IoTClient::ListViolationEvents(const ListViolationEventsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/violation-events";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4721,8 +4721,8 @@ void IoTClient::ListViolationEventsAsyncHelper(const ListViolationEventsRequest&
 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4756,8 +4756,8 @@ void IoTClient::RegisterCACertificateAsyncHelper(const RegisterCACertificateRequ
 
 RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificate/register";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4791,8 +4791,8 @@ void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest&
 
 RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4826,8 +4826,8 @@ void IoTClient::RegisterThingAsyncHelper(const RegisterThingRequest& request, co
 
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/reject-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4862,8 +4862,8 @@ void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTran
 
 RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const RemoveThingFromBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/removeThingFromBillingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -4897,8 +4897,8 @@ void IoTClient::RemoveThingFromBillingGroupAsyncHelper(const RemoveThingFromBill
 
 RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/removeThingFromThingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -4932,8 +4932,8 @@ void IoTClient::RemoveThingFromThingGroupAsyncHelper(const RemoveThingFromThingG
 
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4968,8 +4968,8 @@ void IoTClient::ReplaceTopicRuleAsyncHelper(const ReplaceTopicRuleRequest& reque
 
 SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices/search";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5003,8 +5003,8 @@ void IoTClient::SearchIndexAsyncHelper(const SearchIndexRequest& request, const 
 
 SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5038,8 +5038,8 @@ void IoTClient::SetDefaultAuthorizerAsyncHelper(const SetDefaultAuthorizerReques
 
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -5076,8 +5076,8 @@ void IoTClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersion
 
 SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/loggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5111,8 +5111,8 @@ void IoTClient::SetLoggingOptionsAsyncHelper(const SetLoggingOptionsRequest& req
 
 SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5146,8 +5146,8 @@ void IoTClient::SetV2LoggingLevelAsyncHelper(const SetV2LoggingLevelRequest& req
 
 SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5181,8 +5181,8 @@ void IoTClient::SetV2LoggingOptionsAsyncHelper(const SetV2LoggingOptionsRequest&
 
 StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDemandAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5216,8 +5216,8 @@ void IoTClient::StartOnDemandAuditTaskAsyncHelper(const StartOnDemandAuditTaskRe
 
 StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const StartThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5251,8 +5251,8 @@ void IoTClient::StartThingRegistrationTaskAsyncHelper(const StartThingRegistrati
 
 StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const StopThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   ss << "/cancel";
@@ -5288,8 +5288,8 @@ void IoTClient::StopThingRegistrationTaskAsyncHelper(const StopThingRegistration
 
 TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/tags";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5323,8 +5323,8 @@ void IoTClient::TagResourceAsyncHelper(const TagResourceRequest& request, const 
 
 TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/test-authorization";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5358,8 +5358,8 @@ void IoTClient::TestAuthorizationAsyncHelper(const TestAuthorizationRequest& req
 
 TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   ss << "/test";
@@ -5395,8 +5395,8 @@ void IoTClient::TestInvokeAuthorizerAsyncHelper(const TestInvokeAuthorizerReques
 
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/transfer-certificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5431,8 +5431,8 @@ void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest&
 
 UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/untag";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5466,8 +5466,8 @@ void IoTClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, co
 
 UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguration(const UpdateAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
@@ -5501,8 +5501,8 @@ void IoTClient::UpdateAccountAuditConfigurationAsyncHelper(const UpdateAccountAu
 
 UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5537,8 +5537,8 @@ void IoTClient::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& reque
 
 UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/billing-groups/";
   ss << request.GetBillingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5573,8 +5573,8 @@ void IoTClient::UpdateBillingGroupAsyncHelper(const UpdateBillingGroupRequest& r
 
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5609,8 +5609,8 @@ void IoTClient::UpdateCACertificateAsyncHelper(const UpdateCACertificateRequest&
 
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5645,8 +5645,8 @@ void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& req
 
 UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDynamicThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/dynamic-thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5681,8 +5681,8 @@ void IoTClient::UpdateDynamicThingGroupAsyncHelper(const UpdateDynamicThingGroup
 
 UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/event-configurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
@@ -5716,8 +5716,8 @@ void IoTClient::UpdateEventConfigurationsAsyncHelper(const UpdateEventConfigurat
 
 UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indexing/config";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5751,8 +5751,8 @@ void IoTClient::UpdateIndexingConfigurationAsyncHelper(const UpdateIndexingConfi
 
 UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5787,8 +5787,8 @@ void IoTClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const Upda
 
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5823,8 +5823,8 @@ void IoTClient::UpdateRoleAliasAsyncHelper(const UpdateRoleAliasRequest& request
 
 UpdateScheduledAuditOutcome IoTClient::UpdateScheduledAudit(const UpdateScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5859,8 +5859,8 @@ void IoTClient::UpdateScheduledAuditAsyncHelper(const UpdateScheduledAuditReques
 
 UpdateSecurityProfileOutcome IoTClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5895,8 +5895,8 @@ void IoTClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequ
 
 UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5931,8 +5931,8 @@ void IoTClient::UpdateStreamAsyncHelper(const UpdateStreamRequest& request, cons
 
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5967,8 +5967,8 @@ void IoTClient::UpdateThingAsyncHelper(const UpdateThingRequest& request, const 
 
 UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -6003,8 +6003,8 @@ void IoTClient::UpdateThingGroupAsyncHelper(const UpdateThingGroupRequest& reque
 
 UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const UpdateThingGroupsForThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/updateThingGroupsForThing";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -6038,8 +6038,8 @@ void IoTClient::UpdateThingGroupsForThingAsyncHelper(const UpdateThingGroupsForT
 
 ValidateSecurityProfileBehaviorsOutcome IoTClient::ValidateSecurityProfileBehaviors(const ValidateSecurityProfileBehaviorsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profile-behaviors/validate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

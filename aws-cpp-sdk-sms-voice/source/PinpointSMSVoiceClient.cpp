@@ -111,8 +111,8 @@ void PinpointSMSVoiceClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateConfigurationSetOutcome PinpointSMSVoiceClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -146,8 +146,8 @@ void PinpointSMSVoiceClient::CreateConfigurationSetAsyncHelper(const CreateConfi
 
 CreateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
@@ -183,8 +183,8 @@ void PinpointSMSVoiceClient::CreateConfigurationSetEventDestinationAsyncHelper(c
 
 DeleteConfigurationSetOutcome PinpointSMSVoiceClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -219,8 +219,8 @@ void PinpointSMSVoiceClient::DeleteConfigurationSetAsyncHelper(const DeleteConfi
 
 DeleteConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations/";
@@ -257,8 +257,8 @@ void PinpointSMSVoiceClient::DeleteConfigurationSetEventDestinationAsyncHelper(c
 
 GetConfigurationSetEventDestinationsOutcome PinpointSMSVoiceClient::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
@@ -294,8 +294,8 @@ void PinpointSMSVoiceClient::GetConfigurationSetEventDestinationsAsyncHelper(con
 
 SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoiceMessageRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/voice/message";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -329,8 +329,8 @@ void PinpointSMSVoiceClient::SendVoiceMessageAsyncHelper(const SendVoiceMessageR
 
 UpdateConfigurationSetEventDestinationOutcome PinpointSMSVoiceClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/sms-voice/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations/";

@@ -108,8 +108,8 @@ void IoTDataPlaneClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeleteThingShadowOutcome IoTDataPlaneClient::DeleteThingShadow(const DeleteThingShadowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";
@@ -145,8 +145,8 @@ void IoTDataPlaneClient::DeleteThingShadowAsyncHelper(const DeleteThingShadowReq
 
 GetThingShadowOutcome IoTDataPlaneClient::GetThingShadow(const GetThingShadowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";
@@ -182,8 +182,8 @@ void IoTDataPlaneClient::GetThingShadowAsyncHelper(const GetThingShadowRequest& 
 
 PublishOutcome IoTDataPlaneClient::Publish(const PublishRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/topics/";
   ss << request.GetTopic();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -218,8 +218,8 @@ void IoTDataPlaneClient::PublishAsyncHelper(const PublishRequest& request, const
 
 UpdateThingShadowOutcome IoTDataPlaneClient::UpdateThingShadow(const UpdateThingShadowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/shadow";

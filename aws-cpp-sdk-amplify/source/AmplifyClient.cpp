@@ -124,8 +124,8 @@ void AmplifyClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateAppOutcome AmplifyClient::CreateApp(const CreateAppRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -159,8 +159,8 @@ void AmplifyClient::CreateAppAsyncHelper(const CreateAppRequest& request, const 
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches";
@@ -196,8 +196,8 @@ void AmplifyClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, 
 
 CreateDomainAssociationOutcome AmplifyClient::CreateDomainAssociation(const CreateDomainAssociationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/domains";
@@ -233,8 +233,8 @@ void AmplifyClient::CreateDomainAssociationAsyncHelper(const CreateDomainAssocia
 
 DeleteAppOutcome AmplifyClient::DeleteApp(const DeleteAppRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -269,8 +269,8 @@ void AmplifyClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const 
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -307,8 +307,8 @@ void AmplifyClient::DeleteBranchAsyncHelper(const DeleteBranchRequest& request, 
 
 DeleteDomainAssociationOutcome AmplifyClient::DeleteDomainAssociation(const DeleteDomainAssociationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/domains/";
@@ -345,8 +345,8 @@ void AmplifyClient::DeleteDomainAssociationAsyncHelper(const DeleteDomainAssocia
 
 DeleteJobOutcome AmplifyClient::DeleteJob(const DeleteJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -385,8 +385,8 @@ void AmplifyClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const 
 
 GetAppOutcome AmplifyClient::GetApp(const GetAppRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -421,8 +421,8 @@ void AmplifyClient::GetAppAsyncHelper(const GetAppRequest& request, const GetApp
 
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -459,8 +459,8 @@ void AmplifyClient::GetBranchAsyncHelper(const GetBranchRequest& request, const 
 
 GetDomainAssociationOutcome AmplifyClient::GetDomainAssociation(const GetDomainAssociationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/domains/";
@@ -497,8 +497,8 @@ void AmplifyClient::GetDomainAssociationAsyncHelper(const GetDomainAssociationRe
 
 GetJobOutcome AmplifyClient::GetJob(const GetJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -537,8 +537,8 @@ void AmplifyClient::GetJobAsyncHelper(const GetJobRequest& request, const GetJob
 
 ListAppsOutcome AmplifyClient::ListApps(const ListAppsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -572,8 +572,8 @@ void AmplifyClient::ListAppsAsyncHelper(const ListAppsRequest& request, const Li
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches";
@@ -609,8 +609,8 @@ void AmplifyClient::ListBranchesAsyncHelper(const ListBranchesRequest& request, 
 
 ListDomainAssociationsOutcome AmplifyClient::ListDomainAssociations(const ListDomainAssociationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/domains";
@@ -646,8 +646,8 @@ void AmplifyClient::ListDomainAssociationsAsyncHelper(const ListDomainAssociatio
 
 ListJobsOutcome AmplifyClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -685,8 +685,8 @@ void AmplifyClient::ListJobsAsyncHelper(const ListJobsRequest& request, const Li
 
 StartJobOutcome AmplifyClient::StartJob(const StartJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -724,8 +724,8 @@ void AmplifyClient::StartJobAsyncHelper(const StartJobRequest& request, const St
 
 StopJobOutcome AmplifyClient::StopJob(const StopJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -765,8 +765,8 @@ void AmplifyClient::StopJobAsyncHelper(const StopJobRequest& request, const Stop
 
 UpdateAppOutcome AmplifyClient::UpdateApp(const UpdateAppRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -801,8 +801,8 @@ void AmplifyClient::UpdateAppAsyncHelper(const UpdateAppRequest& request, const 
 
 UpdateBranchOutcome AmplifyClient::UpdateBranch(const UpdateBranchRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/branches/";
@@ -839,8 +839,8 @@ void AmplifyClient::UpdateBranchAsyncHelper(const UpdateBranchRequest& request, 
 
 UpdateDomainAssociationOutcome AmplifyClient::UpdateDomainAssociation(const UpdateDomainAssociationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/apps/";
   ss << request.GetAppId();
   ss << "/domains/";

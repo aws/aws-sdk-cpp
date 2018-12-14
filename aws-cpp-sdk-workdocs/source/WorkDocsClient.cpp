@@ -145,8 +145,8 @@ void WorkDocsClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(const AbortDocumentVersionUploadRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -183,8 +183,8 @@ void WorkDocsClient::AbortDocumentVersionUploadAsyncHelper(const AbortDocumentVe
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   ss << "/activation";
@@ -220,8 +220,8 @@ void WorkDocsClient::ActivateUserAsyncHelper(const ActivateUserRequest& request,
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -257,8 +257,8 @@ void WorkDocsClient::AddResourcePermissionsAsyncHelper(const AddResourcePermissi
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -296,8 +296,8 @@ void WorkDocsClient::CreateCommentAsyncHelper(const CreateCommentRequest& reques
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/customMetadata";
@@ -333,8 +333,8 @@ void WorkDocsClient::CreateCustomMetadataAsyncHelper(const CreateCustomMetadataR
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -368,8 +368,8 @@ void WorkDocsClient::CreateFolderAsyncHelper(const CreateFolderRequest& request,
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/labels";
@@ -405,8 +405,8 @@ void WorkDocsClient::CreateLabelsAsyncHelper(const CreateLabelsRequest& request,
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(const CreateNotificationSubscriptionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
@@ -442,8 +442,8 @@ void WorkDocsClient::CreateNotificationSubscriptionAsyncHelper(const CreateNotif
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -477,8 +477,8 @@ void WorkDocsClient::CreateUserAsyncHelper(const CreateUserRequest& request, con
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   ss << "/activation";
@@ -514,8 +514,8 @@ void WorkDocsClient::DeactivateUserAsyncHelper(const DeactivateUserRequest& requ
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -554,8 +554,8 @@ void WorkDocsClient::DeleteCommentAsyncHelper(const DeleteCommentRequest& reques
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/customMetadata";
@@ -591,8 +591,8 @@ void WorkDocsClient::DeleteCustomMetadataAsyncHelper(const DeleteCustomMetadataR
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -627,8 +627,8 @@ void WorkDocsClient::DeleteDocumentAsyncHelper(const DeleteDocumentRequest& requ
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -663,8 +663,8 @@ void WorkDocsClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request,
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/contents";
@@ -700,8 +700,8 @@ void WorkDocsClient::DeleteFolderContentsAsyncHelper(const DeleteFolderContentsR
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/labels";
@@ -737,8 +737,8 @@ void WorkDocsClient::DeleteLabelsAsyncHelper(const DeleteLabelsRequest& request,
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(const DeleteNotificationSubscriptionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions/";
@@ -775,8 +775,8 @@ void WorkDocsClient::DeleteNotificationSubscriptionAsyncHelper(const DeleteNotif
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -811,8 +811,8 @@ void WorkDocsClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/activities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -846,8 +846,8 @@ void WorkDocsClient::DescribeActivitiesAsyncHelper(const DescribeActivitiesReque
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -885,8 +885,8 @@ void WorkDocsClient::DescribeCommentsAsyncHelper(const DescribeCommentsRequest& 
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions";
@@ -922,8 +922,8 @@ void WorkDocsClient::DescribeDocumentVersionsAsyncHelper(const DescribeDocumentV
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/contents";
@@ -959,8 +959,8 @@ void WorkDocsClient::DescribeFolderContentsAsyncHelper(const DescribeFolderConte
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -994,8 +994,8 @@ void WorkDocsClient::DescribeGroupsAsyncHelper(const DescribeGroupsRequest& requ
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
@@ -1031,8 +1031,8 @@ void WorkDocsClient::DescribeNotificationSubscriptionsAsyncHelper(const Describe
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -1068,8 +1068,8 @@ void WorkDocsClient::DescribeResourcePermissionsAsyncHelper(const DescribeResour
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/me/root";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1103,8 +1103,8 @@ void WorkDocsClient::DescribeRootFoldersAsyncHelper(const DescribeRootFoldersReq
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1138,8 +1138,8 @@ void WorkDocsClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& reques
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/me";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1173,8 +1173,8 @@ void WorkDocsClient::GetCurrentUserAsyncHelper(const GetCurrentUserRequest& requ
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1209,8 +1209,8 @@ void WorkDocsClient::GetDocumentAsyncHelper(const GetDocumentRequest& request, c
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/path";
@@ -1246,8 +1246,8 @@ void WorkDocsClient::GetDocumentPathAsyncHelper(const GetDocumentPathRequest& re
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -1284,8 +1284,8 @@ void WorkDocsClient::GetDocumentVersionAsyncHelper(const GetDocumentVersionReque
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1320,8 +1320,8 @@ void WorkDocsClient::GetFolderAsyncHelper(const GetFolderRequest& request, const
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/path";
@@ -1357,8 +1357,8 @@ void WorkDocsClient::GetFolderPathAsyncHelper(const GetFolderPathRequest& reques
 
 GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1392,8 +1392,8 @@ void WorkDocsClient::GetResourcesAsyncHelper(const GetResourcesRequest& request,
 
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1427,8 +1427,8 @@ void WorkDocsClient::InitiateDocumentVersionUploadAsyncHelper(const InitiateDocu
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -1464,8 +1464,8 @@ void WorkDocsClient::RemoveAllResourcePermissionsAsyncHelper(const RemoveAllReso
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions/";
@@ -1502,8 +1502,8 @@ void WorkDocsClient::RemoveResourcePermissionAsyncHelper(const RemoveResourcePer
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1538,8 +1538,8 @@ void WorkDocsClient::UpdateDocumentAsyncHelper(const UpdateDocumentRequest& requ
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -1576,8 +1576,8 @@ void WorkDocsClient::UpdateDocumentVersionAsyncHelper(const UpdateDocumentVersio
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1612,8 +1612,8 @@ void WorkDocsClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request,
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());

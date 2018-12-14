@@ -107,8 +107,8 @@ void CloudSearchDomainClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 SearchOutcome CloudSearchDomainClient::Search(const SearchRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2013-01-01/search";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?format=sdk&pretty=true");
@@ -144,8 +144,8 @@ void CloudSearchDomainClient::SearchAsyncHelper(const SearchRequest& request, co
 
 SuggestOutcome CloudSearchDomainClient::Suggest(const SuggestRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2013-01-01/suggest";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?format=sdk&pretty=true");
@@ -181,8 +181,8 @@ void CloudSearchDomainClient::SuggestAsyncHelper(const SuggestRequest& request, 
 
 UploadDocumentsOutcome CloudSearchDomainClient::UploadDocuments(const UploadDocumentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2013-01-01/documents/batch";
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?format=sdk");

@@ -105,8 +105,8 @@ void KinesisVideoMediaClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 GetMediaOutcome KinesisVideoMediaClient::GetMedia(const GetMediaRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/getMedia";
   uri.SetPath(uri.GetPath() + ss.str());
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, HttpMethod::HTTP_POST);

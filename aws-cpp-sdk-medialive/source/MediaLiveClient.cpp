@@ -129,8 +129,8 @@ void MediaLiveClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 BatchUpdateScheduleOutcome MediaLiveClient::BatchUpdateSchedule(const BatchUpdateScheduleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   ss << "/schedule";
@@ -166,8 +166,8 @@ void MediaLiveClient::BatchUpdateScheduleAsyncHelper(const BatchUpdateScheduleRe
 
 CreateChannelOutcome MediaLiveClient::CreateChannel(const CreateChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -201,8 +201,8 @@ void MediaLiveClient::CreateChannelAsyncHelper(const CreateChannelRequest& reque
 
 CreateInputOutcome MediaLiveClient::CreateInput(const CreateInputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -236,8 +236,8 @@ void MediaLiveClient::CreateInputAsyncHelper(const CreateInputRequest& request, 
 
 CreateInputSecurityGroupOutcome MediaLiveClient::CreateInputSecurityGroup(const CreateInputSecurityGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -271,8 +271,8 @@ void MediaLiveClient::CreateInputSecurityGroupAsyncHelper(const CreateInputSecur
 
 DeleteChannelOutcome MediaLiveClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -307,8 +307,8 @@ void MediaLiveClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& reque
 
 DeleteInputOutcome MediaLiveClient::DeleteInput(const DeleteInputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -343,8 +343,8 @@ void MediaLiveClient::DeleteInputAsyncHelper(const DeleteInputRequest& request, 
 
 DeleteInputSecurityGroupOutcome MediaLiveClient::DeleteInputSecurityGroup(const DeleteInputSecurityGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -379,8 +379,8 @@ void MediaLiveClient::DeleteInputSecurityGroupAsyncHelper(const DeleteInputSecur
 
 DeleteReservationOutcome MediaLiveClient::DeleteReservation(const DeleteReservationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/reservations/";
   ss << request.GetReservationId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -415,8 +415,8 @@ void MediaLiveClient::DeleteReservationAsyncHelper(const DeleteReservationReques
 
 DescribeChannelOutcome MediaLiveClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -451,8 +451,8 @@ void MediaLiveClient::DescribeChannelAsyncHelper(const DescribeChannelRequest& r
 
 DescribeInputOutcome MediaLiveClient::DescribeInput(const DescribeInputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -487,8 +487,8 @@ void MediaLiveClient::DescribeInputAsyncHelper(const DescribeInputRequest& reque
 
 DescribeInputSecurityGroupOutcome MediaLiveClient::DescribeInputSecurityGroup(const DescribeInputSecurityGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -523,8 +523,8 @@ void MediaLiveClient::DescribeInputSecurityGroupAsyncHelper(const DescribeInputS
 
 DescribeOfferingOutcome MediaLiveClient::DescribeOffering(const DescribeOfferingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/offerings/";
   ss << request.GetOfferingId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -559,8 +559,8 @@ void MediaLiveClient::DescribeOfferingAsyncHelper(const DescribeOfferingRequest&
 
 DescribeReservationOutcome MediaLiveClient::DescribeReservation(const DescribeReservationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/reservations/";
   ss << request.GetReservationId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -595,8 +595,8 @@ void MediaLiveClient::DescribeReservationAsyncHelper(const DescribeReservationRe
 
 DescribeScheduleOutcome MediaLiveClient::DescribeSchedule(const DescribeScheduleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   ss << "/schedule";
@@ -632,8 +632,8 @@ void MediaLiveClient::DescribeScheduleAsyncHelper(const DescribeScheduleRequest&
 
 ListChannelsOutcome MediaLiveClient::ListChannels(const ListChannelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -667,8 +667,8 @@ void MediaLiveClient::ListChannelsAsyncHelper(const ListChannelsRequest& request
 
 ListInputSecurityGroupsOutcome MediaLiveClient::ListInputSecurityGroups(const ListInputSecurityGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -702,8 +702,8 @@ void MediaLiveClient::ListInputSecurityGroupsAsyncHelper(const ListInputSecurity
 
 ListInputsOutcome MediaLiveClient::ListInputs(const ListInputsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -737,8 +737,8 @@ void MediaLiveClient::ListInputsAsyncHelper(const ListInputsRequest& request, co
 
 ListOfferingsOutcome MediaLiveClient::ListOfferings(const ListOfferingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/offerings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -772,8 +772,8 @@ void MediaLiveClient::ListOfferingsAsyncHelper(const ListOfferingsRequest& reque
 
 ListReservationsOutcome MediaLiveClient::ListReservations(const ListReservationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/reservations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -807,8 +807,8 @@ void MediaLiveClient::ListReservationsAsyncHelper(const ListReservationsRequest&
 
 PurchaseOfferingOutcome MediaLiveClient::PurchaseOffering(const PurchaseOfferingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/offerings/";
   ss << request.GetOfferingId();
   ss << "/purchase";
@@ -844,8 +844,8 @@ void MediaLiveClient::PurchaseOfferingAsyncHelper(const PurchaseOfferingRequest&
 
 StartChannelOutcome MediaLiveClient::StartChannel(const StartChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   ss << "/start";
@@ -881,8 +881,8 @@ void MediaLiveClient::StartChannelAsyncHelper(const StartChannelRequest& request
 
 StopChannelOutcome MediaLiveClient::StopChannel(const StopChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   ss << "/stop";
@@ -918,8 +918,8 @@ void MediaLiveClient::StopChannelAsyncHelper(const StopChannelRequest& request, 
 
 UpdateChannelOutcome MediaLiveClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/channels/";
   ss << request.GetChannelId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -954,8 +954,8 @@ void MediaLiveClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& reque
 
 UpdateInputOutcome MediaLiveClient::UpdateInput(const UpdateInputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputs/";
   ss << request.GetInputId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -990,8 +990,8 @@ void MediaLiveClient::UpdateInputAsyncHelper(const UpdateInputRequest& request, 
 
 UpdateInputSecurityGroupOutcome MediaLiveClient::UpdateInputSecurityGroup(const UpdateInputSecurityGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/prod/inputSecurityGroups/";
   ss << request.GetInputSecurityGroupId();
   uri.SetPath(uri.GetPath() + ss.str());

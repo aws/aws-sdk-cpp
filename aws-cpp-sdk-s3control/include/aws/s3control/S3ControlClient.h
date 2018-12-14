@@ -205,7 +205,6 @@ namespace Aws
 
         
         void OverrideEndpoint(const Aws::String& endpoint);
-
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         Aws::String ComputeEndpointString(const Aws::String& accountId) const;

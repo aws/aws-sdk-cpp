@@ -106,8 +106,8 @@ void LexRuntimeServiceClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 PostContentOutcome LexRuntimeServiceClient::PostContent(const PostContentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bot/";
   ss << request.GetBotName();
   ss << "/alias/";
@@ -147,8 +147,8 @@ void LexRuntimeServiceClient::PostContentAsyncHelper(const PostContentRequest& r
 
 PostTextOutcome LexRuntimeServiceClient::PostText(const PostTextRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bot/";
   ss << request.GetBotName();
   ss << "/alias/";

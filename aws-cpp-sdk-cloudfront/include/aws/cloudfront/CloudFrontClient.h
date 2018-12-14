@@ -1868,10 +1868,8 @@ namespace Model
 
       
         void OverrideEndpoint(const Aws::String& endpoint);
-
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateCloudFrontOriginAccessIdentity2018_11_05AsyncHelper(const Model::CreateCloudFrontOriginAccessIdentity2018_11_05Request& request, const CreateCloudFrontOriginAccessIdentity2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDistribution2018_11_05AsyncHelper(const Model::CreateDistribution2018_11_05Request& request, const CreateDistribution2018_11_05ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

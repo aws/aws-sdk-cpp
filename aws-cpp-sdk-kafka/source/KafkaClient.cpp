@@ -110,8 +110,8 @@ void KafkaClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateClusterOutcome KafkaClient::CreateCluster(const CreateClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -145,8 +145,8 @@ void KafkaClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, 
 
 DeleteClusterOutcome KafkaClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters/";
   ss << request.GetClusterArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -181,8 +181,8 @@ void KafkaClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, 
 
 DescribeClusterOutcome KafkaClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters/";
   ss << request.GetClusterArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -217,8 +217,8 @@ void KafkaClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& reque
 
 GetBootstrapBrokersOutcome KafkaClient::GetBootstrapBrokers(const GetBootstrapBrokersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters/";
   ss << request.GetClusterArn();
   ss << "/bootstrap-brokers";
@@ -254,8 +254,8 @@ void KafkaClient::GetBootstrapBrokersAsyncHelper(const GetBootstrapBrokersReques
 
 ListClustersOutcome KafkaClient::ListClusters(const ListClustersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -289,8 +289,8 @@ void KafkaClient::ListClustersAsyncHelper(const ListClustersRequest& request, co
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/clusters/";
   ss << request.GetClusterArn();
   ss << "/nodes";

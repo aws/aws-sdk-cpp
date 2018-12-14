@@ -116,8 +116,8 @@ void EFSClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -151,8 +151,8 @@ void EFSClient::CreateFileSystemAsyncHelper(const CreateFileSystemRequest& reque
 
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -186,8 +186,8 @@ void EFSClient::CreateMountTargetAsyncHelper(const CreateMountTargetRequest& req
 
 CreateTagsOutcome EFSClient::CreateTags(const CreateTagsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/create-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -222,8 +222,8 @@ void EFSClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const Cr
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -258,8 +258,8 @@ void EFSClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& reque
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -294,8 +294,8 @@ void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& req
 
 DeleteTagsOutcome EFSClient::DeleteTags(const DeleteTagsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/delete-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -330,8 +330,8 @@ void EFSClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const De
 
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -365,8 +365,8 @@ void EFSClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest&
 
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
@@ -402,8 +402,8 @@ void EFSClient::DescribeMountTargetSecurityGroupsAsyncHelper(const DescribeMount
 
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -437,8 +437,8 @@ void EFSClient::DescribeMountTargetsAsyncHelper(const DescribeMountTargetsReques
 
 DescribeTagsOutcome EFSClient::DescribeTags(const DescribeTagsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/tags/";
   ss << request.GetFileSystemId();
   ss << "/";
@@ -474,8 +474,8 @@ void EFSClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, cons
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(const ModifyMountTargetSecurityGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
@@ -511,8 +511,8 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTarg
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());

@@ -120,8 +120,8 @@ void ChimeClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 BatchSuspendUserOutcome ChimeClient::BatchSuspendUser(const BatchSuspendUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users";
@@ -159,8 +159,8 @@ void ChimeClient::BatchSuspendUserAsyncHelper(const BatchSuspendUserRequest& req
 
 BatchUnsuspendUserOutcome ChimeClient::BatchUnsuspendUser(const BatchUnsuspendUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users";
@@ -198,8 +198,8 @@ void ChimeClient::BatchUnsuspendUserAsyncHelper(const BatchUnsuspendUserRequest&
 
 BatchUpdateUserOutcome ChimeClient::BatchUpdateUser(const BatchUpdateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users";
@@ -235,8 +235,8 @@ void ChimeClient::BatchUpdateUserAsyncHelper(const BatchUpdateUserRequest& reque
 
 CreateAccountOutcome ChimeClient::CreateAccount(const CreateAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -270,8 +270,8 @@ void ChimeClient::CreateAccountAsyncHelper(const CreateAccountRequest& request, 
 
 DeleteAccountOutcome ChimeClient::DeleteAccount(const DeleteAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -306,8 +306,8 @@ void ChimeClient::DeleteAccountAsyncHelper(const DeleteAccountRequest& request, 
 
 GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -342,8 +342,8 @@ void ChimeClient::GetAccountAsyncHelper(const GetAccountRequest& request, const 
 
 GetAccountSettingsOutcome ChimeClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/settings";
@@ -379,8 +379,8 @@ void ChimeClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest&
 
 GetUserOutcome ChimeClient::GetUser(const GetUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users/";
@@ -417,8 +417,8 @@ void ChimeClient::GetUserAsyncHelper(const GetUserRequest& request, const GetUse
 
 InviteUsersOutcome ChimeClient::InviteUsers(const InviteUsersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users";
@@ -456,8 +456,8 @@ void ChimeClient::InviteUsersAsyncHelper(const InviteUsersRequest& request, cons
 
 ListAccountsOutcome ChimeClient::ListAccounts(const ListAccountsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -491,8 +491,8 @@ void ChimeClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, co
 
 ListUsersOutcome ChimeClient::ListUsers(const ListUsersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users";
@@ -528,8 +528,8 @@ void ChimeClient::ListUsersAsyncHelper(const ListUsersRequest& request, const Li
 
 LogoutUserOutcome ChimeClient::LogoutUser(const LogoutUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users/";
@@ -568,8 +568,8 @@ void ChimeClient::LogoutUserAsyncHelper(const LogoutUserRequest& request, const 
 
 ResetPersonalPINOutcome ChimeClient::ResetPersonalPIN(const ResetPersonalPINRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users/";
@@ -608,8 +608,8 @@ void ChimeClient::ResetPersonalPINAsyncHelper(const ResetPersonalPINRequest& req
 
 UpdateAccountOutcome ChimeClient::UpdateAccount(const UpdateAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -644,8 +644,8 @@ void ChimeClient::UpdateAccountAsyncHelper(const UpdateAccountRequest& request, 
 
 UpdateAccountSettingsOutcome ChimeClient::UpdateAccountSettings(const UpdateAccountSettingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/settings";
@@ -681,8 +681,8 @@ void ChimeClient::UpdateAccountSettingsAsyncHelper(const UpdateAccountSettingsRe
 
 UpdateUserOutcome ChimeClient::UpdateUser(const UpdateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/console/accounts/";
   ss << request.GetAccountId();
   ss << "/users/";

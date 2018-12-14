@@ -684,13 +684,18 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * </ul> </important> <note> <p>When you create a member account with this
-         * operation, you can choose whether to create the account with the <b>IAM User and
-         * Role Access to Billing Information</b> switch enabled. If you enable it, IAM
-         * users and roles that have appropriate permissions can view billing information
-         * for the account. If you disable it, only the account root user can access
-         * billing information. For information about how to disable this switch for an
-         * account, see <a
+         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * recommended. You can only close an account from the Billing and Cost Management
+         * Console, and you must be signed in as the root user. For information on the
+         * requirements and process for closing an account, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+         * an AWS Account</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable it, only the account root user can access billing information.
+         * For information about how to disable this switch for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -746,13 +751,18 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * </ul> </important> <note> <p>When you create a member account with this
-         * operation, you can choose whether to create the account with the <b>IAM User and
-         * Role Access to Billing Information</b> switch enabled. If you enable it, IAM
-         * users and roles that have appropriate permissions can view billing information
-         * for the account. If you disable it, only the account root user can access
-         * billing information. For information about how to disable this switch for an
-         * account, see <a
+         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * recommended. You can only close an account from the Billing and Cost Management
+         * Console, and you must be signed in as the root user. For information on the
+         * requirements and process for closing an account, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+         * an AWS Account</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable it, only the account root user can access billing information.
+         * For information about how to disable this switch for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -810,13 +820,18 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * </ul> </important> <note> <p>When you create a member account with this
-         * operation, you can choose whether to create the account with the <b>IAM User and
-         * Role Access to Billing Information</b> switch enabled. If you enable it, IAM
-         * users and roles that have appropriate permissions can view billing information
-         * for the account. If you disable it, only the account root user can access
-         * billing information. For information about how to disable this switch for an
-         * account, see <a
+         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * recommended. You can only close an account from the Billing and Cost Management
+         * Console, and you must be signed in as the root user. For information on the
+         * requirements and process for closing an account, see <a
+         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+         * an AWS Account</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
+         * </important> <note> <p>When you create a member account with this operation, you
+         * can choose whether to create the account with the <b>IAM User and Role Access to
+         * Billing Information</b> switch enabled. If you enable it, IAM users and roles
+         * that have appropriate permissions can view billing information for the account.
+         * If you disable it, only the account root user can access billing information.
+         * For information about how to disable this switch for an account, see <a
          * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
@@ -2837,7 +2852,6 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AcceptHandshakeAsyncHelper(const Model::AcceptHandshakeRequest& request, const AcceptHandshakeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachPolicyAsyncHelper(const Model::AttachPolicyRequest& request, const AttachPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

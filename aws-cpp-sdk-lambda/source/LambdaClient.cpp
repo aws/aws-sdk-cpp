@@ -141,8 +141,8 @@ void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const AddLayerVersionPermissionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions/";
@@ -180,8 +180,8 @@ void LambdaClient::AddLayerVersionPermissionAsyncHelper(const AddLayerVersionPer
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
@@ -217,8 +217,8 @@ void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request,
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
@@ -254,8 +254,8 @@ void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, con
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -289,8 +289,8 @@ void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMa
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -324,8 +324,8 @@ void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reques
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -362,8 +362,8 @@ void LambdaClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, con
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -398,8 +398,8 @@ void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMa
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -434,8 +434,8 @@ void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& reques
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-10-31/functions/";
   ss << request.GetFunctionName();
   ss << "/concurrency";
@@ -471,8 +471,8 @@ void LambdaClient::DeleteFunctionConcurrencyAsyncHelper(const DeleteFunctionConc
 
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions/";
@@ -509,8 +509,8 @@ void LambdaClient::DeleteLayerVersionAsyncHelper(const DeleteLayerVersionRequest
 
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2016-08-19/account-settings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -544,8 +544,8 @@ void LambdaClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -582,8 +582,8 @@ void LambdaClient::GetAliasAsyncHelper(const GetAliasRequest& request, const Get
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -618,8 +618,8 @@ void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingR
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -654,8 +654,8 @@ void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, con
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";
@@ -691,8 +691,8 @@ void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigur
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions/";
@@ -729,8 +729,8 @@ void LambdaClient::GetLayerVersionAsyncHelper(const GetLayerVersionRequest& requ
 
 GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions/";
@@ -768,8 +768,8 @@ void LambdaClient::GetLayerVersionPolicyAsyncHelper(const GetLayerVersionPolicyR
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
@@ -805,8 +805,8 @@ void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const G
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/invocations";
@@ -842,8 +842,8 @@ void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request, const InvokeR
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
@@ -879,8 +879,8 @@ void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, con
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -914,8 +914,8 @@ void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappi
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -949,8 +949,8 @@ void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request,
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions";
@@ -986,8 +986,8 @@ void LambdaClient::ListLayerVersionsAsyncHelper(const ListLayerVersionsRequest& 
 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1021,8 +1021,8 @@ void LambdaClient::ListLayersAsyncHelper(const ListLayersRequest& request, const
 
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1057,8 +1057,8 @@ void LambdaClient::ListTagsAsyncHelper(const ListTagsRequest& request, const Lis
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
@@ -1094,8 +1094,8 @@ void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctio
 
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions";
@@ -1131,8 +1131,8 @@ void LambdaClient::PublishLayerVersionAsyncHelper(const PublishLayerVersionReque
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
@@ -1168,8 +1168,8 @@ void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& reques
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-10-31/functions/";
   ss << request.GetFunctionName();
   ss << "/concurrency";
@@ -1205,8 +1205,8 @@ void LambdaClient::PutFunctionConcurrencyAsyncHelper(const PutFunctionConcurrenc
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2018-10-31/layers/";
   ss << request.GetLayerName();
   ss << "/versions/";
@@ -1245,8 +1245,8 @@ void LambdaClient::RemoveLayerVersionPermissionAsyncHelper(const RemoveLayerVers
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy/";
@@ -1283,8 +1283,8 @@ void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& re
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1319,8 +1319,8 @@ void LambdaClient::TagResourceAsyncHelper(const TagResourceRequest& request, con
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1355,8 +1355,8 @@ void LambdaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request,
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -1393,8 +1393,8 @@ void LambdaClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, con
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1429,8 +1429,8 @@ void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMa
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/code";
@@ -1466,8 +1466,8 @@ void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";

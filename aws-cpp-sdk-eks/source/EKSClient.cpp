@@ -111,8 +111,8 @@ void EKSClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateClusterOutcome EKSClient::CreateCluster(const CreateClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -146,8 +146,8 @@ void EKSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, co
 
 DeleteClusterOutcome EKSClient::DeleteCluster(const DeleteClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -182,8 +182,8 @@ void EKSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, co
 
 DescribeClusterOutcome EKSClient::DescribeCluster(const DescribeClusterRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -218,8 +218,8 @@ void EKSClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request
 
 DescribeUpdateOutcome EKSClient::DescribeUpdate(const DescribeUpdateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters/";
   ss << request.GetName();
   ss << "/updates/";
@@ -256,8 +256,8 @@ void EKSClient::DescribeUpdateAsyncHelper(const DescribeUpdateRequest& request, 
 
 ListClustersOutcome EKSClient::ListClusters(const ListClustersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -291,8 +291,8 @@ void EKSClient::ListClustersAsyncHelper(const ListClustersRequest& request, cons
 
 ListUpdatesOutcome EKSClient::ListUpdates(const ListUpdatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters/";
   ss << request.GetName();
   ss << "/updates";
@@ -328,8 +328,8 @@ void EKSClient::ListUpdatesAsyncHelper(const ListUpdatesRequest& request, const 
 
 UpdateClusterVersionOutcome EKSClient::UpdateClusterVersion(const UpdateClusterVersionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/clusters/";
   ss << request.GetName();
   ss << "/updates";

@@ -114,8 +114,8 @@ void IoT1ClickDevicesServiceClient::OverrideEndpoint(const Aws::String& endpoint
 }
 ClaimDevicesByClaimCodeOutcome IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCode(const ClaimDevicesByClaimCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/claims/";
   ss << request.GetClaimCode();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -150,8 +150,8 @@ void IoT1ClickDevicesServiceClient::ClaimDevicesByClaimCodeAsyncHelper(const Cla
 
 DescribeDeviceOutcome IoT1ClickDevicesServiceClient::DescribeDevice(const DescribeDeviceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -186,8 +186,8 @@ void IoT1ClickDevicesServiceClient::DescribeDeviceAsyncHelper(const DescribeDevi
 
 FinalizeDeviceClaimOutcome IoT1ClickDevicesServiceClient::FinalizeDeviceClaim(const FinalizeDeviceClaimRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/finalize-claim";
@@ -223,8 +223,8 @@ void IoT1ClickDevicesServiceClient::FinalizeDeviceClaimAsyncHelper(const Finaliz
 
 GetDeviceMethodsOutcome IoT1ClickDevicesServiceClient::GetDeviceMethods(const GetDeviceMethodsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/methods";
@@ -260,8 +260,8 @@ void IoT1ClickDevicesServiceClient::GetDeviceMethodsAsyncHelper(const GetDeviceM
 
 InitiateDeviceClaimOutcome IoT1ClickDevicesServiceClient::InitiateDeviceClaim(const InitiateDeviceClaimRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/initiate-claim";
@@ -297,8 +297,8 @@ void IoT1ClickDevicesServiceClient::InitiateDeviceClaimAsyncHelper(const Initiat
 
 InvokeDeviceMethodOutcome IoT1ClickDevicesServiceClient::InvokeDeviceMethod(const InvokeDeviceMethodRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/methods";
@@ -334,8 +334,8 @@ void IoT1ClickDevicesServiceClient::InvokeDeviceMethodAsyncHelper(const InvokeDe
 
 ListDeviceEventsOutcome IoT1ClickDevicesServiceClient::ListDeviceEvents(const ListDeviceEventsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/events";
@@ -371,8 +371,8 @@ void IoT1ClickDevicesServiceClient::ListDeviceEventsAsyncHelper(const ListDevice
 
 ListDevicesOutcome IoT1ClickDevicesServiceClient::ListDevices(const ListDevicesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -406,8 +406,8 @@ void IoT1ClickDevicesServiceClient::ListDevicesAsyncHelper(const ListDevicesRequ
 
 UnclaimDeviceOutcome IoT1ClickDevicesServiceClient::UnclaimDevice(const UnclaimDeviceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/unclaim";
@@ -443,8 +443,8 @@ void IoT1ClickDevicesServiceClient::UnclaimDeviceAsyncHelper(const UnclaimDevice
 
 UpdateDeviceStateOutcome IoT1ClickDevicesServiceClient::UpdateDeviceState(const UpdateDeviceStateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/devices/";
   ss << request.GetDeviceId();
   ss << "/state";

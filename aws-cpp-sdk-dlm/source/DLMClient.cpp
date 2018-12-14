@@ -109,8 +109,8 @@ void DLMClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateLifecyclePolicyOutcome DLMClient::CreateLifecyclePolicy(const CreateLifecyclePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -144,8 +144,8 @@ void DLMClient::CreateLifecyclePolicyAsyncHelper(const CreateLifecyclePolicyRequ
 
 DeleteLifecyclePolicyOutcome DLMClient::DeleteLifecyclePolicy(const DeleteLifecyclePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyId();
   ss << "/";
@@ -181,8 +181,8 @@ void DLMClient::DeleteLifecyclePolicyAsyncHelper(const DeleteLifecyclePolicyRequ
 
 GetLifecyclePoliciesOutcome DLMClient::GetLifecyclePolicies(const GetLifecyclePoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -216,8 +216,8 @@ void DLMClient::GetLifecyclePoliciesAsyncHelper(const GetLifecyclePoliciesReques
 
 GetLifecyclePolicyOutcome DLMClient::GetLifecyclePolicy(const GetLifecyclePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyId();
   ss << "/";
@@ -253,8 +253,8 @@ void DLMClient::GetLifecyclePolicyAsyncHelper(const GetLifecyclePolicyRequest& r
 
 UpdateLifecyclePolicyOutcome DLMClient::UpdateLifecyclePolicy(const UpdateLifecyclePolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyId();
   uri.SetPath(uri.GetPath() + ss.str());

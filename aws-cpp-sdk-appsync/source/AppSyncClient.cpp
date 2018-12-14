@@ -137,8 +137,8 @@ void AppSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateApiKeyOutcome AppSyncClient::CreateApiKey(const CreateApiKeyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/apikeys";
@@ -174,8 +174,8 @@ void AppSyncClient::CreateApiKeyAsyncHelper(const CreateApiKeyRequest& request, 
 
 CreateDataSourceOutcome AppSyncClient::CreateDataSource(const CreateDataSourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/datasources";
@@ -211,8 +211,8 @@ void AppSyncClient::CreateDataSourceAsyncHelper(const CreateDataSourceRequest& r
 
 CreateFunctionOutcome AppSyncClient::CreateFunction(const CreateFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions";
@@ -248,8 +248,8 @@ void AppSyncClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reque
 
 CreateGraphqlApiOutcome AppSyncClient::CreateGraphqlApi(const CreateGraphqlApiRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -283,8 +283,8 @@ void AppSyncClient::CreateGraphqlApiAsyncHelper(const CreateGraphqlApiRequest& r
 
 CreateResolverOutcome AppSyncClient::CreateResolver(const CreateResolverRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -322,8 +322,8 @@ void AppSyncClient::CreateResolverAsyncHelper(const CreateResolverRequest& reque
 
 CreateTypeOutcome AppSyncClient::CreateType(const CreateTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types";
@@ -359,8 +359,8 @@ void AppSyncClient::CreateTypeAsyncHelper(const CreateTypeRequest& request, cons
 
 DeleteApiKeyOutcome AppSyncClient::DeleteApiKey(const DeleteApiKeyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/apikeys/";
@@ -397,8 +397,8 @@ void AppSyncClient::DeleteApiKeyAsyncHelper(const DeleteApiKeyRequest& request, 
 
 DeleteDataSourceOutcome AppSyncClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/datasources/";
@@ -435,8 +435,8 @@ void AppSyncClient::DeleteDataSourceAsyncHelper(const DeleteDataSourceRequest& r
 
 DeleteFunctionOutcome AppSyncClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions/";
@@ -473,8 +473,8 @@ void AppSyncClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& reque
 
 DeleteGraphqlApiOutcome AppSyncClient::DeleteGraphqlApi(const DeleteGraphqlApiRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -509,8 +509,8 @@ void AppSyncClient::DeleteGraphqlApiAsyncHelper(const DeleteGraphqlApiRequest& r
 
 DeleteResolverOutcome AppSyncClient::DeleteResolver(const DeleteResolverRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -549,8 +549,8 @@ void AppSyncClient::DeleteResolverAsyncHelper(const DeleteResolverRequest& reque
 
 DeleteTypeOutcome AppSyncClient::DeleteType(const DeleteTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -587,8 +587,8 @@ void AppSyncClient::DeleteTypeAsyncHelper(const DeleteTypeRequest& request, cons
 
 GetDataSourceOutcome AppSyncClient::GetDataSource(const GetDataSourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/datasources/";
@@ -625,8 +625,8 @@ void AppSyncClient::GetDataSourceAsyncHelper(const GetDataSourceRequest& request
 
 GetFunctionOutcome AppSyncClient::GetFunction(const GetFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions/";
@@ -663,8 +663,8 @@ void AppSyncClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, co
 
 GetGraphqlApiOutcome AppSyncClient::GetGraphqlApi(const GetGraphqlApiRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -699,8 +699,8 @@ void AppSyncClient::GetGraphqlApiAsyncHelper(const GetGraphqlApiRequest& request
 
 GetIntrospectionSchemaOutcome AppSyncClient::GetIntrospectionSchema(const GetIntrospectionSchemaRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/schema";
@@ -736,8 +736,8 @@ void AppSyncClient::GetIntrospectionSchemaAsyncHelper(const GetIntrospectionSche
 
 GetResolverOutcome AppSyncClient::GetResolver(const GetResolverRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -776,8 +776,8 @@ void AppSyncClient::GetResolverAsyncHelper(const GetResolverRequest& request, co
 
 GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetSchemaCreationStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/schemacreation";
@@ -813,8 +813,8 @@ void AppSyncClient::GetSchemaCreationStatusAsyncHelper(const GetSchemaCreationSt
 
 GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -851,8 +851,8 @@ void AppSyncClient::GetTypeAsyncHelper(const GetTypeRequest& request, const GetT
 
 ListApiKeysOutcome AppSyncClient::ListApiKeys(const ListApiKeysRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/apikeys";
@@ -888,8 +888,8 @@ void AppSyncClient::ListApiKeysAsyncHelper(const ListApiKeysRequest& request, co
 
 ListDataSourcesOutcome AppSyncClient::ListDataSources(const ListDataSourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/datasources";
@@ -925,8 +925,8 @@ void AppSyncClient::ListDataSourcesAsyncHelper(const ListDataSourcesRequest& req
 
 ListFunctionsOutcome AppSyncClient::ListFunctions(const ListFunctionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions";
@@ -962,8 +962,8 @@ void AppSyncClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request
 
 ListGraphqlApisOutcome AppSyncClient::ListGraphqlApis(const ListGraphqlApisRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -997,8 +997,8 @@ void AppSyncClient::ListGraphqlApisAsyncHelper(const ListGraphqlApisRequest& req
 
 ListResolversOutcome AppSyncClient::ListResolvers(const ListResolversRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -1036,8 +1036,8 @@ void AppSyncClient::ListResolversAsyncHelper(const ListResolversRequest& request
 
 ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const ListResolversByFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions/";
@@ -1075,8 +1075,8 @@ void AppSyncClient::ListResolversByFunctionAsyncHelper(const ListResolversByFunc
 
 ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types";
@@ -1112,8 +1112,8 @@ void AppSyncClient::ListTypesAsyncHelper(const ListTypesRequest& request, const 
 
 StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaCreationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/schemacreation";
@@ -1149,8 +1149,8 @@ void AppSyncClient::StartSchemaCreationAsyncHelper(const StartSchemaCreationRequ
 
 UpdateApiKeyOutcome AppSyncClient::UpdateApiKey(const UpdateApiKeyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/apikeys/";
@@ -1187,8 +1187,8 @@ void AppSyncClient::UpdateApiKeyAsyncHelper(const UpdateApiKeyRequest& request, 
 
 UpdateDataSourceOutcome AppSyncClient::UpdateDataSource(const UpdateDataSourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/datasources/";
@@ -1225,8 +1225,8 @@ void AppSyncClient::UpdateDataSourceAsyncHelper(const UpdateDataSourceRequest& r
 
 UpdateFunctionOutcome AppSyncClient::UpdateFunction(const UpdateFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/functions/";
@@ -1263,8 +1263,8 @@ void AppSyncClient::UpdateFunctionAsyncHelper(const UpdateFunctionRequest& reque
 
 UpdateGraphqlApiOutcome AppSyncClient::UpdateGraphqlApi(const UpdateGraphqlApiRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1299,8 +1299,8 @@ void AppSyncClient::UpdateGraphqlApiAsyncHelper(const UpdateGraphqlApiRequest& r
 
 UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";
@@ -1339,8 +1339,8 @@ void AppSyncClient::UpdateResolverAsyncHelper(const UpdateResolverRequest& reque
 
 UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apis/";
   ss << request.GetApiId();
   ss << "/types/";

@@ -113,8 +113,8 @@ void MobileClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -148,8 +148,8 @@ void MobileClient::CreateProjectAsyncHelper(const CreateProjectRequest& request,
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -184,8 +184,8 @@ void MobileClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request,
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -220,8 +220,8 @@ void MobileClient::DescribeBundleAsyncHelper(const DescribeBundleRequest& reques
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/project";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -255,8 +255,8 @@ void MobileClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& requ
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -291,8 +291,8 @@ void MobileClient::ExportBundleAsyncHelper(const ExportBundleRequest& request, c
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/exports/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -327,8 +327,8 @@ void MobileClient::ExportProjectAsyncHelper(const ExportProjectRequest& request,
 
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -362,8 +362,8 @@ void MobileClient::ListBundlesAsyncHelper(const ListBundlesRequest& request, con
 
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -397,8 +397,8 @@ void MobileClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, c
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/update";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

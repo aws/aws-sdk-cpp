@@ -115,8 +115,8 @@ void MediaPackageClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateChannelOutcome MediaPackageClient::CreateChannel(const CreateChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -150,8 +150,8 @@ void MediaPackageClient::CreateChannelAsyncHelper(const CreateChannelRequest& re
 
 CreateOriginEndpointOutcome MediaPackageClient::CreateOriginEndpoint(const CreateOriginEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/origin_endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -185,8 +185,8 @@ void MediaPackageClient::CreateOriginEndpointAsyncHelper(const CreateOriginEndpo
 
 DeleteChannelOutcome MediaPackageClient::DeleteChannel(const DeleteChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -221,8 +221,8 @@ void MediaPackageClient::DeleteChannelAsyncHelper(const DeleteChannelRequest& re
 
 DeleteOriginEndpointOutcome MediaPackageClient::DeleteOriginEndpoint(const DeleteOriginEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -257,8 +257,8 @@ void MediaPackageClient::DeleteOriginEndpointAsyncHelper(const DeleteOriginEndpo
 
 DescribeChannelOutcome MediaPackageClient::DescribeChannel(const DescribeChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -293,8 +293,8 @@ void MediaPackageClient::DescribeChannelAsyncHelper(const DescribeChannelRequest
 
 DescribeOriginEndpointOutcome MediaPackageClient::DescribeOriginEndpoint(const DescribeOriginEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -329,8 +329,8 @@ void MediaPackageClient::DescribeOriginEndpointAsyncHelper(const DescribeOriginE
 
 ListChannelsOutcome MediaPackageClient::ListChannels(const ListChannelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -364,8 +364,8 @@ void MediaPackageClient::ListChannelsAsyncHelper(const ListChannelsRequest& requ
 
 ListOriginEndpointsOutcome MediaPackageClient::ListOriginEndpoints(const ListOriginEndpointsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/origin_endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -399,8 +399,8 @@ void MediaPackageClient::ListOriginEndpointsAsyncHelper(const ListOriginEndpoint
 
 RotateIngestEndpointCredentialsOutcome MediaPackageClient::RotateIngestEndpointCredentials(const RotateIngestEndpointCredentialsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels/";
   ss << request.GetId();
   ss << "/ingest_endpoints/";
@@ -438,8 +438,8 @@ void MediaPackageClient::RotateIngestEndpointCredentialsAsyncHelper(const Rotate
 
 UpdateChannelOutcome MediaPackageClient::UpdateChannel(const UpdateChannelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/channels/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -474,8 +474,8 @@ void MediaPackageClient::UpdateChannelAsyncHelper(const UpdateChannelRequest& re
 
 UpdateOriginEndpointOutcome MediaPackageClient::UpdateOriginEndpoint(const UpdateOriginEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/origin_endpoints/";
   ss << request.GetId();
   uri.SetPath(uri.GetPath() + ss.str());

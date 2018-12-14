@@ -123,7 +123,6 @@ void SQSClient::OverrideEndpoint(const Aws::String& endpoint)
       m_uri = m_configScheme + "://" + endpoint;
   }
 }
-
 AddPermissionOutcome SQSClient::AddPermission(const AddPermissionRequest& request) const
 {
   XmlOutcome outcome = MakeRequest(request.GetQueueUrl(), request, HttpMethod::HTTP_POST);
@@ -219,12 +218,11 @@ void SQSClient::ChangeMessageVisibilityBatchAsyncHelper(const ChangeMessageVisib
 
 CreateQueueOutcome SQSClient::CreateQueue(const CreateQueueRequest& request) const
 {
+  Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << m_uri;
-
   ss << "/";
-
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return CreateQueueOutcome(CreateQueueResult(outcome.GetResult()));
@@ -379,12 +377,11 @@ void SQSClient::GetQueueAttributesAsyncHelper(const GetQueueAttributesRequest& r
 
 GetQueueUrlOutcome SQSClient::GetQueueUrl(const GetQueueUrlRequest& request) const
 {
+  Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << m_uri;
-
   ss << "/";
-
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return GetQueueUrlOutcome(GetQueueUrlResult(outcome.GetResult()));
@@ -477,12 +474,11 @@ void SQSClient::ListQueueTagsAsyncHelper(const ListQueueTagsRequest& request, co
 
 ListQueuesOutcome SQSClient::ListQueues(const ListQueuesRequest& request) const
 {
+  Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << m_uri;
-
   ss << "/";
-
-  XmlOutcome outcome = MakeRequest(ss.str(), request, HttpMethod::HTTP_POST);
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
   if(outcome.IsSuccess())
   {
     return ListQueuesOutcome(ListQueuesResult(outcome.GetResult()));

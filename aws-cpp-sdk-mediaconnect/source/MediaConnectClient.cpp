@@ -118,8 +118,8 @@ void MediaConnectClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 AddFlowOutputsOutcome MediaConnectClient::AddFlowOutputs(const AddFlowOutputsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/outputs";
@@ -155,8 +155,8 @@ void MediaConnectClient::AddFlowOutputsAsyncHelper(const AddFlowOutputsRequest& 
 
 CreateFlowOutcome MediaConnectClient::CreateFlow(const CreateFlowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -190,8 +190,8 @@ void MediaConnectClient::CreateFlowAsyncHelper(const CreateFlowRequest& request,
 
 DeleteFlowOutcome MediaConnectClient::DeleteFlow(const DeleteFlowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -226,8 +226,8 @@ void MediaConnectClient::DeleteFlowAsyncHelper(const DeleteFlowRequest& request,
 
 DescribeFlowOutcome MediaConnectClient::DescribeFlow(const DescribeFlowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -262,8 +262,8 @@ void MediaConnectClient::DescribeFlowAsyncHelper(const DescribeFlowRequest& requ
 
 GrantFlowEntitlementsOutcome MediaConnectClient::GrantFlowEntitlements(const GrantFlowEntitlementsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/entitlements";
@@ -299,8 +299,8 @@ void MediaConnectClient::GrantFlowEntitlementsAsyncHelper(const GrantFlowEntitle
 
 ListEntitlementsOutcome MediaConnectClient::ListEntitlements(const ListEntitlementsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/entitlements";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -334,8 +334,8 @@ void MediaConnectClient::ListEntitlementsAsyncHelper(const ListEntitlementsReque
 
 ListFlowsOutcome MediaConnectClient::ListFlows(const ListFlowsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -369,8 +369,8 @@ void MediaConnectClient::ListFlowsAsyncHelper(const ListFlowsRequest& request, c
 
 RemoveFlowOutputOutcome MediaConnectClient::RemoveFlowOutput(const RemoveFlowOutputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/outputs/";
@@ -407,8 +407,8 @@ void MediaConnectClient::RemoveFlowOutputAsyncHelper(const RemoveFlowOutputReque
 
 RevokeFlowEntitlementOutcome MediaConnectClient::RevokeFlowEntitlement(const RevokeFlowEntitlementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/entitlements/";
@@ -445,8 +445,8 @@ void MediaConnectClient::RevokeFlowEntitlementAsyncHelper(const RevokeFlowEntitl
 
 StartFlowOutcome MediaConnectClient::StartFlow(const StartFlowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/start/";
   ss << request.GetFlowArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -481,8 +481,8 @@ void MediaConnectClient::StartFlowAsyncHelper(const StartFlowRequest& request, c
 
 StopFlowOutcome MediaConnectClient::StopFlow(const StopFlowRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/stop/";
   ss << request.GetFlowArn();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -517,8 +517,8 @@ void MediaConnectClient::StopFlowAsyncHelper(const StopFlowRequest& request, con
 
 UpdateFlowEntitlementOutcome MediaConnectClient::UpdateFlowEntitlement(const UpdateFlowEntitlementRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/entitlements/";
@@ -555,8 +555,8 @@ void MediaConnectClient::UpdateFlowEntitlementAsyncHelper(const UpdateFlowEntitl
 
 UpdateFlowOutputOutcome MediaConnectClient::UpdateFlowOutput(const UpdateFlowOutputRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/outputs/";
@@ -593,8 +593,8 @@ void MediaConnectClient::UpdateFlowOutputAsyncHelper(const UpdateFlowOutputReque
 
 UpdateFlowSourceOutcome MediaConnectClient::UpdateFlowSource(const UpdateFlowSourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/flows/";
   ss << request.GetFlowArn();
   ss << "/source/";

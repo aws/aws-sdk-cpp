@@ -116,13 +116,13 @@ void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return DeletePublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
@@ -156,13 +156,13 @@ void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAcces
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return GetPublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -196,13 +196,13 @@ void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlock
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return PutPublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);

@@ -2956,7 +2956,6 @@ namespace Aws
         virtual bool MultipartUploadSupported() const;
 
         void OverrideEndpoint(const Aws::String& endpoint);
-
     private:
         void init(const Client::ClientConfiguration& clientConfiguration);
         Aws::String ComputeEndpointString(const Aws::String& bucket) const;

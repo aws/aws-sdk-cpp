@@ -119,8 +119,8 @@ void QuickSightClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateGroupOutcome QuickSightClient::CreateGroup(const CreateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -158,8 +158,8 @@ void QuickSightClient::CreateGroupAsyncHelper(const CreateGroupRequest& request,
 
 CreateGroupMembershipOutcome QuickSightClient::CreateGroupMembership(const CreateGroupMembershipRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -200,8 +200,8 @@ void QuickSightClient::CreateGroupMembershipAsyncHelper(const CreateGroupMembers
 
 DeleteGroupOutcome QuickSightClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -240,8 +240,8 @@ void QuickSightClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request,
 
 DeleteGroupMembershipOutcome QuickSightClient::DeleteGroupMembership(const DeleteGroupMembershipRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -282,8 +282,8 @@ void QuickSightClient::DeleteGroupMembershipAsyncHelper(const DeleteGroupMembers
 
 DeleteUserOutcome QuickSightClient::DeleteUser(const DeleteUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -322,8 +322,8 @@ void QuickSightClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, c
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -362,8 +362,8 @@ void QuickSightClient::DescribeGroupAsyncHelper(const DescribeGroupRequest& requ
 
 DescribeUserOutcome QuickSightClient::DescribeUser(const DescribeUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -402,8 +402,8 @@ void QuickSightClient::DescribeUserAsyncHelper(const DescribeUserRequest& reques
 
 GetDashboardEmbedUrlOutcome QuickSightClient::GetDashboardEmbedUrl(const GetDashboardEmbedUrlRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/dashboards/";
@@ -441,8 +441,8 @@ void QuickSightClient::GetDashboardEmbedUrlAsyncHelper(const GetDashboardEmbedUr
 
 ListGroupMembershipsOutcome QuickSightClient::ListGroupMemberships(const ListGroupMembershipsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -482,8 +482,8 @@ void QuickSightClient::ListGroupMembershipsAsyncHelper(const ListGroupMembership
 
 ListGroupsOutcome QuickSightClient::ListGroups(const ListGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -521,8 +521,8 @@ void QuickSightClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, c
 
 ListUserGroupsOutcome QuickSightClient::ListUserGroups(const ListUserGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -562,8 +562,8 @@ void QuickSightClient::ListUserGroupsAsyncHelper(const ListUserGroupsRequest& re
 
 ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -601,8 +601,8 @@ void QuickSightClient::ListUsersAsyncHelper(const ListUsersRequest& request, con
 
 RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -640,8 +640,8 @@ void QuickSightClient::RegisterUserAsyncHelper(const RegisterUserRequest& reques
 
 UpdateGroupOutcome QuickSightClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";
@@ -680,8 +680,8 @@ void QuickSightClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request,
 
 UpdateUserOutcome QuickSightClient::UpdateUser(const UpdateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accounts/";
   ss << request.GetAwsAccountId();
   ss << "/namespaces/";

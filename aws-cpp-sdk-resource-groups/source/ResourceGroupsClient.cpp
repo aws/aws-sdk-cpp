@@ -116,8 +116,8 @@ void ResourceGroupsClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 CreateGroupOutcome ResourceGroupsClient::CreateGroup(const CreateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -151,8 +151,8 @@ void ResourceGroupsClient::CreateGroupAsyncHelper(const CreateGroupRequest& requ
 
 DeleteGroupOutcome ResourceGroupsClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -187,8 +187,8 @@ void ResourceGroupsClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& requ
 
 GetGroupOutcome ResourceGroupsClient::GetGroup(const GetGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -223,8 +223,8 @@ void ResourceGroupsClient::GetGroupAsyncHelper(const GetGroupRequest& request, c
 
 GetGroupQueryOutcome ResourceGroupsClient::GetGroupQuery(const GetGroupQueryRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   ss << "/query";
@@ -260,8 +260,8 @@ void ResourceGroupsClient::GetGroupQueryAsyncHelper(const GetGroupQueryRequest& 
 
 GetTagsOutcome ResourceGroupsClient::GetTags(const GetTagsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/resources/";
   ss << request.GetArn();
   ss << "/tags";
@@ -297,8 +297,8 @@ void ResourceGroupsClient::GetTagsAsyncHelper(const GetTagsRequest& request, con
 
 ListGroupResourcesOutcome ResourceGroupsClient::ListGroupResources(const ListGroupResourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   ss << "/resource-identifiers-list";
@@ -334,8 +334,8 @@ void ResourceGroupsClient::ListGroupResourcesAsyncHelper(const ListGroupResource
 
 ListGroupsOutcome ResourceGroupsClient::ListGroups(const ListGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups-list";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -369,8 +369,8 @@ void ResourceGroupsClient::ListGroupsAsyncHelper(const ListGroupsRequest& reques
 
 SearchResourcesOutcome ResourceGroupsClient::SearchResources(const SearchResourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/resources/search";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -404,8 +404,8 @@ void ResourceGroupsClient::SearchResourcesAsyncHelper(const SearchResourcesReque
 
 TagOutcome ResourceGroupsClient::Tag(const TagRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/resources/";
   ss << request.GetArn();
   ss << "/tags";
@@ -441,8 +441,8 @@ void ResourceGroupsClient::TagAsyncHelper(const TagRequest& request, const TagRe
 
 UntagOutcome ResourceGroupsClient::Untag(const UntagRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/resources/";
   ss << request.GetArn();
   ss << "/tags";
@@ -478,8 +478,8 @@ void ResourceGroupsClient::UntagAsyncHelper(const UntagRequest& request, const U
 
 UpdateGroupOutcome ResourceGroupsClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -514,8 +514,8 @@ void ResourceGroupsClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& requ
 
 UpdateGroupQueryOutcome ResourceGroupsClient::UpdateGroupQuery(const UpdateGroupQueryRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/groups/";
   ss << request.GetGroupName();
   ss << "/query";

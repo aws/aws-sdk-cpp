@@ -108,8 +108,8 @@ void MediaTailorClient::OverrideEndpoint(const Aws::String& endpoint)
 }
 DeletePlaybackConfigurationOutcome MediaTailorClient::DeletePlaybackConfiguration(const DeletePlaybackConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -144,8 +144,8 @@ void MediaTailorClient::DeletePlaybackConfigurationAsyncHelper(const DeletePlayb
 
 GetPlaybackConfigurationOutcome MediaTailorClient::GetPlaybackConfiguration(const GetPlaybackConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/playbackConfiguration/";
   ss << request.GetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -180,8 +180,8 @@ void MediaTailorClient::GetPlaybackConfigurationAsyncHelper(const GetPlaybackCon
 
 ListPlaybackConfigurationsOutcome MediaTailorClient::ListPlaybackConfigurations(const ListPlaybackConfigurationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/playbackConfigurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -215,8 +215,8 @@ void MediaTailorClient::ListPlaybackConfigurationsAsyncHelper(const ListPlayback
 
 PutPlaybackConfigurationOutcome MediaTailorClient::PutPlaybackConfiguration(const PutPlaybackConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/playbackConfiguration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);

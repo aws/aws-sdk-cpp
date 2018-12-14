@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the reputation metrics were last given a fresh start.
-     * When your account is given a fresh start, your reputation metrics are calculated
-     * starting from the date of the fresh start.</p>
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
      */
     inline const Aws::Utils::DateTime& GetLastFreshStart() const{ return m_lastFreshStart; }
 
     /**
-     * <p>The date and time when the reputation metrics were last given a fresh start.
-     * When your account is given a fresh start, your reputation metrics are calculated
-     * starting from the date of the fresh start.</p>
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
      */
     inline void SetLastFreshStart(const Aws::Utils::DateTime& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = value; }
 
     /**
-     * <p>The date and time when the reputation metrics were last given a fresh start.
-     * When your account is given a fresh start, your reputation metrics are calculated
-     * starting from the date of the fresh start.</p>
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
      */
     inline void SetLastFreshStart(Aws::Utils::DateTime&& value) { m_lastFreshStartHasBeenSet = true; m_lastFreshStart = std::move(value); }
 
     /**
-     * <p>The date and time when the reputation metrics were last given a fresh start.
-     * When your account is given a fresh start, your reputation metrics are calculated
-     * starting from the date of the fresh start.</p>
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
      */
     inline ReputationOptions& WithLastFreshStart(const Aws::Utils::DateTime& value) { SetLastFreshStart(value); return *this;}
 
     /**
-     * <p>The date and time when the reputation metrics were last given a fresh start.
-     * When your account is given a fresh start, your reputation metrics are calculated
-     * starting from the date of the fresh start.</p>
+     * <p>The date and time (in Unix time) when the reputation metrics were last given
+     * a fresh start. When your account is given a fresh start, your reputation metrics
+     * are calculated starting from the date of the fresh start.</p>
      */
     inline ReputationOptions& WithLastFreshStart(Aws::Utils::DateTime&& value) { SetLastFreshStart(std::move(value)); return *this;}
 
