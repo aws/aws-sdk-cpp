@@ -70,6 +70,49 @@ namespace Model
 
 
     /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline const Aws::String& GetUserInvitationUrl() const{ return m_userInvitationUrl; }
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline void SetUserInvitationUrl(const Aws::String& value) { m_userInvitationUrl = value; }
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline void SetUserInvitationUrl(Aws::String&& value) { m_userInvitationUrl = std::move(value); }
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline void SetUserInvitationUrl(const char* value) { m_userInvitationUrl.assign(value); }
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline RegisterUserResult& WithUserInvitationUrl(const Aws::String& value) { SetUserInvitationUrl(value); return *this;}
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline RegisterUserResult& WithUserInvitationUrl(Aws::String&& value) { SetUserInvitationUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The URL the user visits to complete registration and provide a password. This
+     * is returned only for users with an identity type of <code>QUICKSIGHT</code>.</p>
+     */
+    inline RegisterUserResult& WithUserInvitationUrl(const char* value) { SetUserInvitationUrl(value); return *this;}
+
+
+    /**
      * <p>The AWS request ID for this operation.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
@@ -123,6 +166,8 @@ namespace Model
   private:
 
     User m_user;
+
+    Aws::String m_userInvitationUrl;
 
     Aws::String m_requestId;
 

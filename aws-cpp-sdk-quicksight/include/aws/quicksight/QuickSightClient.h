@@ -145,10 +145,10 @@ namespace Model
 
   /**
    * <fullname>Amazon QuickSight API Reference</fullname> <p>Amazon QuickSight is a
-   * fast, cloud-powered BI service that makes it easy to build visualizations,
-   * perform ad hoc analysis, and quickly get business insights from your data. This
-   * API interface reference contains documentation for a programming interface that
-   * you can use to manage Amazon QuickSight. </p>
+   * fully managed, serverless, cloud business intelligence service that makes it
+   * easy to extend data and insights to every user in your organization. This API
+   * interface reference contains documentation for a programming interface that you
+   * can use to manage Amazon QuickSight. </p>
    */
   class AWS_QUICKSIGHT_API QuickSightClient : public Aws::Client::AWSJsonClient
   {
@@ -182,7 +182,10 @@ namespace Model
         /**
          * <p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight create-group --aws-account-id=111122223333
+         * --namespace=default --group-name="Sales-Management" --description="Sales
+         * Management - Forecasting" </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">AWS
          * API Reference</a></p>
          */
@@ -191,7 +194,10 @@ namespace Model
         /**
          * <p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight create-group --aws-account-id=111122223333
+         * --namespace=default --group-name="Sales-Management" --description="Sales
+         * Management - Forecasting" </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -202,7 +208,10 @@ namespace Model
         /**
          * <p>Creates an Amazon QuickSight group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight create-group --aws-account-id=111122223333
+         * --namespace=default --group-name="Sales-Management" --description="Sales
+         * Management - Forecasting" </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroup">AWS
          * API Reference</a></p>
          *
@@ -216,7 +225,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
          * key is <code>quicksight:UserName</code>.</p> <p>The response is the group member
-         * object.</p><p><h3>See Also:</h3>   <a
+         * object.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * create-group-membership --aws-account-id=111122223333 --namespace=default
+         * --group-name=Sales --member-name=Pat </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">AWS
          * API Reference</a></p>
          */
@@ -228,7 +239,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
          * key is <code>quicksight:UserName</code>.</p> <p>The response is the group member
-         * object.</p><p><h3>See Also:</h3>   <a
+         * object.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * create-group-membership --aws-account-id=111122223333 --namespace=default
+         * --group-name=Sales --member-name=Pat </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">AWS
          * API Reference</a></p>
          *
@@ -242,7 +255,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
          * key is <code>quicksight:UserName</code>.</p> <p>The response is the group member
-         * object.</p><p><h3>See Also:</h3>   <a
+         * object.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * create-group-membership --aws-account-id=111122223333 --namespace=default
+         * --group-name=Sales --member-name=Pat </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateGroupMembership">AWS
          * API Reference</a></p>
          *
@@ -254,7 +269,9 @@ namespace Model
          * <p>Removes a user group from Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight delete-group
+         * -\-aws-account-id=111122223333 -\-namespace=default
+         * -\-group-name=Sales-Management </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">AWS
          * API Reference</a></p>
          */
@@ -264,7 +281,9 @@ namespace Model
          * <p>Removes a user group from Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight delete-group
+         * -\-aws-account-id=111122223333 -\-namespace=default
+         * -\-group-name=Sales-Management </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -276,7 +295,9 @@ namespace Model
          * <p>Removes a user group from Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight delete-group
+         * -\-aws-account-id=111122223333 -\-namespace=default
+         * -\-group-name=Sales-Management </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroup">AWS
          * API Reference</a></p>
          *
@@ -289,7 +310,10 @@ namespace Model
          * group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
-         * key is <code>quicksight:UserName</code>.</p><p><h3>See Also:</h3>   <a
+         * key is <code>quicksight:UserName</code>.</p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight delete-group-membership --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">AWS
          * API Reference</a></p>
          */
@@ -300,7 +324,10 @@ namespace Model
          * group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
-         * key is <code>quicksight:UserName</code>.</p><p><h3>See Also:</h3>   <a
+         * key is <code>quicksight:UserName</code>.</p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight delete-group-membership --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">AWS
          * API Reference</a></p>
          *
@@ -313,7 +340,10 @@ namespace Model
          * group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
          * </code>.</p> <p>The condition resource is the user name.</p> <p>The condition
-         * key is <code>quicksight:UserName</code>.</p><p><h3>See Also:</h3>   <a
+         * key is <code>quicksight:UserName</code>.</p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight delete-group-membership --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteGroupMembership">AWS
          * API Reference</a></p>
          *
@@ -327,7 +357,9 @@ namespace Model
          * call. The IAM user isn't deleted as a result of this call. </p> <p>The
          * permission resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
-         * </i> </code>.</p><p><h3>See Also:</h3>   <a
+         * </i> </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">AWS
          * API Reference</a></p>
          */
@@ -339,7 +371,9 @@ namespace Model
          * call. The IAM user isn't deleted as a result of this call. </p> <p>The
          * permission resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
-         * </i> </code>.</p><p><h3>See Also:</h3>   <a
+         * </i> </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -353,7 +387,9 @@ namespace Model
          * call. The IAM user isn't deleted as a result of this call. </p> <p>The
          * permission resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;
-         * </i> </code>.</p><p><h3>See Also:</h3>   <a
+         * </i> </code>.</p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUser">AWS
          * API Reference</a></p>
          *
@@ -365,7 +401,9 @@ namespace Model
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
          * (ARN). </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is the group object. </p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is the group object. </p> <p> <b>CLI Sample:</b>
+         * </p> <p> <code>aws quicksight describe-group -\-aws-account-id=11112222333
+         * -\-namespace=default -\-group-name=Sales </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">AWS
          * API Reference</a></p>
          */
@@ -375,7 +413,9 @@ namespace Model
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
          * (ARN). </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is the group object. </p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is the group object. </p> <p> <b>CLI Sample:</b>
+         * </p> <p> <code>aws quicksight describe-group -\-aws-account-id=11112222333
+         * -\-namespace=default -\-group-name=Sales </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">AWS
          * API Reference</a></p>
          *
@@ -387,7 +427,9 @@ namespace Model
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
          * (ARN). </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is the group object. </p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is the group object. </p> <p> <b>CLI Sample:</b>
+         * </p> <p> <code>aws quicksight describe-group -\-aws-account-id=11112222333
+         * -\-namespace=default -\-group-name=Sales </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeGroup">AWS
          * API Reference</a></p>
          *
@@ -401,7 +443,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>. </p> <p>The response is a user object that contains the user's Amazon
          * Resource Name (ARN), AWS Identity and Access Management (IAM) role, and email
-         * address. </p><p><h3>See Also:</h3>   <a
+         * address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight describe-user
+         * --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">AWS
          * API Reference</a></p>
          */
@@ -413,7 +457,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>. </p> <p>The response is a user object that contains the user's Amazon
          * Resource Name (ARN), AWS Identity and Access Management (IAM) role, and email
-         * address. </p><p><h3>See Also:</h3>   <a
+         * address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight describe-user
+         * --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">AWS
          * API Reference</a></p>
          *
@@ -427,7 +473,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>. </p> <p>The response is a user object that contains the user's Amazon
          * Resource Name (ARN), AWS Identity and Access Management (IAM) role, and email
-         * address. </p><p><h3>See Also:</h3>   <a
+         * address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight describe-user
+         * --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeUser">AWS
          * API Reference</a></p>
          *
@@ -436,8 +484,26 @@ namespace Model
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates an embedded URL and authorization code. Before this can work
-         * properly, you need to configure the dashboards and user permissions first.
+         * <p>Generates a server-side embeddable URL and authorization code. Before this
+         * can work properly, first you need to configure the dashboards and user
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html">
+         * Embedding Amazon QuickSight Dashboards</a>.</p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
+         * browser.</p> <p> <b>CLI Sample:</b> </p> <p>Assume the role with permissions
+         * enabled for actions: <code>quickSight:RegisterUser</code> and
+         * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role,
+         * assume-role-with-web-identity, or assume-role-with-saml. </p> <p> <code>aws sts
+         * assume-role --role-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
+         * --role-session-name embeddingsession</code> </p> <p>If the user does not exist
+         * in QuickSight, register the user:</p> <p> <code>aws quicksight register-user
+         * --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role
+         * READER --session-name "embeddingsession" --email user123@example.com --region
+         * us-east-1</code> </p> <p>Get the URL for the embedded dashboard</p> <p>
+         * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333
+         * --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
@@ -445,8 +511,26 @@ namespace Model
         virtual Model::GetDashboardEmbedUrlOutcome GetDashboardEmbedUrl(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates an embedded URL and authorization code. Before this can work
-         * properly, you need to configure the dashboards and user permissions first.
+         * <p>Generates a server-side embeddable URL and authorization code. Before this
+         * can work properly, first you need to configure the dashboards and user
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html">
+         * Embedding Amazon QuickSight Dashboards</a>.</p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
+         * browser.</p> <p> <b>CLI Sample:</b> </p> <p>Assume the role with permissions
+         * enabled for actions: <code>quickSight:RegisterUser</code> and
+         * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role,
+         * assume-role-with-web-identity, or assume-role-with-saml. </p> <p> <code>aws sts
+         * assume-role --role-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
+         * --role-session-name embeddingsession</code> </p> <p>If the user does not exist
+         * in QuickSight, register the user:</p> <p> <code>aws quicksight register-user
+         * --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role
+         * READER --session-name "embeddingsession" --email user123@example.com --region
+         * us-east-1</code> </p> <p>Get the URL for the embedded dashboard</p> <p>
+         * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333
+         * --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
@@ -456,8 +540,26 @@ namespace Model
         virtual Model::GetDashboardEmbedUrlOutcomeCallable GetDashboardEmbedUrlCallable(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates an embedded URL and authorization code. Before this can work
-         * properly, you need to configure the dashboards and user permissions first.
+         * <p>Generates a server-side embeddable URL and authorization code. Before this
+         * can work properly, first you need to configure the dashboards and user
+         * permissions. For more information, see <a
+         * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html">
+         * Embedding Amazon QuickSight Dashboards</a>.</p> <p>Currently, you can use
+         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
+         * browser.</p> <p> <b>CLI Sample:</b> </p> <p>Assume the role with permissions
+         * enabled for actions: <code>quickSight:RegisterUser</code> and
+         * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role,
+         * assume-role-with-web-identity, or assume-role-with-saml. </p> <p> <code>aws sts
+         * assume-role --role-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role"
+         * --role-session-name embeddingsession</code> </p> <p>If the user does not exist
+         * in QuickSight, register the user:</p> <p> <code>aws quicksight register-user
+         * --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn
+         * "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role
+         * READER --session-name "embeddingsession" --email user123@example.com --region
+         * us-east-1</code> </p> <p>Get the URL for the embedded dashboard</p> <p>
+         * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333
+         * --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
@@ -469,7 +571,9 @@ namespace Model
         /**
          * <p>Lists member users in a group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a list of group member objects.</p><p><h3>See
+         * </code>.</p> <p>The response is a list of group member objects.</p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-group-memberships
+         * -\-aws-account-id=111122223333 -\-namespace=default </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">AWS
          * API Reference</a></p>
@@ -479,7 +583,9 @@ namespace Model
         /**
          * <p>Lists member users in a group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a list of group member objects.</p><p><h3>See
+         * </code>.</p> <p>The response is a list of group member objects.</p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-group-memberships
+         * -\-aws-account-id=111122223333 -\-namespace=default </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">AWS
          * API Reference</a></p>
@@ -491,7 +597,9 @@ namespace Model
         /**
          * <p>Lists member users in a group.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a list of group member objects.</p><p><h3>See
+         * </code>.</p> <p>The response is a list of group member objects.</p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-group-memberships
+         * -\-aws-account-id=111122223333 -\-namespace=default </code> </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroupMemberships">AWS
          * API Reference</a></p>
@@ -504,7 +612,9 @@ namespace Model
          * <p>Lists all user groups in Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/ *</code>.</p>
-         * <p>The response is a list of group objects. </p><p><h3>See Also:</h3>   <a
+         * <p>The response is a list of group objects. </p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight list-groups -\-aws-account-id=111122223333
+         * -\-namespace=default </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">AWS
          * API Reference</a></p>
          */
@@ -514,7 +624,9 @@ namespace Model
          * <p>Lists all user groups in Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/ *</code>.</p>
-         * <p>The response is a list of group objects. </p><p><h3>See Also:</h3>   <a
+         * <p>The response is a list of group objects. </p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight list-groups -\-aws-account-id=111122223333
+         * -\-namespace=default </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">AWS
          * API Reference</a></p>
          *
@@ -526,7 +638,9 @@ namespace Model
          * <p>Lists all user groups in Amazon QuickSight. </p> <p>The permissions resource
          * is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/ *</code>.</p>
-         * <p>The response is a list of group objects. </p><p><h3>See Also:</h3>   <a
+         * <p>The response is a list of group objects. </p> <p> <b>CLI Sample:</b> </p> <p>
+         * <code>aws quicksight list-groups -\-aws-account-id=111122223333
+         * -\-namespace=default </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListGroups">AWS
          * API Reference</a></p>
          *
@@ -535,16 +649,26 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the Amazon QuickSight groups that a user is part of.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
+         * of.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a one or more group objects. </p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-user-groups -\-user-name=Pat
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUserGroupsOutcome ListUserGroups(const Model::ListUserGroupsRequest& request) const;
 
         /**
-         * <p>Lists the Amazon QuickSight groups that a user is part of.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
+         * of.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a one or more group objects. </p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-user-groups -\-user-name=Pat
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">AWS
          * API Reference</a></p>
          *
@@ -553,8 +677,13 @@ namespace Model
         virtual Model::ListUserGroupsOutcomeCallable ListUserGroupsCallable(const Model::ListUserGroupsRequest& request) const;
 
         /**
-         * <p>Lists the Amazon QuickSight groups that a user is part of.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member
+         * of.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a one or more group objects. </p> <p> <b>CLI
+         * Sample:</b> </p> <p> <code>aws quicksight list-user-groups -\-user-name=Pat
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUserGroups">AWS
          * API Reference</a></p>
          *
@@ -568,7 +697,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>*</i>
          * </code>.</p> <p>The response is a list of user objects, containing each user's
          * Amazon Resource Name (ARN), AWS Identity and Access Management (IAM) role, and
-         * email address. </p><p><h3>See Also:</h3>   <a
+         * email address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * list-users --aws-account-id=111122223333 --namespace=default </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">AWS
          * API Reference</a></p>
          */
@@ -580,7 +711,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>*</i>
          * </code>.</p> <p>The response is a list of user objects, containing each user's
          * Amazon Resource Name (ARN), AWS Identity and Access Management (IAM) role, and
-         * email address. </p><p><h3>See Also:</h3>   <a
+         * email address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * list-users --aws-account-id=111122223333 --namespace=default </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">AWS
          * API Reference</a></p>
          *
@@ -594,7 +727,9 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>*</i>
          * </code>.</p> <p>The response is a list of user objects, containing each user's
          * Amazon Resource Name (ARN), AWS Identity and Access Management (IAM) role, and
-         * email address. </p><p><h3>See Also:</h3>   <a
+         * email address. </p> <p> <b>CLI Sample:</b> </p> <p> <code>aws quicksight
+         * list-users --aws-account-id=111122223333 --namespace=default </code>
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListUsers">AWS
          * API Reference</a></p>
          *
@@ -609,8 +744,12 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>.</p> <p>The condition resource is the Amazon Resource Name (ARN) for the
          * IAM user or role, and the session name. </p> <p>The condition keys are
-         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>. </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight register-user
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com
+         * -\-identity-type=IAM -\-user-role=AUTHOR
+         * -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code> </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">AWS
          * API Reference</a></p>
          */
@@ -623,8 +762,12 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>.</p> <p>The condition resource is the Amazon Resource Name (ARN) for the
          * IAM user or role, and the session name. </p> <p>The condition keys are
-         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>. </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight register-user
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com
+         * -\-identity-type=IAM -\-user-role=AUTHOR
+         * -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code> </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">AWS
          * API Reference</a></p>
          *
@@ -639,8 +782,12 @@ namespace Model
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
          * </code>.</p> <p>The condition resource is the Amazon Resource Name (ARN) for the
          * IAM user or role, and the session name. </p> <p>The condition keys are
-         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>. </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight register-user
+         * -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com
+         * -\-identity-type=IAM -\-user-role=AUTHOR
+         * -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code> </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RegisterUser">AWS
          * API Reference</a></p>
          *
@@ -651,7 +798,10 @@ namespace Model
         /**
          * <p>Changes a group description. </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight update-group --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales --description="Sales BI Dashboards"
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">AWS
          * API Reference</a></p>
          */
@@ -660,7 +810,10 @@ namespace Model
         /**
          * <p>Changes a group description. </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight update-group --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales --description="Sales BI Dashboards"
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -671,7 +824,10 @@ namespace Model
         /**
          * <p>Changes a group description. </p> <p>The permissions resource is
          * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-         * </code>.</p> <p>The response is a group object.</p><p><h3>See Also:</h3>   <a
+         * </code>.</p> <p>The response is a group object.</p> <p> <b>CLI Sample:</b> </p>
+         * <p> <code>aws quicksight update-group --aws-account-id=111122223333
+         * --namespace=default --group-name=Sales --description="Sales BI Dashboards"
+         * </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateGroup">AWS
          * API Reference</a></p>
          *
@@ -680,14 +836,28 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an Amazon QuickSight user.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon QuickSight user.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a user object that contains the user's Amazon
+         * QuickSight user name, email address, active or inactive status in Amazon
+         * QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN). </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight update-user --user-name=Pat
+         * --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333
+         * --namespace=default --region=us-east-1 </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUserOutcome UpdateUser(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates an Amazon QuickSight user.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon QuickSight user.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a user object that contains the user's Amazon
+         * QuickSight user name, email address, active or inactive status in Amazon
+         * QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN). </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight update-user --user-name=Pat
+         * --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333
+         * --namespace=default --region=us-east-1 </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">AWS
          * API Reference</a></p>
          *
@@ -696,7 +866,14 @@ namespace Model
         virtual Model::UpdateUserOutcomeCallable UpdateUserCallable(const Model::UpdateUserRequest& request) const;
 
         /**
-         * <p>Updates an Amazon QuickSight user.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon QuickSight user.</p> <p>The permission resource is
+         * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i>
+         * </code>. </p> <p>The response is a user object that contains the user's Amazon
+         * QuickSight user name, email address, active or inactive status in Amazon
+         * QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN). </p> <p>
+         * <b>CLI Sample:</b> </p> <p> <code>aws quicksight update-user --user-name=Pat
+         * --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333
+         * --namespace=default --region=us-east-1 </code> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateUser">AWS
          * API Reference</a></p>
          *

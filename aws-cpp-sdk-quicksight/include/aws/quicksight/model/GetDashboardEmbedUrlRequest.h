@@ -122,27 +122,27 @@ namespace Model
 
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM or QUICKSIGHT).</p>
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM or QUICKSIGHT).</p>
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM or QUICKSIGHT).</p>
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM or QUICKSIGHT).</p>
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
     inline GetDashboardEmbedUrlRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM or QUICKSIGHT).</p>
+     * <p>The authentication method the user uses to sign in (IAM only).</p>
      */
     inline GetDashboardEmbedUrlRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 

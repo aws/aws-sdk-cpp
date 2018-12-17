@@ -46,6 +46,12 @@ RegisterUserResult& RegisterUserResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("UserInvitationUrl"))
+  {
+    m_userInvitationUrl = jsonValue.GetString("UserInvitationUrl");
+
+  }
+
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
