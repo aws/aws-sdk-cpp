@@ -50,73 +50,101 @@ namespace Model
 
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of this environment tier.</p>
+     * <p>The name of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>WebServer</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>Worker</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of this environment tier.</p>
+     * <p>The type of this environment tier.</p> <p>Valid values:</p> <ul> <li> <p>For
+     * <i>Web server tier</i> – <code>Standard</code> </p> </li> <li> <p>For <i>Worker
+     * tier</i> – <code>SQS/HTTP</code> </p> </li> </ul>
      */
     inline EnvironmentTier& WithType(const char* value) { SetType(value); return *this;}
 

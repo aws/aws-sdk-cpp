@@ -588,7 +588,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline const EnvironmentHealth& GetHealth() const{ return m_health; }
@@ -604,7 +604,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline void SetHealth(const EnvironmentHealth& value) { m_healthHasBeenSet = true; m_health = value; }
@@ -620,7 +620,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline void SetHealth(EnvironmentHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
@@ -636,7 +636,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline EnvironmentDescription& WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
@@ -652,7 +652,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline EnvironmentDescription& WithHealth(EnvironmentHealth&& value) { SetHealth(std::move(value)); return *this;}

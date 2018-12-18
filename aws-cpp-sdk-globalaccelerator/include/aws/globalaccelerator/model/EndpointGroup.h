@@ -297,20 +297,20 @@ namespace Model
 
 
     /**
-     * <p>The elapsed time, in seconds, between health checks for each endpoint. The
-     * default value is 30.</p>
+     * <p>The time—10 seconds or 30 seconds—between health checks for each endpoint.
+     * The default value is 30.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
-     * <p>The elapsed time, in seconds, between health checks for each endpoint. The
-     * default value is 30.</p>
+     * <p>The time—10 seconds or 30 seconds—between health checks for each endpoint.
+     * The default value is 30.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
-     * <p>The elapsed time, in seconds, between health checks for each endpoint. The
-     * default value is 30.</p>
+     * <p>The time—10 seconds or 30 seconds—between health checks for each endpoint.
+     * The default value is 30.</p>
      */
     inline EndpointGroup& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 

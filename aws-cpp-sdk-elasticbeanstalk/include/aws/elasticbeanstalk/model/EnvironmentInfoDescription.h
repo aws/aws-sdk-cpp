@@ -141,37 +141,58 @@ namespace Model
 
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline EnvironmentInfoDescription& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline EnvironmentInfoDescription& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The retrieved information.</p>
+     * <p>The retrieved information. Currently contains a presigned Amazon S3 URL. The
+     * files are deleted after 15 minutes.</p> <p>Anyone in possession of this URL can
+     * access the files before they are deleted. Make the URL available only to trusted
+     * parties.</p>
      */
     inline EnvironmentInfoDescription& WithMessage(const char* value) { SetMessage(value); return *this;}
 

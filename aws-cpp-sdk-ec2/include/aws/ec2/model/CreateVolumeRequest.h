@@ -141,7 +141,7 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
      * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
@@ -154,7 +154,7 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
      * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
@@ -167,7 +167,7 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
-     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000IOPS for volumes in
+     * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
      * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.

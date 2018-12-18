@@ -21,6 +21,7 @@
 #include <aws/elasticbeanstalk/model/AutoScalingGroup.h>
 #include <aws/elasticbeanstalk/model/Instance.h>
 #include <aws/elasticbeanstalk/model/LaunchConfiguration.h>
+#include <aws/elasticbeanstalk/model/LaunchTemplate.h>
 #include <aws/elasticbeanstalk/model/LoadBalancer.h>
 #include <aws/elasticbeanstalk/model/Trigger.h>
 #include <aws/elasticbeanstalk/model/Queue.h>
@@ -202,6 +203,42 @@ namespace Model
 
 
     /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline const Aws::Vector<LaunchTemplate>& GetLaunchTemplates() const{ return m_launchTemplates; }
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline void SetLaunchTemplates(const Aws::Vector<LaunchTemplate>& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = value; }
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline void SetLaunchTemplates(Aws::Vector<LaunchTemplate>&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates = std::move(value); }
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline EnvironmentResourceDescription& WithLaunchTemplates(const Aws::Vector<LaunchTemplate>& value) { SetLaunchTemplates(value); return *this;}
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline EnvironmentResourceDescription& WithLaunchTemplates(Aws::Vector<LaunchTemplate>&& value) { SetLaunchTemplates(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline EnvironmentResourceDescription& AddLaunchTemplates(const LaunchTemplate& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon EC2 launch templates in use by this environment.</p>
+     */
+    inline EnvironmentResourceDescription& AddLaunchTemplates(LaunchTemplate&& value) { m_launchTemplatesHasBeenSet = true; m_launchTemplates.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The LoadBalancers in use by this environment.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
@@ -321,6 +358,9 @@ namespace Model
 
     Aws::Vector<LaunchConfiguration> m_launchConfigurations;
     bool m_launchConfigurationsHasBeenSet;
+
+    Aws::Vector<LaunchTemplate> m_launchTemplates;
+    bool m_launchTemplatesHasBeenSet;
 
     Aws::Vector<LoadBalancer> m_loadBalancers;
     bool m_loadBalancersHasBeenSet;

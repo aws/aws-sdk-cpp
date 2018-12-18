@@ -111,7 +111,7 @@ namespace Model
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
-     * href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline int GetWeight() const{ return m_weight; }
@@ -123,7 +123,7 @@ namespace Model
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
-     * href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
@@ -135,7 +135,7 @@ namespace Model
      * (sum=20). The result is that 4/20 of your traffic, on average, is routed to the
      * first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20
      * is routed to the last endpoint. For more information, see <a
-     * href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline EndpointConfiguration& WithWeight(int value) { SetWeight(value); return *this;}

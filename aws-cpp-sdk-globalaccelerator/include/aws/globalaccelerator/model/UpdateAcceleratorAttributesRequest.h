@@ -45,139 +45,186 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline const Aws::String& GetAcceleratorArn() const{ return m_acceleratorArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline void SetAcceleratorArn(Aws::String&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline void SetAcceleratorArn(const char* value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(const Aws::String& value) { SetAcceleratorArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(Aws::String&& value) { SetAcceleratorArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to
-     * update.</p>
+     * <p>The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * Attribute is required.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithAcceleratorArn(const char* value) { SetAcceleratorArn(value); return *this;}
 
 
     /**
-     * <p>Update whether flow logs are enabled.</p>
+     * <p>Update whether flow logs are enabled. The default value is false. If the
+     * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
+     * must be specified.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline bool GetFlowLogsEnabled() const{ return m_flowLogsEnabled; }
 
     /**
-     * <p>Update whether flow logs are enabled.</p>
+     * <p>Update whether flow logs are enabled. The default value is false. If the
+     * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
+     * must be specified.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline void SetFlowLogsEnabled(bool value) { m_flowLogsEnabledHasBeenSet = true; m_flowLogsEnabled = value; }
 
     /**
-     * <p>Update whether flow logs are enabled.</p>
+     * <p>Update whether flow logs are enabled. The default value is false. If the
+     * value is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code>
+     * must be specified.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsEnabled(bool value) { SetFlowLogsEnabled(value); return *this;}
 
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Bucket() const{ return m_flowLogsS3Bucket; }
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const Aws::String& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = value; }
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(Aws::String&& value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket = std::move(value); }
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline void SetFlowLogsS3Bucket(const char* value) { m_flowLogsS3BucketHasBeenSet = true; m_flowLogsS3Bucket.assign(value); }
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const Aws::String& value) { SetFlowLogsS3Bucket(value); return *this;}
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(Aws::String&& value) { SetFlowLogsS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>Update the name of the Amazon S3 bucket for the flow logs.</p>
+     * <p>The name of the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. The bucket must exist and
+     * have a bucket policy that grants AWS Global Accelerator permission to write to
+     * the bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Bucket(const char* value) { SetFlowLogsS3Bucket(value); return *this;}
 
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline const Aws::String& GetFlowLogsS3Prefix() const{ return m_flowLogsS3Prefix; }
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Prefix(const Aws::String& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = value; }
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Prefix(Aws::String&& value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix = std::move(value); }
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline void SetFlowLogsS3Prefix(const char* value) { m_flowLogsS3PrefixHasBeenSet = true; m_flowLogsS3Prefix.assign(value); }
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(const Aws::String& value) { SetFlowLogsS3Prefix(value); return *this;}
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(Aws::String&& value) { SetFlowLogsS3Prefix(std::move(value)); return *this;}
 
     /**
-     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow
-     * logs.</p>
+     * <p>Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Attribute is required if <code>FlowLogsEnabled</code> is <code>true</code>. If
+     * you don’t specify a prefix, the flow logs are stored in the root of the
+     * bucket.</p>
      */
     inline UpdateAcceleratorAttributesRequest& WithFlowLogsS3Prefix(const char* value) { SetFlowLogsS3Prefix(value); return *this;}
 

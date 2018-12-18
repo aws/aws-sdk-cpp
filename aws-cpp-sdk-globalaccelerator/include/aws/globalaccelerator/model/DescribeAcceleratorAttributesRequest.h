@@ -46,43 +46,43 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline const Aws::String& GetAcceleratorArn() const{ return m_acceleratorArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline void SetAcceleratorArn(const Aws::String& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline void SetAcceleratorArn(Aws::String&& value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline void SetAcceleratorArn(const char* value) { m_acceleratorArnHasBeenSet = true; m_acceleratorArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline DescribeAcceleratorAttributesRequest& WithAcceleratorArn(const Aws::String& value) { SetAcceleratorArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline DescribeAcceleratorAttributesRequest& WithAcceleratorArn(Aws::String&& value) { SetAcceleratorArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the accelerator with the attributes that
-     * you want to describe.</p>
+     * you want to describe. Value is required.</p>
      */
     inline DescribeAcceleratorAttributesRequest& WithAcceleratorArn(const char* value) { SetAcceleratorArn(value); return *this;}
 
