@@ -129,49 +129,357 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetPreHumanTaskLambdaArn() const{ return m_preHumanTaskLambdaArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(const Aws::String& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(Aws::String&& value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline void SetPreHumanTaskLambdaArn(const char* value) { m_preHumanTaskLambdaArnHasBeenSet = true; m_preHumanTaskLambdaArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const Aws::String& value) { SetPreHumanTaskLambdaArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(Aws::String&& value) { SetPreHumanTaskLambdaArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of a Lambda function that is run before a data
      * object is sent to a human worker. Use this function to provide input to a custom
-     * labeling job.</p>
+     * labeling job.</p> <p>For the built-in bounding box, image classification,
+     * semantic segmentation, and text classification task types, Amazon SageMaker
+     * Ground Truth provides the following Lambda functions:</p> <p> <b>US East
+     * (Northern Virginia) (us-east-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US East (Ohio) (us-east-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>US West (Oregon) (us-west-2):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>EU (Ireland) (eu-west-1):</b> </p> <ul> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> </p>
+     * </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul> <p> <b>Asia Pacific (Tokyo (ap-northeast-1):</b> </p> <ul> <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
+     * </p> </li> <li> <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
+     * </p> </li> </ul>
      */
     inline HumanTaskConfig& WithPreHumanTaskLambdaArn(const char* value) { SetPreHumanTaskLambdaArn(value); return *this;}
 

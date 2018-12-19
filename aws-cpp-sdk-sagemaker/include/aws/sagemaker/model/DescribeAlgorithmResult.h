@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline void SetAlgorithmArn(const char* value) { m_algorithmArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline DescribeAlgorithmResult& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline DescribeAlgorithmResult& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the algorithm.&gt;</p>
+     * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
     inline DescribeAlgorithmResult& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
 

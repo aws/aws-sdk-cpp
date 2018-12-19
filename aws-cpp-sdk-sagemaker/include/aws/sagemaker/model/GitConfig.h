@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline const Aws::String& GetBranch() const{ return m_branch; }
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline GitConfig& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline GitConfig& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
 
     /**
-     * <p>The default brach for the git repository.</p>
+     * <p>The default beach for the git repository.</p>
      */
     inline GitConfig& WithBranch(const char* value) { SetBranch(value); return *this;}
 

@@ -196,7 +196,8 @@ CreateTagsOutcome MQClient::CreateTags(const CreateTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/tags/{resource-arn}";
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -231,7 +232,9 @@ CreateUserOutcome MQClient::CreateUser(const CreateUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/users/";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/users/";
   ss << request.GetUsername();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -267,7 +270,8 @@ DeleteBrokerOutcome MQClient::DeleteBroker(const DeleteBrokerRequest& request) c
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -302,7 +306,8 @@ DeleteTagsOutcome MQClient::DeleteTags(const DeleteTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/tags/{resource-arn}";
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -337,7 +342,9 @@ DeleteUserOutcome MQClient::DeleteUser(const DeleteUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/users/";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/users/";
   ss << request.GetUsername();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -373,7 +380,8 @@ DescribeBrokerOutcome MQClient::DescribeBroker(const DescribeBrokerRequest& requ
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -408,7 +416,8 @@ DescribeConfigurationOutcome MQClient::DescribeConfiguration(const DescribeConfi
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/configurations/{configuration-id}";
+  ss << "/v1/configurations/";
+  ss << request.GetConfigurationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -443,7 +452,10 @@ DescribeConfigurationRevisionOutcome MQClient::DescribeConfigurationRevision(con
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/configurations/{configuration-id}/revisions/{configuration-revision}";
+  ss << "/v1/configurations/";
+  ss << request.GetConfigurationId();
+  ss << "/revisions/";
+  ss << request.GetConfigurationRevision();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -478,7 +490,9 @@ DescribeUserOutcome MQClient::DescribeUser(const DescribeUserRequest& request) c
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/users/";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/users/";
   ss << request.GetUsername();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -549,7 +563,9 @@ ListConfigurationRevisionsOutcome MQClient::ListConfigurationRevisions(const Lis
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/configurations/{configuration-id}/revisions";
+  ss << "/v1/configurations/";
+  ss << request.GetConfigurationId();
+  ss << "/revisions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -619,7 +635,8 @@ ListTagsOutcome MQClient::ListTags(const ListTagsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/tags/{resource-arn}";
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -654,7 +671,9 @@ ListUsersOutcome MQClient::ListUsers(const ListUsersRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/users";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/users";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -689,7 +708,9 @@ RebootBrokerOutcome MQClient::RebootBroker(const RebootBrokerRequest& request) c
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/reboot";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/reboot";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -724,7 +745,8 @@ UpdateBrokerOutcome MQClient::UpdateBroker(const UpdateBrokerRequest& request) c
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -759,7 +781,8 @@ UpdateConfigurationOutcome MQClient::UpdateConfiguration(const UpdateConfigurati
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/configurations/{configuration-id}";
+  ss << "/v1/configurations/";
+  ss << request.GetConfigurationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -794,7 +817,9 @@ UpdateUserOutcome MQClient::UpdateUser(const UpdateUserRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/v1/brokers/{broker-id}/users/";
+  ss << "/v1/brokers/";
+  ss << request.GetBrokerId();
+  ss << "/users/";
   ss << request.GetUsername();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);

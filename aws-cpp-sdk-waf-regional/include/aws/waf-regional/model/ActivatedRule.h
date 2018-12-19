@@ -19,6 +19,8 @@
 #include <aws/waf-regional/model/WafAction.h>
 #include <aws/waf-regional/model/WafOverrideAction.h>
 #include <aws/waf-regional/model/WafRuleType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/waf-regional/model/ExcludedRule.h>
 #include <utility>
 
 namespace Aws
@@ -173,7 +175,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
@@ -190,7 +192,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
@@ -207,7 +209,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
@@ -224,7 +226,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
@@ -241,7 +243,7 @@ namespace Model
      * requests that match the conditions in the rule and then continues to inspect the
      * web request based on the remaining rules in the web ACL. </p> </li> </ul> <p>
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
@@ -405,6 +407,231 @@ namespace Model
      */
     inline ActivatedRule& WithType(WafRuleType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline ActivatedRule& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline ActivatedRule& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline ActivatedRule& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
+
+    /**
+     * <p>An array of rules to exclude from a rule group. This is applicable only when
+     * the <code>ActivatedRule</code> refers to a <code>RuleGroup</code>.</p>
+     * <p>Sometimes it is necessary to troubleshoot rule groups that are blocking
+     * traffic unexpectedly (false positives). One troubleshooting technique is to
+     * identify the specific rule within the rule group that is blocking the legitimate
+     * traffic and then disable (exclude) that particular rule. You can exclude rules
+     * from both your own rule groups and AWS Marketplace rule groups that have been
+     * associated with a web ACL.</p> <p>Specifying <code>ExcludedRules</code> does not
+     * remove those rules from the rule group. Rather, it changes the action for the
+     * rules to <code>COUNT</code>. Therefore, requests that match an
+     * <code>ExcludedRule</code> are counted but not blocked. The
+     * <code>RuleGroup</code> owner will receive COUNT metrics for each
+     * <code>ExcludedRule</code>.</p> <p>If you want to exclude rules from a rule group
+     * that is already associated with a web ACL, perform the following steps:</p> <ol>
+     * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
+     * exclude. For more information about the logs, see <a
+     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
+     * request that has two actions:</p> <ul> <li> <p>The first action deletes the
+     * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
+     * request, the first <code>Updates:Action</code> should be <code>DELETE</code> and
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
+     * the rules that you want to exclude.</p> </li> <li> <p>The second action inserts
+     * the same rule group back in, but specifying the rules to exclude. That is, the
+     * second <code>Updates:Action</code> should be <code>INSERT</code>,
+     * <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just
+     * removed, and <code>ExcludedRules</code> should contain the rules that you want
+     * to exclude.</p> </li> </ul> </li> </ol>
+     */
+    inline ActivatedRule& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+
   private:
 
     int m_priority;
@@ -421,6 +648,9 @@ namespace Model
 
     WafRuleType m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Vector<ExcludedRule> m_excludedRules;
+    bool m_excludedRulesHasBeenSet;
   };
 
 } // namespace Model

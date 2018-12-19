@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline const Aws::String& GetValidationRole() const{ return m_validationRole; }
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline void SetValidationRole(const Aws::String& value) { m_validationRoleHasBeenSet = true; m_validationRole = value; }
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline void SetValidationRole(Aws::String&& value) { m_validationRoleHasBeenSet = true; m_validationRole = std::move(value); }
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline void SetValidationRole(const char* value) { m_validationRoleHasBeenSet = true; m_validationRole.assign(value); }
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline ModelPackageValidationSpecification& WithValidationRole(const Aws::String& value) { SetValidationRole(value); return *this;}
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline ModelPackageValidationSpecification& WithValidationRole(Aws::String&& value) { SetValidationRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM roles to be used for the validation of a model package.</p>
+     * <p>The IAM roles to be used for the validation of the model package.</p>
      */
     inline ModelPackageValidationSpecification& WithValidationRole(const char* value) { SetValidationRole(value); return *this;}
 

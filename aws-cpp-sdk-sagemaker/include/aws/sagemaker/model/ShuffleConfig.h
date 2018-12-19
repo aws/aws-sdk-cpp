@@ -59,17 +59,17 @@ namespace Model
 
 
     /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code>. value.</p>
+     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
     inline long long GetSeed() const{ return m_seed; }
 
     /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code>. value.</p>
+     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
     inline void SetSeed(long long value) { m_seedHasBeenSet = true; m_seed = value; }
 
     /**
-     * <p>Determines the shuffling order in <code>ShuffleConfig</code>. value.</p>
+     * <p>Determines the shuffling order in <code>ShuffleConfig</code> value.</p>
      */
     inline ShuffleConfig& WithSeed(long long value) { SetSeed(value); return *this;}
 

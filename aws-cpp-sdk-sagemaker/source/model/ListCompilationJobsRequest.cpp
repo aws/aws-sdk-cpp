@@ -32,7 +32,11 @@ ListCompilationJobsRequest::ListCompilationJobsRequest() :
     m_lastModifiedTimeBeforeHasBeenSet(false),
     m_nameContainsHasBeenSet(false),
     m_statusEquals(CompilationJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false)
+    m_statusEqualsHasBeenSet(false),
+    m_sortBy(ListCompilationJobsSortBy::NOT_SET),
+    m_sortByHasBeenSet(false),
+    m_sortOrder(SortOrder::NOT_SET),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -81,6 +85,16 @@ Aws::String ListCompilationJobsRequest::SerializePayload() const
   if(m_statusEqualsHasBeenSet)
   {
    payload.WithString("StatusEquals", CompilationJobStatusMapper::GetNameForCompilationJobStatus(m_statusEquals));
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithString("SortBy", ListCompilationJobsSortByMapper::GetNameForListCompilationJobsSortBy(m_sortBy));
+  }
+
+  if(m_sortOrderHasBeenSet)
+  {
+   payload.WithString("SortOrder", SortOrderMapper::GetNameForSortOrder(m_sortOrder));
   }
 
   return payload.View().WriteReadable();

@@ -308,6 +308,42 @@ namespace Model
      */
     inline WebACL& AddRules(ActivatedRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline const Aws::String& GetWebACLArn() const{ return m_webACLArn; }
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline void SetWebACLArn(const Aws::String& value) { m_webACLArnHasBeenSet = true; m_webACLArn = value; }
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline void SetWebACLArn(Aws::String&& value) { m_webACLArnHasBeenSet = true; m_webACLArn = std::move(value); }
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline void SetWebACLArn(const char* value) { m_webACLArnHasBeenSet = true; m_webACLArn.assign(value); }
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline WebACL& WithWebACLArn(const Aws::String& value) { SetWebACLArn(value); return *this;}
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline WebACL& WithWebACLArn(Aws::String&& value) { SetWebACLArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Tha Amazon Resource Name (ARN) of the web ACL.</p>
+     */
+    inline WebACL& WithWebACLArn(const char* value) { SetWebACLArn(value); return *this;}
+
   private:
 
     Aws::String m_webACLId;
@@ -324,6 +360,9 @@ namespace Model
 
     Aws::Vector<ActivatedRule> m_rules;
     bool m_rulesHasBeenSet;
+
+    Aws::String m_webACLArn;
+    bool m_webACLArnHasBeenSet;
   };
 
 } // namespace Model

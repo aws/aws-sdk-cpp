@@ -166,6 +166,25 @@ namespace Model
 
 
     /**
+     * <p>The number of the partition the instance is in. Valid only if the placement
+     * group strategy is set to <code>partition</code>.</p>
+     */
+    inline int GetPartitionNumber() const{ return m_partitionNumber; }
+
+    /**
+     * <p>The number of the partition the instance is in. Valid only if the placement
+     * group strategy is set to <code>partition</code>.</p>
+     */
+    inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
+
+    /**
+     * <p>The number of the partition the instance is in. Valid only if the placement
+     * group strategy is set to <code>partition</code>.</p>
+     */
+    inline Placement& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
+
+
+    /**
      * <p>The ID of the Dedicated Host on which the instance resides. This parameter is
      * not supported for the <a>ImportInstance</a> command.</p>
      */
@@ -294,6 +313,9 @@ namespace Model
 
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet;
+
+    int m_partitionNumber;
+    bool m_partitionNumberHasBeenSet;
 
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet;

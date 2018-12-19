@@ -459,43 +459,92 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3Uri = value; }
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3Uri = std::move(value); }
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3Uri.assign(value); }
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p>
+     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
+     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
+     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(const char* value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 

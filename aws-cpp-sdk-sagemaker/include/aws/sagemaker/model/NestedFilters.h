@@ -36,21 +36,19 @@ namespace Model
 {
 
   /**
-   * <p>A <code>NestedFilter</code> is defined by using a resource name under
-   * <code>NestedPropertyName</code>, which entries in a list that properties must
-   * match to be included in the results. To satisfy the conditions specified in the
-   * <code>NestedFilters</code> call, each object in the list must satisfy the
-   * conditions of all of the filters.</p> <p>For example, a
+   * <p>Defines a list of <code>NestedFilter</code> objects. To satisfy the
+   * conditions specified in the <code>NestedFilters</code> call, a resource must
+   * satisfy the conditions of all of the filters.</p> <p>For example, a
    * <code>NestedFilters</code> could be defined using the training job's
    * <code>InputDataConfig</code> property, this would be defined as a list of
    * <code>Channel</code> objects. </p> <p>A <code>NestedFilters</code> object
-   * contains multiple filters. For example, to find all training jobs that have
-   * <code>train</code> in their name, and have <code>cat/data</code> in their<code/>
-   * <code>S3Uri</code> (under <code>InputDataConfig</code>), you need to create a
-   * <code>NestedFilters</code> object that specfies the <code>InputDataConfig</code>
-   * property with the following <code>Filter</code> objects:</p> <ul> <li> <p>
-   * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"EQUALS",
-   * "Value":"train"}',</code> </p> </li> <li> <p>
+   * contains multiple filters. For example, to find all training jobs whose name
+   * contains <code>train</code> and that have <code>cat/data</code> in their
+   * <code>S3Uri</code> (specified in <code>InputDataConfig</code>), you need to
+   * create a <code>NestedFilters</code> object that specifies the
+   * <code>InputDataConfig</code> property with the following <code>Filter</code>
+   * objects:</p> <ul> <li> <p> <code>'{Name:"InputDataConfig.ChannelName",
+   * "Operator":"EQUALS", "Value":"train"}',</code> </p> </li> <li> <p>
    * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri",
    * "Operator":"CONTAINS", "Value":"cat/data"}'</code> </p> </li> </ul><p><h3>See
    * Also:</h3>   <a
@@ -67,94 +65,108 @@ namespace Model
 
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline const Aws::String& GetNestedPropertyName() const{ return m_nestedPropertyName; }
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(const Aws::String& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = value; }
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(Aws::String&& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = std::move(value); }
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(const char* value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName.assign(value); }
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(const Aws::String& value) { SetNestedPropertyName(value); return *this;}
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(Aws::String&& value) { SetNestedPropertyName(std::move(value)); return *this;}
 
     /**
-     * <p>.The name of the property used in the nested filters.</p>
+     * <p>The name of the property to use in the nested filters. The value must match a
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(const char* value) { SetNestedPropertyName(value); return *this;}
 
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline NestedFilters& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline NestedFilters& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline NestedFilters& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>A list of filters. Each filter acts on a property. For example, a
-     * <code>NestedFilters</code> call might include a filter on the
-     * <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     * property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
+     * <p>A list of filters. Each filter acts on a property. Filters must contain at
+     * least one <code>Filters</code> value. For example, a <code>NestedFilters</code>
+     * call might include a filter on the <code>PropertyName</code> parameter of the
+     * <code>InputDataConfig</code> property:
+     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
     inline NestedFilters& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

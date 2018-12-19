@@ -85,10 +85,11 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -97,10 +98,11 @@ namespace Model
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -109,10 +111,11 @@ namespace Model
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -121,10 +124,11 @@ namespace Model
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -133,10 +137,11 @@ namespace Model
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -145,10 +150,11 @@ namespace Model
     inline ModelPackageContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -157,10 +163,11 @@ namespace Model
     inline ModelPackageContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 Container Registry path where inference code is stored.</p>
-     * <p>If you are using your own custom algorithm instead of an algorithm provided
-     * by Amazon SageMaker, the inference code must meet Amazon SageMaker requirements.
-     * Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored.</p> <p>If you are using your own custom algorithm instead of an
+     * algorithm provided by Amazon SageMaker, the inference code must meet Amazon
+     * SageMaker requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
@@ -263,37 +270,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the model package.</p>
+     * <p>The AWS Marketplace product ID of the model package.</p>
      */
     inline ModelPackageContainerDefinition& WithProductId(const char* value) { SetProductId(value); return *this;}
 

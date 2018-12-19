@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline const Aws::Vector<AlgorithmStatusItem>& GetValidationStatuses() const{ return m_validationStatuses; }
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline void SetValidationStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = value; }
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline void SetValidationStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = std::move(value); }
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline AlgorithmStatusDetails& WithValidationStatuses(const Aws::Vector<AlgorithmStatusItem>& value) { SetValidationStatuses(value); return *this;}
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline AlgorithmStatusDetails& WithValidationStatuses(Aws::Vector<AlgorithmStatusItem>&& value) { SetValidationStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline AlgorithmStatusDetails& AddValidationStatuses(const AlgorithmStatusItem& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(value); return *this; }
 
     /**
-     * <p>The status of the validation of the algorithm.</p>
+     * <p>The status of algorithm validation.</p>
      */
     inline AlgorithmStatusDetails& AddValidationStatuses(AlgorithmStatusItem&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(std::move(value)); return *this; }
 

@@ -889,23 +889,25 @@ namespace Model
         virtual void CreateHyperParameterTuningJobAsync(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a job that uses human workers to label the data objects in your input
-         * dataset. You can use the labeled data to train machine learning models</p>
+         * <p>Creates a job that uses workers to label the data objects in your input
+         * dataset. You can use the labeled data to train machine learning models.</p>
          * <p>You can select your workforce from one of three providers:</p> <ul> <li> <p>A
          * private workforce that you create. It can include employees, contractors, and
-         * outside experts. Use a private workforce when the data is highly confidential or
-         * a specific set of skills is required.</p> </li> <li> <p>One or more vendors that
-         * you select from the Amazon Marketplace. Vendors provide expertise in specific
-         * areas. Vendors are selected by AWS and meet a minimum standard of data security
-         * requirements.</p> </li> <li> <p>The Amazon Mechanical Turk workforce. This is
-         * the largest workforce, but it should only be used for public data or data that
-         * has been stripped of any personally identifiable information.</p> </li> </ul>
-         * <p>You can also use <i>automated data labeling</i> to reduce the number of data
-         * objects that need to be labeled by a human. Automated data labeling uses
-         * <i>active learning</i> to determine if a data object can be labeled by machine
-         * or if it needs to be sent to a human worker.</p> <p>The data objects to be
-         * labeled are contained in an Amazon S3 bucket. You create a <i>manifest file</i>
-         * that describes the location of each object. For more information, see <a
+         * outside experts. Use a private workforce when want the data to stay within your
+         * organization or when a specific set of skills is required.</p> </li> <li> <p>One
+         * or more vendors that you select from the AWS Marketplace. Vendors provide
+         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
+         * workforce. This is the largest workforce, but it should only be used for public
+         * data or data that has been stripped of any personally identifiable
+         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
+         * to reduce the number of data objects that need to be labeled by a human.
+         * Automated data labeling uses <i>active learning</i> to determine if a data
+         * object can be labeled by machine or if it needs to be sent to a human worker.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
+         * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
+         * location of each object. For more information, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
@@ -916,23 +918,25 @@ namespace Model
         virtual Model::CreateLabelingJobOutcome CreateLabelingJob(const Model::CreateLabelingJobRequest& request) const;
 
         /**
-         * <p>Creates a job that uses human workers to label the data objects in your input
-         * dataset. You can use the labeled data to train machine learning models</p>
+         * <p>Creates a job that uses workers to label the data objects in your input
+         * dataset. You can use the labeled data to train machine learning models.</p>
          * <p>You can select your workforce from one of three providers:</p> <ul> <li> <p>A
          * private workforce that you create. It can include employees, contractors, and
-         * outside experts. Use a private workforce when the data is highly confidential or
-         * a specific set of skills is required.</p> </li> <li> <p>One or more vendors that
-         * you select from the Amazon Marketplace. Vendors provide expertise in specific
-         * areas. Vendors are selected by AWS and meet a minimum standard of data security
-         * requirements.</p> </li> <li> <p>The Amazon Mechanical Turk workforce. This is
-         * the largest workforce, but it should only be used for public data or data that
-         * has been stripped of any personally identifiable information.</p> </li> </ul>
-         * <p>You can also use <i>automated data labeling</i> to reduce the number of data
-         * objects that need to be labeled by a human. Automated data labeling uses
-         * <i>active learning</i> to determine if a data object can be labeled by machine
-         * or if it needs to be sent to a human worker.</p> <p>The data objects to be
-         * labeled are contained in an Amazon S3 bucket. You create a <i>manifest file</i>
-         * that describes the location of each object. For more information, see <a
+         * outside experts. Use a private workforce when want the data to stay within your
+         * organization or when a specific set of skills is required.</p> </li> <li> <p>One
+         * or more vendors that you select from the AWS Marketplace. Vendors provide
+         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
+         * workforce. This is the largest workforce, but it should only be used for public
+         * data or data that has been stripped of any personally identifiable
+         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
+         * to reduce the number of data objects that need to be labeled by a human.
+         * Automated data labeling uses <i>active learning</i> to determine if a data
+         * object can be labeled by machine or if it needs to be sent to a human worker.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
+         * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
+         * location of each object. For more information, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
@@ -945,23 +949,25 @@ namespace Model
         virtual Model::CreateLabelingJobOutcomeCallable CreateLabelingJobCallable(const Model::CreateLabelingJobRequest& request) const;
 
         /**
-         * <p>Creates a job that uses human workers to label the data objects in your input
-         * dataset. You can use the labeled data to train machine learning models</p>
+         * <p>Creates a job that uses workers to label the data objects in your input
+         * dataset. You can use the labeled data to train machine learning models.</p>
          * <p>You can select your workforce from one of three providers:</p> <ul> <li> <p>A
          * private workforce that you create. It can include employees, contractors, and
-         * outside experts. Use a private workforce when the data is highly confidential or
-         * a specific set of skills is required.</p> </li> <li> <p>One or more vendors that
-         * you select from the Amazon Marketplace. Vendors provide expertise in specific
-         * areas. Vendors are selected by AWS and meet a minimum standard of data security
-         * requirements.</p> </li> <li> <p>The Amazon Mechanical Turk workforce. This is
-         * the largest workforce, but it should only be used for public data or data that
-         * has been stripped of any personally identifiable information.</p> </li> </ul>
-         * <p>You can also use <i>automated data labeling</i> to reduce the number of data
-         * objects that need to be labeled by a human. Automated data labeling uses
-         * <i>active learning</i> to determine if a data object can be labeled by machine
-         * or if it needs to be sent to a human worker.</p> <p>The data objects to be
-         * labeled are contained in an Amazon S3 bucket. You create a <i>manifest file</i>
-         * that describes the location of each object. For more information, see <a
+         * outside experts. Use a private workforce when want the data to stay within your
+         * organization or when a specific set of skills is required.</p> </li> <li> <p>One
+         * or more vendors that you select from the AWS Marketplace. Vendors provide
+         * expertise in specific areas. </p> </li> <li> <p>The Amazon Mechanical Turk
+         * workforce. This is the largest workforce, but it should only be used for public
+         * data or data that has been stripped of any personally identifiable
+         * information.</p> </li> </ul> <p>You can also use <i>automated data labeling</i>
+         * to reduce the number of data objects that need to be labeled by a human.
+         * Automated data labeling uses <i>active learning</i> to determine if a data
+         * object can be labeled by machine or if it needs to be sent to a human worker.
+         * For more information, see <a
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-automated-labeling.html">Using
+         * Automated Data Labeling</a>.</p> <p>The data objects to be labeled are contained
+         * in an Amazon S3 bucket. You create a <i>manifest file</i> that describes the
+         * location of each object. For more information, see <a
          * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-data.html">Using Input
          * and Output Data</a>.</p> <p>The output can be used as the manifest file for
          * another labeling job or as training data for your machine learning
@@ -1061,7 +1067,12 @@ namespace Model
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
          * list on AWS Marketplace. Buyers can subscribe to model packages listed on AWS
-         * Marketplace to create models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Marketplace to create models in Amazon SageMaker.</p> <p>To create a model
+         * package by specifying a Docker container that contains your inference code and
+         * the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in AWS Marketplace, provide a value
+         * for <code>SourceAlgorithmSpecification</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          */
@@ -1070,7 +1081,12 @@ namespace Model
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
          * list on AWS Marketplace. Buyers can subscribe to model packages listed on AWS
-         * Marketplace to create models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Marketplace to create models in Amazon SageMaker.</p> <p>To create a model
+         * package by specifying a Docker container that contains your inference code and
+         * the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in AWS Marketplace, provide a value
+         * for <code>SourceAlgorithmSpecification</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          *
@@ -1081,7 +1097,12 @@ namespace Model
         /**
          * <p>Creates a model package that you can use to create Amazon SageMaker models or
          * list on AWS Marketplace. Buyers can subscribe to model packages listed on AWS
-         * Marketplace to create models in Amazon SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Marketplace to create models in Amazon SageMaker.</p> <p>To create a model
+         * package by specifying a Docker container that contains your inference code and
+         * the Amazon S3 location of your model artifacts, provide values for
+         * <code>InferenceSpecification</code>. To create a model from an algorithm
+         * resource that you created or subscribed to in AWS Marketplace, provide a value
+         * for <code>SourceAlgorithmSpecification</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelPackage">AWS
          * API Reference</a></p>
          *
@@ -1276,7 +1297,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
@@ -1297,7 +1318,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
@@ -1320,7 +1341,7 @@ namespace Model
          * <code>aws:SourceIP</code> condition context key to specify the list of IP
          * addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/https:/docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
+         * href="http://docs.aws.amazon.com/sagemaker/latest/dg/howitworks-access-ws.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
@@ -2099,9 +2120,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list on AWS Marketplace.</p> <p>Buyers can subscribe
-         * to model packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
+         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          */
@@ -2109,9 +2130,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list on AWS Marketplace.</p> <p>Buyers can subscribe
-         * to model packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
+         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -2121,9 +2142,9 @@ namespace Model
 
         /**
          * <p>Returns a description of the specified model package, which is used to create
-         * Amazon SageMaker models or list on AWS Marketplace.</p> <p>Buyers can subscribe
-         * to model packages listed on AWS Marketplace to create models in Amazon
-         * SageMaker.</p><p><h3>See Also:</h3>   <a
+         * Amazon SageMaker models or list them on AWS Marketplace.</p> <p>To create models
+         * in Amazon SageMaker, buyers can subscribe to model packages listed on AWS
+         * Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelPackage">AWS
          * API Reference</a></p>
          *
@@ -2303,18 +2324,22 @@ namespace Model
         virtual void DescribeWorkteamAsync(const Model::DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns suggestions for the property name to use in <code>Search</code>
-         * queries. Provides suggestions for <code>HyperParameters</code>,
-         * <code>Tags</code>, and <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>An auto-complete API for the search functionality in the Amazon SageMaker
+         * console. It returns suggestions of possible matches for the property name to use
+         * in <code>Search</code> queries. Provides suggestions for
+         * <code>HyperParameters</code>, <code>Tags</code>, and
+         * <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSearchSuggestionsOutcome GetSearchSuggestions(const Model::GetSearchSuggestionsRequest& request) const;
 
         /**
-         * <p>Returns suggestions for the property name to use in <code>Search</code>
-         * queries. Provides suggestions for <code>HyperParameters</code>,
-         * <code>Tags</code>, and <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>An auto-complete API for the search functionality in the Amazon SageMaker
+         * console. It returns suggestions of possible matches for the property name to use
+         * in <code>Search</code> queries. Provides suggestions for
+         * <code>HyperParameters</code>, <code>Tags</code>, and
+         * <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">AWS
          * API Reference</a></p>
          *
@@ -2323,9 +2348,11 @@ namespace Model
         virtual Model::GetSearchSuggestionsOutcomeCallable GetSearchSuggestionsCallable(const Model::GetSearchSuggestionsRequest& request) const;
 
         /**
-         * <p>Returns suggestions for the property name to use in <code>Search</code>
-         * queries. Provides suggestions for <code>HyperParameters</code>,
-         * <code>Tags</code>, and <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>An auto-complete API for the search functionality in the Amazon SageMaker
+         * console. It returns suggestions of possible matches for the property name to use
+         * in <code>Search</code> queries. Provides suggestions for
+         * <code>HyperParameters</code>, <code>Tags</code>, and
+         * <code>Metrics</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GetSearchSuggestions">AWS
          * API Reference</a></p>
          *
@@ -2874,7 +2901,7 @@ namespace Model
         /**
          * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
          * objects are returned as a list of <code>SearchResult</code> objects in the
-         * response. The search results can be sorted by any resrouce property in a
+         * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
@@ -2885,7 +2912,7 @@ namespace Model
         /**
          * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
          * objects are returned as a list of <code>SearchResult</code> objects in the
-         * response. The search results can be sorted by any resrouce property in a
+         * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
@@ -2898,7 +2925,7 @@ namespace Model
         /**
          * <p>Finds Amazon SageMaker resources that match a search query. Matching resource
          * objects are returned as a list of <code>SearchResult</code> objects in the
-         * response. The search results can be sorted by any resrouce property in a
+         * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
          * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
@@ -2948,7 +2975,7 @@ namespace Model
         /**
          * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
          * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
-         * hasn’t stopped, it sends the SIGKILL signal.</p> <p>When it receives a
+         * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
          * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
          * <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the
@@ -2962,7 +2989,7 @@ namespace Model
         /**
          * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
          * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
-         * hasn’t stopped, it sends the SIGKILL signal.</p> <p>When it receives a
+         * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
          * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
          * <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the
@@ -2978,7 +3005,7 @@ namespace Model
         /**
          * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
          * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
-         * hasn’t stopped, it sends the SIGKILL signal.</p> <p>When it receives a
+         * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
          * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
          * <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
          * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the

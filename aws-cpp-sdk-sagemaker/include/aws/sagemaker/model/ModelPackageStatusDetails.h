@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline const Aws::Vector<ModelPackageStatusItem>& GetValidationStatuses() const{ return m_validationStatuses; }
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline void SetValidationStatuses(const Aws::Vector<ModelPackageStatusItem>& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = value; }
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline void SetValidationStatuses(Aws::Vector<ModelPackageStatusItem>&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses = std::move(value); }
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline ModelPackageStatusDetails& WithValidationStatuses(const Aws::Vector<ModelPackageStatusItem>& value) { SetValidationStatuses(value); return *this;}
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline ModelPackageStatusDetails& WithValidationStatuses(Aws::Vector<ModelPackageStatusItem>&& value) { SetValidationStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline ModelPackageStatusDetails& AddValidationStatuses(const ModelPackageStatusItem& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(value); return *this; }
 
     /**
-     * <p>The status of the validation of the model package.</p>
+     * <p>The validation status of the model package.</p>
      */
     inline ModelPackageStatusDetails& AddValidationStatuses(ModelPackageStatusItem&& value) { m_validationStatusesHasBeenSet = true; m_validationStatuses.push_back(std::move(value)); return *this; }
 

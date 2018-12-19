@@ -138,6 +138,25 @@ namespace Model
      */
     inline PlacementGroup& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of partitions. Valid only if <b>strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline int GetPartitionCount() const{ return m_partitionCount; }
+
+    /**
+     * <p>The number of partitions. Valid only if <b>strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline void SetPartitionCount(int value) { m_partitionCountHasBeenSet = true; m_partitionCount = value; }
+
+    /**
+     * <p>The number of partitions. Valid only if <b>strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline PlacementGroup& WithPartitionCount(int value) { SetPartitionCount(value); return *this;}
+
   private:
 
     Aws::String m_groupName;
@@ -148,6 +167,9 @@ namespace Model
 
     PlacementStrategy m_strategy;
     bool m_strategyHasBeenSet;
+
+    int m_partitionCount;
+    bool m_partitionCountHasBeenSet;
   };
 
 } // namespace Model

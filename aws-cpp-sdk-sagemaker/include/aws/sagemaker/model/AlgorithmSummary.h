@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline AlgorithmSummary& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline AlgorithmSummary& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the algorithm which is described by the summary.</p>
+     * <p>The name of the algorithm that is described by the summary.</p>
      */
     inline AlgorithmSummary& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
 
@@ -123,37 +123,37 @@ namespace Model
 
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline const Aws::String& GetAlgorithmDescription() const{ return m_algorithmDescription; }
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline void SetAlgorithmDescription(const Aws::String& value) { m_algorithmDescriptionHasBeenSet = true; m_algorithmDescription = value; }
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline void SetAlgorithmDescription(Aws::String&& value) { m_algorithmDescriptionHasBeenSet = true; m_algorithmDescription = std::move(value); }
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline void SetAlgorithmDescription(const char* value) { m_algorithmDescriptionHasBeenSet = true; m_algorithmDescription.assign(value); }
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline AlgorithmSummary& WithAlgorithmDescription(const Aws::String& value) { SetAlgorithmDescription(value); return *this;}
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline AlgorithmSummary& WithAlgorithmDescription(Aws::String&& value) { SetAlgorithmDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief statement describing the algorithm.</p>
+     * <p>A brief description of the algorithm.</p>
      */
     inline AlgorithmSummary& WithAlgorithmDescription(const char* value) { SetAlgorithmDescription(value); return *this;}
 

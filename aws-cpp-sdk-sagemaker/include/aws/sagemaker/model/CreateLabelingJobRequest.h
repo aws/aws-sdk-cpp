@@ -97,49 +97,70 @@ namespace Model
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline const Aws::String& GetLabelAttributeName() const{ return m_labelAttributeName; }
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline void SetLabelAttributeName(const Aws::String& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = value; }
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline void SetLabelAttributeName(Aws::String&& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = std::move(value); }
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline void SetLabelAttributeName(const char* value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName.assign(value); }
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline CreateLabelingJobRequest& WithLabelAttributeName(const Aws::String& value) { SetLabelAttributeName(value); return *this;}
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline CreateLabelingJobRequest& WithLabelAttributeName(Aws::String&& value) { SetLabelAttributeName(std::move(value)); return *this;}
 
     /**
      * <p>The attribute name to use for the label in the output manifest file. This is
      * the key for the key/value pair formed with the label that a worker assigns to
-     * the object. The name can't end with "-metadata" or "-ref".</p>
+     * the object. The name can't end with "-metadata". If you are running a semantic
+     * segmentation labeling job, the attribute name must end with "-ref". If you are
+     * running any other kind of labeling job, the attribute name must not end with
+     * "-ref".</p>
      */
     inline CreateLabelingJobRequest& WithLabelAttributeName(const char* value) { SetLabelAttributeName(value); return *this;}
 
@@ -270,43 +291,92 @@ namespace Model
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = value; }
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::move(value); }
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri.assign(value); }
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>The S3 URL of the file that defines the categories used to label the data
-     * objects.</p>
+     * objects.</p> <p>The file is a JSON structure in the following format:</p> <p>
+     * <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p> <p>
+     * <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
+     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
+     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
+     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
+     * <code>}</code> </p>
      */
     inline CreateLabelingJobRequest& WithLabelCategoryConfigS3Uri(const char* value) { SetLabelCategoryConfigS3Uri(value); return *this;}
 

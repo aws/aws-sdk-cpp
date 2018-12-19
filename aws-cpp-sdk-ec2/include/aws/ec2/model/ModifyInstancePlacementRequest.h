@@ -77,7 +77,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -86,7 +86,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -113,7 +113,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The name of the placement group in which to place the instance. For spread
      * placement groups, the instance must have a tenancy of <code>default</code>. For
-     * cluster placement groups, the instance must have a tenancy of
+     * cluster and partition placement groups, the instance must have a tenancy of
      * <code>default</code> or <code>dedicated</code>.</p> <p>To remove an instance
      * from a placement group, specify an empty string ("").</p>
      */
@@ -235,6 +235,22 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithTenancy(HostTenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline int GetPartitionNumber() const{ return m_partitionNumber; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
+
   private:
 
     Affinity m_affinity;
@@ -251,6 +267,9 @@ namespace Model
 
     HostTenancy m_tenancy;
     bool m_tenancyHasBeenSet;
+
+    int m_partitionNumber;
+    bool m_partitionNumberHasBeenSet;
   };
 
 } // namespace Model

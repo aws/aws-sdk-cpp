@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/CompilationJobStatus.h>
+#include <aws/sagemaker/model/ListCompilationJobsSortBy.h>
+#include <aws/sagemaker/model/SortOrder.h>
 #include <utility>
 
 namespace Aws
@@ -309,6 +311,63 @@ namespace Model
      */
     inline ListCompilationJobsRequest& WithStatusEquals(CompilationJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
+    inline const ListCompilationJobsSortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
+    inline void SetSortBy(const ListCompilationJobsSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
+    inline void SetSortBy(ListCompilationJobsSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
+    inline ListCompilationJobsRequest& WithSortBy(const ListCompilationJobsSortBy& value) { SetSortBy(value); return *this;}
+
+    /**
+     * <p>The field by which to sort results. The default is
+     * <code>CreationTime</code>.</p>
+     */
+    inline ListCompilationJobsRequest& WithSortBy(ListCompilationJobsSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline ListCompilationJobsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
+
+    /**
+     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     */
+    inline ListCompilationJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -334,6 +393,12 @@ namespace Model
 
     CompilationJobStatus m_statusEquals;
     bool m_statusEqualsHasBeenSet;
+
+    ListCompilationJobsSortBy m_sortBy;
+    bool m_sortByHasBeenSet;
+
+    SortOrder m_sortOrder;
+    bool m_sortOrderHasBeenSet;
   };
 
 } // namespace Model

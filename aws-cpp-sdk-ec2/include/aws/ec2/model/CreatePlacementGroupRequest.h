@@ -74,43 +74,43 @@ namespace Model
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -140,6 +140,25 @@ namespace Model
      */
     inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline int GetPartitionCount() const{ return m_partitionCount; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline void SetPartitionCount(int value) { m_partitionCountHasBeenSet = true; m_partitionCount = value; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline CreatePlacementGroupRequest& WithPartitionCount(int value) { SetPartitionCount(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -150,6 +169,9 @@ namespace Model
 
     PlacementStrategy m_strategy;
     bool m_strategyHasBeenSet;
+
+    int m_partitionCount;
+    bool m_partitionCountHasBeenSet;
   };
 
 } // namespace Model

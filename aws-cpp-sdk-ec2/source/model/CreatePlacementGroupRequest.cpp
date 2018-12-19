@@ -25,7 +25,9 @@ CreatePlacementGroupRequest::CreatePlacementGroupRequest() :
     m_dryRunHasBeenSet(false),
     m_groupNameHasBeenSet(false),
     m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false)
+    m_strategyHasBeenSet(false),
+    m_partitionCount(0),
+    m_partitionCountHasBeenSet(false)
 {
 }
 
@@ -46,6 +48,11 @@ Aws::String CreatePlacementGroupRequest::SerializePayload() const
   if(m_strategyHasBeenSet)
   {
     ss << "Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
+  }
+
+  if(m_partitionCountHasBeenSet)
+  {
+    ss << "PartitionCount=" << m_partitionCount << "&";
   }
 
   ss << "Version=2016-11-15";

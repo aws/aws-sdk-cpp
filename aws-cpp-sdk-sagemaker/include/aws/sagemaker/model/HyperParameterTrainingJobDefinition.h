@@ -131,31 +131,36 @@ namespace Model
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline const HyperParameterAlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
 
@@ -445,7 +450,7 @@ namespace Model
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
      * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */
@@ -456,7 +461,7 @@ namespace Model
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
      * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */
@@ -467,7 +472,7 @@ namespace Model
      * made, except for calls between peers within a training cluster for distributed
      * training. If network isolation is used for training jobs that are configured to
      * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */

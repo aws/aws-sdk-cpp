@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline const Aws::String& GetClientConfiguration() const{ return m_clientConfiguration; }
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline void SetClientConfiguration(const Aws::String& value) { m_clientConfiguration = value; }
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline void SetClientConfiguration(Aws::String&& value) { m_clientConfiguration = std::move(value); }
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline void SetClientConfiguration(const char* value) { m_clientConfiguration.assign(value); }
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline ExportClientVpnClientConfigurationResponse& WithClientConfiguration(const Aws::String& value) { SetClientConfiguration(value); return *this;}
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline ExportClientVpnClientConfigurationResponse& WithClientConfiguration(Aws::String&& value) { SetClientConfiguration(std::move(value)); return *this;}
 
     /**
-     * <p>the contents of the client configuration file.</p>
+     * <p>The contents of the Client VPN endpoint configuration file.</p>
      */
     inline ExportClientVpnClientConfigurationResponse& WithClientConfiguration(const char* value) { SetClientConfiguration(value); return *this;}
 

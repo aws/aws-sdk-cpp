@@ -52,36 +52,36 @@ namespace Model
 
 
     /**
-     * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
 
     /**
-     * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline XssMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
 
     /**
-     * <p>Specify <code>INSERT</code> to add a <a>XssMatchSetUpdate</a> to an
-     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <p>Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an
+     * <a>XssMatchSet</a>. Use <code>DELETE</code> to remove an
      * <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.</p>
      */
     inline XssMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}

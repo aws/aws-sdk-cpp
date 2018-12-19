@@ -32,17 +32,17 @@ namespace Model
 {
 
   /**
-   * <p>Specifies how long a model training or compilation job can run. When the job
-   * reaches the limit, Amazon SageMaker ends the training job. Use this API to cap
-   * model processing cost.</p> <p>To stop a job, Amazon SageMaker sends the
-   * algorithm the <code>SIGTERM</code> signal, which delays job termination for 120
-   * seconds. Algorithms might use this 120-second window to save the model
-   * artifacts, so the results of training is not lost. </p> <p>Training algorithms
-   * provided by Amazon SageMaker automatically saves the intermediate results of a
-   * model training job (it is best effort case, as model might not be ready to save
-   * as some stages, for example training just started). This intermediate data is a
-   * valid model artifact. You can use it to create a model
-   * (<code>CreateModel</code>). </p><p><h3>See Also:</h3>   <a
+   * <p>Specifies how long model training can run. When model training reaches the
+   * limit, Amazon SageMaker ends the training job. Use this API to cap model
+   * training cost.</p> <p>To stop a job, Amazon SageMaker sends the algorithm the
+   * <code>SIGTERM</code> signal, which delays job termination for120 seconds.
+   * Algorithms might use this 120-second window to save the model artifacts, so the
+   * results of training is not lost. </p> <p>Training algorithms provided by Amazon
+   * SageMaker automatically saves the intermediate results of a model training job
+   * (it is best effort case, as model might not be ready to save as some stages, for
+   * example training just started). This intermediate data is a valid model
+   * artifact. You can use it to create a model (<code>CreateModel</code>).
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StoppingCondition">AWS
    * API Reference</a></p>
    */
@@ -56,25 +56,25 @@ namespace Model
 
 
     /**
-     * <p>The maximum length of time, in seconds, that the training or compilation job
-     * can run. If the job does not complete during this time, Amazon SageMaker ends
-     * the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * <p>The maximum length of time, in seconds, that the training job can run. If
+     * model training does not complete during this time, Amazon SageMaker ends the
+     * job. If value is not specified, default value is 1 day. Maximum value is 5
      * days.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
 
     /**
-     * <p>The maximum length of time, in seconds, that the training or compilation job
-     * can run. If the job does not complete during this time, Amazon SageMaker ends
-     * the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * <p>The maximum length of time, in seconds, that the training job can run. If
+     * model training does not complete during this time, Amazon SageMaker ends the
+     * job. If value is not specified, default value is 1 day. Maximum value is 5
      * days.</p>
      */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
 
     /**
-     * <p>The maximum length of time, in seconds, that the training or compilation job
-     * can run. If the job does not complete during this time, Amazon SageMaker ends
-     * the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * <p>The maximum length of time, in seconds, that the training job can run. If
+     * model training does not complete during this time, Amazon SageMaker ends the
+     * job. If value is not specified, default value is 1 day. Maximum value is 5
      * days.</p>
      */
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}

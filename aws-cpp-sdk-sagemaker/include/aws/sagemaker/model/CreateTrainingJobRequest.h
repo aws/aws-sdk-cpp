@@ -286,13 +286,13 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -301,13 +301,13 @@ namespace Model
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -316,13 +316,13 @@ namespace Model
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -331,13 +331,13 @@ namespace Model
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -346,13 +346,13 @@ namespace Model
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -361,13 +361,13 @@ namespace Model
     inline CreateTrainingJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
@@ -376,13 +376,13 @@ namespace Model
     inline CreateTrainingJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes
-     * to perform tasks on your behalf. </p> <p>During model training, Amazon SageMaker
-     * needs your permission to read input data from an S3 bucket, download a Docker
-     * image that contains training code, write model artifacts to an S3 bucket, write
-     * logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You
-     * grant permissions for all of these tasks to an IAM role. For more information,
-     * see <a
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform tasks on your behalf. </p> <p>During model training, Amazon
+     * SageMaker needs your permission to read input data from an S3 bucket, download a
+     * Docker image that contains training code, write model artifacts to an S3 bucket,
+     * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
+     * You grant permissions for all of these tasks to an IAM role. For more
+     * information, see <a
      * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>

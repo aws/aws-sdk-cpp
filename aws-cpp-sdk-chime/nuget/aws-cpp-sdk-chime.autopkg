@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Chime;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20180501.22;
+        version : 1.7.20180501.23;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Chime);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.22
+            AWSSDKCPP-Core/1.7.23
        }
     }
 

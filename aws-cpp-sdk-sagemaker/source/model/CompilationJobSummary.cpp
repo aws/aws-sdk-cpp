@@ -32,6 +32,7 @@ CompilationJobSummary::CompilationJobSummary() :
     m_compilationJobNameHasBeenSet(false),
     m_compilationJobArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_compilationStartTimeHasBeenSet(false),
     m_compilationEndTimeHasBeenSet(false),
     m_compilationTargetDevice(TargetDevice::NOT_SET),
     m_compilationTargetDeviceHasBeenSet(false),
@@ -45,6 +46,7 @@ CompilationJobSummary::CompilationJobSummary(JsonView jsonValue) :
     m_compilationJobNameHasBeenSet(false),
     m_compilationJobArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
+    m_compilationStartTimeHasBeenSet(false),
     m_compilationEndTimeHasBeenSet(false),
     m_compilationTargetDevice(TargetDevice::NOT_SET),
     m_compilationTargetDeviceHasBeenSet(false),
@@ -76,6 +78,13 @@ CompilationJobSummary& CompilationJobSummary::operator =(JsonView jsonValue)
     m_creationTime = jsonValue.GetDouble("CreationTime");
 
     m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CompilationStartTime"))
+  {
+    m_compilationStartTime = jsonValue.GetDouble("CompilationStartTime");
+
+    m_compilationStartTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CompilationEndTime"))
@@ -128,6 +137,11 @@ JsonValue CompilationJobSummary::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_compilationStartTimeHasBeenSet)
+  {
+   payload.WithDouble("CompilationStartTime", m_compilationStartTime.SecondsWithMSPrecision());
   }
 
   if(m_compilationEndTimeHasBeenSet)

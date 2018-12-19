@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains data such as the inputs and targeted instance types that are used in
-   * the process of validating the model package.</p> <p>The data provided in the
+   * <p>Contains data, such as the inputs and targeted instance types that are used
+   * in the process of validating the model package.</p> <p>The data provided in the
    * validation profile is made available to your buyers on AWS
    * Marketplace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ModelPackageValidationProfile">AWS

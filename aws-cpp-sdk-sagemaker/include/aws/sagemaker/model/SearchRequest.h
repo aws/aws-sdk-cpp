@@ -80,105 +80,130 @@ namespace Model
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results.</p>
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
      */
     inline const SearchExpression& GetSearchExpression() const{ return m_searchExpression; }
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results.</p>
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
      */
     inline void SetSearchExpression(const SearchExpression& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = value; }
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results.</p>
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
      */
     inline void SetSearchExpression(SearchExpression&& value) { m_searchExpressionHasBeenSet = true; m_searchExpression = std::move(value); }
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results.</p>
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
      */
     inline SearchRequest& WithSearchExpression(const SearchExpression& value) { SetSearchExpression(value); return *this;}
 
     /**
      * <p>A Boolean conditional statement. Resource objects must satisfy this condition
-     * to be included in search results.</p>
+     * to be included in search results. You must provide at least one subexpression,
+     * filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and
+     * <code>Filters</code> that can be included in a <code>SearchExpression</code>
+     * object is 50.</p>
      */
     inline SearchRequest& WithSearchExpression(SearchExpression&& value) { SetSearchExpression(std::move(value)); return *this;}
 
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline const Aws::String& GetSortBy() const{ return m_sortBy; }
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline void SetSortBy(const Aws::String& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline void SetSortBy(Aws::String&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline void SetSortBy(const char* value) { m_sortByHasBeenSet = true; m_sortBy.assign(value); }
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline SearchRequest& WithSortBy(const Aws::String& value) { SetSortBy(value); return *this;}
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline SearchRequest& WithSortBy(Aws::String&& value) { SetSortBy(std::move(value)); return *this;}
 
     /**
      * <p>The name of the resource property used to sort the
-     * <code>SearchResults</code>.</p>
+     * <code>SearchResults</code>. The default is <code>LastModifiedTime</code>.</p>
      */
     inline SearchRequest& WithSortBy(const char* value) { SetSortBy(value); return *this;}
 
 
     /**
      * <p>How <code>SearchResults</code> are ordered. Valid values are
-     * <code>Ascending</code> or <code>Descending</code>.</p>
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
      */
     inline const SearchSortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p>How <code>SearchResults</code> are ordered. Valid values are
-     * <code>Ascending</code> or <code>Descending</code>.</p>
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const SearchSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p>How <code>SearchResults</code> are ordered. Valid values are
-     * <code>Ascending</code> or <code>Descending</code>.</p>
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
      */
     inline void SetSortOrder(SearchSortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p>How <code>SearchResults</code> are ordered. Valid values are
-     * <code>Ascending</code> or <code>Descending</code>.</p>
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
      */
     inline SearchRequest& WithSortOrder(const SearchSortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p>How <code>SearchResults</code> are ordered. Valid values are
-     * <code>Ascending</code> or <code>Descending</code>.</p>
+     * <code>Ascending</code> or <code>Descending</code>. The default is
+     * <code>Descending</code>.</p>
      */
     inline SearchRequest& WithSortOrder(SearchSortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

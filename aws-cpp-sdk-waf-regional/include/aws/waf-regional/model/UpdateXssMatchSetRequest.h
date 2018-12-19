@@ -137,7 +137,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -148,7 +148,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -159,7 +159,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -170,7 +170,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -181,7 +181,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -192,7 +192,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and
@@ -203,7 +203,7 @@ namespace Model
 
     /**
      * <p>An array of <code>XssMatchSetUpdate</code> objects that you want to insert
-     * into or delete from a <a>XssMatchSet</a>. For more information, see the
+     * into or delete from an <a>XssMatchSet</a>. For more information, see the
      * applicable data types:</p> <ul> <li> <p> <a>XssMatchSetUpdate</a>: Contains
      * <code>Action</code> and <code>XssMatchTuple</code> </p> </li> <li> <p>
      * <a>XssMatchTuple</a>: Contains <code>FieldToMatch</code> and

@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines the possible values for categorical, continous, and integer
+   * <p>Defines the possible values for categorical, continuous, and integer
    * hyperparameters to be used by an algorithm.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ParameterRange">AWS
    * API Reference</a></p>

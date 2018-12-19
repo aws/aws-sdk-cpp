@@ -48,44 +48,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline CreateAlgorithmRequest& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline CreateAlgorithmRequest& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the algorithm. The name must have 1 to 63 characters. Valid
-     * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
+     * <p>The name of the algorithm.</p>
      */
     inline CreateAlgorithmRequest& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
 

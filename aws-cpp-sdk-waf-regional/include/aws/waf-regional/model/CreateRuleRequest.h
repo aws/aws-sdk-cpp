@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
@@ -122,7 +122,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline CreateRuleRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
@@ -130,7 +130,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline CreateRuleRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
      * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
-     * can't contain whitespace. You can't change the name of the metric after you
+     * can't contain white space. You can't change the name of the metric after you
      * create the <code>Rule</code>.</p>
      */
     inline CreateRuleRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}

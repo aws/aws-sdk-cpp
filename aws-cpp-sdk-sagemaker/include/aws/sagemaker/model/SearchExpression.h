@@ -38,17 +38,20 @@ namespace Model
 {
 
   /**
-   * <p>A multi-expression that searches for the specified resource or resources. All
-   * resource objects that satisfy the expression's condition are included in the
-   * search results.</p> <p>A <code>SearchExpression</code> contains the following
+   * <p>A multi-expression that searches for the specified resource or resources in a
+   * search. All resource objects that satisfy the expression's condition are
+   * included in the search results. You must specify at least one subexpression,
+   * filter, or nested filter. A <code>SearchExpression</code> can contain up to
+   * twenty elements.</p> <p>A <code>SearchExpression</code> contains the following
    * components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter
    * defines a simple Boolean expression comprised of a resource property name,
    * Boolean operator, and value.</p> </li> <li> <p>A list of
    * <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean
    * expressions using a list of resource properties. A nested filter is satisfied if
    * a single object in the list satisfies all Boolean expressions.</p> </li> <li>
-   * <p>A list of <code>SearchExpression</code> objects.</p> </li> <li> <p>A Boolean
-   * operator: <code>And</code> or <code>Or</code>.</p> </li> </ul><p><h3>See
+   * <p>A list of <code>SearchExpression</code> objects. A search expression object
+   * can be nested in a list of search expression objects.</p> </li> <li> <p>A
+   * Boolean operator: <code>And</code> or <code>Or</code>.</p> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchExpression">AWS
    * API Reference</a></p>
@@ -175,7 +178,7 @@ namespace Model
      * conditional statement in all lists to be satisfied for the entire search
      * expression to be true, specify <code>And</code>. If only a single conditional
      * statement needs to be true for the entire search expression to be true, specify
-     * <code>Or</code>.</p>
+     * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline const BooleanOperator& GetOperator() const{ return m_operator; }
 
@@ -184,7 +187,7 @@ namespace Model
      * conditional statement in all lists to be satisfied for the entire search
      * expression to be true, specify <code>And</code>. If only a single conditional
      * statement needs to be true for the entire search expression to be true, specify
-     * <code>Or</code>.</p>
+     * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline void SetOperator(const BooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
@@ -193,7 +196,7 @@ namespace Model
      * conditional statement in all lists to be satisfied for the entire search
      * expression to be true, specify <code>And</code>. If only a single conditional
      * statement needs to be true for the entire search expression to be true, specify
-     * <code>Or</code>.</p>
+     * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline void SetOperator(BooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
@@ -202,7 +205,7 @@ namespace Model
      * conditional statement in all lists to be satisfied for the entire search
      * expression to be true, specify <code>And</code>. If only a single conditional
      * statement needs to be true for the entire search expression to be true, specify
-     * <code>Or</code>.</p>
+     * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline SearchExpression& WithOperator(const BooleanOperator& value) { SetOperator(value); return *this;}
 
@@ -211,7 +214,7 @@ namespace Model
      * conditional statement in all lists to be satisfied for the entire search
      * expression to be true, specify <code>And</code>. If only a single conditional
      * statement needs to be true for the entire search expression to be true, specify
-     * <code>Or</code>.</p>
+     * <code>Or</code>. The default value is <code>And</code>.</p>
      */
     inline SearchExpression& WithOperator(BooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
 

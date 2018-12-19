@@ -4601,7 +4601,10 @@ namespace Model
          * </p> <p>A <code>cluster</code> placement group is a logical grouping of
          * instances within a single Availability Zone that benefit from low network
          * latency, high network throughput. A <code>spread</code> placement group places
-         * instances on distinct hardware.</p> <p>For more information, see <a
+         * instances on distinct hardware. A <code>partition</code> placement group places
+         * groups of instances in different partitions, where instances in one partition do
+         * not share the same hardware with instances in another partition.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4616,7 +4619,10 @@ namespace Model
          * </p> <p>A <code>cluster</code> placement group is a logical grouping of
          * instances within a single Availability Zone that benefit from low network
          * latency, high network throughput. A <code>spread</code> placement group places
-         * instances on distinct hardware.</p> <p>For more information, see <a
+         * instances on distinct hardware. A <code>partition</code> placement group places
+         * groups of instances in different partitions, where instances in one partition do
+         * not share the same hardware with instances in another partition.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4633,7 +4639,10 @@ namespace Model
          * </p> <p>A <code>cluster</code> placement group is a logical grouping of
          * instances within a single Availability Zone that benefit from low network
          * latency, high network throughput. A <code>spread</code> placement group places
-         * instances on distinct hardware.</p> <p>For more information, see <a
+         * instances on distinct hardware. A <code>partition</code> placement group places
+         * groups of instances in different partitions, where instances in one partition do
+         * not share the same hardware with instances in another partition.</p> <p>For more
+         * information, see <a
          * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -8150,7 +8159,7 @@ namespace Model
         /**
          * <p>Describes the Dedicated Host reservations that are available to purchase.</p>
          * <p>The results describe all the Dedicated Host reservation offerings, including
-         * offerings that may not match the instance family and region of your Dedicated
+         * offerings that may not match the instance family and Region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
@@ -8165,7 +8174,7 @@ namespace Model
         /**
          * <p>Describes the Dedicated Host reservations that are available to purchase.</p>
          * <p>The results describe all the Dedicated Host reservation offerings, including
-         * offerings that may not match the instance family and region of your Dedicated
+         * offerings that may not match the instance family and Region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
@@ -8182,7 +8191,7 @@ namespace Model
         /**
          * <p>Describes the Dedicated Host reservations that are available to purchase.</p>
          * <p>The results describe all the Dedicated Host reservation offerings, including
-         * offerings that may not match the instance family and region of your Dedicated
+         * offerings that may not match the instance family and Region of your Dedicated
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
@@ -8226,7 +8235,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
-         * only the Dedicated Hosts in the region you're currently using. All listed
+         * only the Dedicated Hosts in the Region you're currently using. All listed
          * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released are listed with the state
          * <code>released</code>.</p><p><h3>See Also:</h3>   <a
@@ -8237,7 +8246,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
-         * only the Dedicated Hosts in the region you're currently using. All listed
+         * only the Dedicated Hosts in the Region you're currently using. All listed
          * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released are listed with the state
          * <code>released</code>.</p><p><h3>See Also:</h3>   <a
@@ -8250,7 +8259,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your Dedicated Hosts.</p> <p>The results describe
-         * only the Dedicated Hosts in the region you're currently using. All listed
+         * only the Dedicated Hosts in the Region you're currently using. All listed
          * instances consume capacity on your Dedicated Host. Dedicated Hosts that have
          * recently been released are listed with the state
          * <code>released</code>.</p><p><h3>See Also:</h3>   <a
@@ -11909,20 +11918,22 @@ namespace Model
         virtual void ExportClientVpnClientCertificateRevocationListAsync(const Model::ExportClientVpnClientCertificateRevocationListRequest& request, const ExportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Downloads the contents of the client configuration file for the specified
-         * Client VPN endpoint. The client configuration file includes the Client VPN
-         * endpoint and certificate information clients need to establish a connection with
-         * the Client VPN endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the contents of the Client VPN endpoint configuration file for the
+         * specified Client VPN endpoint. The Client VPN endpoint configuration file
+         * includes the Client VPN endpoint and certificate information clients need to
+         * establish a connection with the Client VPN endpoint.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::ExportClientVpnClientConfigurationOutcome ExportClientVpnClientConfiguration(const Model::ExportClientVpnClientConfigurationRequest& request) const;
 
         /**
-         * <p>Downloads the contents of the client configuration file for the specified
-         * Client VPN endpoint. The client configuration file includes the Client VPN
-         * endpoint and certificate information clients need to establish a connection with
-         * the Client VPN endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the contents of the Client VPN endpoint configuration file for the
+         * specified Client VPN endpoint. The Client VPN endpoint configuration file
+         * includes the Client VPN endpoint and certificate information clients need to
+         * establish a connection with the Client VPN endpoint.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">AWS
          * API Reference</a></p>
          *
@@ -11931,10 +11942,11 @@ namespace Model
         virtual Model::ExportClientVpnClientConfigurationOutcomeCallable ExportClientVpnClientConfigurationCallable(const Model::ExportClientVpnClientConfigurationRequest& request) const;
 
         /**
-         * <p>Downloads the contents of the client configuration file for the specified
-         * Client VPN endpoint. The client configuration file includes the Client VPN
-         * endpoint and certificate information clients need to establish a connection with
-         * the Client VPN endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Downloads the contents of the Client VPN endpoint configuration file for the
+         * specified Client VPN endpoint. The Client VPN endpoint configuration file
+         * includes the Client VPN endpoint and certificate information clients need to
+         * establish a connection with the Client VPN endpoint.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration">AWS
          * API Reference</a></p>
          *
@@ -13143,8 +13155,8 @@ namespace Model
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
-         * tenancy, or placement group for an instance, the instance must be in the
-         * <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * tenancy, placement group, or partition for an instance, the instance must be in
+         * the <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">AWS
          * API Reference</a></p>
          */
@@ -13166,8 +13178,8 @@ namespace Model
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
-         * tenancy, or placement group for an instance, the instance must be in the
-         * <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * tenancy, placement group, or partition for an instance, the instance must be in
+         * the <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">AWS
          * API Reference</a></p>
          *
@@ -13191,8 +13203,8 @@ namespace Model
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
-         * tenancy, or placement group for an instance, the instance must be in the
-         * <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * tenancy, placement group, or partition for an instance, the instance must be in
+         * the <code>stopped</code> state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement">AWS
          * API Reference</a></p>
          *

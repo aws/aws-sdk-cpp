@@ -32,6 +32,7 @@ namespace Aws
 
         static const int cluster_HASH = HashingUtils::HashString("cluster");
         static const int spread_HASH = HashingUtils::HashString("spread");
+        static const int partition_HASH = HashingUtils::HashString("partition");
 
 
         PlacementStrategy GetPlacementStrategyForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == spread_HASH)
           {
             return PlacementStrategy::spread;
+          }
+          else if (hashCode == partition_HASH)
+          {
+            return PlacementStrategy::partition;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "cluster";
           case PlacementStrategy::spread:
             return "spread";
+          case PlacementStrategy::partition:
+            return "partition";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

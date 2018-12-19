@@ -149,6 +149,32 @@ namespace Model
 
 
     /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompilationStartTime() const{ return m_compilationStartTime; }
+
+    /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline void SetCompilationStartTime(const Aws::Utils::DateTime& value) { m_compilationStartTimeHasBeenSet = true; m_compilationStartTime = value; }
+
+    /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline void SetCompilationStartTime(Aws::Utils::DateTime&& value) { m_compilationStartTimeHasBeenSet = true; m_compilationStartTime = std::move(value); }
+
+    /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline CompilationJobSummary& WithCompilationStartTime(const Aws::Utils::DateTime& value) { SetCompilationStartTime(value); return *this;}
+
+    /**
+     * <p>The time when the model compilation job started.</p>
+     */
+    inline CompilationJobSummary& WithCompilationStartTime(Aws::Utils::DateTime&& value) { SetCompilationStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The time when the model compilation job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompilationEndTime() const{ return m_compilationEndTime; }
@@ -266,6 +292,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_compilationStartTime;
+    bool m_compilationStartTimeHasBeenSet;
 
     Aws::Utils::DateTime m_compilationEndTime;
     bool m_compilationEndTimeHasBeenSet;

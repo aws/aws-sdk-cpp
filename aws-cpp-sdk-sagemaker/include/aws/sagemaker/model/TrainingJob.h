@@ -992,43 +992,43 @@ namespace Model
 
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline const Aws::Vector<MetricData>& GetFinalMetricDataList() const{ return m_finalMetricDataList; }
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline void SetFinalMetricDataList(const Aws::Vector<MetricData>& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList = value; }
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline void SetFinalMetricDataList(Aws::Vector<MetricData>&& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList = std::move(value); }
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline TrainingJob& WithFinalMetricDataList(const Aws::Vector<MetricData>& value) { SetFinalMetricDataList(value); return *this;}
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline TrainingJob& WithFinalMetricDataList(Aws::Vector<MetricData>&& value) { SetFinalMetricDataList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline TrainingJob& AddFinalMetricDataList(const MetricData& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList.push_back(value); return *this; }
 
     /**
-     * <p>A list of final metric values that are set when the Training Job completes.
+     * <p>A list of final metric values that are set when the training job completes.
      * Used only if the training job was configured to use metrics.</p>
      */
     inline TrainingJob& AddFinalMetricDataList(MetricData&& value) { m_finalMetricDataListHasBeenSet = true; m_finalMetricDataList.push_back(std::move(value)); return *this; }

@@ -304,43 +304,71 @@ namespace Model
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateNotebookInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateNotebookInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p> If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at
-     * rest on the ML storage volume that is attached to your notebook instance. </p>
+     * rest on the ML storage volume that is attached to your notebook instance. The
+     * KMS key you provide must be enabled. For information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">Enabling
+     * and Disabling Keys</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p>
      */
     inline CreateNotebookInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

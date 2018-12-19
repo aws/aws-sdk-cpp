@@ -134,7 +134,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -155,7 +155,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -176,7 +176,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -197,7 +197,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -218,7 +218,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -239,7 +239,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -260,7 +260,7 @@ namespace Model
      * ]</code> </p> <p> The preceding JSON matches the following <code>s3Uris</code>:
      * </p> <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> </p>
-     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code> </p>
+     * <p> <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> </p>
      * <p> <code>...</code> </p> <p>The complete set of <code>s3uris</code> in this
      * manifest is the input data for the channel for this datasource. The object that
      * each <code>s3uris</code> points to must be readable by the IAM role that Amazon
@@ -280,10 +280,10 @@ namespace Model
      * machine uses only the subset of training data. </p> <p>Don't choose more ML
      * compute instances for training than available S3 objects. If you do, some nodes
      * won't get any data and you will pay for nodes that aren't getting any training
-     * data. This applies in both File and Pipemodes. Keep this in mind when developing
-     * algorithms. </p> <p>In distributed training, where you use multiple ML compute
-     * EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm
-     * requires copying training data to the ML storage volume (when
+     * data. This applies in both File and Pipe modes. Keep this in mind when
+     * developing algorithms. </p> <p>In distributed training, where you use multiple
+     * ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the
+     * algorithm requires copying training data to the ML storage volume (when
      * <code>TrainingInputMode</code> is set to <code>File</code>), this copies
      * 1/<i>n</i> of the number of objects. </p>
      */
@@ -300,10 +300,10 @@ namespace Model
      * machine uses only the subset of training data. </p> <p>Don't choose more ML
      * compute instances for training than available S3 objects. If you do, some nodes
      * won't get any data and you will pay for nodes that aren't getting any training
-     * data. This applies in both File and Pipemodes. Keep this in mind when developing
-     * algorithms. </p> <p>In distributed training, where you use multiple ML compute
-     * EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm
-     * requires copying training data to the ML storage volume (when
+     * data. This applies in both File and Pipe modes. Keep this in mind when
+     * developing algorithms. </p> <p>In distributed training, where you use multiple
+     * ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the
+     * algorithm requires copying training data to the ML storage volume (when
      * <code>TrainingInputMode</code> is set to <code>File</code>), this copies
      * 1/<i>n</i> of the number of objects. </p>
      */
@@ -320,10 +320,10 @@ namespace Model
      * machine uses only the subset of training data. </p> <p>Don't choose more ML
      * compute instances for training than available S3 objects. If you do, some nodes
      * won't get any data and you will pay for nodes that aren't getting any training
-     * data. This applies in both File and Pipemodes. Keep this in mind when developing
-     * algorithms. </p> <p>In distributed training, where you use multiple ML compute
-     * EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm
-     * requires copying training data to the ML storage volume (when
+     * data. This applies in both File and Pipe modes. Keep this in mind when
+     * developing algorithms. </p> <p>In distributed training, where you use multiple
+     * ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the
+     * algorithm requires copying training data to the ML storage volume (when
      * <code>TrainingInputMode</code> is set to <code>File</code>), this copies
      * 1/<i>n</i> of the number of objects. </p>
      */
@@ -340,10 +340,10 @@ namespace Model
      * machine uses only the subset of training data. </p> <p>Don't choose more ML
      * compute instances for training than available S3 objects. If you do, some nodes
      * won't get any data and you will pay for nodes that aren't getting any training
-     * data. This applies in both File and Pipemodes. Keep this in mind when developing
-     * algorithms. </p> <p>In distributed training, where you use multiple ML compute
-     * EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm
-     * requires copying training data to the ML storage volume (when
+     * data. This applies in both File and Pipe modes. Keep this in mind when
+     * developing algorithms. </p> <p>In distributed training, where you use multiple
+     * ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the
+     * algorithm requires copying training data to the ML storage volume (when
      * <code>TrainingInputMode</code> is set to <code>File</code>), this copies
      * 1/<i>n</i> of the number of objects. </p>
      */
@@ -360,10 +360,10 @@ namespace Model
      * machine uses only the subset of training data. </p> <p>Don't choose more ML
      * compute instances for training than available S3 objects. If you do, some nodes
      * won't get any data and you will pay for nodes that aren't getting any training
-     * data. This applies in both File and Pipemodes. Keep this in mind when developing
-     * algorithms. </p> <p>In distributed training, where you use multiple ML compute
-     * EC2 instances, you might choose <code>ShardedByS3Key</code>. If the algorithm
-     * requires copying training data to the ML storage volume (when
+     * data. This applies in both File and Pipe modes. Keep this in mind when
+     * developing algorithms. </p> <p>In distributed training, where you use multiple
+     * ML compute EC2 instances, you might choose <code>ShardedByS3Key</code>. If the
+     * algorithm requires copying training data to the ML storage volume (when
      * <code>TrainingInputMode</code> is set to <code>File</code>), this copies
      * 1/<i>n</i> of the number of objects. </p>
      */

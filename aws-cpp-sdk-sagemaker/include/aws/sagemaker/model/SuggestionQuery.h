@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p>Defines a property name hint. Only property names that match the specified
-     * hint are included in the response.</p>
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
      */
     inline const PropertyNameQuery& GetPropertyNameQuery() const{ return m_propertyNameQuery; }
 
     /**
-     * <p>Defines a property name hint. Only property names that match the specified
-     * hint are included in the response.</p>
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
      */
     inline void SetPropertyNameQuery(const PropertyNameQuery& value) { m_propertyNameQueryHasBeenSet = true; m_propertyNameQuery = value; }
 
     /**
-     * <p>Defines a property name hint. Only property names that match the specified
-     * hint are included in the response.</p>
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
      */
     inline void SetPropertyNameQuery(PropertyNameQuery&& value) { m_propertyNameQueryHasBeenSet = true; m_propertyNameQuery = std::move(value); }
 
     /**
-     * <p>Defines a property name hint. Only property names that match the specified
-     * hint are included in the response.</p>
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
      */
     inline SuggestionQuery& WithPropertyNameQuery(const PropertyNameQuery& value) { SetPropertyNameQuery(value); return *this;}
 
     /**
-     * <p>Defines a property name hint. Only property names that match the specified
-     * hint are included in the response.</p>
+     * <p>A type of <code>SuggestionQuery</code>. Defines a property name hint. Only
+     * property names that match the specified hint are included in the response.</p>
      */
     inline SuggestionQuery& WithPropertyNameQuery(PropertyNameQuery&& value) { SetPropertyNameQuery(std::move(value)); return *this;}
 

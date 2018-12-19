@@ -34,6 +34,8 @@ Placement::Placement() :
     m_availabilityZoneHasBeenSet(false),
     m_affinityHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_partitionNumber(0),
+    m_partitionNumberHasBeenSet(false),
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
@@ -45,6 +47,8 @@ Placement::Placement(const XmlNode& xmlNode) :
     m_availabilityZoneHasBeenSet(false),
     m_affinityHasBeenSet(false),
     m_groupNameHasBeenSet(false),
+    m_partitionNumber(0),
+    m_partitionNumberHasBeenSet(false),
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
@@ -76,6 +80,12 @@ Placement& Placement::operator =(const XmlNode& xmlNode)
     {
       m_groupName = StringUtils::Trim(groupNameNode.GetText().c_str());
       m_groupNameHasBeenSet = true;
+    }
+    XmlNode partitionNumberNode = resultNode.FirstChild("partitionNumber");
+    if(!partitionNumberNode.IsNull())
+    {
+      m_partitionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(partitionNumberNode.GetText().c_str()).c_str());
+      m_partitionNumberHasBeenSet = true;
     }
     XmlNode hostIdNode = resultNode.FirstChild("hostId");
     if(!hostIdNode.IsNull())
@@ -117,6 +127,11 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
   }
 
+  if(m_partitionNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PartitionNumber=" << m_partitionNumber << "&";
+  }
+
   if(m_hostIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".HostId=" << StringUtils::URLEncode(m_hostId.c_str()) << "&";
@@ -147,6 +162,10 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_groupNameHasBeenSet)
   {
       oStream << location << ".GroupName=" << StringUtils::URLEncode(m_groupName.c_str()) << "&";
+  }
+  if(m_partitionNumberHasBeenSet)
+  {
+      oStream << location << ".PartitionNumber=" << m_partitionNumber << "&";
   }
   if(m_hostIdHasBeenSet)
   {

@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline const Aws::String& GetModelPackageDescription() const{ return m_modelPackageDescription; }
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline void SetModelPackageDescription(const Aws::String& value) { m_modelPackageDescription = value; }
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline void SetModelPackageDescription(Aws::String&& value) { m_modelPackageDescription = std::move(value); }
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline void SetModelPackageDescription(const char* value) { m_modelPackageDescription.assign(value); }
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline DescribeModelPackageResult& WithModelPackageDescription(const Aws::String& value) { SetModelPackageDescription(value); return *this;}
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline DescribeModelPackageResult& WithModelPackageDescription(Aws::String&& value) { SetModelPackageDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief summary about the model package.</p>
+     * <p>A brief summary of the model package.</p>
      */
     inline DescribeModelPackageResult& WithModelPackageDescription(const char* value) { SetModelPackageDescription(value); return *this;}
 

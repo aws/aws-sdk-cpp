@@ -58,15 +58,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -80,15 +81,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -102,15 +104,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -124,15 +127,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -146,15 +150,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -168,15 +173,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -190,15 +196,16 @@ namespace Model
      * </p> </li> <li> <p>// KMS Key Alias</p> <p> <code>"alias/ExampleAlias"</code>
      * </p> </li> <li> <p>// Amazon Resource Name (ARN) of a KMS Key Alias</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p> </li>
-     * </ul> <p>If you don't provide the KMS key ID, Amazon SageMaker uses the default
+     * </ul> <p>If you don't provide a KMS key ID, Amazon SageMaker uses the default
      * KMS key for Amazon S3 for your role's account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
-     * Encryption Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
-     * </p> <note> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTrainingJob</code> request. <a
+     * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
+     * </p> <p>The KMS key policy must grant permission to the IAM role that you
+     * specify in your <code>CreateTramsformJob</code> request. For more information,
+     * see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
-     * Guide</i>. </p> </note>
+     * Guide</i>.</p>
      */
     inline OutputDataConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

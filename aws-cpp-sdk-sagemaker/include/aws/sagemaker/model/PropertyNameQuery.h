@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A suggestion query for retrieving property names.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A type of <code>SuggestionQuery</code>. A suggestion query for retrieving
+   * property names that match the specified hint.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PropertyNameQuery">AWS
    * API Reference</a></p>
    */
@@ -49,44 +49,51 @@ namespace Model
 
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline const Aws::String& GetPropertyNameHint() const{ return m_propertyNameHint; }
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline void SetPropertyNameHint(const Aws::String& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = value; }
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline void SetPropertyNameHint(Aws::String&& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = std::move(value); }
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline void SetPropertyNameHint(const char* value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint.assign(value); }
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline PropertyNameQuery& WithPropertyNameHint(const Aws::String& value) { SetPropertyNameHint(value); return *this;}
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline PropertyNameQuery& WithPropertyNameHint(Aws::String&& value) { SetPropertyNameHint(std::move(value)); return *this;}
 
     /**
-     * <p>The hyperparameter, metric, and tag key property names that begin with the
-     * specified hint.</p>
+     * <p>Text that is part of a property's name. The property names of hyperparameter,
+     * metric, and tag key names that begin with the specified text in the
+     * <code>PropertyNameHint</code>.</p>
      */
     inline PropertyNameQuery& WithPropertyNameHint(const char* value) { SetPropertyNameHint(value); return *this;}
 

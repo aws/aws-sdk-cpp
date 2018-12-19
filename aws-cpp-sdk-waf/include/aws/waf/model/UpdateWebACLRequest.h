@@ -142,7 +142,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -159,7 +159,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -176,7 +176,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -193,7 +193,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -210,7 +210,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -227,7 +227,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:
@@ -244,7 +244,7 @@ namespace Model
      * <code>Action</code>, <code>OverrideAction</code>, <code>Priority</code>,
      * <code>RuleId</code>, and <code>Type</code>.
      * <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use
+     * <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use
      * <code>ActivatedRule|Action</code>. For all other update requests,
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>. </p> </li> <li> <p> <a>WafAction</a>:

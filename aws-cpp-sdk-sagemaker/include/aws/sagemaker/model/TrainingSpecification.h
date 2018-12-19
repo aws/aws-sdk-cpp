@@ -332,43 +332,43 @@ namespace Model
 
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline const Aws::Vector<HyperParameterTuningJobObjective>& GetSupportedTuningJobObjectiveMetrics() const{ return m_supportedTuningJobObjectiveMetrics; }
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline void SetSupportedTuningJobObjectiveMetrics(const Aws::Vector<HyperParameterTuningJobObjective>& value) { m_supportedTuningJobObjectiveMetricsHasBeenSet = true; m_supportedTuningJobObjectiveMetrics = value; }
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline void SetSupportedTuningJobObjectiveMetrics(Aws::Vector<HyperParameterTuningJobObjective>&& value) { m_supportedTuningJobObjectiveMetricsHasBeenSet = true; m_supportedTuningJobObjectiveMetrics = std::move(value); }
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline TrainingSpecification& WithSupportedTuningJobObjectiveMetrics(const Aws::Vector<HyperParameterTuningJobObjective>& value) { SetSupportedTuningJobObjectiveMetrics(value); return *this;}
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline TrainingSpecification& WithSupportedTuningJobObjectiveMetrics(Aws::Vector<HyperParameterTuningJobObjective>&& value) { SetSupportedTuningJobObjectiveMetrics(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline TrainingSpecification& AddSupportedTuningJobObjectiveMetrics(const HyperParameterTuningJobObjective& value) { m_supportedTuningJobObjectiveMetricsHasBeenSet = true; m_supportedTuningJobObjectiveMetrics.push_back(value); return *this; }
 
     /**
-     * <p>A list of the metrics that the alogorithm emits that can be used as the
+     * <p>A list of the metrics that the algorithm emits that can be used as the
      * objective metric in a hyperparameter tuning job.</p>
      */
     inline TrainingSpecification& AddSupportedTuningJobObjectiveMetrics(HyperParameterTuningJobObjective&& value) { m_supportedTuningJobObjectiveMetricsHasBeenSet = true; m_supportedTuningJobObjectiveMetrics.push_back(std::move(value)); return *this; }

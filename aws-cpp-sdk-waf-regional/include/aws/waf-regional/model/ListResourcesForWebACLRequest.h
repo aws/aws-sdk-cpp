@@ -89,31 +89,31 @@ namespace Model
 
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}

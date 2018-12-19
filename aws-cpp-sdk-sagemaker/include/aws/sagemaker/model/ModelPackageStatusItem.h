@@ -51,43 +51,43 @@ namespace Model
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline ModelPackageStatusItem& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline ModelPackageStatusItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the model package for which the overall status is being
-     * repoorted.</p>
+     * reported.</p>
      */
     inline ModelPackageStatusItem& WithName(const char* value) { SetName(value); return *this;}
 
@@ -119,37 +119,37 @@ namespace Model
 
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline ModelPackageStatusItem& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline ModelPackageStatusItem& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason for failure, if the overall status is a failed state.</p>
+     * <p>if the overall status is <code>Failed</code>, the reason for the failure.</p>
      */
     inline ModelPackageStatusItem& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
