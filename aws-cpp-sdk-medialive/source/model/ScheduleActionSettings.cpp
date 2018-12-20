@@ -29,6 +29,7 @@ namespace Model
 {
 
 ScheduleActionSettings::ScheduleActionSettings() : 
+    m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
@@ -39,6 +40,7 @@ ScheduleActionSettings::ScheduleActionSettings() :
 }
 
 ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
+    m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
@@ -51,6 +53,13 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
 
 ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hlsTimedMetadataSettings"))
+  {
+    m_hlsTimedMetadataSettings = jsonValue.GetObject("hlsTimedMetadataSettings");
+
+    m_hlsTimedMetadataSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputSwitchSettings"))
   {
     m_inputSwitchSettings = jsonValue.GetObject("inputSwitchSettings");
@@ -99,6 +108,12 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 JsonValue ScheduleActionSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hlsTimedMetadataSettingsHasBeenSet)
+  {
+   payload.WithObject("hlsTimedMetadataSettings", m_hlsTimedMetadataSettings.Jsonize());
+
+  }
 
   if(m_inputSwitchSettingsHasBeenSet)
   {

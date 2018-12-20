@@ -61,6 +61,8 @@
 #include <aws/comprehend/model/StopEntitiesDetectionJobResult.h>
 #include <aws/comprehend/model/StopKeyPhrasesDetectionJobResult.h>
 #include <aws/comprehend/model/StopSentimentDetectionJobResult.h>
+#include <aws/comprehend/model/StopTrainingDocumentClassifierResult.h>
+#include <aws/comprehend/model/StopTrainingEntityRecognizerResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -141,6 +143,8 @@ namespace Model
         class StopEntitiesDetectionJobRequest;
         class StopKeyPhrasesDetectionJobRequest;
         class StopSentimentDetectionJobRequest;
+        class StopTrainingDocumentClassifierRequest;
+        class StopTrainingEntityRecognizerRequest;
 
         typedef Aws::Utils::Outcome<BatchDetectDominantLanguageResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectDominantLanguageOutcome;
         typedef Aws::Utils::Outcome<BatchDetectEntitiesResult, Aws::Client::AWSError<ComprehendErrors>> BatchDetectEntitiesOutcome;
@@ -182,6 +186,8 @@ namespace Model
         typedef Aws::Utils::Outcome<StopEntitiesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopEntitiesDetectionJobOutcome;
         typedef Aws::Utils::Outcome<StopKeyPhrasesDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopKeyPhrasesDetectionJobOutcome;
         typedef Aws::Utils::Outcome<StopSentimentDetectionJobResult, Aws::Client::AWSError<ComprehendErrors>> StopSentimentDetectionJobOutcome;
+        typedef Aws::Utils::Outcome<StopTrainingDocumentClassifierResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingDocumentClassifierOutcome;
+        typedef Aws::Utils::Outcome<StopTrainingEntityRecognizerResult, Aws::Client::AWSError<ComprehendErrors>> StopTrainingEntityRecognizerOutcome;
 
         typedef std::future<BatchDetectDominantLanguageOutcome> BatchDetectDominantLanguageOutcomeCallable;
         typedef std::future<BatchDetectEntitiesOutcome> BatchDetectEntitiesOutcomeCallable;
@@ -223,6 +229,8 @@ namespace Model
         typedef std::future<StopEntitiesDetectionJobOutcome> StopEntitiesDetectionJobOutcomeCallable;
         typedef std::future<StopKeyPhrasesDetectionJobOutcome> StopKeyPhrasesDetectionJobOutcomeCallable;
         typedef std::future<StopSentimentDetectionJobOutcome> StopSentimentDetectionJobOutcomeCallable;
+        typedef std::future<StopTrainingDocumentClassifierOutcome> StopTrainingDocumentClassifierOutcomeCallable;
+        typedef std::future<StopTrainingEntityRecognizerOutcome> StopTrainingEntityRecognizerOutcomeCallable;
 } // namespace Model
 
   class ComprehendClient;
@@ -267,6 +275,8 @@ namespace Model
     typedef std::function<void(const ComprehendClient*, const Model::StopEntitiesDetectionJobRequest&, const Model::StopEntitiesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopEntitiesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopKeyPhrasesDetectionJobRequest&, const Model::StopKeyPhrasesDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopKeyPhrasesDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendClient*, const Model::StopSentimentDetectionJobRequest&, const Model::StopSentimentDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopSentimentDetectionJobResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StopTrainingDocumentClassifierRequest&, const Model::StopTrainingDocumentClassifierOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingDocumentClassifierResponseReceivedHandler;
+    typedef std::function<void(const ComprehendClient*, const Model::StopTrainingEntityRecognizerRequest&, const Model::StopTrainingEntityRecognizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingEntityRecognizerResponseReceivedHandler;
 
   /**
    * <p>Amazon Comprehend is an AWS service for gaining insight into the content of
@@ -462,8 +472,9 @@ namespace Model
          * <p>Creates a new document classifier that you can use to categorize documents.
          * To create a classifier you provide a set of training documents that labeled with
          * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. </p><p><h3>See
-         * Also:</h3>   <a
+         * it to categorize a set of labeled documents into the categories. For more
+         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          */
@@ -473,8 +484,9 @@ namespace Model
          * <p>Creates a new document classifier that you can use to categorize documents.
          * To create a classifier you provide a set of training documents that labeled with
          * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. </p><p><h3>See
-         * Also:</h3>   <a
+         * it to categorize a set of labeled documents into the categories. For more
+         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          *
@@ -486,8 +498,9 @@ namespace Model
          * <p>Creates a new document classifier that you can use to categorize documents.
          * To create a classifier you provide a set of training documents that labeled with
          * the categories that you want to use. After the classifier is trained you can use
-         * it to categorize a set of labeled documents into the categories. </p><p><h3>See
-         * Also:</h3>   <a
+         * it to categorize a set of labeled documents into the categories. For more
+         * information, see <a>how-document-classification</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDocumentClassifier">AWS
          * API Reference</a></p>
          *
@@ -1633,6 +1646,92 @@ namespace Model
          */
         virtual void StopSentimentDetectionJobAsync(const Model::StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Stops a document classifier training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and put into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP body.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopTrainingDocumentClassifierOutcome StopTrainingDocumentClassifier(const Model::StopTrainingDocumentClassifierRequest& request) const;
+
+        /**
+         * <p>Stops a document classifier training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and put into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP body.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopTrainingDocumentClassifierOutcomeCallable StopTrainingDocumentClassifierCallable(const Model::StopTrainingDocumentClassifierRequest& request) const;
+
+        /**
+         * <p>Stops a document classifier training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and put into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP body.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopTrainingDocumentClassifierAsync(const Model::StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops an entity recognizer training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and putted into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP
+         * body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopTrainingEntityRecognizerOutcome StopTrainingEntityRecognizer(const Model::StopTrainingEntityRecognizerRequest& request) const;
+
+        /**
+         * <p>Stops an entity recognizer training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and putted into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP
+         * body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopTrainingEntityRecognizerOutcomeCallable StopTrainingEntityRecognizerCallable(const Model::StopTrainingEntityRecognizerRequest& request) const;
+
+        /**
+         * <p>Stops an entity recognizer training job while in progress.</p> <p>If the
+         * training job state is <code>TRAINING</code>, the job is marked for termination
+         * and put into the <code>STOP_REQUESTED</code> state. If the training job
+         * completes before it can be stopped, it is put into the <code>TRAINED</code>;
+         * otherwise the training job is stopped and putted into the <code>STOPPED</code>
+         * state and the service sends back an HTTP 200 response with an empty HTTP
+         * body.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopTrainingEntityRecognizerAsync(const Model::StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
       
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1678,6 +1777,8 @@ namespace Model
         void StopEntitiesDetectionJobAsyncHelper(const Model::StopEntitiesDetectionJobRequest& request, const StopEntitiesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopKeyPhrasesDetectionJobAsyncHelper(const Model::StopKeyPhrasesDetectionJobRequest& request, const StopKeyPhrasesDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopSentimentDetectionJobAsyncHelper(const Model::StopSentimentDetectionJobRequest& request, const StopSentimentDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopTrainingDocumentClassifierAsyncHelper(const Model::StopTrainingDocumentClassifierRequest& request, const StopTrainingDocumentClassifierResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopTrainingEntityRecognizerAsyncHelper(const Model::StopTrainingEntityRecognizerRequest& request, const StopTrainingEntityRecognizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

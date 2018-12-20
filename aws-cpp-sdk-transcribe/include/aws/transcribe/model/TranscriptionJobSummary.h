@@ -38,9 +38,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of information about a transcription job. Note that en-AU,
-   * en-UK, and fr-CA languages are in preview and are only available to whitelisted
-   * customers.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides a summary of information about a transcription job. .</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary">AWS
    * API Reference</a></p>
    */

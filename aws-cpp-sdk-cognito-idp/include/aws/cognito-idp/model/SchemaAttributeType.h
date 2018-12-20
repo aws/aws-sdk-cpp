@@ -130,17 +130,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the value of the attribute can be changed.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
+     * user pool attribute that's mapped to an identity provider attribute, you must
+     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
+     * attributes when users sign in to your application through an identity provider.
+     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
+     * update the attribute. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline bool GetMutable() const{ return m_mutable; }
 
     /**
-     * <p>Specifies whether the value of the attribute can be changed.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
+     * user pool attribute that's mapped to an identity provider attribute, you must
+     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
+     * attributes when users sign in to your application through an identity provider.
+     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
+     * update the attribute. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline void SetMutable(bool value) { m_mutableHasBeenSet = true; m_mutable = value; }
 
     /**
-     * <p>Specifies whether the value of the attribute can be changed.</p>
+     * <p>Specifies whether the value of the attribute can be changed.</p> <p>For any
+     * user pool attribute that's mapped to an identity provider attribute, you must
+     * set this parameter to <code>true</code>. Amazon Cognito updates mapped
+     * attributes when users sign in to your application through an identity provider.
+     * If an attribute is immutable, Amazon Cognito throws an error when it attempts to
+     * update the attribute. For more information, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+     * Identity Provider Attribute Mappings for Your User Pool</a>.</p>
      */
     inline SchemaAttributeType& WithMutable(bool value) { SetMutable(value); return *this;}
 

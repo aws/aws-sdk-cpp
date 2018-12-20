@@ -121,7 +121,7 @@ namespace Model
 
 
     /**
-     * <p>The status of the document classifier. The the status is <code>TRAINED</code>
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
      * the classifier is ready to use. If the status is <code>FAILED</code> you can see
      * additional information about why the classifier wasn't trained in the
      * <code>Message</code> field.</p>
@@ -129,7 +129,7 @@ namespace Model
     inline const ModelStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the document classifier. The the status is <code>TRAINED</code>
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
      * the classifier is ready to use. If the status is <code>FAILED</code> you can see
      * additional information about why the classifier wasn't trained in the
      * <code>Message</code> field.</p>
@@ -137,7 +137,7 @@ namespace Model
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the document classifier. The the status is <code>TRAINED</code>
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
      * the classifier is ready to use. If the status is <code>FAILED</code> you can see
      * additional information about why the classifier wasn't trained in the
      * <code>Message</code> field.</p>
@@ -145,7 +145,7 @@ namespace Model
     inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the document classifier. The the status is <code>TRAINED</code>
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
      * the classifier is ready to use. If the status is <code>FAILED</code> you can see
      * additional information about why the classifier wasn't trained in the
      * <code>Message</code> field.</p>
@@ -153,7 +153,7 @@ namespace Model
     inline DocumentClassifierProperties& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the document classifier. The the status is <code>TRAINED</code>
+     * <p>The status of the document classifier. If the status is <code>TRAINED</code>
      * the classifier is ready to use. If the status is <code>FAILED</code> you can see
      * additional information about why the classifier wasn't trained in the
      * <code>Message</code> field.</p>

@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/HlsTimedMetadataScheduleActionSettings.h>
 #include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
@@ -50,6 +51,32 @@ namespace Model
     ScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     ScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Settings to emit HLS metadata
+     */
+    inline const HlsTimedMetadataScheduleActionSettings& GetHlsTimedMetadataSettings() const{ return m_hlsTimedMetadataSettings; }
+
+    /**
+     * Settings to emit HLS metadata
+     */
+    inline void SetHlsTimedMetadataSettings(const HlsTimedMetadataScheduleActionSettings& value) { m_hlsTimedMetadataSettingsHasBeenSet = true; m_hlsTimedMetadataSettings = value; }
+
+    /**
+     * Settings to emit HLS metadata
+     */
+    inline void SetHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings&& value) { m_hlsTimedMetadataSettingsHasBeenSet = true; m_hlsTimedMetadataSettings = std::move(value); }
+
+    /**
+     * Settings to emit HLS metadata
+     */
+    inline ScheduleActionSettings& WithHlsTimedMetadataSettings(const HlsTimedMetadataScheduleActionSettings& value) { SetHlsTimedMetadataSettings(value); return *this;}
+
+    /**
+     * Settings to emit HLS metadata
+     */
+    inline ScheduleActionSettings& WithHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings&& value) { SetHlsTimedMetadataSettings(std::move(value)); return *this;}
 
 
     /**
@@ -208,6 +235,9 @@ namespace Model
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { SetStaticImageDeactivateSettings(std::move(value)); return *this;}
 
   private:
+
+    HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
+    bool m_hlsTimedMetadataSettingsHasBeenSet;
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
     bool m_inputSwitchSettingsHasBeenSet;

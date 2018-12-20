@@ -46,32 +46,42 @@ namespace Model
 
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified
-     * status.</p>
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
      */
     inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified
-     * status.</p>
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
      */
     inline void SetStatus(const TranscriptionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified
-     * status.</p>
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
      */
     inline void SetStatus(TranscriptionJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified
-     * status.</p>
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
      */
     inline ListTranscriptionJobsRequest& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>When specified, returns only transcription jobs with the specified
-     * status.</p>
+     * <p>When specified, returns only transcription jobs with the specified status.
+     * Jobs are ordered by creation date, with the newest jobs returned first. If you
+     * don’t specify a status, Amazon Transcribe returns all transcription jobs ordered
+     * by creation date. </p>
      */
     inline ListTranscriptionJobsRequest& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 

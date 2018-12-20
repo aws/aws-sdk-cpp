@@ -33,7 +33,8 @@ namespace Model
     en_GB,
     de_DE,
     pt_BR,
-    fr_FR
+    fr_FR,
+    it_IT
   };
 
 namespace LanguageCodeMapper

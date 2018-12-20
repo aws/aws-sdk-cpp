@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * use a custom domain for your user pool. Otherwise, you can exclude this
      * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
      * information about the hosted domain and custom domains, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * use a custom domain for your user pool. Otherwise, you can exclude this
      * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
      * information about the hosted domain and custom domains, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * use a custom domain for your user pool. Otherwise, you can exclude this
      * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
      * information about the hosted domain and custom domains, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
@@ -153,7 +153,7 @@ namespace Model
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * use a custom domain for your user pool. Otherwise, you can exclude this
      * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
      * information about the hosted domain and custom domains, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>The configuration for a custom domain that hosts the sign-up and sign-in
      * webpages for your application.</p> <p>Provide this parameter only if you want to
-     * use own custom domain for your user pool. Otherwise, you can exclude this
+     * use a custom domain for your user pool. Otherwise, you can exclude this
      * parameter and use the Amazon Cognito hosted domain instead.</p> <p>For more
      * information about the hosted domain and custom domains, see <a
      * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html">Configuring

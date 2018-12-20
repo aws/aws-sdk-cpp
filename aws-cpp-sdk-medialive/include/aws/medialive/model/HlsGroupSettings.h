@@ -1111,32 +1111,32 @@ VOD
 
 
     /**
-     * When set to useInputSegmentation, the output segment or fragment points are set
-     * by the RAI markers from the input streams.
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
      */
     inline const HlsSegmentationMode& GetSegmentationMode() const{ return m_segmentationMode; }
 
     /**
-     * When set to useInputSegmentation, the output segment or fragment points are set
-     * by the RAI markers from the input streams.
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
      */
     inline void SetSegmentationMode(const HlsSegmentationMode& value) { m_segmentationModeHasBeenSet = true; m_segmentationMode = value; }
 
     /**
-     * When set to useInputSegmentation, the output segment or fragment points are set
-     * by the RAI markers from the input streams.
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
      */
     inline void SetSegmentationMode(HlsSegmentationMode&& value) { m_segmentationModeHasBeenSet = true; m_segmentationMode = std::move(value); }
 
     /**
-     * When set to useInputSegmentation, the output segment or fragment points are set
-     * by the RAI markers from the input streams.
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
      */
     inline HlsGroupSettings& WithSegmentationMode(const HlsSegmentationMode& value) { SetSegmentationMode(value); return *this;}
 
     /**
-     * When set to useInputSegmentation, the output segment or fragment points are set
-     * by the RAI markers from the input streams.
+     * useInputSegmentation has been deprecated. The configured segment size is always
+     * used.
      */
     inline HlsGroupSettings& WithSegmentationMode(HlsSegmentationMode&& value) { SetSegmentationMode(std::move(value)); return *this;}
 

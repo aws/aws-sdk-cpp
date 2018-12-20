@@ -32,6 +32,7 @@
 #include <aws/medialive/model/H264ScanType.h>
 #include <aws/medialive/model/H264SceneChangeDetect.h>
 #include <aws/medialive/model/H264SpatialAq.h>
+#include <aws/medialive/model/H264SubGopLength.h>
 #include <aws/medialive/model/H264Syntax.h>
 #include <aws/medialive/model/H264TemporalAq.h>
 #include <aws/medialive/model/H264TimecodeInsertionBehavior.h>
@@ -1032,6 +1033,37 @@ This field is optional; when
 
 
     /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic,
+     * optimize the number of B-frames used for each sub-GOP to improve visual quality.
+     */
+    inline const H264SubGopLength& GetSubgopLength() const{ return m_subgopLength; }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic,
+     * optimize the number of B-frames used for each sub-GOP to improve visual quality.
+     */
+    inline void SetSubgopLength(const H264SubGopLength& value) { m_subgopLengthHasBeenSet = true; m_subgopLength = value; }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic,
+     * optimize the number of B-frames used for each sub-GOP to improve visual quality.
+     */
+    inline void SetSubgopLength(H264SubGopLength&& value) { m_subgopLengthHasBeenSet = true; m_subgopLength = std::move(value); }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic,
+     * optimize the number of B-frames used for each sub-GOP to improve visual quality.
+     */
+    inline H264Settings& WithSubgopLength(const H264SubGopLength& value) { SetSubgopLength(value); return *this;}
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic,
+     * optimize the number of B-frames used for each sub-GOP to improve visual quality.
+     */
+    inline H264Settings& WithSubgopLength(H264SubGopLength&& value) { SetSubgopLength(std::move(value)); return *this;}
+
+
+    /**
      * Produces a bitstream compliant with SMPTE RP-2027.
      */
     inline const H264Syntax& GetSyntax() const{ return m_syntax; }
@@ -1233,6 +1265,9 @@ This field is optional; when
 
     H264SpatialAq m_spatialAq;
     bool m_spatialAqHasBeenSet;
+
+    H264SubGopLength m_subgopLength;
+    bool m_subgopLengthHasBeenSet;
 
     H264Syntax m_syntax;
     bool m_syntaxHasBeenSet;

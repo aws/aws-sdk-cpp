@@ -237,6 +237,56 @@ namespace Model
 
 
     /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(const char* value) { SetErrorOutputPrefix(value); return *this;}
+
+
+    /**
      * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
      * object default values are used.</p>
      */
@@ -364,6 +414,9 @@ namespace Model
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
+    Aws::String m_errorOutputPrefix;
+    bool m_errorOutputPrefixHasBeenSet;
 
     BufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet;

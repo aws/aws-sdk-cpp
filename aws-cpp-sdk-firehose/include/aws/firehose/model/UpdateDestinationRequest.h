@@ -85,7 +85,7 @@ namespace Model
 
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -95,7 +95,7 @@ namespace Model
     inline const Aws::String& GetCurrentDeliveryStreamVersionId() const{ return m_currentDeliveryStreamVersionId; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -105,7 +105,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(const Aws::String& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -115,7 +115,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::move(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -125,7 +125,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(const char* value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId.assign(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -135,7 +135,7 @@ namespace Model
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const Aws::String& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -145,7 +145,7 @@ namespace Model
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is

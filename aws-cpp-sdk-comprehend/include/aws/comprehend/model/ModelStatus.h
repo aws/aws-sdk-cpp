@@ -29,6 +29,8 @@ namespace Model
     SUBMITTED,
     TRAINING,
     DELETING,
+    STOP_REQUESTED,
+    STOPPED,
     IN_ERROR,
     TRAINED
   };

@@ -165,31 +165,31 @@ namespace Model
 
     /**
      * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
-     * starting with this time stamp.</p>
+     * starting with this timestamp.</p>
      */
     inline const Aws::Utils::DateTime& GetDeliveryStartTimestamp() const{ return m_deliveryStartTimestamp; }
 
     /**
      * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
-     * starting with this time stamp.</p>
+     * starting with this timestamp.</p>
      */
     inline void SetDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = value; }
 
     /**
      * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
-     * starting with this time stamp.</p>
+     * starting with this timestamp.</p>
      */
     inline void SetDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { m_deliveryStartTimestampHasBeenSet = true; m_deliveryStartTimestamp = std::move(value); }
 
     /**
      * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
-     * starting with this time stamp.</p>
+     * starting with this timestamp.</p>
      */
     inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(const Aws::Utils::DateTime& value) { SetDeliveryStartTimestamp(value); return *this;}
 
     /**
      * <p>Kinesis Data Firehose starts retrieving records from the Kinesis data stream
-     * starting with this time stamp.</p>
+     * starting with this timestamp.</p>
      */
     inline KinesisStreamSourceDescription& WithDeliveryStartTimestamp(Aws::Utils::DateTime&& value) { SetDeliveryStartTimestamp(std::move(value)); return *this;}
 

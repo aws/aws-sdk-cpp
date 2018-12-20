@@ -305,7 +305,7 @@ namespace Model
 
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -315,7 +315,7 @@ namespace Model
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -325,7 +325,7 @@ namespace Model
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -335,7 +335,7 @@ namespace Model
     inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -345,7 +345,7 @@ namespace Model
     inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to the <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index

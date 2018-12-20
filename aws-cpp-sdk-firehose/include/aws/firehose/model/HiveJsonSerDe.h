@@ -53,97 +53,97 @@ namespace Model
 
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTimestampFormats() const{ return m_timestampFormats; }
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline void SetTimestampFormats(const Aws::Vector<Aws::String>& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats = value; }
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline void SetTimestampFormats(Aws::Vector<Aws::String>&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats = std::move(value); }
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline HiveJsonSerDe& WithTimestampFormats(const Aws::Vector<Aws::String>& value) { SetTimestampFormats(value); return *this;}
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline HiveJsonSerDe& WithTimestampFormats(Aws::Vector<Aws::String>&& value) { SetTimestampFormats(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline HiveJsonSerDe& AddTimestampFormats(const Aws::String& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(value); return *this; }
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline HiveJsonSerDe& AddTimestampFormats(Aws::String&& value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Indicates how you want Kinesis Data Firehose to parse the date and time
-     * stamps that may be present in your input data JSON. To specify these format
-     * strings, follow the pattern syntax of JodaTime's DateTimeFormat format strings.
-     * For more information, see <a
+     * <p>Indicates how you want Kinesis Data Firehose to parse the date and timestamps
+     * that may be present in your input data JSON. To specify these format strings,
+     * follow the pattern syntax of JodaTime's DateTimeFormat format strings. For more
+     * information, see <a
      * href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
      * DateTimeFormat</a>. You can also use the special value <code>millis</code> to
-     * parse time stamps in epoch milliseconds. If you don't specify a format, Kinesis
+     * parse timestamps in epoch milliseconds. If you don't specify a format, Kinesis
      * Data Firehose uses <code>java.sql.Timestamp::valueOf</code> by default.</p>
      */
     inline HiveJsonSerDe& AddTimestampFormats(const char* value) { m_timestampFormatsHasBeenSet = true; m_timestampFormats.push_back(value); return *this; }

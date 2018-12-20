@@ -103,6 +103,7 @@
 #include <aws/cognito-idp/model/UpdateUserAttributesResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolResult.h>
 #include <aws/cognito-idp/model/UpdateUserPoolClientResult.h>
+#include <aws/cognito-idp/model/UpdateUserPoolDomainResult.h>
 #include <aws/cognito-idp/model/VerifySoftwareTokenResult.h>
 #include <aws/cognito-idp/model/VerifyUserAttributeResult.h>
 #include <aws/core/NoResult.h>
@@ -239,6 +240,7 @@ namespace Model
         class UpdateUserAttributesRequest;
         class UpdateUserPoolRequest;
         class UpdateUserPoolClientRequest;
+        class UpdateUserPoolDomainRequest;
         class VerifySoftwareTokenRequest;
         class VerifyUserAttributeRequest;
 
@@ -335,6 +337,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateUserAttributesResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserAttributesOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolOutcome;
         typedef Aws::Utils::Outcome<UpdateUserPoolClientResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolClientOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserPoolDomainResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> UpdateUserPoolDomainOutcome;
         typedef Aws::Utils::Outcome<VerifySoftwareTokenResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifySoftwareTokenOutcome;
         typedef Aws::Utils::Outcome<VerifyUserAttributeResult, Aws::Client::AWSError<CognitoIdentityProviderErrors>> VerifyUserAttributeOutcome;
 
@@ -431,6 +434,7 @@ namespace Model
         typedef std::future<UpdateUserAttributesOutcome> UpdateUserAttributesOutcomeCallable;
         typedef std::future<UpdateUserPoolOutcome> UpdateUserPoolOutcomeCallable;
         typedef std::future<UpdateUserPoolClientOutcome> UpdateUserPoolClientOutcomeCallable;
+        typedef std::future<UpdateUserPoolDomainOutcome> UpdateUserPoolDomainOutcomeCallable;
         typedef std::future<VerifySoftwareTokenOutcome> VerifySoftwareTokenOutcomeCallable;
         typedef std::future<VerifyUserAttributeOutcome> VerifyUserAttributeOutcomeCallable;
 } // namespace Model
@@ -530,6 +534,7 @@ namespace Model
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserAttributesRequest&, const Model::UpdateUserAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserAttributesResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolRequest&, const Model::UpdateUserPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolClientRequest&, const Model::UpdateUserPoolClientOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolClientResponseReceivedHandler;
+    typedef std::function<void(const CognitoIdentityProviderClient*, const Model::UpdateUserPoolDomainRequest&, const Model::UpdateUserPoolDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserPoolDomainResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifySoftwareTokenRequest&, const Model::VerifySoftwareTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifySoftwareTokenResponseReceivedHandler;
     typedef std::function<void(const CognitoIdentityProviderClient*, const Model::VerifyUserAttributeRequest&, const Model::VerifyUserAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > VerifyUserAttributeResponseReceivedHandler;
 
@@ -3372,6 +3377,88 @@ namespace Model
         virtual void UpdateUserPoolClientAsync(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for
+         * your user pool.</p> <p>You can use this operation to provide the Amazon Resource
+         * Name (ARN) of a new certificate to Amazon Cognito. You cannot use it to change
+         * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
+         * Cognito hosted UI, which provides sign-up and sign-in pages for your
+         * application. When you set up a custom domain, you provide a certificate that you
+         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * operation to change the certificate that you applied to your custom domain.</p>
+         * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
+         * When you renew your existing certificate in ACM, the ARN for your certificate
+         * remains the same, and your custom domain uses the new certificate
+         * automatically.</p> <p>However, if you replace your existing certificate with a
+         * new one, ACM gives the new certificate a new ARN. To apply the new certificate
+         * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
+         * you add your new certificate in ACM, you must choose US East (N. Virginia) as
+         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
+         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
+         * more information about adding a custom domain to your user pool, see <a
+         * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+         * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUserPoolDomainOutcome UpdateUserPoolDomain(const Model::UpdateUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for
+         * your user pool.</p> <p>You can use this operation to provide the Amazon Resource
+         * Name (ARN) of a new certificate to Amazon Cognito. You cannot use it to change
+         * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
+         * Cognito hosted UI, which provides sign-up and sign-in pages for your
+         * application. When you set up a custom domain, you provide a certificate that you
+         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * operation to change the certificate that you applied to your custom domain.</p>
+         * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
+         * When you renew your existing certificate in ACM, the ARN for your certificate
+         * remains the same, and your custom domain uses the new certificate
+         * automatically.</p> <p>However, if you replace your existing certificate with a
+         * new one, ACM gives the new certificate a new ARN. To apply the new certificate
+         * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
+         * you add your new certificate in ACM, you must choose US East (N. Virginia) as
+         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
+         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
+         * more information about adding a custom domain to your user pool, see <a
+         * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+         * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateUserPoolDomainOutcomeCallable UpdateUserPoolDomainCallable(const Model::UpdateUserPoolDomainRequest& request) const;
+
+        /**
+         * <p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for
+         * your user pool.</p> <p>You can use this operation to provide the Amazon Resource
+         * Name (ARN) of a new certificate to Amazon Cognito. You cannot use it to change
+         * the domain for a user pool.</p> <p>A custom domain is used to host the Amazon
+         * Cognito hosted UI, which provides sign-up and sign-in pages for your
+         * application. When you set up a custom domain, you provide a certificate that you
+         * manage with AWS Certificate Manager (ACM). When necessary, you can use this
+         * operation to change the certificate that you applied to your custom domain.</p>
+         * <p>Usually, this is unnecessary following routine certificate renewal with ACM.
+         * When you renew your existing certificate in ACM, the ARN for your certificate
+         * remains the same, and your custom domain uses the new certificate
+         * automatically.</p> <p>However, if you replace your existing certificate with a
+         * new one, ACM gives the new certificate a new ARN. To apply the new certificate
+         * to your custom domain, you must provide this ARN to Amazon Cognito.</p> <p>When
+         * you add your new certificate in ACM, you must choose US East (N. Virginia) as
+         * the AWS Region.</p> <p>After you submit your request, Amazon Cognito requires up
+         * to 1 hour to distribute your new certificate to your custom domain.</p> <p>For
+         * more information about adding a custom domain to your user pool, see <a
+         * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+         * Your Own Domain for the Hosted UI</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateUserPoolDomainAsync(const Model::UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Use this API to register a user's entered TOTP code and mark the user's
          * software token MFA status as "verified" if successful. The request takes an
          * access token or a session string, but not both.</p><p><h3>See Also:</h3>   <a
@@ -3528,6 +3615,7 @@ namespace Model
         void UpdateUserAttributesAsyncHelper(const Model::UpdateUserAttributesRequest& request, const UpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolAsyncHelper(const Model::UpdateUserPoolRequest& request, const UpdateUserPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserPoolClientAsyncHelper(const Model::UpdateUserPoolClientRequest& request, const UpdateUserPoolClientResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateUserPoolDomainAsyncHelper(const Model::UpdateUserPoolDomainRequest& request, const UpdateUserPoolDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifySoftwareTokenAsyncHelper(const Model::VerifySoftwareTokenRequest& request, const VerifySoftwareTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void VerifyUserAttributeAsyncHelper(const Model::VerifyUserAttributeRequest& request, const VerifyUserAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

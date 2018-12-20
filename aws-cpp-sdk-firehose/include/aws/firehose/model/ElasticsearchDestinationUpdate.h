@@ -137,7 +137,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -148,7 +148,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -159,7 +159,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -192,7 +192,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -203,7 +203,7 @@ namespace Model
      * for <code>DescribeElasticsearchDomain</code>,
      * <code>DescribeElasticsearchDomains</code>, and
      * <code>DescribeElasticsearchDomainConfig</code> after assuming the IAM role
-     * specified in <b>RoleARN</b>. For more information, see <a
+     * specified in <code>RoleARN</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
@@ -304,7 +304,7 @@ namespace Model
 
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -314,7 +314,7 @@ namespace Model
     inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -324,7 +324,7 @@ namespace Model
     inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -334,7 +334,7 @@ namespace Model
     inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -344,7 +344,7 @@ namespace Model
     inline ElasticsearchDestinationUpdate& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
 
     /**
-     * <p>The Elasticsearch index rotation period. Index rotation appends a time stamp
+     * <p>The Elasticsearch index rotation period. Index rotation appends a timestamp
      * to <code>IndexName</code> to facilitate the expiration of old data. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index
@@ -356,31 +356,31 @@ namespace Model
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
      */
     inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
      */
     inline void SetBufferingHints(const ElasticsearchBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
      */
     inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
      */
     inline ElasticsearchDestinationUpdate& WithBufferingHints(const ElasticsearchBufferingHints& value) { SetBufferingHints(value); return *this;}
 
     /**
      * <p>The buffering options. If no value is specified,
-     * <b>ElasticsearchBufferingHints</b> object default values are used. </p>
+     * <code>ElasticsearchBufferingHints</code> object default values are used. </p>
      */
     inline ElasticsearchDestinationUpdate& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
 
