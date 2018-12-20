@@ -2,7 +2,7 @@ if(${TARGET_ARCH} STREQUAL ANDROID)
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_SHA}
+        GIT_TAG ${AWS_C_COMMON_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -21,7 +21,7 @@ elseif(MSVC)
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_SHA}
+        GIT_TAG ${AWS_C_COMMON_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -35,7 +35,7 @@ else()
     ExternalProject_Add(AwsCCommon
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_C_COMMON_URL}
-        GIT_TAG ${AWS_C_COMMON_SHA}
+        GIT_TAG ${AWS_C_COMMON_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS

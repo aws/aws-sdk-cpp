@@ -2,7 +2,7 @@ if(${TARGET_ARCH} STREQUAL ANDROID)
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_SHA}
+        GIT_TAG ${AWS_EVENT_STREAM_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -21,7 +21,7 @@ elseif(MSVC)
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_SHA}
+        GIT_TAG ${AWS_EVENT_STREAM_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
@@ -36,7 +36,7 @@ else()
     ExternalProject_Add(AwsCEventStream
         PREFIX ${AWS_DEPS_BUILD_DIR}
         GIT_REPOSITORY ${AWS_EVENT_STREAM_URL}
-        GIT_TAG ${AWS_EVENT_STREAM_SHA}
+        GIT_TAG ${AWS_EVENT_STREAM_TAG}
         BUILD_IN_SOURCE 0
         UPDATE_COMMAND ""
         CMAKE_ARGS
