@@ -18,6 +18,7 @@
 #include <aws/sms-voice/model/CloudWatchLogsDestination.h>
 #include <aws/sms-voice/model/KinesisFirehoseDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sms-voice/model/SnsDestination.h>
 #include <aws/sms-voice/model/EventType.h>
 #include <utility>
 
@@ -125,6 +126,22 @@ namespace Model
     
     inline EventDestinationDefinition& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const SnsDestination& GetSnsDestination() const{ return m_snsDestination; }
+
+    
+    inline void SetSnsDestination(const SnsDestination& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = value; }
+
+    
+    inline void SetSnsDestination(SnsDestination&& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = std::move(value); }
+
+    
+    inline EventDestinationDefinition& WithSnsDestination(const SnsDestination& value) { SetSnsDestination(value); return *this;}
+
+    
+    inline EventDestinationDefinition& WithSnsDestination(SnsDestination&& value) { SetSnsDestination(std::move(value)); return *this;}
+
   private:
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
@@ -138,6 +155,9 @@ namespace Model
 
     Aws::Vector<EventType> m_matchingEventTypes;
     bool m_matchingEventTypesHasBeenSet;
+
+    SnsDestination m_snsDestination;
+    bool m_snsDestinationHasBeenSet;
   };
 
 } // namespace Model

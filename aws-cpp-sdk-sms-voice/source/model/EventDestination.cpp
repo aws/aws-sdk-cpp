@@ -34,7 +34,8 @@ EventDestination::EventDestination() :
     m_enabledHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
     m_matchingEventTypesHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_snsDestinationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ EventDestination::EventDestination(JsonView jsonValue) :
     m_enabledHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
     m_matchingEventTypesHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_snsDestinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ EventDestination& EventDestination::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsDestination"))
+  {
+    m_snsDestination = jsonValue.GetObject("SnsDestination");
+
+    m_snsDestinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +137,12 @@ JsonValue EventDestination::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_snsDestinationHasBeenSet)
+  {
+   payload.WithObject("SnsDestination", m_snsDestination.Jsonize());
 
   }
 

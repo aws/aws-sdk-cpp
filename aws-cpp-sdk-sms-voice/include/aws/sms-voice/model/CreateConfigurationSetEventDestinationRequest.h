@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * CreateConfigurationSetEventDestinationRequest<p><h3>See Also:</h3>   <a
+   * Create a new event destination in a configuration set.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestinationRequest">AWS
    * API Reference</a></p>
    */

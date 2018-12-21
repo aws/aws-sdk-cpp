@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about the start of connected service by a task
+   * <p>Contains details about the successful completion of a task
    * state.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSucceededEventDetails">AWS
    * API Reference</a></p>
@@ -49,116 +49,116 @@ namespace Model
 
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskSucceededEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
 
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline TaskSucceededEventDetails& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline TaskSucceededEventDetails& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
 
     /**
-     * <p>The full JSON response from a connected service when a task has succeeded.
-     * This response becomes the output of the related task.</p>
+     * <p>The full JSON response from a resource when a task has succeeded. This
+     * response becomes the output of the related task.</p>
      */
     inline TaskSucceededEventDetails& WithOutput(const char* value) { SetOutput(value); return *this;}
 

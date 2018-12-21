@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * An object that contains information about a event destination that sends data to
-   * Amazon Kinesis Data Firehose.<p><h3>See Also:</h3>   <a
+   * An object that contains information about an event destination that sends data
+   * to Amazon Kinesis Data Firehose.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/KinesisFirehoseDestination">AWS
    * API Reference</a></p>
    */

@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * An object that contains information about a event destination that sends data to
-   * Amazon CloudWatch Logs.<p><h3>See Also:</h3>   <a
+   * An object that contains information about an event destination that sends data
+   * to Amazon CloudWatch Logs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CloudWatchLogsDestination">AWS
    * API Reference</a></p>
    */

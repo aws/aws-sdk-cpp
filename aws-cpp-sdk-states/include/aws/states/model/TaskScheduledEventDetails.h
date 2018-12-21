@@ -49,131 +49,145 @@ namespace Model
 
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The action of the connected service called by a task state.</p>
+     * <p>The action of the resource called by a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The service name of the connected service in a task state.</p>
+     * <p>The service name of the resource in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithResource(const char* value) { SetResource(value); return *this;}
 
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline TaskScheduledEventDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline TaskScheduledEventDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The region of the scheduled task</p>
+     */
     inline TaskScheduledEventDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
 
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON data passed to the connected service referenced in a task state.</p>
+     * <p>The JSON data passed to the resource referenced in a task state.</p>
      */
     inline TaskScheduledEventDetails& WithParameters(const char* value) { SetParameters(value); return *this;}
 

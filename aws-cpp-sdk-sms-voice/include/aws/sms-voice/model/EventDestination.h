@@ -19,6 +19,7 @@
 #include <aws/sms-voice/model/KinesisFirehoseDestination.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sms-voice/model/SnsDestination.h>
 #include <aws/sms-voice/model/EventType.h>
 #include <utility>
 
@@ -162,6 +163,22 @@ namespace Model
      */
     inline EventDestination& WithName(const char* value) { SetName(value); return *this;}
 
+
+    
+    inline const SnsDestination& GetSnsDestination() const{ return m_snsDestination; }
+
+    
+    inline void SetSnsDestination(const SnsDestination& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = value; }
+
+    
+    inline void SetSnsDestination(SnsDestination&& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = std::move(value); }
+
+    
+    inline EventDestination& WithSnsDestination(const SnsDestination& value) { SetSnsDestination(value); return *this;}
+
+    
+    inline EventDestination& WithSnsDestination(SnsDestination&& value) { SetSnsDestination(std::move(value)); return *this;}
+
   private:
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
@@ -178,6 +195,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    SnsDestination m_snsDestination;
+    bool m_snsDestinationHasBeenSet;
   };
 
 } // namespace Model

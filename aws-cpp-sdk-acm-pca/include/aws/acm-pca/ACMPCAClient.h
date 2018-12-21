@@ -388,9 +388,9 @@ namespace Model
          * of problems such a network outage or backend AWS failure or other errors. A
          * failed CA can never return to the pending state. You must create a new CA. </p>
          * </li> <li> <p> <code>DELETED</code> - Your private CA is within the restoration
-         * period, after which it will be permanently deleted. The length of time remaining
-         * in the CA's restoration period will also be included in this operation's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * period, after which it is permanently deleted. The length of time remaining in
+         * the CA's restoration period is also included in this operation's output.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          */
@@ -411,9 +411,9 @@ namespace Model
          * of problems such a network outage or backend AWS failure or other errors. A
          * failed CA can never return to the pending state. You must create a new CA. </p>
          * </li> <li> <p> <code>DELETED</code> - Your private CA is within the restoration
-         * period, after which it will be permanently deleted. The length of time remaining
-         * in the CA's restoration period will also be included in this operation's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * period, after which it is permanently deleted. The length of time remaining in
+         * the CA's restoration period is also included in this operation's output.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          *
@@ -436,9 +436,9 @@ namespace Model
          * of problems such a network outage or backend AWS failure or other errors. A
          * failed CA can never return to the pending state. You must create a new CA. </p>
          * </li> <li> <p> <code>DELETED</code> - Your private CA is within the restoration
-         * period, after which it will be permanently deleted. The length of time remaining
-         * in the CA's restoration period will also be included in this operation's
-         * output.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * period, after which it is permanently deleted. The length of time remaining in
+         * the CA's restoration period is also included in this operation's output.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DescribeCertificateAuthority">AWS
          * API Reference</a></p>
          *

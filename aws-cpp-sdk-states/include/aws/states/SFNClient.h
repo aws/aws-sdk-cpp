@@ -34,11 +34,14 @@
 #include <aws/states/model/ListActivitiesResult.h>
 #include <aws/states/model/ListExecutionsResult.h>
 #include <aws/states/model/ListStateMachinesResult.h>
+#include <aws/states/model/ListTagsForResourceResult.h>
 #include <aws/states/model/SendTaskFailureResult.h>
 #include <aws/states/model/SendTaskHeartbeatResult.h>
 #include <aws/states/model/SendTaskSuccessResult.h>
 #include <aws/states/model/StartExecutionResult.h>
 #include <aws/states/model/StopExecutionResult.h>
+#include <aws/states/model/TagResourceResult.h>
+#include <aws/states/model/UntagResourceResult.h>
 #include <aws/states/model/UpdateStateMachineResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -93,11 +96,14 @@ namespace Model
         class ListActivitiesRequest;
         class ListExecutionsRequest;
         class ListStateMachinesRequest;
+        class ListTagsForResourceRequest;
         class SendTaskFailureRequest;
         class SendTaskHeartbeatRequest;
         class SendTaskSuccessRequest;
         class StartExecutionRequest;
         class StopExecutionRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateStateMachineRequest;
 
         typedef Aws::Utils::Outcome<CreateActivityResult, Aws::Client::AWSError<SFNErrors>> CreateActivityOutcome;
@@ -113,11 +119,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListActivitiesResult, Aws::Client::AWSError<SFNErrors>> ListActivitiesOutcome;
         typedef Aws::Utils::Outcome<ListExecutionsResult, Aws::Client::AWSError<SFNErrors>> ListExecutionsOutcome;
         typedef Aws::Utils::Outcome<ListStateMachinesResult, Aws::Client::AWSError<SFNErrors>> ListStateMachinesOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SFNErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<SendTaskFailureResult, Aws::Client::AWSError<SFNErrors>> SendTaskFailureOutcome;
         typedef Aws::Utils::Outcome<SendTaskHeartbeatResult, Aws::Client::AWSError<SFNErrors>> SendTaskHeartbeatOutcome;
         typedef Aws::Utils::Outcome<SendTaskSuccessResult, Aws::Client::AWSError<SFNErrors>> SendTaskSuccessOutcome;
         typedef Aws::Utils::Outcome<StartExecutionResult, Aws::Client::AWSError<SFNErrors>> StartExecutionOutcome;
         typedef Aws::Utils::Outcome<StopExecutionResult, Aws::Client::AWSError<SFNErrors>> StopExecutionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SFNErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SFNErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateStateMachineResult, Aws::Client::AWSError<SFNErrors>> UpdateStateMachineOutcome;
 
         typedef std::future<CreateActivityOutcome> CreateActivityOutcomeCallable;
@@ -133,11 +142,14 @@ namespace Model
         typedef std::future<ListActivitiesOutcome> ListActivitiesOutcomeCallable;
         typedef std::future<ListExecutionsOutcome> ListExecutionsOutcomeCallable;
         typedef std::future<ListStateMachinesOutcome> ListStateMachinesOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<SendTaskFailureOutcome> SendTaskFailureOutcomeCallable;
         typedef std::future<SendTaskHeartbeatOutcome> SendTaskHeartbeatOutcomeCallable;
         typedef std::future<SendTaskSuccessOutcome> SendTaskSuccessOutcomeCallable;
         typedef std::future<StartExecutionOutcome> StartExecutionOutcomeCallable;
         typedef std::future<StopExecutionOutcome> StopExecutionOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateStateMachineOutcome> UpdateStateMachineOutcomeCallable;
 } // namespace Model
 
@@ -156,11 +168,14 @@ namespace Model
     typedef std::function<void(const SFNClient*, const Model::ListActivitiesRequest&, const Model::ListActivitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListActivitiesResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::ListExecutionsRequest&, const Model::ListExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExecutionsResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::ListStateMachinesRequest&, const Model::ListStateMachinesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStateMachinesResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskFailureRequest&, const Model::SendTaskFailureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskFailureResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskHeartbeatRequest&, const Model::SendTaskHeartbeatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskHeartbeatResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::SendTaskSuccessRequest&, const Model::SendTaskSuccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendTaskSuccessResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::StartExecutionRequest&, const Model::StartExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExecutionResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::StopExecutionRequest&, const Model::StopExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopExecutionResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const SFNClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const SFNClient*, const Model::UpdateStateMachineRequest&, const Model::UpdateStateMachineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStateMachineResponseReceivedHandler;
 
   /**
@@ -549,9 +564,8 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See
-         * Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          */
@@ -565,9 +579,8 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See
-         * Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          *
@@ -583,9 +596,8 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See
-         * Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory">AWS
          * API Reference</a></p>
          *
@@ -598,9 +610,9 @@ namespace Model
          * there are more results available. The value of <code>nextToken</code> is a
          * unique pagination token for each page. Make the call again using the returned
          * token to retrieve the next page. Keep all other arguments unchanged. Each
-         * pagination token expires after 60 seconds. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
-         * is eventually consistent. The results are best effort and may not reflect very
+         * pagination token expires after 24 hours. Using an expired pagination token will
+         * return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
          * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
          * API Reference</a></p>
@@ -612,9 +624,9 @@ namespace Model
          * there are more results available. The value of <code>nextToken</code> is a
          * unique pagination token for each page. Make the call again using the returned
          * token to retrieve the next page. Keep all other arguments unchanged. Each
-         * pagination token expires after 60 seconds. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
-         * is eventually consistent. The results are best effort and may not reflect very
+         * pagination token expires after 24 hours. Using an expired pagination token will
+         * return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
          * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
          * API Reference</a></p>
@@ -628,9 +640,9 @@ namespace Model
          * there are more results available. The value of <code>nextToken</code> is a
          * unique pagination token for each page. Make the call again using the returned
          * token to retrieve the next page. Keep all other arguments unchanged. Each
-         * pagination token expires after 60 seconds. Using an expired pagination token
-         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
-         * is eventually consistent. The results are best effort and may not reflect very
+         * pagination token expires after 24 hours. Using an expired pagination token will
+         * return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is
+         * eventually consistent. The results are best effort and may not reflect very
          * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities">AWS
          * API Reference</a></p>
@@ -645,7 +657,7 @@ namespace Model
          * <code>nextToken</code> is returned, there are more results available. The value
          * of <code>nextToken</code> is a unique pagination token for each page. Make the
          * call again using the returned token to retrieve the next page. Keep all other
-         * arguments unchanged. Each pagination token expires after 60 seconds. Using an
+         * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
          * and may not reflect very recent updates and changes.</p> </note><p><h3>See
@@ -661,7 +673,7 @@ namespace Model
          * <code>nextToken</code> is returned, there are more results available. The value
          * of <code>nextToken</code> is a unique pagination token for each page. Make the
          * call again using the returned token to retrieve the next page. Keep all other
-         * arguments unchanged. Each pagination token expires after 60 seconds. Using an
+         * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
          * and may not reflect very recent updates and changes.</p> </note><p><h3>See
@@ -679,7 +691,7 @@ namespace Model
          * <code>nextToken</code> is returned, there are more results available. The value
          * of <code>nextToken</code> is a unique pagination token for each page. Make the
          * call again using the returned token to retrieve the next page. Keep all other
-         * arguments unchanged. Each pagination token expires after 60 seconds. Using an
+         * arguments unchanged. Each pagination token expires after 24 hours. Using an
          * expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>
          * <note> <p>This operation is eventually consistent. The results are best effort
          * and may not reflect very recent updates and changes.</p> </note><p><h3>See
@@ -696,10 +708,10 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This
-         * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
+         * is eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
          * API Reference</a></p>
          */
@@ -710,10 +722,10 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This
-         * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
+         * is eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
          * API Reference</a></p>
          *
@@ -726,16 +738,41 @@ namespace Model
          * returned, there are more results available. The value of <code>nextToken</code>
          * is a unique pagination token for each page. Make the call again using the
          * returned token to retrieve the next page. Keep all other arguments unchanged.
-         * Each pagination token expires after 60 seconds. Using an expired pagination
-         * token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This
-         * operation is eventually consistent. The results are best effort and may not
-         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
+         * Each pagination token expires after 24 hours. Using an expired pagination token
+         * will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation
+         * is eventually consistent. The results are best effort and may not reflect very
+         * recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListStateMachinesAsync(const Model::ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>List tags for a given resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used by workers to report that the task identified by the
@@ -914,6 +951,56 @@ namespace Model
         virtual void StopExecutionAsync(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Add a tag to a Step Functions resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Remove a tag from a Step Functions resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove a tag from a Step Functions resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Remove a tag from a Step Functions resource</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing state machine by modifying its <code>definition</code>
          * and/or <code>roleArn</code>. Running executions will continue to use the
          * previous <code>definition</code> and <code>roleArn</code>. You must include at
@@ -983,11 +1070,14 @@ namespace Model
         void ListActivitiesAsyncHelper(const Model::ListActivitiesRequest& request, const ListActivitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListExecutionsAsyncHelper(const Model::ListExecutionsRequest& request, const ListExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStateMachinesAsyncHelper(const Model::ListStateMachinesRequest& request, const ListStateMachinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendTaskFailureAsyncHelper(const Model::SendTaskFailureRequest& request, const SendTaskFailureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendTaskHeartbeatAsyncHelper(const Model::SendTaskHeartbeatRequest& request, const SendTaskHeartbeatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendTaskSuccessAsyncHelper(const Model::SendTaskSuccessRequest& request, const SendTaskSuccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExecutionAsyncHelper(const Model::StartExecutionRequest& request, const StartExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopExecutionAsyncHelper(const Model::StopExecutionRequest& request, const StopExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStateMachineAsyncHelper(const Model::UpdateStateMachineRequest& request, const UpdateStateMachineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
