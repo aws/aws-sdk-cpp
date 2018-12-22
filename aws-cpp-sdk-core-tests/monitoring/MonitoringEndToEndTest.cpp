@@ -192,6 +192,8 @@ protected:
 
         ASSERT_TRUE(json.View().ValueExists("Version"));
         ASSERT_EQ(Aws::Monitoring::DefaultMonitoring::GetVersion(), json.View().GetInteger("Version"));
+
+        ASSERT_TRUE(json.View().ValueExists("UserAgent"));
     }
 
     void DefaultMonitoringAttemptAssert(Aws::Utils::Json::JsonValue& json, Aws::Http::HttpResponseCode responseCode, const Aws::String& region)
@@ -207,13 +209,11 @@ protected:
         ASSERT_TRUE(json.View().ValueExists("Fqdn"));
         ASSERT_STREQ("domain.com", json.View().GetString("Fqdn").c_str());
 
-        ASSERT_TRUE(json.View().ValueExists("UserAgent"));
-
         ASSERT_TRUE(json.View().ValueExists("HttpStatusCode"));
         ASSERT_EQ(static_cast<int>(responseCode), json.View().GetInteger("HttpStatusCode"));
     }
 
-    void DefaultMonitoringApiCallAssert(Aws::Utils::Json::JsonValue& json, const Aws::String& region, int attemptCount, int maxRetriesExceeded)
+    void DefaultMonitoringApiCallAssert(Aws::Utils::Json::JsonValue& json, Aws::Http::HttpResponseCode responseCode, const Aws::String& region, int attemptCount, int maxRetriesExceeded)
     {
         ASSERT_TRUE(json.View().ValueExists("Latency"));
         ASSERT_TRUE(json.View().ValueExists("AttemptCount"));
@@ -222,6 +222,9 @@ protected:
         ASSERT_STREQ(region.c_str(), json.View().GetString("Region").c_str());
         ASSERT_TRUE(json.View().ValueExists("MaxRetriesExceeded"));
         ASSERT_EQ(maxRetriesExceeded, json.View().GetInteger("MaxRetriesExceeded"));
+        
+        ASSERT_TRUE(json.View().ValueExists("FinalHttpStatusCode"));
+        ASSERT_EQ(static_cast<int>(responseCode), json.View().GetInteger("FinalHttpStatusCode"));
     }
 };
 
@@ -260,15 +263,15 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbSingleAttemptSucceeded)
     Aws::Utils::Json::JsonValue attempt(results[0]);
     Aws::Utils::Json::JsonValue api(results[1]);
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert.
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert.
     ASSERT_EQ(12u, attempt.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attempt, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attempt, HttpResponseCode::OK, Aws::Region::US_EAST_1);
 
-    // 6 common items in CommonAssert + 4 api required items in ApiCallAssert
-    ASSERT_EQ(10u, api.View().GetAllObjects().size());
+    // 7 common items in CommonAssert + 5 api required items in ApiCallAssert
+    ASSERT_EQ(12u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, Aws::Region::US_EAST_1, 1/*AttemptCount*/, 0/*maxRetriesExceeded*/);
+    DefaultMonitoringApiCallAssert(api, HttpResponseCode::OK, Aws::Region::US_EAST_1, 1/*AttemptCount*/, 0/*maxRetriesExceeded*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attempt.View().GetString("Timestamp"));
     ASSERT_GE(api.View().GetInt64("Latency"), attempt.View().GetInt64("AttemptLatency"));
@@ -311,22 +314,24 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceed
     Aws::Utils::Json::JsonValue attemptSuccess(results[1]);
     Aws::Utils::Json::JsonValue api(results[2]);
     
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert + 1 AwsExceptionMessage
-    ASSERT_EQ(13u, attemptFail.View().GetAllObjects().size());
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert + 1 AwsException + 1 AwsExceptionMessage
+    ASSERT_EQ(14u, attemptFail.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptFail, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptFail, HttpResponseCode::BAD_REQUEST, Aws::Region::US_WEST_2);
+    ASSERT_TRUE(attemptFail.View().ValueExists("AwsException"));
+    ASSERT_STREQ("ProvisionedThroughputExceededException", attemptFail.View().GetString("AwsException").c_str());
     ASSERT_TRUE(attemptFail.View().ValueExists("AwsExceptionMessage"));
-    ASSERT_STREQ("ProvisionedThroughputExceededException:BlahBlah", attemptFail.View().GetString("AwsExceptionMessage").c_str());
+    ASSERT_STREQ("BlahBlah", attemptFail.View().GetString("AwsExceptionMessage").c_str());
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert
     ASSERT_EQ(12u, attemptSuccess.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptSuccess, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptSuccess, HttpResponseCode::OK, Aws::Region::US_WEST_2);
 
-    // 6 common items in CommonAssert + 4 api required items in ApiCallAssert
-    ASSERT_EQ(10u, api.View().GetAllObjects().size());
+    // 7 common items in CommonAssert + 5 api required items in ApiCallAssert
+    ASSERT_EQ(12u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 0/*maxRetriesExceeded*/);
+    DefaultMonitoringApiCallAssert(api, HttpResponseCode::OK, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 0/*maxRetriesExceeded*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attemptFail.View().GetString("Timestamp"));
     ASSERT_LE(api.View().GetString("Timestamp"), attemptSuccess.View().GetString("Timestamp"));
@@ -370,22 +375,22 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenSucceeded)
     Aws::Utils::Json::JsonValue attemptSuccess(results[1]);
     Aws::Utils::Json::JsonValue api(results[2]);
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert + 1 AwsExceptionMessage
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert + 1 SdkExceptionMessage
     ASSERT_EQ(13u, attemptFail.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptFail, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptFail, HttpResponseCode::BAD_REQUEST, Aws::Region::US_WEST_2);
-    ASSERT_TRUE(attemptFail.View().ValueExists("ConnectionErrorMessage"));
-    ASSERT_STREQ("Can't resolve DNS", attemptFail.View().GetString("ConnectionErrorMessage").c_str());
+    ASSERT_TRUE(attemptFail.View().ValueExists("SdkExceptionMessage"));
+    ASSERT_STREQ("Can't resolve DNS", attemptFail.View().GetString("SdkExceptionMessage").c_str());
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert
     ASSERT_EQ(12u, attemptSuccess.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptSuccess, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptSuccess, HttpResponseCode::OK, Aws::Region::US_WEST_2);
 
-    // 6 common items in CommonAssert + 4 api required items in ApiCallAssert
-    ASSERT_EQ(10u, api.View().GetAllObjects().size());
+    // 7 common items in CommonAssert + 5 api required items in ApiCallAssert
+    ASSERT_EQ(12u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 0/*maxRetriesExceeded*/);
+    DefaultMonitoringApiCallAssert(api, HttpResponseCode::OK, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 0/*maxRetriesExceeded*/);
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attemptFail.View().GetString("Timestamp"));
     ASSERT_LE(api.View().GetString("Timestamp"), attemptSuccess.View().GetString("Timestamp"));
@@ -431,26 +436,27 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockS3TwoAttemptsFailedThenFailed)
     Aws::Utils::Json::JsonValue attemptFail2(results[1]);
     Aws::Utils::Json::JsonValue api(results[2]);
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert + 1 AwsExceptionMessage
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert + 1 SdkExceptionMessage
     ASSERT_EQ(13u, attemptFail.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptFail, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptFail, HttpResponseCode::BAD_REQUEST, Aws::Region::US_WEST_2);
-    ASSERT_TRUE(attemptFail.View().ValueExists("ConnectionErrorMessage"));
-    ASSERT_STREQ("Can't resolve DNS", attemptFail.View().GetString("ConnectionErrorMessage").c_str());
+    ASSERT_TRUE(attemptFail.View().ValueExists("SdkExceptionMessage"));
+    ASSERT_STREQ("Can't resolve DNS", attemptFail.View().GetString("SdkExceptionMessage").c_str());
 
-    // 6 common items in CommonAssert + 6 attempt requierd items for attempt in AttemptAssert + 1 AwsExceptionMessage
+    // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert + 1 SdkExceptionMessage
     ASSERT_EQ(13u, attemptFail2.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptFail2, request.GetServiceRequestName(), "ApiCallAttempt");
     DefaultMonitoringAttemptAssert(attemptFail2, HttpResponseCode::BAD_REQUEST, Aws::Region::US_WEST_2);
-    ASSERT_TRUE(attemptFail2.View().ValueExists("ConnectionErrorMessage"));
-    ASSERT_STREQ("Can't connect to destination", attemptFail2.View().GetString("ConnectionErrorMessage").c_str());
+    ASSERT_TRUE(attemptFail2.View().ValueExists("SdkExceptionMessage"));
+    ASSERT_STREQ("Can't connect to destination", attemptFail2.View().GetString("SdkExceptionMessage").c_str());
 
 
-    // 6 common items in CommonAssert + 4 api required items in ApiCallAssert
-    ASSERT_EQ(10u, api.View().GetAllObjects().size());
+    // 7 common items in CommonAssert + 5 api required items in ApiCallAssert + 1 FinalSdkExceptionMessage
+    ASSERT_EQ(13u, api.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(api, request.GetServiceRequestName(), "ApiCall");
-    DefaultMonitoringApiCallAssert(api, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 1/*maxRetriesExceeded*/);
-
+    DefaultMonitoringApiCallAssert(api, HttpResponseCode::BAD_REQUEST, Aws::Region::US_WEST_2, 2/*AttemptCount*/, 1/*maxRetriesExceeded*/);
+    ASSERT_TRUE(api.View().ValueExists("FinalSdkExceptionMessage"));
+    ASSERT_STREQ("Can't connect to destination", api.View().GetString("FinalSdkExceptionMessage").c_str());
 
     ASSERT_EQ(api.View().GetString("Timestamp"), attemptFail.View().GetString("Timestamp"));
     ASSERT_LE(api.View().GetString("Timestamp"), attemptFail2.View().GetString("Timestamp"));
