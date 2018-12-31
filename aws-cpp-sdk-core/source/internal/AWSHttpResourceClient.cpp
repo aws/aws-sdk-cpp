@@ -171,7 +171,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
             "Getting default credentials for ec2 instance");
     Aws::String credentialsString = GetResource(EC2_SECURITY_CREDENTIALS_RESOURCE);
 
-    if (credentialsString.empty()) return "";
+    if (credentialsString.empty()) return {};
     
     Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
@@ -184,7 +184,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     {
         AWS_LOGSTREAM_WARN(m_logtag.c_str(), 
                 "Initial call to ec2Metadataservice to get credentials failed");
-        return "";
+        return {};
     }
 
     Aws::StringStream ss;
@@ -203,7 +203,7 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
     {
         AWS_LOGSTREAM_INFO(m_logtag.c_str() ,
                 "Unable to pull region from instance metadata service ");
-        return "";
+        return {};
     }
     
     Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());

@@ -57,14 +57,14 @@ Aws::String ${typeInfo.className}::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 #else
 #set($useRequiredField = true)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
   return payloadDoc.ConvertToString();
 #end
 #else
-  return "";
+  return {};
 #end
 }
 

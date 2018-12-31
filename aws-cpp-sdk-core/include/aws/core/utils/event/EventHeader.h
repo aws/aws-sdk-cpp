@@ -200,7 +200,7 @@ namespace Aws
                     if (m_eventHeaderType != EventHeaderType::STRING)
                     {
                         AWS_LOGSTREAM_ERROR(CLASS_TAG, "Expected event header type is STRING, but encountered " << GetNameForEventHeaderType(m_eventHeaderType));
-                        return "";
+                        return {};
                     }
                     return Aws::String(reinterpret_cast<char*>(m_eventHeaderVariableLengthValue.GetUnderlyingData()), m_eventHeaderVariableLengthValue.GetLength());
                 }

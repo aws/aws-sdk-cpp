@@ -143,7 +143,7 @@ Aws::String ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory()
     }
     else
     {
-        return "";
+        return {};
     }
 }
 

@@ -60,7 +60,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   return payloadDoc.ConvertToString();
 #end
 #else
-  return "";
+  return {};
 #end
 }
 

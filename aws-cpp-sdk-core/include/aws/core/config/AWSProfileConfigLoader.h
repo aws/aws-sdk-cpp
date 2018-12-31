@@ -50,7 +50,7 @@ namespace Aws
             inline const Aws::String GetValue(const Aws::String& key) const
             {
                 auto iter = m_allKeyValPairs.find(key);
-                if (iter == m_allKeyValPairs.end()) return "";
+                if (iter == m_allKeyValPairs.end()) return {};
                 return iter->second;
             }
 

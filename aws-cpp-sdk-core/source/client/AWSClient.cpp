@@ -490,7 +490,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
@@ -506,7 +506,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const A
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
@@ -518,7 +518,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
@@ -530,7 +530,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
@@ -544,7 +544,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
@@ -558,7 +558,7 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
@@ -572,7 +572,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,

@@ -43,7 +43,7 @@ Aws::String ${typeInfo.className}::SerializePayload() const
   return "{}";
 ## for rest-json protocol
 #else
-  return "";
+  return {};
 #end
 }
 
