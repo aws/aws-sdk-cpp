@@ -34,7 +34,7 @@ DeleteCertificateRequest::DeleteCertificateRequest() :
 
 Aws::String DeleteCertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteCertificateRequest::AddQueryStringParameters(URI& uri) const

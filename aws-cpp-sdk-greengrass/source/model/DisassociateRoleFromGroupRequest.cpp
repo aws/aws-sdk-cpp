@@ -29,7 +29,7 @@ DisassociateRoleFromGroupRequest::DisassociateRoleFromGroupRequest() :
 
 Aws::String DisassociateRoleFromGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

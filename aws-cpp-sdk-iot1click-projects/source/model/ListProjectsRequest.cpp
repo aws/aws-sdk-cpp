@@ -34,7 +34,7 @@ ListProjectsRequest::ListProjectsRequest() :
 
 Aws::String ListProjectsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListProjectsRequest::AddQueryStringParameters(URI& uri) const

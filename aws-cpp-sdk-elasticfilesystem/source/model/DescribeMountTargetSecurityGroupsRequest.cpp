@@ -29,7 +29,7 @@ DescribeMountTargetSecurityGroupsRequest::DescribeMountTargetSecurityGroupsReque
 
 Aws::String DescribeMountTargetSecurityGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

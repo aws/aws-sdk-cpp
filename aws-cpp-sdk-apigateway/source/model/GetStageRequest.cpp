@@ -30,7 +30,7 @@ GetStageRequest::GetStageRequest() :
 
 Aws::String GetStageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

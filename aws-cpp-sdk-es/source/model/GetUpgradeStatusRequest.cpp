@@ -29,7 +29,7 @@ GetUpgradeStatusRequest::GetUpgradeStatusRequest() :
 
 Aws::String GetUpgradeStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

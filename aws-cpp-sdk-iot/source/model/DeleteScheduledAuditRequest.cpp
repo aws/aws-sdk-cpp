@@ -29,7 +29,7 @@ DeleteScheduledAuditRequest::DeleteScheduledAuditRequest() :
 
 Aws::String DeleteScheduledAuditRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

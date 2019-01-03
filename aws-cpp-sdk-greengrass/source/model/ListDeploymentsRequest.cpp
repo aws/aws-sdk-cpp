@@ -34,7 +34,7 @@ ListDeploymentsRequest::ListDeploymentsRequest() :
 
 Aws::String ListDeploymentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDeploymentsRequest::AddQueryStringParameters(URI& uri) const

@@ -35,7 +35,7 @@ GetBucketAnalyticsConfigurationRequest::GetBucketAnalyticsConfigurationRequest()
 
 Aws::String GetBucketAnalyticsConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketAnalyticsConfigurationRequest::AddQueryStringParameters(URI& uri) const

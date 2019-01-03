@@ -29,7 +29,7 @@ GetResourceDefinitionRequest::GetResourceDefinitionRequest() :
 
 Aws::String GetResourceDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -36,7 +36,7 @@ ListApplicationDependenciesRequest::ListApplicationDependenciesRequest() :
 
 Aws::String ListApplicationDependenciesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListApplicationDependenciesRequest::AddQueryStringParameters(URI& uri) const

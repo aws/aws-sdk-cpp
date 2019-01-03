@@ -371,7 +371,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

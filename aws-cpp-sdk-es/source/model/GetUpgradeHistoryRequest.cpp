@@ -35,7 +35,7 @@ GetUpgradeHistoryRequest::GetUpgradeHistoryRequest() :
 
 Aws::String GetUpgradeHistoryRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetUpgradeHistoryRequest::AddQueryStringParameters(URI& uri) const

@@ -30,7 +30,7 @@ GetSchemaAsJsonRequest::GetSchemaAsJsonRequest() :
 
 Aws::String GetSchemaAsJsonRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetSchemaAsJsonRequest::GetRequestSpecificHeaders() const

@@ -29,7 +29,7 @@ ListProvisionedCapacityRequest::ListProvisionedCapacityRequest() :
 
 Aws::String ListProvisionedCapacityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

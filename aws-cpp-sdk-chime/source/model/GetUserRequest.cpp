@@ -30,7 +30,7 @@ GetUserRequest::GetUserRequest() :
 
 Aws::String GetUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

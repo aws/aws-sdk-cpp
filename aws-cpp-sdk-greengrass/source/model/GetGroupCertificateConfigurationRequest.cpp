@@ -29,7 +29,7 @@ GetGroupCertificateConfigurationRequest::GetGroupCertificateConfigurationRequest
 
 Aws::String GetGroupCertificateConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

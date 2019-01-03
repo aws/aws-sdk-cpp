@@ -45,7 +45,7 @@ Aws::String UntagResource2018_11_05Request::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void UntagResource2018_11_05Request::AddQueryStringParameters(URI& uri) const

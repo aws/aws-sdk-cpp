@@ -29,7 +29,7 @@ DescribeStreamRequest::DescribeStreamRequest() :
 
 Aws::String DescribeStreamRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

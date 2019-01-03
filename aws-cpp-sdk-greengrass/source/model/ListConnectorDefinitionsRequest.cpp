@@ -33,7 +33,7 @@ ListConnectorDefinitionsRequest::ListConnectorDefinitionsRequest() :
 
 Aws::String ListConnectorDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListConnectorDefinitionsRequest::AddQueryStringParameters(URI& uri) const

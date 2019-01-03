@@ -33,7 +33,7 @@ ListTagsForResource2018_11_05Request::ListTagsForResource2018_11_05Request() :
 
 Aws::String ListTagsForResource2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTagsForResource2018_11_05Request::AddQueryStringParameters(URI& uri) const

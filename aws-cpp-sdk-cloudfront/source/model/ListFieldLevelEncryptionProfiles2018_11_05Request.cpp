@@ -34,7 +34,7 @@ ListFieldLevelEncryptionProfiles2018_11_05Request::ListFieldLevelEncryptionProfi
 
 Aws::String ListFieldLevelEncryptionProfiles2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListFieldLevelEncryptionProfiles2018_11_05Request::AddQueryStringParameters(URI& uri) const

@@ -44,7 +44,7 @@ Aws::String UpdatePublicKey2018_11_05Request::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

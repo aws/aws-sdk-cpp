@@ -37,7 +37,7 @@ GetLifecyclePoliciesRequest::GetLifecyclePoliciesRequest() :
 
 Aws::String GetLifecyclePoliciesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetLifecyclePoliciesRequest::AddQueryStringParameters(URI& uri) const

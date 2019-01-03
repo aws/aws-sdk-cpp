@@ -34,7 +34,7 @@ ListHealthChecksRequest::ListHealthChecksRequest() :
 
 Aws::String ListHealthChecksRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListHealthChecksRequest::AddQueryStringParameters(URI& uri) const

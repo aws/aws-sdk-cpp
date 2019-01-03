@@ -29,7 +29,7 @@ GetSigningProfileRequest::GetSigningProfileRequest() :
 
 Aws::String GetSigningProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

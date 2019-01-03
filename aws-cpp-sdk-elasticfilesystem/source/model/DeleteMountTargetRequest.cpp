@@ -29,7 +29,7 @@ DeleteMountTargetRequest::DeleteMountTargetRequest() :
 
 Aws::String DeleteMountTargetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

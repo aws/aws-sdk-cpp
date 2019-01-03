@@ -35,7 +35,7 @@ ListDistributionsByWebACLId2018_11_05Request::ListDistributionsByWebACLId2018_11
 
 Aws::String ListDistributionsByWebACLId2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDistributionsByWebACLId2018_11_05Request::AddQueryStringParameters(URI& uri) const

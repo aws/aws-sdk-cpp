@@ -37,7 +37,7 @@ ListLayerVersionsRequest::ListLayerVersionsRequest() :
 
 Aws::String ListLayerVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListLayerVersionsRequest::AddQueryStringParameters(URI& uri) const

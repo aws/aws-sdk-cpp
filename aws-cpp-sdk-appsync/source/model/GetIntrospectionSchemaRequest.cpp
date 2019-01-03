@@ -34,7 +34,7 @@ GetIntrospectionSchemaRequest::GetIntrospectionSchemaRequest() :
 
 Aws::String GetIntrospectionSchemaRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetIntrospectionSchemaRequest::AddQueryStringParameters(URI& uri) const

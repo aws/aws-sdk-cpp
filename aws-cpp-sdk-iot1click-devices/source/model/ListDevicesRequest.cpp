@@ -35,7 +35,7 @@ ListDevicesRequest::ListDevicesRequest() :
 
 Aws::String ListDevicesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDevicesRequest::AddQueryStringParameters(URI& uri) const

@@ -29,7 +29,7 @@ DeleteInsightRequest::DeleteInsightRequest() :
 
 Aws::String DeleteInsightRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

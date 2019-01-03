@@ -29,7 +29,7 @@ DescribeIndexRequest::DescribeIndexRequest() :
 
 Aws::String DescribeIndexRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

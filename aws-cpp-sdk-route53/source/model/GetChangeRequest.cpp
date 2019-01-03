@@ -30,7 +30,7 @@ GetChangeRequest::GetChangeRequest() :
 
 Aws::String GetChangeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

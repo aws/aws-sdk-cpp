@@ -29,7 +29,7 @@ GetBulkDeploymentStatusRequest::GetBulkDeploymentStatusRequest() :
 
 Aws::String GetBulkDeploymentStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

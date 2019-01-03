@@ -31,7 +31,7 @@ GetInvalidation2018_11_05Request::GetInvalidation2018_11_05Request() :
 
 Aws::String GetInvalidation2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

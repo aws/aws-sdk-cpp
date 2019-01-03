@@ -76,32 +76,32 @@ namespace Model
 
 
     /**
-     * <p>The data set whose content creation will trigger the creation of this data
-     * set's contents.</p>
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
      */
     inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
 
     /**
-     * <p>The data set whose content creation will trigger the creation of this data
-     * set's contents.</p>
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
      */
     inline void SetDataset(const TriggeringDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
 
     /**
-     * <p>The data set whose content creation will trigger the creation of this data
-     * set's contents.</p>
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
      */
     inline void SetDataset(TriggeringDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
 
     /**
-     * <p>The data set whose content creation will trigger the creation of this data
-     * set's contents.</p>
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
      */
     inline DatasetTrigger& WithDataset(const TriggeringDataset& value) { SetDataset(value); return *this;}
 
     /**
-     * <p>The data set whose content creation will trigger the creation of this data
-     * set's contents.</p>
+     * <p>The data set whose content creation triggers the creation of this data set's
+     * contents.</p>
      */
     inline DatasetTrigger& WithDataset(TriggeringDataset&& value) { SetDataset(std::move(value)); return *this;}
 

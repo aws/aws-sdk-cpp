@@ -31,7 +31,7 @@ DeleteGroupRequest::DeleteGroupRequest() :
 
 Aws::String DeleteGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -34,7 +34,7 @@ ListChannelsRequest::ListChannelsRequest() :
 
 Aws::String ListChannelsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListChannelsRequest::AddQueryStringParameters(URI& uri) const

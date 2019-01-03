@@ -29,7 +29,7 @@ StartFlowRequest::StartFlowRequest() :
 
 Aws::String StartFlowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

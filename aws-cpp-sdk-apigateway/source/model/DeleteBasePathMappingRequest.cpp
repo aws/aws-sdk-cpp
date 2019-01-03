@@ -30,7 +30,7 @@ DeleteBasePathMappingRequest::DeleteBasePathMappingRequest() :
 
 Aws::String DeleteBasePathMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

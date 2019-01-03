@@ -35,7 +35,7 @@ ListBucketMetricsConfigurationsRequest::ListBucketMetricsConfigurationsRequest()
 
 Aws::String ListBucketMetricsConfigurationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBucketMetricsConfigurationsRequest::AddQueryStringParameters(URI& uri) const

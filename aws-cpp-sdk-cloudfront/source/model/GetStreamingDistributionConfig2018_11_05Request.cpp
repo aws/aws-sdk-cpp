@@ -30,7 +30,7 @@ GetStreamingDistributionConfig2018_11_05Request::GetStreamingDistributionConfig2
 
 Aws::String GetStreamingDistributionConfig2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

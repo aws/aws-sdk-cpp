@@ -35,7 +35,7 @@ GetFolderRequest::GetFolderRequest() :
 
 Aws::String GetFolderRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetFolderRequest::GetRequestSpecificHeaders() const

@@ -30,7 +30,7 @@ DescribeVirtualNodeRequest::DescribeVirtualNodeRequest() :
 
 Aws::String DescribeVirtualNodeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

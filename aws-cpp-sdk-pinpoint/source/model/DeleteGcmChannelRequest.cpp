@@ -29,7 +29,7 @@ DeleteGcmChannelRequest::DeleteGcmChannelRequest() :
 
 Aws::String DeleteGcmChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

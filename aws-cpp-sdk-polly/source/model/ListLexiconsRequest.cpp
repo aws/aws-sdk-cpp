@@ -32,7 +32,7 @@ ListLexiconsRequest::ListLexiconsRequest() :
 
 Aws::String ListLexiconsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListLexiconsRequest::AddQueryStringParameters(URI& uri) const

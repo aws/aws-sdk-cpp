@@ -30,7 +30,7 @@ DeleteHostedZoneRequest::DeleteHostedZoneRequest() :
 
 Aws::String DeleteHostedZoneRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DeleteJobTemplateRequest::DeleteJobTemplateRequest() :
 
 Aws::String DeleteJobTemplateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

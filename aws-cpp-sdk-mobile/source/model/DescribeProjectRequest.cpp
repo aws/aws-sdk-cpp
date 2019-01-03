@@ -34,7 +34,7 @@ DescribeProjectRequest::DescribeProjectRequest() :
 
 Aws::String DescribeProjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeProjectRequest::AddQueryStringParameters(URI& uri) const

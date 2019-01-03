@@ -30,7 +30,7 @@ DeleteDocumentationVersionRequest::DeleteDocumentationVersionRequest() :
 
 Aws::String DeleteDocumentationVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -30,7 +30,7 @@ GetRouteRequest::GetRouteRequest() :
 
 Aws::String GetRouteRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

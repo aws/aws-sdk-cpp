@@ -33,7 +33,7 @@ GetApisRequest::GetApisRequest() :
 
 Aws::String GetApisRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetApisRequest::AddQueryStringParameters(URI& uri) const

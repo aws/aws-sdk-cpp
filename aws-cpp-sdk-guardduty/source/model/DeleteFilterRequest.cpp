@@ -30,7 +30,7 @@ DeleteFilterRequest::DeleteFilterRequest() :
 
 Aws::String DeleteFilterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

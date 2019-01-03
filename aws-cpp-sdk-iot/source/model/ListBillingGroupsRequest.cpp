@@ -35,7 +35,7 @@ ListBillingGroupsRequest::ListBillingGroupsRequest() :
 
 Aws::String ListBillingGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBillingGroupsRequest::AddQueryStringParameters(URI& uri) const

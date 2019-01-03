@@ -35,7 +35,7 @@ ListIPSetsRequest::ListIPSetsRequest() :
 
 Aws::String ListIPSetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListIPSetsRequest::AddQueryStringParameters(URI& uri) const

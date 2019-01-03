@@ -29,7 +29,7 @@ GetDomainNameRequest::GetDomainNameRequest() :
 
 Aws::String GetDomainNameRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

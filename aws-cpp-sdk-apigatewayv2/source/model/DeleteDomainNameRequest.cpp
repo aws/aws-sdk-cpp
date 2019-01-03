@@ -29,7 +29,7 @@ DeleteDomainNameRequest::DeleteDomainNameRequest() :
 
 Aws::String DeleteDomainNameRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

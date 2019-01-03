@@ -30,7 +30,7 @@ GetModelRequest::GetModelRequest() :
 
 Aws::String GetModelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

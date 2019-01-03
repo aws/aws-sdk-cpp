@@ -34,7 +34,7 @@ GetFunctionDefinitionVersionRequest::GetFunctionDefinitionVersionRequest() :
 
 Aws::String GetFunctionDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetFunctionDefinitionVersionRequest::AddQueryStringParameters(URI& uri) const

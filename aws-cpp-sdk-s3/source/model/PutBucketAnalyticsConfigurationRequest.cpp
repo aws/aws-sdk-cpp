@@ -47,7 +47,7 @@ Aws::String PutBucketAnalyticsConfigurationRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutBucketAnalyticsConfigurationRequest::AddQueryStringParameters(URI& uri) const

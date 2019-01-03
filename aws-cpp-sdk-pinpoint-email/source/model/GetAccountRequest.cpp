@@ -28,7 +28,7 @@ GetAccountRequest::GetAccountRequest()
 
 Aws::String GetAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetAccountRequest::GetRequestSpecificHeaders() const

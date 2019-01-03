@@ -28,7 +28,7 @@ GetInvitationsCountRequest::GetInvitationsCountRequest()
 
 Aws::String GetInvitationsCountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

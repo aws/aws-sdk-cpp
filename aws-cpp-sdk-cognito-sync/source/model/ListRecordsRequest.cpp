@@ -40,7 +40,7 @@ ListRecordsRequest::ListRecordsRequest() :
 
 Aws::String ListRecordsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListRecordsRequest::AddQueryStringParameters(URI& uri) const

@@ -30,7 +30,7 @@ GetHostedZoneRequest::GetHostedZoneRequest() :
 
 Aws::String GetHostedZoneRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

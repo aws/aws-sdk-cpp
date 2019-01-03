@@ -29,7 +29,7 @@ DescribeBundleRequest::DescribeBundleRequest() :
 
 Aws::String DescribeBundleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ GetVoiceChannelRequest::GetVoiceChannelRequest() :
 
 Aws::String GetVoiceChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

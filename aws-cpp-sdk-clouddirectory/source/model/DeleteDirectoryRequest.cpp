@@ -30,7 +30,7 @@ DeleteDirectoryRequest::DeleteDirectoryRequest() :
 
 Aws::String DeleteDirectoryRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteDirectoryRequest::GetRequestSpecificHeaders() const

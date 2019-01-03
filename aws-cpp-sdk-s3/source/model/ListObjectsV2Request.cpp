@@ -46,7 +46,7 @@ ListObjectsV2Request::ListObjectsV2Request() :
 
 Aws::String ListObjectsV2Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListObjectsV2Request::AddQueryStringParameters(URI& uri) const

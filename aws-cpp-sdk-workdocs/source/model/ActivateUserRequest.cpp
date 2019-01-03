@@ -31,7 +31,7 @@ ActivateUserRequest::ActivateUserRequest() :
 
 Aws::String ActivateUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection ActivateUserRequest::GetRequestSpecificHeaders() const

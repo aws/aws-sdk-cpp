@@ -29,7 +29,7 @@ DescribeBillingGroupRequest::DescribeBillingGroupRequest() :
 
 Aws::String DescribeBillingGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

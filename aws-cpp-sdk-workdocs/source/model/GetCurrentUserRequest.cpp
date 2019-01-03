@@ -30,7 +30,7 @@ GetCurrentUserRequest::GetCurrentUserRequest() :
 
 Aws::String GetCurrentUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetCurrentUserRequest::GetRequestSpecificHeaders() const

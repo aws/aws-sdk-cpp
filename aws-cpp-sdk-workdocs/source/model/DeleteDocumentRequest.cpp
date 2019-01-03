@@ -31,7 +31,7 @@ DeleteDocumentRequest::DeleteDocumentRequest() :
 
 Aws::String DeleteDocumentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteDocumentRequest::GetRequestSpecificHeaders() const

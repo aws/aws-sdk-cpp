@@ -35,7 +35,7 @@ ListUserHierarchyGroupsRequest::ListUserHierarchyGroupsRequest() :
 
 Aws::String ListUserHierarchyGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListUserHierarchyGroupsRequest::AddQueryStringParameters(URI& uri) const

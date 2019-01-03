@@ -31,7 +31,7 @@ AttachThingPrincipalRequest::AttachThingPrincipalRequest() :
 
 Aws::String AttachThingPrincipalRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection AttachThingPrincipalRequest::GetRequestSpecificHeaders() const

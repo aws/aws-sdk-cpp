@@ -31,7 +31,7 @@ DeleteJobRequest::DeleteJobRequest() :
 
 Aws::String DeleteJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

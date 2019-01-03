@@ -30,7 +30,7 @@ GetBasePathMappingRequest::GetBasePathMappingRequest() :
 
 Aws::String GetBasePathMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -35,7 +35,7 @@ GetCampaignVersionsRequest::GetCampaignVersionsRequest() :
 
 Aws::String GetCampaignVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetCampaignVersionsRequest::AddQueryStringParameters(URI& uri) const

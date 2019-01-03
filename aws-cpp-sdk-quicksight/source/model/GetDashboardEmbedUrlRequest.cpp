@@ -41,7 +41,7 @@ GetDashboardEmbedUrlRequest::GetDashboardEmbedUrlRequest() :
 
 Aws::String GetDashboardEmbedUrlRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDashboardEmbedUrlRequest::AddQueryStringParameters(URI& uri) const

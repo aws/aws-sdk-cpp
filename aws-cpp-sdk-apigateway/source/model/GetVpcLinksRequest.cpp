@@ -34,7 +34,7 @@ GetVpcLinksRequest::GetVpcLinksRequest() :
 
 Aws::String GetVpcLinksRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetVpcLinksRequest::AddQueryStringParameters(URI& uri) const

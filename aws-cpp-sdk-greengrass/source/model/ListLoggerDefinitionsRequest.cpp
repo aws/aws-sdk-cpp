@@ -33,7 +33,7 @@ ListLoggerDefinitionsRequest::ListLoggerDefinitionsRequest() :
 
 Aws::String ListLoggerDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListLoggerDefinitionsRequest::AddQueryStringParameters(URI& uri) const

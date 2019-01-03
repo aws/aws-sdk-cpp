@@ -35,7 +35,7 @@ ListClustersRequest::ListClustersRequest() :
 
 Aws::String ListClustersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListClustersRequest::AddQueryStringParameters(URI& uri) const

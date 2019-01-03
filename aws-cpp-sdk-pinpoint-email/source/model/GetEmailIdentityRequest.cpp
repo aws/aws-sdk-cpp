@@ -29,7 +29,7 @@ GetEmailIdentityRequest::GetEmailIdentityRequest() :
 
 Aws::String GetEmailIdentityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetEmailIdentityRequest::GetRequestSpecificHeaders() const

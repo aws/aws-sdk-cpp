@@ -47,7 +47,7 @@ Aws::String PutBucketInventoryConfigurationRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutBucketInventoryConfigurationRequest::AddQueryStringParameters(URI& uri) const

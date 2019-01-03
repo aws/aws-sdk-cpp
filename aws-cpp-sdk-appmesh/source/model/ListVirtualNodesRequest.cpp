@@ -35,7 +35,7 @@ ListVirtualNodesRequest::ListVirtualNodesRequest() :
 
 Aws::String ListVirtualNodesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListVirtualNodesRequest::AddQueryStringParameters(URI& uri) const

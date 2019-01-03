@@ -31,7 +31,7 @@ GetSegmentVersionRequest::GetSegmentVersionRequest() :
 
 Aws::String GetSegmentVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

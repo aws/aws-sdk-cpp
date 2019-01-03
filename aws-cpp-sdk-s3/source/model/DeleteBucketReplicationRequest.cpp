@@ -34,7 +34,7 @@ DeleteBucketReplicationRequest::DeleteBucketReplicationRequest() :
 
 Aws::String DeleteBucketReplicationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBucketReplicationRequest::AddQueryStringParameters(URI& uri) const

@@ -34,7 +34,7 @@ ListFlowsRequest::ListFlowsRequest() :
 
 Aws::String ListFlowsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListFlowsRequest::AddQueryStringParameters(URI& uri) const

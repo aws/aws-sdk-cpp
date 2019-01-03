@@ -35,7 +35,7 @@ ListOriginEndpointsRequest::ListOriginEndpointsRequest() :
 
 Aws::String ListOriginEndpointsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListOriginEndpointsRequest::AddQueryStringParameters(URI& uri) const

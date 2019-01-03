@@ -29,7 +29,7 @@ DescribeFlowRequest::DescribeFlowRequest() :
 
 Aws::String DescribeFlowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

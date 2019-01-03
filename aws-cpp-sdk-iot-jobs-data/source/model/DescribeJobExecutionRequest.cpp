@@ -37,7 +37,7 @@ DescribeJobExecutionRequest::DescribeJobExecutionRequest() :
 
 Aws::String DescribeJobExecutionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeJobExecutionRequest::AddQueryStringParameters(URI& uri) const

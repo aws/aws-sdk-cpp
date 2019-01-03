@@ -30,7 +30,7 @@ DeleteVirtualRouterRequest::DeleteVirtualRouterRequest() :
 
 Aws::String DeleteVirtualRouterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

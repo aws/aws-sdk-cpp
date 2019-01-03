@@ -35,7 +35,7 @@ ListNodesRequest::ListNodesRequest() :
 
 Aws::String ListNodesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListNodesRequest::AddQueryStringParameters(URI& uri) const

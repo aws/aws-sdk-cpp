@@ -35,7 +35,7 @@ ListBucketInventoryConfigurationsRequest::ListBucketInventoryConfigurationsReque
 
 Aws::String ListBucketInventoryConfigurationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBucketInventoryConfigurationsRequest::AddQueryStringParameters(URI& uri) const

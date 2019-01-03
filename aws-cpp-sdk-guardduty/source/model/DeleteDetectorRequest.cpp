@@ -29,7 +29,7 @@ DeleteDetectorRequest::DeleteDetectorRequest() :
 
 Aws::String DeleteDetectorRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

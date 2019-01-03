@@ -30,7 +30,7 @@ DeleteBranchRequest::DeleteBranchRequest() :
 
 Aws::String DeleteBranchRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

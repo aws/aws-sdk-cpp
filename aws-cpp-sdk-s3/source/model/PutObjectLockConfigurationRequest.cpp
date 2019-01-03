@@ -50,7 +50,7 @@ Aws::String PutObjectLockConfigurationRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutObjectLockConfigurationRequest::AddQueryStringParameters(URI& uri) const

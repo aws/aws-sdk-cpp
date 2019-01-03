@@ -406,7 +406,8 @@ namespace Model
         virtual void CreateDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
+         * or a "containerAction" (executing a containerized application).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
@@ -414,7 +415,8 @@ namespace Model
         virtual Model::CreateDatasetContentOutcome CreateDatasetContent(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
+         * or a "containerAction" (executing a containerized application).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>
@@ -424,7 +426,8 @@ namespace Model
         virtual Model::CreateDatasetContentOutcomeCallable CreateDatasetContentCallable(const Model::CreateDatasetContentRequest& request) const;
 
         /**
-         * <p>Creates the content of a data set by applying a SQL action.</p><p><h3>See
+         * <p>Creates the content of a data set by applying a "queryAction" (a SQL query)
+         * or a "containerAction" (executing a containerized application).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDatasetContent">AWS
          * API Reference</a></p>

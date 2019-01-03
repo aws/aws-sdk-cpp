@@ -33,7 +33,7 @@ GetFunctionConfigurationRequest::GetFunctionConfigurationRequest() :
 
 Aws::String GetFunctionConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetFunctionConfigurationRequest::AddQueryStringParameters(URI& uri) const

@@ -34,7 +34,7 @@ GetApiKeyRequest::GetApiKeyRequest() :
 
 Aws::String GetApiKeyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetApiKeyRequest::AddQueryStringParameters(URI& uri) const

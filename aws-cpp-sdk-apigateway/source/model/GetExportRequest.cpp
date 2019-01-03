@@ -36,7 +36,7 @@ GetExportRequest::GetExportRequest() :
 
 Aws::String GetExportRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetExportRequest::GetRequestSpecificHeaders() const

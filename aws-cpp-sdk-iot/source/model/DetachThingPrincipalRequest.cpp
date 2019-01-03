@@ -31,7 +31,7 @@ DetachThingPrincipalRequest::DetachThingPrincipalRequest() :
 
 Aws::String DetachThingPrincipalRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DetachThingPrincipalRequest::GetRequestSpecificHeaders() const

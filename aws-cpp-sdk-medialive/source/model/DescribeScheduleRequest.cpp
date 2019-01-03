@@ -35,7 +35,7 @@ DescribeScheduleRequest::DescribeScheduleRequest() :
 
 Aws::String DescribeScheduleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeScheduleRequest::AddQueryStringParameters(URI& uri) const

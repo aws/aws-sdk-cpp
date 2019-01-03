@@ -30,7 +30,7 @@ DeleteUsagePlanKeyRequest::DeleteUsagePlanKeyRequest() :
 
 Aws::String DeleteUsagePlanKeyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

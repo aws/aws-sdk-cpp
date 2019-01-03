@@ -30,7 +30,7 @@ DeleteModelRequest::DeleteModelRequest() :
 
 Aws::String DeleteModelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

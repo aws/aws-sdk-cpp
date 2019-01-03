@@ -30,7 +30,7 @@ GetResourceDefinitionVersionRequest::GetResourceDefinitionVersionRequest() :
 
 Aws::String GetResourceDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

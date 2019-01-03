@@ -30,7 +30,7 @@ GetDomainAssociationRequest::GetDomainAssociationRequest() :
 
 Aws::String GetDomainAssociationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

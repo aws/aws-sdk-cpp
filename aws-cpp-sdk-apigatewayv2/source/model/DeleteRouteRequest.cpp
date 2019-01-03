@@ -30,7 +30,7 @@ DeleteRouteRequest::DeleteRouteRequest() :
 
 Aws::String DeleteRouteRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

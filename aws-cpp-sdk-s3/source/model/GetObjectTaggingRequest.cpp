@@ -36,7 +36,7 @@ GetObjectTaggingRequest::GetObjectTaggingRequest() :
 
 Aws::String GetObjectTaggingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectTaggingRequest::AddQueryStringParameters(URI& uri) const

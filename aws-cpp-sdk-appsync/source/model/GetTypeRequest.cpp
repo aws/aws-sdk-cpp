@@ -35,7 +35,7 @@ GetTypeRequest::GetTypeRequest() :
 
 Aws::String GetTypeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetTypeRequest::AddQueryStringParameters(URI& uri) const

@@ -34,7 +34,7 @@ GetBucketPolicyStatusRequest::GetBucketPolicyStatusRequest() :
 
 Aws::String GetBucketPolicyStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketPolicyStatusRequest::AddQueryStringParameters(URI& uri) const

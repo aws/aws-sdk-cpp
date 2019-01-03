@@ -34,7 +34,7 @@ ListResourceDefinitionVersionsRequest::ListResourceDefinitionVersionsRequest() :
 
 Aws::String ListResourceDefinitionVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListResourceDefinitionVersionsRequest::AddQueryStringParameters(URI& uri) const

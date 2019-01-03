@@ -31,7 +31,7 @@ DescribeDatasetRequest::DescribeDatasetRequest() :
 
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

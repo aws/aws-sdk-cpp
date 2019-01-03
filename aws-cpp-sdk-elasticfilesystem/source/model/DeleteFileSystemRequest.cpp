@@ -29,7 +29,7 @@ DeleteFileSystemRequest::DeleteFileSystemRequest() :
 
 Aws::String DeleteFileSystemRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

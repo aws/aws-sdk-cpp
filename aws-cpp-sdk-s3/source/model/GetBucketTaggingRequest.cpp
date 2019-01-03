@@ -34,7 +34,7 @@ GetBucketTaggingRequest::GetBucketTaggingRequest() :
 
 Aws::String GetBucketTaggingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketTaggingRequest::AddQueryStringParameters(URI& uri) const

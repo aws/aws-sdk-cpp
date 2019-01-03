@@ -29,7 +29,7 @@ DeleteInputRequest::DeleteInputRequest() :
 
 Aws::String DeleteInputRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

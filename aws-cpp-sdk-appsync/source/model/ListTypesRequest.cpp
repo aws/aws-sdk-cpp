@@ -37,7 +37,7 @@ ListTypesRequest::ListTypesRequest() :
 
 Aws::String ListTypesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTypesRequest::AddQueryStringParameters(URI& uri) const

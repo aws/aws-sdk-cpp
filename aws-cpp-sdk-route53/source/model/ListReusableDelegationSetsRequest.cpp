@@ -34,7 +34,7 @@ ListReusableDelegationSetsRequest::ListReusableDelegationSetsRequest() :
 
 Aws::String ListReusableDelegationSetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListReusableDelegationSetsRequest::AddQueryStringParameters(URI& uri) const

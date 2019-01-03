@@ -30,7 +30,7 @@ DeleteIntegrationRequest::DeleteIntegrationRequest() :
 
 Aws::String DeleteIntegrationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

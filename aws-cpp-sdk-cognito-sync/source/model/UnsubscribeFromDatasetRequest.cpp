@@ -32,7 +32,7 @@ UnsubscribeFromDatasetRequest::UnsubscribeFromDatasetRequest() :
 
 Aws::String UnsubscribeFromDatasetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

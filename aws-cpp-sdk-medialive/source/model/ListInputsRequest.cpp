@@ -34,7 +34,7 @@ ListInputsRequest::ListInputsRequest() :
 
 Aws::String ListInputsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListInputsRequest::AddQueryStringParameters(URI& uri) const

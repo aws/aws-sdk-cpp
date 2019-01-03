@@ -32,7 +32,7 @@ GetMethodResponseRequest::GetMethodResponseRequest() :
 
 Aws::String GetMethodResponseRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

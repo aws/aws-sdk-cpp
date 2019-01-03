@@ -30,7 +30,7 @@ GetIPSetRequest::GetIPSetRequest() :
 
 Aws::String GetIPSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

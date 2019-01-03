@@ -29,7 +29,7 @@ DescribeMeshRequest::DescribeMeshRequest() :
 
 Aws::String DescribeMeshRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

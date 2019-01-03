@@ -35,7 +35,7 @@ DescribeNotificationSubscriptionsRequest::DescribeNotificationSubscriptionsReque
 
 Aws::String DescribeNotificationSubscriptionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeNotificationSubscriptionsRequest::AddQueryStringParameters(URI& uri) const

@@ -35,7 +35,7 @@ ListRoutingProfilesRequest::ListRoutingProfilesRequest() :
 
 Aws::String ListRoutingProfilesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListRoutingProfilesRequest::AddQueryStringParameters(URI& uri) const

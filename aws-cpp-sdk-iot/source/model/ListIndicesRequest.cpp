@@ -34,7 +34,7 @@ ListIndicesRequest::ListIndicesRequest() :
 
 Aws::String ListIndicesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListIndicesRequest::AddQueryStringParameters(URI& uri) const

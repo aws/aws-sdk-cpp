@@ -55,7 +55,7 @@ Aws::String CreateBucketRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void CreateBucketRequest::AddQueryStringParameters(URI& uri) const

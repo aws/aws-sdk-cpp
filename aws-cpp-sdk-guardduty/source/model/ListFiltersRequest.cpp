@@ -35,7 +35,7 @@ ListFiltersRequest::ListFiltersRequest() :
 
 Aws::String ListFiltersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListFiltersRequest::AddQueryStringParameters(URI& uri) const

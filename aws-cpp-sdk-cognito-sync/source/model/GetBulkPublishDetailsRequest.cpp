@@ -29,7 +29,7 @@ GetBulkPublishDetailsRequest::GetBulkPublishDetailsRequest() :
 
 Aws::String GetBulkPublishDetailsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

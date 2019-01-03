@@ -34,7 +34,7 @@ DeleteBucketTaggingRequest::DeleteBucketTaggingRequest() :
 
 Aws::String DeleteBucketTaggingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBucketTaggingRequest::AddQueryStringParameters(URI& uri) const

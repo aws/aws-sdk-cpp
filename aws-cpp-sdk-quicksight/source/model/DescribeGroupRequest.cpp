@@ -31,7 +31,7 @@ DescribeGroupRequest::DescribeGroupRequest() :
 
 Aws::String DescribeGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

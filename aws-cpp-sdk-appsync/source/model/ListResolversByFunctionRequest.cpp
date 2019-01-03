@@ -36,7 +36,7 @@ ListResolversByFunctionRequest::ListResolversByFunctionRequest() :
 
 Aws::String ListResolversByFunctionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListResolversByFunctionRequest::AddQueryStringParameters(URI& uri) const

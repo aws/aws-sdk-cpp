@@ -28,7 +28,7 @@ GetDeliverabilityDashboardOptionsRequest::GetDeliverabilityDashboardOptionsReque
 
 Aws::String GetDeliverabilityDashboardOptionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDeliverabilityDashboardOptionsRequest::GetRequestSpecificHeaders() const

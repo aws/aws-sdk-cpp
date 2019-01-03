@@ -51,7 +51,7 @@ Aws::String DeleteObjectsRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void DeleteObjectsRequest::AddQueryStringParameters(URI& uri) const

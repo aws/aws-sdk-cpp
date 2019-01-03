@@ -29,7 +29,7 @@ GetHostedZoneCountRequest::GetHostedZoneCountRequest()
 
 Aws::String GetHostedZoneCountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

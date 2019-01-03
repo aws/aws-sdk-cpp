@@ -42,7 +42,7 @@ ListObjectVersionsRequest::ListObjectVersionsRequest() :
 
 Aws::String ListObjectVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListObjectVersionsRequest::AddQueryStringParameters(URI& uri) const

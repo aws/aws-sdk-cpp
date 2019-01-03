@@ -29,7 +29,7 @@ DeleteIntentRequest::DeleteIntentRequest() :
 
 Aws::String DeleteIntentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

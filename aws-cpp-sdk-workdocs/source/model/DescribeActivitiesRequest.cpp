@@ -43,7 +43,7 @@ DescribeActivitiesRequest::DescribeActivitiesRequest() :
 
 Aws::String DescribeActivitiesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeActivitiesRequest::GetRequestSpecificHeaders() const

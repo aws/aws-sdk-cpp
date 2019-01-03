@@ -29,7 +29,7 @@ GetSdkTypeRequest::GetSdkTypeRequest() :
 
 Aws::String GetSdkTypeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

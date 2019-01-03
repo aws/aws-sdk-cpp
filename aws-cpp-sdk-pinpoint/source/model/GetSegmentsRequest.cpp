@@ -34,7 +34,7 @@ GetSegmentsRequest::GetSegmentsRequest() :
 
 Aws::String GetSegmentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSegmentsRequest::AddQueryStringParameters(URI& uri) const

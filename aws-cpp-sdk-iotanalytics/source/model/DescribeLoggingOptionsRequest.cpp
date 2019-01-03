@@ -28,7 +28,7 @@ DescribeLoggingOptionsRequest::DescribeLoggingOptionsRequest()
 
 Aws::String DescribeLoggingOptionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

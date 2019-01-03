@@ -32,7 +32,7 @@ DeleteDistribution2018_11_05Request::DeleteDistribution2018_11_05Request() :
 
 Aws::String DeleteDistribution2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

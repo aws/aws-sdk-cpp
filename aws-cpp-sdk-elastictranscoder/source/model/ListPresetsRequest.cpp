@@ -33,7 +33,7 @@ ListPresetsRequest::ListPresetsRequest() :
 
 Aws::String ListPresetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPresetsRequest::AddQueryStringParameters(URI& uri) const

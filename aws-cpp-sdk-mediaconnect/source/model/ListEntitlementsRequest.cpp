@@ -34,7 +34,7 @@ ListEntitlementsRequest::ListEntitlementsRequest() :
 
 Aws::String ListEntitlementsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListEntitlementsRequest::AddQueryStringParameters(URI& uri) const

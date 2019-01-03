@@ -33,7 +33,7 @@ DeleteCommentRequest::DeleteCommentRequest() :
 
 Aws::String DeleteCommentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteCommentRequest::GetRequestSpecificHeaders() const

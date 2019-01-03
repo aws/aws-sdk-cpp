@@ -28,7 +28,7 @@ DisassociateFromMasterAccountRequest::DisassociateFromMasterAccountRequest()
 
 Aws::String DisassociateFromMasterAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

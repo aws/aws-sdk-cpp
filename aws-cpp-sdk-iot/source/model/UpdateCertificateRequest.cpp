@@ -34,7 +34,7 @@ UpdateCertificateRequest::UpdateCertificateRequest() :
 
 Aws::String UpdateCertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void UpdateCertificateRequest::AddQueryStringParameters(URI& uri) const

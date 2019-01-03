@@ -29,7 +29,7 @@ GetQueueRequest::GetQueueRequest() :
 
 Aws::String GetQueueRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

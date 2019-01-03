@@ -28,7 +28,7 @@ EnableSecurityHubRequest::EnableSecurityHubRequest()
 
 Aws::String EnableSecurityHubRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -35,7 +35,7 @@ ListInvalidations2018_11_05Request::ListInvalidations2018_11_05Request() :
 
 Aws::String ListInvalidations2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListInvalidations2018_11_05Request::AddQueryStringParameters(URI& uri) const

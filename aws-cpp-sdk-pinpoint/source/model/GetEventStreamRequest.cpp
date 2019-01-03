@@ -29,7 +29,7 @@ GetEventStreamRequest::GetEventStreamRequest() :
 
 Aws::String GetEventStreamRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

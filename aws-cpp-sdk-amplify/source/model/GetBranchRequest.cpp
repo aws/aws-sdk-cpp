@@ -30,7 +30,7 @@ GetBranchRequest::GetBranchRequest() :
 
 Aws::String GetBranchRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -34,7 +34,7 @@ GetDomainNamesRequest::GetDomainNamesRequest() :
 
 Aws::String GetDomainNamesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDomainNamesRequest::AddQueryStringParameters(URI& uri) const

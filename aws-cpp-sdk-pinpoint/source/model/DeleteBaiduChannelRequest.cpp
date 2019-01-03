@@ -29,7 +29,7 @@ DeleteBaiduChannelRequest::DeleteBaiduChannelRequest() :
 
 Aws::String DeleteBaiduChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

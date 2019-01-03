@@ -42,7 +42,7 @@ ListOfferingsRequest::ListOfferingsRequest() :
 
 Aws::String ListOfferingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListOfferingsRequest::AddQueryStringParameters(URI& uri) const

@@ -32,7 +32,7 @@ ListTagsForResourceRequest::ListTagsForResourceRequest() :
 
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTagsForResourceRequest::AddQueryStringParameters(URI& uri) const

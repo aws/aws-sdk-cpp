@@ -54,7 +54,7 @@ GetObjectRequest::GetObjectRequest() :
 
 Aws::String GetObjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectRequest::AddQueryStringParameters(URI& uri) const

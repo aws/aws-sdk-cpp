@@ -29,7 +29,7 @@ GetTagsRequest::GetTagsRequest() :
 
 Aws::String GetTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

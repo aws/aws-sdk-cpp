@@ -29,7 +29,7 @@ DeleteMeshRequest::DeleteMeshRequest() :
 
 Aws::String DeleteMeshRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

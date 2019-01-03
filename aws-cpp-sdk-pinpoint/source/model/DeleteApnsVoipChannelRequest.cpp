@@ -29,7 +29,7 @@ DeleteApnsVoipChannelRequest::DeleteApnsVoipChannelRequest() :
 
 Aws::String DeleteApnsVoipChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

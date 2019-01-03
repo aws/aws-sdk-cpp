@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A "DatasetAction" object specifying the query that creates the data set
-   * content.</p><p><h3>See Also:</h3>   <a
+   * <p>A "DatasetAction" object that specifies how data set contents are
+   * automatically created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction">AWS
    * API Reference</a></p>
    */
@@ -94,32 +94,32 @@ namespace Model
 
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline const SqlQueryDatasetAction& GetQueryAction() const{ return m_queryAction; }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline void SetQueryAction(const SqlQueryDatasetAction& value) { m_queryActionHasBeenSet = true; m_queryAction = value; }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline void SetQueryAction(SqlQueryDatasetAction&& value) { m_queryActionHasBeenSet = true; m_queryAction = std::move(value); }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline DatasetAction& WithQueryAction(const SqlQueryDatasetAction& value) { SetQueryAction(value); return *this;}
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline DatasetAction& WithQueryAction(SqlQueryDatasetAction&& value) { SetQueryAction(std::move(value)); return *this;}
 

@@ -31,7 +31,7 @@ GetObjectRequest::GetObjectRequest() :
 
 Aws::String GetObjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetObjectRequest::GetRequestSpecificHeaders() const

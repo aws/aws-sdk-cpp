@@ -29,7 +29,7 @@ GetVpcLinkRequest::GetVpcLinkRequest() :
 
 Aws::String GetVpcLinkRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

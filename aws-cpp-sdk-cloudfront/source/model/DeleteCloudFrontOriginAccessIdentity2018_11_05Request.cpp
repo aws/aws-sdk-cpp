@@ -32,7 +32,7 @@ DeleteCloudFrontOriginAccessIdentity2018_11_05Request::DeleteCloudFrontOriginAcc
 
 Aws::String DeleteCloudFrontOriginAccessIdentity2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -31,7 +31,7 @@ GetPublicAccessBlockRequest::GetPublicAccessBlockRequest() :
 
 Aws::String GetPublicAccessBlockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

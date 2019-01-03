@@ -29,7 +29,7 @@ DescribeInputSecurityGroupRequest::DescribeInputSecurityGroupRequest() :
 
 Aws::String DescribeInputSecurityGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

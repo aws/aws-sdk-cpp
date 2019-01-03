@@ -29,7 +29,7 @@ GetLoggerDefinitionRequest::GetLoggerDefinitionRequest() :
 
 Aws::String GetLoggerDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

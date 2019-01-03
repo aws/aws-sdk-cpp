@@ -32,7 +32,7 @@ DeletePublicKey2018_11_05Request::DeletePublicKey2018_11_05Request() :
 
 Aws::String DeletePublicKey2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

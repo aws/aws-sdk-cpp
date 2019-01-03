@@ -29,7 +29,7 @@ GetBuiltinIntentRequest::GetBuiltinIntentRequest() :
 
 Aws::String GetBuiltinIntentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

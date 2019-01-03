@@ -29,7 +29,7 @@ DeleteEmailIdentityRequest::DeleteEmailIdentityRequest() :
 
 Aws::String DeleteEmailIdentityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteEmailIdentityRequest::GetRequestSpecificHeaders() const

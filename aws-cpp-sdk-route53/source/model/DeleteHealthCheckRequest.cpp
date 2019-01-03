@@ -30,7 +30,7 @@ DeleteHealthCheckRequest::DeleteHealthCheckRequest() :
 
 Aws::String DeleteHealthCheckRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

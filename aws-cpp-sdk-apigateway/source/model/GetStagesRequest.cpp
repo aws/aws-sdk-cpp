@@ -33,7 +33,7 @@ GetStagesRequest::GetStagesRequest() :
 
 Aws::String GetStagesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetStagesRequest::AddQueryStringParameters(URI& uri) const

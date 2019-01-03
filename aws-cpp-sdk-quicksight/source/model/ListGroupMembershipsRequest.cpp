@@ -37,7 +37,7 @@ ListGroupMembershipsRequest::ListGroupMembershipsRequest() :
 
 Aws::String ListGroupMembershipsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListGroupMembershipsRequest::AddQueryStringParameters(URI& uri) const

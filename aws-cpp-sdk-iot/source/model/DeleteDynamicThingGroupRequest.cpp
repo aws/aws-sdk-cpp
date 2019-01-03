@@ -34,7 +34,7 @@ DeleteDynamicThingGroupRequest::DeleteDynamicThingGroupRequest() :
 
 Aws::String DeleteDynamicThingGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteDynamicThingGroupRequest::AddQueryStringParameters(URI& uri) const

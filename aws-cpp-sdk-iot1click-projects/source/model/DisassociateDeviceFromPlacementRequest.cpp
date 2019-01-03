@@ -31,7 +31,7 @@ DisassociateDeviceFromPlacementRequest::DisassociateDeviceFromPlacementRequest()
 
 Aws::String DisassociateDeviceFromPlacementRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

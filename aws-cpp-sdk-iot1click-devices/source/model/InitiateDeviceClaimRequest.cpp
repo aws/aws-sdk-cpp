@@ -29,7 +29,7 @@ InitiateDeviceClaimRequest::InitiateDeviceClaimRequest() :
 
 Aws::String InitiateDeviceClaimRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

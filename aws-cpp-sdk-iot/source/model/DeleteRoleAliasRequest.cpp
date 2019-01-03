@@ -29,7 +29,7 @@ DeleteRoleAliasRequest::DeleteRoleAliasRequest() :
 
 Aws::String DeleteRoleAliasRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

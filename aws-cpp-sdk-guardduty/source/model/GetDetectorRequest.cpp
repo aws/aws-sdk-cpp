@@ -29,7 +29,7 @@ GetDetectorRequest::GetDetectorRequest() :
 
 Aws::String GetDetectorRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

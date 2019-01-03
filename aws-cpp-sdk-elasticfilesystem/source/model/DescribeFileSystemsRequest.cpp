@@ -36,7 +36,7 @@ DescribeFileSystemsRequest::DescribeFileSystemsRequest() :
 
 Aws::String DescribeFileSystemsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeFileSystemsRequest::AddQueryStringParameters(URI& uri) const

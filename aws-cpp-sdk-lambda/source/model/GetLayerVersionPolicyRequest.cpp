@@ -31,7 +31,7 @@ GetLayerVersionPolicyRequest::GetLayerVersionPolicyRequest() :
 
 Aws::String GetLayerVersionPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -35,7 +35,7 @@ DescribeTagsRequest::DescribeTagsRequest() :
 
 Aws::String DescribeTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeTagsRequest::AddQueryStringParameters(URI& uri) const

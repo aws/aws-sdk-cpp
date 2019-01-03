@@ -33,7 +33,7 @@ InitiateMultipartUploadRequest::InitiateMultipartUploadRequest() :
 
 Aws::String InitiateMultipartUploadRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection InitiateMultipartUploadRequest::GetRequestSpecificHeaders() const

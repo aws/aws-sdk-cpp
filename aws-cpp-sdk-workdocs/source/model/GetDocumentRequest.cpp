@@ -35,7 +35,7 @@ GetDocumentRequest::GetDocumentRequest() :
 
 Aws::String GetDocumentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDocumentRequest::GetRequestSpecificHeaders() const

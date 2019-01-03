@@ -32,7 +32,7 @@ DeleteFieldLevelEncryptionConfig2018_11_05Request::DeleteFieldLevelEncryptionCon
 
 Aws::String DeleteFieldLevelEncryptionConfig2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -30,7 +30,7 @@ DeleteVaultRequest::DeleteVaultRequest() :
 
 Aws::String DeleteVaultRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

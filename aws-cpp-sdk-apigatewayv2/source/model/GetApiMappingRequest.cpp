@@ -34,7 +34,7 @@ GetApiMappingRequest::GetApiMappingRequest() :
 
 Aws::String GetApiMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetApiMappingRequest::AddQueryStringParameters(URI& uri) const

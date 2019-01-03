@@ -35,7 +35,7 @@ GetIntentVersionsRequest::GetIntentVersionsRequest() :
 
 Aws::String GetIntentVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetIntentVersionsRequest::AddQueryStringParameters(URI& uri) const

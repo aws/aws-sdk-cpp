@@ -37,7 +37,7 @@ ListSigningPlatformsRequest::ListSigningPlatformsRequest() :
 
 Aws::String ListSigningPlatformsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListSigningPlatformsRequest::AddQueryStringParameters(URI& uri) const

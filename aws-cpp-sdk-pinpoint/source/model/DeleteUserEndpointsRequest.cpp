@@ -30,7 +30,7 @@ DeleteUserEndpointsRequest::DeleteUserEndpointsRequest() :
 
 Aws::String DeleteUserEndpointsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -32,7 +32,7 @@ DeleteGroupMembershipRequest::DeleteGroupMembershipRequest() :
 
 Aws::String DeleteGroupMembershipRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

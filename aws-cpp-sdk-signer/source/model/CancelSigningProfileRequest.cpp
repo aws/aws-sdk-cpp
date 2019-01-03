@@ -29,7 +29,7 @@ CancelSigningProfileRequest::CancelSigningProfileRequest() :
 
 Aws::String CancelSigningProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

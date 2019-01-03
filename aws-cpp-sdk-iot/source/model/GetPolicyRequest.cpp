@@ -29,7 +29,7 @@ GetPolicyRequest::GetPolicyRequest() :
 
 Aws::String GetPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

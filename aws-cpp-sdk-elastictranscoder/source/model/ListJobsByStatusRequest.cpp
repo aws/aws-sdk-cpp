@@ -34,7 +34,7 @@ ListJobsByStatusRequest::ListJobsByStatusRequest() :
 
 Aws::String ListJobsByStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListJobsByStatusRequest::AddQueryStringParameters(URI& uri) const

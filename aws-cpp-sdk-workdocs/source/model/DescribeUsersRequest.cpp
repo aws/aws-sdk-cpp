@@ -45,7 +45,7 @@ DescribeUsersRequest::DescribeUsersRequest() :
 
 Aws::String DescribeUsersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeUsersRequest::GetRequestSpecificHeaders() const

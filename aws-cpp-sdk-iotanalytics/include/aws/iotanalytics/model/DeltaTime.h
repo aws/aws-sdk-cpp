@@ -34,14 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>When you create data set contents using message data from a specified time
-   * frame, some message data may still be "in flight" when processing begins, and so
-   * will not arrive in time to be processed. Use this field to make allowances for
-   * the "in flight" time of your message data, so that data not processed from the
-   * previous time frame will be included with the next time frame. Without this,
-   * missed message data would be excluded from processing during the next time frame
-   * as well, because its timestamp places it within the previous time
-   * frame.</p><p><h3>See Also:</h3>   <a
+   * <p>Used to limit data to that which has arrived since the last execution of the
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeltaTime">AWS
    * API Reference</a></p>
    */
@@ -55,17 +49,38 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds of estimated "in flight" lag time of message data.</p>
+     * <p>The number of seconds of estimated "in flight" lag time of message data. When
+     * you create data set contents using message data from a specified time frame,
+     * some message data may still be "in flight" when processing begins, and so will
+     * not arrive in time to be processed. Use this field to make allowances for the
+     * "in flight" time of your message data, so that data not processed from a
+     * previous time frame will be included with the next time frame. Without this,
+     * missed message data would be excluded from processing during the next time frame
+     * as well, because its timestamp places it within the previous time frame.</p>
      */
     inline int GetOffsetSeconds() const{ return m_offsetSeconds; }
 
     /**
-     * <p>The number of seconds of estimated "in flight" lag time of message data.</p>
+     * <p>The number of seconds of estimated "in flight" lag time of message data. When
+     * you create data set contents using message data from a specified time frame,
+     * some message data may still be "in flight" when processing begins, and so will
+     * not arrive in time to be processed. Use this field to make allowances for the
+     * "in flight" time of your message data, so that data not processed from a
+     * previous time frame will be included with the next time frame. Without this,
+     * missed message data would be excluded from processing during the next time frame
+     * as well, because its timestamp places it within the previous time frame.</p>
      */
     inline void SetOffsetSeconds(int value) { m_offsetSecondsHasBeenSet = true; m_offsetSeconds = value; }
 
     /**
-     * <p>The number of seconds of estimated "in flight" lag time of message data.</p>
+     * <p>The number of seconds of estimated "in flight" lag time of message data. When
+     * you create data set contents using message data from a specified time frame,
+     * some message data may still be "in flight" when processing begins, and so will
+     * not arrive in time to be processed. Use this field to make allowances for the
+     * "in flight" time of your message data, so that data not processed from a
+     * previous time frame will be included with the next time frame. Without this,
+     * missed message data would be excluded from processing during the next time frame
+     * as well, because its timestamp places it within the previous time frame.</p>
      */
     inline DeltaTime& WithOffsetSeconds(int value) { SetOffsetSeconds(value); return *this;}
 

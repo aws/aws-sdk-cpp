@@ -30,7 +30,7 @@ GetFieldLevelEncryptionProfileConfig2018_11_05Request::GetFieldLevelEncryptionPr
 
 Aws::String GetFieldLevelEncryptionProfileConfig2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

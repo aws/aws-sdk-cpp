@@ -34,7 +34,7 @@ GetModelsRequest::GetModelsRequest() :
 
 Aws::String GetModelsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetModelsRequest::AddQueryStringParameters(URI& uri) const

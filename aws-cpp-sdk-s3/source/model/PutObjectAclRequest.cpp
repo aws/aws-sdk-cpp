@@ -58,7 +58,7 @@ Aws::String PutObjectAclRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutObjectAclRequest::AddQueryStringParameters(URI& uri) const

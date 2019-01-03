@@ -34,7 +34,7 @@ GetConnectorDefinitionVersionRequest::GetConnectorDefinitionVersionRequest() :
 
 Aws::String GetConnectorDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetConnectorDefinitionVersionRequest::AddQueryStringParameters(URI& uri) const

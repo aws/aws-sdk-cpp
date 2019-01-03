@@ -34,7 +34,7 @@ ListInvitationsRequest::ListInvitationsRequest() :
 
 Aws::String ListInvitationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListInvitationsRequest::AddQueryStringParameters(URI& uri) const

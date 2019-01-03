@@ -28,7 +28,7 @@ DeleteRegistrationCodeRequest::DeleteRegistrationCodeRequest()
 
 Aws::String DeleteRegistrationCodeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

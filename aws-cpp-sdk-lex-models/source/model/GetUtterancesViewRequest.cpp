@@ -35,7 +35,7 @@ GetUtterancesViewRequest::GetUtterancesViewRequest() :
 
 Aws::String GetUtterancesViewRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetUtterancesViewRequest::AddQueryStringParameters(URI& uri) const

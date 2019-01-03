@@ -34,7 +34,7 @@ ListGroupVersionsRequest::ListGroupVersionsRequest() :
 
 Aws::String ListGroupVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListGroupVersionsRequest::AddQueryStringParameters(URI& uri) const

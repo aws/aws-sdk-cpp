@@ -29,7 +29,7 @@ GetSpeechSynthesisTaskRequest::GetSpeechSynthesisTaskRequest() :
 
 Aws::String GetSpeechSynthesisTaskRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

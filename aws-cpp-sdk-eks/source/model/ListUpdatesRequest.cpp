@@ -35,7 +35,7 @@ ListUpdatesRequest::ListUpdatesRequest() :
 
 Aws::String ListUpdatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListUpdatesRequest::AddQueryStringParameters(URI& uri) const

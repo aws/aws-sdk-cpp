@@ -43,7 +43,7 @@ DescribeFolderContentsRequest::DescribeFolderContentsRequest() :
 
 Aws::String DescribeFolderContentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeFolderContentsRequest::GetRequestSpecificHeaders() const

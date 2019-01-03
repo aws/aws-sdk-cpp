@@ -29,7 +29,7 @@ GetPendingJobExecutionsRequest::GetPendingJobExecutionsRequest() :
 
 Aws::String GetPendingJobExecutionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DeleteAuthorizerRequest::DeleteAuthorizerRequest() :
 
 Aws::String DeleteAuthorizerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

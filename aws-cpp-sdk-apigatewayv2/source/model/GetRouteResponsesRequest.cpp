@@ -35,7 +35,7 @@ GetRouteResponsesRequest::GetRouteResponsesRequest() :
 
 Aws::String GetRouteResponsesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetRouteResponsesRequest::AddQueryStringParameters(URI& uri) const

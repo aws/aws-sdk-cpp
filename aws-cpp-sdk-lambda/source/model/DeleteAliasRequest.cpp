@@ -30,7 +30,7 @@ DeleteAliasRequest::DeleteAliasRequest() :
 
 Aws::String DeleteAliasRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

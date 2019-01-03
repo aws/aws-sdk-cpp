@@ -37,7 +37,7 @@ GetBotChannelAssociationsRequest::GetBotChannelAssociationsRequest() :
 
 Aws::String GetBotChannelAssociationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBotChannelAssociationsRequest::AddQueryStringParameters(URI& uri) const

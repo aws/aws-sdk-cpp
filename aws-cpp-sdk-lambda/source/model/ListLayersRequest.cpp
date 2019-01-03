@@ -36,7 +36,7 @@ ListLayersRequest::ListLayersRequest() :
 
 Aws::String ListLayersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListLayersRequest::AddQueryStringParameters(URI& uri) const

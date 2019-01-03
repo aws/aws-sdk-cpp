@@ -51,7 +51,7 @@ Aws::String PutObjectLegalHoldRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutObjectLegalHoldRequest::AddQueryStringParameters(URI& uri) const

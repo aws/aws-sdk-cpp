@@ -34,7 +34,7 @@ GetPublicAccessBlockRequest::GetPublicAccessBlockRequest() :
 
 Aws::String GetPublicAccessBlockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetPublicAccessBlockRequest::AddQueryStringParameters(URI& uri) const

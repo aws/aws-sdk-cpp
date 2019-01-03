@@ -29,7 +29,7 @@ DeleteTopicRuleRequest::DeleteTopicRuleRequest() :
 
 Aws::String DeleteTopicRuleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

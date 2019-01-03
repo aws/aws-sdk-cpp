@@ -36,7 +36,7 @@ ListGeoLocationsRequest::ListGeoLocationsRequest() :
 
 Aws::String ListGeoLocationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListGeoLocationsRequest::AddQueryStringParameters(URI& uri) const

@@ -34,7 +34,7 @@ DeleteApiMappingRequest::DeleteApiMappingRequest() :
 
 Aws::String DeleteApiMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteApiMappingRequest::AddQueryStringParameters(URI& uri) const

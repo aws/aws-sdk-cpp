@@ -41,7 +41,7 @@ ListReservationsRequest::ListReservationsRequest() :
 
 Aws::String ListReservationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListReservationsRequest::AddQueryStringParameters(URI& uri) const

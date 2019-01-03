@@ -29,7 +29,7 @@ DescribeUserHierarchyStructureRequest::DescribeUserHierarchyStructureRequest() :
 
 Aws::String DescribeUserHierarchyStructureRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

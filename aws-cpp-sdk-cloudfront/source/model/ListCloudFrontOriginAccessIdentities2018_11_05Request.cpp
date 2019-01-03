@@ -34,7 +34,7 @@ ListCloudFrontOriginAccessIdentities2018_11_05Request::ListCloudFrontOriginAcces
 
 Aws::String ListCloudFrontOriginAccessIdentities2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListCloudFrontOriginAccessIdentities2018_11_05Request::AddQueryStringParameters(URI& uri) const

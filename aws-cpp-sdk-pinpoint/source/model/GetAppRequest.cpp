@@ -29,7 +29,7 @@ GetAppRequest::GetAppRequest() :
 
 Aws::String GetAppRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

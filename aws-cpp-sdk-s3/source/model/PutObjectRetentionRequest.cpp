@@ -53,7 +53,7 @@ Aws::String PutObjectRetentionRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutObjectRetentionRequest::AddQueryStringParameters(URI& uri) const

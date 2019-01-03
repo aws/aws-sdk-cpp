@@ -35,7 +35,7 @@ GetTagsRequest::GetTagsRequest() :
 
 Aws::String GetTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetTagsRequest::AddQueryStringParameters(URI& uri) const

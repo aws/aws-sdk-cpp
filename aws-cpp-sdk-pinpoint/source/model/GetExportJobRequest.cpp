@@ -30,7 +30,7 @@ GetExportJobRequest::GetExportJobRequest() :
 
 Aws::String GetExportJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

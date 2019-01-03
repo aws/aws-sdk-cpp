@@ -33,7 +33,7 @@ GetAppsRequest::GetAppsRequest() :
 
 Aws::String GetAppsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetAppsRequest::AddQueryStringParameters(URI& uri) const

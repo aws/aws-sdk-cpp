@@ -31,7 +31,7 @@ StopJobRequest::StopJobRequest() :
 
 Aws::String StopJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

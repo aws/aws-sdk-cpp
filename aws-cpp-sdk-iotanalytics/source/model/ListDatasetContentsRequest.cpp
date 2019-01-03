@@ -29,13 +29,15 @@ ListDatasetContentsRequest::ListDatasetContentsRequest() :
     m_datasetNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_scheduledOnOrAfterHasBeenSet(false),
+    m_scheduledBeforeHasBeenSet(false)
 {
 }
 
 Aws::String ListDatasetContentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDatasetContentsRequest::AddQueryStringParameters(URI& uri) const
@@ -52,6 +54,20 @@ void ListDatasetContentsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_scheduledOnOrAfterHasBeenSet)
+    {
+      ss << m_scheduledOnOrAfter.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("scheduledOnOrAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_scheduledBeforeHasBeenSet)
+    {
+      ss << m_scheduledBefore.ToGmtString(DateFormat::RFC822);
+      uri.AddQueryStringParameter("scheduledBefore", ss.str());
       ss.str("");
     }
 

@@ -44,7 +44,7 @@ Aws::String UpdateFieldLevelEncryptionConfig2018_11_05Request::SerializePayload(
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

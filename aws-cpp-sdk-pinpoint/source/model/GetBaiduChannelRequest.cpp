@@ -29,7 +29,7 @@ GetBaiduChannelRequest::GetBaiduChannelRequest() :
 
 Aws::String GetBaiduChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ GetConnectivityInfoRequest::GetConnectivityInfoRequest() :
 
 Aws::String GetConnectivityInfoRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -36,7 +36,7 @@ DeleteLabelsRequest::DeleteLabelsRequest() :
 
 Aws::String DeleteLabelsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteLabelsRequest::GetRequestSpecificHeaders() const

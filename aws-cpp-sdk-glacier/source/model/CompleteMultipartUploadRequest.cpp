@@ -34,7 +34,7 @@ CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() :
 
 Aws::String CompleteMultipartUploadRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection CompleteMultipartUploadRequest::GetRequestSpecificHeaders() const

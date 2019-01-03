@@ -36,7 +36,7 @@ SampleChannelDataRequest::SampleChannelDataRequest() :
 
 Aws::String SampleChannelDataRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void SampleChannelDataRequest::AddQueryStringParameters(URI& uri) const

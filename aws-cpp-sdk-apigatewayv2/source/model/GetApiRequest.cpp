@@ -29,7 +29,7 @@ GetApiRequest::GetApiRequest() :
 
 Aws::String GetApiRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

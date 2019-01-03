@@ -30,7 +30,7 @@ DescribeUpdateRequest::DescribeUpdateRequest() :
 
 Aws::String DescribeUpdateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

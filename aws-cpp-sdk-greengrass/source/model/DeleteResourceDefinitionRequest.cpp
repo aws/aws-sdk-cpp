@@ -29,7 +29,7 @@ DeleteResourceDefinitionRequest::DeleteResourceDefinitionRequest() :
 
 Aws::String DeleteResourceDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

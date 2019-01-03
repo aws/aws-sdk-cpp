@@ -29,7 +29,7 @@ GetClientCertificateRequest::GetClientCertificateRequest() :
 
 Aws::String GetClientCertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

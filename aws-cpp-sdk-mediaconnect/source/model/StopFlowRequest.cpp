@@ -29,7 +29,7 @@ StopFlowRequest::StopFlowRequest() :
 
 Aws::String StopFlowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DisableImportFindingsForProductRequest::DisableImportFindingsForProductRequest()
 
 Aws::String DisableImportFindingsForProductRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

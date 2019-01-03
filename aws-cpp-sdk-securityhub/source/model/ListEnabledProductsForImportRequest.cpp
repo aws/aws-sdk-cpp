@@ -34,7 +34,7 @@ ListEnabledProductsForImportRequest::ListEnabledProductsForImportRequest() :
 
 Aws::String ListEnabledProductsForImportRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListEnabledProductsForImportRequest::AddQueryStringParameters(URI& uri) const

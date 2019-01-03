@@ -35,7 +35,7 @@ ListPrincipalThingsRequest::ListPrincipalThingsRequest() :
 
 Aws::String ListPrincipalThingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection ListPrincipalThingsRequest::GetRequestSpecificHeaders() const

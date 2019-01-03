@@ -32,7 +32,7 @@ SubscribeToDatasetRequest::SubscribeToDatasetRequest() :
 
 Aws::String SubscribeToDatasetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

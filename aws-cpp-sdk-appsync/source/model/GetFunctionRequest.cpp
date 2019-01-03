@@ -30,7 +30,7 @@ GetFunctionRequest::GetFunctionRequest() :
 
 Aws::String GetFunctionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

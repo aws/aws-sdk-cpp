@@ -32,7 +32,7 @@ GetReusableDelegationSetLimitRequest::GetReusableDelegationSetLimitRequest() :
 
 Aws::String GetReusableDelegationSetLimitRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

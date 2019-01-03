@@ -34,7 +34,7 @@ GetIntegrationsRequest::GetIntegrationsRequest() :
 
 Aws::String GetIntegrationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetIntegrationsRequest::AddQueryStringParameters(URI& uri) const

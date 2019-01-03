@@ -34,7 +34,7 @@ DeleteSecurityProfileRequest::DeleteSecurityProfileRequest() :
 
 Aws::String DeleteSecurityProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteSecurityProfileRequest::AddQueryStringParameters(URI& uri) const

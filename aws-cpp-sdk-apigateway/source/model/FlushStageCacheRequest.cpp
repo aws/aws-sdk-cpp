@@ -30,7 +30,7 @@ FlushStageCacheRequest::FlushStageCacheRequest() :
 
 Aws::String FlushStageCacheRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

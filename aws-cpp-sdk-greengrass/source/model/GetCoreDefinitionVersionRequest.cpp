@@ -30,7 +30,7 @@ GetCoreDefinitionVersionRequest::GetCoreDefinitionVersionRequest() :
 
 Aws::String GetCoreDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -28,7 +28,7 @@ DescribeDefaultAuthorizerRequest::DescribeDefaultAuthorizerRequest()
 
 Aws::String DescribeDefaultAuthorizerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

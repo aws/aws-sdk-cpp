@@ -30,7 +30,7 @@ DeleteUtterancesRequest::DeleteUtterancesRequest() :
 
 Aws::String DeleteUtterancesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

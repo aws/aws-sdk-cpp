@@ -31,7 +31,7 @@ DeleteFolderContentsRequest::DeleteFolderContentsRequest() :
 
 Aws::String DeleteFolderContentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteFolderContentsRequest::GetRequestSpecificHeaders() const

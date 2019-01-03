@@ -30,7 +30,7 @@ GetHealthCheckLastFailureReasonRequest::GetHealthCheckLastFailureReasonRequest()
 
 Aws::String GetHealthCheckLastFailureReasonRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

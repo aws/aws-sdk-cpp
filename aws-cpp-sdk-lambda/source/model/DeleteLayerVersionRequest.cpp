@@ -31,7 +31,7 @@ DeleteLayerVersionRequest::DeleteLayerVersionRequest() :
 
 Aws::String DeleteLayerVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

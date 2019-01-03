@@ -30,7 +30,7 @@ DeleteDeploymentRequest::DeleteDeploymentRequest() :
 
 Aws::String DeleteDeploymentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -30,7 +30,7 @@ RevokeFlowEntitlementRequest::RevokeFlowEntitlementRequest() :
 
 Aws::String RevokeFlowEntitlementRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

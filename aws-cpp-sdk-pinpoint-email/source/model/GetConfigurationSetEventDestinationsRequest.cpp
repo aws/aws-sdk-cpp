@@ -29,7 +29,7 @@ GetConfigurationSetEventDestinationsRequest::GetConfigurationSetEventDestination
 
 Aws::String GetConfigurationSetEventDestinationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetConfigurationSetEventDestinationsRequest::GetRequestSpecificHeaders() const

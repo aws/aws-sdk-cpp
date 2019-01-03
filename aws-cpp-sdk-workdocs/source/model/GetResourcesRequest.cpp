@@ -38,7 +38,7 @@ GetResourcesRequest::GetResourcesRequest() :
 
 Aws::String GetResourcesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetResourcesRequest::GetRequestSpecificHeaders() const

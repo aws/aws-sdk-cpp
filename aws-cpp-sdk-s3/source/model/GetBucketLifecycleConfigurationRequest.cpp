@@ -34,7 +34,7 @@ GetBucketLifecycleConfigurationRequest::GetBucketLifecycleConfigurationRequest()
 
 Aws::String GetBucketLifecycleConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketLifecycleConfigurationRequest::AddQueryStringParameters(URI& uri) const

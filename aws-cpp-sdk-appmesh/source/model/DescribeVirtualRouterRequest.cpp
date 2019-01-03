@@ -30,7 +30,7 @@ DescribeVirtualRouterRequest::DescribeVirtualRouterRequest() :
 
 Aws::String DescribeVirtualRouterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

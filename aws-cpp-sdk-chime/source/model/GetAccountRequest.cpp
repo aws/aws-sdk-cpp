@@ -29,7 +29,7 @@ GetAccountRequest::GetAccountRequest() :
 
 Aws::String GetAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

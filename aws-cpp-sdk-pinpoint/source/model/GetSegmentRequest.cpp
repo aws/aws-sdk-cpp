@@ -30,7 +30,7 @@ GetSegmentRequest::GetSegmentRequest() :
 
 Aws::String GetSegmentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

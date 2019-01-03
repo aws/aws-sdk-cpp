@@ -30,7 +30,7 @@ GetBotRequest::GetBotRequest() :
 
 Aws::String GetBotRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

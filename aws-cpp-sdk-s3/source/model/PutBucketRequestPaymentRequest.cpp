@@ -47,7 +47,7 @@ Aws::String PutBucketRequestPaymentRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutBucketRequestPaymentRequest::AddQueryStringParameters(URI& uri) const

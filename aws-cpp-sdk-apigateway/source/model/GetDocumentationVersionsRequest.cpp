@@ -35,7 +35,7 @@ GetDocumentationVersionsRequest::GetDocumentationVersionsRequest() :
 
 Aws::String GetDocumentationVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDocumentationVersionsRequest::AddQueryStringParameters(URI& uri) const

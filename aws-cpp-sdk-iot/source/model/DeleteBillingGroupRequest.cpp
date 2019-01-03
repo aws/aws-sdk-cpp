@@ -34,7 +34,7 @@ DeleteBillingGroupRequest::DeleteBillingGroupRequest() :
 
 Aws::String DeleteBillingGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBillingGroupRequest::AddQueryStringParameters(URI& uri) const

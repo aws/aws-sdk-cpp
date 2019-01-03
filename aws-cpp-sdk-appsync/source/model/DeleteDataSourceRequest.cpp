@@ -30,7 +30,7 @@ DeleteDataSourceRequest::DeleteDataSourceRequest() :
 
 Aws::String DeleteDataSourceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

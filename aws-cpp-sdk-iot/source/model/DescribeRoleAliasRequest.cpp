@@ -29,7 +29,7 @@ DescribeRoleAliasRequest::DescribeRoleAliasRequest() :
 
 Aws::String DescribeRoleAliasRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

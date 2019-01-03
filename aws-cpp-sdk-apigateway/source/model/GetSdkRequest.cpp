@@ -35,7 +35,7 @@ GetSdkRequest::GetSdkRequest() :
 
 Aws::String GetSdkRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSdkRequest::AddQueryStringParameters(URI& uri) const

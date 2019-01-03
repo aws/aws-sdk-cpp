@@ -29,7 +29,7 @@ GetGcmChannelRequest::GetGcmChannelRequest() :
 
 Aws::String GetGcmChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

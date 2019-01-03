@@ -77,7 +77,7 @@ CopyObjectRequest::CopyObjectRequest() :
 
 Aws::String CopyObjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void CopyObjectRequest::AddQueryStringParameters(URI& uri) const

@@ -29,7 +29,7 @@ GetPlaybackConfigurationRequest::GetPlaybackConfigurationRequest() :
 
 Aws::String GetPlaybackConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

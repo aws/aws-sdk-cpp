@@ -34,7 +34,7 @@ GetClientCertificatesRequest::GetClientCertificatesRequest() :
 
 Aws::String GetClientCertificatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetClientCertificatesRequest::AddQueryStringParameters(URI& uri) const

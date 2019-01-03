@@ -29,7 +29,7 @@ DescribeThingTypeRequest::DescribeThingTypeRequest() :
 
 Aws::String DescribeThingTypeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

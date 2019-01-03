@@ -31,7 +31,7 @@ CreateGroupCertificateAuthorityRequest::CreateGroupCertificateAuthorityRequest()
 
 Aws::String CreateGroupCertificateAuthorityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection CreateGroupCertificateAuthorityRequest::GetRequestSpecificHeaders() const

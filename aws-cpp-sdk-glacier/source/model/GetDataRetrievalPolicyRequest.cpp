@@ -29,7 +29,7 @@ GetDataRetrievalPolicyRequest::GetDataRetrievalPolicyRequest() :
 
 Aws::String GetDataRetrievalPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

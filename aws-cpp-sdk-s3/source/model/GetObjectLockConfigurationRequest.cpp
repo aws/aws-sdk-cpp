@@ -34,7 +34,7 @@ GetObjectLockConfigurationRequest::GetObjectLockConfigurationRequest() :
 
 Aws::String GetObjectLockConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectLockConfigurationRequest::AddQueryStringParameters(URI& uri) const

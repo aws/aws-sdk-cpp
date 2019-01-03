@@ -29,7 +29,7 @@ DeleteAdmChannelRequest::DeleteAdmChannelRequest() :
 
 Aws::String DeleteAdmChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

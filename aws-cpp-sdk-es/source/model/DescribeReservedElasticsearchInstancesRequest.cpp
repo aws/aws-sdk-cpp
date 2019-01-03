@@ -35,7 +35,7 @@ DescribeReservedElasticsearchInstancesRequest::DescribeReservedElasticsearchInst
 
 Aws::String DescribeReservedElasticsearchInstancesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeReservedElasticsearchInstancesRequest::AddQueryStringParameters(URI& uri) const

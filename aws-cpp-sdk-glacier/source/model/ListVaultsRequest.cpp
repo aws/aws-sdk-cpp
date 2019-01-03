@@ -34,7 +34,7 @@ ListVaultsRequest::ListVaultsRequest() :
 
 Aws::String ListVaultsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListVaultsRequest::AddQueryStringParameters(URI& uri) const

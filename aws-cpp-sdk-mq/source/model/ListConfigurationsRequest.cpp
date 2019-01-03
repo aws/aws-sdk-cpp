@@ -34,7 +34,7 @@ ListConfigurationsRequest::ListConfigurationsRequest() :
 
 Aws::String ListConfigurationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListConfigurationsRequest::AddQueryStringParameters(URI& uri) const

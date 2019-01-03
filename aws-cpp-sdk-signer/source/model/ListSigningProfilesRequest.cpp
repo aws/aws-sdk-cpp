@@ -36,7 +36,7 @@ ListSigningProfilesRequest::ListSigningProfilesRequest() :
 
 Aws::String ListSigningProfilesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListSigningProfilesRequest::AddQueryStringParameters(URI& uri) const

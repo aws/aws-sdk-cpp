@@ -33,6 +33,12 @@ namespace IoTAnalytics
 namespace Model
 {
 
+  /**
+   * <p>The destination to which data set contents are delivered.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryDestination">AWS
+   * API Reference</a></p>
+   */
   class AWS_IOTANALYTICS_API DatasetContentDeliveryDestination
   {
   public:
@@ -42,19 +48,34 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline const IotEventsDestinationConfiguration& GetIotEventsDestinationConfiguration() const{ return m_iotEventsDestinationConfiguration; }
 
-    
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline void SetIotEventsDestinationConfiguration(const IotEventsDestinationConfiguration& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = value; }
 
-    
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline void SetIotEventsDestinationConfiguration(IotEventsDestinationConfiguration&& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(const IotEventsDestinationConfiguration& value) { SetIotEventsDestinationConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Configuration information for delivery of data set contents to AWS IoT
+     * Events.</p>
+     */
     inline DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(IotEventsDestinationConfiguration&& value) { SetIotEventsDestinationConfiguration(std::move(value)); return *this;}
 
   private:

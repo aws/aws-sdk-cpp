@@ -28,7 +28,7 @@ EnableSharingWithAwsOrganizationRequest::EnableSharingWithAwsOrganizationRequest
 
 Aws::String EnableSharingWithAwsOrganizationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

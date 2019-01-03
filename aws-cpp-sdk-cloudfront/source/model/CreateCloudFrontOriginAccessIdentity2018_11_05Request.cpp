@@ -41,7 +41,7 @@ Aws::String CreateCloudFrontOriginAccessIdentity2018_11_05Request::SerializePayl
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

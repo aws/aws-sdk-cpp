@@ -38,7 +38,7 @@ GetObjectLegalHoldRequest::GetObjectLegalHoldRequest() :
 
 Aws::String GetObjectLegalHoldRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectLegalHoldRequest::AddQueryStringParameters(URI& uri) const

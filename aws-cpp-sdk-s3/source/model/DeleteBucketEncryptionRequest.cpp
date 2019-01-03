@@ -34,7 +34,7 @@ DeleteBucketEncryptionRequest::DeleteBucketEncryptionRequest() :
 
 Aws::String DeleteBucketEncryptionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBucketEncryptionRequest::AddQueryStringParameters(URI& uri) const

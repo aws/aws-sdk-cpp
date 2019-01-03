@@ -34,7 +34,7 @@ ListPlaybackConfigurationsRequest::ListPlaybackConfigurationsRequest() :
 
 Aws::String ListPlaybackConfigurationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPlaybackConfigurationsRequest::AddQueryStringParameters(URI& uri) const

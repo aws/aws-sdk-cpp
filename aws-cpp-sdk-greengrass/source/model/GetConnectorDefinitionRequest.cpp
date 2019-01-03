@@ -29,7 +29,7 @@ GetConnectorDefinitionRequest::GetConnectorDefinitionRequest() :
 
 Aws::String GetConnectorDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

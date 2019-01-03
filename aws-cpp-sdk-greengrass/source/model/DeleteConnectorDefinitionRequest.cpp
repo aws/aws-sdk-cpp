@@ -29,7 +29,7 @@ DeleteConnectorDefinitionRequest::DeleteConnectorDefinitionRequest() :
 
 Aws::String DeleteConnectorDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

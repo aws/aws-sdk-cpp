@@ -29,7 +29,7 @@ DeleteFlowRequest::DeleteFlowRequest() :
 
 Aws::String DeleteFlowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

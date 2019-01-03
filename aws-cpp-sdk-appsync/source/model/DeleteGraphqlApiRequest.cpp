@@ -29,7 +29,7 @@ DeleteGraphqlApiRequest::DeleteGraphqlApiRequest() :
 
 Aws::String DeleteGraphqlApiRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

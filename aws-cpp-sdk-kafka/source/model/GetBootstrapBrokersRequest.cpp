@@ -29,7 +29,7 @@ GetBootstrapBrokersRequest::GetBootstrapBrokersRequest() :
 
 Aws::String GetBootstrapBrokersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

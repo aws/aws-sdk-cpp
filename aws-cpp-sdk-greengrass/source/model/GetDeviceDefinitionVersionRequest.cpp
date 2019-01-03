@@ -34,7 +34,7 @@ GetDeviceDefinitionVersionRequest::GetDeviceDefinitionVersionRequest() :
 
 Aws::String GetDeviceDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDeviceDefinitionVersionRequest::AddQueryStringParameters(URI& uri) const

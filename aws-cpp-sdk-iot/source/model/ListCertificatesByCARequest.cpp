@@ -37,7 +37,7 @@ ListCertificatesByCARequest::ListCertificatesByCARequest() :
 
 Aws::String ListCertificatesByCARequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListCertificatesByCARequest::AddQueryStringParameters(URI& uri) const

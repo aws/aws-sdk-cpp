@@ -30,7 +30,7 @@ DeleteFunctionRequest::DeleteFunctionRequest() :
 
 Aws::String DeleteFunctionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

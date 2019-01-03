@@ -36,7 +36,7 @@ RemoveLayerVersionPermissionRequest::RemoveLayerVersionPermissionRequest() :
 
 Aws::String RemoveLayerVersionPermissionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void RemoveLayerVersionPermissionRequest::AddQueryStringParameters(URI& uri) const

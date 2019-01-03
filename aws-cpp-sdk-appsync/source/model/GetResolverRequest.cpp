@@ -31,7 +31,7 @@ GetResolverRequest::GetResolverRequest() :
 
 Aws::String GetResolverRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ GetInsightResultsRequest::GetInsightResultsRequest() :
 
 Aws::String GetInsightResultsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

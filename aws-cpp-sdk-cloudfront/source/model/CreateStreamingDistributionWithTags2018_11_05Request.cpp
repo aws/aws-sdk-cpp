@@ -41,7 +41,7 @@ Aws::String CreateStreamingDistributionWithTags2018_11_05Request::SerializePaylo
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

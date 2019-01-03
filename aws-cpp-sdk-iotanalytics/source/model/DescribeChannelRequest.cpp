@@ -34,7 +34,7 @@ DescribeChannelRequest::DescribeChannelRequest() :
 
 Aws::String DescribeChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeChannelRequest::AddQueryStringParameters(URI& uri) const

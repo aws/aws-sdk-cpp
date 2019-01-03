@@ -29,7 +29,7 @@ GetDeliverabilityTestReportRequest::GetDeliverabilityTestReportRequest() :
 
 Aws::String GetDeliverabilityTestReportRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDeliverabilityTestReportRequest::GetRequestSpecificHeaders() const

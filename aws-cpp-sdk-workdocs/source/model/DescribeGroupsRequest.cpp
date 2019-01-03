@@ -37,7 +37,7 @@ DescribeGroupsRequest::DescribeGroupsRequest() :
 
 Aws::String DescribeGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeGroupsRequest::GetRequestSpecificHeaders() const

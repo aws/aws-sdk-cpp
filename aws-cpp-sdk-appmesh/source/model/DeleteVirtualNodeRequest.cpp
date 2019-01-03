@@ -30,7 +30,7 @@ DeleteVirtualNodeRequest::DeleteVirtualNodeRequest() :
 
 Aws::String DeleteVirtualNodeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

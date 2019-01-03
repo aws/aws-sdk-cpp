@@ -40,7 +40,7 @@ ListAuditTasksRequest::ListAuditTasksRequest() :
 
 Aws::String ListAuditTasksRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListAuditTasksRequest::AddQueryStringParameters(URI& uri) const

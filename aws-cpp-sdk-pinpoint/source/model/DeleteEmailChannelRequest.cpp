@@ -29,7 +29,7 @@ DeleteEmailChannelRequest::DeleteEmailChannelRequest() :
 
 Aws::String DeleteEmailChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

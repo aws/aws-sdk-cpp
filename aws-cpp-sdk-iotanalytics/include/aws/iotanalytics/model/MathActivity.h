@@ -85,44 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline const Aws::String& GetAttribute() const{ return m_attribute; }
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline void SetAttribute(Aws::String&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline void SetAttribute(const char* value) { m_attributeHasBeenSet = true; m_attribute.assign(value); }
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline MathActivity& WithAttribute(const Aws::String& value) { SetAttribute(value); return *this;}
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline MathActivity& WithAttribute(Aws::String&& value) { SetAttribute(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the attribute that will contain the result of the math
-     * operation.</p>
+     * <p>The name of the attribute that contains the result of the math operation.</p>
      */
     inline MathActivity& WithAttribute(const char* value) { SetAttribute(value); return *this;}
 

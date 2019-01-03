@@ -29,7 +29,7 @@ DeleteApiRequest::DeleteApiRequest() :
 
 Aws::String DeleteApiRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

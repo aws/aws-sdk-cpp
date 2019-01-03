@@ -34,7 +34,7 @@ GetBucketReplicationRequest::GetBucketReplicationRequest() :
 
 Aws::String GetBucketReplicationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketReplicationRequest::AddQueryStringParameters(URI& uri) const

@@ -29,7 +29,7 @@ GetCheckerIpRangesRequest::GetCheckerIpRangesRequest()
 
 Aws::String GetCheckerIpRangesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DeleteApnsSandboxChannelRequest::DeleteApnsSandboxChannelRequest() :
 
 Aws::String DeleteApnsSandboxChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

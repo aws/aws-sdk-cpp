@@ -29,7 +29,7 @@ ListThingPrincipalsRequest::ListThingPrincipalsRequest() :
 
 Aws::String ListThingPrincipalsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

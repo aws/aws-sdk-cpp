@@ -30,7 +30,7 @@ GetVaultAccessPolicyRequest::GetVaultAccessPolicyRequest() :
 
 Aws::String GetVaultAccessPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

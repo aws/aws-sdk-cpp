@@ -33,7 +33,7 @@ DeleteClusterRequest::DeleteClusterRequest() :
 
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteClusterRequest::AddQueryStringParameters(URI& uri) const

@@ -29,7 +29,7 @@ GetLifecyclePolicyRequest::GetLifecyclePolicyRequest() :
 
 Aws::String GetLifecyclePolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

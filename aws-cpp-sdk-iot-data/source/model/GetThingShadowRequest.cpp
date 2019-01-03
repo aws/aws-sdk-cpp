@@ -29,7 +29,7 @@ GetThingShadowRequest::GetThingShadowRequest() :
 
 Aws::String GetThingShadowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

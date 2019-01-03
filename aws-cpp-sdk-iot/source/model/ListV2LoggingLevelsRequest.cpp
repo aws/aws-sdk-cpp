@@ -36,7 +36,7 @@ ListV2LoggingLevelsRequest::ListV2LoggingLevelsRequest() :
 
 Aws::String ListV2LoggingLevelsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListV2LoggingLevelsRequest::AddQueryStringParameters(URI& uri) const

@@ -33,7 +33,7 @@ ListCoreDefinitionsRequest::ListCoreDefinitionsRequest() :
 
 Aws::String ListCoreDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListCoreDefinitionsRequest::AddQueryStringParameters(URI& uri) const

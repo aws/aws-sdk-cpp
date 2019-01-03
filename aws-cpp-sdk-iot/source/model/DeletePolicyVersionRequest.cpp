@@ -30,7 +30,7 @@ DeletePolicyVersionRequest::DeletePolicyVersionRequest() :
 
 Aws::String DeletePolicyVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

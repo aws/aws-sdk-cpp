@@ -42,7 +42,7 @@ ListMultipartUploadsRequest::ListMultipartUploadsRequest() :
 
 Aws::String ListMultipartUploadsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListMultipartUploadsRequest::AddQueryStringParameters(URI& uri) const

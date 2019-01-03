@@ -29,7 +29,7 @@ ExportProjectRequest::ExportProjectRequest() :
 
 Aws::String ExportProjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

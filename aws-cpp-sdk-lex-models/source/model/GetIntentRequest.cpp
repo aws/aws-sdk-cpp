@@ -30,7 +30,7 @@ GetIntentRequest::GetIntentRequest() :
 
 Aws::String GetIntentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DescribeElasticsearchDomainRequest::DescribeElasticsearchDomainRequest() :
 
 Aws::String DescribeElasticsearchDomainRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

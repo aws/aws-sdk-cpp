@@ -35,7 +35,7 @@ GetGatewayResponsesRequest::GetGatewayResponsesRequest() :
 
 Aws::String GetGatewayResponsesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetGatewayResponsesRequest::AddQueryStringParameters(URI& uri) const

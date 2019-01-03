@@ -29,7 +29,7 @@ DeleteClusterRequest::DeleteClusterRequest() :
 
 Aws::String DeleteClusterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -32,7 +32,7 @@ ListTagsForResourceRequest::ListTagsForResourceRequest() :
 
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

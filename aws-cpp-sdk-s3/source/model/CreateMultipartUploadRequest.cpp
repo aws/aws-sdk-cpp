@@ -65,7 +65,7 @@ CreateMultipartUploadRequest::CreateMultipartUploadRequest() :
 
 Aws::String CreateMultipartUploadRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void CreateMultipartUploadRequest::AddQueryStringParameters(URI& uri) const

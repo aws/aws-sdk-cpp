@@ -29,7 +29,7 @@ DeleteQueueRequest::DeleteQueueRequest() :
 
 Aws::String DeleteQueueRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

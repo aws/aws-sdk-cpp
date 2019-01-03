@@ -30,7 +30,7 @@ GetTrafficPolicyInstanceRequest::GetTrafficPolicyInstanceRequest() :
 
 Aws::String GetTrafficPolicyInstanceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

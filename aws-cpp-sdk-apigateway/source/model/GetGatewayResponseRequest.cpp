@@ -31,7 +31,7 @@ GetGatewayResponseRequest::GetGatewayResponseRequest() :
 
 Aws::String GetGatewayResponseRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

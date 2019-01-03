@@ -30,7 +30,7 @@ DeleteReusableDelegationSetRequest::DeleteReusableDelegationSetRequest() :
 
 Aws::String DeleteReusableDelegationSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

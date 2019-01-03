@@ -34,7 +34,7 @@ ListPublicKeys2018_11_05Request::ListPublicKeys2018_11_05Request() :
 
 Aws::String ListPublicKeys2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPublicKeys2018_11_05Request::AddQueryStringParameters(URI& uri) const

@@ -249,7 +249,7 @@ Aws::String S3ControlClient::ComputeEndpointString(const Aws::String& accountId)
     }
     else
     {
-        return "";
+        return {};
     }
 }
 

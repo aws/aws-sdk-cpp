@@ -32,7 +32,7 @@ AbortDocumentVersionUploadRequest::AbortDocumentVersionUploadRequest() :
 
 Aws::String AbortDocumentVersionUploadRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection AbortDocumentVersionUploadRequest::GetRequestSpecificHeaders() const

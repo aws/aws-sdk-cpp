@@ -30,7 +30,7 @@ GetRequestValidatorRequest::GetRequestValidatorRequest() :
 
 Aws::String GetRequestValidatorRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

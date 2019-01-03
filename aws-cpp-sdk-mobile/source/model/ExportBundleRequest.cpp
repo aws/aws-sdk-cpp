@@ -35,7 +35,7 @@ ExportBundleRequest::ExportBundleRequest() :
 
 Aws::String ExportBundleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ExportBundleRequest::AddQueryStringParameters(URI& uri) const

@@ -31,7 +31,7 @@ RemoveAllResourcePermissionsRequest::RemoveAllResourcePermissionsRequest() :
 
 Aws::String RemoveAllResourcePermissionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection RemoveAllResourcePermissionsRequest::GetRequestSpecificHeaders() const

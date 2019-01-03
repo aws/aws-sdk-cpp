@@ -36,7 +36,7 @@ ListEventSourceMappingsRequest::ListEventSourceMappingsRequest() :
 
 Aws::String ListEventSourceMappingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListEventSourceMappingsRequest::AddQueryStringParameters(URI& uri) const

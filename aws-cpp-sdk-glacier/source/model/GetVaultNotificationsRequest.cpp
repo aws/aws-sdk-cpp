@@ -30,7 +30,7 @@ GetVaultNotificationsRequest::GetVaultNotificationsRequest() :
 
 Aws::String GetVaultNotificationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

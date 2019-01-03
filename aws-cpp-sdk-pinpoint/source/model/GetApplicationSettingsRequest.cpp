@@ -29,7 +29,7 @@ GetApplicationSettingsRequest::GetApplicationSettingsRequest() :
 
 Aws::String GetApplicationSettingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

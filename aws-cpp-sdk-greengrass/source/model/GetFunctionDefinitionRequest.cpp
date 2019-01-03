@@ -29,7 +29,7 @@ GetFunctionDefinitionRequest::GetFunctionDefinitionRequest() :
 
 Aws::String GetFunctionDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -31,7 +31,7 @@ DescribeRouteRequest::DescribeRouteRequest() :
 
 Aws::String DescribeRouteRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

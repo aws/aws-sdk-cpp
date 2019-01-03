@@ -177,25 +177,46 @@ namespace Model
     inline CreateDatasetRequest& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline const Aws::Vector<DatasetContentDeliveryRule>& GetContentDeliveryRules() const{ return m_contentDeliveryRules; }
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline void SetContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = value; }
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline void SetContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules = std::move(value); }
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline CreateDatasetRequest& WithContentDeliveryRules(const Aws::Vector<DatasetContentDeliveryRule>& value) { SetContentDeliveryRules(value); return *this;}
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline CreateDatasetRequest& WithContentDeliveryRules(Aws::Vector<DatasetContentDeliveryRule>&& value) { SetContentDeliveryRules(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline CreateDatasetRequest& AddContentDeliveryRules(const DatasetContentDeliveryRule& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(value); return *this; }
 
-    
+    /**
+     * <p>When data set contents are created they are delivered to destinations
+     * specified here.</p>
+     */
     inline CreateDatasetRequest& AddContentDeliveryRules(DatasetContentDeliveryRule&& value) { m_contentDeliveryRulesHasBeenSet = true; m_contentDeliveryRules.push_back(std::move(value)); return *this; }
 
 

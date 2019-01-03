@@ -30,7 +30,7 @@ DeleteSlotTypeVersionRequest::DeleteSlotTypeVersionRequest() :
 
 Aws::String DeleteSlotTypeVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

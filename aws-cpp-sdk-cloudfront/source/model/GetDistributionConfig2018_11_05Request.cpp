@@ -30,7 +30,7 @@ GetDistributionConfig2018_11_05Request::GetDistributionConfig2018_11_05Request()
 
 Aws::String GetDistributionConfig2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

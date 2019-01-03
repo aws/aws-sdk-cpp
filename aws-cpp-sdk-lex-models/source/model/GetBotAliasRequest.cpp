@@ -30,7 +30,7 @@ GetBotAliasRequest::GetBotAliasRequest() :
 
 Aws::String GetBotAliasRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

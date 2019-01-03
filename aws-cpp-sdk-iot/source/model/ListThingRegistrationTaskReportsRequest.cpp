@@ -37,7 +37,7 @@ ListThingRegistrationTaskReportsRequest::ListThingRegistrationTaskReportsRequest
 
 Aws::String ListThingRegistrationTaskReportsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListThingRegistrationTaskReportsRequest::AddQueryStringParameters(URI& uri) const

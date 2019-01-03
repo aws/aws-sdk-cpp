@@ -45,7 +45,7 @@ Aws::String TagResource2018_11_05Request::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void TagResource2018_11_05Request::AddQueryStringParameters(URI& uri) const

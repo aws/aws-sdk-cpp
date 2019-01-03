@@ -30,7 +30,7 @@ GetPublicKeyConfig2018_11_05Request::GetPublicKeyConfig2018_11_05Request() :
 
 Aws::String GetPublicKeyConfig2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

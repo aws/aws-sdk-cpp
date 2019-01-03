@@ -44,7 +44,7 @@ Aws::String UpdateStreamingDistribution2018_11_05Request::SerializePayload() con
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

@@ -36,7 +36,7 @@ ListOTAUpdatesRequest::ListOTAUpdatesRequest() :
 
 Aws::String ListOTAUpdatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListOTAUpdatesRequest::AddQueryStringParameters(URI& uri) const

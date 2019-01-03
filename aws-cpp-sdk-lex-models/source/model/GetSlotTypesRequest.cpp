@@ -35,7 +35,7 @@ GetSlotTypesRequest::GetSlotTypesRequest() :
 
 Aws::String GetSlotTypesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSlotTypesRequest::AddQueryStringParameters(URI& uri) const

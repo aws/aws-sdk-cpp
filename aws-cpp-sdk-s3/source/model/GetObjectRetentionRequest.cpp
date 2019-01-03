@@ -38,7 +38,7 @@ GetObjectRetentionRequest::GetObjectRetentionRequest() :
 
 Aws::String GetObjectRetentionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectRetentionRequest::AddQueryStringParameters(URI& uri) const

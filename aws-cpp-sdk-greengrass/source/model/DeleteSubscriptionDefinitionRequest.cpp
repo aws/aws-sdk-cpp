@@ -29,7 +29,7 @@ DeleteSubscriptionDefinitionRequest::DeleteSubscriptionDefinitionRequest() :
 
 Aws::String DeleteSubscriptionDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -30,7 +30,7 @@ GetContactAttributesRequest::GetContactAttributesRequest() :
 
 Aws::String GetContactAttributesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

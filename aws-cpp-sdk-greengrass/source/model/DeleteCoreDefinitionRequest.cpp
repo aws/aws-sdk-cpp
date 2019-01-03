@@ -29,7 +29,7 @@ DeleteCoreDefinitionRequest::DeleteCoreDefinitionRequest() :
 
 Aws::String DeleteCoreDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

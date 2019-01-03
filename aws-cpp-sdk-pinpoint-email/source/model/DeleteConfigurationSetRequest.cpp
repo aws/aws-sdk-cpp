@@ -29,7 +29,7 @@ DeleteConfigurationSetRequest::DeleteConfigurationSetRequest() :
 
 Aws::String DeleteConfigurationSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteConfigurationSetRequest::GetRequestSpecificHeaders() const

@@ -35,7 +35,7 @@ ListTargetsForPolicyRequest::ListTargetsForPolicyRequest() :
 
 Aws::String ListTargetsForPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTargetsForPolicyRequest::AddQueryStringParameters(URI& uri) const

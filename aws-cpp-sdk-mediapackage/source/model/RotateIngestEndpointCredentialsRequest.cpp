@@ -30,7 +30,7 @@ RotateIngestEndpointCredentialsRequest::RotateIngestEndpointCredentialsRequest()
 
 Aws::String RotateIngestEndpointCredentialsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

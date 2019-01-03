@@ -36,7 +36,7 @@ ListUsersRequest::ListUsersRequest() :
 
 Aws::String ListUsersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListUsersRequest::AddQueryStringParameters(URI& uri) const

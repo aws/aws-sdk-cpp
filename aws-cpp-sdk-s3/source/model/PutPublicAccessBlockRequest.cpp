@@ -47,7 +47,7 @@ Aws::String PutPublicAccessBlockRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutPublicAccessBlockRequest::AddQueryStringParameters(URI& uri) const

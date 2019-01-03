@@ -29,7 +29,7 @@ DescribeProjectRequest::DescribeProjectRequest() :
 
 Aws::String DescribeProjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

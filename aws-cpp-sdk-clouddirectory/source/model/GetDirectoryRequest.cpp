@@ -30,7 +30,7 @@ GetDirectoryRequest::GetDirectoryRequest() :
 
 Aws::String GetDirectoryRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDirectoryRequest::GetRequestSpecificHeaders() const

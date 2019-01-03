@@ -30,7 +30,7 @@ GetVaultLockRequest::GetVaultLockRequest() :
 
 Aws::String GetVaultLockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

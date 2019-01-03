@@ -30,7 +30,7 @@ ResetPersonalPINRequest::ResetPersonalPINRequest() :
 
 Aws::String ResetPersonalPINRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

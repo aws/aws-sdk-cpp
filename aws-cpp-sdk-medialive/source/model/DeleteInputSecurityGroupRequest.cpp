@@ -29,7 +29,7 @@ DeleteInputSecurityGroupRequest::DeleteInputSecurityGroupRequest() :
 
 Aws::String DeleteInputSecurityGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

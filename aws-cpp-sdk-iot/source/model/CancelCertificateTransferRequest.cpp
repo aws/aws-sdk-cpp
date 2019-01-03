@@ -29,7 +29,7 @@ CancelCertificateTransferRequest::CancelCertificateTransferRequest() :
 
 Aws::String CancelCertificateTransferRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

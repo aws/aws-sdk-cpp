@@ -34,7 +34,7 @@ ListDistributions2018_11_05Request::ListDistributions2018_11_05Request() :
 
 Aws::String ListDistributions2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDistributions2018_11_05Request::AddQueryStringParameters(URI& uri) const

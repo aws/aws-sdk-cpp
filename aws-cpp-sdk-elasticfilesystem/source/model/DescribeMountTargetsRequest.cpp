@@ -36,7 +36,7 @@ DescribeMountTargetsRequest::DescribeMountTargetsRequest() :
 
 Aws::String DescribeMountTargetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeMountTargetsRequest::AddQueryStringParameters(URI& uri) const

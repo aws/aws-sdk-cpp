@@ -32,7 +32,7 @@ CreateGroupMembershipRequest::CreateGroupMembershipRequest() :
 
 Aws::String CreateGroupMembershipRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

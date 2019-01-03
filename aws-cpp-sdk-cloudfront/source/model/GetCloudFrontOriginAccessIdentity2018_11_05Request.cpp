@@ -30,7 +30,7 @@ GetCloudFrontOriginAccessIdentity2018_11_05Request::GetCloudFrontOriginAccessIde
 
 Aws::String GetCloudFrontOriginAccessIdentity2018_11_05Request::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -36,7 +36,7 @@ ListRoutesRequest::ListRoutesRequest() :
 
 Aws::String ListRoutesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListRoutesRequest::AddQueryStringParameters(URI& uri) const

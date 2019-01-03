@@ -41,7 +41,7 @@ Aws::String CreateDistributionWithTags2018_11_05Request::SerializePayload() cons
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

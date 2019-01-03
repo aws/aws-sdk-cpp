@@ -34,7 +34,7 @@ GetBucketRequestPaymentRequest::GetBucketRequestPaymentRequest() :
 
 Aws::String GetBucketRequestPaymentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketRequestPaymentRequest::AddQueryStringParameters(URI& uri) const

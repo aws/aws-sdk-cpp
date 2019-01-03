@@ -33,7 +33,7 @@ ListFunctionDefinitionsRequest::ListFunctionDefinitionsRequest() :
 
 Aws::String ListFunctionDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListFunctionDefinitionsRequest::AddQueryStringParameters(URI& uri) const

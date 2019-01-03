@@ -39,7 +39,7 @@ TestDNSAnswerRequest::TestDNSAnswerRequest() :
 
 Aws::String TestDNSAnswerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void TestDNSAnswerRequest::AddQueryStringParameters(URI& uri) const

@@ -34,7 +34,7 @@ ListMeshesRequest::ListMeshesRequest() :
 
 Aws::String ListMeshesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListMeshesRequest::AddQueryStringParameters(URI& uri) const

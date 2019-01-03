@@ -35,7 +35,7 @@ ListVirtualRoutersRequest::ListVirtualRoutersRequest() :
 
 Aws::String ListVirtualRoutersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListVirtualRoutersRequest::AddQueryStringParameters(URI& uri) const

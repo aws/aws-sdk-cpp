@@ -36,7 +36,7 @@ ListAliasesRequest::ListAliasesRequest() :
 
 Aws::String ListAliasesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListAliasesRequest::AddQueryStringParameters(URI& uri) const

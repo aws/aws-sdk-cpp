@@ -31,7 +31,7 @@ DeleteDatasetRequest::DeleteDatasetRequest() :
 
 Aws::String DeleteDatasetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

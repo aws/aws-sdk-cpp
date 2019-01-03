@@ -30,7 +30,7 @@ SetDefaultPolicyVersionRequest::SetDefaultPolicyVersionRequest() :
 
 Aws::String SetDefaultPolicyVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

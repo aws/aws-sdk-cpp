@@ -35,7 +35,7 @@ ListBranchesRequest::ListBranchesRequest() :
 
 Aws::String ListBranchesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBranchesRequest::AddQueryStringParameters(URI& uri) const

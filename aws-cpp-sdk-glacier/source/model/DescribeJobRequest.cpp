@@ -31,7 +31,7 @@ DescribeJobRequest::DescribeJobRequest() :
 
 Aws::String DescribeJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

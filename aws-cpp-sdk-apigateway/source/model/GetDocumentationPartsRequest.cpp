@@ -41,7 +41,7 @@ GetDocumentationPartsRequest::GetDocumentationPartsRequest() :
 
 Aws::String GetDocumentationPartsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDocumentationPartsRequest::AddQueryStringParameters(URI& uri) const

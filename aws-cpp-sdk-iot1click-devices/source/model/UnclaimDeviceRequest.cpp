@@ -29,7 +29,7 @@ UnclaimDeviceRequest::UnclaimDeviceRequest() :
 
 Aws::String UnclaimDeviceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

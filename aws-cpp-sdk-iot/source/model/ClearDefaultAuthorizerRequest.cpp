@@ -28,7 +28,7 @@ ClearDefaultAuthorizerRequest::ClearDefaultAuthorizerRequest()
 
 Aws::String ClearDefaultAuthorizerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

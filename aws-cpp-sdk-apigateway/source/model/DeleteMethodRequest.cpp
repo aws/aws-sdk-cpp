@@ -31,7 +31,7 @@ DeleteMethodRequest::DeleteMethodRequest() :
 
 Aws::String DeleteMethodRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

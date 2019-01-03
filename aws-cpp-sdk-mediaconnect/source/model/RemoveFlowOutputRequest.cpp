@@ -30,7 +30,7 @@ RemoveFlowOutputRequest::RemoveFlowOutputRequest() :
 
 Aws::String RemoveFlowOutputRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

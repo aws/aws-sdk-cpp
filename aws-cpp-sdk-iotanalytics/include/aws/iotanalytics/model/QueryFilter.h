@@ -50,66 +50,31 @@ namespace Model
 
     /**
      * <p>Used to limit data to that which has arrived since the last execution of the
-     * action. When you create data set contents using message data from a specified
-     * time frame, some message data may still be "in flight" when processing begins,
-     * and so will not arrive in time to be processed. Use this field to make
-     * allowances for the "in flight" time of you message data, so that data not
-     * processed from a previous time frame will be included with the next time frame.
-     * Without this, missed message data would be excluded from processing during the
-     * next time frame as well, because its timestamp places it within the previous
-     * time frame.</p>
+     * action.</p>
      */
     inline const DeltaTime& GetDeltaTime() const{ return m_deltaTime; }
 
     /**
      * <p>Used to limit data to that which has arrived since the last execution of the
-     * action. When you create data set contents using message data from a specified
-     * time frame, some message data may still be "in flight" when processing begins,
-     * and so will not arrive in time to be processed. Use this field to make
-     * allowances for the "in flight" time of you message data, so that data not
-     * processed from a previous time frame will be included with the next time frame.
-     * Without this, missed message data would be excluded from processing during the
-     * next time frame as well, because its timestamp places it within the previous
-     * time frame.</p>
+     * action.</p>
      */
     inline void SetDeltaTime(const DeltaTime& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = value; }
 
     /**
      * <p>Used to limit data to that which has arrived since the last execution of the
-     * action. When you create data set contents using message data from a specified
-     * time frame, some message data may still be "in flight" when processing begins,
-     * and so will not arrive in time to be processed. Use this field to make
-     * allowances for the "in flight" time of you message data, so that data not
-     * processed from a previous time frame will be included with the next time frame.
-     * Without this, missed message data would be excluded from processing during the
-     * next time frame as well, because its timestamp places it within the previous
-     * time frame.</p>
+     * action.</p>
      */
     inline void SetDeltaTime(DeltaTime&& value) { m_deltaTimeHasBeenSet = true; m_deltaTime = std::move(value); }
 
     /**
      * <p>Used to limit data to that which has arrived since the last execution of the
-     * action. When you create data set contents using message data from a specified
-     * time frame, some message data may still be "in flight" when processing begins,
-     * and so will not arrive in time to be processed. Use this field to make
-     * allowances for the "in flight" time of you message data, so that data not
-     * processed from a previous time frame will be included with the next time frame.
-     * Without this, missed message data would be excluded from processing during the
-     * next time frame as well, because its timestamp places it within the previous
-     * time frame.</p>
+     * action.</p>
      */
     inline QueryFilter& WithDeltaTime(const DeltaTime& value) { SetDeltaTime(value); return *this;}
 
     /**
      * <p>Used to limit data to that which has arrived since the last execution of the
-     * action. When you create data set contents using message data from a specified
-     * time frame, some message data may still be "in flight" when processing begins,
-     * and so will not arrive in time to be processed. Use this field to make
-     * allowances for the "in flight" time of you message data, so that data not
-     * processed from a previous time frame will be included with the next time frame.
-     * Without this, missed message data would be excluded from processing during the
-     * next time frame as well, because its timestamp places it within the previous
-     * time frame.</p>
+     * action.</p>
      */
     inline QueryFilter& WithDeltaTime(DeltaTime&& value) { SetDeltaTime(std::move(value)); return *this;}
 

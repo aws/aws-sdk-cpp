@@ -30,7 +30,7 @@ DeleteDomainAssociationRequest::DeleteDomainAssociationRequest() :
 
 Aws::String DeleteDomainAssociationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

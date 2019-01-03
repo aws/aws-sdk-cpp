@@ -35,7 +35,7 @@ ListDomainAssociationsRequest::ListDomainAssociationsRequest() :
 
 Aws::String ListDomainAssociationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDomainAssociationsRequest::AddQueryStringParameters(URI& uri) const

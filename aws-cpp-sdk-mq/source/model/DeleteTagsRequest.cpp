@@ -33,7 +33,7 @@ DeleteTagsRequest::DeleteTagsRequest() :
 
 Aws::String DeleteTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteTagsRequest::AddQueryStringParameters(URI& uri) const

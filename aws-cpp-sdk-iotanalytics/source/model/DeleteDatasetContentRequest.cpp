@@ -33,7 +33,7 @@ DeleteDatasetContentRequest::DeleteDatasetContentRequest() :
 
 Aws::String DeleteDatasetContentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteDatasetContentRequest::AddQueryStringParameters(URI& uri) const
