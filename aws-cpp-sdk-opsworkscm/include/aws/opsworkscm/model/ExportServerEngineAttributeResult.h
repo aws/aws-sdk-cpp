@@ -44,63 +44,63 @@ namespace Model
 
 
     /**
-     * <p>The requested engine attribute pair with attribute name and value. </p>
+     * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline const EngineAttribute& GetEngineAttribute() const{ return m_engineAttribute; }
 
     /**
-     * <p>The requested engine attribute pair with attribute name and value. </p>
+     * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline void SetEngineAttribute(const EngineAttribute& value) { m_engineAttribute = value; }
 
     /**
-     * <p>The requested engine attribute pair with attribute name and value. </p>
+     * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline void SetEngineAttribute(EngineAttribute&& value) { m_engineAttribute = std::move(value); }
 
     /**
-     * <p>The requested engine attribute pair with attribute name and value. </p>
+     * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline ExportServerEngineAttributeResult& WithEngineAttribute(const EngineAttribute& value) { SetEngineAttribute(value); return *this;}
 
     /**
-     * <p>The requested engine attribute pair with attribute name and value. </p>
+     * <p>The requested engine attribute pair with attribute name and value.</p>
      */
     inline ExportServerEngineAttributeResult& WithEngineAttribute(EngineAttribute&& value) { SetEngineAttribute(std::move(value)); return *this;}
 
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline void SetServerName(const Aws::String& value) { m_serverName = value; }
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline void SetServerName(Aws::String&& value) { m_serverName = std::move(value); }
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline void SetServerName(const char* value) { m_serverName.assign(value); }
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline ExportServerEngineAttributeResult& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline ExportServerEngineAttributeResult& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
 
     /**
-     * <p>The requested ServerName. </p>
+     * <p>The server name used in the request.</p>
      */
     inline ExportServerEngineAttributeResult& WithServerName(const char* value) { SetServerName(value); return *this;}
 
