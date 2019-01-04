@@ -109,6 +109,10 @@ include(initialize_project_version)
 
 # build third-party targets
 if (BUILD_DEPS)
+    # If building third party dependencies, we will move them to the same directory where SDK has been installed during installation.
+    # Therefore, we should set rpath to $ORIGIN to let SDK find these third party dependencies.
+    # Otherwise, customers are responsible for handling the linkage to these libraries.
+    set(CMAKE_INSTALL_RPATH "$ORIGIN")
     set(AWS_DEPS_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps)
     if (DEFINED CMAKE_INSTALL_PREFIX)
         set(AWS_DEPS_INSTALL_DIR ${CMAKE_INSTALL_PREFIX})
@@ -131,7 +135,8 @@ if (BUILD_DEPS)
             -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
             -DGIT_EXECUTABLE=${GIT_EXECUTABLE}
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party
-            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR})
+            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
+            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
     else()
         execute_process(
             COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}

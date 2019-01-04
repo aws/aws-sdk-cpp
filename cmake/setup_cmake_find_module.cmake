@@ -73,6 +73,19 @@ install(
 # useful macros and variables will be included in this cmake file for user to use
 install(DIRECTORY "${AWS_NATIVE_SDK_ROOT}/cmake/" DESTINATION "${LIBRARY_DIRECTORY}/cmake/${PROJECT_NAME}")
 
+# copy third party dependencies
+if (BUILD_DEPS)
+    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/include")
+        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/include/" DESTINATION "${INCLUDE_DIRECTORY}")
+    endif()
+    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/lib")
+        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/lib/" DESTINATION "${LIBRARY_DIRECTORY}")
+    endif()
+    if (EXISTS "${AWS_DEPS_INSTALL_DIR}/bin")
+        install(DIRECTORY "${AWS_DEPS_INSTALL_DIR}/bin/" DESTINATION "${BINARY_DIRECTORY}")
+    endif()
+endif()
+
 # following two files are vital for cmake to find correct package, but since we copied all files from above
 # we left the code here to give you bettern understanding
 #install(

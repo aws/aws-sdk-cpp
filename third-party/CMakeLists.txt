@@ -20,16 +20,16 @@ set(AWS_DEPS_LIB_DIR "${AWS_DEPS_INSTALL_DIR}/lib" CACHE PATH "Dependencies libr
 set(AWS_DEPS_BUILD_DIR "${CMAKE_BINARY_DIR}/build" CACHE PATH "Dependencies build directory.")
 set(AWS_DEPS_DOWNLOAD_DIR "${AWS_DEPS_BUILD_DIR}/downloads" CACHE PATH "Dependencies download directory.")
 
-set(AWS_CHECKSUMS_URL "https://github.com/awslabs/aws-checksums.git")
-set(AWS_CHECKSUMS_TAG "v0.1.0")
-include(BuildAwsChecksums)
-
 set(AWS_C_COMMON_URL "https://github.com/awslabs/aws-c-common.git")
-set(AWS_C_COMMON_TAG "v0.2.0")
+set(AWS_C_COMMON_TAG "97126de65bc5")
 include(BuildAwsCCommon)
 
+set(AWS_CHECKSUMS_URL "https://github.com/awslabs/aws-checksums.git")
+set(AWS_CHECKSUMS_TAG "v0.1.1")
+include(BuildAwsChecksums)
+
 set(AWS_EVENT_STREAM_URL "https://github.com/awslabs/aws-c-event-stream.git")
-set(AWS_EVENT_STREAM_TAG "v0.1.0")
+set(AWS_EVENT_STREAM_TAG "v0.1.1")
 include(BuildAwsEventStream)
 
 add_dependencies(AwsCEventStream AwsCCommon AwsChecksums)
