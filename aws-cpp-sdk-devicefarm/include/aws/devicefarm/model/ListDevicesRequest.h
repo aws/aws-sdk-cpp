@@ -144,8 +144,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -156,8 +157,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -179,8 +180,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -191,8 +193,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -214,8 +216,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -226,8 +229,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -249,8 +252,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -261,8 +265,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -284,8 +288,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -296,8 +301,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -319,8 +324,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -331,8 +337,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>
@@ -354,8 +360,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul> </li> <li> <p>Operator:
@@ -366,8 +373,8 @@ namespace Model
      * and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN, GREATER_THAN,
      * LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also available for
      * the OS_VERSION attribute.</p> </li> </ul> </li> <li> <p>Values: An array of one
-     * or more filter values.</p> <ul> <li> <p>The IN and NOT operators can take a
-     * values array that has more than one element.</p> </li> <li> <p>The other
+     * or more filter values.</p> <ul> <li> <p>The IN and NOT_IN operators take a
+     * values array that has one or more elements.</p> </li> <li> <p>The other
      * operators require an array with a single element.</p> </li> <li> <p>In a
      * request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE",
      * "BUSY", or "TEMPORARY_NOT_AVAILABLE" as values.</p> </li> </ul> </li> </ul>

@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents test settings. This data structure is passed in as the "test"
-   * parameter to ScheduleRun. For an example of the JSON request syntax, see
-   * <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents test settings. This data structure is passed in as the
+   * <code>test</code> parameter to ScheduleRun. For an example of the JSON request
+   * syntax, see <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest">AWS
    * API Reference</a></p>
    */
@@ -58,14 +58,18 @@ namespace Model
      * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
      * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
      * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
-     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
-     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
-     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
-     * XCode UI test type.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
      */
     inline const TestType& GetType() const{ return m_type; }
 
@@ -76,14 +80,18 @@ namespace Model
      * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
      * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
      * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
-     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
-     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
-     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
-     * XCode UI test type.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
      */
     inline void SetType(const TestType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -94,14 +102,18 @@ namespace Model
      * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
      * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
      * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
-     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
-     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
-     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
-     * XCode UI test type.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
      */
     inline void SetType(TestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -112,14 +124,18 @@ namespace Model
      * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
      * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
      * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
-     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
-     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
-     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
-     * XCode UI test type.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
      */
     inline ScheduleRunTest& WithType(const TestType& value) { SetType(value); return *this;}
 
@@ -130,14 +146,18 @@ namespace Model
      * and capturing screenshots at the same time.</p> </li> <li> <p>APPIUM_JAVA_JUNIT:
      * The Appium Java JUnit type.</p> </li> <li> <p>APPIUM_JAVA_TESTNG: The Appium
      * Java TestNG type.</p> </li> <li> <p>APPIUM_PYTHON: The Appium Python type.</p>
-     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web
-     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
-     * Web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web
-     * apps.</p> </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li>
-     * <p>INSTRUMENTATION: The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION:
-     * The uiautomation type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p>
-     * </li> <li> <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The
-     * XCode UI test type.</p> </li> </ul>
+     * </li> <li> <p>APPIUM_NODE: The Appium Node.js type.</p> </li> <li>
+     * <p>APPIUM_RUBY: The Appium Ruby type.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT:
+     * The Appium Java JUnit type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.</p> </li>
+     * <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE: The Appium Node.js type for web apps.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p> </li> <li>
+     * <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
+     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
+     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
+     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
+     * </ul>
      */
     inline ScheduleRunTest& WithType(TestType&& value) { SetType(std::move(value)); return *this;}
 
@@ -260,36 +280,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -303,36 +323,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -346,36 +366,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -389,36 +409,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -432,36 +452,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -475,36 +495,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -518,36 +538,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -561,36 +581,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -604,36 +624,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -647,36 +667,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -690,36 +710,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -733,36 +753,36 @@ namespace Model
      * features or scenarios that have (or don't have) certain tags, for example,
      * "@smoke" or "@smoke,~@wip".</p> </li> </ul> <p>For Appium tests (all types):</p>
      * <ul> <li> <p>appium_version: The Appium version. Currently supported values are
-     * "1.7.2", "1.7.1", "1.6.5", "latest", and "default".</p> <ul> <li> <p>“latest”
-     * will run the latest Appium version supported by Device Farm (1.7.2).</p> </li>
-     * <li> <p>For “default”, Device Farm will choose a compatible version of Appium
-     * for the device. The current behavior is to run 1.7.2 on Android devices and iOS
-     * 9 and earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is
-     * subject to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android
-     * only):</p> <ul> <li> <p>event_count: The number of events, between 1 and 10000,
-     * that the UI fuzz test should perform.</p> </li> <li> <p>throttle: The time, in
-     * ms, between 0 and 1000, that the UI fuzz test should wait between events.</p>
-     * </li> <li> <p>seed: A seed to use for randomizing the UI fuzz test. Using the
-     * same seed value between tests ensures identical event sequences.</p> </li> </ul>
-     * <p>For Explorer tests:</p> <ul> <li> <p>username: A username to use if the
-     * Explorer encounters a login form. If not supplied, no username will be
-     * inserted.</p> </li> <li> <p>password: A password to use if the Explorer
-     * encounters a login form. If not supplied, no password will be inserted.</p>
-     * </li> </ul> <p>For Instrumentation:</p> <ul> <li> <p>filter: A test filter
-     * string. Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul> <p>For
-     * XCTest and XCTestUI:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test class: "LoginTests"</p> </li>
-     * <li> <p>Running a multiple test classes: "LoginTests,SmokeTests"</p> </li> <li>
-     * <p>Running a single test: "LoginTests/testValid"</p> </li> <li> <p>Running
-     * multiple tests: "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul>
-     * </li> </ul> <p>For UIAutomator:</p> <ul> <li> <p>filter: A test filter string.
-     * Examples:</p> <ul> <li> <p>Running a single test case:
-     * "com.android.abc.Test1"</p> </li> <li> <p>Running a single test:
-     * "com.android.abc.Test1#smoke"</p> </li> <li> <p>Running multiple tests:
-     * "com.android.abc.Test1,com.android.abc.Test2"</p> </li> </ul> </li> </ul>
+     * "1.6.5" (and higher), "latest", and "default".</p> <ul> <li> <p>“latest” will
+     * run the latest Appium version supported by Device Farm (1.9.1).</p> </li> <li>
+     * <p>For “default”, Device Farm will choose a compatible version of Appium for the
+     * device. The current behavior is to run 1.7.2 on Android devices and iOS 9 and
+     * earlier, 1.7.2 for iOS 10 and later.</p> </li> <li> <p>This behavior is subject
+     * to change.</p> </li> </ul> </li> </ul> <p>For Fuzz tests (Android only):</p>
+     * <ul> <li> <p>event_count: The number of events, between 1 and 10000, that the UI
+     * fuzz test should perform.</p> </li> <li> <p>throttle: The time, in ms, between 0
+     * and 1000, that the UI fuzz test should wait between events.</p> </li> <li>
+     * <p>seed: A seed to use for randomizing the UI fuzz test. Using the same seed
+     * value between tests ensures identical event sequences.</p> </li> </ul> <p>For
+     * Explorer tests:</p> <ul> <li> <p>username: A username to use if the Explorer
+     * encounters a login form. If not supplied, no username will be inserted.</p>
+     * </li> <li> <p>password: A password to use if the Explorer encounters a login
+     * form. If not supplied, no password will be inserted.</p> </li> </ul> <p>For
+     * Instrumentation:</p> <ul> <li> <p>filter: A test filter string. Examples:</p>
+     * <ul> <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul> <p>For XCTest and XCTestUI:</p> <ul> <li> <p>filter: A
+     * test filter string. Examples:</p> <ul> <li> <p>Running a single test class:
+     * "LoginTests"</p> </li> <li> <p>Running a multiple test classes:
+     * "LoginTests,SmokeTests"</p> </li> <li> <p>Running a single test:
+     * "LoginTests/testValid"</p> </li> <li> <p>Running multiple tests:
+     * "LoginTests/testValid,LoginTests/testInvalid"</p> </li> </ul> </li> </ul> <p>For
+     * UIAutomator:</p> <ul> <li> <p>filter: A test filter string. Examples:</p> <ul>
+     * <li> <p>Running a single test case: "com.android.abc.Test1"</p> </li> <li>
+     * <p>Running a single test: "com.android.abc.Test1#smoke"</p> </li> <li>
+     * <p>Running multiple tests: "com.android.abc.Test1,com.android.abc.Test2"</p>
+     * </li> </ul> </li> </ul>
      */
     inline ScheduleRunTest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

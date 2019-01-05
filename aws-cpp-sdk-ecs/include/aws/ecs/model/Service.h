@@ -1215,7 +1215,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1224,7 +1224,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1233,7 +1233,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */

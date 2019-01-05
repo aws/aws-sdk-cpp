@@ -100,25 +100,36 @@ namespace Model
      * Appium Java JUnit test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium
-     * Java JUnit test package upload.</p> </li> <li>
+     * package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium Node.js
+     * test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
-     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
-     * <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
-     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
-     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
-     * test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium
-     * Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An
-     * Appium Python test spec upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An
-     * instrumentation test spec upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An
-     * XCode UI test spec upload.</p> </li> </ul>
+     * upload for a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An
+     * Appium Python test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web
+     * app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package
+     * upload for a web app.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test
+     * package upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An
+     * instrumentation upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A
+     * uiautomation test package upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A
+     * uiautomator test package upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode
+     * test package upload.</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test
+     * package upload.</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java
+     * JUnit test spec upload.</p> </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An
+     * Appium Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC:
+     * An Appium Python test spec upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload.</p> </li> <li> <p> APPIUM_RUBY_TEST_SPEC: An
+     * Appium Ruby test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+     * An Appium Java JUnit test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul>
      */
     inline const UploadType& GetType() const{ return m_type; }
 
@@ -130,25 +141,36 @@ namespace Model
      * Appium Java JUnit test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium
-     * Java JUnit test package upload.</p> </li> <li>
+     * package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium Node.js
+     * test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
-     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
-     * <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
-     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
-     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
-     * test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium
-     * Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An
-     * Appium Python test spec upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An
-     * instrumentation test spec upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An
-     * XCode UI test spec upload.</p> </li> </ul>
+     * upload for a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An
+     * Appium Python test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web
+     * app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package
+     * upload for a web app.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test
+     * package upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An
+     * instrumentation upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A
+     * uiautomation test package upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A
+     * uiautomator test package upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode
+     * test package upload.</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test
+     * package upload.</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java
+     * JUnit test spec upload.</p> </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An
+     * Appium Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC:
+     * An Appium Python test spec upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload.</p> </li> <li> <p> APPIUM_RUBY_TEST_SPEC: An
+     * Appium Ruby test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+     * An Appium Java JUnit test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul>
      */
     inline void SetType(const UploadType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -160,25 +182,36 @@ namespace Model
      * Appium Java JUnit test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium
-     * Java JUnit test package upload.</p> </li> <li>
+     * package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium Node.js
+     * test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
-     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
-     * <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
-     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
-     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
-     * test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium
-     * Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An
-     * Appium Python test spec upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An
-     * instrumentation test spec upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An
-     * XCode UI test spec upload.</p> </li> </ul>
+     * upload for a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An
+     * Appium Python test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web
+     * app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package
+     * upload for a web app.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test
+     * package upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An
+     * instrumentation upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A
+     * uiautomation test package upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A
+     * uiautomator test package upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode
+     * test package upload.</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test
+     * package upload.</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java
+     * JUnit test spec upload.</p> </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An
+     * Appium Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC:
+     * An Appium Python test spec upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload.</p> </li> <li> <p> APPIUM_RUBY_TEST_SPEC: An
+     * Appium Ruby test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+     * An Appium Java JUnit test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul>
      */
     inline void SetType(UploadType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -190,25 +223,36 @@ namespace Model
      * Appium Java JUnit test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium
-     * Java JUnit test package upload.</p> </li> <li>
+     * package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium Node.js
+     * test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
-     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
-     * <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
-     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
-     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
-     * test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium
-     * Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An
-     * Appium Python test spec upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An
-     * instrumentation test spec upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An
-     * XCode UI test spec upload.</p> </li> </ul>
+     * upload for a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An
+     * Appium Python test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web
+     * app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package
+     * upload for a web app.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test
+     * package upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An
+     * instrumentation upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A
+     * uiautomation test package upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A
+     * uiautomator test package upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode
+     * test package upload.</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test
+     * package upload.</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java
+     * JUnit test spec upload.</p> </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An
+     * Appium Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC:
+     * An Appium Python test spec upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload.</p> </li> <li> <p> APPIUM_RUBY_TEST_SPEC: An
+     * Appium Ruby test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+     * An Appium Java JUnit test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul>
      */
     inline ListUploadsRequest& WithType(const UploadType& value) { SetType(value); return *this;}
 
@@ -220,25 +264,36 @@ namespace Model
      * Appium Java JUnit test package upload.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
      * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An Appium
-     * Java JUnit test package upload.</p> </li> <li>
+     * package upload.</p> </li> <li> <p>APPIUM_NODE_TEST_PACKAGE: An Appium Node.js
+     * test package upload.</p> </li> <li> <p>APPIUM_RUBY_TEST_PACKAGE: An Appium Ruby
+     * test package upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: An
+     * Appium Java JUnit test package upload for a web app.</p> </li> <li>
      * <p>APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: An Appium Java TestNG test package
-     * upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An Appium Python test
-     * package upload.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test package
-     * upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An instrumentation
-     * upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A uiautomation test package
-     * upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A uiautomator test package
-     * upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode test package upload.</p>
-     * </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test package upload.</p> </li>
-     * <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit test spec upload.</p>
-     * </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec
-     * upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC: An Appium Python test spec
-     * upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: An Appium Java JUnit
-     * test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium
-     * Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An
-     * Appium Python test spec upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An
-     * instrumentation test spec upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An
-     * XCode UI test spec upload.</p> </li> </ul>
+     * upload for a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_PACKAGE: An
+     * Appium Python test package upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_NODE_TEST_PACKAGE: An Appium Node.js test package upload for a web
+     * app.</p> </li> <li> <p>APPIUM_WEB_RUBY_TEST_PACKAGE: An Appium Ruby test package
+     * upload for a web app.</p> </li> <li> <p>CALABASH_TEST_PACKAGE: A Calabash test
+     * package upload.</p> </li> <li> <p>INSTRUMENTATION_TEST_PACKAGE: An
+     * instrumentation upload.</p> </li> <li> <p>UIAUTOMATION_TEST_PACKAGE: A
+     * uiautomation test package upload.</p> </li> <li> <p>UIAUTOMATOR_TEST_PACKAGE: A
+     * uiautomator test package upload.</p> </li> <li> <p>XCTEST_TEST_PACKAGE: An XCode
+     * test package upload.</p> </li> <li> <p>XCTEST_UI_TEST_PACKAGE: An XCode UI test
+     * package upload.</p> </li> <li> <p>APPIUM_JAVA_JUNIT_TEST_SPEC: An Appium Java
+     * JUnit test spec upload.</p> </li> <li> <p>APPIUM_JAVA_TESTNG_TEST_SPEC: An
+     * Appium Java TestNG test spec upload.</p> </li> <li> <p>APPIUM_PYTHON_TEST_SPEC:
+     * An Appium Python test spec upload.</p> </li> <li> <p>APPIUM_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload.</p> </li> <li> <p> APPIUM_RUBY_TEST_SPEC: An
+     * Appium Ruby test spec upload.</p> </li> <li> <p>APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
+     * An Appium Java JUnit test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: An Appium Java TestNG test spec upload for
+     * a web app.</p> </li> <li> <p>APPIUM_WEB_PYTHON_TEST_SPEC: An Appium Python test
+     * spec upload for a web app.</p> </li> <li> <p>APPIUM_WEB_NODE_TEST_SPEC: An
+     * Appium Node.js test spec upload for a web app.</p> </li> <li>
+     * <p>APPIUM_WEB_RUBY_TEST_SPEC: An Appium Ruby test spec upload for a web app.</p>
+     * </li> <li> <p>INSTRUMENTATION_TEST_SPEC: An instrumentation test spec
+     * upload.</p> </li> <li> <p>XCTEST_UI_TEST_SPEC: An XCode UI test spec upload.</p>
+     * </li> </ul>
      */
     inline ListUploadsRequest& WithType(UploadType&& value) { SetType(std::move(value)); return *this;}
 

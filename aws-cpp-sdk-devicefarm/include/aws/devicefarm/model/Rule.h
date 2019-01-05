@@ -60,13 +60,13 @@ namespace Model
      * "IOS".</p> </li> <li> <p>FORM_FACTOR: The device form factor. Valid values are
      * "PHONE" or "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer.
      * For example, "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the
-     * device is enabled for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging.</p> </li> <li>
-     * <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
-     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
-     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".</p> </li>
-     * </ul>
+     * device is enabled for remote access. Valid values are "TRUE" or "FALSE".</p>
+     * </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote
+     * debugging. Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>APPIUM_VERSION:
+     * The Appium version for the test.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
      */
     inline const DeviceAttribute& GetAttribute() const{ return m_attribute; }
 
@@ -79,13 +79,13 @@ namespace Model
      * "IOS".</p> </li> <li> <p>FORM_FACTOR: The device form factor. Valid values are
      * "PHONE" or "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer.
      * For example, "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the
-     * device is enabled for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging.</p> </li> <li>
-     * <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
-     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
-     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".</p> </li>
-     * </ul>
+     * device is enabled for remote access. Valid values are "TRUE" or "FALSE".</p>
+     * </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote
+     * debugging. Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>APPIUM_VERSION:
+     * The Appium version for the test.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
      */
     inline void SetAttribute(const DeviceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
@@ -98,13 +98,13 @@ namespace Model
      * "IOS".</p> </li> <li> <p>FORM_FACTOR: The device form factor. Valid values are
      * "PHONE" or "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer.
      * For example, "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the
-     * device is enabled for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging.</p> </li> <li>
-     * <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
-     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
-     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".</p> </li>
-     * </ul>
+     * device is enabled for remote access. Valid values are "TRUE" or "FALSE".</p>
+     * </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote
+     * debugging. Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>APPIUM_VERSION:
+     * The Appium version for the test.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
      */
     inline void SetAttribute(DeviceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
@@ -117,13 +117,13 @@ namespace Model
      * "IOS".</p> </li> <li> <p>FORM_FACTOR: The device form factor. Valid values are
      * "PHONE" or "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer.
      * For example, "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the
-     * device is enabled for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging.</p> </li> <li>
-     * <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
-     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
-     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".</p> </li>
-     * </ul>
+     * device is enabled for remote access. Valid values are "TRUE" or "FALSE".</p>
+     * </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote
+     * debugging. Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>APPIUM_VERSION:
+     * The Appium version for the test.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
      */
     inline Rule& WithAttribute(const DeviceAttribute& value) { SetAttribute(value); return *this;}
 
@@ -136,13 +136,13 @@ namespace Model
      * "IOS".</p> </li> <li> <p>FORM_FACTOR: The device form factor. Valid values are
      * "PHONE" or "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer.
      * For example, "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the
-     * device is enabled for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED:
-     * Whether the device is enabled for remote debugging.</p> </li> <li>
-     * <p>APPIUM_VERSION: The Appium version for the test.</p> </li> <li>
-     * <p>INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance.</p>
-     * </li> <li> <p>INSTANCE_LABELS: The label of the device instance.</p> </li> <li>
-     * <p>FLEET_TYPE: The fleet type. Valid values are "PUBLIC" or "PRIVATE".</p> </li>
-     * </ul>
+     * device is enabled for remote access. Valid values are "TRUE" or "FALSE".</p>
+     * </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote
+     * debugging. Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>APPIUM_VERSION:
+     * The Appium version for the test.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
+     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
      */
     inline Rule& WithAttribute(DeviceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 

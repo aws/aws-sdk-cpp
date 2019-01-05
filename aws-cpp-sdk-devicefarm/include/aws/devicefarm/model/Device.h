@@ -689,27 +689,32 @@ namespace Model
 
 
     /**
-     * <p>Reflects how likely a device will be available for a test run.</p>
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
      */
     inline const DeviceAvailability& GetAvailability() const{ return m_availability; }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run.</p>
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
      */
     inline void SetAvailability(const DeviceAvailability& value) { m_availabilityHasBeenSet = true; m_availability = value; }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run.</p>
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
      */
     inline void SetAvailability(DeviceAvailability&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run.</p>
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
      */
     inline Device& WithAvailability(const DeviceAvailability& value) { SetAvailability(value); return *this;}
 
     /**
-     * <p>Reflects how likely a device will be available for a test run.</p>
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
      */
     inline Device& WithAvailability(DeviceAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 

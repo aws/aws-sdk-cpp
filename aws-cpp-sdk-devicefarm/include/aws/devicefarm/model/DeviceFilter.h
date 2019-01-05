@@ -39,10 +39,11 @@ namespace Model
   /**
    * <p>Represents a device filter used to select a set of devices to be included in
    * a test run. This data structure is passed in as the
-   * "deviceSelectionConfiguration" parameter to ScheduleRun. For an example of the
-   * JSON request syntax, see <a>ScheduleRun</a>.</p> <p>It is also passed in as the
-   * "filters" parameter to ListDevices. For an example of the JSON request syntax,
-   * see <a>ListDevices</a>.</p><p><h3>See Also:</h3>   <a
+   * <code>deviceSelectionConfiguration</code> parameter to ScheduleRun. For an
+   * example of the JSON request syntax, see <a>ScheduleRun</a>.</p> <p>It is also
+   * passed in as the <code>filters</code> parameter to ListDevices. For an example
+   * of the JSON request syntax, see <a>ListDevices</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceFilter">AWS
    * API Reference</a></p>
    */
@@ -68,8 +69,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -89,8 +91,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -110,8 +113,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -131,8 +135,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -152,8 +157,9 @@ namespace Model
      * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
      * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
      * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access.</p> </li> <li> <p>REMOTE_DEBUG_ENABLED: Whether the device is
-     * enabled for remote debugging.</p> </li> <li> <p>INSTANCE_ARN: The Amazon
+     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
+     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
      * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
      * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
      * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -219,12 +225,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -233,12 +239,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -247,12 +253,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -261,12 +267,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -275,12 +281,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -289,12 +295,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -303,12 +309,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>
@@ -317,12 +323,12 @@ namespace Model
 
     /**
      * <p>An array of one or more filter values used in a device filter.</p> <p
-     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT operators
-     * can take a values array that has more than one element.</p> </li> <li> <p>The
-     * other operators require an array with a single element.</p> </li> </ul> <p
-     * class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM attribute
-     * can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY attribute
-     * can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * class="title"> <b>Operator Values</b> </p> <ul> <li> <p>The IN and NOT_IN
+     * operators can take a values array that has more than one element.</p> </li> <li>
+     * <p>The other operators require an array with a single element.</p> </li> </ul>
+     * <p class="title"> <b>Attribute Values</b> </p> <ul> <li> <p>The PLATFORM
+     * attribute can be set to "ANDROID" or "IOS".</p> </li> <li> <p>The AVAILABILITY
+     * attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
      * "TEMPORARY_NOT_AVAILABLE".</p> </li> <li> <p>The FORM_FACTOR attribute can be
      * set to "PHONE" or "TABLET".</p> </li> <li> <p>The FLEET_TYPE attribute can be
      * set to "PUBLIC" or "PRIVATE".</p> </li> </ul>

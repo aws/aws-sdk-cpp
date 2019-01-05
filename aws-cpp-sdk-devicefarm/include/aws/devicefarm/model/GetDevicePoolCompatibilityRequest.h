@@ -130,15 +130,18 @@ namespace Model
      * Android app, interacting with it and capturing screenshots at the same time.</p>
      * </li> <li> <p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p> </li> <li>
-     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li>
-     * <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p> </li>
-     * <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p>
-     * </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p> </li>
-     * <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
-     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
-     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
-     * </ul>
+     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li> <p>APPIUM_NODE: The
+     * Appium Node.js type.</p> </li> <li> <p>APPIUM_RUBY: The Appium Ruby type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_NODE: The Appium Node.js type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p>
+     * </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION:
+     * The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation
+     * type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li>
+     * <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test
+     * type.</p> </li> </ul>
      */
     inline const TestType& GetTestType() const{ return m_testType; }
 
@@ -149,15 +152,18 @@ namespace Model
      * Android app, interacting with it and capturing screenshots at the same time.</p>
      * </li> <li> <p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p> </li> <li>
-     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li>
-     * <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p> </li>
-     * <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p>
-     * </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p> </li>
-     * <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
-     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
-     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
-     * </ul>
+     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li> <p>APPIUM_NODE: The
+     * Appium Node.js type.</p> </li> <li> <p>APPIUM_RUBY: The Appium Ruby type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_NODE: The Appium Node.js type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p>
+     * </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION:
+     * The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation
+     * type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li>
+     * <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test
+     * type.</p> </li> </ul>
      */
     inline void SetTestType(const TestType& value) { m_testTypeHasBeenSet = true; m_testType = value; }
 
@@ -168,15 +174,18 @@ namespace Model
      * Android app, interacting with it and capturing screenshots at the same time.</p>
      * </li> <li> <p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p> </li> <li>
-     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li>
-     * <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p> </li>
-     * <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p>
-     * </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p> </li>
-     * <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
-     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
-     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
-     * </ul>
+     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li> <p>APPIUM_NODE: The
+     * Appium Node.js type.</p> </li> <li> <p>APPIUM_RUBY: The Appium Ruby type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_NODE: The Appium Node.js type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p>
+     * </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION:
+     * The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation
+     * type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li>
+     * <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test
+     * type.</p> </li> </ul>
      */
     inline void SetTestType(TestType&& value) { m_testTypeHasBeenSet = true; m_testType = std::move(value); }
 
@@ -187,15 +196,18 @@ namespace Model
      * Android app, interacting with it and capturing screenshots at the same time.</p>
      * </li> <li> <p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p> </li> <li>
-     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li>
-     * <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p> </li>
-     * <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p>
-     * </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p> </li>
-     * <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
-     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
-     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
-     * </ul>
+     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li> <p>APPIUM_NODE: The
+     * Appium Node.js type.</p> </li> <li> <p>APPIUM_RUBY: The Appium Ruby type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_NODE: The Appium Node.js type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p>
+     * </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION:
+     * The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation
+     * type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li>
+     * <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test
+     * type.</p> </li> </ul>
      */
     inline GetDevicePoolCompatibilityRequest& WithTestType(const TestType& value) { SetTestType(value); return *this;}
 
@@ -206,15 +218,18 @@ namespace Model
      * Android app, interacting with it and capturing screenshots at the same time.</p>
      * </li> <li> <p>APPIUM_JAVA_JUNIT: The Appium Java JUnit type.</p> </li> <li>
      * <p>APPIUM_JAVA_TESTNG: The Appium Java TestNG type.</p> </li> <li>
-     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li>
-     * <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.</p> </li>
-     * <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.</p>
-     * </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for Web apps.</p> </li>
-     * <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION: The
-     * Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation type.</p>
-     * </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li> <p>XCTEST: The
-     * XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test type.</p> </li>
-     * </ul>
+     * <p>APPIUM_PYTHON: The Appium Python type.</p> </li> <li> <p>APPIUM_NODE: The
+     * Appium Node.js type.</p> </li> <li> <p>APPIUM_RUBY: The Appium Ruby type.</p>
+     * </li> <li> <p>APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for
+     * web apps.</p> </li> <li> <p>APPIUM_WEB_PYTHON: The Appium Python type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_NODE: The Appium Node.js type for web
+     * apps.</p> </li> <li> <p>APPIUM_WEB_RUBY: The Appium Ruby type for web apps.</p>
+     * </li> <li> <p>CALABASH: The Calabash type.</p> </li> <li> <p>INSTRUMENTATION:
+     * The Instrumentation type.</p> </li> <li> <p>UIAUTOMATION: The uiautomation
+     * type.</p> </li> <li> <p>UIAUTOMATOR: The uiautomator type.</p> </li> <li>
+     * <p>XCTEST: The XCode test type.</p> </li> <li> <p>XCTEST_UI: The XCode UI test
+     * type.</p> </li> </ul>
      */
     inline GetDevicePoolCompatibilityRequest& WithTestType(TestType&& value) { SetTestType(std::move(value)); return *this;}
 
