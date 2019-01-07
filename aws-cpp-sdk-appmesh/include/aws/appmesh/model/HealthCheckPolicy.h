@@ -36,12 +36,7 @@ namespace Model
 
   /**
    * <p>An object representing the health check policy for a virtual node's
-   * listener.</p>
-         <note>
-            <p>Listener health checks are not
-   * available during the App Mesh preview.</p>
-         </note><p><h3>See Also:</h3>
-   * <a
+   * listener.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HealthCheckPolicy">AWS
    * API Reference</a></p>
    */
@@ -93,53 +88,80 @@ namespace Model
 
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The destination path for the health check request.</p>
+     * <p>The destination path for the health check request. This is only required if
+     * the
+         specified protocol is HTTP; if the protocol is TCP, then this
+     * parameter is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const char* value) { SetPath(value); return *this;}
 
 
     /**
-     * <p>The destination port for the health check request.</p>
+     * <p>The destination port for the health check request. This port must match the
+     * port defined
+         in the <a>PortMapping</a> for the listener.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The destination port for the health check request.</p>
+     * <p>The destination port for the health check request. This port must match the
+     * port defined
+         in the <a>PortMapping</a> for the listener.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The destination port for the health check request.</p>
+     * <p>The destination port for the health check request. This port must match the
+     * port defined
+         in the <a>PortMapping</a> for the listener.</p>
      */
     inline HealthCheckPolicy& WithPort(int value) { SetPort(value); return *this;}
 

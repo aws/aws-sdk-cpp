@@ -188,7 +188,7 @@ namespace Model
    * Kubernetes on AWS. For
             more information about service discovery on
    * Amazon ECS, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
    * Discovery</a> in the
                <i>Amazon Elastic Container Service
    * Developer Guide</i>. Kubernetes <code>kube-dns</code> is supported.
@@ -648,14 +648,14 @@ namespace Model
         virtual void DeleteVirtualRouterAsync(const Model::DeleteVirtualRouterRequest& request, const DeleteVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeMeshOutcome DescribeMesh(const Model::DescribeMeshRequest& request) const;
 
         /**
-         * <p>Describes an existing cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">AWS
          * API Reference</a></p>
          *
@@ -664,7 +664,7 @@ namespace Model
         virtual Model::DescribeMeshOutcomeCallable DescribeMeshCallable(const Model::DescribeMeshRequest& request) const;
 
         /**
-         * <p>Describes an existing cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes an existing service mesh.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeMesh">AWS
          * API Reference</a></p>
          *

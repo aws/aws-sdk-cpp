@@ -51,51 +51,26 @@ namespace Model
 
     /**
      * <p>The health check information for the listener.</p>
-         <note>
-          
-     * <p>Listener health checks are not available during the App Mesh preview.</p>
-   
-     *      </note>
      */
     inline const HealthCheckPolicy& GetHealthCheck() const{ return m_healthCheck; }
 
     /**
      * <p>The health check information for the listener.</p>
-         <note>
-          
-     * <p>Listener health checks are not available during the App Mesh preview.</p>
-   
-     *      </note>
      */
     inline void SetHealthCheck(const HealthCheckPolicy& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
 
     /**
      * <p>The health check information for the listener.</p>
-         <note>
-          
-     * <p>Listener health checks are not available during the App Mesh preview.</p>
-   
-     *      </note>
      */
     inline void SetHealthCheck(HealthCheckPolicy&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
 
     /**
      * <p>The health check information for the listener.</p>
-         <note>
-          
-     * <p>Listener health checks are not available during the App Mesh preview.</p>
-   
-     *      </note>
      */
     inline Listener& WithHealthCheck(const HealthCheckPolicy& value) { SetHealthCheck(value); return *this;}
 
     /**
      * <p>The health check information for the listener.</p>
-         <note>
-          
-     * <p>Listener health checks are not available during the App Mesh preview.</p>
-   
-     *      </note>
      */
     inline Listener& WithHealthCheck(HealthCheckPolicy&& value) { SetHealthCheck(std::move(value)); return *this;}
 
