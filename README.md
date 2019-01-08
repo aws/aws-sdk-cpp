@@ -72,7 +72,7 @@ sudo make uninstall-awssdk
 
 * For Visual Studio:
 ```
-cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
+cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64" -DCMAKE_BUILD_TYPE=Release
 msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
 
