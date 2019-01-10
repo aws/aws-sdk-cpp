@@ -145,29 +145,29 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. This is good for algorithms that implement multiple workers on
-     * larger instances . The default value is <code>1</code>. To allow Amazon
-     * SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
+     * <p>The maximum number of parallel requests that can be sent to an algorithm
+     * container on an instance. This is good for algorithms that implement multiple
+     * workers on larger instances . The default value is <code>1</code>. To allow
+     * Amazon SageMaker to determine the appropriate number for
+     * <code>MaxConcurrentTransforms</code>, do not set the value in the API.</p>
      */
     inline int GetMaxConcurrentTransforms() const{ return m_maxConcurrentTransforms; }
 
     /**
-     * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. This is good for algorithms that implement multiple workers on
-     * larger instances . The default value is <code>1</code>. To allow Amazon
-     * SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
+     * <p>The maximum number of parallel requests that can be sent to an algorithm
+     * container on an instance. This is good for algorithms that implement multiple
+     * workers on larger instances . The default value is <code>1</code>. To allow
+     * Amazon SageMaker to determine the appropriate number for
+     * <code>MaxConcurrentTransforms</code>, do not set the value in the API.</p>
      */
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
 
     /**
-     * <p>The maximum number of parallel requests that can be sent to each instance in
-     * a transform job. This is good for algorithms that implement multiple workers on
-     * larger instances . The default value is <code>1</code>. To allow Amazon
-     * SageMaker to determine the appropriate number for
-     * <code>MaxConcurrentTransforms</code>, set the value to <code>0</code>.</p>
+     * <p>The maximum number of parallel requests that can be sent to an algorithm
+     * container on an instance. This is good for algorithms that implement multiple
+     * workers on larger instances . The default value is <code>1</code>. To allow
+     * Amazon SageMaker to determine the appropriate number for
+     * <code>MaxConcurrentTransforms</code>, do not set the value in the API.</p>
      */
     inline CreateTransformJobRequest& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
 
@@ -219,67 +219,67 @@ namespace Model
 
 
     /**
-     * <p>Determines the number of records included in a single mini-batch.
-     * <code>SingleRecord</code> means only one record is used per mini-batch.
-     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * <p>Determines the number of records to include in a mini-batch. If you want to
+     * include only one record in a mini-batch, specify <code>SingleRecord</code>.. If
+     * you want mini-batches to contain a maximum of the number of records specified in
+     * the <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.</p>
+     * <p> If you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>, a batch transform
+     * automatically splits your input data into the specified payload size. There's no
+     * need to split the dataset into smaller files or to use larger payload sizes
+     * unless the records in your dataset are very large.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
     /**
-     * <p>Determines the number of records included in a single mini-batch.
-     * <code>SingleRecord</code> means only one record is used per mini-batch.
-     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * <p>Determines the number of records to include in a mini-batch. If you want to
+     * include only one record in a mini-batch, specify <code>SingleRecord</code>.. If
+     * you want mini-batches to contain a maximum of the number of records specified in
+     * the <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.</p>
+     * <p> If you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>, a batch transform
+     * automatically splits your input data into the specified payload size. There's no
+     * need to split the dataset into smaller files or to use larger payload sizes
+     * unless the records in your dataset are very large.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = value; }
 
     /**
-     * <p>Determines the number of records included in a single mini-batch.
-     * <code>SingleRecord</code> means only one record is used per mini-batch.
-     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * <p>Determines the number of records to include in a mini-batch. If you want to
+     * include only one record in a mini-batch, specify <code>SingleRecord</code>.. If
+     * you want mini-batches to contain a maximum of the number of records specified in
+     * the <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.</p>
+     * <p> If you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>, a batch transform
+     * automatically splits your input data into the specified payload size. There's no
+     * need to split the dataset into smaller files or to use larger payload sizes
+     * unless the records in your dataset are very large.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = std::move(value); }
 
     /**
-     * <p>Determines the number of records included in a single mini-batch.
-     * <code>SingleRecord</code> means only one record is used per mini-batch.
-     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * <p>Determines the number of records to include in a mini-batch. If you want to
+     * include only one record in a mini-batch, specify <code>SingleRecord</code>.. If
+     * you want mini-batches to contain a maximum of the number of records specified in
+     * the <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.</p>
+     * <p> If you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>, a batch transform
+     * automatically splits your input data into the specified payload size. There's no
+     * need to split the dataset into smaller files or to use larger payload sizes
+     * unless the records in your dataset are very large.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
     /**
-     * <p>Determines the number of records included in a single mini-batch.
-     * <code>SingleRecord</code> means only one record is used per mini-batch.
-     * <code>MultiRecord</code> means a mini-batch is set to contain as many records
-     * that can fit within the <code>MaxPayloadInMB</code> limit.</p> <p>Batch
-     * transform will automatically split your input data into whatever payload size is
-     * specified if you set <code>SplitType</code> to <code>Line</code> and
-     * <code>BatchStrategy</code> to <code>MultiRecord</code>. There's no need to split
-     * the dataset into smaller files or to use larger payload sizes unless the records
-     * in your dataset are very large.</p>
+     * <p>Determines the number of records to include in a mini-batch. If you want to
+     * include only one record in a mini-batch, specify <code>SingleRecord</code>.. If
+     * you want mini-batches to contain a maximum of the number of records specified in
+     * the <code>MaxPayloadInMB</code> parameter, specify <code>MultiRecord</code>.</p>
+     * <p> If you set <code>SplitType</code> to <code>Line</code> and
+     * <code>BatchStrategy</code> to <code>MultiRecord</code>, a batch transform
+     * automatically splits your input data into the specified payload size. There's no
+     * need to split the dataset into smaller files or to use larger payload sizes
+     * unless the records in your dataset are very large.</p>
      */
     inline CreateTransformJobRequest& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 
@@ -441,8 +441,7 @@ namespace Model
 
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -450,8 +449,7 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -459,8 +457,7 @@ namespace Model
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -468,8 +465,7 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -477,8 +473,7 @@ namespace Model
     inline CreateTransformJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -486,8 +481,7 @@ namespace Model
     inline CreateTransformJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>
@@ -495,8 +489,7 @@ namespace Model
     inline CreateTransformJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>An array of key-value pairs. Adding tags is optional. For more information,
-     * see <a
+     * <p>(Optional) An array of key-value pairs. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>.</p>

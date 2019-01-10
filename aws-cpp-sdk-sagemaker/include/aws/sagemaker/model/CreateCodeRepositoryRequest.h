@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline const Aws::String& GetCodeRepositoryName() const{ return m_codeRepositoryName; }
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetCodeRepositoryName(Aws::String&& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = std::move(value); }
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline void SetCodeRepositoryName(const char* value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName.assign(value); }
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline CreateCodeRepositoryRequest& WithCodeRepositoryName(const Aws::String& value) { SetCodeRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline CreateCodeRepositoryRequest& WithCodeRepositoryName(Aws::String&& value) { SetCodeRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the git repository. The name must have 1 to 63 characters. Valid
+     * <p>The name of the Git repository. The name must have 1 to 63 characters. Valid
      * characters are a-z, A-Z, 0-9, and - (hyphen).</p>
      */
     inline CreateCodeRepositoryRequest& WithCodeRepositoryName(const char* value) { SetCodeRepositoryName(value); return *this;}

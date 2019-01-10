@@ -120,53 +120,53 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event started.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event started.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event started.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event started.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
     inline LifecycleEvent& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event started.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event started.</p>
      */
     inline LifecycleEvent& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline LifecycleEvent& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment lifecycle event ended.</p>
+     * <p>A timestamp that indicates when the deployment lifecycle event ended.</p>
      */
     inline LifecycleEvent& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

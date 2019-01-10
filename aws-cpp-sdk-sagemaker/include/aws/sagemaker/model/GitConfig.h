@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration details for a git repository in your AWS
+   * <p>Specifies configuration details for a Git repository in your AWS
    * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GitConfig">AWS
    * API Reference</a></p>
@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline const Aws::String& GetRepositoryUrl() const{ return m_repositoryUrl; }
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline void SetRepositoryUrl(const Aws::String& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = value; }
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline void SetRepositoryUrl(Aws::String&& value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl = std::move(value); }
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline void SetRepositoryUrl(const char* value) { m_repositoryUrlHasBeenSet = true; m_repositoryUrl.assign(value); }
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline GitConfig& WithRepositoryUrl(const Aws::String& value) { SetRepositoryUrl(value); return *this;}
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline GitConfig& WithRepositoryUrl(Aws::String&& value) { SetRepositoryUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL where the git repository is located.</p>
+     * <p>The URL where the Git repository is located.</p>
      */
     inline GitConfig& WithRepositoryUrl(const char* value) { SetRepositoryUrl(value); return *this;}
 
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline const Aws::String& GetBranch() const{ return m_branch; }
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline void SetBranch(const Aws::String& value) { m_branchHasBeenSet = true; m_branch = value; }
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline void SetBranch(Aws::String&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline void SetBranch(const char* value) { m_branchHasBeenSet = true; m_branch.assign(value); }
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline GitConfig& WithBranch(const Aws::String& value) { SetBranch(value); return *this;}
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline GitConfig& WithBranch(Aws::String&& value) { SetBranch(std::move(value)); return *this;}
 
     /**
-     * <p>The default beach for the git repository.</p>
+     * <p>The default branch for the Git repository.</p>
      */
     inline GitConfig& WithBranch(const char* value) { SetBranch(value); return *this;}
 

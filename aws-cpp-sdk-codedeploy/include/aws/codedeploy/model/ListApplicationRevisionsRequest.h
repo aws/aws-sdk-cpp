@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account. </p>
+     * <p> The name of an AWS CodeDeploy application associated with the IAM user or
+     * AWS account. </p>
      */
     inline ListApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -100,7 +100,7 @@ namespace Model
      * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
      * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
      * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
-     * or set to null, the results will be returned in an arbitrary order. </p>
+     * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline const ApplicationRevisionSortBy& GetSortBy() const{ return m_sortBy; }
 
@@ -110,7 +110,7 @@ namespace Model
      * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
      * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
      * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
-     * or set to null, the results will be returned in an arbitrary order. </p>
+     * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline void SetSortBy(const ApplicationRevisionSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
@@ -120,7 +120,7 @@ namespace Model
      * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
      * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
      * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
-     * or set to null, the results will be returned in an arbitrary order. </p>
+     * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline void SetSortBy(ApplicationRevisionSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
@@ -130,7 +130,7 @@ namespace Model
      * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
      * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
      * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
-     * or set to null, the results will be returned in an arbitrary order. </p>
+     * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline ListApplicationRevisionsRequest& WithSortBy(const ApplicationRevisionSortBy& value) { SetSortBy(value); return *this;}
 
@@ -140,7 +140,7 @@ namespace Model
      * CodeDeploy.</p> </li> <li> <p>firstUsedTime: Sort by the time the revisions were
      * first used in a deployment.</p> </li> <li> <p>lastUsedTime: Sort by the time the
      * revisions were last used in a deployment.</p> </li> </ul> <p> If not specified
-     * or set to null, the results will be returned in an arbitrary order. </p>
+     * or set to null, the results are returned in an arbitrary order. </p>
      */
     inline ListApplicationRevisionsRequest& WithSortBy(ApplicationRevisionSortBy&& value) { SetSortBy(std::move(value)); return *this;}
 
@@ -148,40 +148,40 @@ namespace Model
     /**
      * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
-     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
-     * set to null, the results will be sorted in an arbitrary order.</p>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
      * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
-     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
-     * set to null, the results will be sorted in an arbitrary order.</p>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
      * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
-     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
-     * set to null, the results will be sorted in an arbitrary order.</p>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
      * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
-     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
-     * set to null, the results will be sorted in an arbitrary order.</p>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
      * <p> The order in which to sort the list results: </p> <ul> <li> <p>ascending:
      * ascending order.</p> </li> <li> <p>descending: descending order.</p> </li> </ul>
-     * <p>If not specified, the results will be sorted in ascending order.</p> <p>If
-     * set to null, the results will be sorted in an arbitrary order.</p>
+     * <p>If not specified, the results are sorted in ascending order.</p> <p>If set to
+     * null, the results are sorted in an arbitrary order.</p>
      */
     inline ListApplicationRevisionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

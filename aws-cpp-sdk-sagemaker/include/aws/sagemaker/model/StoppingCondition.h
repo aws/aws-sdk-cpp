@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The maximum length of time, in seconds, that the training job can run. If
      * model training does not complete during this time, Amazon SageMaker ends the
-     * job. If value is not specified, default value is 1 day. Maximum value is 5
+     * job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The maximum length of time, in seconds, that the training job can run. If
      * model training does not complete during this time, Amazon SageMaker ends the
-     * job. If value is not specified, default value is 1 day. Maximum value is 5
+     * job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.</p>
      */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The maximum length of time, in seconds, that the training job can run. If
      * model training does not complete during this time, Amazon SageMaker ends the
-     * job. If value is not specified, default value is 1 day. Maximum value is 5
+     * job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.</p>
      */
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}

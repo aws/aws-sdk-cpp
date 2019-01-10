@@ -93,44 +93,44 @@ namespace Model
 
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline void SetTagFilters(const Aws::Vector<TagFilter>& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline void SetTagFilters(Aws::Vector<TagFilter>&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters = std::move(value); }
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline ListOnPremisesInstancesRequest& WithTagFilters(const Aws::Vector<TagFilter>& value) { SetTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline ListOnPremisesInstancesRequest& WithTagFilters(Aws::Vector<TagFilter>&& value) { SetTagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline ListOnPremisesInstancesRequest& AddTagFilters(const TagFilter& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags that will be used to restrict the corresponding
-     * on-premises instance names returned.</p>
+     * <p>The on-premises instance tags that are used to restrict the on-premises
+     * instance names returned.</p>
      */
     inline ListOnPremisesInstancesRequest& AddTagFilters(TagFilter&& value) { m_tagFiltersHasBeenSet = true; m_tagFilters.push_back(std::move(value)); return *this; }
 

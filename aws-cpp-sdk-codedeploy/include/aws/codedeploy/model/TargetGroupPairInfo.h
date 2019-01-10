@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p> Information about two target groups and how traffic routes during an Amazon
-   * ECS deployment. An optional test traffic route can be specified. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Information about two target groups and how traffic is routed during an
+   * Amazon ECS deployment. An optional test traffic route can be specified.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TargetGroupPairInfo">AWS
    * API Reference</a></p>
    */
@@ -53,50 +53,50 @@ namespace Model
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline const Aws::Vector<TargetGroupInfo>& GetTargetGroups() const{ return m_targetGroups; }
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline void SetTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline void SetTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline TargetGroupPairInfo& WithTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroups(value); return *this;}
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline TargetGroupPairInfo& WithTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroups(std::move(value)); return *this;}
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline TargetGroupPairInfo& AddTargetGroups(const TargetGroupInfo& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
 
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
-     * second target is associated with the task set that serves traffic after the
-     * deployment completes. </p>
+     * second is associated with the task set that serves traffic after the deployment
+     * is complete. </p>
      */
     inline TargetGroupPairInfo& AddTargetGroups(TargetGroupInfo&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
 
@@ -134,35 +134,35 @@ namespace Model
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can happen while test traffic is served during
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline const TrafficRoute& GetTestTrafficRoute() const{ return m_testTrafficRoute; }
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can happen while test traffic is served during
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline void SetTestTrafficRoute(const TrafficRoute& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = value; }
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can happen while test traffic is served during
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline void SetTestTrafficRoute(TrafficRoute&& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = std::move(value); }
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can happen while test traffic is served during
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline TargetGroupPairInfo& WithTestTrafficRoute(const TrafficRoute& value) { SetTestTrafficRoute(value); return *this;}
 
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can happen while test traffic is served during
+     * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline TargetGroupPairInfo& WithTestTrafficRoute(TrafficRoute&& value) { SetTestTrafficRoute(std::move(value)); return *this;}

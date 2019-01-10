@@ -34,7 +34,9 @@ CreateTrainingJobRequest::CreateTrainingJobRequest() :
     m_stoppingConditionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false)
+    m_enableNetworkIsolationHasBeenSet(false),
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,12 @@ Aws::String CreateTrainingJobRequest::SerializePayload() const
   if(m_enableNetworkIsolationHasBeenSet)
   {
    payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
+
+  }
+
+  if(m_enableInterContainerTrafficEncryptionHasBeenSet)
+  {
+   payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
 
   }
 

@@ -91,9 +91,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -104,9 +102,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -117,9 +113,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -130,9 +124,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline SearchTransitGatewayRoutesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -143,9 +135,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline SearchTransitGatewayRoutesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -156,9 +146,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline SearchTransitGatewayRoutesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -169,9 +157,7 @@ namespace Model
      * (<code>active</code> | <code>blackhole</code>).</p> </li> <li> <p>
      * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the
      * attachment.</p> </li> <li> <p> <code>transit-gateway-route-type</code> - The
-     * route type (<code>static</code> | <code>propagated</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN
-     * connection.</p> </li> </ul>
+     * route type (<code>static</code> | <code>propagated</code>).</p> </li> </ul>
      */
     inline SearchTransitGatewayRoutesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

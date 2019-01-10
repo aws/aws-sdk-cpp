@@ -258,11 +258,12 @@ namespace Model
   /**
    * <fullname>AWS CodeDeploy</fullname> <p>AWS CodeDeploy is a deployment service
    * that automates application deployments to Amazon EC2 instances, on-premises
-   * instances running in your own facility, or serverless AWS Lambda functions.</p>
-   * <p>You can deploy a nearly unlimited variety of application content, such as an
-   * updated Lambda function, code, web and configuration files, executables,
-   * packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy
-   * application content stored in Amazon S3 buckets, GitHub repositories, or
+   * instances running in your own facility, serverless AWS Lambda functions, or
+   * applications in an Amazon ECS service.</p> <p>You can deploy a nearly unlimited
+   * variety of application content, such as an updated Lambda function, updated
+   * applications in an Amazon ECS service, code, web and configuration files,
+   * executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can
+   * deploy application content stored in Amazon S3 buckets, GitHub repositories, or
    * Bitbucket repositories. You do not need to make changes to your existing code
    * before you can use AWS CodeDeploy.</p> <p>AWS CodeDeploy makes it easier for you
    * to rapidly release new features, helps you avoid downtime during application
@@ -274,27 +275,35 @@ namespace Model
    * deploy. AWS CodeDeploy uses this name, which functions as a container, to ensure
    * the correct combination of revision, deployment configuration, and deployment
    * group are referenced during a deployment.</p> </li> <li> <p> <b>Deployment
-   * group</b>: A set of individual instances or CodeDeploy Lambda applications. A
-   * Lambda deployment group contains a group of applications. An EC2/On-premises
-   * deployment group contains individually tagged instances, Amazon EC2 instances in
-   * Auto Scaling groups, or both. </p> </li> <li> <p> <b>Deployment
+   * group</b>: A set of individual instances, CodeDeploy Lambda deployment
+   * configuration settings, or an Amazon ECS service and network details. A Lambda
+   * deployment group specifies how to route traffic to a new version of a Lambda
+   * function. An Amazon ECS deployment group specifies the service created in Amazon
+   * ECS to deploy, a load balancer, and a listener to reroute production traffic to
+   * an updated containerized application. An EC2/On-premises deployment group
+   * contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto
+   * Scaling groups, or both. All deployment groups can specify optional trigger,
+   * alarm, and rollback settings.</p> </li> <li> <p> <b>Deployment
    * configuration</b>: A set of deployment rules and deployment success and failure
    * conditions used by AWS CodeDeploy during a deployment.</p> </li> <li> <p>
-   * <b>Deployment</b>: The process and the components used in the process of
-   * updating a Lambda function or of installing content on one or more instances.
-   * </p> </li> <li> <p> <b>Application revisions</b>: For an AWS Lambda deployment,
-   * this is an AppSpec file that specifies the Lambda function to update and one or
-   * more functions to validate deployment lifecycle events. For an EC2/On-premises
-   * deployment, this is an archive file containing source content—source code, web
-   * pages, executable files, and deployment scripts—along with an AppSpec file.
-   * Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3,
-   * a revision is uniquely identified by its Amazon S3 object key and its ETag,
-   * version, or both. For GitHub, a revision is uniquely identified by its commit
-   * ID.</p> </li> </ul> <p>This guide also contains information to help you get
-   * details about the instances in your deployments, to make on-premises instances
-   * available for AWS CodeDeploy deployments, and to get details about a Lambda
-   * function deployment.</p> <p> <b>AWS CodeDeploy Information Resources</b> </p>
-   * <ul> <li> <p> <a
+   * <b>Deployment</b>: The process and the components used when updating a Lambda
+   * function, a containerized application in an Amazon ECS service, or of installing
+   * content on one or more instances. </p> </li> <li> <p> <b>Application
+   * revisions</b>: For an AWS Lambda deployment, this is an AppSpec file that
+   * specifies the Lambda function to be updated and one or more functions to
+   * validate deployment lifecycle events. For an Amazon ECS deployment, this is an
+   * AppSpec file that specifies the Amazon ECS task definition, container, and port
+   * where production traffic is rerouted. For an EC2/On-premises deployment, this is
+   * an archive file that contains source content—source code, webpages, executable
+   * files, and deployment scripts—along with an AppSpec file. Revisions are stored
+   * in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is
+   * uniquely identified by its Amazon S3 object key and its ETag, version, or both.
+   * For GitHub, a revision is uniquely identified by its commit ID.</p> </li> </ul>
+   * <p>This guide also contains information to help you get details about the
+   * instances in your deployments, to make on-premises instances available for AWS
+   * CodeDeploy deployments, to get details about a Lambda function deployment, and
+   * to get details about Amazon ECS service deployments.</p> <p> <b>AWS CodeDeploy
+   * Information Resources</b> </p> <ul> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
    * User Guide</a> </p> </li> <li> <p> <a
    * href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
@@ -447,10 +456,10 @@ namespace Model
          * with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
          * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b> - Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b> - Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b> - Information about ECS service targets. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          */
@@ -461,10 +470,10 @@ namespace Model
          * with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
          * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b> - Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b> - Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b> - Information about ECS service targets. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          *
@@ -477,10 +486,10 @@ namespace Model
          * with all compute types and should be used instead of the deprecated
          * <code>BatchGetDeploymentInstances</code>. </p> <p> The type of targets returned
          * depends on the deployment's compute platform: </p> <ul> <li> <p>
-         * <b>EC2/On-premises</b> - Information about EC2 instance targets. </p> </li> <li>
-         * <p> <b>AWS Lambda</b> - Information about Lambda functions targets. </p> </li>
-         * <li> <p> <b>Amazon ECS</b> - Information about ECS service targets. </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <b>EC2/On-premises</b>: Information about EC2 instance targets. </p> </li> <li>
+         * <p> <b>AWS Lambda</b>: Information about Lambda functions targets. </p> </li>
+         * <li> <p> <b>Amazon ECS</b>: Information about Amazon ECS service targets. </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/BatchGetDeploymentTargets">AWS
          * API Reference</a></p>
          *
@@ -660,7 +669,7 @@ namespace Model
         virtual void CreateDeploymentConfigAsync(const Model::CreateDeploymentConfigRequest& request, const CreateDeploymentConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a deployment group to which application revisions will be
+         * <p>Creates a deployment group to which application revisions are
          * deployed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">AWS
          * API Reference</a></p>
@@ -668,7 +677,7 @@ namespace Model
         virtual Model::CreateDeploymentGroupOutcome CreateDeploymentGroup(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a deployment group to which application revisions will be
+         * <p>Creates a deployment group to which application revisions are
          * deployed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">AWS
          * API Reference</a></p>
@@ -678,7 +687,7 @@ namespace Model
         virtual Model::CreateDeploymentGroupOutcomeCallable CreateDeploymentGroupCallable(const Model::CreateDeploymentGroupRequest& request) const;
 
         /**
-         * <p>Creates a deployment group to which application revisions will be
+         * <p>Creates a deployment group to which application revisions are
          * deployed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeploymentGroup">AWS
          * API Reference</a></p>
@@ -1031,7 +1040,7 @@ namespace Model
         virtual void ListApplicationRevisionsAsync(const Model::ListApplicationRevisionsRequest& request, const ListApplicationRevisionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the applications registered with the applicable IAM user or AWS
+         * <p>Lists the applications registered with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
@@ -1039,7 +1048,7 @@ namespace Model
         virtual Model::ListApplicationsOutcome ListApplications(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists the applications registered with the applicable IAM user or AWS
+         * <p>Lists the applications registered with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
@@ -1049,7 +1058,7 @@ namespace Model
         virtual Model::ListApplicationsOutcomeCallable ListApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 
         /**
-         * <p>Lists the applications registered with the applicable IAM user or AWS
+         * <p>Lists the applications registered with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListApplications">AWS
          * API Reference</a></p>
@@ -1059,7 +1068,7 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the deployment configurations with the applicable IAM user or AWS
+         * <p>Lists the deployment configurations with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
@@ -1067,7 +1076,7 @@ namespace Model
         virtual Model::ListDeploymentConfigsOutcome ListDeploymentConfigs(const Model::ListDeploymentConfigsRequest& request) const;
 
         /**
-         * <p>Lists the deployment configurations with the applicable IAM user or AWS
+         * <p>Lists the deployment configurations with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
@@ -1077,7 +1086,7 @@ namespace Model
         virtual Model::ListDeploymentConfigsOutcomeCallable ListDeploymentConfigsCallable(const Model::ListDeploymentConfigsRequest& request) const;
 
         /**
-         * <p>Lists the deployment configurations with the applicable IAM user or AWS
+         * <p>Lists the deployment configurations with the IAM user or AWS
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentConfigs">AWS
          * API Reference</a></p>
@@ -1087,16 +1096,16 @@ namespace Model
         virtual void ListDeploymentConfigsAsync(const Model::ListDeploymentConfigsRequest& request, const ListDeploymentConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the deployment groups for an application registered with the applicable
-         * IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployment groups for an application registered with the IAM user
+         * or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDeploymentGroupsOutcome ListDeploymentGroups(const Model::ListDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Lists the deployment groups for an application registered with the applicable
-         * IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployment groups for an application registered with the IAM user
+         * or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
          * API Reference</a></p>
          *
@@ -1105,8 +1114,8 @@ namespace Model
         virtual Model::ListDeploymentGroupsOutcomeCallable ListDeploymentGroupsCallable(const Model::ListDeploymentGroupsRequest& request) const;
 
         /**
-         * <p>Lists the deployment groups for an application registered with the applicable
-         * IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the deployment groups for an application registered with the IAM user
+         * or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeploymentGroups">AWS
          * API Reference</a></p>
          *
@@ -1144,7 +1153,7 @@ namespace Model
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
-         * with the applicable IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          */
@@ -1152,7 +1161,7 @@ namespace Model
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
-         * with the applicable IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          *
@@ -1162,7 +1171,7 @@ namespace Model
 
         /**
          * <p>Lists the deployments in a deployment group for an application registered
-         * with the applicable IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
+         * with the IAM user or AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListDeployments">AWS
          * API Reference</a></p>
          *
@@ -1201,8 +1210,8 @@ namespace Model
         /**
          * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
-         * will be listed. To list only registered or deregistered on-premises instance
-         * names, use the registration status parameter.</p><p><h3>See Also:</h3>   <a
+         * are listed. To list only registered or deregistered on-premises instance names,
+         * use the registration status parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
          * API Reference</a></p>
          */
@@ -1211,8 +1220,8 @@ namespace Model
         /**
          * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
-         * will be listed. To list only registered or deregistered on-premises instance
-         * names, use the registration status parameter.</p><p><h3>See Also:</h3>   <a
+         * are listed. To list only registered or deregistered on-premises instance names,
+         * use the registration status parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
          * API Reference</a></p>
          *
@@ -1223,8 +1232,8 @@ namespace Model
         /**
          * <p>Gets a list of names for one or more on-premises instances.</p> <p>Unless
          * otherwise specified, both registered and deregistered on-premises instance names
-         * will be listed. To list only registered or deregistered on-premises instance
-         * names, use the registration status parameter.</p><p><h3>See Also:</h3>   <a
+         * are listed. To list only registered or deregistered on-premises instance names,
+         * use the registration status parameter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ListOnPremisesInstances">AWS
          * API Reference</a></p>
          *

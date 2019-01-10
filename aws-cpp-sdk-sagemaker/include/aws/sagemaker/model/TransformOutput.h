@@ -55,11 +55,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
 
@@ -69,11 +69,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
@@ -83,11 +83,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
 
@@ -97,11 +97,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
 
@@ -111,11 +111,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline TransformOutput& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
 
@@ -125,11 +125,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline TransformOutput& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
 
@@ -139,11 +139,11 @@ namespace Model
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
      * as input for the transform job, the transformed data is stored in a
      * corresponding subfolder in the location under the output prefix. For example,
-     * the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> will have the
-     * transformed data stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>, based on the original
-     * name, as a series of .part files (.part0001, part0002, etc).</p>
+     * for the input data
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
+     * transformed data is stored at
+     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
+     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
      */
     inline TransformOutput& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 
@@ -193,46 +193,41 @@ namespace Model
 
     /**
      * <p>Defines how to assemble the results of the transform job as a single S3
-     * object. You should select a format that is most convenient to you. To
-     * concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify
-     * <code>Line</code>.</p>
+     * object. Choose a format that is most convenient to you. To concatenate the
+     * results in binary format, specify <code>None</code>. To add a newline character
+     * at the end of every transformed record, specify <code>Line</code>.</p>
      */
     inline const AssemblyType& GetAssembleWith() const{ return m_assembleWith; }
 
     /**
      * <p>Defines how to assemble the results of the transform job as a single S3
-     * object. You should select a format that is most convenient to you. To
-     * concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify
-     * <code>Line</code>.</p>
+     * object. Choose a format that is most convenient to you. To concatenate the
+     * results in binary format, specify <code>None</code>. To add a newline character
+     * at the end of every transformed record, specify <code>Line</code>.</p>
      */
     inline void SetAssembleWith(const AssemblyType& value) { m_assembleWithHasBeenSet = true; m_assembleWith = value; }
 
     /**
      * <p>Defines how to assemble the results of the transform job as a single S3
-     * object. You should select a format that is most convenient to you. To
-     * concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify
-     * <code>Line</code>.</p>
+     * object. Choose a format that is most convenient to you. To concatenate the
+     * results in binary format, specify <code>None</code>. To add a newline character
+     * at the end of every transformed record, specify <code>Line</code>.</p>
      */
     inline void SetAssembleWith(AssemblyType&& value) { m_assembleWithHasBeenSet = true; m_assembleWith = std::move(value); }
 
     /**
      * <p>Defines how to assemble the results of the transform job as a single S3
-     * object. You should select a format that is most convenient to you. To
-     * concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify
-     * <code>Line</code>.</p>
+     * object. Choose a format that is most convenient to you. To concatenate the
+     * results in binary format, specify <code>None</code>. To add a newline character
+     * at the end of every transformed record, specify <code>Line</code>.</p>
      */
     inline TransformOutput& WithAssembleWith(const AssemblyType& value) { SetAssembleWith(value); return *this;}
 
     /**
      * <p>Defines how to assemble the results of the transform job as a single S3
-     * object. You should select a format that is most convenient to you. To
-     * concatenate the results in binary format, specify <code>None</code>. To add a
-     * newline character at the end of every transformed record, specify
-     * <code>Line</code>.</p>
+     * object. Choose a format that is most convenient to you. To concatenate the
+     * results in binary format, specify <code>None</code>. To add a newline character
+     * at the end of every transformed record, specify <code>Line</code>.</p>
      */
     inline TransformOutput& WithAssembleWith(AssemblyType&& value) { SetAssembleWith(std::move(value)); return *this;}
 

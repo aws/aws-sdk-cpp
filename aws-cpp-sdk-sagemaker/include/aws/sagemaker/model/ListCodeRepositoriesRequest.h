@@ -48,183 +48,183 @@ namespace Model
 
 
     /**
-     * <p>A filter that returns only git repositories that were created after the
+     * <p>A filter that returns only Git repositories that were created after the
      * specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
 
     /**
-     * <p>A filter that returns only git repositories that were created after the
+     * <p>A filter that returns only Git repositories that were created after the
      * specified time.</p>
      */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
-     * <p>A filter that returns only git repositories that were created after the
+     * <p>A filter that returns only Git repositories that were created after the
      * specified time.</p>
      */
     inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
 
     /**
-     * <p>A filter that returns only git repositories that were created after the
+     * <p>A filter that returns only Git repositories that were created after the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
 
     /**
-     * <p>A filter that returns only git repositories that were created after the
+     * <p>A filter that returns only Git repositories that were created after the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
 
 
     /**
-     * <p>A filter that returns only git repositories that were created before the
+     * <p>A filter that returns only Git repositories that were created before the
      * specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
 
     /**
-     * <p>A filter that returns only git repositories that were created before the
+     * <p>A filter that returns only Git repositories that were created before the
      * specified time.</p>
      */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
-     * <p>A filter that returns only git repositories that were created before the
+     * <p>A filter that returns only Git repositories that were created before the
      * specified time.</p>
      */
     inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
 
     /**
-     * <p>A filter that returns only git repositories that were created before the
+     * <p>A filter that returns only Git repositories that were created before the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
 
     /**
-     * <p>A filter that returns only git repositories that were created before the
+     * <p>A filter that returns only Git repositories that were created before the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
 
 
     /**
-     * <p>A filter that returns only git repositories that were last modified after the
+     * <p>A filter that returns only Git repositories that were last modified after the
      * specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified after the
+     * <p>A filter that returns only Git repositories that were last modified after the
      * specified time.</p>
      */
     inline void SetLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = value; }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified after the
+     * <p>A filter that returns only Git repositories that were last modified after the
      * specified time.</p>
      */
     inline void SetLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = std::move(value); }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified after the
+     * <p>A filter that returns only Git repositories that were last modified after the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { SetLastModifiedTimeAfter(value); return *this;}
 
     /**
-     * <p>A filter that returns only git repositories that were last modified after the
+     * <p>A filter that returns only Git repositories that were last modified after the
      * specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { SetLastModifiedTimeAfter(std::move(value)); return *this;}
 
 
     /**
-     * <p>A filter that returns only git repositories that were last modified before
+     * <p>A filter that returns only Git repositories that were last modified before
      * the specified time.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeBefore() const{ return m_lastModifiedTimeBefore; }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified before
+     * <p>A filter that returns only Git repositories that were last modified before
      * the specified time.</p>
      */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified before
+     * <p>A filter that returns only Git repositories that were last modified before
      * the specified time.</p>
      */
     inline void SetLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = std::move(value); }
 
     /**
-     * <p>A filter that returns only git repositories that were last modified before
+     * <p>A filter that returns only Git repositories that were last modified before
      * the specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { SetLastModifiedTimeBefore(value); return *this;}
 
     /**
-     * <p>A filter that returns only git repositories that were last modified before
+     * <p>A filter that returns only Git repositories that were last modified before
      * the specified time.</p>
      */
     inline ListCodeRepositoriesRequest& WithLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { SetLastModifiedTimeBefore(std::move(value)); return *this;}
 
 
     /**
-     * <p>The maximum number of git repositories to return in the response.</p>
+     * <p>The maximum number of Git repositories to return in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of git repositories to return in the response.</p>
+     * <p>The maximum number of Git repositories to return in the response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of git repositories to return in the response.</p>
+     * <p>The maximum number of Git repositories to return in the response.</p>
      */
     inline ListCodeRepositoriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline ListCodeRepositoriesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline ListCodeRepositoriesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
 
     /**
-     * <p>A string in the git repositories name. This filter returns only repositories
+     * <p>A string in the Git repositories name. This filter returns only repositories
      * whose name contains the specified string.</p>
      */
     inline ListCodeRepositoriesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
@@ -233,49 +233,49 @@ namespace Model
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline ListCodeRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline ListCodeRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the result of a <code>ListCodeRepositoriesOutput</code> request was
      * truncated, the response includes a <code>NextToken</code>. To get the next set
-     * of git repositories, use the token in the next request.</p>
+     * of Git repositories, use the token in the next request.</p>
      */
     inline ListCodeRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

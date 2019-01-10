@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies configuration details for a git repository when the repository is
+   * <p>Specifies configuration details for a Git repository when the repository is
    * updated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/GitConfigForUpdate">AWS
    * API Reference</a></p>

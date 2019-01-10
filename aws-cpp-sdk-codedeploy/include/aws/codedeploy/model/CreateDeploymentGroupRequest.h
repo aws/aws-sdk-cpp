@@ -61,44 +61,44 @@ namespace Model
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline CreateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -145,8 +145,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -159,8 +159,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -173,8 +173,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -187,8 +187,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -201,8 +201,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -215,8 +215,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -229,8 +229,8 @@ namespace Model
      * configuration that you create by calling the create deployment configuration
      * operation.</p> <p>CodeDeployDefault.OneAtATime is the default deployment
      * configuration. It is used if a configuration isn't specified for the deployment
-     * or the deployment group.</p> <p>For more information about the predefined
-     * deployment configurations in AWS CodeDeploy, see <a
+     * or deployment group.</p> <p>For more information about the predefined deployment
+     * configurations in AWS CodeDeploy, see <a
      * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
@@ -239,49 +239,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline const Aws::Vector<EC2TagFilter>& GetEc2TagFilters() const{ return m_ec2TagFilters; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline void SetEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = value; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline void SetEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagFilters(const Aws::Vector<EC2TagFilter>& value) { SetEc2TagFilters(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagFilters(Aws::Vector<EC2TagFilter>&& value) { SetEc2TagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
     inline CreateDeploymentGroupRequest& AddEc2TagFilters(const EC2TagFilter& value) { m_ec2TagFiltersHasBeenSet = true; m_ec2TagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon EC2 tags on which to filter. The deployment group will include EC2
+     * <p>The Amazon EC2 tags on which to filter. The deployment group includes EC2
      * instances with any of the specified tags. Cannot be used in the same call as
      * ec2TagSet.</p>
      */
@@ -289,92 +289,92 @@ namespace Model
 
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline const Aws::Vector<TagFilter>& GetOnPremisesInstanceTagFilters() const{ return m_onPremisesInstanceTagFilters; }
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = value; }
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline void SetOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters = std::move(value); }
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(const Aws::Vector<TagFilter>& value) { SetOnPremisesInstanceTagFilters(value); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesInstanceTagFilters(Aws::Vector<TagFilter>&& value) { SetOnPremisesInstanceTagFilters(std::move(value)); return *this;}
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(const TagFilter& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(value); return *this; }
 
     /**
-     * <p>The on-premises instance tags on which to filter. The deployment group will
-     * include on-premises instances with any of the specified tags. Cannot be used in
+     * <p>The on-premises instance tags on which to filter. The deployment group
+     * includes on-premises instances with any of the specified tags. Cannot be used in
      * the same call as OnPremisesTagSet.</p>
      */
     inline CreateDeploymentGroupRequest& AddOnPremisesInstanceTagFilters(TagFilter&& value) { m_onPremisesInstanceTagFiltersHasBeenSet = true; m_onPremisesInstanceTagFilters.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline void SetAutoScalingGroups(const Aws::Vector<Aws::String>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline void SetAutoScalingGroups(Aws::Vector<Aws::String>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& WithAutoScalingGroups(const Aws::Vector<Aws::String>& value) { SetAutoScalingGroups(value); return *this;}
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& WithAutoScalingGroups(Aws::Vector<Aws::String>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& AddAutoScalingGroups(const Aws::String& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& AddAutoScalingGroups(Aws::String&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of associated Auto Scaling groups.</p>
+     * <p>A list of associated Amazon EC2 Auto Scaling groups.</p>
      */
     inline CreateDeploymentGroupRequest& AddAutoScalingGroups(const char* value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
@@ -626,128 +626,128 @@ namespace Model
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
-     * group will include only EC2 instances identified by all the tag groups. Cannot
-     * be used in the same call as ec2TagFilters.</p>
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
-     * group will include only EC2 instances identified by all the tag groups. Cannot
-     * be used in the same call as ec2TagFilters.</p>
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
-     * group will include only EC2 instances identified by all the tag groups. Cannot
-     * be used in the same call as ec2TagFilters.</p>
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
-     * group will include only EC2 instances identified by all the tag groups. Cannot
-     * be used in the same call as ec2TagFilters.</p>
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
      * <p>Information about groups of tags applied to EC2 instances. The deployment
-     * group will include only EC2 instances identified by all the tag groups. Cannot
-     * be used in the same call as ec2TagFilters.</p>
+     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * used in the same call as ec2TagFilters.</p>
      */
     inline CreateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(const Aws::Vector<ECSService>& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = value; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(Aws::Vector<ECSService>&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = std::move(value); }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline CreateDeploymentGroupRequest& WithEcsServices(const Aws::Vector<ECSService>& value) { SetEcsServices(value); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline CreateDeploymentGroupRequest& WithEcsServices(Aws::Vector<ECSService>&& value) { SetEcsServices(std::move(value)); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline CreateDeploymentGroupRequest& AddEcsServices(const ECSService& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(value); return *this; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline CreateDeploymentGroupRequest& AddEcsServices(ECSService&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only on-premises instances identified by all the
+     * deployment group includes only on-premises instances identified by all of the
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only on-premises instances identified by all the
+     * deployment group includes only on-premises instances identified by all of the
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only on-premises instances identified by all the
+     * deployment group includes only on-premises instances identified by all of the
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline void SetOnPremisesTagSet(OnPremisesTagSet&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::move(value); }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only on-premises instances identified by all the
+     * deployment group includes only on-premises instances identified by all of the
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(const OnPremisesTagSet& value) { SetOnPremisesTagSet(value); return *this;}
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only on-premises instances identified by all the
+     * deployment group includes only on-premises instances identified by all of the
      * tag groups. Cannot be used in the same call as onPremisesInstanceTagFilters.</p>
      */
     inline CreateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}

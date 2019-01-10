@@ -127,51 +127,51 @@ namespace Model
 
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline const Aws::String& GetRollbackMessage() const{ return m_rollbackMessage; }
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline void SetRollbackMessage(const Aws::String& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = value; }
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline void SetRollbackMessage(Aws::String&& value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage = std::move(value); }
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline void SetRollbackMessage(const char* value) { m_rollbackMessageHasBeenSet = true; m_rollbackMessage.assign(value); }
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline RollbackInfo& WithRollbackMessage(const Aws::String& value) { SetRollbackMessage(value); return *this;}
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline RollbackInfo& WithRollbackMessage(Aws::String&& value) { SetRollbackMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Information describing the status of a deployment rollback; for example,
+     * <p>Information that describes the status of a deployment rollback (for example,
      * whether the deployment can't be rolled back, is in progress, failed, or
-     * succeeded. </p>
+     * succeeded). </p>
      */
     inline RollbackInfo& WithRollbackMessage(const char* value) { SetRollbackMessage(value); return *this;}
 

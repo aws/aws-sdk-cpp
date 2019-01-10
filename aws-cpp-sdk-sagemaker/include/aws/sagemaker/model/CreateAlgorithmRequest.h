@@ -289,19 +289,19 @@ namespace Model
 
     /**
      * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marektplace.</p>
+     * Marketplace.</p>
      */
     inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
 
     /**
      * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marektplace.</p>
+     * Marketplace.</p>
      */
     inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
 
     /**
      * <p>Whether to certify the algorithm so that it can be listed in AWS
-     * Marektplace.</p>
+     * Marketplace.</p>
      */
     inline CreateAlgorithmRequest& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
 

@@ -36,12 +36,12 @@ namespace Model
 {
 
   /**
-   * <p> A set of Amazon ECS tasks. A task set runs a specified number of instances
-   * of a task definition simultaneously inside an Amazon ECS service. Information
-   * about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS
-   * task set includes details such as the desired number of tasks, how many tasks
-   * are running, and whether the task set serves production traffic or not.
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment.
+   * An Amazon ECS task set includes details such as the desired number of tasks, how
+   * many tasks are running, and whether the task set serves production traffic. An
+   * AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a
+   * containerized application in an Amazon ECS service as a task set. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet">AWS
    * API Reference</a></p>
    */
@@ -92,25 +92,25 @@ namespace Model
 
     /**
      * <p> The number of tasks in a task set. During a deployment that uses the Amazon
-     * ECS compute type, CodeDeploy asks Amazon ECS to create a new task set and uses
-     * this value to determine how many tasks to create. After the updated task set is
-     * created, CodeDeploy shifts traffic to the new task set. </p>
+     * ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and
+     * uses this value to determine how many tasks to create. After the updated task
+     * set is created, CodeDeploy shifts traffic to the new task set. </p>
      */
     inline long long GetDesiredCount() const{ return m_desiredCount; }
 
     /**
      * <p> The number of tasks in a task set. During a deployment that uses the Amazon
-     * ECS compute type, CodeDeploy asks Amazon ECS to create a new task set and uses
-     * this value to determine how many tasks to create. After the updated task set is
-     * created, CodeDeploy shifts traffic to the new task set. </p>
+     * ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and
+     * uses this value to determine how many tasks to create. After the updated task
+     * set is created, CodeDeploy shifts traffic to the new task set. </p>
      */
     inline void SetDesiredCount(long long value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
      * <p> The number of tasks in a task set. During a deployment that uses the Amazon
-     * ECS compute type, CodeDeploy asks Amazon ECS to create a new task set and uses
-     * this value to determine how many tasks to create. After the updated task set is
-     * created, CodeDeploy shifts traffic to the new task set. </p>
+     * ECS compute type, CodeDeploy instructs Amazon ECS to create a new task set and
+     * uses this value to determine how many tasks to create. After the updated task
+     * set is created, CodeDeploy shifts traffic to the new task set. </p>
      */
     inline ECSTaskSet& WithDesiredCount(long long value) { SetDesiredCount(value); return *this;}
 
@@ -167,71 +167,71 @@ namespace Model
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline ECSTaskSet& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline ECSTaskSet& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p> The status of the task set. There are three valid task set statuses: </p>
-     * <ul> <li> <p> <code>PRIMARY</code> - indicates the task set is serving
-     * production traffic. </p> </li> <li> <p> <code>ACTIVE</code> - indicates the task
-     * set is not serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>
-     * - indicates the tasks in the task set are being stopped and their corresponding
-     * targets are being deregistered from their target group. </p> </li> </ul>
+     * <ul> <li> <p> <code>PRIMARY</code>: Indicates the task set is serving production
+     * traffic. </p> </li> <li> <p> <code>ACTIVE</code>: Indicates the task set is not
+     * serving production traffic. </p> </li> <li> <p> <code>DRAINING</code>: Indicates
+     * the tasks in the task set are being stopped and their corresponding targets are
+     * being deregistered from their target group. </p> </li> </ul>
      */
     inline ECSTaskSet& WithStatus(const char* value) { SetStatus(value); return *this;}
 

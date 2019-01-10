@@ -50,51 +50,51 @@ namespace Model
 
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline const Aws::Vector<Aws::Vector<TagFilter>>& GetOnPremisesTagSetList() const{ return m_onPremisesTagSetList; }
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline void SetOnPremisesTagSetList(const Aws::Vector<Aws::Vector<TagFilter>>& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = value; }
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline void SetOnPremisesTagSetList(Aws::Vector<Aws::Vector<TagFilter>>&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList = std::move(value); }
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline OnPremisesTagSet& WithOnPremisesTagSetList(const Aws::Vector<Aws::Vector<TagFilter>>& value) { SetOnPremisesTagSetList(value); return *this;}
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline OnPremisesTagSet& WithOnPremisesTagSetList(Aws::Vector<Aws::Vector<TagFilter>>&& value) { SetOnPremisesTagSetList(std::move(value)); return *this;}
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline OnPremisesTagSet& AddOnPremisesTagSetList(const Aws::Vector<TagFilter>& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.push_back(value); return *this; }
 
     /**
-     * <p>A list containing other lists of on-premises instance tag groups. In order
-     * for an instance to be included in the deployment group, it must be identified by
-     * all the tag groups in the list.</p>
+     * <p>A list that contains other lists of on-premises instance tag groups. For an
+     * instance to be included in the deployment group, it must be identified by all of
+     * the tag groups in the list.</p>
      */
     inline OnPremisesTagSet& AddOnPremisesTagSetList(Aws::Vector<TagFilter>&& value) { m_onPremisesTagSetListHasBeenSet = true; m_onPremisesTagSetList.push_back(std::move(value)); return *this; }
 

@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of a transform job. Multiple TransformJobSummary objects
-   * are returned as a list after calling <a>ListTransformJobs</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides a summary of a transform job. Multiple
+   * <code>TransformJobSummary</code> objects are returned as a list after in
+   * response to a <a>ListTransformJobs</a> call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobSummary">AWS
    * API Reference</a></p>
    */

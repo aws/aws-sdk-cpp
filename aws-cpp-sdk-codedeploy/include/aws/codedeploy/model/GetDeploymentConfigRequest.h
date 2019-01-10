@@ -49,44 +49,44 @@ namespace Model
 
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline const Aws::String& GetDeploymentConfigName() const{ return m_deploymentConfigName; }
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetDeploymentConfigName(const Aws::String& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = value; }
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetDeploymentConfigName(Aws::String&& value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName = std::move(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetDeploymentConfigName(const char* value) { m_deploymentConfigNameHasBeenSet = true; m_deploymentConfigName.assign(value); }
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline GetDeploymentConfigRequest& WithDeploymentConfigName(const Aws::String& value) { SetDeploymentConfigName(value); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline GetDeploymentConfigRequest& WithDeploymentConfigName(Aws::String&& value) { SetDeploymentConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a deployment configuration associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of a deployment configuration associated with the IAM user or AWS
+     * account.</p>
      */
     inline GetDeploymentConfigRequest& WithDeploymentConfigName(const char* value) { SetDeploymentConfigName(value); return *this;}
 

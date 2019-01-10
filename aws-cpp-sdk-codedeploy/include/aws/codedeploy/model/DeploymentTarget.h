@@ -51,31 +51,31 @@ namespace Model
 
 
     /**
-     * <p> The deployment type which is specific to the deployment's compute platform.
+     * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     inline const DeploymentTargetType& GetDeploymentTargetType() const{ return m_deploymentTargetType; }
 
     /**
-     * <p> The deployment type which is specific to the deployment's compute platform.
+     * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     inline void SetDeploymentTargetType(const DeploymentTargetType& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = value; }
 
     /**
-     * <p> The deployment type which is specific to the deployment's compute platform.
+     * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     inline void SetDeploymentTargetType(DeploymentTargetType&& value) { m_deploymentTargetTypeHasBeenSet = true; m_deploymentTargetType = std::move(value); }
 
     /**
-     * <p> The deployment type which is specific to the deployment's compute platform.
+     * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     inline DeploymentTarget& WithDeploymentTargetType(const DeploymentTargetType& value) { SetDeploymentTargetType(value); return *this;}
 
     /**
-     * <p> The deployment type which is specific to the deployment's compute platform.
+     * <p> The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     inline DeploymentTarget& WithDeploymentTargetType(DeploymentTargetType&& value) { SetDeploymentTargetType(std::move(value)); return *this;}

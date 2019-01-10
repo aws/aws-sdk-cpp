@@ -478,6 +478,31 @@ namespace Model
      */
     inline HyperParameterTrainingJobDefinition& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, specify <code>True</code>. Encryption provides greater security for
+     * distributed training, but training take longer because of the additional
+     * communications between ML compute instances.</p>
+     */
+    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, specify <code>True</code>. Encryption provides greater security for
+     * distributed training, but training take longer because of the additional
+     * communications between ML compute instances.</p>
+     */
+    inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, specify <code>True</code>. Encryption provides greater security for
+     * distributed training, but training take longer because of the additional
+     * communications between ML compute instances.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
@@ -506,6 +531,9 @@ namespace Model
 
     bool m_enableNetworkIsolation;
     bool m_enableNetworkIsolationHasBeenSet;
+
+    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
   };
 
 } // namespace Model

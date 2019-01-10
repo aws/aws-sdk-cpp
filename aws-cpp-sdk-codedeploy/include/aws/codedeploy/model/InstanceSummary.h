@@ -181,27 +181,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 

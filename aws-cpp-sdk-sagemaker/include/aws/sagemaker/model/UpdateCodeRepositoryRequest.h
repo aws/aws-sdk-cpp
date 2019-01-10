@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline const Aws::String& GetCodeRepositoryName() const{ return m_codeRepositoryName; }
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline void SetCodeRepositoryName(Aws::String&& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = std::move(value); }
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline void SetCodeRepositoryName(const char* value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName.assign(value); }
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline UpdateCodeRepositoryRequest& WithCodeRepositoryName(const Aws::String& value) { SetCodeRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline UpdateCodeRepositoryRequest& WithCodeRepositoryName(Aws::String&& value) { SetCodeRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the git repository to update.</p>
+     * <p>The name of the Git repository to update.</p>
      */
     inline UpdateCodeRepositoryRequest& WithCodeRepositoryName(const char* value) { SetCodeRepositoryName(value); return *this;}
 

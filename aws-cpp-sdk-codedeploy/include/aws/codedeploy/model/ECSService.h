@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline ECSService& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline ECSService& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the target ECS service. </p>
+     * <p> The name of the target Amazon ECS service. </p>
      */
     inline ECSService& WithServiceName(const char* value) { SetServiceName(value); return *this;}
 
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline ECSService& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline ECSService& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the cluster that the ECS service is associated with. </p>
+     * <p> The name of the cluster that the Amazon ECS service is associated with. </p>
      */
     inline ECSService& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 

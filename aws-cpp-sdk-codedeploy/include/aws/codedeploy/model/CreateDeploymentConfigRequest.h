@@ -169,32 +169,27 @@ namespace Model
 
 
     /**
-     * <p>The configuration that specifies how the deployment traffic will be
-     * routed.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic will be
-     * routed.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
     inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic will be
-     * routed.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
     inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
 
     /**
-     * <p>The configuration that specifies how the deployment traffic will be
-     * routed.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
     inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
 
     /**
-     * <p>The configuration that specifies how the deployment traffic will be
-     * routed.</p>
+     * <p>The configuration that specifies how the deployment traffic is routed.</p>
      */
     inline CreateDeploymentConfigRequest& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}
 

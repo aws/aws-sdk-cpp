@@ -636,35 +636,35 @@ namespace Model
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
      * used in the same call as ec2TagFilters.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
      * used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
      * used in the same call as ec2TagFilters.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
      * used in the same call as ec2TagFilters.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
      * <p>Information about groups of tags applied to an EC2 instance. The deployment
-     * group includes only EC2 instances identified by all the tag groups. Cannot be
+     * group includes only EC2 instances identified by all of the tag groups. Cannot be
      * used in the same call as ec2TagFilters.</p>
      */
     inline DeploymentGroupInfo& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
@@ -738,58 +738,58 @@ namespace Model
 
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(const Aws::Vector<ECSService>& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = value; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(Aws::Vector<ECSService>&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = std::move(value); }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline DeploymentGroupInfo& WithEcsServices(const Aws::Vector<ECSService>& value) { SetEcsServices(value); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline DeploymentGroupInfo& WithEcsServices(Aws::Vector<ECSService>&& value) { SetEcsServices(std::move(value)); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline DeploymentGroupInfo& AddEcsServices(const ECSService& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(value); return *this; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline DeploymentGroupInfo& AddEcsServices(ECSService&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(std::move(value)); return *this; }
 

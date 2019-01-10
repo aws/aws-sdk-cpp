@@ -55,44 +55,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline const Aws::String& GetTrainingImage() const{ return m_trainingImage; }
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline void SetTrainingImage(const Aws::String& value) { m_trainingImageHasBeenSet = true; m_trainingImage = value; }
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline void SetTrainingImage(Aws::String&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::move(value); }
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline void SetTrainingImage(const char* value) { m_trainingImageHasBeenSet = true; m_trainingImage.assign(value); }
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline TrainingSpecification& WithTrainingImage(const Aws::String& value) { SetTrainingImage(value); return *this;}
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline TrainingSpecification& WithTrainingImage(Aws::String&& value) { SetTrainingImage(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Amazon ECR registry path of the Docker image that contains the
-     * training algorithm.</p>
+     * <p>The Amazon ECR registry path of the Docker image that contains the training
+     * algorithm.</p>
      */
     inline TrainingSpecification& WithTrainingImage(const char* value) { SetTrainingImage(value); return *this;}
 

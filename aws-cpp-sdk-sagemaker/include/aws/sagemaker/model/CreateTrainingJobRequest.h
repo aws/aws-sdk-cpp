@@ -751,9 +751,9 @@ namespace Model
     /**
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
-     * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * training. If you enable network isolation for training jobs that are configured
+     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */
@@ -762,9 +762,9 @@ namespace Model
     /**
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
-     * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * training. If you enable network isolation for training jobs that are configured
+     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */
@@ -773,13 +773,38 @@ namespace Model
     /**
      * <p>Isolates the training container. No inbound or outbound network calls can be
      * made, except for calls between peers within a training cluster for distributed
-     * training. If network isolation is used for training jobs that are configured to
-     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
-     * artifacts through the specifed VPC, but the training container does not have
+     * training. If you enable network isolation for training jobs that are configured
+     * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
      * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
      * not support network isolation.</p> </note>
      */
     inline CreateTrainingJobRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>,. Encryption provides greater security for
+     * distributed training, but training can take longer because of additional
+     * communications between ML compute instances.</p>
+     */
+    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>,. Encryption provides greater security for
+     * distributed training, but training can take longer because of additional
+     * communications between ML compute instances.</p>
+     */
+    inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>,. Encryption provides greater security for
+     * distributed training, but training can take longer because of additional
+     * communications between ML compute instances.</p>
+     */
+    inline CreateTrainingJobRequest& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 
   private:
 
@@ -815,6 +840,9 @@ namespace Model
 
     bool m_enableNetworkIsolation;
     bool m_enableNetworkIsolationHasBeenSet;
+
+    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
   };
 
 } // namespace Model

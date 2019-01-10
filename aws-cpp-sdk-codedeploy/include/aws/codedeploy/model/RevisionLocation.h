@@ -55,8 +55,8 @@ namespace Model
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
-     * stored in GitHub (EC2/On-premises deployments only)</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only)</p> </li>
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
     inline const RevisionLocationType& GetRevisionType() const{ return m_revisionType; }
@@ -64,8 +64,8 @@ namespace Model
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
-     * stored in GitHub (EC2/On-premises deployments only)</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only)</p> </li>
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
     inline void SetRevisionType(const RevisionLocationType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
@@ -73,8 +73,8 @@ namespace Model
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
-     * stored in GitHub (EC2/On-premises deployments only)</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only)</p> </li>
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
     inline void SetRevisionType(RevisionLocationType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
@@ -82,8 +82,8 @@ namespace Model
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
-     * stored in GitHub (EC2/On-premises deployments only)</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only)</p> </li>
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
     inline RevisionLocation& WithRevisionType(const RevisionLocationType& value) { SetRevisionType(value); return *this;}
@@ -91,8 +91,8 @@ namespace Model
     /**
      * <p>The type of application revision:</p> <ul> <li> <p>S3: An application
      * revision stored in Amazon S3.</p> </li> <li> <p>GitHub: An application revision
-     * stored in GitHub (EC2/On-premises deployments only)</p> </li> <li> <p>String: A
-     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only)</p> </li>
+     * stored in GitHub (EC2/On-premises deployments only).</p> </li> <li> <p>String: A
+     * YAML-formatted or JSON-formatted string (AWS Lambda deployments only).</p> </li>
      * </ul>
      */
     inline RevisionLocation& WithRevisionType(RevisionLocationType&& value) { SetRevisionType(std::move(value)); return *this;}

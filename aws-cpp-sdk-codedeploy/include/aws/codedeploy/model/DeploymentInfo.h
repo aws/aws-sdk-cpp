@@ -321,94 +321,94 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when the deployment was created.</p>
+     * <p>A timestamp that indicates when the deployment was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment was created.</p>
+     * <p>A timestamp that indicates when the deployment was created.</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment was created.</p>
+     * <p>A timestamp that indicates when the deployment was created.</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the deployment was created.</p>
+     * <p>A timestamp that indicates when the deployment was created.</p>
      */
     inline DeploymentInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment was created.</p>
+     * <p>A timestamp that indicates when the deployment was created.</p>
      */
     inline DeploymentInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp indicating when the deployment was deployed to the deployment
-     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * <p>A timestamp that indicates when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time might be later
      * than the complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.</p>
+     * backend servers that participate in the deployment process.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment was deployed to the deployment
-     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * <p>A timestamp that indicates when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time might be later
      * than the complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.</p>
+     * backend servers that participate in the deployment process.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment was deployed to the deployment
-     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * <p>A timestamp that indicates when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time might be later
      * than the complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.</p>
+     * backend servers that participate in the deployment process.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the deployment was deployed to the deployment
-     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * <p>A timestamp that indicates when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time might be later
      * than the complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.</p>
+     * backend servers that participate in the deployment process.</p>
      */
     inline DeploymentInfo& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment was deployed to the deployment
-     * group.</p> <p>In some cases, the reported value of the start time may be later
+     * <p>A timestamp that indicates when the deployment was deployed to the deployment
+     * group.</p> <p>In some cases, the reported value of the start time might be later
      * than the complete time. This is due to differences in the clock settings of
-     * back-end servers that participate in the deployment process.</p>
+     * backend servers that participate in the deployment process.</p>
      */
     inline DeploymentInfo& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp indicating when the deployment was complete.</p>
+     * <p>A timestamp that indicates when the deployment was complete.</p>
      */
     inline const Aws::Utils::DateTime& GetCompleteTime() const{ return m_completeTime; }
 
     /**
-     * <p>A timestamp indicating when the deployment was complete.</p>
+     * <p>A timestamp that indicates when the deployment was complete.</p>
      */
     inline void SetCompleteTime(const Aws::Utils::DateTime& value) { m_completeTimeHasBeenSet = true; m_completeTime = value; }
 
     /**
-     * <p>A timestamp indicating when the deployment was complete.</p>
+     * <p>A timestamp that indicates when the deployment was complete.</p>
      */
     inline void SetCompleteTime(Aws::Utils::DateTime&& value) { m_completeTimeHasBeenSet = true; m_completeTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the deployment was complete.</p>
+     * <p>A timestamp that indicates when the deployment was complete.</p>
      */
     inline DeploymentInfo& WithCompleteTime(const Aws::Utils::DateTime& value) { SetCompleteTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the deployment was complete.</p>
+     * <p>A timestamp that indicates when the deployment was complete.</p>
      */
     inline DeploymentInfo& WithCompleteTime(Aws::Utils::DateTime&& value) { SetCompleteTime(std::move(value)); return *this;}
 
@@ -477,75 +477,75 @@ namespace Model
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
-     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
+     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
+     * created the deployment.</p> </li> </ul>
      */
     inline const DeploymentCreator& GetCreator() const{ return m_creator; }
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
-     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
+     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
+     * created the deployment.</p> </li> </ul>
      */
     inline void SetCreator(const DeploymentCreator& value) { m_creatorHasBeenSet = true; m_creator = value; }
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
-     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
+     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
+     * created the deployment.</p> </li> </ul>
      */
     inline void SetCreator(DeploymentCreator&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
-     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
+     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
+     * created the deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(const DeploymentCreator& value) { SetCreator(value); return *this;}
 
     /**
      * <p>The means by which the deployment was created:</p> <ul> <li> <p>user: A user
-     * created the deployment.</p> </li> <li> <p>autoscaling: Auto Scaling created the
-     * deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process created the
-     * deployment.</p> </li> </ul>
+     * created the deployment.</p> </li> <li> <p>autoscaling: Amazon EC2 Auto Scaling
+     * created the deployment.</p> </li> <li> <p>codeDeployRollback: A rollback process
+     * created the deployment.</p> </li> </ul>
      */
     inline DeploymentInfo& WithCreator(DeploymentCreator&& value) { SetCreator(std::move(value)); return *this;}
 
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance will not
-     * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
-     * if the deployment causes the ApplicationStop deployment lifecycle event to an
-     * instance to fail, the deployment to that instance will stop, and the deployment
-     * to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance is not
+     * considered to have failed at that point and continues on to the BeforeInstall
+     * deployment lifecycle event.</p> <p>If false or not specified, then if the
+     * deployment causes the ApplicationStop deployment lifecycle event to an instance
+     * to fail, the deployment to that instance stops, and the deployment to that
+     * instance is considered to have failed.</p>
      */
     inline bool GetIgnoreApplicationStopFailures() const{ return m_ignoreApplicationStopFailures; }
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance will not
-     * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
-     * if the deployment causes the ApplicationStop deployment lifecycle event to an
-     * instance to fail, the deployment to that instance will stop, and the deployment
-     * to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance is not
+     * considered to have failed at that point and continues on to the BeforeInstall
+     * deployment lifecycle event.</p> <p>If false or not specified, then if the
+     * deployment causes the ApplicationStop deployment lifecycle event to an instance
+     * to fail, the deployment to that instance stops, and the deployment to that
+     * instance is considered to have failed.</p>
      */
     inline void SetIgnoreApplicationStopFailures(bool value) { m_ignoreApplicationStopFailuresHasBeenSet = true; m_ignoreApplicationStopFailures = value; }
 
     /**
      * <p>If true, then if the deployment causes the ApplicationStop deployment
-     * lifecycle event to an instance to fail, the deployment to that instance will not
-     * be considered to have failed at that point and will continue on to the
-     * BeforeInstall deployment lifecycle event.</p> <p>If false or not specified, then
-     * if the deployment causes the ApplicationStop deployment lifecycle event to an
-     * instance to fail, the deployment to that instance will stop, and the deployment
-     * to that instance will be considered to have failed.</p>
+     * lifecycle event to an instance to fail, the deployment to that instance is not
+     * considered to have failed at that point and continues on to the BeforeInstall
+     * deployment lifecycle event.</p> <p>If false or not specified, then if the
+     * deployment causes the ApplicationStop deployment lifecycle event to an instance
+     * to fail, the deployment to that instance stops, and the deployment to that
+     * instance is considered to have failed.</p>
      */
     inline DeploymentInfo& WithIgnoreApplicationStopFailures(bool value) { SetIgnoreApplicationStopFailures(value); return *this;}
 
@@ -691,21 +691,21 @@ namespace Model
     /**
      * <p>Indicates whether the wait period set for the termination of instances in the
      * original environment has started. Status is 'false' if the KEEP_ALIVE option is
-     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     * specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
      */
     inline bool GetInstanceTerminationWaitTimeStarted() const{ return m_instanceTerminationWaitTimeStarted; }
 
     /**
      * <p>Indicates whether the wait period set for the termination of instances in the
      * original environment has started. Status is 'false' if the KEEP_ALIVE option is
-     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     * specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
      */
     inline void SetInstanceTerminationWaitTimeStarted(bool value) { m_instanceTerminationWaitTimeStartedHasBeenSet = true; m_instanceTerminationWaitTimeStarted = value; }
 
     /**
      * <p>Indicates whether the wait period set for the termination of instances in the
      * original environment has started. Status is 'false' if the KEEP_ALIVE option is
-     * specified; otherwise, 'true' as soon as the termination wait period starts.</p>
+     * specified. Otherwise, 'true' as soon as the termination wait period starts.</p>
      */
     inline DeploymentInfo& WithInstanceTerminationWaitTimeStarted(bool value) { SetInstanceTerminationWaitTimeStarted(value); return *this;}
 

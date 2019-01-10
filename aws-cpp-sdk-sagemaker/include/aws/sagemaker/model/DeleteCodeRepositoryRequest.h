@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline const Aws::String& GetCodeRepositoryName() const{ return m_codeRepositoryName; }
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline void SetCodeRepositoryName(const Aws::String& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = value; }
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline void SetCodeRepositoryName(Aws::String&& value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName = std::move(value); }
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline void SetCodeRepositoryName(const char* value) { m_codeRepositoryNameHasBeenSet = true; m_codeRepositoryName.assign(value); }
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline DeleteCodeRepositoryRequest& WithCodeRepositoryName(const Aws::String& value) { SetCodeRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline DeleteCodeRepositoryRequest& WithCodeRepositoryName(Aws::String&& value) { SetCodeRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the git repository to delete.</p>
+     * <p>The name of the Git repository to delete.</p>
      */
     inline DeleteCodeRepositoryRequest& WithCodeRepositoryName(const char* value) { SetCodeRepositoryName(value); return *this;}
 

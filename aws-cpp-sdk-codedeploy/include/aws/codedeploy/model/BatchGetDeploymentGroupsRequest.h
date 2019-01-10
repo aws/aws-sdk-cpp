@@ -93,42 +93,42 @@ namespace Model
 
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroupNames() const{ return m_deploymentGroupNames; }
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline void SetDeploymentGroupNames(const Aws::Vector<Aws::String>& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames = value; }
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline void SetDeploymentGroupNames(Aws::Vector<Aws::String>&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames = std::move(value); }
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsRequest& WithDeploymentGroupNames(const Aws::Vector<Aws::String>& value) { SetDeploymentGroupNames(value); return *this;}
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsRequest& WithDeploymentGroupNames(Aws::Vector<Aws::String>&& value) { SetDeploymentGroupNames(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(const Aws::String& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(value); return *this; }
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(Aws::String&& value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The deployment groups' names.</p>
+     * <p>The names of the deployment groups.</p>
      */
     inline BatchGetDeploymentGroupsRequest& AddDeploymentGroupNames(const char* value) { m_deploymentGroupNamesHasBeenSet = true; m_deploymentGroupNames.push_back(value); return *this; }
 

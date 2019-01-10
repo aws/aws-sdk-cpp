@@ -47,31 +47,31 @@ namespace Model
 
 
     /**
-     * <p>A <code>Template</code>object containing the worker UI template to
+     * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
     inline const UiTemplate& GetUiTemplate() const{ return m_uiTemplate; }
 
     /**
-     * <p>A <code>Template</code>object containing the worker UI template to
+     * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
     inline void SetUiTemplate(const UiTemplate& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = value; }
 
     /**
-     * <p>A <code>Template</code>object containing the worker UI template to
+     * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
     inline void SetUiTemplate(UiTemplate&& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = std::move(value); }
 
     /**
-     * <p>A <code>Template</code>object containing the worker UI template to
+     * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
     inline RenderUiTemplateRequest& WithUiTemplate(const UiTemplate& value) { SetUiTemplate(value); return *this;}
 
     /**
-     * <p>A <code>Template</code>object containing the worker UI template to
+     * <p>A <code>Template</code> object containing the worker UI template to
      * render.</p>
      */
     inline RenderUiTemplateRequest& WithUiTemplate(UiTemplate&& value) { SetUiTemplate(std::move(value)); return *this;}

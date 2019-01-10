@@ -49,51 +49,51 @@ namespace Model
 
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline const Aws::Vector<Aws::Vector<EC2TagFilter>>& GetEc2TagSetList() const{ return m_ec2TagSetList; }
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline void SetEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = value; }
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline void SetEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList = std::move(value); }
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline EC2TagSet& WithEc2TagSetList(const Aws::Vector<Aws::Vector<EC2TagFilter>>& value) { SetEc2TagSetList(value); return *this;}
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline EC2TagSet& WithEc2TagSetList(Aws::Vector<Aws::Vector<EC2TagFilter>>&& value) { SetEc2TagSetList(std::move(value)); return *this;}
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline EC2TagSet& AddEc2TagSetList(const Aws::Vector<EC2TagFilter>& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(value); return *this; }
 
     /**
-     * <p>A list containing other lists of EC2 instance tag groups. In order for an
-     * instance to be included in the deployment group, it must be identified by all
-     * the tag groups in the list.</p>
+     * <p>A list that contains other lists of EC2 instance tag groups. For an instance
+     * to be included in the deployment group, it must be identified by all of the tag
+     * groups in the list.</p>
      */
     inline EC2TagSet& AddEc2TagSetList(Aws::Vector<EC2TagFilter>&& value) { m_ec2TagSetListHasBeenSet = true; m_ec2TagSetList.push_back(std::move(value)); return *this; }
 

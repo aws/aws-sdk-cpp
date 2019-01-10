@@ -174,49 +174,49 @@ namespace Model
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline S3Location& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline S3Location& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>A specific version of the Amazon S3 object that represents the bundled
      * artifacts for the application revision.</p> <p>If the version is not specified,
-     * the system will use the most recent version by default.</p>
+     * the system uses the most recent version by default.</p>
      */
     inline S3Location& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -224,49 +224,49 @@ namespace Model
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline S3Location& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline S3Location& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * <p>The ETag of the Amazon S3 object that represents the bundled artifacts for
      * the application revision.</p> <p>If the ETag is not specified as an input
-     * parameter, ETag validation of the object will be skipped.</p>
+     * parameter, ETag validation of the object is skipped.</p>
      */
     inline S3Location& WithETag(const char* value) { SetETag(value); return *this;}
 

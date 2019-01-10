@@ -86,7 +86,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -96,7 +95,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -106,7 +104,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -116,7 +113,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -126,7 +122,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -136,7 +131,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>
@@ -146,7 +140,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
      * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
      * <code>resource-type</code> - The resource type (<code>vpc</code> |
      * <code>vpn</code>).</p> </li> <li> <p> <code>transit-gateway-attachment-id</code>

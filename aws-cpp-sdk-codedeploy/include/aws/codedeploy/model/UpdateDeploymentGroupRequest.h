@@ -61,37 +61,37 @@ namespace Model
 
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline UpdateDeploymentGroupRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline UpdateDeploymentGroupRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The application name corresponding to the deployment group to update.</p>
+     * <p>The application name that corresponds to the deployment group to update.</p>
      */
     inline UpdateDeploymentGroupRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -623,124 +623,124 @@ namespace Model
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only EC2 instances identified by all the tag
+     * deployment group includes only EC2 instances identified by all the tag
      * groups.</p>
      */
     inline const EC2TagSet& GetEc2TagSet() const{ return m_ec2TagSet; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only EC2 instances identified by all the tag
+     * deployment group includes only EC2 instances identified by all the tag
      * groups.</p>
      */
     inline void SetEc2TagSet(const EC2TagSet& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = value; }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only EC2 instances identified by all the tag
+     * deployment group includes only EC2 instances identified by all the tag
      * groups.</p>
      */
     inline void SetEc2TagSet(EC2TagSet&& value) { m_ec2TagSetHasBeenSet = true; m_ec2TagSet = std::move(value); }
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only EC2 instances identified by all the tag
+     * deployment group includes only EC2 instances identified by all the tag
      * groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagSet(const EC2TagSet& value) { SetEc2TagSet(value); return *this;}
 
     /**
      * <p>Information about groups of tags applied to on-premises instances. The
-     * deployment group will include only EC2 instances identified by all the tag
+     * deployment group includes only EC2 instances identified by all the tag
      * groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithEc2TagSet(EC2TagSet&& value) { SetEc2TagSet(std::move(value)); return *this;}
 
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline const Aws::Vector<ECSService>& GetEcsServices() const{ return m_ecsServices; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(const Aws::Vector<ECSService>& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = value; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline void SetEcsServices(Aws::Vector<ECSService>&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices = std::move(value); }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline UpdateDeploymentGroupRequest& WithEcsServices(const Aws::Vector<ECSService>& value) { SetEcsServices(value); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline UpdateDeploymentGroupRequest& WithEcsServices(Aws::Vector<ECSService>&& value) { SetEcsServices(std::move(value)); return *this;}
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline UpdateDeploymentGroupRequest& AddEcsServices(const ECSService& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(value); return *this; }
 
     /**
-     * <p> The target ECS services in the deployment group. This only applies to
-     * deployment groups that use the Amazon ECS compute platform. A target ECS service
-     * is specified as an Amazon ECS cluster and service name pair using the format
-     * <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
+     * <p> The target Amazon ECS services in the deployment group. This applies only to
+     * deployment groups that use the Amazon ECS compute platform. A target Amazon ECS
+     * service is specified as an Amazon ECS cluster and service name pair using the
+     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>. </p>
      */
     inline UpdateDeploymentGroupRequest& AddEcsServices(ECSService&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Information about an on-premises instance tag set. The deployment group will
-     * include only on-premises instances identified by all the tag groups.</p>
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline const OnPremisesTagSet& GetOnPremisesTagSet() const{ return m_onPremisesTagSet; }
 
     /**
-     * <p>Information about an on-premises instance tag set. The deployment group will
-     * include only on-premises instances identified by all the tag groups.</p>
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline void SetOnPremisesTagSet(const OnPremisesTagSet& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = value; }
 
     /**
-     * <p>Information about an on-premises instance tag set. The deployment group will
-     * include only on-premises instances identified by all the tag groups.</p>
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline void SetOnPremisesTagSet(OnPremisesTagSet&& value) { m_onPremisesTagSetHasBeenSet = true; m_onPremisesTagSet = std::move(value); }
 
     /**
-     * <p>Information about an on-premises instance tag set. The deployment group will
-     * include only on-premises instances identified by all the tag groups.</p>
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOnPremisesTagSet(const OnPremisesTagSet& value) { SetOnPremisesTagSet(value); return *this;}
 
     /**
-     * <p>Information about an on-premises instance tag set. The deployment group will
-     * include only on-premises instances identified by all the tag groups.</p>
+     * <p>Information about an on-premises instance tag set. The deployment group
+     * includes only on-premises instances identified by all the tag groups.</p>
      */
     inline UpdateDeploymentGroupRequest& WithOnPremisesTagSet(OnPremisesTagSet&& value) { SetOnPremisesTagSet(std::move(value)); return *this;}
 

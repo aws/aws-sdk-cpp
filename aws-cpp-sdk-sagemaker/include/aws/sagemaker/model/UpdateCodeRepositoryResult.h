@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline const Aws::String& GetCodeRepositoryArn() const{ return m_codeRepositoryArn; }
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline void SetCodeRepositoryArn(const Aws::String& value) { m_codeRepositoryArn = value; }
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline void SetCodeRepositoryArn(Aws::String&& value) { m_codeRepositoryArn = std::move(value); }
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline void SetCodeRepositoryArn(const char* value) { m_codeRepositoryArn.assign(value); }
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(const Aws::String& value) { SetCodeRepositoryArn(value); return *this;}
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(Aws::String&& value) { SetCodeRepositoryArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the git repository.</p>
+     * <p>The ARN of the Git repository.</p>
      */
     inline UpdateCodeRepositoryResult& WithCodeRepositoryArn(const char* value) { SetCodeRepositoryArn(value); return *this;}
 

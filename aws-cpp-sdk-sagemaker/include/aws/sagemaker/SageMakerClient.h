@@ -557,30 +557,30 @@ namespace Model
         virtual void CreateAlgorithmAsync(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Create a git repository as a resource in your Amazon SageMaker account. You
-         * can associate the repository with notebook instances so that you can use git
-         * source control for the notebooks you create. The git repository is a resource in
+         * <p>Creates a Git repository as a resource in your Amazon SageMaker account. You
+         * can associate the repository with notebook instances so that you can use Git
+         * source control for the notebooks you create. The Git repository is a resource in
          * your Amazon SageMaker account, so it can be associated with more than one
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other git repository.</p><p><h3>See Also:</h3>   <a
+         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateCodeRepositoryOutcome CreateCodeRepository(const Model::CreateCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Create a git repository as a resource in your Amazon SageMaker account. You
-         * can associate the repository with notebook instances so that you can use git
-         * source control for the notebooks you create. The git repository is a resource in
+         * <p>Creates a Git repository as a resource in your Amazon SageMaker account. You
+         * can associate the repository with notebook instances so that you can use Git
+         * source control for the notebooks you create. The Git repository is a resource in
          * your Amazon SageMaker account, so it can be associated with more than one
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other git repository.</p><p><h3>See Also:</h3>   <a
+         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          *
@@ -589,15 +589,15 @@ namespace Model
         virtual Model::CreateCodeRepositoryOutcomeCallable CreateCodeRepositoryCallable(const Model::CreateCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Create a git repository as a resource in your Amazon SageMaker account. You
-         * can associate the repository with notebook instances so that you can use git
-         * source control for the notebooks you create. The git repository is a resource in
+         * <p>Creates a Git repository as a resource in your Amazon SageMaker account. You
+         * can associate the repository with notebook instances so that you can use Git
+         * source control for the notebooks you create. The Git repository is a resource in
          * your Amazon SageMaker account, so it can be associated with more than one
          * notebook instance, and it persists independently from the lifecycle of any
          * notebook instances it is associated with.</p> <p>The repository can be hosted
          * either in <a
          * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS
-         * CodeCommit</a> or in any other git repository.</p><p><h3>See Also:</h3>   <a
+         * CodeCommit</a> or in any other Git repository.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCodeRepository">AWS
          * API Reference</a></p>
          *
@@ -1592,7 +1592,7 @@ namespace Model
         virtual void DeleteAlgorithmAsync(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified git repository from your account.</p><p><h3>See
+         * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
          * API Reference</a></p>
@@ -1600,7 +1600,7 @@ namespace Model
         virtual Model::DeleteCodeRepositoryOutcome DeleteCodeRepository(const Model::DeleteCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Deletes the specified git repository from your account.</p><p><h3>See
+         * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
          * API Reference</a></p>
@@ -1610,7 +1610,7 @@ namespace Model
         virtual Model::DeleteCodeRepositoryOutcomeCallable DeleteCodeRepositoryCallable(const Model::DeleteCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Deletes the specified git repository from your account.</p><p><h3>See
+         * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
          * API Reference</a></p>
@@ -1923,7 +1923,7 @@ namespace Model
         virtual void DescribeAlgorithmAsync(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets details about the specified git repository.</p><p><h3>See Also:</h3>  
+         * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">AWS
          * API Reference</a></p>
@@ -1931,7 +1931,7 @@ namespace Model
         virtual Model::DescribeCodeRepositoryOutcome DescribeCodeRepository(const Model::DescribeCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Gets details about the specified git repository.</p><p><h3>See Also:</h3>  
+         * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">AWS
          * API Reference</a></p>
@@ -1941,7 +1941,7 @@ namespace Model
         virtual Model::DescribeCodeRepositoryOutcomeCallable DescribeCodeRepositoryCallable(const Model::DescribeCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Gets details about the specified git repository.</p><p><h3>See Also:</h3>  
+         * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCodeRepository">AWS
          * API Reference</a></p>
@@ -2389,7 +2389,7 @@ namespace Model
         virtual void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets a list of the git repositories in your account.</p><p><h3>See Also:</h3>
+         * <p>Gets a list of the Git repositories in your account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">AWS
          * API Reference</a></p>
@@ -2397,7 +2397,7 @@ namespace Model
         virtual Model::ListCodeRepositoriesOutcome ListCodeRepositories(const Model::ListCodeRepositoriesRequest& request) const;
 
         /**
-         * <p>Gets a list of the git repositories in your account.</p><p><h3>See Also:</h3>
+         * <p>Gets a list of the Git repositories in your account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">AWS
          * API Reference</a></p>
@@ -2407,7 +2407,7 @@ namespace Model
         virtual Model::ListCodeRepositoriesOutcomeCallable ListCodeRepositoriesCallable(const Model::ListCodeRepositoriesRequest& request) const;
 
         /**
-         * <p>Gets a list of the git repositories in your account.</p><p><h3>See Also:</h3>
+         * <p>Gets a list of the Git repositories in your account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">AWS
          * API Reference</a></p>
@@ -3228,7 +3228,7 @@ namespace Model
         virtual void StopTransformJobAsync(const Model::StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified git repository with the specified values.</p><p><h3>See
+         * <p>Updates the specified Git repository with the specified values.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">AWS
          * API Reference</a></p>
@@ -3236,7 +3236,7 @@ namespace Model
         virtual Model::UpdateCodeRepositoryOutcome UpdateCodeRepository(const Model::UpdateCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Updates the specified git repository with the specified values.</p><p><h3>See
+         * <p>Updates the specified Git repository with the specified values.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">AWS
          * API Reference</a></p>
@@ -3246,7 +3246,7 @@ namespace Model
         virtual Model::UpdateCodeRepositoryOutcomeCallable UpdateCodeRepositoryCallable(const Model::UpdateCodeRepositoryRequest& request) const;
 
         /**
-         * <p>Updates the specified git repository with the specified values.</p><p><h3>See
+         * <p>Updates the specified Git repository with the specified values.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateCodeRepository">AWS
          * API Reference</a></p>
@@ -3256,7 +3256,7 @@ namespace Model
         virtual void UpdateCodeRepositoryAsync(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> Deploys the new <code>EndpointConfig</code> specified in the request,
+         * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
          * switches to using newly created endpoint, and then deletes resources provisioned
          * for the endpoint using the previous <code>EndpointConfig</code> (there is no
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
@@ -3273,7 +3273,7 @@ namespace Model
         virtual Model::UpdateEndpointOutcome UpdateEndpoint(const Model::UpdateEndpointRequest& request) const;
 
         /**
-         * <p> Deploys the new <code>EndpointConfig</code> specified in the request,
+         * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
          * switches to using newly created endpoint, and then deletes resources provisioned
          * for the endpoint using the previous <code>EndpointConfig</code> (there is no
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets
@@ -3292,7 +3292,7 @@ namespace Model
         virtual Model::UpdateEndpointOutcomeCallable UpdateEndpointCallable(const Model::UpdateEndpointRequest& request) const;
 
         /**
-         * <p> Deploys the new <code>EndpointConfig</code> specified in the request,
+         * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
          * switches to using newly created endpoint, and then deletes resources provisioned
          * for the endpoint using the previous <code>EndpointConfig</code> (there is no
          * availability loss). </p> <p>When Amazon SageMaker receives the request, it sets

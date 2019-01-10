@@ -52,10 +52,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -65,10 +65,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -78,10 +78,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -91,10 +91,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -104,10 +104,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -117,10 +117,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as
@@ -130,10 +130,10 @@ namespace Model
 
     /**
      * <p> The YAML-formatted or JSON-formatted revision string. </p> <p> For an AWS
-     * Lambda deployment the content includes a Lambda function name, the alias for its
-     * original version, and the alias for its replacement version. The deployment
+     * Lambda deployment, the content includes a Lambda function name, the alias for
+     * its original version, and the alias for its replacement version. The deployment
      * shifts traffic from the original version of the Lambda function to the
-     * replacement version. </p> <p> For an Amazon ECS deployment the content includes
+     * replacement version. </p> <p> For an Amazon ECS deployment, the content includes
      * the task name, information about the load balancer that serves traffic to the
      * container, and more. </p> <p> For both types of deployments, the content can
      * specify Lambda functions that run at specified hooks, such as

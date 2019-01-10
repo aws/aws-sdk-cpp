@@ -532,10 +532,12 @@ namespace Model
      * target capacity or also attempts to maintain it. When this value is
      * <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it
-     * submit requests in alternative Spot pools if capacity is not available. To
-     * maintain a certain target capacity, the Spot Fleet places the required requests
-     * to meet capacity and automatically replenishes any interrupted instances.
-     * Default: <code>maintain</code>.</p>
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
      */
     inline const FleetType& GetType() const{ return m_type; }
 
@@ -544,10 +546,12 @@ namespace Model
      * target capacity or also attempts to maintain it. When this value is
      * <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it
-     * submit requests in alternative Spot pools if capacity is not available. To
-     * maintain a certain target capacity, the Spot Fleet places the required requests
-     * to meet capacity and automatically replenishes any interrupted instances.
-     * Default: <code>maintain</code>.</p>
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
      */
     inline void SetType(const FleetType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -556,10 +560,12 @@ namespace Model
      * target capacity or also attempts to maintain it. When this value is
      * <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it
-     * submit requests in alternative Spot pools if capacity is not available. To
-     * maintain a certain target capacity, the Spot Fleet places the required requests
-     * to meet capacity and automatically replenishes any interrupted instances.
-     * Default: <code>maintain</code>.</p>
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
      */
     inline void SetType(FleetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -568,10 +574,12 @@ namespace Model
      * target capacity or also attempts to maintain it. When this value is
      * <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it
-     * submit requests in alternative Spot pools if capacity is not available. To
-     * maintain a certain target capacity, the Spot Fleet places the required requests
-     * to meet capacity and automatically replenishes any interrupted instances.
-     * Default: <code>maintain</code>.</p>
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
      */
     inline SpotFleetRequestConfigData& WithType(const FleetType& value) { SetType(value); return *this;}
 
@@ -580,10 +588,12 @@ namespace Model
      * target capacity or also attempts to maintain it. When this value is
      * <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it
-     * submit requests in alternative Spot pools if capacity is not available. To
-     * maintain a certain target capacity, the Spot Fleet places the required requests
-     * to meet capacity and automatically replenishes any interrupted instances.
-     * Default: <code>maintain</code>.</p>
+     * submit requests in alternative Spot pools if capacity is not available. When
+     * this value is <code>maintain</code>, the Spot Fleet maintains the target
+     * capacity. The Spot Fleet places the required requests to meet capacity and
+     * automatically replenishes any interrupted instances. Default:
+     * <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.</p>
      */
     inline SpotFleetRequestConfigData& WithType(FleetType&& value) { SetType(std::move(value)); return *this;}
 

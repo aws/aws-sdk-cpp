@@ -91,15 +91,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -111,15 +112,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -131,15 +133,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -151,15 +154,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -171,15 +175,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -191,15 +196,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
@@ -211,15 +217,16 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>association-id</code> - The ID of the association.</p> </li> <li> <p>
-     * <code>association-route-table-id</code> - The ID of the route table for the
-     * transit gateway.</p> </li> <li> <p> <code>associate-state</code> - The state of
-     * the association (<code>associating</code> | <code>associated</code> |
-     * <code>disassociating</code>).</p> </li> <li> <p> <code>resource-id</code> - The
-     * ID of the resource.</p> </li> <li> <p> <code>resource-type</code> - The resource
-     * type (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
+     * <code>association.transit-gateway-route-table-id</code> - The ID of the route
+     * table for the transit gateway.</p> </li> <li> <p> <code>association.state</code>
+     * - The state of the association (<code>associating</code> |
+     * <code>associated</code> | <code>disassociating</code>).</p> </li> <li> <p>
+     * <code>resource-id</code> - The ID of the resource.</p> </li> <li> <p>
+     * <code>resource-owner</code> - The ID of the AWS account that owns the
+     * resource.</p> </li> <li> <p> <code>resource-type</code> - The resource type
+     * (<code>vpc</code> | <code>vpn</code>).</p> </li> <li> <p> <code>state</code> -
+     * The state of the attachment (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>modifying</code> |
      * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
      * <code>rejected</code>).</p> </li> <li> <p>
      * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>

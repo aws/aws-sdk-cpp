@@ -115,21 +115,21 @@ namespace Model
 
 
     /**
-     * <p>The number of minutes to wait before the status of a blue/green deployment
+     * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
      * STOP_DEPLOYMENT option for actionOnTimeout</p>
      */
     inline int GetWaitTimeInMinutes() const{ return m_waitTimeInMinutes; }
 
     /**
-     * <p>The number of minutes to wait before the status of a blue/green deployment
+     * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
      * STOP_DEPLOYMENT option for actionOnTimeout</p>
      */
     inline void SetWaitTimeInMinutes(int value) { m_waitTimeInMinutesHasBeenSet = true; m_waitTimeInMinutes = value; }
 
     /**
-     * <p>The number of minutes to wait before the status of a blue/green deployment
+     * <p>The number of minutes to wait before the status of a blue/green deployment is
      * changed to Stopped if rerouting is not started manually. Applies only to the
      * STOP_DEPLOYMENT option for actionOnTimeout</p>
      */

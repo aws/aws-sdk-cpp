@@ -207,31 +207,31 @@ namespace Model
 
 
     /**
-     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline const TrafficRoutingConfig& GetTrafficRoutingConfig() const{ return m_trafficRoutingConfig; }
 
     /**
-     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline void SetTrafficRoutingConfig(const TrafficRoutingConfig& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = value; }
 
     /**
-     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline void SetTrafficRoutingConfig(TrafficRoutingConfig&& value) { m_trafficRoutingConfigHasBeenSet = true; m_trafficRoutingConfig = std::move(value); }
 
     /**
-     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(const TrafficRoutingConfig& value) { SetTrafficRoutingConfig(value); return *this;}
 
     /**
-     * <p>The configuration specifying how the deployment traffic will be routed. Only
+     * <p>The configuration that specifies how the deployment traffic is routed. Only
      * deployments with a Lambda compute platform can specify this.</p>
      */
     inline DeploymentConfigInfo& WithTrafficRoutingConfig(TrafficRoutingConfig&& value) { SetTrafficRoutingConfig(std::move(value)); return *this;}

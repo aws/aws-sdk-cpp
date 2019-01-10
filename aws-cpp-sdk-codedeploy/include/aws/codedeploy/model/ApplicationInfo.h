@@ -148,20 +148,20 @@ namespace Model
 
 
     /**
-     * <p>True if the user has authenticated with GitHub for the specified application;
-     * otherwise, false.</p>
+     * <p>True if the user has authenticated with GitHub for the specified application.
+     * Otherwise, false.</p>
      */
     inline bool GetLinkedToGitHub() const{ return m_linkedToGitHub; }
 
     /**
-     * <p>True if the user has authenticated with GitHub for the specified application;
-     * otherwise, false.</p>
+     * <p>True if the user has authenticated with GitHub for the specified application.
+     * Otherwise, false.</p>
      */
     inline void SetLinkedToGitHub(bool value) { m_linkedToGitHubHasBeenSet = true; m_linkedToGitHub = value; }
 
     /**
-     * <p>True if the user has authenticated with GitHub for the specified application;
-     * otherwise, false.</p>
+     * <p>True if the user has authenticated with GitHub for the specified application.
+     * Otherwise, false.</p>
      */
     inline ApplicationInfo& WithLinkedToGitHub(bool value) { SetLinkedToGitHub(value); return *this;}
 

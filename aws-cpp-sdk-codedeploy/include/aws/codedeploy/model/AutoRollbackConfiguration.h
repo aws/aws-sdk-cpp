@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Information about a configuration for automatically rolling back to a
-   * previous version of an application revision when a deployment doesn't complete
+   * previous version of an application revision when a deployment is not completed
    * successfully.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AutoRollbackConfiguration">AWS
    * API Reference</a></p>

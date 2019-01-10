@@ -121,6 +121,25 @@ namespace Model
 
 
     /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
+
+    /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
+
+    /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline OnDemandOptions& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
+
+
+    /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
      */
@@ -145,6 +164,9 @@ namespace Model
 
     bool m_singleInstanceType;
     bool m_singleInstanceTypeHasBeenSet;
+
+    bool m_singleAvailabilityZone;
+    bool m_singleAvailabilityZoneHasBeenSet;
 
     int m_minTargetCapacity;
     bool m_minTargetCapacityHasBeenSet;
