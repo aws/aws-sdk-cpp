@@ -36,6 +36,9 @@ SnapshotSchedule::SnapshotSchedule() :
     m_scheduleDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_nextInvocationsHasBeenSet(false),
+    m_associatedClusterCount(0),
+    m_associatedClusterCountHasBeenSet(false),
+    m_associatedClustersHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -46,6 +49,9 @@ SnapshotSchedule::SnapshotSchedule(const XmlNode& xmlNode) :
     m_scheduleDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_nextInvocationsHasBeenSet(false),
+    m_associatedClusterCount(0),
+    m_associatedClusterCountHasBeenSet(false),
+    m_associatedClustersHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -105,6 +111,24 @@ SnapshotSchedule& SnapshotSchedule::operator =(const XmlNode& xmlNode)
 
       m_nextInvocationsHasBeenSet = true;
     }
+    XmlNode associatedClusterCountNode = resultNode.FirstChild("AssociatedClusterCount");
+    if(!associatedClusterCountNode.IsNull())
+    {
+      m_associatedClusterCount = StringUtils::ConvertToInt32(StringUtils::Trim(associatedClusterCountNode.GetText().c_str()).c_str());
+      m_associatedClusterCountHasBeenSet = true;
+    }
+    XmlNode associatedClustersNode = resultNode.FirstChild("AssociatedClusters");
+    if(!associatedClustersNode.IsNull())
+    {
+      XmlNode associatedClustersMember = associatedClustersNode.FirstChild("ClusterAssociatedToSchedule");
+      while(!associatedClustersMember.IsNull())
+      {
+        m_associatedClusters.push_back(associatedClustersMember);
+        associatedClustersMember = associatedClustersMember.NextNode("ClusterAssociatedToSchedule");
+      }
+
+      m_associatedClustersHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -151,6 +175,22 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
+  if(m_associatedClusterCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AssociatedClusterCount=" << m_associatedClusterCount << "&";
+  }
+
+  if(m_associatedClustersHasBeenSet)
+  {
+      unsigned associatedClustersIdx = 1;
+      for(auto& item : m_associatedClusters)
+      {
+        Aws::StringStream associatedClustersSs;
+        associatedClustersSs << location << index << locationValue << ".ClusterAssociatedToSchedule." << associatedClustersIdx++;
+        item.OutputToStream(oStream, associatedClustersSs.str().c_str());
+      }
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -194,6 +234,20 @@ void SnapshotSchedule::OutputToStream(Aws::OStream& oStream, const char* locatio
       for(auto& item : m_nextInvocations)
       {
         oStream << location << ".SnapshotTime." << nextInvocationsIdx++ << "=" << StringUtils::URLEncode(item.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+      }
+  }
+  if(m_associatedClusterCountHasBeenSet)
+  {
+      oStream << location << ".AssociatedClusterCount=" << m_associatedClusterCount << "&";
+  }
+  if(m_associatedClustersHasBeenSet)
+  {
+      unsigned associatedClustersIdx = 1;
+      for(auto& item : m_associatedClusters)
+      {
+        Aws::StringStream associatedClustersSs;
+        associatedClustersSs << location <<  ".ClusterAssociatedToSchedule." << associatedClustersIdx++;
+        item.OutputToStream(oStream, associatedClustersSs.str().c_str());
       }
   }
   if(m_responseMetadataHasBeenSet)

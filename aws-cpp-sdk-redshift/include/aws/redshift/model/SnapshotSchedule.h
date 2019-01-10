@@ -21,6 +21,7 @@
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/Tag.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/redshift/model/ClusterAssociatedToSchedule.h>
 #include <utility>
 
 namespace Aws
@@ -227,6 +228,38 @@ namespace Model
 
 
     
+    inline int GetAssociatedClusterCount() const{ return m_associatedClusterCount; }
+
+    
+    inline void SetAssociatedClusterCount(int value) { m_associatedClusterCountHasBeenSet = true; m_associatedClusterCount = value; }
+
+    
+    inline SnapshotSchedule& WithAssociatedClusterCount(int value) { SetAssociatedClusterCount(value); return *this;}
+
+
+    
+    inline const Aws::Vector<ClusterAssociatedToSchedule>& GetAssociatedClusters() const{ return m_associatedClusters; }
+
+    
+    inline void SetAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = value; }
+
+    
+    inline void SetAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = std::move(value); }
+
+    
+    inline SnapshotSchedule& WithAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { SetAssociatedClusters(value); return *this;}
+
+    
+    inline SnapshotSchedule& WithAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { SetAssociatedClusters(std::move(value)); return *this;}
+
+    
+    inline SnapshotSchedule& AddAssociatedClusters(const ClusterAssociatedToSchedule& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(value); return *this; }
+
+    
+    inline SnapshotSchedule& AddAssociatedClusters(ClusterAssociatedToSchedule&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(std::move(value)); return *this; }
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -257,6 +290,12 @@ namespace Model
 
     Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
     bool m_nextInvocationsHasBeenSet;
+
+    int m_associatedClusterCount;
+    bool m_associatedClusterCountHasBeenSet;
+
+    Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
+    bool m_associatedClustersHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;

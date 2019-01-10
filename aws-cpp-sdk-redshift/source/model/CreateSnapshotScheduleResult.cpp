@@ -27,11 +27,13 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSnapshotScheduleResult::CreateSnapshotScheduleResult()
+CreateSnapshotScheduleResult::CreateSnapshotScheduleResult() : 
+    m_associatedClusterCount(0)
 {
 }
 
-CreateSnapshotScheduleResult::CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+CreateSnapshotScheduleResult::CreateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+    m_associatedClusterCount(0)
 {
   *this = result;
 }
@@ -88,6 +90,22 @@ CreateSnapshotScheduleResult& CreateSnapshotScheduleResult::operator =(const Aws
       {
         m_nextInvocations.push_back(DateTime(StringUtils::Trim(nextInvocationsMember.GetText().c_str()).c_str(), DateFormat::ISO_8601));
         nextInvocationsMember = nextInvocationsMember.NextNode("SnapshotTime");
+      }
+
+    }
+    XmlNode associatedClusterCountNode = resultNode.FirstChild("AssociatedClusterCount");
+    if(!associatedClusterCountNode.IsNull())
+    {
+      m_associatedClusterCount = StringUtils::ConvertToInt32(StringUtils::Trim(associatedClusterCountNode.GetText().c_str()).c_str());
+    }
+    XmlNode associatedClustersNode = resultNode.FirstChild("AssociatedClusters");
+    if(!associatedClustersNode.IsNull())
+    {
+      XmlNode associatedClustersMember = associatedClustersNode.FirstChild("ClusterAssociatedToSchedule");
+      while(!associatedClustersMember.IsNull())
+      {
+        m_associatedClusters.push_back(associatedClustersMember);
+        associatedClustersMember = associatedClustersMember.NextNode("ClusterAssociatedToSchedule");
       }
 
     }
