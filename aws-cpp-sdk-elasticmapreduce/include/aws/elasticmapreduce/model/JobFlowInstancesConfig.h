@@ -93,37 +93,37 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = std::move(value); }
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType.assign(value); }
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline JobFlowInstancesConfig& WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline JobFlowInstancesConfig& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance type of the slave nodes.</p>
+     * <p>The EC2 instance type of the core and task nodes.</p>
      */
     inline JobFlowInstancesConfig& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
@@ -620,37 +620,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
@@ -740,42 +747,50 @@ namespace Model
 
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline void SetAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = std::move(value); }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const Aws::String& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesConfig& AddAdditionalSlaveSecurityGroups(const char* value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 

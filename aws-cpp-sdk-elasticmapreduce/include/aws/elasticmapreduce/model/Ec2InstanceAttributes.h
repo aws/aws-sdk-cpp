@@ -506,37 +506,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline const Aws::String& GetEmrManagedSlaveSecurityGroup() const{ return m_emrManagedSlaveSecurityGroup; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const Aws::String& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = value; }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(Aws::String&& value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup = std::move(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline void SetEmrManagedSlaveSecurityGroup(const char* value) { m_emrManagedSlaveSecurityGroupHasBeenSet = true; m_emrManagedSlaveSecurityGroup.assign(value); }
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const Aws::String& value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(Aws::String&& value) { SetEmrManagedSlaveSecurityGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Amazon EC2 security group for the slave nodes.</p>
+     * <p>The identifier of the Amazon EC2 security group for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& WithEmrManagedSlaveSecurityGroup(const char* value) { SetEmrManagedSlaveSecurityGroup(value); return *this;}
 
@@ -626,42 +633,50 @@ namespace Model
 
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAdditionalSlaveSecurityGroups() const{ return m_additionalSlaveSecurityGroups; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline void SetAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = value; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline void SetAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups = std::move(value); }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(const Aws::Vector<Aws::String>& value) { SetAdditionalSlaveSecurityGroups(value); return *this;}
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& WithAdditionalSlaveSecurityGroups(Aws::Vector<Aws::String>&& value) { SetAdditionalSlaveSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(const Aws::String& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(Aws::String&& value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>
+     * <p>A list of additional Amazon EC2 security group IDs for the core and task
+     * nodes.</p>
      */
     inline Ec2InstanceAttributes& AddAdditionalSlaveSecurityGroups(const char* value) { m_additionalSlaveSecurityGroupsHasBeenSet = true; m_additionalSlaveSecurityGroups.push_back(value); return *this; }
 

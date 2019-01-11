@@ -167,59 +167,62 @@ namespace Model
 
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline const Aws::String& GetSlaveInstanceType() const{ return m_slaveInstanceType; }
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline void SetSlaveInstanceType(const Aws::String& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = value; }
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline void SetSlaveInstanceType(Aws::String&& value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline void SetSlaveInstanceType(const char* value) { m_slaveInstanceTypeHasBeenSet = true; m_slaveInstanceType.assign(value); }
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline JobFlowInstancesDetail& WithSlaveInstanceType(const Aws::String& value) { SetSlaveInstanceType(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline JobFlowInstancesDetail& WithSlaveInstanceType(Aws::String&& value) { SetSlaveInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 slave node instance type.</p>
+     * <p>The Amazon EC2 core and task node instance type.</p>
      */
     inline JobFlowInstancesDetail& WithSlaveInstanceType(const char* value) { SetSlaveInstanceType(value); return *this;}
 
 
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
-     * same instance serves as both the master and slave node. If the value is greater
-     * than 1, one instance is the master node and all others are slave nodes.</p>
+     * same instance serves as both the master and core and task node. If the value is
+     * greater than 1, one instance is the master node and all others are core and task
+     * nodes.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
-     * same instance serves as both the master and slave node. If the value is greater
-     * than 1, one instance is the master node and all others are slave nodes.</p>
+     * same instance serves as both the master and core and task node. If the value is
+     * greater than 1, one instance is the master node and all others are core and task
+     * nodes.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
      * <p>The number of Amazon EC2 instances in the cluster. If the value is 1, the
-     * same instance serves as both the master and slave node. If the value is greater
-     * than 1, one instance is the master node and all others are slave nodes.</p>
+     * same instance serves as both the master and core and task node. If the value is
+     * greater than 1, one instance is the master node and all others are core and task
+     * nodes.</p>
      */
     inline JobFlowInstancesDetail& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

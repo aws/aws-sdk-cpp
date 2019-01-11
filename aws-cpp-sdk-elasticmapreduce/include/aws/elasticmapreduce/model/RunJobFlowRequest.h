@@ -651,51 +651,65 @@ namespace Model
 
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 

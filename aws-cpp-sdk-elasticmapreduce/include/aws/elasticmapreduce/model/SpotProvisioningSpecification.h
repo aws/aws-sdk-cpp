@@ -77,51 +77,56 @@ namespace Model
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
-     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
-     * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
-     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
-     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is,
+     * when all Spot instances could not be provisioned within the Spot provisioning
+     * timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+     * instances are available, On-Demand Instances should be provisioned to fulfill
+     * any remaining Spot capacity.</p>
      */
     inline const SpotProvisioningTimeoutAction& GetTimeoutAction() const{ return m_timeoutAction; }
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
-     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
-     * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
-     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
-     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is,
+     * when all Spot instances could not be provisioned within the Spot provisioning
+     * timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+     * instances are available, On-Demand Instances should be provisioned to fulfill
+     * any remaining Spot capacity.</p>
      */
     inline void SetTimeoutAction(const SpotProvisioningTimeoutAction& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
-     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
-     * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
-     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
-     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is,
+     * when all Spot instances could not be provisioned within the Spot provisioning
+     * timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+     * instances are available, On-Demand Instances should be provisioned to fulfill
+     * any remaining Spot capacity.</p>
      */
     inline void SetTimeoutAction(SpotProvisioningTimeoutAction&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
-     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
-     * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
-     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
-     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is,
+     * when all Spot instances could not be provisioned within the Spot provisioning
+     * timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+     * instances are available, On-Demand Instances should be provisioned to fulfill
+     * any remaining Spot capacity.</p>
      */
     inline SpotProvisioningSpecification& WithTimeoutAction(const SpotProvisioningTimeoutAction& value) { SetTimeoutAction(value); return *this;}
 
     /**
      * <p>The action to take when <code>TargetSpotCapacity</code> has not been
-     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot
-     * instances are not uprovisioned within the Spot provisioining timeout. Valid
-     * values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>.
-     * SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand
-     * Instances should be provisioned to fulfill any remaining Spot capacity.</p>
+     * fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is,
+     * when all Spot instances could not be provisioned within the Spot provisioning
+     * timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
+     * instances are available, On-Demand Instances should be provisioned to fulfill
+     * any remaining Spot capacity.</p>
      */
     inline SpotProvisioningSpecification& WithTimeoutAction(SpotProvisioningTimeoutAction&& value) { SetTimeoutAction(std::move(value)); return *this;}
 
