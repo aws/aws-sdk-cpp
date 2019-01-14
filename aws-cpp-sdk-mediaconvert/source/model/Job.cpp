@@ -29,6 +29,7 @@ namespace Model
 {
 
 Job::Job() : 
+    m_accelerationSettingsHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
@@ -50,6 +51,7 @@ Job::Job() :
 }
 
 Job::Job(JsonView jsonValue) : 
+    m_accelerationSettingsHasBeenSet(false),
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
@@ -73,6 +75,13 @@ Job::Job(JsonView jsonValue) :
 
 Job& Job::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accelerationSettings"))
+  {
+    m_accelerationSettings = jsonValue.GetObject("accelerationSettings");
+
+    m_accelerationSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
@@ -183,6 +192,12 @@ Job& Job::operator =(JsonView jsonValue)
 JsonValue Job::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accelerationSettingsHasBeenSet)
+  {
+   payload.WithObject("accelerationSettings", m_accelerationSettings.Jsonize());
+
+  }
 
   if(m_arnHasBeenSet)
   {

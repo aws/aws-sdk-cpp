@@ -33,6 +33,7 @@ StorediSCSIVolume::StorediSCSIVolume() :
     m_volumeIdHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_volumeStatusHasBeenSet(false),
+    m_volumeAttachmentStatusHasBeenSet(false),
     m_volumeSizeInBytes(0),
     m_volumeSizeInBytesHasBeenSet(false),
     m_volumeProgress(0.0),
@@ -45,7 +46,8 @@ StorediSCSIVolume::StorediSCSIVolume() :
     m_createdDateHasBeenSet(false),
     m_volumeUsedInBytes(0),
     m_volumeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false)
+    m_kMSKeyHasBeenSet(false),
+    m_targetNameHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,7 @@ StorediSCSIVolume::StorediSCSIVolume(JsonView jsonValue) :
     m_volumeIdHasBeenSet(false),
     m_volumeTypeHasBeenSet(false),
     m_volumeStatusHasBeenSet(false),
+    m_volumeAttachmentStatusHasBeenSet(false),
     m_volumeSizeInBytes(0),
     m_volumeSizeInBytesHasBeenSet(false),
     m_volumeProgress(0.0),
@@ -66,7 +69,8 @@ StorediSCSIVolume::StorediSCSIVolume(JsonView jsonValue) :
     m_createdDateHasBeenSet(false),
     m_volumeUsedInBytes(0),
     m_volumeUsedInBytesHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false)
+    m_kMSKeyHasBeenSet(false),
+    m_targetNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,13 @@ StorediSCSIVolume& StorediSCSIVolume::operator =(JsonView jsonValue)
     m_volumeStatus = jsonValue.GetString("VolumeStatus");
 
     m_volumeStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VolumeAttachmentStatus"))
+  {
+    m_volumeAttachmentStatus = jsonValue.GetString("VolumeAttachmentStatus");
+
+    m_volumeAttachmentStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VolumeSizeInBytes"))
@@ -164,6 +175,13 @@ StorediSCSIVolume& StorediSCSIVolume::operator =(JsonView jsonValue)
     m_kMSKeyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TargetName"))
+  {
+    m_targetName = jsonValue.GetString("TargetName");
+
+    m_targetNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +210,12 @@ JsonValue StorediSCSIVolume::Jsonize() const
   if(m_volumeStatusHasBeenSet)
   {
    payload.WithString("VolumeStatus", m_volumeStatus);
+
+  }
+
+  if(m_volumeAttachmentStatusHasBeenSet)
+  {
+   payload.WithString("VolumeAttachmentStatus", m_volumeAttachmentStatus);
 
   }
 
@@ -245,6 +269,12 @@ JsonValue StorediSCSIVolume::Jsonize() const
   if(m_kMSKeyHasBeenSet)
   {
    payload.WithString("KMSKey", m_kMSKey);
+
+  }
+
+  if(m_targetNameHasBeenSet)
+  {
+   payload.WithString("TargetName", m_targetName);
 
   }
 

@@ -35,7 +35,8 @@ CaptionSourceSettings::CaptionSourceSettings() :
     m_fileSourceSettingsHasBeenSet(false),
     m_sourceType(CaptionSourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
-    m_teletextSourceSettingsHasBeenSet(false)
+    m_teletextSourceSettingsHasBeenSet(false),
+    m_trackSourceSettingsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ CaptionSourceSettings::CaptionSourceSettings(JsonView jsonValue) :
     m_fileSourceSettingsHasBeenSet(false),
     m_sourceType(CaptionSourceType::NOT_SET),
     m_sourceTypeHasBeenSet(false),
-    m_teletextSourceSettingsHasBeenSet(false)
+    m_teletextSourceSettingsHasBeenSet(false),
+    m_trackSourceSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ CaptionSourceSettings& CaptionSourceSettings::operator =(JsonView jsonValue)
     m_teletextSourceSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trackSourceSettings"))
+  {
+    m_trackSourceSettings = jsonValue.GetObject("trackSourceSettings");
+
+    m_trackSourceSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue CaptionSourceSettings::Jsonize() const
   if(m_teletextSourceSettingsHasBeenSet)
   {
    payload.WithObject("teletextSourceSettings", m_teletextSourceSettings.Jsonize());
+
+  }
+
+  if(m_trackSourceSettingsHasBeenSet)
+  {
+   payload.WithObject("trackSourceSettings", m_trackSourceSettings.Jsonize());
 
   }
 

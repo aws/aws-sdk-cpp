@@ -24,6 +24,7 @@
 #include <aws/mediaconvert/model/M2tsEbpAudioInterval.h>
 #include <aws/mediaconvert/model/M2tsEbpPlacement.h>
 #include <aws/mediaconvert/model/M2tsEsRateInPes.h>
+#include <aws/mediaconvert/model/M2tsForceTsVideoEbpOrder.h>
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
@@ -327,6 +328,22 @@ namespace Model
 
     
     inline M2tsSettings& WithEsRateInPes(M2tsEsRateInPes&& value) { SetEsRateInPes(std::move(value)); return *this;}
+
+
+    
+    inline const M2tsForceTsVideoEbpOrder& GetForceTsVideoEbpOrder() const{ return m_forceTsVideoEbpOrder; }
+
+    
+    inline void SetForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = value; }
+
+    
+    inline void SetForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = std::move(value); }
+
+    
+    inline M2tsSettings& WithForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { SetForceTsVideoEbpOrder(value); return *this;}
+
+    
+    inline M2tsSettings& WithForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { SetForceTsVideoEbpOrder(std::move(value)); return *this;}
 
 
     /**
@@ -740,6 +757,9 @@ namespace Model
 
     M2tsEsRateInPes m_esRateInPes;
     bool m_esRateInPesHasBeenSet;
+
+    M2tsForceTsVideoEbpOrder m_forceTsVideoEbpOrder;
+    bool m_forceTsVideoEbpOrderHasBeenSet;
 
     double m_fragmentTime;
     bool m_fragmentTimeHasBeenSet;

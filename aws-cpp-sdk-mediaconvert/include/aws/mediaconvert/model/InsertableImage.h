@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Settings that specify how your overlay appears.<p><h3>See Also:</h3>   <a
+   * Settings that specify how your still graphic overlay appears.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InsertableImage">AWS
    * API Reference</a></p>
    */
@@ -48,45 +49,48 @@ namespace Model
 
 
     /**
-     * Set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video.
+     * This duration includes fade-in time but not fade-out time.
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
-     * Set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video.
+     * This duration includes fade-in time but not fade-out time.
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
-     * Set the time, in milliseconds, for the image to remain on the output video.
+     * Specify the time, in milliseconds, for the image to remain on the output video.
+     * This duration includes fade-in time but not fade-out time.
      */
     inline InsertableImage& WithDuration(int value) { SetDuration(value); return *this;}
 
 
     /**
-     * Set the length of time, in milliseconds, between the Start time that you specify
-     * for the image insertion and the time that the image appears at full opacity.
-     * Full opacity is the level that you specify for the opacity setting. If you don't
-     * specify a value for Fade-in, the image will appear abruptly at the overlay start
-     * time.
+     * Specify the length of time, in milliseconds, between the Start time that you
+     * specify for the image insertion and the time that the image appears at full
+     * opacity. Full opacity is the level that you specify for the opacity setting. If
+     * you don't specify a value for Fade-in, the image will appear abruptly at the
+     * overlay start time.
      */
     inline int GetFadeIn() const{ return m_fadeIn; }
 
     /**
-     * Set the length of time, in milliseconds, between the Start time that you specify
-     * for the image insertion and the time that the image appears at full opacity.
-     * Full opacity is the level that you specify for the opacity setting. If you don't
-     * specify a value for Fade-in, the image will appear abruptly at the overlay start
-     * time.
+     * Specify the length of time, in milliseconds, between the Start time that you
+     * specify for the image insertion and the time that the image appears at full
+     * opacity. Full opacity is the level that you specify for the opacity setting. If
+     * you don't specify a value for Fade-in, the image will appear abruptly at the
+     * overlay start time.
      */
     inline void SetFadeIn(int value) { m_fadeInHasBeenSet = true; m_fadeIn = value; }
 
     /**
-     * Set the length of time, in milliseconds, between the Start time that you specify
-     * for the image insertion and the time that the image appears at full opacity.
-     * Full opacity is the level that you specify for the opacity setting. If you don't
-     * specify a value for Fade-in, the image will appear abruptly at the overlay start
-     * time.
+     * Specify the length of time, in milliseconds, between the Start time that you
+     * specify for the image insertion and the time that the image appears at full
+     * opacity. Full opacity is the level that you specify for the opacity setting. If
+     * you don't specify a value for Fade-in, the image will appear abruptly at the
+     * overlay start time.
      */
     inline InsertableImage& WithFadeIn(int value) { SetFadeIn(value); return *this;}
 
@@ -142,95 +146,82 @@ namespace Model
 
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline const Aws::String& GetImageInserterInput() const{ return m_imageInserterInput; }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(const Aws::String& value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput = value; }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(Aws::String&& value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput = std::move(value); }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline void SetImageInserterInput(const char* value) { m_imageInserterInputHasBeenSet = true; m_imageInserterInput.assign(value); }
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(const Aws::String& value) { SetImageInserterInput(value); return *this;}
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(Aws::String&& value) { SetImageInserterInput(std::move(value)); return *this;}
 
     /**
-     * Use Image location (imageInserterInput) to specify the Amazon S3 location of the
-     * image to be inserted into the output. Use a PNG or TGA file that fits inside the
-     * video frame.
+     * Specify the Amazon S3 location of the image that you want to overlay on the
+     * video. Use a PNG or TGA file.
      */
     inline InsertableImage& WithImageInserterInput(const char* value) { SetImageInserterInput(value); return *this;}
 
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and
-     * the left edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the inserted image and the left edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline int GetImageX() const{ return m_imageX; }
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and
-     * the left edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the inserted image and the left edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
 
     /**
-     * Use Left (ImageX) to set the distance, in pixels, between the inserted image and
-     * the left edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the inserted image and the left edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline InsertableImage& WithImageX(int value) { SetImageX(value); return *this;}
 
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the overlaid image and
-     * the top edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline int GetImageY() const{ return m_imageY; }
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the overlaid image and
-     * the top edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline void SetImageY(int value) { m_imageYHasBeenSet = true; m_imageY = value; }
 
     /**
-     * Use Top (ImageY) to set the distance, in pixels, between the overlaid image and
-     * the top edge of the video frame. Required for any image overlay that you
-     * specify.
+     * Specify the distance, in pixels, between the overlaid image and the top edge of
+     * the video frame. Required for any image overlay that you specify.
      */
     inline InsertableImage& WithImageY(int value) { SetImageY(value); return *this;}
 
@@ -274,51 +265,51 @@ namespace Model
 
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline const Aws::String& GetStartTime() const{ return m_startTime; }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline InsertableImage& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline InsertableImage& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
 
     /**
-     * Use Start time (StartTime) to specify the video timecode when the image is
-     * inserted in the output. This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF)
-     * format.
+     * Specify the timecode of the frame that you want the overlay to first appear on.
+     * This must be in timecode (HH:MM:SS:FF or HH:MM:SS;FF) format. Remember to take
+     * into account your timecode source settings.
      */
     inline InsertableImage& WithStartTime(const char* value) { SetStartTime(value); return *this;}
 

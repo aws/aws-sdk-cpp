@@ -50,6 +50,8 @@ M2tsSettings::M2tsSettings() :
     m_ebpPlacementHasBeenSet(false),
     m_esRateInPes(M2tsEsRateInPes::NOT_SET),
     m_esRateInPesHasBeenSet(false),
+    m_forceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder::NOT_SET),
+    m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
     m_maxPcrInterval(0),
@@ -117,6 +119,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_ebpPlacementHasBeenSet(false),
     m_esRateInPes(M2tsEsRateInPes::NOT_SET),
     m_esRateInPesHasBeenSet(false),
+    m_forceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder::NOT_SET),
+    m_forceTsVideoEbpOrderHasBeenSet(false),
     m_fragmentTime(0.0),
     m_fragmentTimeHasBeenSet(false),
     m_maxPcrInterval(0),
@@ -260,6 +264,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_esRateInPes = M2tsEsRateInPesMapper::GetM2tsEsRateInPesForName(jsonValue.GetString("esRateInPes"));
 
     m_esRateInPesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("forceTsVideoEbpOrder"))
+  {
+    m_forceTsVideoEbpOrder = M2tsForceTsVideoEbpOrderMapper::GetM2tsForceTsVideoEbpOrderForName(jsonValue.GetString("forceTsVideoEbpOrder"));
+
+    m_forceTsVideoEbpOrderHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fragmentTime"))
@@ -497,6 +508,11 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_esRateInPesHasBeenSet)
   {
    payload.WithString("esRateInPes", M2tsEsRateInPesMapper::GetNameForM2tsEsRateInPes(m_esRateInPes));
+  }
+
+  if(m_forceTsVideoEbpOrderHasBeenSet)
+  {
+   payload.WithString("forceTsVideoEbpOrder", M2tsForceTsVideoEbpOrderMapper::GetNameForM2tsForceTsVideoEbpOrder(m_forceTsVideoEbpOrder));
   }
 
   if(m_fragmentTimeHasBeenSet)

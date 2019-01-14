@@ -312,27 +312,27 @@ namespace Model
 
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      */
     inline const InputDecryptionSettings& GetDecryptionSettings() const{ return m_decryptionSettings; }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      */
     inline void SetDecryptionSettings(const InputDecryptionSettings& value) { m_decryptionSettingsHasBeenSet = true; m_decryptionSettings = value; }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      */
     inline void SetDecryptionSettings(InputDecryptionSettings&& value) { m_decryptionSettingsHasBeenSet = true; m_decryptionSettings = std::move(value); }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      */
     inline Input& WithDecryptionSettings(const InputDecryptionSettings& value) { SetDecryptionSettings(value); return *this;}
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      */
     inline Input& WithDecryptionSettings(InputDecryptionSettings&& value) { SetDecryptionSettings(std::move(value)); return *this;}
 
@@ -354,51 +354,79 @@ namespace Model
 
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline const Aws::String& GetFileInput() const{ return m_fileInput; }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline void SetFileInput(const Aws::String& value) { m_fileInputHasBeenSet = true; m_fileInput = value; }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline void SetFileInput(Aws::String&& value) { m_fileInputHasBeenSet = true; m_fileInput = std::move(value); }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline void SetFileInput(const char* value) { m_fileInputHasBeenSet = true; m_fileInput.assign(value); }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline Input& WithFileInput(const Aws::String& value) { SetFileInput(value); return *this;}
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline Input& WithFileInput(Aws::String&& value) { SetFileInput(std::move(value)); return *this;}
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There
-     * can be multiple inputs in a job. These inputs are concantenated, in the order
-     * they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in
+     * a single job. The service concatenates these inputs, in the order that you
+     * specify them in the job, to create the outputs. If your input format is IMF,
+     * specify your input by providing the path to your CPL. For example,
+     * "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use
+     * *Supplemental IMPs* (SupplementalImps) to specify any supplemental IMPs that
+     * contain assets referenced by the CPL.
      */
     inline Input& WithFileInput(const char* value) { SetFileInput(value); return *this;}
 
@@ -439,37 +467,37 @@ namespace Model
 
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline Input& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline Input& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
 
@@ -586,6 +614,87 @@ namespace Model
     inline Input& WithPsiControl(InputPsiControl&& value) { SetPsiControl(std::move(value)); return *this;}
 
 
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline const Aws::Vector<Aws::String>& GetSupplementalImps() const{ return m_supplementalImps; }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline void SetSupplementalImps(const Aws::Vector<Aws::String>& value) { m_supplementalImpsHasBeenSet = true; m_supplementalImps = value; }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline void SetSupplementalImps(Aws::Vector<Aws::String>&& value) { m_supplementalImpsHasBeenSet = true; m_supplementalImps = std::move(value); }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline Input& WithSupplementalImps(const Aws::Vector<Aws::String>& value) { SetSupplementalImps(value); return *this;}
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline Input& WithSupplementalImps(Aws::Vector<Aws::String>&& value) { SetSupplementalImps(std::move(value)); return *this;}
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline Input& AddSupplementalImps(const Aws::String& value) { m_supplementalImpsHasBeenSet = true; m_supplementalImps.push_back(value); return *this; }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline Input& AddSupplementalImps(Aws::String&& value) { m_supplementalImpsHasBeenSet = true; m_supplementalImps.push_back(std::move(value)); return *this; }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if
+     * the CPL that you're using for your input is in an incomplete IMP. Specify either
+     * the supplemental IMP directories with a trailing slash or the ASSETMAP.xml
+     * files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     * don't need to specify the IMP that contains your input CPL, because the service
+     * automatically detects it.
+     */
+    inline Input& AddSupplementalImps(const char* value) { m_supplementalImpsHasBeenSet = true; m_supplementalImps.push_back(value); return *this; }
+
+
     
     inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
 
@@ -657,6 +766,9 @@ namespace Model
 
     InputPsiControl m_psiControl;
     bool m_psiControlHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supplementalImps;
+    bool m_supplementalImpsHasBeenSet;
 
     InputTimecodeSource m_timecodeSource;
     bool m_timecodeSourceHasBeenSet;

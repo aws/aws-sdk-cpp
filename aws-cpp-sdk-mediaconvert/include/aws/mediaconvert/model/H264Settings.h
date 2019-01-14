@@ -270,48 +270,48 @@ namespace Model
 
 
     /**
-     * When you use the API for transcode jobs that use framerate conversion, specify
-     * the framerate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
-     * console for transcode jobs that use framerate conversion, provide the value as a
-     * decimal number for Framerate. In this example, specify 23.976.
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
 
     /**
-     * When you use the API for transcode jobs that use framerate conversion, specify
-     * the framerate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
-     * console for transcode jobs that use framerate conversion, provide the value as a
-     * decimal number for Framerate. In this example, specify 23.976.
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
 
     /**
-     * When you use the API for transcode jobs that use framerate conversion, specify
-     * the framerate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
+     * When you use the API for transcode jobs that use frame rate conversion, specify
+     * the frame rate as a fraction. For example,  24000 / 1001 = 23.976 fps. Use
      * FramerateDenominator to specify the denominator of this fraction. In this
      * example, use 1001 for the value of FramerateDenominator. When you use the
-     * console for transcode jobs that use framerate conversion, provide the value as a
-     * decimal number for Framerate. In this example, specify 23.976.
+     * console for transcode jobs that use frame rate conversion, provide the value as
+     * a decimal number for Framerate. In this example, specify 23.976.
      */
     inline H264Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
 
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline H264Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 

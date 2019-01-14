@@ -362,37 +362,37 @@ namespace Model
 
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline const ImageInserter& GetImageInserter() const{ return m_imageInserter; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(const ImageInserter& value) { m_imageInserterHasBeenSet = true; m_imageInserter = value; }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline void SetImageInserter(ImageInserter&& value) { m_imageInserterHasBeenSet = true; m_imageInserter = std::move(value); }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline InputTemplate& WithImageInserter(const ImageInserter& value) { SetImageInserter(value); return *this;}
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-     * on your video. Enable or disable this feature for each input individually. This
-     * setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video.
+     * Enable or disable this feature for each input individually. This setting is
+     * disabled by default.
      */
     inline InputTemplate& WithImageInserter(ImageInserter&& value) { SetImageInserter(std::move(value)); return *this;}
 

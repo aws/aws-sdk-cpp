@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/DvbSubtitleAlignment.h>
 #include <aws/mediaconvert/model/DvbSubtitleBackgroundColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleFontColor.h>
+#include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/DvbSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleShadowColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleTeletextSpacing.h>
@@ -164,6 +165,47 @@ All burn-in and
      * DVB-Sub font settings must match.
      */
     inline DvbSubDestinationSettings& WithFontResolution(int value) { SetFontResolution(value); return *this;}
+
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    inline const FontScript& GetFontScript() const{ return m_fontScript; }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    inline void SetFontScript(const FontScript& value) { m_fontScriptHasBeenSet = true; m_fontScript = value; }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    inline void SetFontScript(FontScript&& value) { m_fontScriptHasBeenSet = true; m_fontScript = std::move(value); }
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    inline DvbSubDestinationSettings& WithFontScript(const FontScript& value) { SetFontScript(value); return *this;}
+
+    /**
+     * Provide the font script, using an ISO 15924 script code, if the LanguageCode is
+     * not sufficient for determining the script type. Where LanguageCode or
+     * CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. This is used
+     * to help determine the appropriate font for rendering DVB-Sub captions.
+     */
+    inline DvbSubDestinationSettings& WithFontScript(FontScript&& value) { SetFontScript(std::move(value)); return *this;}
 
 
     /**
@@ -410,6 +452,9 @@ All burn-in and
 
     int m_fontResolution;
     bool m_fontResolutionHasBeenSet;
+
+    FontScript m_fontScript;
+    bool m_fontScriptHasBeenSet;
 
     int m_fontSize;
     bool m_fontSizeHasBeenSet;

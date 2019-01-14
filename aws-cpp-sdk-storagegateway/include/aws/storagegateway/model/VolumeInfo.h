@@ -287,6 +287,28 @@ namespace Model
      */
     inline VolumeInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
 
+
+    
+    inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
+
+    
+    inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
+
+    
+    inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
+
+    
+    inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
+
+    
+    inline VolumeInfo& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
+
+    
+    inline VolumeInfo& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
+
+    
+    inline VolumeInfo& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
+
   private:
 
     Aws::String m_volumeARN;
@@ -306,6 +328,9 @@ namespace Model
 
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
+
+    Aws::String m_volumeAttachmentStatus;
+    bool m_volumeAttachmentStatusHasBeenSet;
   };
 
 } // namespace Model

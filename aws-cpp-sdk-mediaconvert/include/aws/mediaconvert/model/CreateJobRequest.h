@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/MediaConvertRequest.h>
+#include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/JobSettings.h>
@@ -44,6 +45,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateJob"; }
 
     Aws::String SerializePayload() const override;
+
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
+    inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
+    inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
+    inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
+    inline CreateJobRequest& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please
+     * contact AWS customer support.
+     */
+    inline CreateJobRequest& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
 
 
     
@@ -337,6 +369,9 @@ namespace Model
     inline CreateJobRequest& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
   private:
+
+    AccelerationSettings m_accelerationSettings;
+    bool m_accelerationSettingsHasBeenSet;
 
     BillingTagsSource m_billingTagsSource;
     bool m_billingTagsSourceHasBeenSet;

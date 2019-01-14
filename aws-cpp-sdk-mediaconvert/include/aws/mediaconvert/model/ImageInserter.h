@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * Enable the Image inserter (ImageInserter) feature to include a graphic overlay
-   * on your video. Enable or disable this feature for each input or output
-   * individually. This setting is disabled by default.<p><h3>See Also:</h3>   <a
+   * Enable the image inserter feature to include a graphic overlay on your video.
+   * Enable or disable this feature for each input or output individually. This
+   * setting is disabled by default.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/ImageInserter">AWS
    * API Reference</a></p>
    */

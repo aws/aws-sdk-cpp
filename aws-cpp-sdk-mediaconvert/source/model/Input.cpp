@@ -48,6 +48,7 @@ Input::Input() :
     m_programNumberHasBeenSet(false),
     m_psiControl(InputPsiControl::NOT_SET),
     m_psiControlHasBeenSet(false),
+    m_supplementalImpsHasBeenSet(false),
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -74,6 +75,7 @@ Input::Input(JsonView jsonValue) :
     m_programNumberHasBeenSet(false),
     m_psiControl(InputPsiControl::NOT_SET),
     m_psiControlHasBeenSet(false),
+    m_supplementalImpsHasBeenSet(false),
     m_timecodeSource(InputTimecodeSource::NOT_SET),
     m_timecodeSourceHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
@@ -184,6 +186,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_psiControl = InputPsiControlMapper::GetInputPsiControlForName(jsonValue.GetString("psiControl"));
 
     m_psiControlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supplementalImps"))
+  {
+    Array<JsonView> supplementalImpsJsonList = jsonValue.GetArray("supplementalImps");
+    for(unsigned supplementalImpsIndex = 0; supplementalImpsIndex < supplementalImpsJsonList.GetLength(); ++supplementalImpsIndex)
+    {
+      m_supplementalImps.push_back(supplementalImpsJsonList[supplementalImpsIndex].AsString());
+    }
+    m_supplementalImpsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timecodeSource"))
@@ -299,6 +311,17 @@ JsonValue Input::Jsonize() const
   if(m_psiControlHasBeenSet)
   {
    payload.WithString("psiControl", InputPsiControlMapper::GetNameForInputPsiControl(m_psiControl));
+  }
+
+  if(m_supplementalImpsHasBeenSet)
+  {
+   Array<JsonValue> supplementalImpsJsonList(m_supplementalImps.size());
+   for(unsigned supplementalImpsIndex = 0; supplementalImpsIndex < supplementalImpsJsonList.GetLength(); ++supplementalImpsIndex)
+   {
+     supplementalImpsJsonList[supplementalImpsIndex].AsString(m_supplementalImps[supplementalImpsIndex]);
+   }
+   payload.WithArray("supplementalImps", std::move(supplementalImpsJsonList));
+
   }
 
   if(m_timecodeSourceHasBeenSet)

@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/BurninDestinationSettings.h>
 #include <aws/mediaconvert/model/CaptionDestinationType.h>
 #include <aws/mediaconvert/model/DvbSubDestinationSettings.h>
+#include <aws/mediaconvert/model/EmbeddedDestinationSettings.h>
 #include <aws/mediaconvert/model/SccDestinationSettings.h>
 #include <aws/mediaconvert/model/TeletextDestinationSettings.h>
 #include <aws/mediaconvert/model/TtmlDestinationSettings.h>
@@ -103,6 +104,22 @@ namespace Model
 
 
     
+    inline const EmbeddedDestinationSettings& GetEmbeddedDestinationSettings() const{ return m_embeddedDestinationSettings; }
+
+    
+    inline void SetEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = value; }
+
+    
+    inline void SetEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { m_embeddedDestinationSettingsHasBeenSet = true; m_embeddedDestinationSettings = std::move(value); }
+
+    
+    inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(const EmbeddedDestinationSettings& value) { SetEmbeddedDestinationSettings(value); return *this;}
+
+    
+    inline CaptionDestinationSettings& WithEmbeddedDestinationSettings(EmbeddedDestinationSettings&& value) { SetEmbeddedDestinationSettings(std::move(value)); return *this;}
+
+
+    
     inline const SccDestinationSettings& GetSccDestinationSettings() const{ return m_sccDestinationSettings; }
 
     
@@ -159,6 +176,9 @@ namespace Model
 
     DvbSubDestinationSettings m_dvbSubDestinationSettings;
     bool m_dvbSubDestinationSettingsHasBeenSet;
+
+    EmbeddedDestinationSettings m_embeddedDestinationSettings;
+    bool m_embeddedDestinationSettingsHasBeenSet;
 
     SccDestinationSettings m_sccDestinationSettings;
     bool m_sccDestinationSettingsHasBeenSet;

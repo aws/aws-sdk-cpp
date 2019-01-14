@@ -124,8 +124,9 @@ namespace Model
      * Applies only if your input aspect ratio is different from your output aspect
      * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
      * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. Do not use this setting if you have
-     * enabled Stretch to output (stretchToOutput) in your output settings.
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
      */
     inline const Rectangle& GetCrop() const{ return m_crop; }
 
@@ -133,8 +134,9 @@ namespace Model
      * Applies only if your input aspect ratio is different from your output aspect
      * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
      * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. Do not use this setting if you have
-     * enabled Stretch to output (stretchToOutput) in your output settings.
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
      */
     inline void SetCrop(const Rectangle& value) { m_cropHasBeenSet = true; m_crop = value; }
 
@@ -142,8 +144,9 @@ namespace Model
      * Applies only if your input aspect ratio is different from your output aspect
      * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
      * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. Do not use this setting if you have
-     * enabled Stretch to output (stretchToOutput) in your output settings.
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
      */
     inline void SetCrop(Rectangle&& value) { m_cropHasBeenSet = true; m_crop = std::move(value); }
 
@@ -151,8 +154,9 @@ namespace Model
      * Applies only if your input aspect ratio is different from your output aspect
      * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
      * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. Do not use this setting if you have
-     * enabled Stretch to output (stretchToOutput) in your output settings.
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
      */
     inline VideoDescription& WithCrop(const Rectangle& value) { SetCrop(value); return *this;}
 
@@ -160,8 +164,9 @@ namespace Model
      * Applies only if your input aspect ratio is different from your output aspect
      * ratio. Use Input cropping rectangle (Crop) to specify the  video area the
      * service will include in the output. This will crop the input source, causing
-     * video pixels to be removed on encode. Do not use this setting if you have
-     * enabled Stretch to output (stretchToOutput) in your output settings.
+     * video pixels to be removed on encode. If you crop your input frame size to
+     * smaller than your output frame size, make sure to specify the behavior you want
+     * in your output setting "Scaling behavior".
      */
     inline VideoDescription& WithCrop(Rectangle&& value) { SetCrop(std::move(value)); return *this;}
 

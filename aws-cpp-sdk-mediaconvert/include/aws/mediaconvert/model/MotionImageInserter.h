@@ -54,56 +54,56 @@ namespace Model
 
     /**
      * If your motion graphic asset is a .mov file, keep this setting unspecified. If
-     * your motion graphic asset is a series of .png files, specify the framerate of
+     * your motion graphic asset is a series of .png files, specify the frame rate of
      * the overlay in frames per second, as a fraction. For example, specify 24 fps as
-     * 24/1. Make sure that the number of images in your series matches the framerate
+     * 24/1. Make sure that the number of images in your series matches the frame rate
      * and your intended overlay duration. For example, if you want a 30-second overlay
-     * at 30 fps, you should have 900 .png images. This overlay framerate doesn't need
-     * to match the framerate of the underlying video.
+     * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
+     * to match the frame rate of the underlying video.
      */
     inline const MotionImageInsertionFramerate& GetFramerate() const{ return m_framerate; }
 
     /**
      * If your motion graphic asset is a .mov file, keep this setting unspecified. If
-     * your motion graphic asset is a series of .png files, specify the framerate of
+     * your motion graphic asset is a series of .png files, specify the frame rate of
      * the overlay in frames per second, as a fraction. For example, specify 24 fps as
-     * 24/1. Make sure that the number of images in your series matches the framerate
+     * 24/1. Make sure that the number of images in your series matches the frame rate
      * and your intended overlay duration. For example, if you want a 30-second overlay
-     * at 30 fps, you should have 900 .png images. This overlay framerate doesn't need
-     * to match the framerate of the underlying video.
+     * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
+     * to match the frame rate of the underlying video.
      */
     inline void SetFramerate(const MotionImageInsertionFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
 
     /**
      * If your motion graphic asset is a .mov file, keep this setting unspecified. If
-     * your motion graphic asset is a series of .png files, specify the framerate of
+     * your motion graphic asset is a series of .png files, specify the frame rate of
      * the overlay in frames per second, as a fraction. For example, specify 24 fps as
-     * 24/1. Make sure that the number of images in your series matches the framerate
+     * 24/1. Make sure that the number of images in your series matches the frame rate
      * and your intended overlay duration. For example, if you want a 30-second overlay
-     * at 30 fps, you should have 900 .png images. This overlay framerate doesn't need
-     * to match the framerate of the underlying video.
+     * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
+     * to match the frame rate of the underlying video.
      */
     inline void SetFramerate(MotionImageInsertionFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
 
     /**
      * If your motion graphic asset is a .mov file, keep this setting unspecified. If
-     * your motion graphic asset is a series of .png files, specify the framerate of
+     * your motion graphic asset is a series of .png files, specify the frame rate of
      * the overlay in frames per second, as a fraction. For example, specify 24 fps as
-     * 24/1. Make sure that the number of images in your series matches the framerate
+     * 24/1. Make sure that the number of images in your series matches the frame rate
      * and your intended overlay duration. For example, if you want a 30-second overlay
-     * at 30 fps, you should have 900 .png images. This overlay framerate doesn't need
-     * to match the framerate of the underlying video.
+     * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
+     * to match the frame rate of the underlying video.
      */
     inline MotionImageInserter& WithFramerate(const MotionImageInsertionFramerate& value) { SetFramerate(value); return *this;}
 
     /**
      * If your motion graphic asset is a .mov file, keep this setting unspecified. If
-     * your motion graphic asset is a series of .png files, specify the framerate of
+     * your motion graphic asset is a series of .png files, specify the frame rate of
      * the overlay in frames per second, as a fraction. For example, specify 24 fps as
-     * 24/1. Make sure that the number of images in your series matches the framerate
+     * 24/1. Make sure that the number of images in your series matches the frame rate
      * and your intended overlay duration. For example, if you want a 30-second overlay
-     * at 30 fps, you should have 900 .png images. This overlay framerate doesn't need
-     * to match the framerate of the underlying video.
+     * at 30 fps, you should have 900 .png images. This overlay frame rate doesn't need
+     * to match the frame rate of the underlying video.
      */
     inline MotionImageInserter& WithFramerate(MotionImageInsertionFramerate&& value) { SetFramerate(std::move(value)); return *this;}
 

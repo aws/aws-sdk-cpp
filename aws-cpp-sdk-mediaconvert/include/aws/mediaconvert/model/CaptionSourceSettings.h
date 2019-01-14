@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/FileSourceSettings.h>
 #include <aws/mediaconvert/model/CaptionSourceType.h>
 #include <aws/mediaconvert/model/TeletextSourceSettings.h>
+#include <aws/mediaconvert/model/TrackSourceSettings.h>
 #include <utility>
 
 namespace Aws
@@ -148,6 +149,22 @@ namespace Model
     
     inline CaptionSourceSettings& WithTeletextSourceSettings(TeletextSourceSettings&& value) { SetTeletextSourceSettings(std::move(value)); return *this;}
 
+
+    
+    inline const TrackSourceSettings& GetTrackSourceSettings() const{ return m_trackSourceSettings; }
+
+    
+    inline void SetTrackSourceSettings(const TrackSourceSettings& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = value; }
+
+    
+    inline void SetTrackSourceSettings(TrackSourceSettings&& value) { m_trackSourceSettingsHasBeenSet = true; m_trackSourceSettings = std::move(value); }
+
+    
+    inline CaptionSourceSettings& WithTrackSourceSettings(const TrackSourceSettings& value) { SetTrackSourceSettings(value); return *this;}
+
+    
+    inline CaptionSourceSettings& WithTrackSourceSettings(TrackSourceSettings&& value) { SetTrackSourceSettings(std::move(value)); return *this;}
+
   private:
 
     AncillarySourceSettings m_ancillarySourceSettings;
@@ -167,6 +184,9 @@ namespace Model
 
     TeletextSourceSettings m_teletextSourceSettings;
     bool m_teletextSourceSettingsHasBeenSet;
+
+    TrackSourceSettings m_trackSourceSettings;
+    bool m_trackSourceSettingsHasBeenSet;
   };
 
 } // namespace Model

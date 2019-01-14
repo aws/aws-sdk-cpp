@@ -208,6 +208,49 @@ namespace Model
 
 
     /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline CachediSCSIVolume& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline CachediSCSIVolume& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
+
+    /**
+     * <p>A value that indicates whether a storage volume is attached to or detached
+     * from a gateway.</p>
+     */
+    inline CachediSCSIVolume& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
+
+
+    /**
      * <p>The size, in bytes, of the volume capacity.</p>
      */
     inline long long GetVolumeSizeInBytes() const{ return m_volumeSizeInBytes; }
@@ -396,6 +439,63 @@ namespace Model
     
     inline CachediSCSIVolume& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
 
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline const Aws::String& GetTargetName() const{ return m_targetName; }
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline CachediSCSIVolume& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline CachediSCSIVolume& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the iSCSI target that is used by an initiator to connect to a
+     * volume and used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     */
+    inline CachediSCSIVolume& WithTargetName(const char* value) { SetTargetName(value); return *this;}
+
   private:
 
     Aws::String m_volumeARN;
@@ -409,6 +509,9 @@ namespace Model
 
     Aws::String m_volumeStatus;
     bool m_volumeStatusHasBeenSet;
+
+    Aws::String m_volumeAttachmentStatus;
+    bool m_volumeAttachmentStatusHasBeenSet;
 
     long long m_volumeSizeInBytes;
     bool m_volumeSizeInBytesHasBeenSet;
@@ -430,6 +533,9 @@ namespace Model
 
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
+    Aws::String m_targetName;
+    bool m_targetNameHasBeenSet;
   };
 
 } // namespace Model

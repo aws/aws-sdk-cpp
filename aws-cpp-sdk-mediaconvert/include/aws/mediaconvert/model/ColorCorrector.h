@@ -96,19 +96,34 @@ namespace Model
     inline ColorCorrector& WithContrast(int value) { SetContrast(value); return *this;}
 
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline ColorCorrector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline ColorCorrector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
 
 

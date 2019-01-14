@@ -36,7 +36,8 @@ namespace Model
     SRT,
     SMI,
     TELETEXT,
-    NULL_SOURCE
+    NULL_SOURCE,
+    IMSC
   };
 
 namespace CaptionSourceTypeMapper

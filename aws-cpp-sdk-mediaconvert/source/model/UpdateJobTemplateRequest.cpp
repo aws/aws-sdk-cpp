@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateJobTemplateRequest::UpdateJobTemplateRequest() : 
+    m_accelerationSettingsHasBeenSet(false),
     m_categoryHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -34,6 +35,12 @@ UpdateJobTemplateRequest::UpdateJobTemplateRequest() :
 Aws::String UpdateJobTemplateRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accelerationSettingsHasBeenSet)
+  {
+   payload.WithObject("accelerationSettings", m_accelerationSettings.Jsonize());
+
+  }
 
   if(m_categoryHasBeenSet)
   {

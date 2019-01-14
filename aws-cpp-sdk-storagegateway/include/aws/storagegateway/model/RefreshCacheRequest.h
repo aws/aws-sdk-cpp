@@ -28,6 +28,9 @@ namespace Model
 {
 
   /**
+   * <p>RefreshCacheInput</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCacheInput">AWS
+   * API Reference</a></p>
    */
   class AWS_STORAGEGATEWAY_API RefreshCacheRequest : public StorageGatewayRequest
   {
@@ -45,50 +48,104 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline void SetFileShareARN(Aws::String&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline void SetFileShareARN(const char* value) { m_fileShareARNHasBeenSet = true; m_fileShareARN.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline RefreshCacheRequest& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline RefreshCacheRequest& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share you want to refresh.</p>
+     */
     inline RefreshCacheRequest& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
 
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetFolderList() const{ return m_folderList; }
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline void SetFolderList(const Aws::Vector<Aws::String>& value) { m_folderListHasBeenSet = true; m_folderList = value; }
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline void SetFolderList(Aws::Vector<Aws::String>&& value) { m_folderListHasBeenSet = true; m_folderList = std::move(value); }
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline RefreshCacheRequest& WithFolderList(const Aws::Vector<Aws::String>& value) { SetFolderList(value); return *this;}
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline RefreshCacheRequest& WithFolderList(Aws::Vector<Aws::String>&& value) { SetFolderList(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline RefreshCacheRequest& AddFolderList(const Aws::String& value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline RefreshCacheRequest& AddFolderList(Aws::String&& value) { m_folderListHasBeenSet = true; m_folderList.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>A comma-separated list of the paths of folders to refresh in the cache. The
+     * default is [<code>"/"</code>]. The default refreshes objects and folders at the
+     * root of the Amazon S3 bucket. If <code>Recursive</code> is set to "true", the
+     * entire S3 bucket that the file share has access to is refreshed.</p>
+     */
     inline RefreshCacheRequest& AddFolderList(const char* value) { m_folderListHasBeenSet = true; m_folderList.push_back(value); return *this; }
 
 

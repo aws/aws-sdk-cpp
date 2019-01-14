@@ -254,33 +254,33 @@ namespace Model
 
 
     /**
-     * Framerate denominator.
+     * Frame rate denominator.
      */
     inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
 
     /**
-     * Framerate denominator.
+     * Frame rate denominator.
      */
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
 
     /**
-     * Framerate denominator.
+     * Frame rate denominator.
      */
     inline H265Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
 
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
 
     /**
-     * Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
      */
     inline H265Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
 
