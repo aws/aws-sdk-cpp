@@ -593,23 +593,6 @@ namespace
         deleteBucketRequest.SetBucket(fullBucketName);
         DeleteBucketOutcome deleteBucketOutcome = Client->DeleteBucket(deleteBucketRequest);
         ASSERT_TRUE(deleteBucketOutcome.IsSuccess());
-
-        headBucketRequest.SetBucket(fullBucketName);
-        headBucketOutcome = Client->HeadBucket(headBucketRequest);
-
-        unsigned timeoutCount = 0;
-        bool bucketHeadSucceeded(true);
-        while (timeoutCount++ < TIMEOUT_MAX)
-        {
-            headBucketOutcome = Client->HeadBucket(headBucketRequest);
-            if (!headBucketOutcome.IsSuccess())
-            {
-                bucketHeadSucceeded = false;
-                break;
-            }
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-        ASSERT_FALSE(bucketHeadSucceeded);
     }
 
     //Create a bucket somewhere other than US Standard and ensure the location is correctly shown later
