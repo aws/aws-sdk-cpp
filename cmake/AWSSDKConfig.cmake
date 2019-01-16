@@ -38,12 +38,7 @@ endif()
 include(${CMAKE_CURRENT_LIST_DIR}/AWSSDKConfigVersion.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/sdksCommon.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/platformDeps.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/resolve_platform.cmake)
-include(CMakePackageConfigHelpers)
-include(${CMAKE_CURRENT_LIST_DIR}/initialize_project_version.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/compiler_settings.cmake)
-include(${CMAKE_CURRENT_LIST_DIR}/utilities.cmake)
-
 
 if (NOT AWSSDK_INSTALL_LIBDIR)
     set(AWSSDK_INSTALL_LIBDIR "lib")
