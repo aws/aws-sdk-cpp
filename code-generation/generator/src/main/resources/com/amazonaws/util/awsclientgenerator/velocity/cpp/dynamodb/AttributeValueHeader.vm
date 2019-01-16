@@ -26,7 +26,7 @@ public:
     AttributeValue(Aws::Utils::Json::JsonView jsonValue) { *this = jsonValue; }
 
     /// returns the String value if the value is specialized to this type, otherwise an empty String
-    const Aws::String& GetS() const;
+    const Aws::String GetS() const;
     /// if already specialized to a String, sets the value to this String
     /// if uninitialized, specializes the type to a String with specified value
     /// if already specialized to another type then the behavior is undefined
@@ -36,7 +36,7 @@ public:
     AttributeValue& SetS(const char* n) { return SetS(Aws::String(n)); }
 
     /// returns the Number value if the value is specialized to this type, otherwise an empty String
-    const Aws::String& GetN() const;
+    const Aws::String GetN() const;
     /// if already specialized to a Number, sets the value to this Number
     /// if uninitialized, specializes the type to a Number with specified value
     /// if already specialized to another type then the behavior is undefined
@@ -47,14 +47,14 @@ public:
     AttributeValue& SetN(const char* n) { return SetN(Aws::String(n)); }
 
     /// returns the ByteBuffer if the value is specialized to this type, otherwise an empty Buffer
-    const Aws::Utils::ByteBuffer& GetB() const;
+    const Aws::Utils::ByteBuffer GetB() const;
     /// if already specialized to a ByteBuffer, sets the value to this value
     /// if uninitialized, specializes the type to a ByteBuffer with the specified value
     /// if already specialized to another type then the behavior is undefined
     AttributeValue& SetB(const Aws::Utils::ByteBuffer& b);
 
     /// returns the String Vector if the value is specialized to this type, otherwise an empty Vector
-    const Aws::Vector<Aws::String>& GetSS() const;
+    const Aws::Vector<Aws::String> GetSS() const;
     /// if already specialized to a String Set, sets to these values
     /// if uninitialized, specializes the type to a String Set with specified values
     /// if already specialized to another type then the behavior is undefined
@@ -69,7 +69,7 @@ public:
     AttributeValue& AddSItem(const char* sItem) { return AddSItem(Aws::String(sItem)); }
 
     /// returns the Number Vector if the value is specialized to this type, otherwise an empty Vector
-    const Aws::Vector<Aws::String>& GetNS() const;
+    const Aws::Vector<Aws::String> GetNS() const;
     /// if already specialized to a Number Set, sets to these values
     /// if uninitialized, specializes the type to a Number Set with specified values
     /// if already specialized to another type then the behavior is undefined
@@ -84,7 +84,7 @@ public:
     AttributeValue& AddNItem(const char* nItem) { return AddNItem(Aws::String(nItem)); }
 
     /// returns the ByteBuffer Vector if the value is specialized to this type, otherwise an empty Vector
-    const Aws::Vector<Aws::Utils::ByteBuffer>& GetBS() const;
+    const Aws::Vector<Aws::Utils::ByteBuffer> GetBS() const;
     /// if already specialized to a ByteBuffer Set, sets to these values
     /// if uninitialized, specializes the type to a ByteBuffer Set with specified values
     /// if already specialized to another type then the behavior is undefined
@@ -99,7 +99,7 @@ public:
     AttributeValue& AddBItem(const unsigned char* bItem, size_t size);
 
     /// returns the Attribute Map if the value is specialized to this type, otherwise an empty Map
-    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& GetM() const;
+    const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>> GetM() const;
     /// if already specialized to an Attribute Map, sets to these values
     /// if uninitialized, specializes the type to an Attribute Map with specified values
     /// if already specialized to another type then the behavior is undefined
@@ -114,7 +114,7 @@ public:
     AttributeValue& AddMEntry(const char* key, const std::shared_ptr<AttributeValue>& value) { return AddMEntry(Aws::String(key), value); }
 
     /// returns the Attribute List if the value is specialized to this type, otherwise an empty Vector
-    const Aws::Vector<std::shared_ptr<AttributeValue>>& GetL() const;
+    const Aws::Vector<std::shared_ptr<AttributeValue>> GetL() const;
     /// if already specialized to an Attribute List, sets to these values
     /// if uninitialized, specializes the type to an Attribute List with specified values
     /// if already specialized to another type then the behavior is undefined
