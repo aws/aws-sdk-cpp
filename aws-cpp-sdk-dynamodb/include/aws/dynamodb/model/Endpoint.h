@@ -33,6 +33,11 @@ namespace DynamoDB
 namespace Model
 {
 
+  /**
+   * <p>An endpoint information details.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Endpoint">AWS
+   * API Reference</a></p>
+   */
   class AWS_DYNAMODB_API Endpoint
   {
   public:
@@ -42,35 +47,55 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline const Aws::String& GetAddress() const{ return m_address; }
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline Endpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline Endpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>IP address of the endpoint.</p>
+     */
     inline Endpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>Endpoint cache time to live (TTL) value.</p>
+     */
     inline long long GetCachePeriodInMinutes() const{ return m_cachePeriodInMinutes; }
 
-    
+    /**
+     * <p>Endpoint cache time to live (TTL) value.</p>
+     */
     inline void SetCachePeriodInMinutes(long long value) { m_cachePeriodInMinutesHasBeenSet = true; m_cachePeriodInMinutes = value; }
 
-    
+    /**
+     * <p>Endpoint cache time to live (TTL) value.</p>
+     */
     inline Endpoint& WithCachePeriodInMinutes(long long value) { SetCachePeriodInMinutes(value); return *this;}
 
   private:

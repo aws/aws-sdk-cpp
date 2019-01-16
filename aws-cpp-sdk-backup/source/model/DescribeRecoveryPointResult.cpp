@@ -1,0 +1,154 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/backup/model/DescribeRecoveryPointResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+
+#include <utility>
+
+using namespace Aws::Backup::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+DescribeRecoveryPointResult::DescribeRecoveryPointResult() : 
+    m_status(RecoveryPointStatus::NOT_SET),
+    m_backupSizeInBytes(0),
+    m_isEncrypted(false),
+    m_storageClass(StorageClass::NOT_SET)
+{
+}
+
+DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(RecoveryPointStatus::NOT_SET),
+    m_backupSizeInBytes(0),
+    m_isEncrypted(false),
+    m_storageClass(StorageClass::NOT_SET)
+{
+  *this = result;
+}
+
+DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("RecoveryPointArn"))
+  {
+    m_recoveryPointArn = jsonValue.GetString("RecoveryPointArn");
+
+  }
+
+  if(jsonValue.ValueExists("BackupVaultName"))
+  {
+    m_backupVaultName = jsonValue.GetString("BackupVaultName");
+
+  }
+
+  if(jsonValue.ValueExists("BackupVaultArn"))
+  {
+    m_backupVaultArn = jsonValue.GetString("BackupVaultArn");
+
+  }
+
+  if(jsonValue.ValueExists("ResourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("ResourceArn");
+
+  }
+
+  if(jsonValue.ValueExists("ResourceType"))
+  {
+    m_resourceType = jsonValue.GetString("ResourceType");
+
+  }
+
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+
+  }
+
+  if(jsonValue.ValueExists("IamRoleArn"))
+  {
+    m_iamRoleArn = jsonValue.GetString("IamRoleArn");
+
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = RecoveryPointStatusMapper::GetRecoveryPointStatusForName(jsonValue.GetString("Status"));
+
+  }
+
+  if(jsonValue.ValueExists("CreationDate"))
+  {
+    m_creationDate = jsonValue.GetDouble("CreationDate");
+
+  }
+
+  if(jsonValue.ValueExists("CompletionDate"))
+  {
+    m_completionDate = jsonValue.GetDouble("CompletionDate");
+
+  }
+
+  if(jsonValue.ValueExists("BackupSizeInBytes"))
+  {
+    m_backupSizeInBytes = jsonValue.GetInt64("BackupSizeInBytes");
+
+  }
+
+  if(jsonValue.ValueExists("CalculatedLifecycle"))
+  {
+    m_calculatedLifecycle = jsonValue.GetObject("CalculatedLifecycle");
+
+  }
+
+  if(jsonValue.ValueExists("Lifecycle"))
+  {
+    m_lifecycle = jsonValue.GetObject("Lifecycle");
+
+  }
+
+  if(jsonValue.ValueExists("EncryptionKeyArn"))
+  {
+    m_encryptionKeyArn = jsonValue.GetString("EncryptionKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("IsEncrypted"))
+  {
+    m_isEncrypted = jsonValue.GetBool("IsEncrypted");
+
+  }
+
+  if(jsonValue.ValueExists("StorageClass"))
+  {
+    m_storageClass = StorageClassMapper::GetStorageClassForName(jsonValue.GetString("StorageClass"));
+
+  }
+
+  if(jsonValue.ValueExists("LastRestoreTime"))
+  {
+    m_lastRestoreTime = jsonValue.GetDouble("LastRestoreTime");
+
+  }
+
+
+
+  return *this;
+}

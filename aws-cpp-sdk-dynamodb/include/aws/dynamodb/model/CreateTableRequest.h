@@ -334,8 +334,8 @@ namespace Model
 
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -355,15 +355,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Vector<LocalSecondaryIndex>& GetLocalSecondaryIndexes() const{ return m_localSecondaryIndexes; }
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -383,15 +383,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline void SetLocalSecondaryIndexes(const Aws::Vector<LocalSecondaryIndex>& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes = value; }
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -411,15 +411,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline void SetLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes = std::move(value); }
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -439,15 +439,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline CreateTableRequest& WithLocalSecondaryIndexes(const Aws::Vector<LocalSecondaryIndex>& value) { SetLocalSecondaryIndexes(value); return *this;}
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -467,15 +467,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline CreateTableRequest& WithLocalSecondaryIndexes(Aws::Vector<LocalSecondaryIndex>&& value) { SetLocalSecondaryIndexes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -495,15 +495,15 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
     inline CreateTableRequest& AddLocalSecondaryIndexes(const LocalSecondaryIndex& value) { m_localSecondaryIndexesHasBeenSet = true; m_localSecondaryIndexes.push_back(value); return *this; }
 
     /**
-     * <p>One or more local secondary indexes (the maximum is five) to be created on
-     * the table. Each index is scoped to a given partition key value. There is a 10 GB
+     * <p>One or more local secondary indexes (the maximum is 5) to be created on the
+     * table. Each index is scoped to a given partition key value. There is a 10 GB
      * size limit per partition key value; otherwise, the size of a local secondary
      * index is unconstrained.</p> <p>Each local secondary index in the array includes
      * the following:</p> <ul> <li> <p> <code>IndexName</code> - The name of the local
@@ -523,7 +523,7 @@ namespace Model
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> </ul>
      */
@@ -531,25 +531,25 @@ namespace Model
 
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -558,25 +558,25 @@ namespace Model
     inline const Aws::Vector<GlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -585,25 +585,25 @@ namespace Model
     inline void SetGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndex>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -612,25 +612,25 @@ namespace Model
     inline void SetGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -639,25 +639,25 @@ namespace Model
     inline CreateTableRequest& WithGlobalSecondaryIndexes(const Aws::Vector<GlobalSecondaryIndex>& value) { SetGlobalSecondaryIndexes(value); return *this;}
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -666,25 +666,25 @@ namespace Model
     inline CreateTableRequest& WithGlobalSecondaryIndexes(Aws::Vector<GlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
@@ -693,25 +693,25 @@ namespace Model
     inline CreateTableRequest& AddGlobalSecondaryIndexes(const GlobalSecondaryIndex& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
 
     /**
-     * <p>One or more global secondary indexes (the maximum is five) to be created on
-     * the table. Each global secondary index in the array includes the following:</p>
-     * <ul> <li> <p> <code>IndexName</code> - The name of the global secondary index.
-     * Must be unique only for this table.</p> <p/> </li> <li> <p>
-     * <code>KeySchema</code> - Specifies the key schema for the global secondary
-     * index.</p> </li> <li> <p> <code>Projection</code> - Specifies attributes that
-     * are copied (projected) from the table into the index. These are in addition to
-     * the primary key attributes and index key attributes, which are automatically
-     * projected. Each attribute specification is composed of:</p> <ul> <li> <p>
-     * <code>ProjectionType</code> - One of the following:</p> <ul> <li> <p>
-     * <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the
-     * index.</p> </li> <li> <p> <code>INCLUDE</code> - Only the specified table
-     * attributes are projected into the index. The list of projected attributes are in
+     * <p>One or more global secondary indexes (the maximum is 20) to be created on the
+     * table. Each global secondary index in the array includes the following:</p> <ul>
+     * <li> <p> <code>IndexName</code> - The name of the global secondary index. Must
+     * be unique only for this table.</p> <p/> </li> <li> <p> <code>KeySchema</code> -
+     * Specifies the key schema for the global secondary index.</p> </li> <li> <p>
+     * <code>Projection</code> - Specifies attributes that are copied (projected) from
+     * the table into the index. These are in addition to the primary key attributes
+     * and index key attributes, which are automatically projected. Each attribute
+     * specification is composed of:</p> <ul> <li> <p> <code>ProjectionType</code> -
+     * One of the following:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index
+     * and primary keys are projected into the index.</p> </li> <li> <p>
+     * <code>INCLUDE</code> - Only the specified table attributes are projected into
+     * the index. The list of projected attributes are in
      * <code>NonKeyAttributes</code>.</p> </li> <li> <p> <code>ALL</code> - All of the
      * table attributes are projected into the index.</p> </li> </ul> </li> <li> <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names
      * that are projected into the secondary index. The total count of attributes
      * provided in <code>NonKeyAttributes</code>, summed across all of the secondary
-     * indexes, must not exceed 20. If you project the same attribute into two
+     * indexes, must not exceed 100. If you project the same attribute into two
      * different indexes, this counts as two distinct attributes when determining the
      * total.</p> </li> </ul> </li> <li> <p> <code>ProvisionedThroughput</code> - The
      * provisioned throughput settings for the global secondary index, consisting of
