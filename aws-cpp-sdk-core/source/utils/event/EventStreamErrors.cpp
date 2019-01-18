@@ -28,6 +28,7 @@ namespace Aws
         {
             namespace EventStreamErrorsMapper
             {
+                /*
                 static const int EVENT_STREAM_NO_ERROR_HASH = HashingUtils::HashString("EventStreamNoError");
                 static const int EVENT_STREAM_BUFFER_LENGTH_MISMATCH_HASH = HashingUtils::HashString("EventStreamBufferLengthMismatch");
                 static const int EVENT_STREAM_INSUFFICIENT_BUFFER_LEN_HASH = HashingUtils::HashString("EventStreamInsufficientBufferLen");
@@ -37,7 +38,7 @@ namespace Aws
                 static const int EVENT_STREAM_MESSAGE_INVALID_HEADERS_LEN_HASH = HashingUtils::HashString("EventStreamMessageInvalidHeadersLen");
                 static const int EVENT_STREAM_MESSAGE_UNKNOWN_HEADER_TYPE_HASH = HashingUtils::HashString("EventStreamMessageUnknownHeaderType");
                 static const int EVENT_STREAM_MESSAGE_PARSER_ILLEGAL_STATE_HASH = HashingUtils::HashString("EventStreamMessageParserIllegalState");
-
+                */
                 const char* GetNameForError(EventStreamErrors error)
                 {
                     switch (error)
