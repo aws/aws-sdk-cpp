@@ -1039,7 +1039,15 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * is pending.</p> <p>You can also use this operation to create a snapshot of an
+         * instance's system volume. You might want to do this, for example, to recover
+         * data from the system volume of a botched instance or to create a backup of the
+         * system volume like you would for a block storage disk. To create a snapshot of a
+         * system volume, just define the <code>instance name</code> parameter when issuing
+         * the snapshot command, and a snapshot of the defined instance's system volume
+         * will be created. After the snapshot is available, you can create a block storage
+         * disk from the snapshot and attach it to a running instance to access the data on
+         * the disk.</p> <p>The <code>create disk snapshot</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -1060,7 +1068,15 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * is pending.</p> <p>You can also use this operation to create a snapshot of an
+         * instance's system volume. You might want to do this, for example, to recover
+         * data from the system volume of a botched instance or to create a backup of the
+         * system volume like you would for a block storage disk. To create a snapshot of a
+         * system volume, just define the <code>instance name</code> parameter when issuing
+         * the snapshot command, and a snapshot of the defined instance's system volume
+         * will be created. After the snapshot is available, you can create a block storage
+         * disk from the snapshot and attach it to a running instance to access the data on
+         * the disk.</p> <p>The <code>create disk snapshot</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -1083,7 +1099,15 @@ namespace Model
          * should unmount the disk from within the Lightsail instance, issue the create
          * disk snapshot command, and then remount the disk to ensure a consistent and
          * complete snapshot. You may remount and use your disk while the snapshot status
-         * is pending.</p> <p>The <code>create disk snapshot</code> operation supports
+         * is pending.</p> <p>You can also use this operation to create a snapshot of an
+         * instance's system volume. You might want to do this, for example, to recover
+         * data from the system volume of a botched instance or to create a backup of the
+         * system volume like you would for a block storage disk. To create a snapshot of a
+         * system volume, just define the <code>instance name</code> parameter when issuing
+         * the snapshot command, and a snapshot of the defined instance's system volume
+         * will be created. After the snapshot is available, you can create a block storage
+         * disk from the snapshot and attach it to a running instance to access the data on
+         * the disk.</p> <p>The <code>create disk snapshot</code> operation supports
          * tag-based access control via request tags. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
@@ -2180,7 +2204,7 @@ namespace Model
         virtual void DownloadDefaultKeyPairAsync(const Model::DownloadDefaultKeyPairRequest& request, const DownloadDefaultKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon
          * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
          * record that can be used with the <code>create cloud formation stack</code>
          * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
@@ -2201,7 +2225,7 @@ namespace Model
         virtual Model::ExportSnapshotOutcome ExportSnapshot(const Model::ExportSnapshotRequest& request) const;
 
         /**
-         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon
          * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
          * record that can be used with the <code>create cloud formation stack</code>
          * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
@@ -2224,7 +2248,7 @@ namespace Model
         virtual Model::ExportSnapshotOutcomeCallable ExportSnapshotCallable(const Model::ExportSnapshotRequest& request) const;
 
         /**
-         * <p>Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon
+         * <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon
          * Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot
          * record that can be used with the <code>create cloud formation stack</code>
          * operation to create new Amazon EC2 instances.</p> <p>Exported instance snapshots
@@ -3732,12 +3756,9 @@ namespace Model
         virtual void PutInstancePublicPortsAsync(const Model::PutInstancePublicPortsRequest& request, const PutInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
-         * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
-         * <p>The <code>reboot instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
-         * information, see the <a
+         * <p>Restarts a specific instance.</p> <p>The <code>reboot instance</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
@@ -3746,12 +3767,9 @@ namespace Model
         virtual Model::RebootInstanceOutcome RebootInstance(const Model::RebootInstanceRequest& request) const;
 
         /**
-         * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
-         * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
-         * <p>The <code>reboot instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
-         * information, see the <a
+         * <p>Restarts a specific instance.</p> <p>The <code>reboot instance</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
@@ -3762,12 +3780,9 @@ namespace Model
         virtual Model::RebootInstanceOutcomeCallable RebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
 
         /**
-         * <p>Restarts a specific instance. When your Amazon Lightsail instance is finished
-         * rebooting, Lightsail assigns a new public IP address. To use the same IP address
-         * after restarting, create a static IP address and attach it to the instance.</p>
-         * <p>The <code>reboot instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
-         * information, see the <a
+         * <p>Restarts a specific instance.</p> <p>The <code>reboot instance</code>
+         * operation supports tag-based access control via resource tags applied to the
+         * resource identified by instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/RebootInstance">AWS
@@ -3844,10 +3859,15 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p> <p>The <code>start
-         * instance</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by instanceName. For more information, see
-         * the <a
+         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * you start a stopped instance, Lightsail assigns a new public IP address to the
+         * instance. To use the same IP address after stopping and starting an instance,
+         * create a static IP address and attach it to the instance. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
@@ -3857,10 +3877,15 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p> <p>The <code>start
-         * instance</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by instanceName. For more information, see
-         * the <a
+         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * you start a stopped instance, Lightsail assigns a new public IP address to the
+         * instance. To use the same IP address after stopping and starting an instance,
+         * create a static IP address and attach it to the instance. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
@@ -3872,10 +3897,15 @@ namespace Model
 
         /**
          * <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart
-         * an instance, use the reboot instance operation.</p> <p>The <code>start
-         * instance</code> operation supports tag-based access control via resource tags
-         * applied to the resource identified by instanceName. For more information, see
-         * the <a
+         * an instance, use the <code>reboot instance</code> operation.</p> <note> <p>When
+         * you start a stopped instance, Lightsail assigns a new public IP address to the
+         * instance. To use the same IP address after stopping and starting an instance,
+         * create a static IP address and attach it to the instance. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>start instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartInstance">AWS
@@ -3930,9 +3960,14 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <p>The <code>stop instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
+         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         * address to the instance. To use the same IP address after stopping and starting
+         * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
@@ -3942,9 +3977,14 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <p>The <code>stop instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
+         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         * address to the instance. To use the same IP address after stopping and starting
+         * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS
@@ -3956,9 +3996,14 @@ namespace Model
 
         /**
          * <p>Stops a specific Amazon Lightsail instance that is currently running.</p>
-         * <p>The <code>stop instance</code> operation supports tag-based access control
-         * via resource tags applied to the resource identified by instanceName. For more
+         * <note> <p>When you start a stopped instance, Lightsail assigns a new public IP
+         * address to the instance. To use the same IP address after stopping and starting
+         * an instance, create a static IP address and attach it to the instance. For more
          * information, see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail
+         * Dev Guide</a>.</p> </note> <p>The <code>stop instance</code> operation supports
+         * tag-based access control via resource tags applied to the resource identified by
+         * instanceName. For more information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopInstance">AWS

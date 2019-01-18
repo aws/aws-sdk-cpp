@@ -129,155 +129,145 @@ namespace Model
 
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline CreateAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline CreateAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name for the alias you are creating.</p>
+     * <p>The name of the alias.</p>
      */
     inline CreateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline const Aws::String& GetFunctionVersion() const{ return m_functionVersion; }
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline void SetFunctionVersion(const Aws::String& value) { m_functionVersionHasBeenSet = true; m_functionVersion = value; }
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline void SetFunctionVersion(Aws::String&& value) { m_functionVersionHasBeenSet = true; m_functionVersion = std::move(value); }
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline void SetFunctionVersion(const char* value) { m_functionVersionHasBeenSet = true; m_functionVersion.assign(value); }
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline CreateAliasRequest& WithFunctionVersion(const Aws::String& value) { SetFunctionVersion(value); return *this;}
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline CreateAliasRequest& WithFunctionVersion(Aws::String&& value) { SetFunctionVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Lambda function version for which you are creating the alias.</p>
+     * <p>The function version that the alias invokes.</p>
      */
     inline CreateAliasRequest& WithFunctionVersion(const char* value) { SetFunctionVersion(value); return *this;}
 
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the alias.</p>
+     * <p>A description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Specifies an additional version your alias can point to, allowing you to
-     * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     * Shifting Using Aliases</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
-     * <p>Specifies an additional version your alias can point to, allowing you to
-     * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     * Shifting Using Aliases</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
-     * <p>Specifies an additional version your alias can point to, allowing you to
-     * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     * Shifting Using Aliases</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
-     * <p>Specifies an additional version your alias can point to, allowing you to
-     * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     * Shifting Using Aliases</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
      */
     inline CreateAliasRequest& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
-     * <p>Specifies an additional version your alias can point to, allowing you to
-     * dictate what percentage of traffic will invoke each version. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     * Shifting Using Aliases</a>.</p>
+     * <p>The <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.</p>
      */
     inline CreateAliasRequest& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 

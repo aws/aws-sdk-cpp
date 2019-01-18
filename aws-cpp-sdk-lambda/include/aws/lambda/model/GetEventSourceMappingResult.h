@@ -174,32 +174,27 @@ namespace Model
 
 
     /**
-     * <p>The date that the event source mapping was last updated, in Unix time
-     * seconds.</p>
+     * <p>The date that the event source mapping was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The date that the event source mapping was last updated, in Unix time
-     * seconds.</p>
+     * <p>The date that the event source mapping was last updated.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     /**
-     * <p>The date that the event source mapping was last updated, in Unix time
-     * seconds.</p>
+     * <p>The date that the event source mapping was last updated.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     /**
-     * <p>The date that the event source mapping was last updated, in Unix time
-     * seconds.</p>
+     * <p>The date that the event source mapping was last updated.</p>
      */
     inline GetEventSourceMappingResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The date that the event source mapping was last updated, in Unix time
-     * seconds.</p>
+     * <p>The date that the event source mapping was last updated.</p>
      */
     inline GetEventSourceMappingResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 

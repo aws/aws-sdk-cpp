@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Input face recognition parameters for an Amazon Rekognition stream processor.
-   * <code>FaceRecognitionSettings</code> is a request parameter for .</p><p><h3>See
-   * Also:</h3>   <a
+   * <code>FaceRecognitionSettings</code> is a request parameter for
+   * <a>CreateStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/FaceSearchSettings">AWS
    * API Reference</a></p>
    */

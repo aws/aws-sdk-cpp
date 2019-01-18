@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline const Aws::String& GetLayerName() const{ return m_layerName; }
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline GetLayerVersionRequest& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline GetLayerVersionRequest& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the layer.</p>
+     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline GetLayerVersionRequest& WithLayerName(const char* value) { SetLayerName(value); return *this;}
 

@@ -134,70 +134,60 @@ namespace Model
 
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p> Optional string. An opaque pagination token returned from a previous
-     * <code>ListVersionsByFunction</code> operation. If present, indicates where to
-     * continue the listing. </p>
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.</p>
+     * <p>Limit the number of versions returned.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.</p>
+     * <p>Limit the number of versions returned.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Optional integer. Specifies the maximum number of AWS Lambda function
-     * versions to return in response. This parameter value must be greater than 0.</p>
+     * <p>Limit the number of versions returned.</p>
      */
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

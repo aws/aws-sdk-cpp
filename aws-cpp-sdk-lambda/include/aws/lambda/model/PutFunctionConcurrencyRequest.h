@@ -44,11 +44,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -56,11 +56,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -68,11 +68,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -80,11 +80,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -92,11 +92,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -104,11 +104,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -116,11 +116,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -128,17 +128,17 @@ namespace Model
 
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The number of simultaneous executions to reserve for the function.</p>
      */
     inline int GetReservedConcurrentExecutions() const{ return m_reservedConcurrentExecutions; }
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The number of simultaneous executions to reserve for the function.</p>
      */
     inline void SetReservedConcurrentExecutions(int value) { m_reservedConcurrentExecutionsHasBeenSet = true; m_reservedConcurrentExecutions = value; }
 
     /**
-     * <p>The concurrent execution limit reserved for this function.</p>
+     * <p>The number of simultaneous executions to reserve for the function.</p>
      */
     inline PutFunctionConcurrencyRequest& WithReservedConcurrentExecutions(int value) { SetReservedConcurrentExecutions(value); return *this;}
 

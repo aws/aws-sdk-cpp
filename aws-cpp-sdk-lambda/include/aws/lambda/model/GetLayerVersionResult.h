@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline const Aws::String& GetLayerArn() const{ return m_layerArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline void SetLayerArn(const Aws::String& value) { m_layerArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline void SetLayerArn(Aws::String&& value) { m_layerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline void SetLayerArn(const char* value) { m_layerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline GetLayerVersionResult& WithLayerArn(const Aws::String& value) { SetLayerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline GetLayerVersionResult& WithLayerArn(Aws::String&& value) { SetLayerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function layer.</p>
+     * <p>The ARN of the layer.</p>
      */
     inline GetLayerVersionResult& WithLayerArn(const char* value) { SetLayerArn(value); return *this;}
 

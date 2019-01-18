@@ -44,148 +44,98 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline TagResourceRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline TagResourceRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the Lambda function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline TagResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) you are assigning to the Lambda function.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tags to apply to the function.</p>
      */
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

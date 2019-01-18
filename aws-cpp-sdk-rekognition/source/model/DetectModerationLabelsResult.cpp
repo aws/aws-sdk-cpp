@@ -47,6 +47,12 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("ModerationModelVersion"))
+  {
+    m_moderationModelVersion = jsonValue.GetString("ModerationModelVersion");
+
+  }
+
 
 
   return *this;

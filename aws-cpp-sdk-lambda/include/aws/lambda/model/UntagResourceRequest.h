@@ -50,108 +50,78 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UntagResourceRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UntagResourceRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UntagResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of tag keys to be deleted from the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of tag keys to remove from the function.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
 

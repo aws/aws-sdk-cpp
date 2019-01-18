@@ -43,7 +43,9 @@ DiskSnapshot::DiskSnapshot() :
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_fromDiskNameHasBeenSet(false),
-    m_fromDiskArnHasBeenSet(false)
+    m_fromDiskArnHasBeenSet(false),
+    m_fromInstanceNameHasBeenSet(false),
+    m_fromInstanceArnHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ DiskSnapshot::DiskSnapshot(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_fromDiskNameHasBeenSet(false),
-    m_fromDiskArnHasBeenSet(false)
+    m_fromDiskArnHasBeenSet(false),
+    m_fromInstanceNameHasBeenSet(false),
+    m_fromInstanceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -156,6 +160,20 @@ DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
     m_fromDiskArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("fromInstanceName"))
+  {
+    m_fromInstanceName = jsonValue.GetString("fromInstanceName");
+
+    m_fromInstanceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fromInstanceArn"))
+  {
+    m_fromInstanceArn = jsonValue.GetString("fromInstanceArn");
+
+    m_fromInstanceArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -234,6 +252,18 @@ JsonValue DiskSnapshot::Jsonize() const
   if(m_fromDiskArnHasBeenSet)
   {
    payload.WithString("fromDiskArn", m_fromDiskArn);
+
+  }
+
+  if(m_fromInstanceNameHasBeenSet)
+  {
+   payload.WithString("fromInstanceName", m_fromInstanceName);
+
+  }
+
+  if(m_fromInstanceArnHasBeenSet)
+  {
+   payload.WithString("fromInstanceArn", m_fromInstanceArn);
 
   }
 

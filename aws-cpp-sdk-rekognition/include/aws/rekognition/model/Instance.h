@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>An instance of a label detected by .</p><p><h3>See Also:</h3>   <a
+   * <p>An instance of a label returned by Amazon Rekognition Image
+   * (<a>DetectLabels</a>) or by Amazon Rekognition Video
+   * (<a>GetLabelDetection</a>).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Instance">AWS
    * API Reference</a></p>
    */
@@ -74,20 +76,20 @@ namespace Model
 
 
     /**
-     * <p>The confidence that Amazon Rekognition Image has in the accuracy of the
-     * bounding box.</p>
+     * <p>The confidence that Amazon Rekognition has in the accuracy of the bounding
+     * box.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
 
     /**
-     * <p>The confidence that Amazon Rekognition Image has in the accuracy of the
-     * bounding box.</p>
+     * <p>The confidence that Amazon Rekognition has in the accuracy of the bounding
+     * box.</p>
      */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
 
     /**
-     * <p>The confidence that Amazon Rekognition Image has in the accuracy of the
-     * bounding box.</p>
+     * <p>The confidence that Amazon Rekognition has in the accuracy of the bounding
+     * box.</p>
      */
     inline Instance& WithConfidence(double value) { SetConfidence(value); return *this;}
 

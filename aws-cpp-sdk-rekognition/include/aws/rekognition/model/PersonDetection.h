@@ -38,7 +38,7 @@ namespace Model
    * tracked in a video. Amazon Rekognition operations that track people's paths
    * return an array of <code>PersonDetection</code> objects with elements for each
    * time a person's path is tracked in a video. </p> <p>For more information, see
-   * API_GetPersonTracking in the Amazon Rekognition Developer Guide. </p><p><h3>See
+   * GetPersonTracking in the Amazon Rekognition Developer Guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetection">AWS
    * API Reference</a></p>

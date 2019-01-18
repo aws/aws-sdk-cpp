@@ -29,20 +29,28 @@ namespace Model
 {
 
 Event::Event() : 
+    m_appPackageNameHasBeenSet(false),
+    m_appTitleHasBeenSet(false),
+    m_appVersionCodeHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_clientSdkVersionHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_sdkNameHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_timestampHasBeenSet(false)
 {
 }
 
 Event::Event(JsonView jsonValue) : 
+    m_appPackageNameHasBeenSet(false),
+    m_appTitleHasBeenSet(false),
+    m_appVersionCodeHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_clientSdkVersionHasBeenSet(false),
     m_eventTypeHasBeenSet(false),
     m_metricsHasBeenSet(false),
+    m_sdkNameHasBeenSet(false),
     m_sessionHasBeenSet(false),
     m_timestampHasBeenSet(false)
 {
@@ -51,6 +59,27 @@ Event::Event(JsonView jsonValue) :
 
 Event& Event::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AppPackageName"))
+  {
+    m_appPackageName = jsonValue.GetString("AppPackageName");
+
+    m_appPackageNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppTitle"))
+  {
+    m_appTitle = jsonValue.GetString("AppTitle");
+
+    m_appTitleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppVersionCode"))
+  {
+    m_appVersionCode = jsonValue.GetString("AppVersionCode");
+
+    m_appVersionCodeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -85,6 +114,13 @@ Event& Event::operator =(JsonView jsonValue)
     m_metricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SdkName"))
+  {
+    m_sdkName = jsonValue.GetString("SdkName");
+
+    m_sdkNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Session"))
   {
     m_session = jsonValue.GetObject("Session");
@@ -105,6 +141,24 @@ Event& Event::operator =(JsonView jsonValue)
 JsonValue Event::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_appPackageNameHasBeenSet)
+  {
+   payload.WithString("AppPackageName", m_appPackageName);
+
+  }
+
+  if(m_appTitleHasBeenSet)
+  {
+   payload.WithString("AppTitle", m_appTitle);
+
+  }
+
+  if(m_appVersionCodeHasBeenSet)
+  {
+   payload.WithString("AppVersionCode", m_appVersionCode);
+
+  }
 
   if(m_attributesHasBeenSet)
   {
@@ -137,6 +191,12 @@ JsonValue Event::Jsonize() const
      metricsJsonMap.WithDouble(metricsItem.first, metricsItem.second);
    }
    payload.WithObject("Metrics", std::move(metricsJsonMap));
+
+  }
+
+  if(m_sdkNameHasBeenSet)
+  {
+   payload.WithString("SdkName", m_sdkName);
 
   }
 

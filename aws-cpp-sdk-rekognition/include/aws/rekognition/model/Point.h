@@ -36,9 +36,10 @@ namespace Model
    * are ratios of the overall image size. For example, if the input image is 700x200
    * and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50)
    * pixel coordinate on the image.</p> <p>An array of <code>Point</code> objects,
-   * <code>Polygon</code>, is returned by . <code>Polygon</code> represents a
-   * fine-grained polygon around detected text. For more information, see Geometry in
-   * the Amazon Rekognition Developer Guide. </p><p><h3>See Also:</h3>   <a
+   * <code>Polygon</code>, is returned by <a>DetectText</a>. <code>Polygon</code>
+   * represents a fine-grained polygon around detected text. For more information,
+   * see Geometry in the Amazon Rekognition Developer Guide. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Point">AWS
    * API Reference</a></p>
    */

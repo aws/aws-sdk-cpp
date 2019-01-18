@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>Provides information about a celebrity recognized by the
-   * operation.</p><p><h3>See Also:</h3>   <a
+   * <a>RecognizeCelebrities</a> operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Celebrity">AWS
    * API Reference</a></p>
    */

@@ -122,56 +122,56 @@ namespace Model
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(const char* value) { SetName(value); return *this;}
 

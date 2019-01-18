@@ -22,7 +22,7 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Json;
 
-const Aws::String& AttributeValue::GetS() const
+const Aws::String AttributeValue::GetS() const
 {
     if (m_value)
     {
@@ -30,7 +30,7 @@ const Aws::String& AttributeValue::GetS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING;
+        return {};
     }
 }
 
@@ -40,7 +40,7 @@ AttributeValue& AttributeValue::SetS(const Aws::String& s)
     return *this;
 }
 
-const Aws::String& AttributeValue::GetN() const
+const Aws::String AttributeValue::GetN() const
 {
     if (m_value)
     {
@@ -48,7 +48,7 @@ const Aws::String& AttributeValue::GetN() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING;
+        return {};
     }
 }
 
@@ -58,7 +58,7 @@ AttributeValue& AttributeValue::SetN(const Aws::String& n)
     return *this;
 }
 
-const ByteBuffer& AttributeValue::GetB() const
+const ByteBuffer AttributeValue::GetB() const
 {
     if (m_value)
     {
@@ -66,7 +66,7 @@ const ByteBuffer& AttributeValue::GetB() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_BYTEBUFFER;
+        return {};
     }
 }
 
@@ -76,7 +76,7 @@ AttributeValue& AttributeValue::SetB(const ByteBuffer& b)
     return *this;
 }
 
-const Aws::Vector<Aws::String>& AttributeValue::GetSS() const
+const Aws::Vector<Aws::String> AttributeValue::GetSS() const
 {
     if (m_value)
     {
@@ -84,7 +84,7 @@ const Aws::Vector<Aws::String>& AttributeValue::GetSS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING_SET;
+        return {};
     }
 }
 
@@ -109,7 +109,7 @@ AttributeValue& AttributeValue::AddSItem(const Aws::String& sItem)
     return *this;
 }
 
-const Aws::Vector<Aws::String>& AttributeValue::GetNS() const
+const Aws::Vector<Aws::String> AttributeValue::GetNS() const
 {
     if (m_value)
     {
@@ -117,7 +117,7 @@ const Aws::Vector<Aws::String>& AttributeValue::GetNS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_STRING_SET;
+        return {};
     }
 }
 
@@ -142,7 +142,7 @@ AttributeValue& AttributeValue::AddNItem(const Aws::String& nItem)
     return *this;
 }
 
-const Aws::Vector<ByteBuffer>& AttributeValue::GetBS() const
+const Aws::Vector<ByteBuffer> AttributeValue::GetBS() const
 {
     if (m_value)
     {
@@ -150,7 +150,7 @@ const Aws::Vector<ByteBuffer>& AttributeValue::GetBS() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_BYTEBUFFER_SET;
+        return {};
     }
 }
 
@@ -180,7 +180,7 @@ AttributeValue& AttributeValue::AddBItem(const unsigned char* bItem, size_t size
     return AddBItem(ByteBuffer(bItem, size));
 }
 
-const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& AttributeValue::GetM() const
+const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>> AttributeValue::GetM() const
 {
     if (m_value)
     {
@@ -188,7 +188,7 @@ const Aws::Map<Aws::String, const std::shared_ptr<AttributeValue>>& AttributeVal
     }
     else
     {
-        return AttributeValueValue::DEFAULT_ATTRIBUTE_MAP;
+        return {};
     }
 }
 
@@ -215,7 +215,7 @@ AttributeValue& AttributeValue::AddMEntry(const Aws::String& key, const std::sha
     return *this;
 }
 
-const Aws::Vector<std::shared_ptr<AttributeValue>>& AttributeValue::GetL() const
+const Aws::Vector<std::shared_ptr<AttributeValue>> AttributeValue::GetL() const
 {
     if (m_value)
     {
@@ -223,7 +223,7 @@ const Aws::Vector<std::shared_ptr<AttributeValue>>& AttributeValue::GetL() const
     }
     else
     {
-        return AttributeValueValue::DEFAULT_ATTRIBUTE_LIST;
+        return {};
     }
 }
 

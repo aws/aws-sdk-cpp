@@ -49,143 +49,136 @@ namespace Model
 
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline GetPolicyRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline GetPolicyRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline GetPolicyRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>You can specify this optional query parameter to specify a function version
-     * or an alias name in which case this API will return all permissions associated
-     * with the specific qualified ARN. If you don't provide this parameter, the API
-     * will return permissions that apply to the unqualified function ARN.</p>
+     * <p>Specify a version or alias to get the policy for that resource.</p>
      */
     inline GetPolicyRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 

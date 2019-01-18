@@ -49,421 +49,393 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline AddPermissionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline AddPermissionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <p>The name of the Lambda function, version, or alias.</p> <p class="title">
+     * <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> -
+     * <code>my-function</code> (name-only), <code>my-function:v1</code> (with
+     * alias).</p> </li> <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
-     * constraint applies only to the full ARN. If you specify only the function name,
-     * it is limited to 64 characters in length.</p>
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can
+     * append a version number or alias to any of the formats. The length constraint
+     * applies only to the full ARN. If you specify only the function name, it is
+     * limited to 64 characters in length.</p>
      */
     inline AddPermissionRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
 
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline const Aws::String& GetStatementId() const{ return m_statementId; }
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline void SetStatementId(Aws::String&& value) { m_statementIdHasBeenSet = true; m_statementId = std::move(value); }
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline void SetStatementId(const char* value) { m_statementIdHasBeenSet = true; m_statementId.assign(value); }
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline AddPermissionRequest& WithStatementId(const Aws::String& value) { SetStatementId(value); return *this;}
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline AddPermissionRequest& WithStatementId(Aws::String&& value) { SetStatementId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique statement identifier.</p>
+     * <p>A statement identifier that differentiates the statement from others in the
+     * same policy.</p>
      */
     inline AddPermissionRequest& WithStatementId(const char* value) { SetStatementId(value); return *this;}
 
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline AddPermissionRequest& WithAction(const Aws::String& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline AddPermissionRequest& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Lambda action you want to allow in this statement. Each Lambda action
-     * is a string starting with <code>lambda:</code> followed by the API name . For
-     * example, <code>lambda:CreateFunction</code>. You can use wildcard
-     * (<code>lambda:*</code>) to grant permission for all AWS Lambda actions. </p>
+     * <p>The action that the principal can use on the function. For example,
+     * <code>lambda:InvokeFunction</code> or <code>lambda:GetFunction</code>.</p>
      */
     inline AddPermissionRequest& WithAction(const char* value) { SetAction(value); return *this;}
 
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline AddPermissionRequest& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline AddPermissionRequest& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The principal who is getting this permission. The principal can be an AWS
-     * service (e.g. <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>)
-     * for service triggers, or an account ID for cross-account access. If you specify
-     * a service as a principal, use the <code>SourceArn</code> parameter to limit who
+     * <p>The AWS service or account that invokes the function. If you specify a
+     * service, use <code>SourceArn</code> or <code>SourceAccount</code> to limit who
      * can invoke the function through that service.</p>
      */
     inline AddPermissionRequest& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline AddPermissionRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline AddPermissionRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name of the invoker. </p> <important> <p>If you add a
-     * permission to a service principal without providing the source ARN, any AWS
-     * account that creates a mapping to your function ARN can invoke your Lambda
-     * function.</p> </important>
+     * <p>For AWS services, the ARN of the AWS resource that invokes the function. For
+     * example, an Amazon S3 bucket or Amazon SNS topic.</p>
      */
     inline AddPermissionRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter is used for S3 and SES. The AWS account ID (without a hyphen)
-     * of the source owner. For example, if the <code>SourceArn</code> identifies a
-     * bucket, then this is the bucket owner's account ID. You can use this additional
-     * condition to ensure the bucket you specify is owned by a specific account (it is
-     * possible the bucket owner deleted the bucket and some other AWS account created
-     * the bucket). You can also use this condition to specify all sources (that is,
-     * you don't specify the <code>SourceArn</code>) owned by a specific account. </p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use instead
+     * of <code>SourceArn</code> to grant permission to resources owned by another
+     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
+     * <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and
+     * recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline const Aws::String& GetEventSourceToken() const{ return m_eventSourceToken; }
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline void SetEventSourceToken(const Aws::String& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = value; }
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline void SetEventSourceToken(Aws::String&& value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken = std::move(value); }
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline void SetEventSourceToken(const char* value) { m_eventSourceTokenHasBeenSet = true; m_eventSourceToken.assign(value); }
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline AddPermissionRequest& WithEventSourceToken(const Aws::String& value) { SetEventSourceToken(value); return *this;}
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline AddPermissionRequest& WithEventSourceToken(Aws::String&& value) { SetEventSourceToken(std::move(value)); return *this;}
 
     /**
-     * <p>A unique token that must be supplied by the principal invoking the function.
-     * This is currently only used for Alexa Smart Home functions.</p>
+     * <p>For Alexa Smart Home functions, a token that must be supplied by the
+     * invoker.</p>
      */
     inline AddPermissionRequest& WithEventSourceToken(const char* value) { SetEventSourceToken(value); return *this;}
 
@@ -512,72 +484,44 @@ namespace Model
 
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>An optional value you can use to ensure you are updating the latest update of
-     * the function version or alias. If the <code>RevisionID</code> you pass doesn't
-     * match the latest <code>RevisionId</code> of the function or alias, it will fail
-     * with an error message, advising you to retrieve the latest function version or
-     * alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>
-     * </p>
+     * <p>Only update the policy if the revision ID matches the ID specified. Use this
+     * option to avoid modifying a policy that has changed since you last read it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

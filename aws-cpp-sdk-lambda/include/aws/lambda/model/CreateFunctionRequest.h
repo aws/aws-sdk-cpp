@@ -52,11 +52,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -64,11 +64,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -76,11 +76,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -88,11 +88,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -100,11 +100,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -112,11 +112,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -124,11 +124,11 @@ namespace Model
 
     /**
      * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
-     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> -
-     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it is limited to 64 characters in length.</p>
      */
@@ -136,84 +136,76 @@ namespace Model
 
 
     /**
-     * <p>The runtime version for the function.</p>
+     * <p>The identifier of the function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
     inline const Runtime& GetRuntime() const{ return m_runtime; }
 
     /**
-     * <p>The runtime version for the function.</p>
+     * <p>The identifier of the function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
     inline void SetRuntime(const Runtime& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
     /**
-     * <p>The runtime version for the function.</p>
+     * <p>The identifier of the function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
     inline void SetRuntime(Runtime&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
     /**
-     * <p>The runtime version for the function.</p>
+     * <p>The identifier of the function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
     inline CreateFunctionRequest& WithRuntime(const Runtime& value) { SetRuntime(value); return *this;}
 
     /**
-     * <p>The runtime version for the function.</p>
+     * <p>The identifier of the function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.</p>
      */
     inline CreateFunctionRequest& WithRuntime(Runtime&& value) { SetRuntime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline CreateFunctionRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline CreateFunctionRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
-     * role</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of the function's execution role.</p>
      */
     inline CreateFunctionRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -221,7 +213,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -229,7 +222,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -237,7 +231,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -245,7 +240,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -253,7 +249,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -261,7 +258,8 @@ namespace Model
 
     /**
      * <p>The name of the method within your code that Lambda calls to execute your
-     * function. For more information, see <a
+     * function. The format includes the filename and can also include namespaces and
+     * other qualifiers, depending on the runtime. For more information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming
      * Model</a>.</p>
      */
@@ -388,42 +386,52 @@ namespace Model
 
 
     /**
-     * <p>If your Lambda function accesses resources in a VPC, you provide this
-     * parameter identifying the list of security group IDs and subnet IDs. These must
-     * belong to the same VPC. You must provide at least one security group and one
-     * subnet ID.</p>
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>If your Lambda function accesses resources in a VPC, you provide this
-     * parameter identifying the list of security group IDs and subnet IDs. These must
-     * belong to the same VPC. You must provide at least one security group and one
-     * subnet ID.</p>
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>If your Lambda function accesses resources in a VPC, you provide this
-     * parameter identifying the list of security group IDs and subnet IDs. These must
-     * belong to the same VPC. You must provide at least one security group and one
-     * subnet ID.</p>
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>If your Lambda function accesses resources in a VPC, you provide this
-     * parameter identifying the list of security group IDs and subnet IDs. These must
-     * belong to the same VPC. You must provide at least one security group and one
-     * subnet ID.</p>
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
      */
     inline CreateFunctionRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>If your Lambda function accesses resources in a VPC, you provide this
-     * parameter identifying the list of security group IDs and subnet IDs. These must
-     * belong to the same VPC. You must provide at least one security group and one
-     * subnet ID.</p>
+     * <p>For network connectivity to AWS resources in a VPC, specify a list of
+     * security groups and subnets in the VPC. When you connect a function to a VPC, it
+     * can only access resources and the internet through that VPC. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * Settings</a>.</p>
      */
     inline CreateFunctionRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
@@ -433,7 +441,7 @@ namespace Model
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>. </p>
+     * Queues</a>.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
@@ -442,7 +450,7 @@ namespace Model
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>. </p>
+     * Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
@@ -451,7 +459,7 @@ namespace Model
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>. </p>
+     * Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
@@ -460,7 +468,7 @@ namespace Model
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>. </p>
+     * Queues</a>.</p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
@@ -469,7 +477,7 @@ namespace Model
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>. </p>
+     * Queues</a>.</p>
      */
     inline CreateFunctionRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 
@@ -506,44 +514,51 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the KMS key used to encrypt your function's environment variables.
-     * If not provided, AWS Lambda will use a default service key.</p>
+     * <p>The ARN of the AWS Key Management Service key used to encrypt your function's
+     * environment variables. If not provided, AWS Lambda uses a default service
+     * key.</p>
      */
     inline CreateFunctionRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
@@ -580,98 +595,86 @@ namespace Model
 
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The list of tags (key-value pairs) assigned to the new function. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>A list of <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to
+     * apply to the function.</p>
      */
     inline CreateFunctionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -679,56 +682,64 @@ namespace Model
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLayers() const{ return m_layers; }
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline void SetLayers(const Aws::Vector<Aws::String>& value) { m_layersHasBeenSet = true; m_layers = value; }
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline void SetLayers(Aws::Vector<Aws::String>&& value) { m_layersHasBeenSet = true; m_layers = std::move(value); }
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline CreateFunctionRequest& WithLayers(const Aws::Vector<Aws::String>& value) { SetLayers(value); return *this;}
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline CreateFunctionRequest& WithLayers(Aws::Vector<Aws::String>&& value) { SetLayers(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline CreateFunctionRequest& AddLayers(const Aws::String& value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline CreateFunctionRequest& AddLayers(Aws::String&& value) { m_layersHasBeenSet = true; m_layers.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of <a
      * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a> to add to the function's execution environment.</p>
+     * layers</a> to add to the function's execution environment. Specify each layer by
+     * ARN, including the version.</p>
      */
     inline CreateFunctionRequest& AddLayers(const char* value) { m_layersHasBeenSet = true; m_layers.push_back(value); return *this; }
 

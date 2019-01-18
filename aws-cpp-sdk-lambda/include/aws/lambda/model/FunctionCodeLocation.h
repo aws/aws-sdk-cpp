@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The object for the Lambda function location.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a function's deployment package.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocation">AWS
    * API Reference</a></p>
    */
@@ -48,80 +48,73 @@ namespace Model
 
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline const Aws::String& GetRepositoryType() const{ return m_repositoryType; }
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::move(value); }
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline void SetRepositoryType(const char* value) { m_repositoryTypeHasBeenSet = true; m_repositoryType.assign(value); }
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(std::move(value)); return *this;}
 
     /**
-     * <p>The repository from which you can download the function.</p>
+     * <p>The service hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(const char* value) { SetRepositoryType(value); return *this;}
 
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The presigned URL you can use to download the function's .zip file that you
-     * previously uploaded. The URL is valid for up to 10 minutes.</p>
+     * <p>A pre-signed URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 

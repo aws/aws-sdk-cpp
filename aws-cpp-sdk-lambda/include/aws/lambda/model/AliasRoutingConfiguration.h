@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The alias's <a
+   * <p>A Lambda function alias's <a
    * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic
    * shifting</a> configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasRoutingConfiguration">AWS

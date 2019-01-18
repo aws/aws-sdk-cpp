@@ -43,51 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline ListTagsRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline ListTagsRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN (Amazon Resource Name) of the function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda
-     * Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline ListTagsRequest& WithResource(const char* value) { SetResource(value); return *this;}
 

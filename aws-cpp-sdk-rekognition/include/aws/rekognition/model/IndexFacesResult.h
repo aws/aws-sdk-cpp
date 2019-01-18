@@ -115,7 +115,7 @@ namespace Model
      * translated and represent the object locations before the image is rotated.</p>
      * </li> </ul> <p>Bounding box information is returned in the
      * <code>FaceRecords</code> array. You can get the version of the face detection
-     * model by calling . </p>
+     * model by calling <a>DescribeCollection</a>. </p>
      */
     inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
 
@@ -138,7 +138,7 @@ namespace Model
      * translated and represent the object locations before the image is rotated.</p>
      * </li> </ul> <p>Bounding box information is returned in the
      * <code>FaceRecords</code> array. You can get the version of the face detection
-     * model by calling . </p>
+     * model by calling <a>DescribeCollection</a>. </p>
      */
     inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
 
@@ -161,7 +161,7 @@ namespace Model
      * translated and represent the object locations before the image is rotated.</p>
      * </li> </ul> <p>Bounding box information is returned in the
      * <code>FaceRecords</code> array. You can get the version of the face detection
-     * model by calling . </p>
+     * model by calling <a>DescribeCollection</a>. </p>
      */
     inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
 
@@ -184,7 +184,7 @@ namespace Model
      * translated and represent the object locations before the image is rotated.</p>
      * </li> </ul> <p>Bounding box information is returned in the
      * <code>FaceRecords</code> array. You can get the version of the face detection
-     * model by calling . </p>
+     * model by calling <a>DescribeCollection</a>. </p>
      */
     inline IndexFacesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
 
@@ -207,7 +207,7 @@ namespace Model
      * translated and represent the object locations before the image is rotated.</p>
      * </li> </ul> <p>Bounding box information is returned in the
      * <code>FaceRecords</code> array. You can get the version of the face detection
-     * model by calling . </p>
+     * model by calling <a>DescribeCollection</a>. </p>
      */
     inline IndexFacesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
 

@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     DEFAULT,
     INSTANCE,
-    NONE
+    NONE,
+    CLOSED
   };
 
 namespace PortInfoSourceTypeMapper

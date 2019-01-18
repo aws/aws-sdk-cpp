@@ -47,37 +47,58 @@ namespace Model
 
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline CreateDiskSnapshotRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline CreateDiskSnapshotRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique name of the source disk (e.g., <code>my-source-disk</code>).</p>
+     * <p>The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p>
+     * <note> <p>This parameter cannot be defined together with the <code>instance
+     * name</code> parameter. The <code>disk name</code> and <code>instance name</code>
+     * parameters are mutually exclusive.</p> </note>
      */
     inline CreateDiskSnapshotRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
 
@@ -123,6 +144,77 @@ namespace Model
      * <code>my-disk-snapshot</code>) based on the source disk.</p>
      */
     inline CreateDiskSnapshotRequest& WithDiskSnapshotName(const char* value) { SetDiskSnapshotName(value); return *this;}
+
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline CreateDiskSnapshotRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline CreateDiskSnapshotRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique name of the source instance (e.g.,
+     * <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined, a snapshot of
+     * the instance's system volume is created.</p> <note> <p>This parameter cannot be
+     * defined together with the <code>disk name</code> parameter. The <code>instance
+     * name</code> and <code>disk name</code> parameters are mutually exclusive.</p>
+     * </note>
+     */
+    inline CreateDiskSnapshotRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
 
 
     /**
@@ -181,6 +273,9 @@ namespace Model
 
     Aws::String m_diskSnapshotName;
     bool m_diskSnapshotNameHasBeenSet;
+
+    Aws::String m_instanceName;
+    bool m_instanceNameHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

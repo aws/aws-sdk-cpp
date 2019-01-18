@@ -33,6 +33,7 @@ namespace Aws
         static const int DEFAULT_HASH = HashingUtils::HashString("DEFAULT");
         static const int INSTANCE_HASH = HashingUtils::HashString("INSTANCE");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
+        static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
 
 
         PortInfoSourceType GetPortInfoSourceTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == NONE_HASH)
           {
             return PortInfoSourceType::NONE;
+          }
+          else if (hashCode == CLOSED_HASH)
+          {
+            return PortInfoSourceType::CLOSED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "INSTANCE";
           case PortInfoSourceType::NONE:
             return "NONE";
+          case PortInfoSourceType::CLOSED:
+            return "CLOSED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

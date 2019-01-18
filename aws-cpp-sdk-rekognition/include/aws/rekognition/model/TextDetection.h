@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a word or line of text detected by .</p> <p>The
-   * <code>DetectedText</code> field contains the text that Amazon Rekognition
+   * <p>Information about a word or line of text detected by <a>DetectText</a>.</p>
+   * <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition
    * detected in the image. </p> <p>Every word and line has an identifier
    * (<code>Id</code>). Each word belongs to a line and has a parent identifier
    * (<code>ParentId</code>) that identifies the line of text in which the word

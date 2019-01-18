@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides code size usage and function count associated with the current
-   * account and region.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of functions and amount of storage in use.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountUsage">AWS
    * API Reference</a></p>
    */
@@ -47,33 +47,36 @@ namespace Model
 
 
     /**
-     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
+     * <p>The amount of storage space, in bytes, in use by deployment packages and
+     * layer archives.</p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
 
     /**
-     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
+     * <p>The amount of storage space, in bytes, in use by deployment packages and
+     * layer archives.</p>
      */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
-     * <p>Total size, in bytes, of the account's deployment packages per region.</p>
+     * <p>The amount of storage space, in bytes, in use by deployment packages and
+     * layer archives.</p>
      */
     inline AccountUsage& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
 
 
     /**
-     * <p>The number of your account's existing functions per region.</p>
+     * <p>The number of Lambda functions.</p>
      */
     inline long long GetFunctionCount() const{ return m_functionCount; }
 
     /**
-     * <p>The number of your account's existing functions per region.</p>
+     * <p>The number of Lambda functions.</p>
      */
     inline void SetFunctionCount(long long value) { m_functionCountHasBeenSet = true; m_functionCount = value; }
 
     /**
-     * <p>The number of your account's existing functions per region.</p>
+     * <p>The number of Lambda functions.</p>
      */
     inline AccountUsage& WithFunctionCount(long long value) { SetFunctionCount(value); return *this;}
 

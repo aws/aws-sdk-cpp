@@ -162,7 +162,8 @@ namespace Model
      * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
      * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
      * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> </ul>
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
      */
     inline const PortInfoSourceType& GetPortInfoSource() const{ return m_portInfoSource; }
 
@@ -171,7 +172,8 @@ namespace Model
      * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
      * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
      * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> </ul>
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
      */
     inline void SetPortInfoSource(const PortInfoSourceType& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = value; }
 
@@ -180,7 +182,8 @@ namespace Model
      * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
      * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
      * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> </ul>
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
      */
     inline void SetPortInfoSource(PortInfoSourceType&& value) { m_portInfoSourceHasBeenSet = true; m_portInfoSource = std::move(value); }
 
@@ -189,7 +192,8 @@ namespace Model
      * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
      * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
      * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> </ul>
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
      */
     inline InstanceEntry& WithPortInfoSource(const PortInfoSourceType& value) { SetPortInfoSource(value); return *this;}
 
@@ -198,7 +202,8 @@ namespace Model
      * following configuration options are available:</p> <ul> <li> <p>DEFAULT — Use
      * the default firewall settings from the image.</p> </li> <li> <p>INSTANCE — Use
      * the firewall settings from the source Lightsail instance.</p> </li> <li> <p>NONE
-     * — Default to Amazon EC2.</p> </li> </ul>
+     * — Default to Amazon EC2.</p> </li> <li> <p>CLOSED — All ports closed.</p> </li>
+     * </ul>
      */
     inline InstanceEntry& WithPortInfoSource(PortInfoSourceType&& value) { SetPortInfoSource(std::move(value)); return *this;}
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/ModerationLabel.h>
 #include <utility>
 
@@ -85,9 +86,54 @@ namespace Model
      */
     inline DetectModerationLabelsResult& AddModerationLabels(ModerationLabel&& value) { m_moderationLabels.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline const Aws::String& GetModerationModelVersion() const{ return m_moderationModelVersion; }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(const Aws::String& value) { m_moderationModelVersion = value; }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(Aws::String&& value) { m_moderationModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(const char* value) { m_moderationModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline DetectModerationLabelsResult& WithModerationModelVersion(const Aws::String& value) { SetModerationModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline DetectModerationLabelsResult& WithModerationModelVersion(Aws::String&& value) { SetModerationModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline DetectModerationLabelsResult& WithModerationModelVersion(const char* value) { SetModerationModelVersion(value); return *this;}
+
   private:
 
     Aws::Vector<ModerationLabel> m_moderationLabels;
+
+    Aws::String m_moderationModelVersion;
   };
 
 } // namespace Model

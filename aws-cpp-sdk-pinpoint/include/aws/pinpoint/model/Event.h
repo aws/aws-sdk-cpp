@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pinpoint/model/Session.h>
 #include <utility>
 
@@ -47,6 +47,114 @@ namespace Model
     Event(Aws::Utils::Json::JsonView jsonValue);
     Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline const Aws::String& GetAppPackageName() const{ return m_appPackageName; }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline void SetAppPackageName(const Aws::String& value) { m_appPackageNameHasBeenSet = true; m_appPackageName = value; }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline void SetAppPackageName(Aws::String&& value) { m_appPackageNameHasBeenSet = true; m_appPackageName = std::move(value); }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline void SetAppPackageName(const char* value) { m_appPackageNameHasBeenSet = true; m_appPackageName.assign(value); }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline Event& WithAppPackageName(const Aws::String& value) { SetAppPackageName(value); return *this;}
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline Event& WithAppPackageName(Aws::String&& value) { SetAppPackageName(std::move(value)); return *this;}
+
+    /**
+     * The package name associated with the app that's recording the event.
+     */
+    inline Event& WithAppPackageName(const char* value) { SetAppPackageName(value); return *this;}
+
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline const Aws::String& GetAppTitle() const{ return m_appTitle; }
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline void SetAppTitle(const Aws::String& value) { m_appTitleHasBeenSet = true; m_appTitle = value; }
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline void SetAppTitle(Aws::String&& value) { m_appTitleHasBeenSet = true; m_appTitle = std::move(value); }
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline void SetAppTitle(const char* value) { m_appTitleHasBeenSet = true; m_appTitle.assign(value); }
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline Event& WithAppTitle(const Aws::String& value) { SetAppTitle(value); return *this;}
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline Event& WithAppTitle(Aws::String&& value) { SetAppTitle(std::move(value)); return *this;}
+
+    /**
+     * The title of the app that's recording the event.
+     */
+    inline Event& WithAppTitle(const char* value) { SetAppTitle(value); return *this;}
+
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline const Aws::String& GetAppVersionCode() const{ return m_appVersionCode; }
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline void SetAppVersionCode(const Aws::String& value) { m_appVersionCodeHasBeenSet = true; m_appVersionCode = value; }
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline void SetAppVersionCode(Aws::String&& value) { m_appVersionCodeHasBeenSet = true; m_appVersionCode = std::move(value); }
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline void SetAppVersionCode(const char* value) { m_appVersionCodeHasBeenSet = true; m_appVersionCode.assign(value); }
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline Event& WithAppVersionCode(const Aws::String& value) { SetAppVersionCode(value); return *this;}
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline Event& WithAppVersionCode(Aws::String&& value) { SetAppVersionCode(std::move(value)); return *this;}
+
+    /**
+     * The version number of the app that's recording the event.
+     */
+    inline Event& WithAppVersionCode(const char* value) { SetAppVersionCode(value); return *this;}
 
 
     /**
@@ -224,6 +332,42 @@ namespace Model
 
 
     /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline const Aws::String& GetSdkName() const{ return m_sdkName; }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline void SetSdkName(const Aws::String& value) { m_sdkNameHasBeenSet = true; m_sdkName = value; }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline void SetSdkName(Aws::String&& value) { m_sdkNameHasBeenSet = true; m_sdkName = std::move(value); }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline void SetSdkName(const char* value) { m_sdkNameHasBeenSet = true; m_sdkName.assign(value); }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline Event& WithSdkName(const Aws::String& value) { SetSdkName(value); return *this;}
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline Event& WithSdkName(Aws::String&& value) { SetSdkName(std::move(value)); return *this;}
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     */
+    inline Event& WithSdkName(const char* value) { SetSdkName(value); return *this;}
+
+
+    /**
      * Information about the session in which the event occurred.
      */
     inline const Session& GetSession() const{ return m_session; }
@@ -286,6 +430,15 @@ namespace Model
 
   private:
 
+    Aws::String m_appPackageName;
+    bool m_appPackageNameHasBeenSet;
+
+    Aws::String m_appTitle;
+    bool m_appTitleHasBeenSet;
+
+    Aws::String m_appVersionCode;
+    bool m_appVersionCodeHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
 
@@ -297,6 +450,9 @@ namespace Model
 
     Aws::Map<Aws::String, double> m_metrics;
     bool m_metricsHasBeenSet;
+
+    Aws::String m_sdkName;
+    bool m_sdkNameHasBeenSet;
 
     Session m_session;
     bool m_sessionHasBeenSet;

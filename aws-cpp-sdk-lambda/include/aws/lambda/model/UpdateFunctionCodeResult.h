@@ -42,7 +42,7 @@ namespace Lambda
 namespace Model
 {
   /**
-   * <p>A Lambda function's configuration settings.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a function's configuration.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -91,37 +91,37 @@ namespace Model
 
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetFunctionArn(const Aws::String& value) { m_functionArn = value; }
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetFunctionArn(Aws::String&& value) { m_functionArn = std::move(value); }
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline void SetFunctionArn(const char* value) { m_functionArn.assign(value); }
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UpdateFunctionCodeResult& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UpdateFunctionCodeResult& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The function's Amazon Resource Name.</p>
+     * <p>The function's Amazon Resource Name (ARN).</p>
      */
     inline UpdateFunctionCodeResult& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
 
@@ -581,37 +581,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline const Aws::String& GetMasterArn() const{ return m_masterArn; }
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline void SetMasterArn(const Aws::String& value) { m_masterArn = value; }
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline void SetMasterArn(Aws::String&& value) { m_masterArn = std::move(value); }
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline void SetMasterArn(const char* value) { m_masterArn.assign(value); }
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(const Aws::String& value) { SetMasterArn(value); return *this;}
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(Aws::String&& value) { SetMasterArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the master function.</p>
+     * <p>For Lambda@Edge functions, the ARN of the master function.</p>
      */
     inline UpdateFunctionCodeResult& WithMasterArn(const char* value) { SetMasterArn(value); return *this;}
 
@@ -653,51 +653,51 @@ namespace Model
 
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline UpdateFunctionCodeResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline UpdateFunctionCodeResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline UpdateFunctionCodeResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     * layers</a>.</p>
+     * <p>The function's <a
+     * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     * layers</a> </p>
      */
     inline UpdateFunctionCodeResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
 

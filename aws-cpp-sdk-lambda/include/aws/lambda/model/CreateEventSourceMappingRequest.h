@@ -285,32 +285,32 @@ namespace Model
 
 
     /**
-     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix
-     * time in seconds from which to start reading.</p>
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
      */
     inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
 
     /**
-     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix
-     * time in seconds from which to start reading.</p>
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
      */
     inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = value; }
 
     /**
-     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix
-     * time in seconds from which to start reading.</p>
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
      */
     inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::move(value); }
 
     /**
-     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix
-     * time in seconds from which to start reading.</p>
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
 
     /**
-     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix
-     * time in seconds from which to start reading.</p>
+     * <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time
+     * from which to start reading.</p>
      */
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 

@@ -128,37 +128,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
