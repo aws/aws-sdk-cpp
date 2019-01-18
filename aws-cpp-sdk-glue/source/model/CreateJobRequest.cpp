@@ -33,10 +33,10 @@ CreateJobRequest::CreateJobRequest() :
     m_connectionsHasBeenSet(false),
     m_maxRetries(0),
     m_maxRetriesHasBeenSet(false),
-    m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false),
     m_timeout(0),
     m_timeoutHasBeenSet(false),
+    m_maxCapacity(0.0),
+    m_maxCapacityHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false)
 {
@@ -105,15 +105,15 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
-  if(m_allocatedCapacityHasBeenSet)
-  {
-   payload.WithInteger("AllocatedCapacity", m_allocatedCapacity);
-
-  }
-
   if(m_timeoutHasBeenSet)
   {
    payload.WithInteger("Timeout", m_timeout);
+
+  }
+
+  if(m_maxCapacityHasBeenSet)
+  {
+   payload.WithDouble("MaxCapacity", m_maxCapacity);
 
   }
 

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-ElasticLoadBalancing;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20120601.36;
+        version : 1.7.20120601.37;
 
         // Display name for package.
         title: AWS SDK for C++ (Elastic Load Balancing);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.36
+            AWSSDKCPP-Core/1.7.37
        }
     }
 

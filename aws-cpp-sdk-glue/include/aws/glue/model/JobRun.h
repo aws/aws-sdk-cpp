@@ -566,34 +566,6 @@ namespace Model
 
 
     /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
-     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
-     * GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
-     */
-    inline int GetAllocatedCapacity() const{ return m_allocatedCapacity; }
-
-    /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
-     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
-     * GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
-     */
-    inline void SetAllocatedCapacity(int value) { m_allocatedCapacityHasBeenSet = true; m_allocatedCapacity = value; }
-
-    /**
-     * <p>The number of AWS Glue data processing units (DPUs) allocated to this JobRun.
-     * From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative
-     * measure of processing power that consists of 4 vCPUs of compute capacity and 16
-     * GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
-     */
-    inline JobRun& WithAllocatedCapacity(int value) { SetAllocatedCapacity(value); return *this;}
-
-
-    /**
      * <p>The amount of time (in seconds) that the job run consumed resources.</p>
      */
     inline int GetExecutionTime() const{ return m_executionTime; }
@@ -632,6 +604,31 @@ namespace Model
      * value set in the parent job.</p>
      */
     inline JobRun& WithTimeout(int value) { SetTimeout(value); return *this;}
+
+
+    /**
+     * <p>AWS Glue supports running jobs on a
+     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
+     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
+     * running in any other way cannot have fractional DPU allocations.</p>
+     */
+    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>AWS Glue supports running jobs on a
+     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
+     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
+     * running in any other way cannot have fractional DPU allocations.</p>
+     */
+    inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
+
+    /**
+     * <p>AWS Glue supports running jobs on a
+     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
+     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
+     * running in any other way cannot have fractional DPU allocations.</p>
+     */
+    inline JobRun& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
 
     /**
@@ -818,14 +815,14 @@ namespace Model
     Aws::Vector<Predecessor> m_predecessorRuns;
     bool m_predecessorRunsHasBeenSet;
 
-    int m_allocatedCapacity;
-    bool m_allocatedCapacityHasBeenSet;
-
     int m_executionTime;
     bool m_executionTimeHasBeenSet;
 
     int m_timeout;
     bool m_timeoutHasBeenSet;
+
+    double m_maxCapacity;
+    bool m_maxCapacityHasBeenSet;
 
     NotificationProperty m_notificationProperty;
     bool m_notificationPropertyHasBeenSet;

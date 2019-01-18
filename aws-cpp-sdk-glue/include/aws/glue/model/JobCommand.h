@@ -48,37 +48,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline JobCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline JobCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the job command: this must be <code>glueetl</code>.</p>
+     * <p>The name of the job command: this must be <code>glueetl</code>, for an Apache
+     * Spark ETL job, or <code>pythonshell</code>, for a Python shell job.</p>
      */
     inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
 
