@@ -289,9 +289,18 @@ namespace Model
     typedef std::function<void(const AppStreamClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
 
   /**
-   * <fullname>Amazon AppStream 2.0</fullname> <p>You can use Amazon AppStream 2.0 to
-   * stream desktop applications to any device running a web browser, without
-   * rewriting them.</p>
+   * <fullname>Amazon AppStream 2.0</fullname> <p>This is the <i>Amazon AppStream 2.0
+   * API Reference</i>. It provides descriptions and syntax for each of the actions
+   * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application
+   * streaming service. You centrally manage your desktop applications on AppStream
+   * 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
+   * resources required to host and run your applications, scales automatically, and
+   * provides access to your users on demand.</p> <p>To learn more about AppStream
+   * 2.0, see the following resources:</p> <ul> <li> <p> <a
+   * href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0 product page</a>
+   * </p> </li> <li> <p> <a
+   * href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0
+   * documentation</a> </p> </li> </ul>
    */
   class AWS_APPSTREAM_API AppStreamClient : public Aws::Client::AWSJsonClient
   {
@@ -1019,7 +1028,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes the streaming sessions for a specified stack
-         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
          * sessions for that user are described. If an authentication type is not provided,
          * the default is to authenticate users using a streaming URL.</p><p><h3>See
          * Also:</h3>   <a
@@ -1030,7 +1039,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes the streaming sessions for a specified stack
-         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
          * sessions for that user are described. If an authentication type is not provided,
          * the default is to authenticate users using a streaming URL.</p><p><h3>See
          * Also:</h3>   <a
@@ -1043,7 +1052,7 @@ namespace Model
 
         /**
          * <p>Retrieves a list that describes the streaming sessions for a specified stack
-         * and fleet. If a user ID is provided for the stack and fleet, only streaming
+         * and fleet. If a UserId is provided for the stack and fleet, only streaming
          * sessions for that user are described. If an authentication type is not provided,
          * the default is to authenticate users using a streaming URL.</p><p><h3>See
          * Also:</h3>   <a
@@ -1123,18 +1132,16 @@ namespace Model
         virtual void DescribeUserStackAssociationsAsync(const Model::DescribeUserStackAssociationsRequest& request, const DescribeUserStackAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list that describes one or more specified users in the user pool,
-         * if user names are provided. Otherwise, all users in the user pool are
-         * described.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified users in the user
+         * pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeUsersOutcome DescribeUsers(const Model::DescribeUsersRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes one or more specified users in the user pool,
-         * if user names are provided. Otherwise, all users in the user pool are
-         * described.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified users in the user
+         * pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">AWS
          * API Reference</a></p>
          *
@@ -1143,9 +1150,8 @@ namespace Model
         virtual Model::DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes one or more specified users in the user pool,
-         * if user names are provided. Otherwise, all users in the user pool are
-         * described.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes one or more specified users in the user
+         * pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeUsers">AWS
          * API Reference</a></p>
          *

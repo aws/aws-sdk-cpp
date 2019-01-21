@@ -164,37 +164,37 @@ namespace Model
 
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline Image& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline Image& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The image name for display.</p>
+     * <p>The image name to display.</p>
      */
     inline Image& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -304,37 +304,37 @@ namespace Model
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Image& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Image& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Image& WithDescription(const char* value) { SetDescription(value); return *this;}
 

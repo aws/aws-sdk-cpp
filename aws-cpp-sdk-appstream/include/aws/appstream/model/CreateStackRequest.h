@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appstream/model/ApplicationSettings.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/appstream/model/StorageConnector.h>
 #include <aws/appstream/model/UserSetting.h>
 #include <utility>
@@ -85,73 +86,73 @@ namespace Model
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateStackRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateStackRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateStackRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline CreateStackRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline CreateStackRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline CreateStackRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -349,6 +350,127 @@ namespace Model
      */
     inline CreateStackRequest& WithApplicationSettings(ApplicationSettings&& value) { SetApplicationSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to associate with the stack. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateStackRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -374,6 +496,9 @@ namespace Model
 
     ApplicationSettings m_applicationSettings;
     bool m_applicationSettingsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

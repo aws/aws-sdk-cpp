@@ -37,8 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for the directory used to join
-   * domains.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the configuration information for the directory used to join a
+   * streaming instance to a Microsoft Active Directory domain.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig">AWS
    * API Reference</a></p>
    */

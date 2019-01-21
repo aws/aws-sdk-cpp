@@ -113,42 +113,42 @@ namespace Model
 
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline void SetDomains(const Aws::Vector<Aws::String>& value) { m_domainsHasBeenSet = true; m_domains = value; }
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline void SetDomains(Aws::Vector<Aws::String>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline StorageConnector& WithDomains(const Aws::Vector<Aws::String>& value) { SetDomains(value); return *this;}
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline StorageConnector& WithDomains(Aws::Vector<Aws::String>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline StorageConnector& AddDomains(const Aws::String& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline StorageConnector& AddDomains(Aws::String&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the domains for the G Suite account.</p>
+     * <p>The names of the domains for the account.</p>
      */
     inline StorageConnector& AddDomains(const char* value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 

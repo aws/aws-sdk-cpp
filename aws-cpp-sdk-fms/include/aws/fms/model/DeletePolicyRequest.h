@@ -86,10 +86,35 @@ namespace Model
      */
     inline DeletePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
+
+    /**
+     * <p>If <code>True</code>, the request will also delete all web ACLs in this
+     * policy. Associated resources will no longer be protected by web ACLs in this
+     * policy.</p>
+     */
+    inline bool GetDeleteAllPolicyResources() const{ return m_deleteAllPolicyResources; }
+
+    /**
+     * <p>If <code>True</code>, the request will also delete all web ACLs in this
+     * policy. Associated resources will no longer be protected by web ACLs in this
+     * policy.</p>
+     */
+    inline void SetDeleteAllPolicyResources(bool value) { m_deleteAllPolicyResourcesHasBeenSet = true; m_deleteAllPolicyResources = value; }
+
+    /**
+     * <p>If <code>True</code>, the request will also delete all web ACLs in this
+     * policy. Associated resources will no longer be protected by web ACLs in this
+     * policy.</p>
+     */
+    inline DeletePolicyRequest& WithDeleteAllPolicyResources(bool value) { SetDeleteAllPolicyResources(value); return *this;}
+
   private:
 
     Aws::String m_policyId;
     bool m_policyIdHasBeenSet;
+
+    bool m_deleteAllPolicyResources;
+    bool m_deleteAllPolicyResourcesHasBeenSet;
   };
 
 } // namespace Model

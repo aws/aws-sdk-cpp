@@ -434,6 +434,56 @@ namespace Model
 
 
     /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline const Aws::String& GetAutomationTargetParameterName() const{ return m_automationTargetParameterName; }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline void SetAutomationTargetParameterName(const Aws::String& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = value; }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline void SetAutomationTargetParameterName(Aws::String&& value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName = std::move(value); }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline void SetAutomationTargetParameterName(const char* value) { m_automationTargetParameterNameHasBeenSet = true; m_automationTargetParameterName.assign(value); }
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline UpdateAssociationRequest& WithAutomationTargetParameterName(const Aws::String& value) { SetAutomationTargetParameterName(value); return *this;}
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline UpdateAssociationRequest& WithAutomationTargetParameterName(Aws::String&& value) { SetAutomationTargetParameterName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the target for the association. This target is required for
+     * associations that use an Automation document and target resources by using rate
+     * controls.</p>
+     */
+    inline UpdateAssociationRequest& WithAutomationTargetParameterName(const char* value) { SetAutomationTargetParameterName(value); return *this;}
+
+
+    /**
      * <p>The number of errors that are allowed before the system stops sending
      * requests to run the association on additional targets. You can specify either an
      * absolute number of errors, for example 10, or a percentage of the target set,
@@ -684,6 +734,9 @@ namespace Model
 
     Aws::String m_associationVersion;
     bool m_associationVersionHasBeenSet;
+
+    Aws::String m_automationTargetParameterName;
+    bool m_automationTargetParameterNameHasBeenSet;
 
     Aws::String m_maxErrors;
     bool m_maxErrorsHasBeenSet;

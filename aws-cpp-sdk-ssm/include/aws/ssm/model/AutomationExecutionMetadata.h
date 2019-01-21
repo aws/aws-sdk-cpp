@@ -806,9 +806,9 @@ namespace Model
 
 
     /**
-     * <p>Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local
-     * of CrossAccount. CrossAccount is an Automation that executes in multiple AWS
-     * Regions and accounts. For more information, see <a
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
      * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
      * Systems Manager User Guide</i>. </p>
@@ -816,9 +816,9 @@ namespace Model
     inline const AutomationType& GetAutomationType() const{ return m_automationType; }
 
     /**
-     * <p>Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local
-     * of CrossAccount. CrossAccount is an Automation that executes in multiple AWS
-     * Regions and accounts. For more information, see <a
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
      * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
      * Systems Manager User Guide</i>. </p>
@@ -826,9 +826,9 @@ namespace Model
     inline void SetAutomationType(const AutomationType& value) { m_automationTypeHasBeenSet = true; m_automationType = value; }
 
     /**
-     * <p>Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local
-     * of CrossAccount. CrossAccount is an Automation that executes in multiple AWS
-     * Regions and accounts. For more information, see <a
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
      * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
      * Systems Manager User Guide</i>. </p>
@@ -836,9 +836,9 @@ namespace Model
     inline void SetAutomationType(AutomationType&& value) { m_automationTypeHasBeenSet = true; m_automationType = std::move(value); }
 
     /**
-     * <p>Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local
-     * of CrossAccount. CrossAccount is an Automation that executes in multiple AWS
-     * Regions and accounts. For more information, see <a
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
      * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
      * Systems Manager User Guide</i>. </p>
@@ -846,9 +846,9 @@ namespace Model
     inline AutomationExecutionMetadata& WithAutomationType(const AutomationType& value) { SetAutomationType(value); return *this;}
 
     /**
-     * <p>Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local
-     * of CrossAccount. CrossAccount is an Automation that executes in multiple AWS
-     * Regions and accounts. For more information, see <a
+     * <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either
+     * Local or CrossAccount. CrossAccount is an Automation that executes in multiple
+     * AWS Regions and accounts. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Concurrently
      * Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS
      * Systems Manager User Guide</i>. </p>

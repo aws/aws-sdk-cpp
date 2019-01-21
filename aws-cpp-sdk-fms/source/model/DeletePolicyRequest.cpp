@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeletePolicyRequest::DeletePolicyRequest() : 
-    m_policyIdHasBeenSet(false)
+    m_policyIdHasBeenSet(false),
+    m_deleteAllPolicyResources(false),
+    m_deleteAllPolicyResourcesHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeletePolicyRequest::SerializePayload() const
   if(m_policyIdHasBeenSet)
   {
    payload.WithString("PolicyId", m_policyId);
+
+  }
+
+  if(m_deleteAllPolicyResourcesHasBeenSet)
+  {
+   payload.WithBool("DeleteAllPolicyResources", m_deleteAllPolicyResources);
 
   }
 

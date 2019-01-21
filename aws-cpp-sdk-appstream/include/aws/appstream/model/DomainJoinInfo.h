@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains the information needed to join a Microsoft Active Directory
-   * domain.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the configuration information required to join fleets and image
+   * builders to Microsoft Active Directory domains.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DomainJoinInfo">AWS
    * API Reference</a></p>
    */

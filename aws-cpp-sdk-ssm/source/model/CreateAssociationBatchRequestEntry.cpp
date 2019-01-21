@@ -32,6 +32,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry() :
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
@@ -48,6 +49,7 @@ CreateAssociationBatchRequestEntry::CreateAssociationBatchRequestEntry(JsonView 
     m_nameHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_parametersHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
     m_targetsHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
@@ -92,6 +94,13 @@ CreateAssociationBatchRequestEntry& CreateAssociationBatchRequestEntry::operator
       m_parameters[parametersItem.first] = std::move(parameterValueListList);
     }
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomationTargetParameterName"))
+  {
+    m_automationTargetParameterName = jsonValue.GetString("AutomationTargetParameterName");
+
+    m_automationTargetParameterNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DocumentVersion"))
@@ -185,6 +194,12 @@ JsonValue CreateAssociationBatchRequestEntry::Jsonize() const
      parametersJsonMap.WithArray(parametersItem.first, std::move(parameterValueListJsonList));
    }
    payload.WithObject("Parameters", std::move(parametersJsonMap));
+
+  }
+
+  if(m_automationTargetParameterNameHasBeenSet)
+  {
+   payload.WithString("AutomationTargetParameterName", m_automationTargetParameterName);
 
   }
 

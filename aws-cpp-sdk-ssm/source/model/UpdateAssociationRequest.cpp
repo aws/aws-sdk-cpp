@@ -32,6 +32,7 @@ UpdateAssociationRequest::UpdateAssociationRequest() :
     m_targetsHasBeenSet(false),
     m_associationNameHasBeenSet(false),
     m_associationVersionHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
@@ -109,6 +110,12 @@ Aws::String UpdateAssociationRequest::SerializePayload() const
   if(m_associationVersionHasBeenSet)
   {
    payload.WithString("AssociationVersion", m_associationVersion);
+
+  }
+
+  if(m_automationTargetParameterNameHasBeenSet)
+  {
+   payload.WithString("AutomationTargetParameterName", m_automationTargetParameterName);
 
   }
 

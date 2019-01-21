@@ -37,6 +37,7 @@ AssociationDescription::AssociationDescription() :
     m_statusHasBeenSet(false),
     m_overviewHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_targetsHasBeenSet(false),
@@ -61,6 +62,7 @@ AssociationDescription::AssociationDescription(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_overviewHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_associationIdHasBeenSet(false),
     m_targetsHasBeenSet(false),
@@ -133,6 +135,13 @@ AssociationDescription& AssociationDescription::operator =(JsonView jsonValue)
     m_documentVersion = jsonValue.GetString("DocumentVersion");
 
     m_documentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomationTargetParameterName"))
+  {
+    m_automationTargetParameterName = jsonValue.GetString("AutomationTargetParameterName");
+
+    m_automationTargetParameterNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Parameters"))
@@ -275,6 +284,12 @@ JsonValue AssociationDescription::Jsonize() const
   if(m_documentVersionHasBeenSet)
   {
    payload.WithString("DocumentVersion", m_documentVersion);
+
+  }
+
+  if(m_automationTargetParameterNameHasBeenSet)
+  {
+   payload.WithString("AutomationTargetParameterName", m_automationTargetParameterName);
 
   }
 

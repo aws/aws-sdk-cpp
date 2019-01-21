@@ -105,49 +105,49 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSharedAwsAccountIds() const{ return m_sharedAwsAccountIds; }
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline void SetSharedAwsAccountIds(const Aws::Vector<Aws::String>& value) { m_sharedAwsAccountIdsHasBeenSet = true; m_sharedAwsAccountIds = value; }
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline void SetSharedAwsAccountIds(Aws::Vector<Aws::String>&& value) { m_sharedAwsAccountIdsHasBeenSet = true; m_sharedAwsAccountIds = std::move(value); }
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline DescribeImagePermissionsRequest& WithSharedAwsAccountIds(const Aws::Vector<Aws::String>& value) { SetSharedAwsAccountIds(value); return *this;}
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline DescribeImagePermissionsRequest& WithSharedAwsAccountIds(Aws::Vector<Aws::String>&& value) { SetSharedAwsAccountIds(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline DescribeImagePermissionsRequest& AddSharedAwsAccountIds(const Aws::String& value) { m_sharedAwsAccountIdsHasBeenSet = true; m_sharedAwsAccountIds.push_back(value); return *this; }
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline DescribeImagePermissionsRequest& AddSharedAwsAccountIds(Aws::String&& value) { m_sharedAwsAccountIdsHasBeenSet = true; m_sharedAwsAccountIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The 12-digit ID of one or more AWS accounts with which the image is
+     * <p>The 12-digit identifier of one or more AWS accounts with which the image is
      * shared.</p>
      */
     inline DescribeImagePermissionsRequest& AddSharedAwsAccountIds(const char* value) { m_sharedAwsAccountIdsHasBeenSet = true; m_sharedAwsAccountIds.push_back(value); return *this; }

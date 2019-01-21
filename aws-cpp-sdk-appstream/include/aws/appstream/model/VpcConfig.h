@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes VPC configuration information.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes VPC configuration information for fleets and image
+   * builders.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/VpcConfig">AWS
    * API Reference</a></p>
    */
@@ -49,91 +50,99 @@ namespace Model
 
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The subnets to which a network interface is established from the fleet
-     * instance.</p>
+     * <p>The identifiers of the subnets to which a network interface is attached from
+     * the fleet instance or image builder instance. Fleet instances use one or two
+     * subnets. Image builder instances use one subnet.</p>
      */
     inline VpcConfig& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline VpcConfig& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline VpcConfig& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security groups for the fleet.</p>
+     * <p>The identifiers of the security groups for the fleet or image builder.</p>
      */
     inline VpcConfig& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 

@@ -118,37 +118,37 @@ namespace Model
 
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline DescribeSessionsRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline DescribeSessionsRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The user ID.</p>
+     * <p>The user identifier.</p>
      */
     inline DescribeSessionsRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
 

@@ -21,6 +21,7 @@
 #include <aws/appstream/model/ComputeCapacity.h>
 #include <aws/appstream/model/VpcConfig.h>
 #include <aws/appstream/model/DomainJoinInfo.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -443,73 +444,73 @@ namespace Model
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateFleetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateFleetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline CreateFleetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline CreateFleetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline CreateFleetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline CreateFleetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -531,29 +532,155 @@ namespace Model
 
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline CreateFleetRequest& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline CreateFleetRequest& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to associate with the fleet. A tag is a key-value pair (the value is
+     * optional). For example, Environment=Test, or, if you do not specify a value,
+     * Environment=. </p> <p>If you do not specify a value, we set the value to an
+     * empty string.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging
+     * Your Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.</p>
+     */
+    inline CreateFleetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -595,6 +722,9 @@ namespace Model
 
     DomainJoinInfo m_domainJoinInfo;
     bool m_domainJoinInfoHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

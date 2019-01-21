@@ -252,7 +252,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline const Aws::Map<DependentServiceName, Aws::String>& GetIssueInfoMap() const{ return m_issueInfoMap; }
@@ -260,7 +260,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline void SetIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = value; }
@@ -268,7 +268,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline void SetIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap = std::move(value); }
@@ -276,7 +276,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& WithIssueInfoMap(const Aws::Map<DependentServiceName, Aws::String>& value) { SetIssueInfoMap(value); return *this;}
@@ -284,7 +284,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& WithIssueInfoMap(Aws::Map<DependentServiceName, Aws::String>&& value) { SetIssueInfoMap(std::move(value)); return *this;}
@@ -292,7 +292,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }
@@ -300,7 +300,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, const Aws::String& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
@@ -308,7 +308,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, std::move(value)); return *this; }
@@ -316,7 +316,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, Aws::String&& value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), std::move(value)); return *this; }
@@ -324,7 +324,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(DependentServiceName&& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(std::move(key), value); return *this; }
@@ -332,7 +332,7 @@ namespace Model
     /**
      * <p>Details about problems with dependent services, such as AWS WAF or AWS
      * Config, that are causing a resource to be non-compliant. The details include the
-     * name of the dependent service and the error message recieved indicating the
+     * name of the dependent service and the error message received that indicates the
      * problem with the service.</p>
      */
     inline PolicyComplianceDetail& AddIssueInfoMap(const DependentServiceName& key, const char* value) { m_issueInfoMapHasBeenSet = true; m_issueInfoMap.emplace(key, value); return *this; }

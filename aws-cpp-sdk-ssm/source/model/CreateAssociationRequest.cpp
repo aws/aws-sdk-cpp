@@ -31,6 +31,7 @@ CreateAssociationRequest::CreateAssociationRequest() :
     m_scheduleExpressionHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_associationNameHasBeenSet(false),
+    m_automationTargetParameterNameHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_complianceSeverity(AssociationComplianceSeverity::NOT_SET),
@@ -102,6 +103,12 @@ Aws::String CreateAssociationRequest::SerializePayload() const
   if(m_associationNameHasBeenSet)
   {
    payload.WithString("AssociationName", m_associationName);
+
+  }
+
+  if(m_automationTargetParameterNameHasBeenSet)
+  {
+   payload.WithString("AutomationTargetParameterName", m_automationTargetParameterName);
 
   }
 

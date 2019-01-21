@@ -50,73 +50,73 @@ namespace Model
 
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline UpdateStackRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline UpdateStackRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The stack name for display.</p>
+     * <p>The stack name to display.</p>
      */
     inline UpdateStackRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline UpdateStackRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline UpdateStackRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline UpdateStackRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -230,44 +230,44 @@ namespace Model
 
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline const Aws::String& GetFeedbackURL() const{ return m_feedbackURL; }
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline void SetFeedbackURL(const Aws::String& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = value; }
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline void SetFeedbackURL(Aws::String&& value) { m_feedbackURLHasBeenSet = true; m_feedbackURL = std::move(value); }
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline void SetFeedbackURL(const char* value) { m_feedbackURLHasBeenSet = true; m_feedbackURL.assign(value); }
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline UpdateStackRequest& WithFeedbackURL(const Aws::String& value) { SetFeedbackURL(value); return *this;}
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline UpdateStackRequest& WithFeedbackURL(Aws::String&& value) { SetFeedbackURL(std::move(value)); return *this;}
 
     /**
-     * <p>The URL that users are redirected to after they click the Send Feedback link.
-     * If no URL is specified, no Send Feedback link is displayed.</p>
+     * <p>The URL that users are redirected to after they choose the Send Feedback
+     * link. If no URL is specified, no Send Feedback link is displayed.</p>
      */
     inline UpdateStackRequest& WithFeedbackURL(const char* value) { SetFeedbackURL(value); return *this;}
 

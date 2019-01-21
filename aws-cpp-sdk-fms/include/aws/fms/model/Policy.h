@@ -369,98 +369,107 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -471,7 +480,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -482,7 +491,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -493,7 +502,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -504,7 +513,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -515,7 +524,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -526,7 +535,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -537,7 +546,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -548,7 +557,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For

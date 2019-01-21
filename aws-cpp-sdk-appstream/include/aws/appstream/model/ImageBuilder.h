@@ -42,8 +42,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a streaming instance used for editing an image. New images are
-   * created from a snapshot through an image builder.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a virtual machine that is used to create an image. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/ImageBuilder">AWS
    * API Reference</a></p>
    */
@@ -165,73 +165,73 @@ namespace Model
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline ImageBuilder& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline ImageBuilder& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline ImageBuilder& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline ImageBuilder& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline ImageBuilder& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The image builder name for display.</p>
+     * <p>The image builder name to display.</p>
      */
     inline ImageBuilder& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -419,27 +419,32 @@ namespace Model
 
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
      */
     inline ImageBuilder& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * image builder to a Microsoft Active Directory domain. </p>
      */
     inline ImageBuilder& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 
@@ -481,43 +486,43 @@ namespace Model
 
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline const Aws::String& GetAppstreamAgentVersion() const{ return m_appstreamAgentVersion; }
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline void SetAppstreamAgentVersion(const Aws::String& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = value; }
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline void SetAppstreamAgentVersion(Aws::String&& value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion = std::move(value); }
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline void SetAppstreamAgentVersion(const char* value) { m_appstreamAgentVersionHasBeenSet = true; m_appstreamAgentVersion.assign(value); }
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline ImageBuilder& WithAppstreamAgentVersion(const Aws::String& value) { SetAppstreamAgentVersion(value); return *this;}
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline ImageBuilder& WithAppstreamAgentVersion(Aws::String&& value) { SetAppstreamAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the AppStream 2.0 agent that is currently being used by this
+     * <p>The version of the AppStream 2.0 agent that is currently being used by the
      * image builder. </p>
      */
     inline ImageBuilder& WithAppstreamAgentVersion(const char* value) { SetAppstreamAgentVersion(value); return *this;}

@@ -33,7 +33,8 @@ CreateImageBuilderRequest::CreateImageBuilderRequest() :
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
     m_domainJoinInfoHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false)
+    m_appstreamAgentVersionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,17 @@ Aws::String CreateImageBuilderRequest::SerializePayload() const
   if(m_appstreamAgentVersionHasBeenSet)
   {
    payload.WithString("AppstreamAgentVersion", m_appstreamAgentVersion);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

@@ -127,7 +127,7 @@ namespace Model
      * to return for this request. If you have more IDs than the number that you
      * specify for <code>MaxResults</code>, the response includes a
      * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs. The maximum value for <code>MaxResults</code> is 100.</p>
+     * account IDs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -136,7 +136,7 @@ namespace Model
      * to return for this request. If you have more IDs than the number that you
      * specify for <code>MaxResults</code>, the response includes a
      * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs. The maximum value for <code>MaxResults</code> is 100.</p>
+     * account IDs.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -145,7 +145,7 @@ namespace Model
      * to return for this request. If you have more IDs than the number that you
      * specify for <code>MaxResults</code>, the response includes a
      * <code>NextToken</code> value that you can use to get another batch of member
-     * account IDs. The maximum value for <code>MaxResults</code> is 100.</p>
+     * account IDs.</p>
      */
     inline ListMemberAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

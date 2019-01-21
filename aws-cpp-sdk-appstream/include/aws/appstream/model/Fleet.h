@@ -42,7 +42,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for a fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the parameters for a fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet">AWS API
    * Reference</a></p>
    */
@@ -128,73 +128,73 @@ namespace Model
 
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -564,27 +564,32 @@ namespace Model
 
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline Fleet& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline Fleet& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 

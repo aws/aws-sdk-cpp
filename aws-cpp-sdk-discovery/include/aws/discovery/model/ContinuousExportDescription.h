@@ -164,37 +164,233 @@ namespace Model
 
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline void SetStatusDetail(const Aws::String& value) { m_statusDetailHasBeenSet = true; m_statusDetail = value; }
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline void SetStatusDetail(Aws::String&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::move(value); }
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline void SetStatusDetail(const char* value) { m_statusDetailHasBeenSet = true; m_statusDetail.assign(value); }
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
 
     /**
-     * <p>Contains information about any errors that may have occurred.</p>
+     * <p>Contains information about any errors that have occurred. This data type can
+     * have the following values:</p> <ul> <li> <p>ACCESS_DENIED - You don’t have
+     * permission to start Data Exploration in Amazon Athena. Contact your AWS
+     * administrator for help. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html">Setting
+     * Up AWS Application Discovery Service</a> in the Application Discovery Service
+     * User Guide.</p> </li> <li> <p>DELIVERY_STREAM_LIMIT_FAILURE - You reached the
+     * limit for Amazon Kinesis Data Firehose delivery streams. Reduce the number of
+     * streams or request a limit increase and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/streams/latest/dev/service-sizes-and-limits.html">Kinesis
+     * Data Streams Limits</a> in the Amazon Kinesis Data Streams Developer Guide.</p>
+     * </li> <li> <p>FIREHOSE_ROLE_MISSING - The Data Exploration feature is in an
+     * error state because your IAM User is missing the
+     * AWSApplicationDiscoveryServiceFirehose role. Turn on Data Exploration in Amazon
+     * Athena and try again. For more information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#setting-up-user-policy">Step
+     * 3: Provide Application Discovery Service Access to Non-Administrator Users by
+     * Attaching Policies</a> in the Application Discovery Service User Guide.</p>
+     * </li> <li> <p>FIREHOSE_STREAM_DOES_NOT_EXIST - The Data Exploration feature is
+     * in an error state because your IAM User is missing one or more of the Kinesis
+     * data delivery streams.</p> </li> <li> <p>INTERNAL_FAILURE - The Data Exploration
+     * feature is in an error state because of an internal failure. Try again later. If
+     * this problem persists, contact AWS Support.</p> </li> <li>
+     * <p>S3_BUCKET_LIMIT_FAILURE - You reached the limit for Amazon S3 buckets. Reduce
+     * the number of Amazon S3 buckets or request a limit increase and try again. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
+     * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
+     * Guide.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 
