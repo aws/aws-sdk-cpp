@@ -20,6 +20,8 @@
 #include <aws/acm-pca/model/RevocationConfiguration.h>
 #include <aws/acm-pca/model/CertificateAuthorityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm-pca/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -237,6 +239,49 @@ namespace Model
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
@@ -250,6 +295,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

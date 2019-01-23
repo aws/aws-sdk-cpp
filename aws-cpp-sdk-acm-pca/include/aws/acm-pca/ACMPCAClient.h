@@ -168,10 +168,13 @@ namespace Model
    * call the <a>CreateCertificateAuthority</a> operation. ACM PCA writes the CRL to
    * an S3 bucket that you specify. You must specify a bucket policy that grants ACM
    * PCA write permission. </p> <p>You can also call the
-   * <a>CreateCertificateAuthorityAuditReport</a> to create an optional audit report
-   * that lists every time the CA private key is used. The private key is used for
-   * signing when the <b>IssueCertificate</b> or <b>RevokeCertificate</b> operation
-   * is called. </p>
+   * <a>CreateCertificateAuthorityAuditReport</a> to create an optional audit report,
+   * which enumerates all of the issued, valid, expired, and revoked certificates
+   * from the CA.</p> <note> <p>Each ACM PCA API operation has a throttling limit
+   * which determines the number of times the operation can be called per second. For
+   * more information, see <a
+   * href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in
+   * ACM PCA</a> in the ACM PCA user guide.</p> </note>
    */
   class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient
   {

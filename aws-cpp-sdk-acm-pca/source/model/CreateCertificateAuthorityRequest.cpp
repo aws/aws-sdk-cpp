@@ -27,7 +27,8 @@ CreateCertificateAuthorityRequest::CreateCertificateAuthorityRequest() :
     m_revocationConfigurationHasBeenSet(false),
     m_certificateAuthorityType(CertificateAuthorityType::NOT_SET),
     m_certificateAuthorityTypeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
+    m_idempotencyTokenHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String CreateCertificateAuthorityRequest::SerializePayload() const
   if(m_idempotencyTokenHasBeenSet)
   {
    payload.WithString("IdempotencyToken", m_idempotencyToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 
