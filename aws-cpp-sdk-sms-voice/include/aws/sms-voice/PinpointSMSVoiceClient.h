@@ -26,6 +26,7 @@
 #include <aws/sms-voice/model/DeleteConfigurationSetResult.h>
 #include <aws/sms-voice/model/DeleteConfigurationSetEventDestinationResult.h>
 #include <aws/sms-voice/model/GetConfigurationSetEventDestinationsResult.h>
+#include <aws/sms-voice/model/ListConfigurationSetsResult.h>
 #include <aws/sms-voice/model/SendVoiceMessageResult.h>
 #include <aws/sms-voice/model/UpdateConfigurationSetEventDestinationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -73,6 +74,7 @@ namespace Model
         class DeleteConfigurationSetRequest;
         class DeleteConfigurationSetEventDestinationRequest;
         class GetConfigurationSetEventDestinationsRequest;
+        class ListConfigurationSetsRequest;
         class SendVoiceMessageRequest;
         class UpdateConfigurationSetEventDestinationRequest;
 
@@ -81,6 +83,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteConfigurationSetResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetOutcome;
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> DeleteConfigurationSetEventDestinationOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetEventDestinationsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> GetConfigurationSetEventDestinationsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> ListConfigurationSetsOutcome;
         typedef Aws::Utils::Outcome<SendVoiceMessageResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> SendVoiceMessageOutcome;
         typedef Aws::Utils::Outcome<UpdateConfigurationSetEventDestinationResult, Aws::Client::AWSError<PinpointSMSVoiceErrors>> UpdateConfigurationSetEventDestinationOutcome;
 
@@ -89,6 +92,7 @@ namespace Model
         typedef std::future<DeleteConfigurationSetOutcome> DeleteConfigurationSetOutcomeCallable;
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
         typedef std::future<GetConfigurationSetEventDestinationsOutcome> GetConfigurationSetEventDestinationsOutcomeCallable;
+        typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
         typedef std::future<SendVoiceMessageOutcome> SendVoiceMessageOutcomeCallable;
         typedef std::future<UpdateConfigurationSetEventDestinationOutcome> UpdateConfigurationSetEventDestinationOutcomeCallable;
 } // namespace Model
@@ -100,6 +104,7 @@ namespace Model
     typedef std::function<void(const PinpointSMSVoiceClient*, const Model::DeleteConfigurationSetRequest&, const Model::DeleteConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetResponseReceivedHandler;
     typedef std::function<void(const PinpointSMSVoiceClient*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const PinpointSMSVoiceClient*, const Model::GetConfigurationSetEventDestinationsRequest&, const Model::GetConfigurationSetEventDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetEventDestinationsResponseReceivedHandler;
+    typedef std::function<void(const PinpointSMSVoiceClient*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
     typedef std::function<void(const PinpointSMSVoiceClient*, const Model::SendVoiceMessageRequest&, const Model::SendVoiceMessageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendVoiceMessageResponseReceivedHandler;
     typedef std::function<void(const PinpointSMSVoiceClient*, const Model::UpdateConfigurationSetEventDestinationRequest&, const Model::UpdateConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationSetEventDestinationResponseReceivedHandler;
 
@@ -270,6 +275,34 @@ namespace Model
         virtual void GetConfigurationSetEventDestinationsAsync(const Model::GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * List all of the configuration sets associated with your Amazon Pinpoint account
+         * in the current region.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationSetsOutcome ListConfigurationSets(const Model::ListConfigurationSetsRequest& request) const;
+
+        /**
+         * List all of the configuration sets associated with your Amazon Pinpoint account
+         * in the current region.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConfigurationSetsOutcomeCallable ListConfigurationSetsCallable(const Model::ListConfigurationSetsRequest& request) const;
+
+        /**
+         * List all of the configuration sets associated with your Amazon Pinpoint account
+         * in the current region.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConfigurationSetsAsync(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Create a new voice message and send it to a recipient's phone number.<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/SendVoiceMessage">AWS
@@ -341,6 +374,7 @@ namespace Model
         void DeleteConfigurationSetAsyncHelper(const Model::DeleteConfigurationSetRequest& request, const DeleteConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetEventDestinationsAsyncHelper(const Model::GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendVoiceMessageAsyncHelper(const Model::SendVoiceMessageRequest& request, const SendVoiceMessageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateConfigurationSetEventDestinationAsyncHelper(const Model::UpdateConfigurationSetEventDestinationRequest& request, const UpdateConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

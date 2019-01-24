@@ -35,7 +35,7 @@ namespace ECREndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
     
     Aws::StringStream ss;
-    ss << "ecr" << ".";
+    ss << "api.ecr" << ".";
 
     if(useDualStack)
     {

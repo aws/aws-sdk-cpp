@@ -81,39 +81,39 @@ namespace Model
 
 
     /**
-     * <p>The time to start the query. Specified as epoch time, the number of seconds
-     * since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. Specified as epoch time, the number
+     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The time to start the query. Specified as epoch time, the number of seconds
-     * since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. Specified as epoch time, the number
+     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The time to start the query. Specified as epoch time, the number of seconds
-     * since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. Specified as epoch time, the number
+     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline StartQueryRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The time to end this query, if it is still running. Specified as epoch time,
-     * the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The time to end this query, if it is still running. Specified as epoch time,
-     * the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The time to end this query, if it is still running. Specified as epoch time,
-     * the number of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline StartQueryRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
 

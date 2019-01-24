@@ -86,40 +86,45 @@ namespace Model
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
      * setting.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
      * setting.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
      * setting.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
      * setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is
-     * TCP.</p> <p>If the protocol of the target group is TCP, you can't modify this
+     * The TCP protocol is supported for health checks only if the protocol of the
+     * target group is TCP or TLS. The TLS protocol is not supported for health
+     * checks.</p> <p>If the protocol of the target group is TCP, you can't modify this
      * setting.</p>
      */
     inline ModifyTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}

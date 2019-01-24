@@ -102,40 +102,40 @@ namespace Model
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP. If the target is a Lambda function,
-     * this parameter does not apply.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP. If the target is a Lambda function,
-     * this parameter does not apply.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP. If the target is a Lambda function,
-     * this parameter does not apply.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP. If the target is a Lambda function,
-     * this parameter does not apply.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP. If the target is a Lambda function,
-     * this parameter does not apply.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
@@ -207,41 +207,46 @@ namespace Model
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 

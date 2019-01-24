@@ -1606,8 +1606,8 @@ namespace Model
 
         /**
          * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
-         * the log group to query, the query string to use, and the time to query.</p>
-         * <p>For more information, see <a
+         * the log group and time range to query, and the query string to use.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
          * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
@@ -1617,8 +1617,8 @@ namespace Model
 
         /**
          * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
-         * the log group to query, the query string to use, and the time to query.</p>
-         * <p>For more information, see <a
+         * the log group and time range to query, and the query string to use.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
          * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API
@@ -1630,8 +1630,8 @@ namespace Model
 
         /**
          * <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify
-         * the log group to query, the query string to use, and the time to query.</p>
-         * <p>For more information, see <a
+         * the log group and time range to query, and the query string to use.</p> <p>For
+         * more information, see <a
          * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
          * Logs Insights Query Syntax</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/StartQuery">AWS API

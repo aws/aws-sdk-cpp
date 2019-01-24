@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codebuild/model/RegistryCredential.h>
+#include <aws/codebuild/model/ImagePullCredentialsType.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
 #include <utility>
 
@@ -79,37 +81,93 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Docker image to use for this build project.</p>
+     * <p>The image tag or image digest that identifies the Docker image to use for
+     * this build project. Use the following formats:</p> <ul> <li> <p>For an image
+     * tag: <code>registry/repository:tag</code>. For example, to specify an image with
+     * the tag "latest," use <code>registry/repository:latest</code>.</p> </li> <li>
+     * <p>For an image digest: <code>registry/repository@digest</code>. For example, to
+     * specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.</p>
+     * </li> </ul>
      */
     inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -307,6 +365,93 @@ namespace Model
      */
     inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
 
+
+    /**
+     * <p> The credentials for access to a private registry.</p>
+     */
+    inline const RegistryCredential& GetRegistryCredential() const{ return m_registryCredential; }
+
+    /**
+     * <p> The credentials for access to a private registry.</p>
+     */
+    inline void SetRegistryCredential(const RegistryCredential& value) { m_registryCredentialHasBeenSet = true; m_registryCredential = value; }
+
+    /**
+     * <p> The credentials for access to a private registry.</p>
+     */
+    inline void SetRegistryCredential(RegistryCredential&& value) { m_registryCredentialHasBeenSet = true; m_registryCredential = std::move(value); }
+
+    /**
+     * <p> The credentials for access to a private registry.</p>
+     */
+    inline ProjectEnvironment& WithRegistryCredential(const RegistryCredential& value) { SetRegistryCredential(value); return *this;}
+
+    /**
+     * <p> The credentials for access to a private registry.</p>
+     */
+    inline ProjectEnvironment& WithRegistryCredential(RegistryCredential&& value) { SetRegistryCredential(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline const ImagePullCredentialsType& GetImagePullCredentialsType() const{ return m_imagePullCredentialsType; }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline void SetImagePullCredentialsType(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline void SetImagePullCredentialsType(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = std::move(value); }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline ProjectEnvironment& WithImagePullCredentialsType(const ImagePullCredentialsType& value) { SetImagePullCredentialsType(value); return *this;}
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal. </p> </li>
+     * <li> <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When you use a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline ProjectEnvironment& WithImagePullCredentialsType(ImagePullCredentialsType&& value) { SetImagePullCredentialsType(std::move(value)); return *this;}
+
   private:
 
     EnvironmentType m_type;
@@ -326,6 +471,12 @@ namespace Model
 
     Aws::String m_certificate;
     bool m_certificateHasBeenSet;
+
+    RegistryCredential m_registryCredential;
+    bool m_registryCredentialHasBeenSet;
+
+    ImagePullCredentialsType m_imagePullCredentialsType;
+    bool m_imagePullCredentialsTypeHasBeenSet;
   };
 
 } // namespace Model

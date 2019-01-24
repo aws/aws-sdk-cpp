@@ -25,6 +25,8 @@
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ProjectCache.h>
 #include <aws/codebuild/model/LogsConfig.h>
+#include <aws/codebuild/model/RegistryCredential.h>
+#include <aws/codebuild/model/ImagePullCredentialsType.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
@@ -1002,6 +1004,93 @@ namespace Model
      */
     inline StartBuildRequest& WithLogsConfigOverride(LogsConfig&& value) { SetLogsConfigOverride(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline const RegistryCredential& GetRegistryCredentialOverride() const{ return m_registryCredentialOverride; }
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline void SetRegistryCredentialOverride(const RegistryCredential& value) { m_registryCredentialOverrideHasBeenSet = true; m_registryCredentialOverride = value; }
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline void SetRegistryCredentialOverride(RegistryCredential&& value) { m_registryCredentialOverrideHasBeenSet = true; m_registryCredentialOverride = std::move(value); }
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline StartBuildRequest& WithRegistryCredentialOverride(const RegistryCredential& value) { SetRegistryCredentialOverride(value); return *this;}
+
+    /**
+     * <p> The credentials for access to a private registry. </p>
+     */
+    inline StartBuildRequest& WithRegistryCredentialOverride(RegistryCredential&& value) { SetRegistryCredentialOverride(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline const ImagePullCredentialsType& GetImagePullCredentialsTypeOverride() const{ return m_imagePullCredentialsTypeOverride; }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline void SetImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = value; }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline void SetImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeOverrideHasBeenSet = true; m_imagePullCredentialsTypeOverride = std::move(value); }
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline StartBuildRequest& WithImagePullCredentialsTypeOverride(const ImagePullCredentialsType& value) { SetImagePullCredentialsTypeOverride(value); return *this;}
+
+    /**
+     * <p> The type of credentials AWS CodeBuild uses to pull images in your build.
+     * There are two valid values: </p> <ul> <li> <p> <code>CODEBUILD</code> specifies
+     * that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.</p> </li> <li>
+     * <p> <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build
+     * project's service role. </p> </li> </ul> <p> When using a cross-account or
+     * private registry image, you must use SERVICE_ROLE credentials. When using an AWS
+     * CodeBuild curated image, you must use CODEBUILD credentials. </p>
+     */
+    inline StartBuildRequest& WithImagePullCredentialsTypeOverride(ImagePullCredentialsType&& value) { SetImagePullCredentialsTypeOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1078,6 +1167,12 @@ namespace Model
 
     LogsConfig m_logsConfigOverride;
     bool m_logsConfigOverrideHasBeenSet;
+
+    RegistryCredential m_registryCredentialOverride;
+    bool m_registryCredentialOverrideHasBeenSet;
+
+    ImagePullCredentialsType m_imagePullCredentialsTypeOverride;
+    bool m_imagePullCredentialsTypeOverrideHasBeenSet;
   };
 
 } // namespace Model

@@ -56,7 +56,10 @@ StartBuildRequest::StartBuildRequest() :
     m_queuedTimeoutInMinutesOverride(0),
     m_queuedTimeoutInMinutesOverrideHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
-    m_logsConfigOverrideHasBeenSet(false)
+    m_logsConfigOverrideHasBeenSet(false),
+    m_registryCredentialOverrideHasBeenSet(false),
+    m_imagePullCredentialsTypeOverride(ImagePullCredentialsType::NOT_SET),
+    m_imagePullCredentialsTypeOverrideHasBeenSet(false)
 {
 }
 
@@ -229,6 +232,17 @@ Aws::String StartBuildRequest::SerializePayload() const
   {
    payload.WithObject("logsConfigOverride", m_logsConfigOverride.Jsonize());
 
+  }
+
+  if(m_registryCredentialOverrideHasBeenSet)
+  {
+   payload.WithObject("registryCredentialOverride", m_registryCredentialOverride.Jsonize());
+
+  }
+
+  if(m_imagePullCredentialsTypeOverrideHasBeenSet)
+  {
+   payload.WithString("imagePullCredentialsTypeOverride", ImagePullCredentialsTypeMapper::GetNameForImagePullCredentialsType(m_imagePullCredentialsTypeOverride));
   }
 
   return payload.View().WriteReadable();

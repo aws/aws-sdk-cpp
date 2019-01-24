@@ -29,6 +29,7 @@
 #include <aws/rds/model/DBInstanceStatusInfo.h>
 #include <aws/rds/model/DomainMembership.h>
 #include <aws/rds/model/ProcessorFeature.h>
+#include <aws/rds/model/DBInstanceRole.h>
 #include <utility>
 
 namespace Aws
@@ -2123,6 +2124,49 @@ namespace Model
 
 
     /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline const Aws::Vector<DBInstanceRole>& GetAssociatedRoles() const{ return m_associatedRoles; }
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline void SetAssociatedRoles(const Aws::Vector<DBInstanceRole>& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = value; }
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline void SetAssociatedRoles(Aws::Vector<DBInstanceRole>&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles = std::move(value); }
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline DBInstance& WithAssociatedRoles(const Aws::Vector<DBInstanceRole>& value) { SetAssociatedRoles(value); return *this;}
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline DBInstance& WithAssociatedRoles(Aws::Vector<DBInstanceRole>&& value) { SetAssociatedRoles(std::move(value)); return *this;}
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline DBInstance& AddAssociatedRoles(const DBInstanceRole& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(value); return *this; }
+
+    /**
+     * <p> The AWS Identity and Access Management (IAM) roles associated with the DB
+     * instance. </p>
+     */
+    inline DBInstance& AddAssociatedRoles(DBInstanceRole&& value) { m_associatedRolesHasBeenSet = true; m_associatedRoles.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
      */
     inline const Endpoint& GetListenerEndpoint() const{ return m_listenerEndpoint; }
@@ -2313,6 +2357,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet;
+
+    Aws::Vector<DBInstanceRole> m_associatedRoles;
+    bool m_associatedRolesHasBeenSet;
 
     Endpoint m_listenerEndpoint;
     bool m_listenerEndpointHasBeenSet;

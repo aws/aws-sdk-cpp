@@ -35,6 +35,7 @@
 #include <aws/sms-voice/model/DeleteConfigurationSetRequest.h>
 #include <aws/sms-voice/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/sms-voice/model/GetConfigurationSetEventDestinationsRequest.h>
+#include <aws/sms-voice/model/ListConfigurationSetsRequest.h>
 #include <aws/sms-voice/model/SendVoiceMessageRequest.h>
 #include <aws/sms-voice/model/UpdateConfigurationSetEventDestinationRequest.h>
 
@@ -290,6 +291,41 @@ void PinpointSMSVoiceClient::GetConfigurationSetEventDestinationsAsync(const Get
 void PinpointSMSVoiceClient::GetConfigurationSetEventDestinationsAsyncHelper(const GetConfigurationSetEventDestinationsRequest& request, const GetConfigurationSetEventDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetConfigurationSetEventDestinations(request), context);
+}
+
+ListConfigurationSetsOutcome PinpointSMSVoiceClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/sms-voice/configuration-sets";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListConfigurationSetsOutcome(ListConfigurationSetsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListConfigurationSetsOutcome(outcome.GetError());
+  }
+}
+
+ListConfigurationSetsOutcomeCallable PinpointSMSVoiceClient::ListConfigurationSetsCallable(const ListConfigurationSetsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationSetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationSets(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointSMSVoiceClient::ListConfigurationSetsAsync(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationSetsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointSMSVoiceClient::ListConfigurationSetsAsyncHelper(const ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConfigurationSets(request), context);
 }
 
 SendVoiceMessageOutcome PinpointSMSVoiceClient::SendVoiceMessage(const SendVoiceMessageRequest& request) const

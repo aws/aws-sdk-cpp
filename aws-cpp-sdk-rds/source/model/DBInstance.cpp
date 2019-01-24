@@ -101,6 +101,7 @@ DBInstance::DBInstance() :
     m_processorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
+    m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false)
 {
 }
@@ -176,6 +177,7 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_processorFeaturesHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
+    m_associatedRolesHasBeenSet(false),
     m_listenerEndpointHasBeenSet(false)
 {
   *this = xmlNode;
@@ -577,6 +579,18 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(deletionProtectionNode.GetText().c_str()).c_str());
       m_deletionProtectionHasBeenSet = true;
     }
+    XmlNode associatedRolesNode = resultNode.FirstChild("AssociatedRoles");
+    if(!associatedRolesNode.IsNull())
+    {
+      XmlNode associatedRolesMember = associatedRolesNode.FirstChild("DBInstanceRole");
+      while(!associatedRolesMember.IsNull())
+      {
+        m_associatedRoles.push_back(associatedRolesMember);
+        associatedRolesMember = associatedRolesMember.NextNode("DBInstanceRole");
+      }
+
+      m_associatedRolesHasBeenSet = true;
+    }
     XmlNode listenerEndpointNode = resultNode.FirstChild("ListenerEndpoint");
     if(!listenerEndpointNode.IsNull())
     {
@@ -925,6 +939,17 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
+  if(m_associatedRolesHasBeenSet)
+  {
+      unsigned associatedRolesIdx = 1;
+      for(auto& item : m_associatedRoles)
+      {
+        Aws::StringStream associatedRolesSs;
+        associatedRolesSs << location << index << locationValue << ".DBInstanceRole." << associatedRolesIdx++;
+        item.OutputToStream(oStream, associatedRolesSs.str().c_str());
+      }
+  }
+
   if(m_listenerEndpointHasBeenSet)
   {
       Aws::StringStream listenerEndpointLocationAndMemberSs;
@@ -1215,6 +1240,16 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
   if(m_deletionProtectionHasBeenSet)
   {
       oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+  if(m_associatedRolesHasBeenSet)
+  {
+      unsigned associatedRolesIdx = 1;
+      for(auto& item : m_associatedRoles)
+      {
+        Aws::StringStream associatedRolesSs;
+        associatedRolesSs << location <<  ".DBInstanceRole." << associatedRolesIdx++;
+        item.OutputToStream(oStream, associatedRolesSs.str().c_str());
+      }
   }
   if(m_listenerEndpointHasBeenSet)
   {

@@ -537,6 +537,55 @@ namespace Model
      */
     inline DBEngineVersion& AddSupportedEngineModes(const char* value) { m_supportedEngineModesHasBeenSet = true; m_supportedEngineModes.push_back(value); return *this; }
 
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedFeatureNames() const{ return m_supportedFeatureNames; }
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline void SetSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames = value; }
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline void SetSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames = std::move(value); }
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline DBEngineVersion& WithSupportedFeatureNames(const Aws::Vector<Aws::String>& value) { SetSupportedFeatureNames(value); return *this;}
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline DBEngineVersion& WithSupportedFeatureNames(Aws::Vector<Aws::String>&& value) { SetSupportedFeatureNames(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline DBEngineVersion& AddSupportedFeatureNames(const Aws::String& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(value); return *this; }
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline DBEngineVersion& AddSupportedFeatureNames(Aws::String&& value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p> A list of features supported by the DB engine. Supported feature names
+     * include the following. </p> <ul> <li> <p>s3Import</p> </li> </ul>
+     */
+    inline DBEngineVersion& AddSupportedFeatureNames(const char* value) { m_supportedFeatureNamesHasBeenSet = true; m_supportedFeatureNames.push_back(value); return *this; }
+
   private:
 
     Aws::String m_engine;
@@ -577,6 +626,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_supportedEngineModes;
     bool m_supportedEngineModesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_supportedFeatureNames;
+    bool m_supportedFeatureNamesHasBeenSet;
   };
 
 } // namespace Model
