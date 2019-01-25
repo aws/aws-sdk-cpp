@@ -48,37 +48,27 @@ namespace Model
 
 
     /**
-     * A directory and base filename where archive files should be written.  If the
-     * base filename portion of the URI is left blank, the base filename of the first
-     * input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
 
     /**
-     * A directory and base filename where archive files should be written.  If the
-     * base filename portion of the URI is left blank, the base filename of the first
-     * input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      */
     inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * A directory and base filename where archive files should be written.  If the
-     * base filename portion of the URI is left blank, the base filename of the first
-     * input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      */
     inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * A directory and base filename where archive files should be written.  If the
-     * base filename portion of the URI is left blank, the base filename of the first
-     * input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      */
     inline ArchiveGroupSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
 
     /**
-     * A directory and base filename where archive files should be written.  If the
-     * base filename portion of the URI is left blank, the base filename of the first
-     * input will be automatically inserted.
+     * A directory and base filename where archive files should be written.
      */
     inline ArchiveGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
 

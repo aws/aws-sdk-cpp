@@ -98,6 +98,7 @@ static const int PULL_REQUEST_STATUS_REQUIRED_HASH = HashingUtils::HashString("P
 static const int PATH_REQUIRED_HASH = HashingUtils::HashString("PathRequiredException");
 static const int INVALID_REPOSITORY_TRIGGER_BRANCH_NAME_HASH = HashingUtils::HashString("InvalidRepositoryTriggerBranchNameException");
 static const int INVALID_SOURCE_COMMIT_SPECIFIER_HASH = HashingUtils::HashString("InvalidSourceCommitSpecifierException");
+static const int FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("FolderContentSizeLimitExceededException");
 static const int INVALID_MERGE_OPTION_HASH = HashingUtils::HashString("InvalidMergeOptionException");
 static const int ENCRYPTION_KEY_UNAVAILABLE_HASH = HashingUtils::HashString("EncryptionKeyUnavailableException");
 static const int REPOSITORY_NAME_REQUIRED_HASH = HashingUtils::HashString("RepositoryNameRequiredException");
@@ -116,6 +117,7 @@ static const int ENCRYPTION_KEY_NOT_FOUND_HASH = HashingUtils::HashString("Encry
 static const int REFERENCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ReferenceTypeNotSupportedException");
 static const int INVALID_PATH_HASH = HashingUtils::HashString("InvalidPathException");
 static const int FILE_TOO_LARGE_HASH = HashingUtils::HashString("FileTooLargeException");
+static const int FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH = HashingUtils::HashString("FilePathConflictsWithSubmodulePathException");
 static const int MANUAL_MERGE_REQUIRED_HASH = HashingUtils::HashString("ManualMergeRequiredException");
 static const int INVALID_RELATIVE_FILE_VERSION_ENUM_HASH = HashingUtils::HashString("InvalidRelativeFileVersionEnumException");
 static const int INVALID_REFERENCE_NAME_HASH = HashingUtils::HashString("InvalidReferenceNameException");
@@ -427,6 +429,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_SOURCE_COMMIT_SPECIFIER), false);
   }
+  else if (hashCode == FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FOLDER_CONTENT_SIZE_LIMIT_EXCEEDED), false);
+  }
   else if (hashCode == INVALID_MERGE_OPTION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::INVALID_MERGE_OPTION), false);
@@ -498,6 +504,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == FILE_TOO_LARGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_TOO_LARGE), false);
+  }
+  else if (hashCode == FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeCommitErrors::FILE_PATH_CONFLICTS_WITH_SUBMODULE_PATH), false);
   }
   else if (hashCode == MANUAL_MERGE_REQUIRED_HASH)
   {

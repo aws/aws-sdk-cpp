@@ -31,7 +31,7 @@ namespace Model
 DeviceFilter::DeviceFilter() : 
     m_attribute(DeviceFilterAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
-    m_operator(DeviceFilterOperator::NOT_SET),
+    m_operator(RuleOperator::NOT_SET),
     m_operatorHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
@@ -40,7 +40,7 @@ DeviceFilter::DeviceFilter() :
 DeviceFilter::DeviceFilter(JsonView jsonValue) : 
     m_attribute(DeviceFilterAttribute::NOT_SET),
     m_attributeHasBeenSet(false),
-    m_operator(DeviceFilterOperator::NOT_SET),
+    m_operator(RuleOperator::NOT_SET),
     m_operatorHasBeenSet(false),
     m_valuesHasBeenSet(false)
 {
@@ -58,7 +58,7 @@ DeviceFilter& DeviceFilter::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("operator"))
   {
-    m_operator = DeviceFilterOperatorMapper::GetDeviceFilterOperatorForName(jsonValue.GetString("operator"));
+    m_operator = RuleOperatorMapper::GetRuleOperatorForName(jsonValue.GetString("operator"));
 
     m_operatorHasBeenSet = true;
   }
@@ -87,7 +87,7 @@ JsonValue DeviceFilter::Jsonize() const
 
   if(m_operatorHasBeenSet)
   {
-   payload.WithString("operator", DeviceFilterOperatorMapper::GetNameForDeviceFilterOperator(m_operator));
+   payload.WithString("operator", RuleOperatorMapper::GetNameForRuleOperator(m_operator));
   }
 
   if(m_valuesHasBeenSet)

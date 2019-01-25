@@ -125,51 +125,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline void SetDevicePoolArn(const Aws::String& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = value; }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline void SetDevicePoolArn(Aws::String&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::move(value); }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline void SetDevicePoolArn(const char* value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn.assign(value); }
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(const Aws::String& value) { SetDevicePoolArn(value); return *this;}
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(Aws::String&& value) { SetDevicePoolArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the device pool for the run to be scheduled.</p> <p>Either <b>
-     * <code>devicePoolArn</code> </b> or <b> <code>deviceSelectionConfiguration</code>
-     * </b> is required in a request.</p>
+     * <p>The ARN of the device pool for the run to be scheduled.</p>
      */
     inline ScheduleRunRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
 

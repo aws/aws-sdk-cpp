@@ -593,7 +593,7 @@ namespace Model
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
@@ -602,7 +602,7 @@ namespace Model
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
@@ -611,7 +611,7 @@ namespace Model
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
     inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
@@ -620,7 +620,7 @@ namespace Model
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
     inline RemoteAccessSession& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
@@ -629,7 +629,7 @@ namespace Model
      * <p>The billing method of the remote access session. Possible values include
      * <code>METERED</code> or <code>UNMETERED</code>. For more information about
      * metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      * Device Farm terminology</a>."</p>
      */
     inline RemoteAccessSession& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}

@@ -35,7 +35,10 @@ namespace Model
     APPIUM_VERSION,
     INSTANCE_ARN,
     INSTANCE_LABELS,
-    FLEET_TYPE
+    FLEET_TYPE,
+    OS_VERSION,
+    MODEL,
+    AVAILABILITY
   };
 
 namespace DeviceAttributeMapper

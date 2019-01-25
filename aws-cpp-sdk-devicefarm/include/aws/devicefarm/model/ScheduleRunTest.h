@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents test settings. This data structure is passed in as the
-   * <code>test</code> parameter to ScheduleRun. For an example of the JSON request
-   * syntax, see <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents test settings. This data structure is passed in as the "test"
+   * parameter to ScheduleRun. For an example of the JSON request syntax, see
+   * <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest">AWS
    * API Reference</a></p>
    */

@@ -24,6 +24,7 @@
 #include <aws/medialive/model/HlsDirectoryStructure.h>
 #include <aws/medialive/model/HlsEncryptionType.h>
 #include <aws/medialive/model/HlsCdnSettings.h>
+#include <aws/medialive/model/IFrameOnlyPlaylistType.h>
 #include <aws/medialive/model/InputLossActionForHlsOut.h>
 #include <aws/medialive/model/HlsIvInManifest.h>
 #include <aws/medialive/model/HlsIvSource.h>
@@ -562,6 +563,32 @@ omit: Omit any CLOSED-CAPTIONS line
      * Parameters that control interactions with the CDN.
      */
     inline HlsGroupSettings& WithHlsCdnSettings(HlsCdnSettings&& value) { SetHlsCdnSettings(std::move(value)); return *this;}
+
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     */
+    inline const IFrameOnlyPlaylistType& GetIFrameOnlyPlaylists() const{ return m_iFrameOnlyPlaylists; }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     */
+    inline void SetIFrameOnlyPlaylists(const IFrameOnlyPlaylistType& value) { m_iFrameOnlyPlaylistsHasBeenSet = true; m_iFrameOnlyPlaylists = value; }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     */
+    inline void SetIFrameOnlyPlaylists(IFrameOnlyPlaylistType&& value) { m_iFrameOnlyPlaylistsHasBeenSet = true; m_iFrameOnlyPlaylists = std::move(value); }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     */
+    inline HlsGroupSettings& WithIFrameOnlyPlaylists(const IFrameOnlyPlaylistType& value) { SetIFrameOnlyPlaylists(value); return *this;}
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     */
+    inline HlsGroupSettings& WithIFrameOnlyPlaylists(IFrameOnlyPlaylistType&& value) { SetIFrameOnlyPlaylists(std::move(value)); return *this;}
 
 
     /**
@@ -1324,6 +1351,9 @@ VOD
 
     HlsCdnSettings m_hlsCdnSettings;
     bool m_hlsCdnSettingsHasBeenSet;
+
+    IFrameOnlyPlaylistType m_iFrameOnlyPlaylists;
+    bool m_iFrameOnlyPlaylistsHasBeenSet;
 
     int m_indexNSegments;
     bool m_indexNSegmentsHasBeenSet;

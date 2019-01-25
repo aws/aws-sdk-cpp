@@ -16,7 +16,7 @@
 #pragma once
 #include <aws/devicefarm/DeviceFarm_EXPORTS.h>
 #include <aws/devicefarm/model/DeviceFilterAttribute.h>
-#include <aws/devicefarm/model/DeviceFilterOperator.h>
+#include <aws/devicefarm/model/RuleOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -58,169 +58,234 @@ namespace Model
 
     /**
      * <p>The aspect of a device such as platform or model used as the selection
-     * criteria in a device filter.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ARN: The Amazon Resource Name (ARN) of the device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
-     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
-     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
-     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
-     * <p>AVAILABILITY: The current availability of the device. Valid values are
-     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
-     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
-     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
-     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
-     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
+     * criteria in a device filter.</p> <p>The supported operators for each attribute
+     * are provided in the following list.</p> <dl> <dt>ARN</dt> <dd> <p>The Amazon
+     * Resource Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
+     * </dd> <dt>PLATFORM</dt> <dd> <p>The device platform. Valid values are "ANDROID"
+     * or "IOS".</p> <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>OS_VERSION</dt> <dd> <p>The operating system version. For example,
+     * "10.3.2".</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+     * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+     * </p> </dd> <dt>MODEL</dt> <dd> <p>The device model. For example, "iPad 5th
+     * Gen".</p> <p> <i>Supported operators</i>: <code>CONTAINS</code>,
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
+     * values are "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+     * factor. Valid values are "PHONE" or "TABLET".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The
+     * device manufacturer. For example, "Apple".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>REMOTE_ACCESS_ENABLED</dt> <dd> <p>Whether the device is enabled for remote
+     * access. Valid values are "TRUE" or "FALSE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> <p>Whether the
+     * device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".</p>
+     * <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
+     * instance.</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>IN</code>, <code>NOT_IN</code> </p> </dd> <dt>INSTANCE_LABELS</dt> <dd>
+     * <p>The label of the device instance.</p> <p> <i>Supported operators</i>:
+     * <code>CONTAINS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> </dl>
      */
     inline const DeviceFilterAttribute& GetAttribute() const{ return m_attribute; }
 
     /**
      * <p>The aspect of a device such as platform or model used as the selection
-     * criteria in a device filter.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ARN: The Amazon Resource Name (ARN) of the device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
-     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
-     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
-     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
-     * <p>AVAILABILITY: The current availability of the device. Valid values are
-     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
-     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
-     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
-     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
-     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
+     * criteria in a device filter.</p> <p>The supported operators for each attribute
+     * are provided in the following list.</p> <dl> <dt>ARN</dt> <dd> <p>The Amazon
+     * Resource Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
+     * </dd> <dt>PLATFORM</dt> <dd> <p>The device platform. Valid values are "ANDROID"
+     * or "IOS".</p> <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>OS_VERSION</dt> <dd> <p>The operating system version. For example,
+     * "10.3.2".</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+     * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+     * </p> </dd> <dt>MODEL</dt> <dd> <p>The device model. For example, "iPad 5th
+     * Gen".</p> <p> <i>Supported operators</i>: <code>CONTAINS</code>,
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
+     * values are "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+     * factor. Valid values are "PHONE" or "TABLET".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The
+     * device manufacturer. For example, "Apple".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>REMOTE_ACCESS_ENABLED</dt> <dd> <p>Whether the device is enabled for remote
+     * access. Valid values are "TRUE" or "FALSE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> <p>Whether the
+     * device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".</p>
+     * <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
+     * instance.</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>IN</code>, <code>NOT_IN</code> </p> </dd> <dt>INSTANCE_LABELS</dt> <dd>
+     * <p>The label of the device instance.</p> <p> <i>Supported operators</i>:
+     * <code>CONTAINS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> </dl>
      */
     inline void SetAttribute(const DeviceFilterAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
      * <p>The aspect of a device such as platform or model used as the selection
-     * criteria in a device filter.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ARN: The Amazon Resource Name (ARN) of the device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
-     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
-     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
-     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
-     * <p>AVAILABILITY: The current availability of the device. Valid values are
-     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
-     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
-     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
-     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
-     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
+     * criteria in a device filter.</p> <p>The supported operators for each attribute
+     * are provided in the following list.</p> <dl> <dt>ARN</dt> <dd> <p>The Amazon
+     * Resource Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
+     * </dd> <dt>PLATFORM</dt> <dd> <p>The device platform. Valid values are "ANDROID"
+     * or "IOS".</p> <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>OS_VERSION</dt> <dd> <p>The operating system version. For example,
+     * "10.3.2".</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+     * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+     * </p> </dd> <dt>MODEL</dt> <dd> <p>The device model. For example, "iPad 5th
+     * Gen".</p> <p> <i>Supported operators</i>: <code>CONTAINS</code>,
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
+     * values are "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+     * factor. Valid values are "PHONE" or "TABLET".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The
+     * device manufacturer. For example, "Apple".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>REMOTE_ACCESS_ENABLED</dt> <dd> <p>Whether the device is enabled for remote
+     * access. Valid values are "TRUE" or "FALSE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> <p>Whether the
+     * device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".</p>
+     * <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
+     * instance.</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>IN</code>, <code>NOT_IN</code> </p> </dd> <dt>INSTANCE_LABELS</dt> <dd>
+     * <p>The label of the device instance.</p> <p> <i>Supported operators</i>:
+     * <code>CONTAINS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> </dl>
      */
     inline void SetAttribute(DeviceFilterAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
 
     /**
      * <p>The aspect of a device such as platform or model used as the selection
-     * criteria in a device filter.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ARN: The Amazon Resource Name (ARN) of the device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
-     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
-     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
-     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
-     * <p>AVAILABILITY: The current availability of the device. Valid values are
-     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
-     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
-     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
-     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
-     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
+     * criteria in a device filter.</p> <p>The supported operators for each attribute
+     * are provided in the following list.</p> <dl> <dt>ARN</dt> <dd> <p>The Amazon
+     * Resource Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
+     * </dd> <dt>PLATFORM</dt> <dd> <p>The device platform. Valid values are "ANDROID"
+     * or "IOS".</p> <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>OS_VERSION</dt> <dd> <p>The operating system version. For example,
+     * "10.3.2".</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+     * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+     * </p> </dd> <dt>MODEL</dt> <dd> <p>The device model. For example, "iPad 5th
+     * Gen".</p> <p> <i>Supported operators</i>: <code>CONTAINS</code>,
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
+     * values are "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+     * factor. Valid values are "PHONE" or "TABLET".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The
+     * device manufacturer. For example, "Apple".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>REMOTE_ACCESS_ENABLED</dt> <dd> <p>Whether the device is enabled for remote
+     * access. Valid values are "TRUE" or "FALSE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> <p>Whether the
+     * device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".</p>
+     * <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
+     * instance.</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>IN</code>, <code>NOT_IN</code> </p> </dd> <dt>INSTANCE_LABELS</dt> <dd>
+     * <p>The label of the device instance.</p> <p> <i>Supported operators</i>:
+     * <code>CONTAINS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> </dl>
      */
     inline DeviceFilter& WithAttribute(const DeviceFilterAttribute& value) { SetAttribute(value); return *this;}
 
     /**
      * <p>The aspect of a device such as platform or model used as the selection
-     * criteria in a device filter.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ARN: The Amazon Resource Name (ARN) of the device. For example,
-     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> </li> <li> <p>PLATFORM:
-     * The device platform. Valid values are "ANDROID" or "IOS".</p> </li> <li>
-     * <p>OS_VERSION: The operating system version. For example, "10.3.2".</p> </li>
-     * <li> <p>MODEL: The device model. For example, "iPad 5th Gen".</p> </li> <li>
-     * <p>AVAILABILITY: The current availability of the device. Valid values are
-     * "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".</p> </li>
-     * <li> <p>FORM_FACTOR: The device form factor. Valid values are "PHONE" or
-     * "TABLET".</p> </li> <li> <p>MANUFACTURER: The device manufacturer. For example,
-     * "Apple".</p> </li> <li> <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled
-     * for remote access. Valid values are "TRUE" or "FALSE".</p> </li> <li>
-     * <p>REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
-     * Valid values are "TRUE" or "FALSE".</p> </li> <li> <p>INSTANCE_ARN: The Amazon
-     * Resource Name (ARN) of the device instance.</p> </li> <li> <p>INSTANCE_LABELS:
-     * The label of the device instance.</p> </li> <li> <p>FLEET_TYPE: The fleet type.
-     * Valid values are "PUBLIC" or "PRIVATE".</p> </li> </ul>
+     * criteria in a device filter.</p> <p>The supported operators for each attribute
+     * are provided in the following list.</p> <dl> <dt>ARN</dt> <dd> <p>The Amazon
+     * Resource Name (ARN) of the device. For example,
+     * "arn:aws:devicefarm:us-west-2::device:12345Example".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p>
+     * </dd> <dt>PLATFORM</dt> <dd> <p>The device platform. Valid values are "ANDROID"
+     * or "IOS".</p> <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>OS_VERSION</dt> <dd> <p>The operating system version. For example,
+     * "10.3.2".</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>GREATER_THAN</code>, <code>GREATER_THAN_OR_EQUALS</code>, <code>IN</code>,
+     * <code>LESS_THAN</code>, <code>LESS_THAN_OR_EQUALS</code>, <code>NOT_IN</code>
+     * </p> </dd> <dt>MODEL</dt> <dd> <p>The device model. For example, "iPad 5th
+     * Gen".</p> <p> <i>Supported operators</i>: <code>CONTAINS</code>,
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>AVAILABILITY</dt> <dd> <p>The current availability of the device. Valid
+     * values are "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     * "TEMPORARY_NOT_AVAILABLE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>FORM_FACTOR</dt> <dd> <p>The device form
+     * factor. Valid values are "PHONE" or "TABLET".</p> <p> <i>Supported
+     * operators</i>: <code>EQUALS</code> </p> </dd> <dt>MANUFACTURER</dt> <dd> <p>The
+     * device manufacturer. For example, "Apple".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code>, <code>IN</code>, <code>NOT_IN</code> </p> </dd>
+     * <dt>REMOTE_ACCESS_ENABLED</dt> <dd> <p>Whether the device is enabled for remote
+     * access. Valid values are "TRUE" or "FALSE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> <dt>REMOTE_DEBUG_ENABLED</dt> <dd> <p>Whether the
+     * device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".</p>
+     * <p> <i>Supported operators</i>: <code>EQUALS</code> </p> </dd>
+     * <dt>INSTANCE_ARN</dt> <dd> <p>The Amazon Resource Name (ARN) of the device
+     * instance.</p> <p> <i>Supported operators</i>: <code>EQUALS</code>,
+     * <code>IN</code>, <code>NOT_IN</code> </p> </dd> <dt>INSTANCE_LABELS</dt> <dd>
+     * <p>The label of the device instance.</p> <p> <i>Supported operators</i>:
+     * <code>CONTAINS</code> </p> </dd> <dt>FLEET_TYPE</dt> <dd> <p>The fleet type.
+     * Valid values are "PUBLIC" or "PRIVATE".</p> <p> <i>Supported operators</i>:
+     * <code>EQUALS</code> </p> </dd> </dl>
      */
     inline DeviceFilter& WithAttribute(DeviceFilterAttribute&& value) { SetAttribute(std::move(value)); return *this;}
 
 
     /**
-     * <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for
-     * every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator
-     * is available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The
-     * IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL,
-     * MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN,
-     * GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also
-     * available for the OS_VERSION attribute.</p> </li> </ul>
+     * <p>Specifies how Device Farm compares the filter's attribute to the value. For
+     * the operators that are supported by each attribute, see the attribute
+     * descriptions.</p>
      */
-    inline const DeviceFilterOperator& GetOperator() const{ return m_operator; }
+    inline const RuleOperator& GetOperator() const{ return m_operator; }
 
     /**
-     * <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for
-     * every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator
-     * is available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The
-     * IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL,
-     * MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN,
-     * GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also
-     * available for the OS_VERSION attribute.</p> </li> </ul>
+     * <p>Specifies how Device Farm compares the filter's attribute to the value. For
+     * the operators that are supported by each attribute, see the attribute
+     * descriptions.</p>
      */
-    inline void SetOperator(const DeviceFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline void SetOperator(const RuleOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
 
     /**
-     * <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for
-     * every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator
-     * is available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The
-     * IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL,
-     * MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN,
-     * GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also
-     * available for the OS_VERSION attribute.</p> </li> </ul>
+     * <p>Specifies how Device Farm compares the filter's attribute to the value. For
+     * the operators that are supported by each attribute, see the attribute
+     * descriptions.</p>
      */
-    inline void SetOperator(DeviceFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
+    inline void SetOperator(RuleOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
 
     /**
-     * <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for
-     * every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator
-     * is available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The
-     * IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL,
-     * MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN,
-     * GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also
-     * available for the OS_VERSION attribute.</p> </li> </ul>
+     * <p>Specifies how Device Farm compares the filter's attribute to the value. For
+     * the operators that are supported by each attribute, see the attribute
+     * descriptions.</p>
      */
-    inline DeviceFilter& WithOperator(const DeviceFilterOperator& value) { SetOperator(value); return *this;}
+    inline DeviceFilter& WithOperator(const RuleOperator& value) { SetOperator(value); return *this;}
 
     /**
-     * <p>The filter operator.</p> <ul> <li> <p>The EQUALS operator is available for
-     * every attribute except INSTANCE_LABELS.</p> </li> <li> <p>The CONTAINS operator
-     * is available for the INSTANCE_LABELS and MODEL attributes.</p> </li> <li> <p>The
-     * IN and NOT_IN operators are available for the ARN, OS_VERSION, MODEL,
-     * MANUFACTURER, and INSTANCE_ARN attributes.</p> </li> <li> <p>The LESS_THAN,
-     * GREATER_THAN, LESS_THAN_OR_EQUALS, and GREATER_THAN_OR_EQUALS operators are also
-     * available for the OS_VERSION attribute.</p> </li> </ul>
+     * <p>Specifies how Device Farm compares the filter's attribute to the value. For
+     * the operators that are supported by each attribute, see the attribute
+     * descriptions.</p>
      */
-    inline DeviceFilter& WithOperator(DeviceFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline DeviceFilter& WithOperator(RuleOperator&& value) { SetOperator(std::move(value)); return *this;}
 
 
     /**
@@ -340,7 +405,7 @@ namespace Model
     DeviceFilterAttribute m_attribute;
     bool m_attributeHasBeenSet;
 
-    DeviceFilterOperator m_operator;
+    RuleOperator m_operator;
     bool m_operatorHasBeenSet;
 
     Aws::Vector<Aws::String> m_values;

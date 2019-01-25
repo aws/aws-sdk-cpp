@@ -30,6 +30,7 @@ namespace Model
 
 OutputSettings::OutputSettings() : 
     m_archiveOutputSettingsHasBeenSet(false),
+    m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
@@ -39,6 +40,7 @@ OutputSettings::OutputSettings() :
 
 OutputSettings::OutputSettings(JsonView jsonValue) : 
     m_archiveOutputSettingsHasBeenSet(false),
+    m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
@@ -54,6 +56,13 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_archiveOutputSettings = jsonValue.GetObject("archiveOutputSettings");
 
     m_archiveOutputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("frameCaptureOutputSettings"))
+  {
+    m_frameCaptureOutputSettings = jsonValue.GetObject("frameCaptureOutputSettings");
+
+    m_frameCaptureOutputSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hlsOutputSettings"))
@@ -94,6 +103,12 @@ JsonValue OutputSettings::Jsonize() const
   if(m_archiveOutputSettingsHasBeenSet)
   {
    payload.WithObject("archiveOutputSettings", m_archiveOutputSettings.Jsonize());
+
+  }
+
+  if(m_frameCaptureOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("frameCaptureOutputSettings", m_frameCaptureOutputSettings.Jsonize());
 
   }
 

@@ -30,6 +30,7 @@ namespace Model
 
 OutputGroupSettings::OutputGroupSettings() : 
     m_archiveGroupSettingsHasBeenSet(false),
+    m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
@@ -39,6 +40,7 @@ OutputGroupSettings::OutputGroupSettings() :
 
 OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
     m_archiveGroupSettingsHasBeenSet(false),
+    m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
@@ -54,6 +56,13 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_archiveGroupSettings = jsonValue.GetObject("archiveGroupSettings");
 
     m_archiveGroupSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("frameCaptureGroupSettings"))
+  {
+    m_frameCaptureGroupSettings = jsonValue.GetObject("frameCaptureGroupSettings");
+
+    m_frameCaptureGroupSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hlsGroupSettings"))
@@ -94,6 +103,12 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_archiveGroupSettingsHasBeenSet)
   {
    payload.WithObject("archiveGroupSettings", m_archiveGroupSettings.Jsonize());
+
+  }
+
+  if(m_frameCaptureGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("frameCaptureGroupSettings", m_frameCaptureGroupSettings.Jsonize());
 
   }
 

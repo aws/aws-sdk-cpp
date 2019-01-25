@@ -214,6 +214,80 @@ namespace Model
      */
     inline UpdateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p> <p>If you use this
+     * parameter in your request, you cannot use the <code>clearMaxDevices</code>
+     * parameter in the same request.</p>
+     */
+    inline int GetMaxDevices() const{ return m_maxDevices; }
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p> <p>If you use this
+     * parameter in your request, you cannot use the <code>clearMaxDevices</code>
+     * parameter in the same request.</p>
+     */
+    inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p> <p>If you use this
+     * parameter in your request, you cannot use the <code>clearMaxDevices</code>
+     * parameter in the same request.</p>
+     */
+    inline UpdateDevicePoolRequest& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
+
+
+    /**
+     * <p>Sets whether the <code>maxDevices</code> parameter applies to your device
+     * pool. If you set this parameter to <code>true</code>, the
+     * <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
+     * the number of devices that it adds to your device pool. In this case, Device
+     * Farm adds all available devices that meet the criteria that are specified for
+     * the <code>rules</code> parameter.</p> <p>If you use this parameter in your
+     * request, you cannot use the <code>maxDevices</code> parameter in the same
+     * request.</p>
+     */
+    inline bool GetClearMaxDevices() const{ return m_clearMaxDevices; }
+
+    /**
+     * <p>Sets whether the <code>maxDevices</code> parameter applies to your device
+     * pool. If you set this parameter to <code>true</code>, the
+     * <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
+     * the number of devices that it adds to your device pool. In this case, Device
+     * Farm adds all available devices that meet the criteria that are specified for
+     * the <code>rules</code> parameter.</p> <p>If you use this parameter in your
+     * request, you cannot use the <code>maxDevices</code> parameter in the same
+     * request.</p>
+     */
+    inline void SetClearMaxDevices(bool value) { m_clearMaxDevicesHasBeenSet = true; m_clearMaxDevices = value; }
+
+    /**
+     * <p>Sets whether the <code>maxDevices</code> parameter applies to your device
+     * pool. If you set this parameter to <code>true</code>, the
+     * <code>maxDevices</code> parameter does not apply, and Device Farm does not limit
+     * the number of devices that it adds to your device pool. In this case, Device
+     * Farm adds all available devices that meet the criteria that are specified for
+     * the <code>rules</code> parameter.</p> <p>If you use this parameter in your
+     * request, you cannot use the <code>maxDevices</code> parameter in the same
+     * request.</p>
+     */
+    inline UpdateDevicePoolRequest& WithClearMaxDevices(bool value) { SetClearMaxDevices(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -227,6 +301,12 @@ namespace Model
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
+
+    int m_maxDevices;
+    bool m_maxDevicesHasBeenSet;
+
+    bool m_clearMaxDevices;
+    bool m_clearMaxDevicesHasBeenSet;
   };
 
 } // namespace Model

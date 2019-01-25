@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/FrameCaptureSettings.h>
 #include <aws/medialive/model/H264Settings.h>
 #include <utility>
 
@@ -48,6 +49,22 @@ namespace Model
 
 
     
+    inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
+
+    
+    inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
+
+    
+    inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
+
+    
+    inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
+
+    
+    inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
+
+
+    
     inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
 
     
@@ -63,6 +80,9 @@ namespace Model
     inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
 
   private:
+
+    FrameCaptureSettings m_frameCaptureSettings;
+    bool m_frameCaptureSettingsHasBeenSet;
 
     H264Settings m_h264Settings;
     bool m_h264SettingsHasBeenSet;

@@ -14,34 +14,28 @@
 */
 
 #pragma once
-#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace DeviceFarm
+namespace MediaLive
 {
 namespace Model
 {
-  enum class DeviceFilterOperator
+  enum class IFrameOnlyPlaylistType
   {
     NOT_SET,
-    EQUALS,
-    LESS_THAN,
-    LESS_THAN_OR_EQUALS,
-    GREATER_THAN,
-    GREATER_THAN_OR_EQUALS,
-    IN,
-    NOT_IN,
-    CONTAINS
+    DISABLED,
+    STANDARD
   };
 
-namespace DeviceFilterOperatorMapper
+namespace IFrameOnlyPlaylistTypeMapper
 {
-AWS_DEVICEFARM_API DeviceFilterOperator GetDeviceFilterOperatorForName(const Aws::String& name);
+AWS_MEDIALIVE_API IFrameOnlyPlaylistType GetIFrameOnlyPlaylistTypeForName(const Aws::String& name);
 
-AWS_DEVICEFARM_API Aws::String GetNameForDeviceFilterOperator(DeviceFilterOperator value);
-} // namespace DeviceFilterOperatorMapper
+AWS_MEDIALIVE_API Aws::String GetNameForIFrameOnlyPlaylistType(IFrameOnlyPlaylistType value);
+} // namespace IFrameOnlyPlaylistTypeMapper
 } // namespace Model
-} // namespace DeviceFarm
+} // namespace MediaLive
 } // namespace Aws

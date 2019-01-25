@@ -46,6 +46,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
+    m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
+    m_iFrameOnlyPlaylistsHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -112,6 +114,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
+    m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
+    m_iFrameOnlyPlaylistsHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -251,6 +255,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_hlsCdnSettings = jsonValue.GetObject("hlsCdnSettings");
 
     m_hlsCdnSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("iFrameOnlyPlaylists"))
+  {
+    m_iFrameOnlyPlaylists = IFrameOnlyPlaylistTypeMapper::GetIFrameOnlyPlaylistTypeForName(jsonValue.GetString("iFrameOnlyPlaylists"));
+
+    m_iFrameOnlyPlaylistsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("indexNSegments"))
@@ -503,6 +514,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithObject("hlsCdnSettings", m_hlsCdnSettings.Jsonize());
 
+  }
+
+  if(m_iFrameOnlyPlaylistsHasBeenSet)
+  {
+   payload.WithString("iFrameOnlyPlaylists", IFrameOnlyPlaylistTypeMapper::GetNameForIFrameOnlyPlaylistType(m_iFrameOnlyPlaylists));
   }
 
   if(m_indexNSegmentsHasBeenSet)

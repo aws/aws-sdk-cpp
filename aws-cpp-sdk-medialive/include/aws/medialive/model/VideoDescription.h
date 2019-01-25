@@ -77,20 +77,26 @@ namespace Model
 
 
     /**
-     * Output video height (in pixels). Leave blank to use source video height. If left
-     * blank, width must also be unspecified.
+     * Output video height, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and width blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline int GetHeight() const{ return m_height; }
 
     /**
-     * Output video height (in pixels). Leave blank to use source video height. If left
-     * blank, width must also be unspecified.
+     * Output video height, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and width blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
-     * Output video height (in pixels). Leave blank to use source video height. If left
-     * blank, width must also be unspecified.
+     * Output video height, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and width blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline VideoDescription& WithHeight(int value) { SetHeight(value); return *this;}
 
@@ -146,117 +152,142 @@ namespace Model
 
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. Setting to
-     * "respond" causes input video to be clipped, depending on AFD value, input
-     * display aspect ratio and output display aspect ratio.
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
      */
     inline const VideoDescriptionRespondToAfd& GetRespondToAfd() const{ return m_respondToAfd; }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. Setting to
-     * "respond" causes input video to be clipped, depending on AFD value, input
-     * display aspect ratio and output display aspect ratio.
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
      */
     inline void SetRespondToAfd(const VideoDescriptionRespondToAfd& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = value; }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. Setting to
-     * "respond" causes input video to be clipped, depending on AFD value, input
-     * display aspect ratio and output display aspect ratio.
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
      */
     inline void SetRespondToAfd(VideoDescriptionRespondToAfd&& value) { m_respondToAfdHasBeenSet = true; m_respondToAfd = std::move(value); }
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. Setting to
-     * "respond" causes input video to be clipped, depending on AFD value, input
-     * display aspect ratio and output display aspect ratio.
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
      */
     inline VideoDescription& WithRespondToAfd(const VideoDescriptionRespondToAfd& value) { SetRespondToAfd(value); return *this;}
 
     /**
-     * Indicates how to respond to the AFD values in the input stream. Setting to
-     * "respond" causes input video to be clipped, depending on AFD value, input
-     * display aspect ratio and output display aspect ratio.
+     * Indicates how to respond to the AFD values in the input stream. RESPOND causes
+     * input video to be clipped, depending on the AFD value, input display aspect
+     * ratio, and output display aspect ratio, and (except for FRAMECAPTURE codec)
+     * includes the values in the output. PASSTHROUGH (does not apply to FRAMECAPTURE
+     * codec) ignores the AFD values and includes the values in the output, so input
+     * video is not clipped. NONE ignores the AFD values and does not include the
+     * values through to the output, so input video is not clipped.
      */
     inline VideoDescription& WithRespondToAfd(VideoDescriptionRespondToAfd&& value) { SetRespondToAfd(std::move(value)); return *this;}
 
 
     /**
-     * When set to "stretchToOutput", automatically configures the output position to
-     * stretch the video to the specified output resolution. This option will override
-     * any position value.
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
      */
     inline const VideoDescriptionScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * When set to "stretchToOutput", automatically configures the output position to
-     * stretch the video to the specified output resolution. This option will override
-     * any position value.
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
      */
     inline void SetScalingBehavior(const VideoDescriptionScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * When set to "stretchToOutput", automatically configures the output position to
-     * stretch the video to the specified output resolution. This option will override
-     * any position value.
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
      */
     inline void SetScalingBehavior(VideoDescriptionScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * When set to "stretchToOutput", automatically configures the output position to
-     * stretch the video to the specified output resolution. This option will override
-     * any position value.
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
      */
     inline VideoDescription& WithScalingBehavior(const VideoDescriptionScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * When set to "stretchToOutput", automatically configures the output position to
-     * stretch the video to the specified output resolution. This option will override
-     * any position value.
+     * STRETCHTOOUTPUT configures the output position to stretch the video to the
+     * specified output resolution (height and width). This option will override any
+     * position value. DEFAULT may insert black boxes (pillar boxes or letter boxes)
+     * around the video to provide the specified output resolution.
      */
     inline VideoDescription& WithScalingBehavior(VideoDescriptionScalingBehavior&& value) { SetScalingBehavior(std::move(value)); return *this;}
 
 
     /**
-     * Changes the width of the anti-alias filter kernel used for scaling. Only applies
-     * if scaling is being performed and antiAlias is set to true. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * Changes the strength of the anti-alias filter used for scaling. 0 is the softest
+     * setting, 100 is the sharpest. A setting of 50 is recommended for most content.
      */
     inline int GetSharpness() const{ return m_sharpness; }
 
     /**
-     * Changes the width of the anti-alias filter kernel used for scaling. Only applies
-     * if scaling is being performed and antiAlias is set to true. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * Changes the strength of the anti-alias filter used for scaling. 0 is the softest
+     * setting, 100 is the sharpest. A setting of 50 is recommended for most content.
      */
     inline void SetSharpness(int value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
 
     /**
-     * Changes the width of the anti-alias filter kernel used for scaling. Only applies
-     * if scaling is being performed and antiAlias is set to true. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * Changes the strength of the anti-alias filter used for scaling. 0 is the softest
+     * setting, 100 is the sharpest. A setting of 50 is recommended for most content.
      */
     inline VideoDescription& WithSharpness(int value) { SetSharpness(value); return *this;}
 
 
     /**
-     * Output video width (in pixels). Leave out to use source video width.  If left
-     * out, height must also be left out. Display aspect ratio is always preserved by
-     * letterboxing or pillarboxing when necessary.
+     * Output video width, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and height blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline int GetWidth() const{ return m_width; }
 
     /**
-     * Output video width (in pixels). Leave out to use source video width.  If left
-     * out, height must also be left out. Display aspect ratio is always preserved by
-     * letterboxing or pillarboxing when necessary.
+     * Output video width, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and height blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
-     * Output video width (in pixels). Leave out to use source video width.  If left
-     * out, height must also be left out. Display aspect ratio is always preserved by
-     * letterboxing or pillarboxing when necessary.
+     * Output video width, in pixels. Must be an even number. For most codecs, you can
+     * leave this field and height blank in order to use the height and width
+     * (resolution) from the source. Note, however, that leaving blank is not
+     * recommended. For the Frame Capture codec, height and width are required.
      */
     inline VideoDescription& WithWidth(int value) { SetWidth(value); return *this;}
 

@@ -193,6 +193,37 @@ namespace Model
      */
     inline CreateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p>
+     */
+    inline int GetMaxDevices() const{ return m_maxDevices; }
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p>
+     */
+    inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
+
+    /**
+     * <p>The number of devices that Device Farm can add to your device pool. Device
+     * Farm adds devices that are available and that meet the criteria that you assign
+     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * constraints, your device pool might contain fewer devices than the value for
+     * this parameter.</p> <p>By specifying the maximum number of devices, you can
+     * control the costs that you incur by running tests.</p>
+     */
+    inline CreateDevicePoolRequest& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -206,6 +237,9 @@ namespace Model
 
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet;
+
+    int m_maxDevices;
+    bool m_maxDevicesHasBeenSet;
   };
 
 } // namespace Model
