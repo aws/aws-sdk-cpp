@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.3)
+set(CMAKE_CXX_STANDARD 11)
+project(app LANGUAGES CXX)
+find_package(AWSSDK REQUIRED COMPONENTS s3)
+add_executable(${PROJECT_NAME} "main.cpp")
+target_link_libraries(${PROJECT_NAME} ${AWSSDK_LINK_LIBRARIES})
+target_compile_options(${PROJECT_NAME} PRIVATE "-Wall" "-Werror")
