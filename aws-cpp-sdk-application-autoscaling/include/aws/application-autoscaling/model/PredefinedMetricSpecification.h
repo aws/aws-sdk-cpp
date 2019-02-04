@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures a predefined metric for a target tracking policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configures a predefined metric for a target tracking policy to use with
+   * Application Auto Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredefinedMetricSpecification">AWS
    * API Reference</a></p>
    */

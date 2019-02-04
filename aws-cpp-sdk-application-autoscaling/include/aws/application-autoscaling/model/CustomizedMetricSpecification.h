@@ -37,8 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Configures a customized metric for a target tracking policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Configures a customized metric for a target tracking policy to use with
+   * Application Auto Scaling.</p> <p>For information about terminology, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+   * CloudWatch Concepts</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/CustomizedMetricSpecification">AWS
    * API Reference</a></p>
    */
@@ -52,37 +54,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline CustomizedMetricSpecification& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline CustomizedMetricSpecification& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric. </p>
      */
     inline CustomizedMetricSpecification& WithMetricName(const char* value) { SetMetricName(value); return *this;}
 
@@ -124,37 +126,37 @@ namespace Model
 
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline const Aws::Vector<MetricDimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline void SetDimensions(const Aws::Vector<MetricDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline void SetDimensions(Aws::Vector<MetricDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline CustomizedMetricSpecification& WithDimensions(const Aws::Vector<MetricDimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline CustomizedMetricSpecification& WithDimensions(Aws::Vector<MetricDimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline CustomizedMetricSpecification& AddDimensions(const MetricDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric. </p>
      */
     inline CustomizedMetricSpecification& AddDimensions(MetricDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 

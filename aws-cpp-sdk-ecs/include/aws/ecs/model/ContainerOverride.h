@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/KeyValuePair.h>
+#include <aws/ecs/model/ResourceRequirement.h>
 #include <utility>
 
 namespace Aws
@@ -275,6 +276,56 @@ namespace Model
      */
     inline ContainerOverride& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
 
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline ContainerOverride& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline ContainerOverride& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline ContainerOverride& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container, instead of the
+     * default value from the task definition. The only supported resource is a
+     * GPU.</p>
+     */
+    inline ContainerOverride& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -294,6 +345,9 @@ namespace Model
 
     int m_memoryReservation;
     bool m_memoryReservationHasBeenSet;
+
+    Aws::Vector<ResourceRequirement> m_resourceRequirements;
+    bool m_resourceRequirementsHasBeenSet;
   };
 
 } // namespace Model

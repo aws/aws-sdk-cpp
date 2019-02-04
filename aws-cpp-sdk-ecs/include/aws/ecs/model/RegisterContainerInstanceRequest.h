@@ -21,6 +21,7 @@
 #include <aws/ecs/model/VersionInfo.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
+#include <aws/ecs/model/PlatformDevice.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
 
@@ -353,6 +354,49 @@ namespace Model
 
 
     /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline const Aws::Vector<PlatformDevice>& GetPlatformDevices() const{ return m_platformDevices; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline void SetPlatformDevices(const Aws::Vector<PlatformDevice>& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = value; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline void SetPlatformDevices(Aws::Vector<PlatformDevice>&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = std::move(value); }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& WithPlatformDevices(const Aws::Vector<PlatformDevice>& value) { SetPlatformDevices(value); return *this;}
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& WithPlatformDevices(Aws::Vector<PlatformDevice>&& value) { SetPlatformDevices(std::move(value)); return *this;}
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& AddPlatformDevices(const PlatformDevice& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(value); return *this; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& AddPlatformDevices(PlatformDevice&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The metadata that you apply to the container instance to help you categorize
      * and organize them. Each tag consists of a key and an optional value, both of
      * which you define. Tag keys can have a maximum character length of 128
@@ -430,6 +474,9 @@ namespace Model
 
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
+    Aws::Vector<PlatformDevice> m_platformDevices;
+    bool m_platformDevicesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

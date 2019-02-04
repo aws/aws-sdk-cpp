@@ -70,7 +70,8 @@ ContainerDefinition::ContainerDefinition() :
     m_ulimitsHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_systemControlsHasBeenSet(false)
+    m_systemControlsHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
 }
 
@@ -116,7 +117,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_ulimitsHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_systemControlsHasBeenSet(false)
+    m_systemControlsHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -399,6 +401,16 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_systemControlsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resourceRequirements"))
+  {
+    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+    {
+      m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
+    }
+    m_resourceRequirementsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -676,6 +688,17 @@ JsonValue ContainerDefinition::Jsonize() const
      systemControlsJsonList[systemControlsIndex].AsObject(m_systemControls[systemControlsIndex].Jsonize());
    }
    payload.WithArray("systemControls", std::move(systemControlsJsonList));
+
+  }
+
+  if(m_resourceRequirementsHasBeenSet)
+  {
+   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+   {
+     resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
+   }
+   payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
 
   }
 

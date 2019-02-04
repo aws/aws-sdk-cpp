@@ -733,32 +733,52 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p> <note> <p>An error will be
+     * received if you specify the <code>SERVICE</code> option when running a task.</p>
+     * </note>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p> <note> <p>An error will be
+     * received if you specify the <code>SERVICE</code> option when running a task.</p>
+     * </note>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p> <note> <p>An error will be
+     * received if you specify the <code>SERVICE</code> option when running a task.</p>
+     * </note>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p> <note> <p>An error will be
+     * received if you specify the <code>SERVICE</code> option when running a task.</p>
+     * </note>
      */
     inline RunTaskRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>Specifies whether to propagate the tags from the task definition to the task.
+     * If no value is specified, the tags are not propagated. Tags can only be
+     * propagated to the task during task creation. To add tags to a task after task
+     * creation, use the <a>TagResource</a> API action.</p> <note> <p>An error will be
+     * received if you specify the <code>SERVICE</code> option when running a task.</p>
+     * </note>
      */
     inline RunTaskRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

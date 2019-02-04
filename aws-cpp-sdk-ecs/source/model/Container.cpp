@@ -39,7 +39,11 @@ Container::Container() :
     m_networkBindingsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_memoryReservationHasBeenSet(false),
+    m_gpuIdsHasBeenSet(false)
 {
 }
 
@@ -54,7 +58,11 @@ Container::Container(JsonView jsonValue) :
     m_networkBindingsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false)
+    m_healthStatusHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_memoryReservationHasBeenSet(false),
+    m_gpuIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -130,6 +138,37 @@ Container& Container::operator =(JsonView jsonValue)
     m_healthStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("cpu"))
+  {
+    m_cpu = jsonValue.GetString("cpu");
+
+    m_cpuHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetString("memory");
+
+    m_memoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memoryReservation"))
+  {
+    m_memoryReservation = jsonValue.GetString("memoryReservation");
+
+    m_memoryReservationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gpuIds"))
+  {
+    Array<JsonView> gpuIdsJsonList = jsonValue.GetArray("gpuIds");
+    for(unsigned gpuIdsIndex = 0; gpuIdsIndex < gpuIdsJsonList.GetLength(); ++gpuIdsIndex)
+    {
+      m_gpuIds.push_back(gpuIdsJsonList[gpuIdsIndex].AsString());
+    }
+    m_gpuIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -198,6 +237,35 @@ JsonValue Container::Jsonize() const
   if(m_healthStatusHasBeenSet)
   {
    payload.WithString("healthStatus", HealthStatusMapper::GetNameForHealthStatus(m_healthStatus));
+  }
+
+  if(m_cpuHasBeenSet)
+  {
+   payload.WithString("cpu", m_cpu);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithString("memory", m_memory);
+
+  }
+
+  if(m_memoryReservationHasBeenSet)
+  {
+   payload.WithString("memoryReservation", m_memoryReservation);
+
+  }
+
+  if(m_gpuIdsHasBeenSet)
+  {
+   Array<JsonValue> gpuIdsJsonList(m_gpuIds.size());
+   for(unsigned gpuIdsIndex = 0; gpuIdsIndex < gpuIdsJsonList.GetLength(); ++gpuIdsIndex)
+   {
+     gpuIdsJsonList[gpuIdsIndex].AsString(m_gpuIds[gpuIdsIndex]);
+   }
+   payload.WithArray("gpuIds", std::move(gpuIdsJsonList));
+
   }
 
   return payload;

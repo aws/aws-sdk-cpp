@@ -42,7 +42,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a scaling policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a scaling policy to use with Application Auto
+   * Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy">AWS
    * API Reference</a></p>
    */
@@ -200,7 +201,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -231,7 +234,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -262,7 +267,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -293,7 +300,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -324,7 +333,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -355,7 +366,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -386,7 +399,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline ScalingPolicy& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -410,8 +425,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -437,8 +453,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -464,8 +481,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -491,8 +509,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -518,8 +537,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>

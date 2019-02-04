@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a step scaling policy configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a step scaling policy configuration to use with Application Auto
+   * Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/StepScalingPolicyConfiguration">AWS
    * API Reference</a></p>
    */

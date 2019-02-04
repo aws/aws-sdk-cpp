@@ -97,15 +97,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
@@ -113,15 +113,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
@@ -129,15 +129,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(Aws::String&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
@@ -145,15 +145,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline void SetSchedule(const char* value) { m_scheduleHasBeenSet = true; m_schedule.assign(value); }
@@ -161,15 +161,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(const Aws::String& value) { SetSchedule(value); return *this;}
@@ -177,15 +177,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(Aws::String&& value) { SetSchedule(std::move(value)); return *this;}
@@ -193,15 +193,15 @@ namespace Model
     /**
      * <p>The schedule for this action. The following formats are supported:</p> <ul>
      * <li> <p>At expressions -
-     * <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
-     * </p> </li> <li> <p>Rate expressions - <code>rate(<i>value</i>
-     * <i>unit</i>)</code> </p> </li> <li> <p>Cron expressions -
-     * <code>cron(<i>fields</i>)</code> </p> </li> </ul> <p>At expressions are useful
+     * "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"</p>
+     * </li> <li> <p>Rate expressions - "<code>rate(<i>value</i>
+     * <i>unit</i>)</code>"</p> </li> <li> <p>Cron expressions -
+     * "<code>cron(<i>fields</i>)</code>"</p> </li> </ul> <p>At expressions are useful
      * for one-time schedules. Specify the time, in UTC.</p> <p>For rate expressions,
      * <i>value</i> is a positive integer and <i>unit</i> is <code>minute</code> |
      * <code>minutes</code> | <code>hour</code> | <code>hours</code> | <code>day</code>
      * | <code>days</code>.</p> <p>For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
     inline PutScheduledActionRequest& WithSchedule(const char* value) { SetSchedule(value); return *this;}
@@ -270,7 +270,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -301,7 +303,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -332,7 +336,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -363,7 +369,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -394,7 +402,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -425,7 +435,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -456,7 +468,9 @@ namespace Model
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
-     * provider.</p> </li> </ul>
+     * provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
+     * repository</a>.</p> </li> </ul>
      */
     inline PutScheduledActionRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -481,8 +495,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -509,8 +524,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -537,8 +553,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -565,8 +582,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>
@@ -593,8 +611,9 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li> <li>
-     * <p> <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
      * a custom resource provided by your own application or service.</p> </li> </ul>

@@ -361,6 +361,169 @@ namespace Model
      */
     inline Container& WithHealthStatus(HealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline const Aws::String& GetCpu() const{ return m_cpu; }
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline Container& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline Container& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of CPU units set for the container. The value will be
+     * <code>0</code> if no value was specified in the container definition when the
+     * task definition was registered.</p>
+     */
+    inline Container& WithCpu(const char* value) { SetCpu(value); return *this;}
+
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline const Aws::String& GetMemory() const{ return m_memory; }
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
+
+    /**
+     * <p>The hard limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemory(const char* value) { SetMemory(value); return *this;}
+
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline const Aws::String& GetMemoryReservation() const{ return m_memoryReservation; }
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemoryReservation(const Aws::String& value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemoryReservation(Aws::String&& value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = std::move(value); }
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline void SetMemoryReservation(const char* value) { m_memoryReservationHasBeenSet = true; m_memoryReservation.assign(value); }
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemoryReservation(const Aws::String& value) { SetMemoryReservation(value); return *this;}
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemoryReservation(Aws::String&& value) { SetMemoryReservation(std::move(value)); return *this;}
+
+    /**
+     * <p>The soft limit (in MiB) of memory set for the container.</p>
+     */
+    inline Container& WithMemoryReservation(const char* value) { SetMemoryReservation(value); return *this;}
+
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGpuIds() const{ return m_gpuIds; }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline void SetGpuIds(const Aws::Vector<Aws::String>& value) { m_gpuIdsHasBeenSet = true; m_gpuIds = value; }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline void SetGpuIds(Aws::Vector<Aws::String>&& value) { m_gpuIdsHasBeenSet = true; m_gpuIds = std::move(value); }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline Container& WithGpuIds(const Aws::Vector<Aws::String>& value) { SetGpuIds(value); return *this;}
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline Container& WithGpuIds(Aws::Vector<Aws::String>&& value) { SetGpuIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline Container& AddGpuIds(const Aws::String& value) { m_gpuIdsHasBeenSet = true; m_gpuIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline Container& AddGpuIds(Aws::String&& value) { m_gpuIdsHasBeenSet = true; m_gpuIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of each GPU assigned to the container.</p>
+     */
+    inline Container& AddGpuIds(const char* value) { m_gpuIdsHasBeenSet = true; m_gpuIds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_containerArn;
@@ -389,6 +552,18 @@ namespace Model
 
     HealthStatus m_healthStatus;
     bool m_healthStatusHasBeenSet;
+
+    Aws::String m_cpu;
+    bool m_cpuHasBeenSet;
+
+    Aws::String m_memory;
+    bool m_memoryHasBeenSet;
+
+    Aws::String m_memoryReservation;
+    bool m_memoryReservationHasBeenSet;
+
+    Aws::Vector<Aws::String> m_gpuIds;
+    bool m_gpuIdsHasBeenSet;
   };
 
 } // namespace Model
