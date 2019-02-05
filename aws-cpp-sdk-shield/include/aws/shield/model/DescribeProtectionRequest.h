@@ -46,50 +46,124 @@ namespace Model
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline const Aws::String& GetProtectionId() const{ return m_protectionId; }
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline void SetProtectionId(const Aws::String& value) { m_protectionIdHasBeenSet = true; m_protectionId = value; }
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline void SetProtectionId(Aws::String&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline void SetProtectionId(const char* value) { m_protectionIdHasBeenSet = true; m_protectionId.assign(value); }
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline DescribeProtectionRequest& WithProtectionId(const Aws::String& value) { SetProtectionId(value); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline DescribeProtectionRequest& WithProtectionId(Aws::String&& value) { SetProtectionId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) for the <a>Protection</a> object that is
-     * described.</p>
+     * described. When submitting the <code>DescribeProtection</code> request you must
+     * provide either the <code>ResourceArn</code> or the <code>ProtectionID</code>,
+     * but not both.</p>
      */
     inline DescribeProtectionRequest& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
+
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline DescribeProtectionRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline DescribeProtectionRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a>
+     * object that is described. When submitting the <code>DescribeProtection</code>
+     * request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.</p>
+     */
+    inline DescribeProtectionRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
   private:
 
     Aws::String m_protectionId;
     bool m_protectionIdHasBeenSet;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet;
   };
 
 } // namespace Model

@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeProtectionRequest::DescribeProtectionRequest() : 
-    m_protectionIdHasBeenSet(false)
+    m_protectionIdHasBeenSet(false),
+    m_resourceArnHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String DescribeProtectionRequest::SerializePayload() const
   if(m_protectionIdHasBeenSet)
   {
    payload.WithString("ProtectionId", m_protectionId);
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 

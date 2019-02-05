@@ -159,7 +159,7 @@ namespace Model
    * about the AWS Shield Advanced API actions, data types, and errors. For detailed
    * information about AWS WAF and AWS Shield Advanced features and an overview of
    * how to use the AWS WAF and AWS Shield Advanced APIs, see the <a
-   * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS
    * Shield Developer Guide</a>.</p>
    */
   class AWS_SHIELD_API ShieldClient : public Aws::Client::AWSJsonClient
@@ -354,12 +354,12 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
-         * IP Address, or an Amazon Route 53 hosted zone.</p> <p>You can add protection to
-         * only a single resource with each CreateProtection request. If you want to add
-         * protection to multiple resources at once, use the <a
-         * href="https://console.aws.amazon.com/waf/">AWS WAF console</a>. For more
-         * information see <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS
+         * Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted
+         * zone.</p> <p>You can add protection to only a single resource with each
+         * CreateProtection request. If you want to add protection to multiple resources at
+         * once, use the <a href="https://console.aws.amazon.com/waf/">AWS WAF console</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with AWS Shield Advanced</a> and <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
@@ -372,12 +372,12 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
-         * IP Address, or an Amazon Route 53 hosted zone.</p> <p>You can add protection to
-         * only a single resource with each CreateProtection request. If you want to add
-         * protection to multiple resources at once, use the <a
-         * href="https://console.aws.amazon.com/waf/">AWS WAF console</a>. For more
-         * information see <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS
+         * Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted
+         * zone.</p> <p>You can add protection to only a single resource with each
+         * CreateProtection request. If you want to add protection to multiple resources at
+         * once, use the <a href="https://console.aws.amazon.com/waf/">AWS WAF console</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with AWS Shield Advanced</a> and <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add
@@ -392,12 +392,12 @@ namespace Model
 
         /**
          * <p>Enables AWS Shield Advanced for a specific AWS resource. The resource can be
-         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, Elastic
-         * IP Address, or an Amazon Route 53 hosted zone.</p> <p>You can add protection to
-         * only a single resource with each CreateProtection request. If you want to add
-         * protection to multiple resources at once, use the <a
-         * href="https://console.aws.amazon.com/waf/">AWS WAF console</a>. For more
-         * information see <a
+         * an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS
+         * Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted
+         * zone.</p> <p>You can add protection to only a single resource with each
+         * CreateProtection request. If you want to add protection to multiple resources at
+         * once, use the <a href="https://console.aws.amazon.com/waf/">AWS WAF console</a>.
+         * For more information see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
          * Started with AWS Shield Advanced</a> and <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add

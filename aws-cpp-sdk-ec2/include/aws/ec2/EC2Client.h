@@ -2729,8 +2729,8 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
@@ -2740,8 +2740,8 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
@@ -2753,8 +2753,8 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
          * API Reference</a></p>
@@ -3623,15 +3623,15 @@ namespace Model
          * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
-         * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
-         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
-         * identical request more than one time, the first request creates the customer
-         * gateway, and subsequent requests return information about the existing customer
-         * gateway. The subsequent requests do not create new customer gateway
-         * resources.</p> </important><p><h3>See Also:</h3>   <a
+         * </note> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+         * <important> <p>You cannot create more than one customer gateway with the same
+         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
+         * request more than one time, the first request creates the customer gateway, and
+         * subsequent requests return information about the existing customer gateway. The
+         * subsequent requests do not create new customer gateway resources.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          */
@@ -3650,15 +3650,15 @@ namespace Model
          * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
-         * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
-         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
-         * identical request more than one time, the first request creates the customer
-         * gateway, and subsequent requests return information about the existing customer
-         * gateway. The subsequent requests do not create new customer gateway
-         * resources.</p> </important><p><h3>See Also:</h3>   <a
+         * </note> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+         * <important> <p>You cannot create more than one customer gateway with the same
+         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
+         * request more than one time, the first request creates the customer gateway, and
+         * subsequent requests return information about the existing customer gateway. The
+         * subsequent requests do not create new customer gateway resources.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -3679,15 +3679,15 @@ namespace Model
          * <note> <p>Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534,
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
-         * </note> <p>For more information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
-         * Guide</i>.</p> <important> <p>You cannot create more than one customer gateway
-         * with the same VPN type, IP address, and BGP ASN parameter values. If you run an
-         * identical request more than one time, the first request creates the customer
-         * gateway, and subsequent requests return information about the existing customer
-         * gateway. The subsequent requests do not create new customer gateway
-         * resources.</p> </important><p><h3>See Also:</h3>   <a
+         * </note> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
+         * <important> <p>You cannot create more than one customer gateway with the same
+         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
+         * request more than one time, the first request creates the customer gateway, and
+         * subsequent requests return information about the existing customer gateway. The
+         * subsequent requests do not create new customer gateway resources.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -5800,8 +5800,8 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
@@ -5821,8 +5821,8 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
@@ -5844,8 +5844,8 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
          * API Reference</a></p>
@@ -5858,9 +5858,9 @@ namespace Model
          * <p>Creates a static route associated with a VPN connection between an existing
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
-         * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * gateway.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
@@ -5871,9 +5871,9 @@ namespace Model
          * <p>Creates a static route associated with a VPN connection between an existing
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
-         * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * gateway.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
@@ -5886,9 +5886,9 @@ namespace Model
          * <p>Creates a static route associated with a VPN connection between an existing
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
-         * gateway.</p> <p>For more information about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * gateway.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
          * API Reference</a></p>
@@ -5900,10 +5900,9 @@ namespace Model
         /**
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
-         * before creating the VPC itself.</p> <p>For more information about virtual
-         * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * before creating the VPC itself.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
@@ -5913,10 +5912,9 @@ namespace Model
         /**
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
-         * before creating the VPC itself.</p> <p>For more information about virtual
-         * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * before creating the VPC itself.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
@@ -5928,10 +5926,9 @@ namespace Model
         /**
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
-         * before creating the VPC itself.</p> <p>For more information about virtual
-         * private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * before creating the VPC itself.</p> <p>For more information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
          * API Reference</a></p>
@@ -7826,9 +7823,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
-         * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
@@ -7837,9 +7834,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
-         * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
@@ -7850,9 +7847,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
-         * information about VPN customer gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
          * API Reference</a></p>
@@ -11066,10 +11063,9 @@ namespace Model
         virtual void DescribeVpcsAsync(const Model::DescribeVpcsRequest& request, const DescribeVpcsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your VPN connections.</p> <p>For more information
-         * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * <p>Describes one or more of your VPN connections.</p> <p>For more information,
+         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
@@ -11077,10 +11073,9 @@ namespace Model
         virtual Model::DescribeVpnConnectionsOutcome DescribeVpnConnections(const Model::DescribeVpnConnectionsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your VPN connections.</p> <p>For more information
-         * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * <p>Describes one or more of your VPN connections.</p> <p>For more information,
+         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
@@ -11090,10 +11085,9 @@ namespace Model
         virtual Model::DescribeVpnConnectionsOutcomeCallable DescribeVpnConnectionsCallable(const Model::DescribeVpnConnectionsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your VPN connections.</p> <p>For more information
-         * about VPN connections, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * <p>Describes one or more of your VPN connections.</p> <p>For more information,
+         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
          * API Reference</a></p>
@@ -11104,9 +11098,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
-         * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
@@ -11115,9 +11109,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
-         * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>
@@ -11128,9 +11122,9 @@ namespace Model
 
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
-         * information about virtual private gateways, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html">AWS
-         * Managed VPN Connections</a> in the <i>Amazon Virtual Private Cloud User
+         * information, see <a
+         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
          * API Reference</a></p>

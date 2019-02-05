@@ -91,8 +91,6 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -111,21 +109,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -144,21 +139,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -177,21 +169,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -210,21 +199,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -243,21 +229,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -276,21 +259,18 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit
-     * gateway.</p> </li> <li> <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default
      * propagation route table.</p> </li> <li> <p> <code>options.amazon-side-asn</code>
      * - The private ASN for the Amazon side of a BGP session.</p> </li> <li> <p>
@@ -309,14 +289,13 @@ namespace Model
      * (<code>enable</code> | <code>disable</code>).</p> </li> <li> <p>
      * <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath
      * Protocol support is enabled (<code>enable</code> | <code>disable</code>).</p>
-     * </li> <li> <p> <code>state</code> - The state of the attachment
-     * (<code>pendingAcceptance</code> | <code>pending</code> | <code>available</code>
-     * | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> <li>
-     * <p> <code>transit-gateway-state</code> - The state of the transit gateway
-     * (<code>pending</code> | <code>available</code> | <code>deleting</code> |
-     * <code>deleted</code>).</p> </li> </ul>
+     * </li> <li> <p> <code>owner-id</code> - The ID of the AWS account that owns the
+     * transit gateway.</p> </li> <li> <p> <code>state</code> - The state of the
+     * attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> |
+     * <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code>
+     * | <code>rejected</code> | <code>rejecting</code>).</p> </li> <li> <p>
+     * <code>transit-gateway-id</code> - The ID of the transit gateway.</p> </li> </ul>
      */
     inline DescribeTransitGatewaysRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

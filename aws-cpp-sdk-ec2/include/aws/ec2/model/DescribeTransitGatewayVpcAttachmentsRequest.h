@@ -91,85 +91,92 @@ namespace Model
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline DescribeTransitGatewayVpcAttachmentsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline DescribeTransitGatewayVpcAttachmentsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline DescribeTransitGatewayVpcAttachmentsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>One or more filters. The possible values are:</p> <ul> <li> <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code>
-     * | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     * <code>deleting</code> | <code>deleted</code> | <code>failed</code> |
-     * <code>rejected</code>).</p> </li> <li> <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.</p> </li>
-     * <li> <p> <code>transit-gateway-id</code> - The ID of the transit gateway.</p>
-     * </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p> </li> </ul>
+     * <code>state</code> - The state of the attachment (<code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).</p>
+     * </li> <li> <p> <code>transit-gateway-attachment-id</code> - The ID of the
+     * attachment.</p> </li> <li> <p> <code>transit-gateway-id</code> - The ID of the
+     * transit gateway.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC.</p>
+     * </li> </ul>
      */
     inline DescribeTransitGatewayVpcAttachmentsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

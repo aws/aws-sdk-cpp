@@ -225,50 +225,50 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPublicIps() const{ return m_publicIps; }
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline void SetPublicIps(const Aws::Vector<Aws::String>& value) { m_publicIpsHasBeenSet = true; m_publicIps = value; }
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline void SetPublicIps(Aws::Vector<Aws::String>&& value) { m_publicIpsHasBeenSet = true; m_publicIps = std::move(value); }
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline DescribeAddressesRequest& WithPublicIps(const Aws::Vector<Aws::String>& value) { SetPublicIps(value); return *this;}
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline DescribeAddressesRequest& WithPublicIps(Aws::Vector<Aws::String>&& value) { SetPublicIps(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline DescribeAddressesRequest& AddPublicIps(const Aws::String& value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline DescribeAddressesRequest& AddPublicIps(Aws::String&& value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-Classic] One or more Elastic IP addresses.</p> <p>Default: Describes all
-     * your Elastic IP addresses.</p>
+     * <p>One or more Elastic IP addresses.</p> <p>Default: Describes all your Elastic
+     * IP addresses.</p>
      */
     inline DescribeAddressesRequest& AddPublicIps(const char* value) { m_publicIpsHasBeenSet = true; m_publicIps.push_back(value); return *this; }
 

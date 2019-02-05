@@ -348,7 +348,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
+     * required.</p> </note>
      */
     inline int GetSize() const{ return m_size; }
 
@@ -359,7 +360,8 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
+     * required.</p> </note>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
@@ -370,43 +372,51 @@ namespace Model
      * <code>standard</code>. If you specify a snapshot, the volume size must be equal
      * to or larger than the snapshot size.</p> <p>Default: If you're creating the
      * volume from a snapshot and don't specify a volume size, the default is the
-     * snapshot size.</p>
+     * snapshot size.</p> <note> <p>At least one of Size or SnapshotId are
+     * required.</p> </note>
      */
     inline CreateVolumeRequest& WithSize(int value) { SetSize(value); return *this;}
 
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline CreateVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline CreateVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The snapshot from which to create the volume.</p>
+     * <p>The snapshot from which to create the volume.</p> <note> <p>At least one of
+     * Size or SnapshotId are required.</p> </note>
      */
     inline CreateVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 

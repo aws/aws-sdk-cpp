@@ -1003,27 +1003,42 @@ namespace Model
 
 
     /**
-     * <p>The Capacity Reservation targeting option.</p>
+     * <p>The Capacity Reservation targeting option. If you do not specify this
+     * parameter, the instance's Capacity Reservation preference defaults to
+     * <code>open</code>, which enables it to run in any open Capacity Reservation that
+     * has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline const LaunchTemplateCapacityReservationSpecificationRequest& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
 
     /**
-     * <p>The Capacity Reservation targeting option.</p>
+     * <p>The Capacity Reservation targeting option. If you do not specify this
+     * parameter, the instance's Capacity Reservation preference defaults to
+     * <code>open</code>, which enables it to run in any open Capacity Reservation that
+     * has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline void SetCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationRequest& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
 
     /**
-     * <p>The Capacity Reservation targeting option.</p>
+     * <p>The Capacity Reservation targeting option. If you do not specify this
+     * parameter, the instance's Capacity Reservation preference defaults to
+     * <code>open</code>, which enables it to run in any open Capacity Reservation that
+     * has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline void SetCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationRequest&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
 
     /**
-     * <p>The Capacity Reservation targeting option.</p>
+     * <p>The Capacity Reservation targeting option. If you do not specify this
+     * parameter, the instance's Capacity Reservation preference defaults to
+     * <code>open</code>, which enables it to run in any open Capacity Reservation that
+     * has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline RequestLaunchTemplateData& WithCapacityReservationSpecification(const LaunchTemplateCapacityReservationSpecificationRequest& value) { SetCapacityReservationSpecification(value); return *this;}
 
     /**
-     * <p>The Capacity Reservation targeting option.</p>
+     * <p>The Capacity Reservation targeting option. If you do not specify this
+     * parameter, the instance's Capacity Reservation preference defaults to
+     * <code>open</code>, which enables it to run in any open Capacity Reservation that
+     * has matching attributes (instance type, platform, Availability Zone).</p>
      */
     inline RequestLaunchTemplateData& WithCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationRequest&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
 
