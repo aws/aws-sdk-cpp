@@ -30,16 +30,14 @@ The following video explains many of the core features and also high-level SDKs
 Use the information below to build the entire source tree for your platform, run unit tests, and build integration tests.  
 
 #### Minimum Requirements:
-* Visual Studio 2013 or later
-  * Visual Studio 2013 does not provide default move constructors and operators.
-  * Later versions of Visual Studio provide a standards-compliant compiler.
+* Visual Studio 2015 or later
 * OR GNU Compiler Collection (GCC) 4.9 or later
 * OR Clang 3.3 or later
 * 4GB of RAM
   * 4GB of RAM is required to build some of the larger clients. The SDK build may fail on EC2 instance types t2.micro, t2.small and other small instance types due to insufficient memory.
 
 #### Creating an Out-of-Source Build (Recommended):
-To create an **out-of-source build**:
+##### To create an **out-of-source build**:
 1. Install CMake and the relevant build tools for your platform. Ensure these are available in your executable path.
 2. Create your build directory. Replace BUILD_DIR with your build directory name:
 
@@ -54,14 +52,14 @@ You can use the following variations to create your build directory:
 * For Visual Studio:
 `msbuild ALL_BUILD.vcxproj`
 
-To create a **release build**, do one of the following:
+##### To create a **release build**, do one of the following:
 * For Auto Make build systems:
 ```
 cmake -DCMAKE_BUILD_TYPE=Release  <path-to-root-of-this-source-code>
 make
 sudo make install
 ```
-To uninstall these libraries:
+##### To uninstall these libraries:
 ```
 sudo make uninstall
 ```
@@ -76,6 +74,52 @@ cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64" -DCMAKE_BUI
 msbuild INSTALL.vcxproj /p:Configuration=Release
 ```
 
+##### To build and install third party dependencies:
+Starting from version 1.7.0, we added several third party dependencies, including [`aws-c-common`](https://github.com/awslabs/aws-c-common), [`aws-checksums`](https://github.com/awslabs/aws-checksums) and [`aws-c-event-stream`](https://github.com/awslabs/aws-c-event-stream). By default, they will be built and installed in `<BUILD_DIR>/.deps/install`, and copied to default system directory during SDK installation. You can change the location by specifying `CMAKE_INSTALL_PREFIX`.
+
+However, if you want to build and install these libraries separately:
+1. Download, build and install `aws-c-commom`:
+    ```sh
+    git clone https://github.com/awslabs/aws-c-common
+    cd aws-c-common
+    # checkout to a specific commit id if you want.
+    git checkout <commit-id>
+    mkdir build && cd build
+    # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
+    cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> <extra-cmake-parameters-here>
+    make # or MSBuild ALL_BUILD.vcxproj on Windows
+    make install # or MSBuild INSTALL.vcxproj on Windows
+    ```
+2. Download, build and install `aws-checksums`:
+    ```sh
+    git clone https://github.com/awslabs/aws-checksums
+    cd aws-checksums
+    # checkout to a specific commit id if you want
+    git checkout <commit-id>
+    mkdir build && cd build
+    # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
+    cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> <extra-cmake-parameters-here>
+    make # or MSBuild ALL_BUILD.vcxproj on Windows
+    make install # or MSBuild INSTALL.vcxproj on Windows
+    ```
+3. Download, build and install `aws-c-event-stream`:
+    ```sh
+    git clone https://github.com/awslabs/aws-c-event-stream
+    cd aws-c-event-stream
+    # checkout to a specific commit id if you want
+    git checkout <commit-id>
+    mkdir build && cd build
+    # aws-c-common and aws-checksums are dependencies of aws-c-event-stream
+    # without CMAKE_INSTALL_PREFIX, it will be installed to default system directory.
+    cmake .. -DCMAKE_INSTALL_PREFIX=<deps-install-dir> -DCMAKE_PREFIX_PATH=<deps-install-dir> <extra-cmake-parameters-here>
+    make # or MSBuild ALL_BUILD.vcxproj on Windows
+    make install # or MSBuild INSTALL.vcxproj on Windows
+    ```
+4. Turn off `BUILD_DEPS` when building C++ SDK:
+    ```sh
+    cd BUILD_DIR
+    cmake <path-to-root-of-this-source-code> -DBUILD_DEPS=OFF -DCMAKE_PREFIX_PATH=<deps-install-dir>
+    ```
 You may also find the following link helpful for including the build in your project:
 
 https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
