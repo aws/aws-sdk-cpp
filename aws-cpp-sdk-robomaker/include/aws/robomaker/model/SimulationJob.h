@@ -22,6 +22,7 @@
 #include <aws/robomaker/model/SimulationJobErrorCode.h>
 #include <aws/robomaker/model/OutputLocation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
@@ -245,6 +246,42 @@ namespace Model
      * <p>The failure code of the simulation job if it failed.</p>
      */
     inline SimulationJob& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline SimulationJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline SimulationJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason why the simulation job failed.</p>
+     */
+    inline SimulationJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
     /**
@@ -481,6 +518,79 @@ namespace Model
 
 
     /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline SimulationJob& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>VPC configuration information.</p>
      */
     inline const VPCConfigResponse& GetVpcConfig() const{ return m_vpcConfig; }
@@ -525,6 +635,9 @@ namespace Model
     SimulationJobErrorCode m_failureCode;
     bool m_failureCodeHasBeenSet;
 
+    Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet;
+
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
 
@@ -545,6 +658,9 @@ namespace Model
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
     bool m_simulationApplicationsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     VPCConfigResponse m_vpcConfig;
     bool m_vpcConfigHasBeenSet;

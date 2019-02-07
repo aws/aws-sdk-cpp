@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline const Aws::String& GetLaunchFile() const{ return m_launchFile; }
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(const Aws::String& value) { m_launchFileHasBeenSet = true; m_launchFile = value; }
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(Aws::String&& value) { m_launchFileHasBeenSet = true; m_launchFile = std::move(value); }
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(const char* value) { m_launchFileHasBeenSet = true; m_launchFile.assign(value); }
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline LaunchConfig& WithLaunchFile(const Aws::String& value) { SetLaunchFile(value); return *this;}
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline LaunchConfig& WithLaunchFile(Aws::String&& value) { SetLaunchFile(std::move(value)); return *this;}
 
     /**
-     * <p>The launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline LaunchConfig& WithLaunchFile(const char* value) { SetLaunchFile(value); return *this;}
 

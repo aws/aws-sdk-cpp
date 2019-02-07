@@ -39,11 +39,10 @@ namespace Model
    * <p>Information about the fleet's capacity. Fleet capacity is measured in EC2
    * instances. By default, new fleets have a capacity of one instance, but can be
    * updated as needed. The maximum number of instances for a fleet is determined by
-   * the fleet's instance type.</p> <p>Fleet-related operations include:</p> <ul>
-   * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
-   * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
-   * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-   * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+   * the fleet's instance type.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li>
+   * <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
    * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>

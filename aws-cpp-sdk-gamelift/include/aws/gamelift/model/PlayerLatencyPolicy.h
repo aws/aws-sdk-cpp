@@ -36,9 +36,9 @@ namespace Model
    * players when placing a game session. When a latency policy is in force, a game
    * session cannot be placed at any destination in a region where a player is
    * reporting latency higher than the cap. Latency policies are only enforced when
-   * the placement request contains player latency information.</p> <p>Queue-related
-   * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-   * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+   * the placement request contains player latency information.</p> <ul> <li> <p>
+   * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
    * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS

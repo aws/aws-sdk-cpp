@@ -22,6 +22,7 @@
 #include <aws/robomaker/model/SimulationJobErrorCode.h>
 #include <aws/robomaker/model/OutputLocation.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfigResponse.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
@@ -171,27 +172,137 @@ namespace Model
 
 
     /**
-     * <p>The failure code of the simulation job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd>
+     * <dt>RobotApplicationCrash</dt> <dd> <p>Robot application exited abnormally.</p>
+     * </dd> <dt>SimulationApplicationCrash</dt> <dd> <p> Simulation application exited
+     * abnormally.</p> </dd> <dt>BadPermissionsRobotApplication</dt> <dd> <p>Robot
+     * application bundle could not be downloaded.</p> </dd>
+     * <dt>BadPermissionsSimulationApplication</dt> <dd> <p>Simulation application
+     * bundle could not be downloaded.</p> </dd> <dt>BadPermissionsS3Output</dt> <dd>
+     * <p>Unable to publish outputs to customer-provided S3 bucket.</p> </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt> <dd> <p>Unable to publish logs to
+     * customer-provided CloudWatch Logs resource.</p> </dd>
+     * <dt>SubnetIpLimitExceeded</dt> <dd> <p>Subnet IP limit exceeded.</p> </dd>
+     * <dt>ENILimitExceeded</dt> <dd> <p>ENI limit exceeded.</p> </dd>
+     * <dt>BadPermissionsUserCredentials</dt> <dd> <p>Unable to use the Role
+     * provided.</p> </dd> <dt>InvalidBundleRobotApplication</dt> <dd> <p>Robot bundle
+     * cannot be extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>InvalidBundleSimulationApplication</dt> <dd> <p>Simulation bundle cannot be
+     * extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for RobotApplication
+     * does not match value during version creation.</p> </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
+     * SimulationApplication does not match value during version creation.</p> </dd>
+     * </dl>
      */
     inline const SimulationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
 
     /**
-     * <p>The failure code of the simulation job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd>
+     * <dt>RobotApplicationCrash</dt> <dd> <p>Robot application exited abnormally.</p>
+     * </dd> <dt>SimulationApplicationCrash</dt> <dd> <p> Simulation application exited
+     * abnormally.</p> </dd> <dt>BadPermissionsRobotApplication</dt> <dd> <p>Robot
+     * application bundle could not be downloaded.</p> </dd>
+     * <dt>BadPermissionsSimulationApplication</dt> <dd> <p>Simulation application
+     * bundle could not be downloaded.</p> </dd> <dt>BadPermissionsS3Output</dt> <dd>
+     * <p>Unable to publish outputs to customer-provided S3 bucket.</p> </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt> <dd> <p>Unable to publish logs to
+     * customer-provided CloudWatch Logs resource.</p> </dd>
+     * <dt>SubnetIpLimitExceeded</dt> <dd> <p>Subnet IP limit exceeded.</p> </dd>
+     * <dt>ENILimitExceeded</dt> <dd> <p>ENI limit exceeded.</p> </dd>
+     * <dt>BadPermissionsUserCredentials</dt> <dd> <p>Unable to use the Role
+     * provided.</p> </dd> <dt>InvalidBundleRobotApplication</dt> <dd> <p>Robot bundle
+     * cannot be extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>InvalidBundleSimulationApplication</dt> <dd> <p>Simulation bundle cannot be
+     * extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for RobotApplication
+     * does not match value during version creation.</p> </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
+     * SimulationApplication does not match value during version creation.</p> </dd>
+     * </dl>
      */
     inline void SetFailureCode(const SimulationJobErrorCode& value) { m_failureCode = value; }
 
     /**
-     * <p>The failure code of the simulation job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd>
+     * <dt>RobotApplicationCrash</dt> <dd> <p>Robot application exited abnormally.</p>
+     * </dd> <dt>SimulationApplicationCrash</dt> <dd> <p> Simulation application exited
+     * abnormally.</p> </dd> <dt>BadPermissionsRobotApplication</dt> <dd> <p>Robot
+     * application bundle could not be downloaded.</p> </dd>
+     * <dt>BadPermissionsSimulationApplication</dt> <dd> <p>Simulation application
+     * bundle could not be downloaded.</p> </dd> <dt>BadPermissionsS3Output</dt> <dd>
+     * <p>Unable to publish outputs to customer-provided S3 bucket.</p> </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt> <dd> <p>Unable to publish logs to
+     * customer-provided CloudWatch Logs resource.</p> </dd>
+     * <dt>SubnetIpLimitExceeded</dt> <dd> <p>Subnet IP limit exceeded.</p> </dd>
+     * <dt>ENILimitExceeded</dt> <dd> <p>ENI limit exceeded.</p> </dd>
+     * <dt>BadPermissionsUserCredentials</dt> <dd> <p>Unable to use the Role
+     * provided.</p> </dd> <dt>InvalidBundleRobotApplication</dt> <dd> <p>Robot bundle
+     * cannot be extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>InvalidBundleSimulationApplication</dt> <dd> <p>Simulation bundle cannot be
+     * extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for RobotApplication
+     * does not match value during version creation.</p> </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
+     * SimulationApplication does not match value during version creation.</p> </dd>
+     * </dl>
      */
     inline void SetFailureCode(SimulationJobErrorCode&& value) { m_failureCode = std::move(value); }
 
     /**
-     * <p>The failure code of the simulation job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd>
+     * <dt>RobotApplicationCrash</dt> <dd> <p>Robot application exited abnormally.</p>
+     * </dd> <dt>SimulationApplicationCrash</dt> <dd> <p> Simulation application exited
+     * abnormally.</p> </dd> <dt>BadPermissionsRobotApplication</dt> <dd> <p>Robot
+     * application bundle could not be downloaded.</p> </dd>
+     * <dt>BadPermissionsSimulationApplication</dt> <dd> <p>Simulation application
+     * bundle could not be downloaded.</p> </dd> <dt>BadPermissionsS3Output</dt> <dd>
+     * <p>Unable to publish outputs to customer-provided S3 bucket.</p> </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt> <dd> <p>Unable to publish logs to
+     * customer-provided CloudWatch Logs resource.</p> </dd>
+     * <dt>SubnetIpLimitExceeded</dt> <dd> <p>Subnet IP limit exceeded.</p> </dd>
+     * <dt>ENILimitExceeded</dt> <dd> <p>ENI limit exceeded.</p> </dd>
+     * <dt>BadPermissionsUserCredentials</dt> <dd> <p>Unable to use the Role
+     * provided.</p> </dd> <dt>InvalidBundleRobotApplication</dt> <dd> <p>Robot bundle
+     * cannot be extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>InvalidBundleSimulationApplication</dt> <dd> <p>Simulation bundle cannot be
+     * extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for RobotApplication
+     * does not match value during version creation.</p> </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
+     * SimulationApplication does not match value during version creation.</p> </dd>
+     * </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(const SimulationJobErrorCode& value) { SetFailureCode(value); return *this;}
 
     /**
-     * <p>The failure code of the simulation job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>InternalServiceError</dt> <dd> <p>Internal service error.</p> </dd>
+     * <dt>RobotApplicationCrash</dt> <dd> <p>Robot application exited abnormally.</p>
+     * </dd> <dt>SimulationApplicationCrash</dt> <dd> <p> Simulation application exited
+     * abnormally.</p> </dd> <dt>BadPermissionsRobotApplication</dt> <dd> <p>Robot
+     * application bundle could not be downloaded.</p> </dd>
+     * <dt>BadPermissionsSimulationApplication</dt> <dd> <p>Simulation application
+     * bundle could not be downloaded.</p> </dd> <dt>BadPermissionsS3Output</dt> <dd>
+     * <p>Unable to publish outputs to customer-provided S3 bucket.</p> </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt> <dd> <p>Unable to publish logs to
+     * customer-provided CloudWatch Logs resource.</p> </dd>
+     * <dt>SubnetIpLimitExceeded</dt> <dd> <p>Subnet IP limit exceeded.</p> </dd>
+     * <dt>ENILimitExceeded</dt> <dd> <p>ENI limit exceeded.</p> </dd>
+     * <dt>BadPermissionsUserCredentials</dt> <dd> <p>Unable to use the Role
+     * provided.</p> </dd> <dt>InvalidBundleRobotApplication</dt> <dd> <p>Robot bundle
+     * cannot be extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>InvalidBundleSimulationApplication</dt> <dd> <p>Simulation bundle cannot be
+     * extracted (invalid format, bundling error, or other issue).</p> </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for RobotApplication
+     * does not match value during version creation.</p> </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt> <dd> <p>Etag for
+     * SimulationApplication does not match value during version creation.</p> </dd>
+     * </dl>
      */
     inline CreateSimulationJobResult& WithFailureCode(SimulationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
@@ -416,6 +527,67 @@ namespace Model
 
 
     /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the simulation job.</p>
+     */
+    inline CreateSimulationJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>Information about the vpc configuration.</p>
      */
     inline const VPCConfigResponse& GetVpcConfig() const{ return m_vpcConfig; }
@@ -465,6 +637,8 @@ namespace Model
     Aws::Vector<RobotApplicationConfig> m_robotApplications;
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     VPCConfigResponse m_vpcConfig;
   };

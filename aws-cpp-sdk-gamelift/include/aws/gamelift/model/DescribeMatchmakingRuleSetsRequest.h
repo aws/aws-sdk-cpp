@@ -49,50 +49,58 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * (Note: The rule set name is different from the optional "name" field in the rule
+     * set body.) </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 

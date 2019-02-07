@@ -35,6 +35,7 @@
 #include <aws/gamelift/model/CreateVpcPeeringConnectionResult.h>
 #include <aws/gamelift/model/DeleteGameSessionQueueResult.h>
 #include <aws/gamelift/model/DeleteMatchmakingConfigurationResult.h>
+#include <aws/gamelift/model/DeleteMatchmakingRuleSetResult.h>
 #include <aws/gamelift/model/DeleteVpcPeeringAuthorizationResult.h>
 #include <aws/gamelift/model/DeleteVpcPeeringConnectionResult.h>
 #include <aws/gamelift/model/DescribeAliasResult.h>
@@ -142,6 +143,7 @@ namespace Model
         class DeleteFleetRequest;
         class DeleteGameSessionQueueRequest;
         class DeleteMatchmakingConfigurationRequest;
+        class DeleteMatchmakingRuleSetRequest;
         class DeleteScalingPolicyRequest;
         class DeleteVpcPeeringAuthorizationRequest;
         class DeleteVpcPeeringConnectionRequest;
@@ -210,6 +212,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteFleetOutcome;
         typedef Aws::Utils::Outcome<DeleteGameSessionQueueResult, Aws::Client::AWSError<GameLiftErrors>> DeleteGameSessionQueueOutcome;
         typedef Aws::Utils::Outcome<DeleteMatchmakingConfigurationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingConfigurationOutcome;
+        typedef Aws::Utils::Outcome<DeleteMatchmakingRuleSetResult, Aws::Client::AWSError<GameLiftErrors>> DeleteMatchmakingRuleSetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<GameLiftErrors>> DeleteScalingPolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcPeeringAuthorizationResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringAuthorizationOutcome;
         typedef Aws::Utils::Outcome<DeleteVpcPeeringConnectionResult, Aws::Client::AWSError<GameLiftErrors>> DeleteVpcPeeringConnectionOutcome;
@@ -278,6 +281,7 @@ namespace Model
         typedef std::future<DeleteFleetOutcome> DeleteFleetOutcomeCallable;
         typedef std::future<DeleteGameSessionQueueOutcome> DeleteGameSessionQueueOutcomeCallable;
         typedef std::future<DeleteMatchmakingConfigurationOutcome> DeleteMatchmakingConfigurationOutcomeCallable;
+        typedef std::future<DeleteMatchmakingRuleSetOutcome> DeleteMatchmakingRuleSetOutcomeCallable;
         typedef std::future<DeleteScalingPolicyOutcome> DeleteScalingPolicyOutcomeCallable;
         typedef std::future<DeleteVpcPeeringAuthorizationOutcome> DeleteVpcPeeringAuthorizationOutcomeCallable;
         typedef std::future<DeleteVpcPeeringConnectionOutcome> DeleteVpcPeeringConnectionOutcomeCallable;
@@ -349,6 +353,7 @@ namespace Model
     typedef std::function<void(const GameLiftClient*, const Model::DeleteFleetRequest&, const Model::DeleteFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFleetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteGameSessionQueueRequest&, const Model::DeleteGameSessionQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGameSessionQueueResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingConfigurationRequest&, const Model::DeleteMatchmakingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingConfigurationResponseReceivedHandler;
+    typedef std::function<void(const GameLiftClient*, const Model::DeleteMatchmakingRuleSetRequest&, const Model::DeleteMatchmakingRuleSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMatchmakingRuleSetResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteScalingPolicyRequest&, const Model::DeleteScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringAuthorizationRequest&, const Model::DeleteVpcPeeringAuthorizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringAuthorizationResponseReceivedHandler;
     typedef std::function<void(const GameLiftClient*, const Model::DeleteVpcPeeringConnectionRequest&, const Model::DeleteVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcPeeringConnectionResponseReceivedHandler;
@@ -417,34 +422,35 @@ namespace Model
    * use the API functionality with these tools: </p> <ul> <li> <p>The Amazon Web
    * Services software development kit (<a
    * href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>) is available in <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients">multiple
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients">multiple
    * languages</a> including C++ and C#. Use the SDK to access the API
    * programmatically from an application, such as a game client.</p> </li> <li>
-   * <p>The <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI)
-   * tool is primarily useful for handling administrative actions, such as setting up
-   * and managing Amazon GameLift settings and resources. You can use the AWS CLI to
-   * manage all of your AWS services.</p> </li> <li> <p>The <a
-   * href="https://console.aws.amazon.com/gamelift/home">AWS Management Console</a>
-   * for Amazon GameLift provides a web interface to manage your Amazon GameLift
-   * settings and resources. The console includes a dashboard for tracking key
-   * resources, including builds and fleets, and displays usage and performance
-   * metrics for your games as customizable graphs.</p> </li> <li> <p>Amazon GameLift
-   * Local is a tool for testing your game's integration with Amazon GameLift before
-   * deploying it on the service. This tools supports a subset of key API actions,
-   * which can be called from either the AWS CLI or programmatically. See <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
+   * <p>The <a href="https://docs.aws.amazon.com/cli/latest/userguide/">AWS
+   * command-line interface</a> (CLI) tool is primarily useful for handling
+   * administrative actions, such as setting up and managing Amazon GameLift settings
+   * and resources. You can use the AWS CLI to manage all of your AWS services.</p>
+   * </li> <li> <p>The <a href="https://console.aws.amazon.com/gamelift/home">AWS
+   * Management Console</a> for Amazon GameLift provides a web interface to manage
+   * your Amazon GameLift settings and resources. The console includes a dashboard
+   * for tracking key resources, including builds and fleets, and displays usage and
+   * performance metrics for your games as customizable graphs.</p> </li> <li>
+   * <p>Amazon GameLift Local is a tool for testing your game's integration with
+   * Amazon GameLift before deploying it on the service. This tools supports a subset
+   * of key API actions, which can be called from either the AWS CLI or
+   * programmatically. See <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing
    * an Integration</a>.</p> </li> </ul> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer
    * Guide</a> -- Read about Amazon GameLift features and how to use them. </p> </li>
    * <li> <p> <a href="https://gamedev.amazon.com/forums/tutorials">Tutorials</a> --
    * Get started fast with walkthroughs and sample projects.</p> </li> <li> <p> <a
-   * href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date
-   * with new features and techniques.</p> </li> <li> <p> <a
+   * href="https://gamedev.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to
+   * date with new features and techniques.</p> </li> <li> <p> <a
    * href="https://gamedev.amazon.com/forums/spaces/123/gamelift-discussion.html">GameDev
    * Forums</a> -- Connect with the GameDev community.</p> </li> <li> <p> <a
-   * href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and
-   * <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
+   * href="https://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a>
+   * and <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document
    * history</a> -- Stay current with updates to the Amazon GameLift service, SDKs,
    * and documentation. </p> </li> </ul> <p> <b>API SUMMARY</b> </p> <p>This list
    * offers a functional overview of the Amazon GameLift service API.</p> <p>
@@ -490,7 +496,7 @@ namespace Model
    * Local.</i> </p> </li> </ul> </li> </ul> <p> <b>Setting Up and Managing Game
    * Servers</b> </p> <p>When setting up Amazon GameLift resources for your game, you
    * first <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create
    * a game build</a> and upload it to Amazon GameLift. You can then use these
    * actions to configure and manage a fleet of resources to run your game servers,
    * scale capacity to meet player demand, access performance and utilization
@@ -529,57 +535,58 @@ namespace Model
    * stop it from affecting a fleet's capacity.</p> </li> <li> <p>
    * <a>StartFleetActions</a> -- Restart a fleet's auto-scaling policies.</p> </li>
    * <li> <p> <a>StopFleetActions</a> -- Suspend a fleet's auto-scaling policies.</p>
-   * </li> </ul> </li> </ul> </li> <li> <p> <b>Manage VPC peering connections for
-   * fleets</b> </p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> -- Authorize
-   * a peering connection to one of your VPCs.</p> </li> <li> <p>
-   * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection
-   * authorizations. </p> </li> <li> <p> <a>DeleteVpcPeeringAuthorization</a> --
-   * Delete a peering connection authorization.</p> </li> <li> <p>
-   * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the
-   * VPC for a Amazon GameLift fleet and one of your VPCs.</p> </li> <li> <p>
-   * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or
-   * pending VPC peering connections with a Amazon GameLift fleet.</p> </li> <li> <p>
-   * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a
-   * Amazon GameLift fleet.</p> </li> </ul> </li> <li> <p> <b>Access fleet activity
-   * statistics</b> </p> <ul> <li> <p> <a>DescribeFleetUtilization</a> -- Get current
-   * data on the number of server processes, game sessions, and players currently
-   * active on a fleet.</p> </li> <li> <p> <a>DescribeFleetEvents</a> -- Get a
-   * fleet's logged events for a specified time span.</p> </li> <li> <p>
-   * <a>DescribeGameSessions</a> -- Retrieve metadata associated with one or more
-   * game sessions, including length of time active and current player count.</p>
-   * </li> </ul> </li> <li> <p> <b>Remotely access an instance</b> </p> <ul> <li> <p>
-   * <a>DescribeInstances</a> -- Get information on each instance in a fleet,
-   * including instance ID, IP address, and status.</p> </li> <li> <p>
-   * <a>GetInstanceAccess</a> -- Request access credentials needed to remotely
-   * connect to a specified instance in a fleet.</p> </li> </ul> </li> <li> <p>
-   * <b>Manage fleet aliases</b> </p> <ul> <li> <p> <a>CreateAlias</a> -- Define a
-   * new alias and optionally assign it to a fleet.</p> </li> <li> <p>
-   * <a>ListAliases</a> -- Get all fleet aliases defined in a Amazon GameLift
-   * region.</p> </li> <li> <p> <a>DescribeAlias</a> -- Retrieve information on an
-   * existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> -- Change settings for a
-   * alias, such as redirecting it from one fleet to another.</p> </li> <li> <p>
-   * <a>DeleteAlias</a> -- Remove an alias from the region.</p> </li> <li> <p>
-   * <a>ResolveAlias</a> -- Get the fleet ID that a specified alias points to.</p>
-   * </li> </ul> </li> <li> <p> <b>Manage game session queues</b> </p> <ul> <li> <p>
-   * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new
-   * game sessions. </p> </li> <li> <p> <a>DescribeGameSessionQueues</a> -- Retrieve
-   * game session queues defined in a Amazon GameLift region.</p> </li> <li> <p>
-   * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session
-   * queue.</p> </li> <li> <p> <a>DeleteGameSessionQueue</a> -- Remove a game session
-   * queue from the region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch
-   * resources</b> </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> -- Create
-   * a matchmaking configuration with instructions for building a player group and
-   * placing in a new game session. </p> </li> <li> <p>
-   * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations
-   * defined a Amazon GameLift region.</p> </li> <li> <p>
-   * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking
-   * configuration. queue.</p> </li> <li> <p> <a>DeleteMatchmakingConfiguration</a>
-   * -- Remove a matchmaking configuration from the region.</p> </li> <li> <p>
-   * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching
-   * for player matches. </p> </li> <li> <p> <a>DescribeMatchmakingRuleSets</a> --
-   * Retrieve matchmaking rule sets defined in a Amazon GameLift region.</p> </li>
-   * <li> <p> <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of
-   * matchmaking rules. </p> </li> </ul> </li> </ul>
+   * </li> </ul> </li> </ul> </li> <li> <p> <b>Manage game session queues</b> </p>
+   * <ul> <li> <p> <a>CreateGameSessionQueue</a> -- Create a queue for processing
+   * requests for new game sessions. </p> </li> <li> <p>
+   * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a
+   * Amazon GameLift region.</p> </li> <li> <p> <a>UpdateGameSessionQueue</a> --
+   * Change the configuration of a game session queue.</p> </li> <li> <p>
+   * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the
+   * region.</p> </li> </ul> </li> <li> <p> <b>Manage FlexMatch resources</b> </p>
+   * <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking
+   * configuration with instructions for building a player group and placing in a new
+   * game session. </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> --
+   * Retrieve matchmaking configurations defined a Amazon GameLift region.</p> </li>
+   * <li> <p> <a>UpdateMatchmakingConfiguration</a> -- Change settings for
+   * matchmaking configuration. queue.</p> </li> <li> <p>
+   * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from
+   * the region.</p> </li> <li> <p> <a>CreateMatchmakingRuleSet</a> -- Create a set
+   * of rules to use when searching for player matches. </p> </li> <li> <p>
+   * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in
+   * a Amazon GameLift region.</p> </li> <li> <p> <a>ValidateMatchmakingRuleSet</a>
+   * -- Verify syntax for a set of matchmaking rules. </p> </li> <li> <p>
+   * <a>DeleteMatchmakingRuleSet</a> -- Remove a matchmaking rule set from the
+   * region.</p> </li> </ul> </li> <li> <p> <b>Access fleet activity statistics</b>
+   * </p> <ul> <li> <p> <a>DescribeFleetUtilization</a> -- Get current data on the
+   * number of server processes, game sessions, and players currently active on a
+   * fleet.</p> </li> <li> <p> <a>DescribeFleetEvents</a> -- Get a fleet's logged
+   * events for a specified time span.</p> </li> <li> <p> <a>DescribeGameSessions</a>
+   * -- Retrieve metadata associated with one or more game sessions, including length
+   * of time active and current player count.</p> </li> </ul> </li> <li> <p>
+   * <b>Remotely access an instance</b> </p> <ul> <li> <p> <a>DescribeInstances</a>
+   * -- Get information on each instance in a fleet, including instance ID, IP
+   * address, and status.</p> </li> <li> <p> <a>GetInstanceAccess</a> -- Request
+   * access credentials needed to remotely connect to a specified instance in a
+   * fleet.</p> </li> </ul> </li> <li> <p> <b>Manage fleet aliases</b> </p> <ul> <li>
+   * <p> <a>CreateAlias</a> -- Define a new alias and optionally assign it to a
+   * fleet.</p> </li> <li> <p> <a>ListAliases</a> -- Get all fleet aliases defined in
+   * a Amazon GameLift region.</p> </li> <li> <p> <a>DescribeAlias</a> -- Retrieve
+   * information on an existing alias.</p> </li> <li> <p> <a>UpdateAlias</a> --
+   * Change settings for a alias, such as redirecting it from one fleet to
+   * another.</p> </li> <li> <p> <a>DeleteAlias</a> -- Remove an alias from the
+   * region.</p> </li> <li> <p> <a>ResolveAlias</a> -- Get the fleet ID that a
+   * specified alias points to.</p> </li> </ul> </li> <li> <p> <b>Manage VPC peering
+   * connections for fleets</b> </p> <ul> <li> <p>
+   * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of
+   * your VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> --
+   * Retrieve valid peering connection authorizations. </p> </li> <li> <p>
+   * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection
+   * authorization.</p> </li> <li> <p> <a>CreateVpcPeeringConnection</a> -- Establish
+   * a peering connection between the VPC for a Amazon GameLift fleet and one of your
+   * VPCs.</p> </li> <li> <p> <a>DescribeVpcPeeringConnections</a> -- Retrieve
+   * information on active or pending VPC peering connections with a Amazon GameLift
+   * fleet.</p> </li> <li> <p> <a>DeleteVpcPeeringConnection</a> -- Delete a VPC
+   * peering connection with a Amazon GameLift fleet.</p> </li> </ul> </li> </ul>
    */
   class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSJsonClient
   {
@@ -607,7 +614,7 @@ namespace Model
 
         virtual ~GameLiftClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "gamelift"; }
+        inline virtual const char* GetServiceClientName() const override { return "GameLift"; }
 
 
         /**
@@ -629,11 +636,11 @@ namespace Model
          * <code>SEARCHING</code> to find a new match. For tickets where one or more
          * players failed to accept the match, the ticket status is set to
          * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
-         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * these players can be submitted as needed. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          */
@@ -658,11 +665,11 @@ namespace Model
          * <code>SEARCHING</code> to find a new match. For tickets where one or more
          * players failed to accept the match, the ticket status is set to
          * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
-         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * these players can be submitted as needed. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          *
@@ -689,11 +696,11 @@ namespace Model
          * <code>SEARCHING</code> to find a new match. For tickets where one or more
          * players failed to accept the match, the ticket status is set to
          * <code>FAILED</code>, and processing is terminated. A new matchmaking request for
-         * these players can be submitted as needed. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * these players can be submitted as needed. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AcceptMatch">AWS
          * API Reference</a></p>
          *
@@ -717,10 +724,10 @@ namespace Model
          * can have multiple aliases. If successful, a new alias record is returned,
          * including an alias ID, which you can reference when creating a game session. You
          * can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
          * API Reference</a></p>
          */
@@ -742,10 +749,10 @@ namespace Model
          * can have multiple aliases. If successful, a new alias record is returned,
          * including an alias ID, which you can reference when creating a game session. You
          * can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
          * API Reference</a></p>
          *
@@ -769,10 +776,10 @@ namespace Model
          * can have multiple aliases. If successful, a new alias record is returned,
          * including an alias ID, which you can reference when creating a game session. You
          * can reassign an alias to another fleet by calling <code>UpdateAlias</code>.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias">AWS
          * API Reference</a></p>
          *
@@ -785,20 +792,20 @@ namespace Model
          * and points to the location of your game server build files in an Amazon Simple
          * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
          * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
          * Your Game</a> for more information. </p> <important> <p>To create new builds
          * quickly and easily, use the AWS CLI command <b> <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command uploads your build and creates a new build record in
          * one step, and automatically handles the necessary permissions. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
          * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
          * <code>CreateBuild</code> operation should be used only when you need to manually
          * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
          * build file in an Amazon S3 bucket under your own AWS account. To use this
          * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
          * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
          * and specify a build name, operating system, and the storage location of your
@@ -808,16 +815,15 @@ namespace Model
          * and returns an Amazon S3 storage location (bucket and key only) and temporary
          * access credentials. Use the credentials to manually upload your build file to
          * the storage location (see the Amazon S3 topic <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
          * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
          * <p>If successful, this operation creates a new build record with a unique build
          * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p> <ul> <li>
+         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          */
@@ -828,20 +834,20 @@ namespace Model
          * and points to the location of your game server build files in an Amazon Simple
          * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
          * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
          * Your Game</a> for more information. </p> <important> <p>To create new builds
          * quickly and easily, use the AWS CLI command <b> <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command uploads your build and creates a new build record in
          * one step, and automatically handles the necessary permissions. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
          * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
          * <code>CreateBuild</code> operation should be used only when you need to manually
          * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
          * build file in an Amazon S3 bucket under your own AWS account. To use this
          * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
          * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
          * and specify a build name, operating system, and the storage location of your
@@ -851,16 +857,15 @@ namespace Model
          * and returns an Amazon S3 storage location (bucket and key only) and temporary
          * access credentials. Use the credentials to manually upload your build file to
          * the storage location (see the Amazon S3 topic <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
          * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
          * <p>If successful, this operation creates a new build record with a unique build
          * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p> <ul> <li>
+         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          *
@@ -873,20 +878,20 @@ namespace Model
          * and points to the location of your game server build files in an Amazon Simple
          * Storage Service (Amazon S3) location. </p> <p>Game server binaries must be
          * combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading
          * Your Game</a> for more information. </p> <important> <p>To create new builds
          * quickly and easily, use the AWS CLI command <b> <a
-         * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
+         * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command uploads your build and creates a new build record in
          * one step, and automatically handles the necessary permissions. See <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html">
          * Upload Build Files to Amazon GameLift</a> for more help.</p> </important> <p>The
          * <code>CreateBuild</code> operation should be used only when you need to manually
          * upload your build files, as in the following scenarios:</p> <ul> <li> <p>Store a
          * build file in an Amazon S3 bucket under your own AWS account. To use this
          * option, you must first give Amazon GameLift access to that Amazon S3 bucket. See
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build">
          * Create a Build with Files in Amazon S3</a> for detailed help. To create a new
          * build record using files in your Amazon S3 bucket, call <code>CreateBuild</code>
          * and specify a build name, operating system, and the storage location of your
@@ -896,16 +901,15 @@ namespace Model
          * and returns an Amazon S3 storage location (bucket and key only) and temporary
          * access credentials. Use the credentials to manually upload your build file to
          * the storage location (see the Amazon S3 topic <a
-         * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
          * Objects</a>). You can upload files to a location only once. </p> </li> </ul>
          * <p>If successful, this operation creates a new build record with a unique build
          * ID and places it in <code>INITIALIZED</code> status. You can use
          * <a>DescribeBuild</a> to check the status of your build. A build must be in
-         * <code>READY</code> status before it can be used to create fleets.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <code>READY</code> status before it can be used to create fleets.</p> <ul> <li>
+         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild">AWS
          * API Reference</a></p>
          *
@@ -918,36 +922,29 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You set up a fleet to use instances with
          * certain hardware specifications (see <a
-         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy your game build to run on each instance. </p>
-         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
-         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
-         * and (4) a run-time configuration, which describes the server processes to run on
-         * each instance in the fleet. If you don't specify a fleet type (on-demand or
-         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
-         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
-         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
-         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
-         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
-         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
-         * multiple fleets to a metric group, you can view aggregated metrics for all the
-         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
-         * Amazon GameLift performs the following tasks. You can track the process of a
-         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
-         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
-         * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Downloads the game build to the new instance and installs it.
-         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
-         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
-         * the instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>),
+         * and deploy your game build to the fleet. </p> <p>To create a new fleet, you must
+         * provide the following: (1) a fleet name, (2) an EC2 instance type, (3) the build
+         * ID for your game build, and (4) a run-time configuration, which specifies the
+         * server processes to run on each instance in the fleet. If fleet type is not set,
+         * the new fleet will use on-demand instances by default.</p> <p>If the
+         * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
+         * following tasks. You can track the process of a fleet by checking the fleet
+         * status or by monitoring fleet creation events:</p> <ul> <li> <p>Creates a fleet
+         * record. Status: <code>NEW</code>.</p> </li> <li> <p>Begins writing events to the
+         * fleet event log, which can be accessed in the Amazon GameLift console.</p>
+         * <p>Sets the fleet's target capacity to 1 (desired instances), which triggers
+         * Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Downloads the
+         * game build to the new instance and installs it. Statuses:
+         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
+         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
+         * configured to run multiple server processes per instance, Amazon GameLift
+         * staggers each launch by a few seconds. Status: <code>ACTIVATING</code>.</p>
+         * </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as soon as one
+         * server process is ready to host a game session.</p> </li> </ul> <p> <b>Learn
+         * more</b> </p> <p>See Amazon GameLift Developer Guide topics in <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -971,36 +968,29 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You set up a fleet to use instances with
          * certain hardware specifications (see <a
-         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy your game build to run on each instance. </p>
-         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
-         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
-         * and (4) a run-time configuration, which describes the server processes to run on
-         * each instance in the fleet. If you don't specify a fleet type (on-demand or
-         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
-         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
-         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
-         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
-         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
-         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
-         * multiple fleets to a metric group, you can view aggregated metrics for all the
-         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
-         * Amazon GameLift performs the following tasks. You can track the process of a
-         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
-         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
-         * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Downloads the game build to the new instance and installs it.
-         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
-         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
-         * the instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>),
+         * and deploy your game build to the fleet. </p> <p>To create a new fleet, you must
+         * provide the following: (1) a fleet name, (2) an EC2 instance type, (3) the build
+         * ID for your game build, and (4) a run-time configuration, which specifies the
+         * server processes to run on each instance in the fleet. If fleet type is not set,
+         * the new fleet will use on-demand instances by default.</p> <p>If the
+         * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
+         * following tasks. You can track the process of a fleet by checking the fleet
+         * status or by monitoring fleet creation events:</p> <ul> <li> <p>Creates a fleet
+         * record. Status: <code>NEW</code>.</p> </li> <li> <p>Begins writing events to the
+         * fleet event log, which can be accessed in the Amazon GameLift console.</p>
+         * <p>Sets the fleet's target capacity to 1 (desired instances), which triggers
+         * Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Downloads the
+         * game build to the new instance and installs it. Statuses:
+         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
+         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
+         * configured to run multiple server processes per instance, Amazon GameLift
+         * staggers each launch by a few seconds. Status: <code>ACTIVATING</code>.</p>
+         * </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as soon as one
+         * server process is ready to host a game session.</p> </li> </ul> <p> <b>Learn
+         * more</b> </p> <p>See Amazon GameLift Developer Guide topics in <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -1026,36 +1016,29 @@ namespace Model
          * Elastic Compute Cloud (Amazon EC2) instances, each of which can run multiple
          * server processes to host game sessions. You set up a fleet to use instances with
          * certain hardware specifications (see <a
-         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
-         * for more information), and deploy your game build to run on each instance. </p>
-         * <p>To create a new fleet, you must specify the following: (1) a fleet name, (2)
-         * the build ID of a successfully uploaded game build, (3) an EC2 instance type,
-         * and (4) a run-time configuration, which describes the server processes to run on
-         * each instance in the fleet. If you don't specify a fleet type (on-demand or
-         * spot), the new fleet uses on-demand instances by default.</p> <p>You can also
-         * configure the new fleet with the following settings:</p> <ul> <li> <p>Fleet
-         * description</p> </li> <li> <p>Access permissions for inbound traffic</p> </li>
-         * <li> <p>Fleet-wide game session protection</p> </li> <li> <p>Resource usage
-         * limits</p> </li> </ul> <ul> <li> <p>VPC peering connection (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
-         * Peering with Amazon GameLift Fleets</a>)</p> </li> </ul> <p>If you use Amazon
-         * CloudWatch for metrics, you can add the new fleet to a metric group. By adding
-         * multiple fleets to a metric group, you can view aggregated metrics for all the
-         * fleets in the group. </p> <p>If the <code>CreateFleet</code> call is successful,
-         * Amazon GameLift performs the following tasks. You can track the process of a
-         * fleet by checking the fleet status or by monitoring fleet creation events:</p>
-         * <ul> <li> <p>Creates a fleet record. Status: <code>NEW</code>.</p> </li> <li>
-         * <p>Begins writing events to the fleet event log, which can be accessed in the
-         * Amazon GameLift console.</p> <p>Sets the fleet's target capacity to 1 (desired
-         * instances), which triggers Amazon GameLift to start one new EC2 instance.</p>
-         * </li> <li> <p>Downloads the game build to the new instance and installs it.
-         * Statuses: <code>DOWNLOADING</code>, <code>VALIDATING</code>,
-         * <code>BUILDING</code>. </p> </li> <li> <p>Starts launching server processes on
-         * the instance. If the fleet is configured to run multiple server processes per
-         * instance, Amazon GameLift staggers each launch by a few seconds. Status:
-         * <code>ACTIVATING</code>.</p> </li> <li> <p>Sets the fleet's status to
-         * <code>ACTIVE</code> as soon as one server process is ready to host a game
-         * session.</p> </li> </ul> <p>Fleet-related operations include:</p> <ul> <li> <p>
+         * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>),
+         * and deploy your game build to the fleet. </p> <p>To create a new fleet, you must
+         * provide the following: (1) a fleet name, (2) an EC2 instance type, (3) the build
+         * ID for your game build, and (4) a run-time configuration, which specifies the
+         * server processes to run on each instance in the fleet. If fleet type is not set,
+         * the new fleet will use on-demand instances by default.</p> <p>If the
+         * <code>CreateFleet</code> call is successful, Amazon GameLift performs the
+         * following tasks. You can track the process of a fleet by checking the fleet
+         * status or by monitoring fleet creation events:</p> <ul> <li> <p>Creates a fleet
+         * record. Status: <code>NEW</code>.</p> </li> <li> <p>Begins writing events to the
+         * fleet event log, which can be accessed in the Amazon GameLift console.</p>
+         * <p>Sets the fleet's target capacity to 1 (desired instances), which triggers
+         * Amazon GameLift to start one new EC2 instance.</p> </li> <li> <p>Downloads the
+         * game build to the new instance and installs it. Statuses:
+         * <code>DOWNLOADING</code>, <code>VALIDATING</code>, <code>BUILDING</code>. </p>
+         * </li> <li> <p>Starts launching server processes on the instance. If the fleet is
+         * configured to run multiple server processes per instance, Amazon GameLift
+         * staggers each launch by a few seconds. Status: <code>ACTIVATING</code>.</p>
+         * </li> <li> <p>Sets the fleet's status to <code>ACTIVE</code> as soon as one
+         * server process is ready to host a game session.</p> </li> </ul> <p> <b>Learn
+         * more</b> </p> <p>See Amazon GameLift Developer Guide topics in <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">
+         * Working with Fleets</a>.</p> <p> <b>Related operations</b> </p> <ul> <li> <p>
          * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
          * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
          * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
@@ -1099,9 +1082,8 @@ namespace Model
          * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
          * all active game sessions for 14 days. To access the logs, call
          * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
-         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * Amazon GameLift Local.</i> </p> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -1137,9 +1119,8 @@ namespace Model
          * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
          * all active game sessions for 14 days. To access the logs, call
          * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
-         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * Amazon GameLift Local.</i> </p> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -1177,9 +1158,8 @@ namespace Model
          * session creation policy.</p> <p> <b>Game session logs.</b> Logs are retained for
          * all active game sessions for 14 days. To access the logs, call
          * <a>GetGameSessionLogUrl</a> to download the log files.</p> <p> <i>Available in
-         * Amazon GameLift Local.</i> </p> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * Amazon GameLift Local.</i> </p> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -1220,8 +1200,8 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1256,8 +1236,8 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1294,8 +1274,8 @@ namespace Model
          * latency cap for the first 60 seconds, a second policy with a higher cap for the
          * next 60 seconds, etc. </p> <p>To create a new queue, provide a name, timeout
          * value, a list of destinations and, if desired, a set of latency policies. If
-         * successful, a new queue object is returned.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * successful, a new queue object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -1328,18 +1308,18 @@ namespace Model
          * Simple Notification Service (SNS). To use notifications, you first need to set
          * up an SNS topic to receive the notifications, and provide the topic ARN in the
          * matchmaking configuration (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
          * Setting up Notifications for Matchmaking</a>). Since notifications promise only
          * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
-         * no notifications are received within 30 seconds.</p> <p>Operations related to
-         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * no notifications are received within 30 seconds.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1367,18 +1347,18 @@ namespace Model
          * Simple Notification Service (SNS). To use notifications, you first need to set
          * up an SNS topic to receive the notifications, and provide the topic ARN in the
          * matchmaking configuration (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
          * Setting up Notifications for Matchmaking</a>). Since notifications promise only
          * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
-         * no notifications are received within 30 seconds.</p> <p>Operations related to
-         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * no notifications are received within 30 seconds.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1408,18 +1388,18 @@ namespace Model
          * Simple Notification Service (SNS). To use notifications, you first need to set
          * up an SNS topic to receive the notifications, and provide the topic ARN in the
          * matchmaking configuration (see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html">
          * Setting up Notifications for Matchmaking</a>). Since notifications promise only
          * "best effort" delivery, we recommend calling <code>DescribeMatchmaking</code> if
-         * no notifications are received within 30 seconds.</p> <p>Operations related to
-         * match configurations and rule sets include:</p> <ul> <li> <p>
+         * no notifications are received within 30 seconds.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1431,30 +1411,27 @@ namespace Model
          * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
          * type of match to create, such as the number and size of teams, and sets the
          * parameters for acceptable player matches, such as minimum skill level or
-         * character type. Rule sets are used in matchmaking configurations, which define
-         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
-         * one rule set; you can set up multiple rule sets to handle the scenarios that
-         * suit your game (such as for different game modes), and create a separate
-         * matchmaking configuration for each rule set. See additional information on rule
-         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
-         * sets, including useful examples, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
-         * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
-         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
-         * must be defined in the same region as the matchmaking configuration they will be
-         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
-         * set, create a new one with the necessary edits and then update matchmaking
-         * configurations to use the new rule set.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
-         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * character type. A rule set is used by a <a>MatchmakingConfiguration</a>. </p>
+         * <p>To create a matchmaking rule set, provide unique rule set name and the rule
+         * set body in JSON format. Rule sets must be defined in the same region as the
+         * matchmaking configuration they will be used with.</p> <p>Since matchmaking rule
+         * sets cannot be edited, it is a good idea to check the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a> before creating a new rule set.</p> <p>
+         * <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">Design
+         * a Matchmaker</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">Matchmaking
+         * with FlexMatch</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          */
@@ -1464,30 +1441,27 @@ namespace Model
          * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
          * type of match to create, such as the number and size of teams, and sets the
          * parameters for acceptable player matches, such as minimum skill level or
-         * character type. Rule sets are used in matchmaking configurations, which define
-         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
-         * one rule set; you can set up multiple rule sets to handle the scenarios that
-         * suit your game (such as for different game modes), and create a separate
-         * matchmaking configuration for each rule set. See additional information on rule
-         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
-         * sets, including useful examples, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
-         * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
-         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
-         * must be defined in the same region as the matchmaking configuration they will be
-         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
-         * set, create a new one with the necessary edits and then update matchmaking
-         * configurations to use the new rule set.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
-         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * character type. A rule set is used by a <a>MatchmakingConfiguration</a>. </p>
+         * <p>To create a matchmaking rule set, provide unique rule set name and the rule
+         * set body in JSON format. Rule sets must be defined in the same region as the
+         * matchmaking configuration they will be used with.</p> <p>Since matchmaking rule
+         * sets cannot be edited, it is a good idea to check the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a> before creating a new rule set.</p> <p>
+         * <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">Design
+         * a Matchmaker</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">Matchmaking
+         * with FlexMatch</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1499,30 +1473,27 @@ namespace Model
          * <p>Creates a new rule set for FlexMatch matchmaking. A rule set describes the
          * type of match to create, such as the number and size of teams, and sets the
          * parameters for acceptable player matches, such as minimum skill level or
-         * character type. Rule sets are used in matchmaking configurations, which define
-         * how matchmaking requests are handled. Each <a>MatchmakingConfiguration</a> uses
-         * one rule set; you can set up multiple rule sets to handle the scenarios that
-         * suit your game (such as for different game modes), and create a separate
-         * matchmaking configuration for each rule set. See additional information on rule
-         * set content in the <a>MatchmakingRuleSet</a> structure. For help creating rule
-         * sets, including useful examples, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * Adding FlexMatch to Your Game</a>.</p> <p>Once created, matchmaking rule sets
-         * cannot be changed or deleted, so we recommend checking the rule set syntax using
-         * <a>ValidateMatchmakingRuleSet</a> before creating the rule set.</p> <p>To create
-         * a matchmaking rule set, provide the set of rules and a unique name. Rule sets
-         * must be defined in the same region as the matchmaking configuration they will be
-         * used with. Rule sets cannot be edited or deleted. If you need to change a rule
-         * set, create a new one with the necessary edits and then update matchmaking
-         * configurations to use the new rule set.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
-         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * character type. A rule set is used by a <a>MatchmakingConfiguration</a>. </p>
+         * <p>To create a matchmaking rule set, provide unique rule set name and the rule
+         * set body in JSON format. Rule sets must be defined in the same region as the
+         * matchmaking configuration they will be used with.</p> <p>Since matchmaking rule
+         * sets cannot be edited, it is a good idea to check the rule set syntax using
+         * <a>ValidateMatchmakingRuleSet</a> before creating a new rule set.</p> <p>
+         * <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">Design
+         * a Matchmaker</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">Matchmaking
+         * with FlexMatch</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li>
+         * <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          *
@@ -1539,11 +1510,10 @@ namespace Model
          * session ID, player ID, and optionally a string of player data. If successful,
          * the player is added to the game session and a new <a>PlayerSession</a> object is
          * returned. Player sessions cannot be updated. </p> <p> <i>Available in Amazon
-         * GameLift Local.</i> </p> <p>Player-session-related operations include:</p> <ul>
-         * <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
-         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
-         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
-         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * GameLift Local.</i> </p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li>
+         * <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
+         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
+         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -1561,11 +1531,10 @@ namespace Model
          * session ID, player ID, and optionally a string of player data. If successful,
          * the player is added to the game session and a new <a>PlayerSession</a> object is
          * returned. Player sessions cannot be updated. </p> <p> <i>Available in Amazon
-         * GameLift Local.</i> </p> <p>Player-session-related operations include:</p> <ul>
-         * <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
-         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
-         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
-         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * GameLift Local.</i> </p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li>
+         * <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
+         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
+         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -1585,11 +1554,10 @@ namespace Model
          * session ID, player ID, and optionally a string of player data. If successful,
          * the player is added to the game session and a new <a>PlayerSession</a> object is
          * returned. Player sessions cannot be updated. </p> <p> <i>Available in Amazon
-         * GameLift Local.</i> </p> <p>Player-session-related operations include:</p> <ul>
-         * <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
-         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
-         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
-         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * GameLift Local.</i> </p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li>
+         * <li> <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
+         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
+         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
@@ -1609,12 +1577,11 @@ namespace Model
          * session ID, a list of player IDs, and optionally a set of player data strings.
          * If successful, the players are added to the game session and a set of new
          * <a>PlayerSession</a> objects is returned. Player sessions cannot be updated.</p>
-         * <p> <i>Available in Amazon GameLift Local.</i> </p> <p>Player-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li>
-         * <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
-         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
-         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
+         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
@@ -1631,12 +1598,11 @@ namespace Model
          * session ID, a list of player IDs, and optionally a set of player data strings.
          * If successful, the players are added to the game session and a set of new
          * <a>PlayerSession</a> objects is returned. Player sessions cannot be updated.</p>
-         * <p> <i>Available in Amazon GameLift Local.</i> </p> <p>Player-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li>
-         * <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
-         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
-         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
+         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
@@ -1655,12 +1621,11 @@ namespace Model
          * session ID, a list of player IDs, and optionally a set of player data strings.
          * If successful, the players are added to the game session and a set of new
          * <a>PlayerSession</a> objects is returned. Player sessions cannot be updated.</p>
-         * <p> <i>Available in Amazon GameLift Local.</i> </p> <p>Player-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li>
-         * <p> <a>CreatePlayerSessions</a> </p> </li> <li> <p>
-         * <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session placements</p>
-         * <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
+         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
+         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreatePlayerSessions">AWS
@@ -1677,7 +1642,7 @@ namespace Model
          * directly with other AWS resources. Once you've received authorization, call
          * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
          * owned by any AWS account you have access to, including the account that you use
          * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
@@ -1694,9 +1659,9 @@ namespace Model
          * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
          * <p>The authorization remains valid for 24 hours unless it is canceled by a call
          * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
-         * connection while the authorization is valid. </p> <p>VPC peering connection
-         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
-         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * connection while the authorization is valid. </p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
@@ -1713,7 +1678,7 @@ namespace Model
          * directly with other AWS resources. Once you've received authorization, call
          * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
          * owned by any AWS account you have access to, including the account that you use
          * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
@@ -1730,9 +1695,9 @@ namespace Model
          * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
          * <p>The authorization remains valid for 24 hours unless it is canceled by a call
          * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
-         * connection while the authorization is valid. </p> <p>VPC peering connection
-         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
-         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * connection while the authorization is valid. </p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
@@ -1751,7 +1716,7 @@ namespace Model
          * directly with other AWS resources. Once you've received authorization, call
          * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>You can peer with VPCs that are
          * owned by any AWS account you have access to, including the account that you use
          * to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in
@@ -1768,9 +1733,9 @@ namespace Model
          * and (2) ID of the AWS account that you use to manage Amazon GameLift. </p>
          * <p>The authorization remains valid for 24 hours unless it is canceled by a call
          * to <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering
-         * connection while the authorization is valid. </p> <p>VPC peering connection
-         * operations include:</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p>
-         * </li> <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+         * connection while the authorization is valid. </p> <ul> <li> <p>
+         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
@@ -1789,7 +1754,7 @@ namespace Model
          * You can peer with VPCs in any AWS account that you have access to, including the
          * account that you use to manage your Amazon GameLift fleets. You cannot peer with
          * VPCs that are in different regions. For more information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
          * establish the peering connection, you first need to call
          * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
@@ -1804,8 +1769,7 @@ namespace Model
          * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
          * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
          * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
-         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * </p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -1823,7 +1787,7 @@ namespace Model
          * You can peer with VPCs in any AWS account that you have access to, including the
          * account that you use to manage your Amazon GameLift fleets. You cannot peer with
          * VPCs that are in different regions. For more information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
          * establish the peering connection, you first need to call
          * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
@@ -1838,8 +1802,7 @@ namespace Model
          * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
          * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
          * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
-         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * </p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -1859,7 +1822,7 @@ namespace Model
          * You can peer with VPCs in any AWS account that you have access to, including the
          * account that you use to manage your Amazon GameLift fleets. You cannot peer with
          * VPCs that are in different regions. For more information, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
          * Peering with Amazon GameLift Fleets</a>.</p> <p>Before calling this operation to
          * establish the peering connection, you first need to call
          * <a>CreateVpcPeeringAuthorization</a> and identify the VPC you want to peer with.
@@ -1874,8 +1837,7 @@ namespace Model
          * <a>VpcPeeringConnection</a> request is created. You can use continuous polling
          * to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by
          * monitoring fleet events for success or failure using <a>DescribeFleetEvents</a>.
-         * </p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * </p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -1891,11 +1853,11 @@ namespace Model
         /**
          * <p>Deletes an alias. This action removes all record of the alias. Game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * To delete an alias, specify the alias ID to be deleted.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
          * API Reference</a></p>
          */
@@ -1904,11 +1866,11 @@ namespace Model
         /**
          * <p>Deletes an alias. This action removes all record of the alias. Game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * To delete an alias, specify the alias ID to be deleted.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
          * API Reference</a></p>
          *
@@ -1919,11 +1881,11 @@ namespace Model
         /**
          * <p>Deletes an alias. This action removes all record of the alias. Game clients
          * attempting to access a server process using the deleted alias receive an error.
-         * To delete an alias, specify the alias ID to be deleted.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * To delete an alias, specify the alias ID to be deleted.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteAlias">AWS
          * API Reference</a></p>
          *
@@ -1935,11 +1897,10 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p>Build-related operations
-         * include:</p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p>
-         * <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
-         * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * longer create new fleets with the deleted build.</p> <ul> <li> <p>
+         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          */
@@ -1949,11 +1910,10 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p>Build-related operations
-         * include:</p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p>
-         * <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
-         * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * longer create new fleets with the deleted build.</p> <ul> <li> <p>
+         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          *
@@ -1965,11 +1925,10 @@ namespace Model
          * <p>Deletes a build. This action permanently deletes the build record and any
          * uploaded build files.</p> <p>To delete a build, specify its ID. Deleting a build
          * does not affect the status of any active fleets using the build, but you can no
-         * longer create new fleets with the deleted build.</p> <p>Build-related operations
-         * include:</p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p>
-         * <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
-         * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * longer create new fleets with the deleted build.</p> <ul> <li> <p>
+         * <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
+         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
+         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteBuild">AWS
          * API Reference</a></p>
          *
@@ -1981,12 +1940,11 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * is deleted, you can no longer use that fleet.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2005,12 +1963,11 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * is deleted, you can no longer use that fleet.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2031,12 +1988,11 @@ namespace Model
          * <p>Deletes everything related to a fleet. Before deleting a fleet, you must set
          * the fleet's desired capacity to zero. See <a>UpdateFleetCapacity</a>.</p>
          * <p>This action removes the fleet's resources and the fleet record. Once a fleet
-         * is deleted, you can no longer use that fleet.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * is deleted, you can no longer use that fleet.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2056,8 +2012,8 @@ namespace Model
         /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2069,8 +2025,8 @@ namespace Model
         /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2084,8 +2040,8 @@ namespace Model
         /**
          * <p>Deletes a game session queue. This action means that any
          * <a>StartGameSessionPlacement</a> requests that reference this queue will fail.
-         * To delete a queue, specify the queue name.</p> <p>Queue-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * To delete a queue, specify the queue name.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2099,15 +2055,15 @@ namespace Model
         /**
          * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
          * the configuration name. A matchmaking configuration cannot be deleted if it is
-         * being used in any active matchmaking tickets.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
+         * being used in any active matchmaking tickets.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2116,15 +2072,15 @@ namespace Model
         /**
          * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
          * the configuration name. A matchmaking configuration cannot be deleted if it is
-         * being used in any active matchmaking tickets.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
+         * being used in any active matchmaking tickets.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2135,15 +2091,15 @@ namespace Model
         /**
          * <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify
          * the configuration name. A matchmaking configuration cannot be deleted if it is
-         * being used in any active matchmaking tickets.</p> <p>Operations related to match
-         * configurations and rule sets include:</p> <ul> <li> <p>
+         * being used in any active matchmaking tickets.</p> <ul> <li> <p>
          * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2152,16 +2108,76 @@ namespace Model
         virtual void DeleteMatchmakingConfigurationAsync(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the
+         * rule set name. Rule sets cannot be deleted if they are currently being used by a
+         * matchmaking configuration. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMatchmakingRuleSetOutcome DeleteMatchmakingRuleSet(const Model::DeleteMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the
+         * rule set name. Rule sets cannot be deleted if they are currently being used by a
+         * matchmaking configuration. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMatchmakingRuleSetOutcomeCallable DeleteMatchmakingRuleSetCallable(const Model::DeleteMatchmakingRuleSetRequest& request) const;
+
+        /**
+         * <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the
+         * rule set name. Rule sets cannot be deleted if they are currently being used by a
+         * matchmaking configuration. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMatchmakingRuleSetAsync(const Model::DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a fleet scaling policy. This action means that the policy is no
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
          * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
-         * operation suspends all policies for the fleet.</p> <p>Operations related to
-         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
-         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * operation suspends all policies for the fleet.</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2175,12 +2191,11 @@ namespace Model
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
          * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
-         * operation suspends all policies for the fleet.</p> <p>Operations related to
-         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
-         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * operation suspends all policies for the fleet.</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2196,12 +2211,11 @@ namespace Model
          * longer in force and removes all record of it. To delete a scaling policy,
          * specify both the scaling policy name and the fleet ID it is associated with.</p>
          * <p>To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This
-         * operation suspends all policies for the fleet.</p> <p>Operations related to
-         * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
-         * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
-         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * operation suspends all policies for the fleet.</p> <ul> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -2215,8 +2229,7 @@ namespace Model
         /**
          * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
          * authorization has already been used to create a peering connection, call
-         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2231,8 +2244,7 @@ namespace Model
         /**
          * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
          * authorization has already been used to create a peering connection, call
-         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2249,8 +2261,7 @@ namespace Model
         /**
          * <p>Cancels a pending VPC peering authorization for the specified VPC. If the
          * authorization has already been used to create a peering connection, call
-         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * <a>DeleteVpcPeeringConnection</a> to remove the connection. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2272,8 +2283,7 @@ namespace Model
          * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
          * call this operation from the AWS account that is used to manage the Amazon
          * GameLift fleets. Identify the connection to delete by the connection ID and
-         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * fleet ID. If successful, the connection is removed. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2293,8 +2303,7 @@ namespace Model
          * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
          * call this operation from the AWS account that is used to manage the Amazon
          * GameLift fleets. Identify the connection to delete by the connection ID and
-         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * fleet ID. If successful, the connection is removed. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2316,8 +2325,7 @@ namespace Model
          * <a>CreateVpcPeeringAuthorization</a>. </p> <p>Once a valid authorization exists,
          * call this operation from the AWS account that is used to manage the Amazon
          * GameLift fleets. Identify the connection to delete by the connection ID and
-         * fleet ID. If successful, the connection is removed. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * fleet ID. If successful, the connection is removed. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -2335,11 +2343,11 @@ namespace Model
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
          * and settings. To get an alias's target fleet ID only, use
          * <code>ResolveAlias</code>. </p> <p>To get alias properties, specify the alias
-         * ID. If successful, the requested alias record is returned.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ID. If successful, the requested alias record is returned.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
          * API Reference</a></p>
          */
@@ -2349,11 +2357,11 @@ namespace Model
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
          * and settings. To get an alias's target fleet ID only, use
          * <code>ResolveAlias</code>. </p> <p>To get alias properties, specify the alias
-         * ID. If successful, the requested alias record is returned.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ID. If successful, the requested alias record is returned.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
          * API Reference</a></p>
          *
@@ -2365,11 +2373,11 @@ namespace Model
          * <p>Retrieves properties for an alias. This operation returns all alias metadata
          * and settings. To get an alias's target fleet ID only, use
          * <code>ResolveAlias</code>. </p> <p>To get alias properties, specify the alias
-         * ID. If successful, the requested alias record is returned.</p> <p>Alias-related
-         * operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * ID. If successful, the requested alias record is returned.</p> <ul> <li> <p>
+         * <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p>
+         * <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p>
+         * <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeAlias">AWS
          * API Reference</a></p>
          *
@@ -2380,10 +2388,9 @@ namespace Model
         /**
          * <p>Retrieves properties for a build. To request a build record, specify a build
          * ID. If successful, an object containing the build properties is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          */
@@ -2392,10 +2399,9 @@ namespace Model
         /**
          * <p>Retrieves properties for a build. To request a build record, specify a build
          * ID. If successful, an object containing the build properties is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          *
@@ -2406,10 +2412,9 @@ namespace Model
         /**
          * <p>Retrieves properties for a build. To request a build record, specify a build
          * ID. If successful, an object containing the build properties is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeBuild">AWS
          * API Reference</a></p>
          *
@@ -2423,12 +2428,11 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for Amazon
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * drop-down list in the upper right corner).</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2449,12 +2453,11 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for Amazon
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * drop-down list in the upper right corner).</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2477,12 +2480,11 @@ namespace Model
          * limit)</p> </li> <li> <p>current usage level for the AWS account</p> </li> </ul>
          * <p>Service limits vary depending on region. Available regions for Amazon
          * GameLift can be found in the AWS Management Console for Amazon GameLift (see the
-         * drop-down list in the upper right corner).</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * drop-down list in the upper right corner).</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2509,10 +2511,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2538,10 +2540,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2569,10 +2571,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2601,10 +2603,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2631,10 +2633,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2663,10 +2665,10 @@ namespace Model
          * fleets that currently exist. </p> <note> <p>Some API actions may limit the
          * number of fleet IDs allowed in one request. If a request exceeds this limit, the
          * request fails and the error message includes the maximum allowed.</p> </note>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
+         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
+         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -2688,12 +2690,11 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * entries matching the request are returned.</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2712,12 +2713,11 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * entries matching the request are returned.</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2738,12 +2738,11 @@ namespace Model
          * <p>Retrieves entries from the specified fleet's event log. You can specify a
          * time range to limit the result set. Use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a collection of event log
-         * entries matching the request are returned.</p> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * entries matching the request are returned.</p> <ul> <li> <p> <a>CreateFleet</a>
+         * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+         * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2766,12 +2765,11 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * requested fleet has been deleted, the result set is empty.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2792,12 +2790,11 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * requested fleet has been deleted, the result set is empty.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2820,12 +2817,11 @@ namespace Model
          * traffic can use to access server processes in the fleet. To get a fleet's
          * inbound connection permissions, specify a fleet ID. If successful, a collection
          * of <a>IpPermission</a> objects is returned for the requested fleet ID. If the
-         * requested fleet has been deleted, the result set is empty.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * requested fleet has been deleted, the result set is empty.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2851,12 +2847,11 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * message includes the maximum allowed.</p> </note> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2880,12 +2875,11 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * message includes the maximum allowed.</p> </note> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2911,12 +2905,11 @@ namespace Model
          * IDs, utilization objects are returned only for fleets that currently exist. </p>
          * <note> <p>Some API actions may limit the number of fleet IDs allowed in one
          * request. If a request exceeds this limit, the request fails and the error
-         * message includes the maximum allowed.</p> </note> <p>Fleet-related operations
-         * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * message includes the maximum allowed.</p> </note> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -2943,14 +2936,13 @@ namespace Model
          * game session ID, fleet ID, or alias ID. You can filter this request by game
          * session status. Use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionDetail</a> object is returned
-         * for each session matching the request.</p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * for each session matching the request.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
@@ -2968,14 +2960,13 @@ namespace Model
          * game session ID, fleet ID, or alias ID. You can filter this request by game
          * session status. Use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionDetail</a> object is returned
-         * for each session matching the request.</p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * for each session matching the request.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
@@ -2995,14 +2986,13 @@ namespace Model
          * game session ID, fleet ID, or alias ID. You can filter this request by game
          * session status. Use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionDetail</a> object is returned
-         * for each session matching the request.</p> <p>Game-session-related operations
-         * include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * for each session matching the request.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails">AWS
@@ -3015,14 +3005,13 @@ namespace Model
         /**
          * <p>Retrieves properties and current status of a game session placement request.
          * To get game session placement details, specify the placement ID. If successful,
-         * a <a>GameSessionPlacement</a> object is returned.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * a <a>GameSessionPlacement</a> object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">AWS
@@ -3033,14 +3022,13 @@ namespace Model
         /**
          * <p>Retrieves properties and current status of a game session placement request.
          * To get game session placement details, specify the placement ID. If successful,
-         * a <a>GameSessionPlacement</a> object is returned.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * a <a>GameSessionPlacement</a> object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">AWS
@@ -3053,14 +3041,13 @@ namespace Model
         /**
          * <p>Retrieves properties and current status of a game session placement request.
          * To get game session placement details, specify the placement ID. If successful,
-         * a <a>GameSessionPlacement</a> object is returned.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * a <a>GameSessionPlacement</a> object is returned.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionPlacement">AWS
@@ -3075,9 +3062,9 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the region.</p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * only for queues that currently exist in the region.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">AWS
@@ -3090,9 +3077,9 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the region.</p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * only for queues that currently exist in the region.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">AWS
@@ -3107,9 +3094,9 @@ namespace Model
          * multiple queues, use the pagination parameters to retrieve results as a set of
          * sequential pages. If successful, a <a>GameSessionQueue</a> object is returned
          * for each requested queue. When specifying a list of queues, objects are returned
-         * only for queues that currently exist in the region.</p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * only for queues that currently exist in the region.</p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues">AWS
@@ -3129,8 +3116,7 @@ namespace Model
          * filter this request by game session status. Use the pagination parameters to
          * retrieve results as a set of sequential pages. If successful, a
          * <a>GameSession</a> object is returned for each game session matching the
-         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -3154,8 +3140,7 @@ namespace Model
          * filter this request by game session status. Use the pagination parameters to
          * retrieve results as a set of sequential pages. If successful, a
          * <a>GameSession</a> object is returned for each game session matching the
-         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -3181,8 +3166,7 @@ namespace Model
          * filter this request by game session status. Use the pagination parameters to
          * retrieve results as a set of sequential pages. If successful, a
          * <a>GameSession</a> object is returned for each game session matching the
-         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -3250,11 +3234,11 @@ namespace Model
          * details on tracking matchmaking requests through polling or notifications in
          * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
          * of up to 10 ticket IDs. If the request is successful, a ticket object is
-         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * returned for each requested ID that currently exists.</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -3269,11 +3253,11 @@ namespace Model
          * details on tracking matchmaking requests through polling or notifications in
          * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
          * of up to 10 ticket IDs. If the request is successful, a ticket object is
-         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * returned for each requested ID that currently exists.</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -3290,11 +3274,11 @@ namespace Model
          * details on tracking matchmaking requests through polling or notifications in
          * <a>StartMatchmaking</a>. </p> <p>To request matchmaking tickets, provide a list
          * of up to 10 ticket IDs. If the request is successful, a ticket object is
-         * returned for each requested ID that currently exists.</p> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * returned for each requested ID that currently exists.</p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -3310,14 +3294,15 @@ namespace Model
          * requesting multiple items, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a configuration is returned for each
          * requested name. When specifying a list of names, only configurations that
-         * currently exist are returned. </p> <p>Operations related to match configurations
-         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
-         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * currently exist are returned. </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
          * API Reference</a></p>
          */
@@ -3331,14 +3316,15 @@ namespace Model
          * requesting multiple items, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a configuration is returned for each
          * requested name. When specifying a list of names, only configurations that
-         * currently exist are returned. </p> <p>Operations related to match configurations
-         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
-         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * currently exist are returned. </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3354,14 +3340,15 @@ namespace Model
          * requesting multiple items, use the pagination parameters to retrieve results as
          * a set of sequential pages. If successful, a configuration is returned for each
          * requested name. When specifying a list of names, only configurations that
-         * currently exist are returned. </p> <p>Operations related to match configurations
-         * and rule sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a>
-         * </p> </li> <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * currently exist are returned. </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingConfigurations">AWS
          * API Reference</a></p>
          *
@@ -3374,14 +3361,17 @@ namespace Model
          * all existing rule sets for the region, or provide a list of one or more rule set
          * names. When requesting multiple items, use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a rule set is returned for
-         * each requested name. </p> <p>Operations related to match configurations and rule
-         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
-         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * each requested name. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
          * API Reference</a></p>
          */
@@ -3392,14 +3382,17 @@ namespace Model
          * all existing rule sets for the region, or provide a list of one or more rule set
          * names. When requesting multiple items, use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a rule set is returned for
-         * each requested name. </p> <p>Operations related to match configurations and rule
-         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
-         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * each requested name. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
          * API Reference</a></p>
          *
@@ -3412,14 +3405,17 @@ namespace Model
          * all existing rule sets for the region, or provide a list of one or more rule set
          * names. When requesting multiple items, use the pagination parameters to retrieve
          * results as a set of sequential pages. If successful, a rule set is returned for
-         * each requested name. </p> <p>Operations related to match configurations and rule
-         * sets include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
-         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * each requested name. </p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets">AWS
          * API Reference</a></p>
          *
@@ -3439,11 +3435,11 @@ namespace Model
          * status. Use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>PlayerSession</a> object is returned for each session
          * matching the request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Player-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
-         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
+         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
+         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
+         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
@@ -3463,11 +3459,11 @@ namespace Model
          * status. Use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>PlayerSession</a> object is returned for each session
          * matching the request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Player-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
-         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
+         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
+         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
+         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
@@ -3489,11 +3485,11 @@ namespace Model
          * status. Use the pagination parameters to retrieve results as a set of sequential
          * pages. If successful, a <a>PlayerSession</a> object is returned for each session
          * matching the request.</p> <p> <i>Available in Amazon GameLift Local.</i> </p>
-         * <p>Player-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
-         * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
+         * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
+         * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
+         * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions">AWS
@@ -3506,11 +3502,11 @@ namespace Model
         /**
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instances in the fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -3528,11 +3524,11 @@ namespace Model
         /**
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instances in the fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -3552,11 +3548,11 @@ namespace Model
         /**
          * <p>Retrieves the current run-time configuration for the specified fleet. The
          * run-time configuration tells Amazon GameLift how to launch server processes on
-         * instances in the fleet.</p> <p>Fleet-related operations include:</p> <ul> <li>
-         * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instances in the fleet.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -3582,8 +3578,7 @@ namespace Model
          * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
          * action does not affect the status of the scaling policies, which remains ACTIVE.
          * To see whether a fleet's scaling policies are in force or suspended, call
-         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -3605,8 +3600,7 @@ namespace Model
          * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
          * action does not affect the status of the scaling policies, which remains ACTIVE.
          * To see whether a fleet's scaling policies are in force or suspended, call
-         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -3630,8 +3624,7 @@ namespace Model
          * have all of its scaling policies suspended (<a>StopFleetActions</a>). This
          * action does not affect the status of the scaling policies, which remains ACTIVE.
          * To see whether a fleet's scaling policies are in force or suspended, call
-         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> and check the stopped actions.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -3649,9 +3642,8 @@ namespace Model
         /**
          * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
          * account. This operation returns all VPC peering authorizations and requests for
-         * peering. This includes those initiated and received by this account. </p> <p>VPC
-         * peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * peering. This includes those initiated and received by this account. </p> <ul>
+         * <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -3665,9 +3657,8 @@ namespace Model
         /**
          * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
          * account. This operation returns all VPC peering authorizations and requests for
-         * peering. This includes those initiated and received by this account. </p> <p>VPC
-         * peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * peering. This includes those initiated and received by this account. </p> <ul>
+         * <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -3683,9 +3674,8 @@ namespace Model
         /**
          * <p>Retrieves valid VPC peering authorizations that are pending for the AWS
          * account. This operation returns all VPC peering authorizations and requests for
-         * peering. This includes those initiated and received by this account. </p> <p>VPC
-         * peering connection operations include:</p> <ul> <li> <p>
-         * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+         * peering. This includes those initiated and received by this account. </p> <ul>
+         * <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -3705,8 +3695,7 @@ namespace Model
          * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
          * parameter empty to retrieve all connection records. If successful, the retrieved
          * information includes both active and pending connections. Active connections
-         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -3725,8 +3714,7 @@ namespace Model
          * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
          * parameter empty to retrieve all connection records. If successful, the retrieved
          * information includes both active and pending connections. Active connections
-         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -3747,8 +3735,7 @@ namespace Model
          * is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the
          * parameter empty to retrieve all connection records. If successful, the retrieved
          * information includes both active and pending connections. Active connections
-         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <p>VPC peering
-         * connection operations include:</p> <ul> <li> <p>
+         * identify the IpV4 CIDR block that the VPC uses to connect. </p> <ul> <li> <p>
          * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
          * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
          * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
@@ -3767,11 +3754,10 @@ namespace Model
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
          * logs.</p> <note> <p>See the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3789,11 +3775,10 @@ namespace Model
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
          * logs.</p> <note> <p>See the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3813,11 +3798,10 @@ namespace Model
          * session. When a game session is terminated, Amazon GameLift automatically stores
          * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
          * logs.</p> <note> <p>See the <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
+         * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
          * Service Limits</a> page for maximum log file sizes. Log files that exceed this
-         * limit are not saved.</p> </note> <p>Game-session-related operations include:</p>
-         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * limit are not saved.</p> </note> <ul> <li> <p> <a>CreateGameSession</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
          * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
          * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
          * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
@@ -3844,11 +3828,12 @@ namespace Model
          * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
          * (See the example later in this topic). For more information on remote access,
          * see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of the instance and the fleet it belongs to. If successful, an
-         * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * specify the IDs of both the instance and the fleet it belongs to. You can
+         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
+         * successful, an <a>InstanceAccess</a> object is returned containing the
+         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          */
@@ -3866,11 +3851,12 @@ namespace Model
          * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
          * (See the example later in this topic). For more information on remote access,
          * see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of the instance and the fleet it belongs to. If successful, an
-         * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * specify the IDs of both the instance and the fleet it belongs to. You can
+         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
+         * successful, an <a>InstanceAccess</a> object is returned containing the
+         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          *
@@ -3890,11 +3876,12 @@ namespace Model
          * CLI, saving the secret can be handled as part of the GetInstanceAccess request.
          * (See the example later in this topic). For more information on remote access,
          * see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely
          * Accessing an Instance</a>.</p> <p>To request access to a specific instance,
-         * specify the IDs of the instance and the fleet it belongs to. If successful, an
-         * <a>InstanceAccess</a> object is returned containing the instance's IP address
-         * and a set of credentials.</p><p><h3>See Also:</h3>   <a
+         * specify the IDs of both the instance and the fleet it belongs to. You can
+         * retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If
+         * successful, an <a>InstanceAccess</a> object is returned containing the
+         * instance's IP address and a set of credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GetInstanceAccess">AWS
          * API Reference</a></p>
          *
@@ -3906,11 +3893,11 @@ namespace Model
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
          * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <p>Alias-related operations
-         * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
+         * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
+         * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
          * API Reference</a></p>
          */
@@ -3920,11 +3907,11 @@ namespace Model
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
          * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <p>Alias-related operations
-         * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
+         * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
+         * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
          * API Reference</a></p>
          *
@@ -3936,11 +3923,11 @@ namespace Model
          * <p>Retrieves all aliases for this AWS account. You can filter the result set by
          * alias name and/or routing strategy type. Use the pagination parameters to
          * retrieve results in sequential pages.</p> <note> <p>Returned aliases are not
-         * listed in any particular order.</p> </note> <p>Alias-related operations
-         * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-         * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-         * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-         * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * listed in any particular order.</p> </note> <ul> <li> <p> <a>CreateAlias</a>
+         * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
+         * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
+         * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases">AWS
          * API Reference</a></p>
          *
@@ -3953,10 +3940,10 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p>Build-related operations include:</p> <ul> <li>
-         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * particular order.</p> </note> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li>
+         * <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li>
+         * <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          */
@@ -3967,10 +3954,10 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p>Build-related operations include:</p> <ul> <li>
-         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * particular order.</p> </note> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li>
+         * <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li>
+         * <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          *
@@ -3983,10 +3970,10 @@ namespace Model
          * use. You can limit results to builds that are in a specific status by using the
          * <code>Status</code> parameter. Use the pagination parameters to retrieve results
          * in a set of sequential pages. </p> <note> <p>Build records are not listed in any
-         * particular order.</p> </note> <p>Build-related operations include:</p> <ul> <li>
-         * <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p>
-         * <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p>
-         * <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * particular order.</p> </note> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li>
+         * <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li>
+         * <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListBuilds">AWS
          * API Reference</a></p>
          *
@@ -3998,11 +3985,11 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * order.</p> </note> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -4021,11 +4008,11 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * order.</p> </note> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -4046,11 +4033,11 @@ namespace Model
          * <p>Retrieves a collection of fleet records for this AWS account. You can filter
          * the result set by build ID. Use the pagination parameters to retrieve results in
          * sequential pages.</p> <note> <p>Fleet records are not listed in any particular
-         * order.</p> </note> <p>Fleet-related operations include:</p> <ul> <li> <p>
-         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * order.</p> </note> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -4085,7 +4072,7 @@ namespace Model
          * action. To stop just one scaling policy--or to permanently remove it, you must
          * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
          * to work with auto-scaling in <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
          * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
          * target-based policy tracks a single metric: PercentAvailableGameSessions. This
          * metric tells us how much of a fleet's hosting capacity is ready to host game
@@ -4126,8 +4113,7 @@ namespace Model
          * policy rule statement. On a successful request, the policy name is returned.
          * Scaling policies are automatically in force as soon as they're successfully
          * created. If the fleet's auto-scaling actions are temporarily suspended, the new
-         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * policy will be in force once the fleet actions are restarted.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -4158,7 +4144,7 @@ namespace Model
          * action. To stop just one scaling policy--or to permanently remove it, you must
          * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
          * to work with auto-scaling in <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
          * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
          * target-based policy tracks a single metric: PercentAvailableGameSessions. This
          * metric tells us how much of a fleet's hosting capacity is ready to host game
@@ -4199,8 +4185,7 @@ namespace Model
          * policy rule statement. On a successful request, the policy name is returned.
          * Scaling policies are automatically in force as soon as they're successfully
          * created. If the fleet's auto-scaling actions are temporarily suspended, the new
-         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * policy will be in force once the fleet actions are restarted.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -4233,7 +4218,7 @@ namespace Model
          * action. To stop just one scaling policy--or to permanently remove it, you must
          * delete the policy with <a>DeleteScalingPolicy</a>.</p> <p>Learn more about how
          * to work with auto-scaling in <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set
          * Up Fleet Automatic Scaling</a>.</p> <p> <b>Target-based policy</b> </p> <p>A
          * target-based policy tracks a single metric: PercentAvailableGameSessions. This
          * metric tells us how much of a fleet's hosting capacity is ready to host game
@@ -4274,8 +4259,7 @@ namespace Model
          * policy rule statement. On a successful request, the policy name is returned.
          * Scaling policies are automatically in force as soon as they're successfully
          * created. If the fleet's auto-scaling actions are temporarily suspended, the new
-         * policy will be in force once the fleet actions are restarted.</p> <p>Operations
-         * related to fleet capacity scaling include:</p> <ul> <li> <p>
+         * policy will be in force once the fleet actions are restarted.</p> <ul> <li> <p>
          * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
          * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
          * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
@@ -4332,10 +4316,10 @@ namespace Model
 
         /**
          * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
          * API Reference</a></p>
          */
@@ -4343,10 +4327,10 @@ namespace Model
 
         /**
          * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
          * API Reference</a></p>
          *
@@ -4356,10 +4340,10 @@ namespace Model
 
         /**
          * <p>Retrieves the fleet ID that a specified alias is currently pointing to.</p>
-         * <p>Alias-related operations include:</p> <ul> <li> <p> <a>CreateAlias</a> </p>
-         * </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p>
-         * </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p>
-         * </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p>
+         * </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p>
+         * </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResolveAlias">AWS
          * API Reference</a></p>
          *
@@ -4406,14 +4390,13 @@ namespace Model
          * only. To find game sessions across multiple fleets, you must search each fleet
          * separately and combine the results. This search feature finds only game sessions
          * that are in <code>ACTIVE</code> status. To locate games in statuses other than
-         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4460,14 +4443,13 @@ namespace Model
          * only. To find game sessions across multiple fleets, you must search each fleet
          * separately and combine the results. This search feature finds only game sessions
          * that are in <code>ACTIVE</code> status. To locate games in statuses other than
-         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4516,14 +4498,13 @@ namespace Model
          * only. To find game sessions across multiple fleets, you must search each fleet
          * separately and combine the results. This search feature finds only game sessions
          * that are in <code>ACTIVE</code> status. To locate games in statuses other than
-         * active, use <a>DescribeGameSessionDetails</a>.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * active, use <a>DescribeGameSessionDetails</a>.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions">AWS
@@ -4541,11 +4522,11 @@ namespace Model
          * again initiates scaling events as triggered by the fleet's scaling policies. If
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
-         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
-         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
-         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a>
+         * </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p>
+         * <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -4562,11 +4543,11 @@ namespace Model
          * again initiates scaling events as triggered by the fleet's scaling policies. If
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
-         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
-         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
-         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a>
+         * </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p>
+         * <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -4585,11 +4566,11 @@ namespace Model
          * again initiates scaling events as triggered by the fleet's scaling policies. If
          * actions on the fleet were never stopped, this operation will have no effect. You
          * can view a fleet's stopped actions using <a>DescribeFleetAttributes</a>.</p>
-         * <p>Operations related to fleet capacity scaling include:</p> <ul> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-         * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
-         * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
-         * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+         * <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a>
+         * </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p>
+         * <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+         * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
          * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
          * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
          * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -4621,15 +4602,16 @@ namespace Model
          * <ul> <li> <p>The queue name and a set of game session properties and
          * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
          * use this ID to track the status of the placement request</p> </li> <li>
-         * <p>(Optional) A set of IDs and player data for each player you want to join to
-         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
-         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
-         * game session placement is created.</p> <p>To track the status of a placement
-         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>FULFILLED</code>, a new game session has been
-         * created and a game session ARN and region are referenced. If the placement
-         * request times out, you can resubmit the request or retry it with a different
-         * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * <p>(Optional) A set of player data and a unique player ID for each player that
+         * you are joining to the new game session (player data is optional, but if you
+         * include it, you must also provide a unique ID for each player)</p> </li> <li>
+         * <p>Latency data for all players (if you want to optimize game play for the
+         * players)</p> </li> </ul> <p>If successful, a new game session placement is
+         * created.</p> <p>To track the status of a placement request, call
+         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
+         * status is <code>FULFILLED</code>, a new game session has been created and a game
+         * session ARN and region are referenced. If the placement request times out, you
+         * can resubmit the request or retry it with a different queue. </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -4664,15 +4646,16 @@ namespace Model
          * <ul> <li> <p>The queue name and a set of game session properties and
          * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
          * use this ID to track the status of the placement request</p> </li> <li>
-         * <p>(Optional) A set of IDs and player data for each player you want to join to
-         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
-         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
-         * game session placement is created.</p> <p>To track the status of a placement
-         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>FULFILLED</code>, a new game session has been
-         * created and a game session ARN and region are referenced. If the placement
-         * request times out, you can resubmit the request or retry it with a different
-         * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * <p>(Optional) A set of player data and a unique player ID for each player that
+         * you are joining to the new game session (player data is optional, but if you
+         * include it, you must also provide a unique ID for each player)</p> </li> <li>
+         * <p>Latency data for all players (if you want to optimize game play for the
+         * players)</p> </li> </ul> <p>If successful, a new game session placement is
+         * created.</p> <p>To track the status of a placement request, call
+         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
+         * status is <code>FULFILLED</code>, a new game session has been created and a game
+         * session ARN and region are referenced. If the placement request times out, you
+         * can resubmit the request or retry it with a different queue. </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -4709,15 +4692,16 @@ namespace Model
          * <ul> <li> <p>The queue name and a set of game session properties and
          * settings</p> </li> <li> <p>A unique ID (such as a UUID) for the placement. You
          * use this ID to track the status of the placement request</p> </li> <li>
-         * <p>(Optional) A set of IDs and player data for each player you want to join to
-         * the new game session</p> </li> <li> <p>Latency data for all players (if you want
-         * to optimize game play for the players)</p> </li> </ul> <p>If successful, a new
-         * game session placement is created.</p> <p>To track the status of a placement
-         * request, call <a>DescribeGameSessionPlacement</a> and check the request's
-         * status. If the status is <code>FULFILLED</code>, a new game session has been
-         * created and a game session ARN and region are referenced. If the placement
-         * request times out, you can resubmit the request or retry it with a different
-         * queue. </p> <p>Game-session-related operations include:</p> <ul> <li> <p>
+         * <p>(Optional) A set of player data and a unique player ID for each player that
+         * you are joining to the new game session (player data is optional, but if you
+         * include it, you must also provide a unique ID for each player)</p> </li> <li>
+         * <p>Latency data for all players (if you want to optimize game play for the
+         * players)</p> </li> </ul> <p>If successful, a new game session placement is
+         * created.</p> <p>To track the status of a placement request, call
+         * <a>DescribeGameSessionPlacement</a> and check the request's status. If the
+         * status is <code>FULFILLED</code>, a new game session has been created and a game
+         * session ARN and region are referenced. If the placement request times out, you
+         * can resubmit the request or retry it with a different queue. </p> <ul> <li> <p>
          * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
          * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
          * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
@@ -4747,7 +4731,7 @@ namespace Model
          * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
          * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
          * backfill matches is essentially identical to the initial matchmaking process.
          * The matchmaker searches the pool and groups tickets together to form potential
@@ -4757,12 +4741,12 @@ namespace Model
          * and the <a>GameSession</a> object is updated to include matchmaker data on the
          * new players. For more detail on how match backfill requests are processed, see
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          */
@@ -4782,7 +4766,7 @@ namespace Model
          * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
          * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
          * backfill matches is essentially identical to the initial matchmaking process.
          * The matchmaker searches the pool and groups tickets together to form potential
@@ -4792,12 +4776,12 @@ namespace Model
          * and the <a>GameSession</a> object is updated to include matchmaker data on the
          * new players. For more detail on how match backfill requests are processed, see
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          *
@@ -4819,7 +4803,7 @@ namespace Model
          * QUEUED. The ticket is placed in the matchmaker's ticket pool and processed.
          * Track the status of the ticket to respond as needed. For more detail how to set
          * up backfilling, see <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
          * Backfill Existing Games with FlexMatch</a>. </p> <p>The process of finding
          * backfill matches is essentially identical to the initial matchmaking process.
          * The matchmaker searches the pool and groups tickets together to form potential
@@ -4829,12 +4813,12 @@ namespace Model
          * and the <a>GameSession</a> object is updated to include matchmaker data on the
          * new players. For more detail on how match backfill requests are processed, see
          * <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
-         * How Amazon GameLift FlexMatch Works</a>. </p> <p>Matchmaking-related operations
-         * include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p>
-         * <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li>
-         * <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * How Amazon GameLift FlexMatch Works</a>. </p> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchBackfill">AWS
          * API Reference</a></p>
          *
@@ -4853,7 +4837,7 @@ namespace Model
          * match. Match type, rules, and the queue used to place a new game session are
          * defined in a <code>MatchmakingConfiguration</code>. For complete information on
          * setting up and using FlexMatch, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
          * ticket ID, specify a matchmaking configuration, and include the players to be
          * matched. You must also include a set of player attributes relevant for the
@@ -4892,11 +4876,11 @@ namespace Model
          * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
          * status. Connection information (including game session endpoint and player
          * session) is added to the matchmaking tickets. Matched players can use the
-         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * connection information to join the game. </p> </li> </ol> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -4913,7 +4897,7 @@ namespace Model
          * match. Match type, rules, and the queue used to place a new game session are
          * defined in a <code>MatchmakingConfiguration</code>. For complete information on
          * setting up and using FlexMatch, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
          * ticket ID, specify a matchmaking configuration, and include the players to be
          * matched. You must also include a set of player attributes relevant for the
@@ -4952,11 +4936,11 @@ namespace Model
          * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
          * status. Connection information (including game session endpoint and player
          * session) is added to the matchmaking tickets. Matched players can use the
-         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * connection information to join the game. </p> </li> </ol> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -4975,7 +4959,7 @@ namespace Model
          * match. Match type, rules, and the queue used to place a new game session are
          * defined in a <code>MatchmakingConfiguration</code>. For complete information on
          * setting up and using FlexMatch, see the topic <a
-         * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">
          * Adding FlexMatch to Your Game</a>.</p> <p>To start matchmaking, provide a unique
          * ticket ID, specify a matchmaking configuration, and include the players to be
          * matched. You must also include a set of player attributes relevant for the
@@ -5014,11 +4998,11 @@ namespace Model
          * successfully placed, the matchmaking tickets move into <code>COMPLETED</code>
          * status. Connection information (including game session endpoint and player
          * session) is added to the matchmaking tickets. Matched players can use the
-         * connection information to join the game. </p> </li> </ol> <p>Matchmaking-related
-         * operations include:</p> <ul> <li> <p> <a>StartMatchmaking</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmaking</a> </p> </li> <li> <p> <a>StopMatchmaking</a> </p>
-         * </li> <li> <p> <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a>
-         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * connection information to join the game. </p> </li> </ol> <ul> <li> <p>
+         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
+         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
+         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -5081,14 +5065,13 @@ namespace Model
         /**
          * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
          * stop a placement, provide the placement ID values. If successful, the placement
-         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * is moved to <code>CANCELLED</code> status.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">AWS
@@ -5099,14 +5082,13 @@ namespace Model
         /**
          * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
          * stop a placement, provide the placement ID values. If successful, the placement
-         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * is moved to <code>CANCELLED</code> status.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">AWS
@@ -5119,14 +5101,13 @@ namespace Model
         /**
          * <p>Cancels a game session placement that is in <code>PENDING</code> status. To
          * stop a placement, provide the placement ID values. If successful, the placement
-         * is moved to <code>CANCELLED</code> status.</p> <p>Game-session-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessions</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
-         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
-         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
-         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
-         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * is moved to <code>CANCELLED</code> status.</p> <ul> <li> <p>
+         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
+         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
+         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
+         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
+         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
+         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopGameSessionPlacement">AWS
@@ -5139,12 +5120,11 @@ namespace Model
         /**
          * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
          * matchmaking operation, specify the ticket ID. If successful, work on the ticket
-         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
-         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
-         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
-         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p> <ul>
+         * <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a>
+         * </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p>
+         * <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          */
@@ -5153,12 +5133,11 @@ namespace Model
         /**
          * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
          * matchmaking operation, specify the ticket ID. If successful, work on the ticket
-         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
-         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
-         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
-         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p> <ul>
+         * <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a>
+         * </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p>
+         * <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -5169,12 +5148,11 @@ namespace Model
         /**
          * <p>Cancels a matchmaking ticket that is currently being processed. To stop the
          * matchmaking operation, specify the ticket ID. If successful, work on the ticket
-         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>
-         * <p>Matchmaking-related operations include:</p> <ul> <li> <p>
-         * <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a> </p>
-         * </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p> <a>AcceptMatch</a>
-         * </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li> </ul><p><h3>See
-         * Also:</h3>   <a
+         * is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p> <ul>
+         * <li> <p> <a>StartMatchmaking</a> </p> </li> <li> <p> <a>DescribeMatchmaking</a>
+         * </p> </li> <li> <p> <a>StopMatchmaking</a> </p> </li> <li> <p>
+         * <a>AcceptMatch</a> </p> </li> <li> <p> <a>StartMatchBackfill</a> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StopMatchmaking">AWS
          * API Reference</a></p>
          *
@@ -5186,11 +5164,10 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p> <p>Alias-related operations include:</p> <ul> <li>
-         * <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li>
-         * <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li>
-         * <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * alias record is returned.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li>
+         * <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li>
+         * <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li>
+         * <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
          * API Reference</a></p>
          */
@@ -5200,11 +5177,10 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p> <p>Alias-related operations include:</p> <ul> <li>
-         * <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li>
-         * <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li>
-         * <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * alias record is returned.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li>
+         * <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li>
+         * <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li>
+         * <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
          * API Reference</a></p>
          *
@@ -5216,11 +5192,10 @@ namespace Model
          * <p>Updates properties for an alias. To update properties, specify the alias ID
          * to be updated and provide the information to be changed. To reassign an alias to
          * another fleet, provide an updated routing strategy. If successful, the updated
-         * alias record is returned.</p> <p>Alias-related operations include:</p> <ul> <li>
-         * <p> <a>CreateAlias</a> </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li>
-         * <p> <a>DescribeAlias</a> </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li>
-         * <p> <a>DeleteAlias</a> </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * alias record is returned.</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li>
+         * <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li>
+         * <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li>
+         * <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateAlias">AWS
          * API Reference</a></p>
          *
@@ -5232,10 +5207,9 @@ namespace Model
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
          * If successful, a build object containing the updated metadata is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          */
@@ -5245,10 +5219,9 @@ namespace Model
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
          * If successful, a build object containing the updated metadata is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          *
@@ -5260,10 +5233,9 @@ namespace Model
          * <p>Updates metadata in a build record, including the build name and version. To
          * update the metadata, specify the build ID to update and provide the new values.
          * If successful, a build object containing the updated metadata is returned.</p>
-         * <p>Build-related operations include:</p> <ul> <li> <p> <a>CreateBuild</a> </p>
-         * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
-         * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p> <a>ListBuilds</a> </p>
+         * </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p> <a>UpdateBuild</a> </p>
+         * </li> <li> <p> <a>DeleteBuild</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateBuild">AWS
          * API Reference</a></p>
          *
@@ -5274,11 +5246,11 @@ namespace Model
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values that you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * change. If successful, the fleet ID for the updated fleet is returned.</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5297,11 +5269,11 @@ namespace Model
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values that you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * change. If successful, the fleet ID for the updated fleet is returned.</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5322,11 +5294,11 @@ namespace Model
         /**
          * <p>Updates fleet properties, including name and description, for a fleet. To
          * update metadata, specify the fleet ID and the property values that you want to
-         * change. If successful, the fleet ID for the updated fleet is returned.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * change. If successful, the fleet ID for the updated fleet is returned.</p> <ul>
+         * <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li>
+         * <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li>
+         * <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5358,12 +5330,11 @@ namespace Model
          * that the fleet's active instance count matches the desired instance count. You
          * can view a fleet's current capacity information by calling
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
-         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5392,12 +5363,11 @@ namespace Model
          * that the fleet's active instance count matches the desired instance count. You
          * can view a fleet's current capacity information by calling
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
-         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5428,12 +5398,11 @@ namespace Model
          * that the fleet's active instance count matches the desired instance count. You
          * can view a fleet's current capacity information by calling
          * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the
-         * instance type's limit, the "Limit Exceeded" exception occurs.</p>
-         * <p>Fleet-related operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p>
-         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
-         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
-         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * instance type's limit, the "Limit Exceeded" exception occurs.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5456,11 +5425,10 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
-         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * for the updated fleet is returned.</p> <ul> <li> <p> <a>CreateFleet</a> </p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5482,11 +5450,10 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
-         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * for the updated fleet is returned.</p> <ul> <li> <p> <a>CreateFleet</a> </p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5510,11 +5477,10 @@ namespace Model
          * you want to add in <code>InboundPermissionAuthorizations</code>, and permissions
          * you want to remove in <code>InboundPermissionRevocations</code>. Permissions to
          * be removed must match existing fleet permissions. If successful, the fleet ID
-         * for the updated fleet is returned.</p> <p>Fleet-related operations include:</p>
-         * <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p>
-         * </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul>
-         * <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
-         * <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+         * for the updated fleet is returned.</p> <ul> <li> <p> <a>CreateFleet</a> </p>
+         * </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p>
+         * </li> <li> <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a>
+         * </p> </li> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
          * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
@@ -5539,13 +5505,13 @@ namespace Model
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
          * change. If successful, an updated <a>GameSession</a> object is returned. </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
-         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
@@ -5560,13 +5526,13 @@ namespace Model
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
          * change. If successful, an updated <a>GameSession</a> object is returned. </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
-         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
@@ -5583,13 +5549,13 @@ namespace Model
          * creation policy, which controls whether or not new players can join the session.
          * To update a game session, specify the game session ID and the values you want to
          * change. If successful, an updated <a>GameSession</a> object is returned. </p>
-         * <p>Game-session-related operations include:</p> <ul> <li> <p>
-         * <a>CreateGameSession</a> </p> </li> <li> <p> <a>DescribeGameSessions</a> </p>
-         * </li> <li> <p> <a>DescribeGameSessionDetails</a> </p> </li> <li> <p>
-         * <a>SearchGameSessions</a> </p> </li> <li> <p> <a>UpdateGameSession</a> </p>
-         * </li> <li> <p> <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session
-         * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-         * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+         * <ul> <li> <p> <a>CreateGameSession</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessions</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionDetails</a> </p> </li> <li> <p> <a>SearchGameSessions</a>
+         * </p> </li> <li> <p> <a>UpdateGameSession</a> </p> </li> <li> <p>
+         * <a>GetGameSessionLogUrl</a> </p> </li> <li> <p>Game session placements</p> <ul>
+         * <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
          * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSession">AWS
@@ -5603,9 +5569,9 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">AWS
@@ -5617,9 +5583,9 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">AWS
@@ -5633,9 +5599,9 @@ namespace Model
          * <p>Updates settings for a game session queue, which determines how new game
          * session requests in the queue are processed. To update settings, specify the
          * queue name to be updated and provide the new settings. When updating
-         * destinations, provide a complete list of destinations. </p> <p>Queue-related
-         * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-         * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+         * destinations, provide a complete list of destinations. </p> <ul> <li> <p>
+         * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+         * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
          * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateGameSessionQueue">AWS
@@ -5648,14 +5614,14 @@ namespace Model
         /**
          * <p>Updates settings for a FlexMatch matchmaking configuration. To update
          * settings, specify the configuration name to be updated and provide the new
-         * settings. </p> <p>Operations related to match configurations and rule sets
-         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * settings. </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -5664,14 +5630,14 @@ namespace Model
         /**
          * <p>Updates settings for a FlexMatch matchmaking configuration. To update
          * settings, specify the configuration name to be updated and provide the new
-         * settings. </p> <p>Operations related to match configurations and rule sets
-         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * settings. </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5682,14 +5648,14 @@ namespace Model
         /**
          * <p>Updates settings for a FlexMatch matchmaking configuration. To update
          * settings, specify the configuration name to be updated and provide the new
-         * settings. </p> <p>Operations related to match configurations and rule sets
-         * include:</p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li>
-         * <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
+         * settings. </p> <ul> <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li>
+         * <li> <p> <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateMatchmakingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -5711,12 +5677,11 @@ namespace Model
          * Amazon GameLift simply adds new server processes to fit the current run-time
          * configuration. As a result, the run-time configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift's normal process recycling activity.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5745,12 +5710,11 @@ namespace Model
          * Amazon GameLift simply adds new server processes to fit the current run-time
          * configuration. As a result, the run-time configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift's normal process recycling activity.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5781,12 +5745,11 @@ namespace Model
          * Amazon GameLift simply adds new server processes to fit the current run-time
          * configuration. As a result, the run-time configuration changes are applied
          * gradually as existing processes shut down and new processes are launched in
-         * Amazon GameLift's normal process recycling activity.</p> <p>Fleet-related
-         * operations include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-         * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-         * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-         * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-         * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+         * Amazon GameLift's normal process recycling activity.</p> <ul> <li> <p>
+         * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+         * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+         * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+         * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
          * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
          * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -5805,16 +5768,19 @@ namespace Model
 
         /**
          * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
-         * that the rule set uses syntactically correct JSON and that it conforms to
-         * allowed property expressions. To validate syntax, provide a rule set string.</p>
-         * <p>Operations related to match configurations and rule sets include:</p> <ul>
-         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * that the rule set is using syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set JSON
+         * string.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          */
@@ -5822,16 +5788,19 @@ namespace Model
 
         /**
          * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
-         * that the rule set uses syntactically correct JSON and that it conforms to
-         * allowed property expressions. To validate syntax, provide a rule set string.</p>
-         * <p>Operations related to match configurations and rule sets include:</p> <ul>
-         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * that the rule set is using syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set JSON
+         * string.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          *
@@ -5841,16 +5810,19 @@ namespace Model
 
         /**
          * <p>Validates the syntax of a matchmaking rule or rule set. This operation checks
-         * that the rule set uses syntactically correct JSON and that it conforms to
-         * allowed property expressions. To validate syntax, provide a rule set string.</p>
-         * <p>Operations related to match configurations and rule sets include:</p> <ul>
-         * <li> <p> <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
+         * that the rule set is using syntactically correct JSON and that it conforms to
+         * allowed property expressions. To validate syntax, provide a rule set JSON
+         * string.</p> <p> <b>Learn more</b> </p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+         * a Rule Set</a> </p> </li> </ul> <p> <b>Related operations</b> </p> <ul> <li> <p>
+         * <a>CreateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingConfigurations</a> </p> </li> <li> <p>
          * <a>UpdateMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>DeleteMatchmakingConfiguration</a> </p> </li> <li> <p>
          * <a>CreateMatchmakingRuleSet</a> </p> </li> <li> <p>
          * <a>DescribeMatchmakingRuleSets</a> </p> </li> <li> <p>
-         * <a>ValidateMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * <a>ValidateMatchmakingRuleSet</a> </p> </li> <li> <p>
+         * <a>DeleteMatchmakingRuleSet</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ValidateMatchmakingRuleSet">AWS
          * API Reference</a></p>
          *
@@ -5880,6 +5852,7 @@ namespace Model
         void DeleteFleetAsyncHelper(const Model::DeleteFleetRequest& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGameSessionQueueAsyncHelper(const Model::DeleteGameSessionQueueRequest& request, const DeleteGameSessionQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMatchmakingConfigurationAsyncHelper(const Model::DeleteMatchmakingConfigurationRequest& request, const DeleteMatchmakingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMatchmakingRuleSetAsyncHelper(const Model::DeleteMatchmakingRuleSetRequest& request, const DeleteMatchmakingRuleSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScalingPolicyAsyncHelper(const Model::DeleteScalingPolicyRequest& request, const DeleteScalingPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcPeeringAuthorizationAsyncHelper(const Model::DeleteVpcPeeringAuthorizationRequest& request, const DeleteVpcPeeringAuthorizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVpcPeeringConnectionAsyncHelper(const Model::DeleteVpcPeeringConnectionRequest& request, const DeleteVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

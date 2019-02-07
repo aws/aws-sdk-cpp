@@ -40,7 +40,7 @@ namespace Model
    * level, or map. Game properties are passed to the game server process when
    * initiating a new game session; the server process uses the properties as
    * appropriate. For more information, see the <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
    * Amazon GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
    * API Reference</a></p>

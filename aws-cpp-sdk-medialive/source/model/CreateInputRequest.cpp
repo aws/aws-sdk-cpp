@@ -31,6 +31,7 @@ CreateInputRequest::CreateInputRequest() :
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -99,6 +100,17 @@ Aws::String CreateInputRequest::SerializePayload() const
      sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
    payload.WithArray("sources", std::move(sourcesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

@@ -43,12 +43,11 @@ namespace Model
 {
 
   /**
-   * <p>General properties describing a fleet.</p> <p>Fleet-related operations
-   * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a>
+   * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
+   * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+   * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
    * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -578,7 +577,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -590,7 +589,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -602,7 +601,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -614,7 +613,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -626,7 +625,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -638,7 +637,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -650,7 +649,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for
@@ -662,7 +661,7 @@ namespace Model
      * <p>Location of default log files. When a server process is shut down, Amazon
      * GameLift captures and stores any log files in this location. These logs are in
      * addition to game session logs; see more on game session logs in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-api-server-code">Amazon
      * GameLift Developer Guide</a>. If no default log path for a fleet is specified,
      * Amazon GameLift automatically uploads logs that are stored on each instance at
      * <code>C:\game\logs</code> (for Windows) or <code>/local/game/logs</code> (for

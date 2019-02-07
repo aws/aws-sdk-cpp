@@ -37,11 +37,10 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a game build.</p> <p>Build-related operations
-   * include:</p> <ul> <li> <p> <a>CreateBuild</a> </p> </li> <li> <p>
-   * <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p> </li> <li> <p>
-   * <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p> </li>
-   * </ul><p><h3>See Also:</h3>   <a
+   * <p>Properties describing a game build.</p> <ul> <li> <p> <a>CreateBuild</a> </p>
+   * </li> <li> <p> <a>ListBuilds</a> </p> </li> <li> <p> <a>DescribeBuild</a> </p>
+   * </li> <li> <p> <a>UpdateBuild</a> </p> </li> <li> <p> <a>DeleteBuild</a> </p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Build">AWS API
    * Reference</a></p>
    */

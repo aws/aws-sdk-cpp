@@ -38,6 +38,7 @@ SimulationJob::SimulationJob() :
     m_failureBehaviorHasBeenSet(false),
     m_failureCode(SimulationJobErrorCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_maxJobDurationInSeconds(0),
@@ -47,6 +48,7 @@ SimulationJob::SimulationJob() :
     m_iamRoleHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
 }
@@ -61,6 +63,7 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_failureBehaviorHasBeenSet(false),
     m_failureCode(SimulationJobErrorCode::NOT_SET),
     m_failureCodeHasBeenSet(false),
+    m_failureReasonHasBeenSet(false),
     m_clientRequestTokenHasBeenSet(false),
     m_outputLocationHasBeenSet(false),
     m_maxJobDurationInSeconds(0),
@@ -70,6 +73,7 @@ SimulationJob::SimulationJob(JsonView jsonValue) :
     m_iamRoleHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
   *this = jsonValue;
@@ -117,6 +121,13 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     m_failureCode = SimulationJobErrorCodeMapper::GetSimulationJobErrorCodeForName(jsonValue.GetString("failureCode"));
 
     m_failureCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
+    m_failureReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clientRequestToken"))
@@ -174,6 +185,16 @@ SimulationJob& SimulationJob::operator =(JsonView jsonValue)
     m_simulationApplicationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
@@ -218,6 +239,12 @@ JsonValue SimulationJob::Jsonize() const
   if(m_failureCodeHasBeenSet)
   {
    payload.WithString("failureCode", SimulationJobErrorCodeMapper::GetNameForSimulationJobErrorCode(m_failureCode));
+  }
+
+  if(m_failureReasonHasBeenSet)
+  {
+   payload.WithString("failureReason", m_failureReason);
+
   }
 
   if(m_clientRequestTokenHasBeenSet)
@@ -269,6 +296,17 @@ JsonValue SimulationJob::Jsonize() const
      simulationApplicationsJsonList[simulationApplicationsIndex].AsObject(m_simulationApplications[simulationApplicationsIndex].Jsonize());
    }
    payload.WithArray("simulationApplications", std::move(simulationApplicationsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

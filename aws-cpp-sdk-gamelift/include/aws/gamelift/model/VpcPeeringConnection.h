@@ -38,9 +38,8 @@ namespace Model
    * <p>Represents a peering connection between a VPC on one of your AWS accounts and
    * the VPC for your Amazon GameLift fleets. This record may be for an active
    * peering connection or a pending connection that has not yet been
-   * established.</p> <p>VPC peering connection operations include:</p> <ul> <li> <p>
-   * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
-   * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
+   * established.</p> <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li>
+   * <li> <p> <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
    * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
    * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
    * <a>DescribeVpcPeeringConnections</a> </p> </li> <li> <p>
@@ -234,56 +233,70 @@ namespace Model
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringConnection& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringConnection& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringConnection& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 

@@ -48,94 +48,101 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set. This name is used to identify
-     * the rule set associated with a matchmaking configuration.</p>
+     * <p>Unique identifier for a matchmaking rule set. A matchmaking configuration
+     * identifies the rule set it uses by this name value. (Note: The rule set name is
+     * different from the optional "name" field in the rule set body.) </p>
      */
     inline CreateMatchmakingRuleSetRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline void SetRuleSetBody(const Aws::String& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = value; }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline void SetRuleSetBody(Aws::String&& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = std::move(value); }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline void SetRuleSetBody(const char* value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody.assign(value); }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithRuleSetBody(const Aws::String& value) { SetRuleSetBody(value); return *this;}
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithRuleSetBody(Aws::String&& value) { SetRuleSetBody(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * <p>Collection of matchmaking rules, formatted as a JSON string. Note that
      * comments are not allowed in JSON, but most elements support a description
-     * field.)</p>
+     * field.</p>
      */
     inline CreateMatchmakingRuleSetRequest& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
 

@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/robomaker/model/DeploymentJobErrorCode.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/DeploymentApplicationConfig.h>
 #include <aws/robomaker/model/RobotDeployment.h>
 #include <utility>
@@ -337,6 +338,67 @@ namespace Model
      */
     inline DescribeDeploymentJobResult& AddRobotDeploymentSummary(RobotDeployment&& value) { m_robotDeploymentSummary.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the specified deployment job.</p>
+     */
+    inline DescribeDeploymentJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -356,6 +418,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::Vector<RobotDeployment> m_robotDeploymentSummary;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

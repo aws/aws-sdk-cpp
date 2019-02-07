@@ -20,6 +20,7 @@
 #include <aws/robomaker/model/OutputLocation.h>
 #include <aws/robomaker/model/FailureBehavior.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/VPCConfig.h>
 #include <aws/robomaker/model/RobotApplicationConfig.h>
 #include <aws/robomaker/model/SimulationApplicationConfig.h>
@@ -141,65 +142,51 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline CreateSimulationJobRequest& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline CreateSimulationJobRequest& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that allows the simulation instance to call the AWS APIs that
-     * are specified in its associated policies on your behalf. This is how credentials
-     * are passed in to your simulation job. See how to <a
-     * href="https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials">specify
-     * AWS security credentials for your application</a>. </p>
+     * <p>The IAM role name that allows the simulation instance to call the AWS APIs
+     * that are specified in its associated policies on your behalf. This is how
+     * credentials are passed in to your simulation job. </p>
      */
     inline CreateSimulationJobRequest& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 
@@ -313,6 +300,79 @@ namespace Model
 
 
     /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation job.</p>
+     */
+    inline CreateSimulationJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * <p>If your simulation job accesses resources in a VPC, you provide this
      * parameter identifying the list of security group IDs and subnet IDs. These must
      * belong to the same VPC. You must provide at least one security group and one
@@ -374,6 +434,9 @@ namespace Model
 
     Aws::Vector<SimulationApplicationConfig> m_simulationApplications;
     bool m_simulationApplicationsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     VPCConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;

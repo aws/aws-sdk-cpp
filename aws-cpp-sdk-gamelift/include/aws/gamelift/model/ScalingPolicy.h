@@ -41,12 +41,11 @@ namespace Model
 
   /**
    * <p>Rule that controls how a fleet is scaled. Scaling policies are uniquely
-   * identified by the combination of name and fleet ID.</p> <p>Operations related to
-   * fleet capacity scaling include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a>
-   * </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
-   * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
-   * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
+   * identified by the combination of name and fleet ID.</p> <ul> <li> <p>
+   * <a>DescribeFleetCapacity</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
+   * </li> <li> <p> <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage
+   * scaling policies:</p> <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p>
+   * </li> <li> <p> <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
    * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
    * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
    * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
@@ -385,7 +384,7 @@ namespace Model
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
      * adjustment. For detailed descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
@@ -415,7 +414,7 @@ namespace Model
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
      * adjustment. For detailed descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
@@ -445,7 +444,7 @@ namespace Model
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
      * adjustment. For detailed descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
@@ -475,7 +474,7 @@ namespace Model
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
      * adjustment. For detailed descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are
@@ -505,7 +504,7 @@ namespace Model
     /**
      * <p>Name of the Amazon GameLift-defined metric that is used to trigger a scaling
      * adjustment. For detailed descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      * Amazon GameLift with Amazon CloudWatch</a>. </p> <ul> <li> <p>
      * <b>ActivatingGameSessions</b> -- Game sessions in the process of being
      * created.</p> </li> <li> <p> <b>ActiveGameSessions</b> -- Game sessions that are

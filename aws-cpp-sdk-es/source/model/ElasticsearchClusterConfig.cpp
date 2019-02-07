@@ -37,6 +37,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
     m_dedicatedMasterEnabledHasBeenSet(false),
     m_zoneAwarenessEnabled(false),
     m_zoneAwarenessEnabledHasBeenSet(false),
+    m_zoneAwarenessConfigHasBeenSet(false),
     m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
@@ -53,6 +54,7 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue) :
     m_dedicatedMasterEnabledHasBeenSet(false),
     m_zoneAwarenessEnabled(false),
     m_zoneAwarenessEnabledHasBeenSet(false),
+    m_zoneAwarenessConfigHasBeenSet(false),
     m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
@@ -89,6 +91,13 @@ ElasticsearchClusterConfig& ElasticsearchClusterConfig::operator =(JsonView json
     m_zoneAwarenessEnabled = jsonValue.GetBool("ZoneAwarenessEnabled");
 
     m_zoneAwarenessEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ZoneAwarenessConfig"))
+  {
+    m_zoneAwarenessConfig = jsonValue.GetObject("ZoneAwarenessConfig");
+
+    m_zoneAwarenessConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DedicatedMasterType"))
@@ -132,6 +141,12 @@ JsonValue ElasticsearchClusterConfig::Jsonize() const
   if(m_zoneAwarenessEnabledHasBeenSet)
   {
    payload.WithBool("ZoneAwarenessEnabled", m_zoneAwarenessEnabled);
+
+  }
+
+  if(m_zoneAwarenessConfigHasBeenSet)
+  {
+   payload.WithObject("ZoneAwarenessConfig", m_zoneAwarenessConfig.Jsonize());
 
   }
 

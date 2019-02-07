@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
+#include <aws/es/model/ZoneAwarenessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -138,6 +139,37 @@ namespace Model
 
 
     /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline const ZoneAwarenessConfig& GetZoneAwarenessConfig() const{ return m_zoneAwarenessConfig; }
+
+    /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline void SetZoneAwarenessConfig(const ZoneAwarenessConfig& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = value; }
+
+    /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline void SetZoneAwarenessConfig(ZoneAwarenessConfig&& value) { m_zoneAwarenessConfigHasBeenSet = true; m_zoneAwarenessConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline ElasticsearchClusterConfig& WithZoneAwarenessConfig(const ZoneAwarenessConfig& value) { SetZoneAwarenessConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the zone awareness configuration for a domain when zone awareness
+     * is enabled.</p>
+     */
+    inline ElasticsearchClusterConfig& WithZoneAwarenessConfig(ZoneAwarenessConfig&& value) { SetZoneAwarenessConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The instance type for a dedicated master node.</p>
      */
     inline const ESPartitionInstanceType& GetDedicatedMasterType() const{ return m_dedicatedMasterType; }
@@ -194,6 +226,9 @@ namespace Model
 
     bool m_zoneAwarenessEnabled;
     bool m_zoneAwarenessEnabledHasBeenSet;
+
+    ZoneAwarenessConfig m_zoneAwarenessConfig;
+    bool m_zoneAwarenessConfigHasBeenSet;
 
     ESPartitionInstanceType m_dedicatedMasterType;
     bool m_dedicatedMasterTypeHasBeenSet;

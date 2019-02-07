@@ -84,6 +84,12 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
+  }
+
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
@@ -129,6 +135,15 @@ DescribeSimulationJobResult& DescribeSimulationJobResult::operator =(const Aws::
     for(unsigned simulationApplicationsIndex = 0; simulationApplicationsIndex < simulationApplicationsJsonList.GetLength(); ++simulationApplicationsIndex)
     {
       m_simulationApplications.push_back(simulationApplicationsJsonList[simulationApplicationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
   }
 

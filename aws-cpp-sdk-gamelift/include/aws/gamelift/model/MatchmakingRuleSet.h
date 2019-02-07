@@ -41,7 +41,7 @@ namespace Model
    * used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define
    * the following elements for a match. For detailed information and examples
    * showing how to construct a rule set, see <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
    * a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team
    * sizes. For example, a rule set might describe a 4x4 match that requires all

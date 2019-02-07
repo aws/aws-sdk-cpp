@@ -27,7 +27,8 @@ CreateSimulationApplicationRequest::CreateSimulationApplicationRequest() :
     m_sourcesHasBeenSet(false),
     m_simulationSoftwareSuiteHasBeenSet(false),
     m_robotSoftwareSuiteHasBeenSet(false),
-    m_renderingEngineHasBeenSet(false)
+    m_renderingEngineHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,17 @@ Aws::String CreateSimulationApplicationRequest::SerializePayload() const
   if(m_renderingEngineHasBeenSet)
   {
    payload.WithObject("renderingEngine", m_renderingEngine.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

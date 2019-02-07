@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline const Aws::String& GetApplication() const{ return m_application; }
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline DeploymentApplicationConfig& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline DeploymentApplicationConfig& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
 
     /**
-     * <p>The application.</p>
+     * <p>The Amazon Resource Name (ARN) of the robot application.</p>
      */
     inline DeploymentApplicationConfig& WithApplication(const char* value) { SetApplication(value); return *this;}
 
@@ -122,27 +122,27 @@ namespace Model
 
 
     /**
-     * <p>The launch configuration, usually <code>roslaunch</code>.</p>
+     * <p>The launch configuration.</p>
      */
     inline const DeploymentLaunchConfig& GetLaunchConfig() const{ return m_launchConfig; }
 
     /**
-     * <p>The launch configuration, usually <code>roslaunch</code>.</p>
+     * <p>The launch configuration.</p>
      */
     inline void SetLaunchConfig(const DeploymentLaunchConfig& value) { m_launchConfigHasBeenSet = true; m_launchConfig = value; }
 
     /**
-     * <p>The launch configuration, usually <code>roslaunch</code>.</p>
+     * <p>The launch configuration.</p>
      */
     inline void SetLaunchConfig(DeploymentLaunchConfig&& value) { m_launchConfigHasBeenSet = true; m_launchConfig = std::move(value); }
 
     /**
-     * <p>The launch configuration, usually <code>roslaunch</code>.</p>
+     * <p>The launch configuration.</p>
      */
     inline DeploymentApplicationConfig& WithLaunchConfig(const DeploymentLaunchConfig& value) { SetLaunchConfig(value); return *this;}
 
     /**
-     * <p>The launch configuration, usually <code>roslaunch</code>.</p>
+     * <p>The launch configuration.</p>
      */
     inline DeploymentApplicationConfig& WithLaunchConfig(DeploymentLaunchConfig&& value) { SetLaunchConfig(std::move(value)); return *this;}
 

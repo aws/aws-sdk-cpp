@@ -48,9 +48,12 @@
 #include <aws/robomaker/model/ListRobotsResult.h>
 #include <aws/robomaker/model/ListSimulationApplicationsResult.h>
 #include <aws/robomaker/model/ListSimulationJobsResult.h>
+#include <aws/robomaker/model/ListTagsForResourceResult.h>
 #include <aws/robomaker/model/RegisterRobotResult.h>
 #include <aws/robomaker/model/RestartSimulationJobResult.h>
 #include <aws/robomaker/model/SyncDeploymentJobResult.h>
+#include <aws/robomaker/model/TagResourceResult.h>
+#include <aws/robomaker/model/UntagResourceResult.h>
 #include <aws/robomaker/model/UpdateRobotApplicationResult.h>
 #include <aws/robomaker/model/UpdateSimulationApplicationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -120,9 +123,12 @@ namespace Model
         class ListRobotsRequest;
         class ListSimulationApplicationsRequest;
         class ListSimulationJobsRequest;
+        class ListTagsForResourceRequest;
         class RegisterRobotRequest;
         class RestartSimulationJobRequest;
         class SyncDeploymentJobRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateRobotApplicationRequest;
         class UpdateSimulationApplicationRequest;
 
@@ -153,9 +159,12 @@ namespace Model
         typedef Aws::Utils::Outcome<ListRobotsResult, Aws::Client::AWSError<RoboMakerErrors>> ListRobotsOutcome;
         typedef Aws::Utils::Outcome<ListSimulationApplicationsResult, Aws::Client::AWSError<RoboMakerErrors>> ListSimulationApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListSimulationJobsResult, Aws::Client::AWSError<RoboMakerErrors>> ListSimulationJobsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RoboMakerErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RegisterRobotResult, Aws::Client::AWSError<RoboMakerErrors>> RegisterRobotOutcome;
         typedef Aws::Utils::Outcome<RestartSimulationJobResult, Aws::Client::AWSError<RoboMakerErrors>> RestartSimulationJobOutcome;
         typedef Aws::Utils::Outcome<SyncDeploymentJobResult, Aws::Client::AWSError<RoboMakerErrors>> SyncDeploymentJobOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<RoboMakerErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<RoboMakerErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateRobotApplicationResult, Aws::Client::AWSError<RoboMakerErrors>> UpdateRobotApplicationOutcome;
         typedef Aws::Utils::Outcome<UpdateSimulationApplicationResult, Aws::Client::AWSError<RoboMakerErrors>> UpdateSimulationApplicationOutcome;
 
@@ -186,9 +195,12 @@ namespace Model
         typedef std::future<ListRobotsOutcome> ListRobotsOutcomeCallable;
         typedef std::future<ListSimulationApplicationsOutcome> ListSimulationApplicationsOutcomeCallable;
         typedef std::future<ListSimulationJobsOutcome> ListSimulationJobsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RegisterRobotOutcome> RegisterRobotOutcomeCallable;
         typedef std::future<RestartSimulationJobOutcome> RestartSimulationJobOutcomeCallable;
         typedef std::future<SyncDeploymentJobOutcome> SyncDeploymentJobOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateRobotApplicationOutcome> UpdateRobotApplicationOutcomeCallable;
         typedef std::future<UpdateSimulationApplicationOutcome> UpdateSimulationApplicationOutcomeCallable;
 } // namespace Model
@@ -222,9 +234,12 @@ namespace Model
     typedef std::function<void(const RoboMakerClient*, const Model::ListRobotsRequest&, const Model::ListRobotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRobotsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationApplicationsRequest&, const Model::ListSimulationApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationApplicationsResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::ListSimulationJobsRequest&, const Model::ListSimulationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSimulationJobsResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::RegisterRobotRequest&, const Model::RegisterRobotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterRobotResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::RestartSimulationJobRequest&, const Model::RestartSimulationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestartSimulationJobResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::SyncDeploymentJobRequest&, const Model::SyncDeploymentJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SyncDeploymentJobResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const RoboMakerClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::UpdateRobotApplicationRequest&, const Model::UpdateRobotApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRobotApplicationResponseReceivedHandler;
     typedef std::function<void(const RoboMakerClient*, const Model::UpdateSimulationApplicationRequest&, const Model::UpdateSimulationApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSimulationApplicationResponseReceivedHandler;
 
@@ -311,14 +326,24 @@ namespace Model
         virtual void CancelSimulationJobAsync(const Model::CancelSimulationJobRequest& request, const CancelSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a deployment job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deploys a specific version of a robot application to robots in a fleet.</p>
+         * <p>The robot application must have a numbered <code>applicationVersion</code>
+         * for consistency reasons. To create a new version, use
+         * <code>CreateRobotApplicationVersion</code> or see <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateDeploymentJobOutcome CreateDeploymentJob(const Model::CreateDeploymentJobRequest& request) const;
 
         /**
-         * <p>Creates a deployment job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deploys a specific version of a robot application to robots in a fleet.</p>
+         * <p>The robot application must have a numbered <code>applicationVersion</code>
+         * for consistency reasons. To create a new version, use
+         * <code>CreateRobotApplicationVersion</code> or see <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -327,7 +352,12 @@ namespace Model
         virtual Model::CreateDeploymentJobOutcomeCallable CreateDeploymentJobCallable(const Model::CreateDeploymentJobRequest& request) const;
 
         /**
-         * <p>Creates a deployment job.</p><p><h3>See Also:</h3>   <a
+         * <p>Deploys a specific version of a robot application to robots in a fleet.</p>
+         * <p>The robot application must have a numbered <code>applicationVersion</code>
+         * for consistency reasons. To create a new version, use
+         * <code>CreateRobotApplicationVersion</code> or see <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+         * a Robot Application Version</a>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateDeploymentJob">AWS
          * API Reference</a></p>
          *
@@ -963,6 +993,31 @@ namespace Model
         virtual void ListSimulationJobsAsync(const Model::ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all tags on a AWS RoboMaker resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags on a AWS RoboMaker resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists all tags on a AWS RoboMaker resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Registers a robot with a fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/RegisterRobot">AWS
          * API Reference</a></p>
@@ -1039,6 +1094,86 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SyncDeploymentJobAsync(const Model::SyncDeploymentJobRequest& request, const SyncDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of
+         * a tag key and a tag value. Tag keys and tag values are both required, but tag
+         * values can be empty strings. </p> <p>For information about the rules that apply
+         * to tag keys and tag values, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of
+         * a tag key and a tag value. Tag keys and tag values are both required, but tag
+         * values can be empty strings. </p> <p>For information about the rules that apply
+         * to tag keys and tag values, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of
+         * a tag key and a tag value. Tag keys and tag values are both required, but tag
+         * values can be empty strings. </p> <p>For information about the rules that apply
+         * to tag keys and tag values, see <a
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+         * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
+         * <p>To remove a tag, specify the tag key. To change the tag value of an existing
+         * tag key, use <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
+         * <p>To remove a tag, specify the tag key. To change the tag value of an existing
+         * tag key, use <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p>
+         * <p>To remove a tag, specify the tag key. To change the tag value of an existing
+         * tag key, use <a
+         * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+         * <code>TagResource</code> </a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates a robot application.</p><p><h3>See Also:</h3>   <a
@@ -1122,9 +1257,12 @@ namespace Model
         void ListRobotsAsyncHelper(const Model::ListRobotsRequest& request, const ListRobotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSimulationApplicationsAsyncHelper(const Model::ListSimulationApplicationsRequest& request, const ListSimulationApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSimulationJobsAsyncHelper(const Model::ListSimulationJobsRequest& request, const ListSimulationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterRobotAsyncHelper(const Model::RegisterRobotRequest& request, const RegisterRobotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestartSimulationJobAsyncHelper(const Model::RestartSimulationJobRequest& request, const RestartSimulationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SyncDeploymentJobAsyncHelper(const Model::SyncDeploymentJobRequest& request, const SyncDeploymentJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateRobotApplicationAsyncHelper(const Model::UpdateRobotApplicationRequest& request, const UpdateRobotApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSimulationApplicationAsyncHelper(const Model::UpdateSimulationApplicationRequest& request, const UpdateSimulationApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

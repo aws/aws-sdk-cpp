@@ -39,7 +39,10 @@ namespace Model
     InvalidBundleRobotApplication,
     InvalidBundleSimulationApplication,
     RobotApplicationVersionMismatchedEtag,
-    SimulationApplicationVersionMismatchedEtag
+    SimulationApplicationVersionMismatchedEtag,
+    WrongRegionS3Output,
+    WrongRegionRobotApplication,
+    WrongRegionSimulationApplication
   };
 
 namespace SimulationJobErrorCodeMapper

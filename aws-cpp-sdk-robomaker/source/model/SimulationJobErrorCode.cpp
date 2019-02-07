@@ -44,6 +44,9 @@ namespace Aws
         static const int InvalidBundleSimulationApplication_HASH = HashingUtils::HashString("InvalidBundleSimulationApplication");
         static const int RobotApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("RobotApplicationVersionMismatchedEtag");
         static const int SimulationApplicationVersionMismatchedEtag_HASH = HashingUtils::HashString("SimulationApplicationVersionMismatchedEtag");
+        static const int WrongRegionS3Output_HASH = HashingUtils::HashString("WrongRegionS3Output");
+        static const int WrongRegionRobotApplication_HASH = HashingUtils::HashString("WrongRegionRobotApplication");
+        static const int WrongRegionSimulationApplication_HASH = HashingUtils::HashString("WrongRegionSimulationApplication");
 
 
         SimulationJobErrorCode GetSimulationJobErrorCodeForName(const Aws::String& name)
@@ -105,6 +108,18 @@ namespace Aws
           {
             return SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag;
           }
+          else if (hashCode == WrongRegionS3Output_HASH)
+          {
+            return SimulationJobErrorCode::WrongRegionS3Output;
+          }
+          else if (hashCode == WrongRegionRobotApplication_HASH)
+          {
+            return SimulationJobErrorCode::WrongRegionRobotApplication;
+          }
+          else if (hashCode == WrongRegionSimulationApplication_HASH)
+          {
+            return SimulationJobErrorCode::WrongRegionSimulationApplication;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -147,6 +162,12 @@ namespace Aws
             return "RobotApplicationVersionMismatchedEtag";
           case SimulationJobErrorCode::SimulationApplicationVersionMismatchedEtag:
             return "SimulationApplicationVersionMismatchedEtag";
+          case SimulationJobErrorCode::WrongRegionS3Output:
+            return "WrongRegionS3Output";
+          case SimulationJobErrorCode::WrongRegionRobotApplication:
+            return "WrongRegionRobotApplication";
+          case SimulationJobErrorCode::WrongRegionSimulationApplication:
+            return "WrongRegionSimulationApplication";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

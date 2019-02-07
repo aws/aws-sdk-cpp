@@ -193,49 +193,49 @@ namespace Model
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline const Aws::String& GetGameSessionArn() const{ return m_gameSessionArn; }
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline void SetGameSessionArn(const Aws::String& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = value; }
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline void SetGameSessionArn(Aws::String&& value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn = std::move(value); }
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline void SetGameSessionArn(const char* value) { m_gameSessionArnHasBeenSet = true; m_gameSessionArn.assign(value); }
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline StartMatchBackfillRequest& WithGameSessionArn(const Aws::String& value) { SetGameSessionArn(value); return *this;}
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline StartMatchBackfillRequest& WithGameSessionArn(Aws::String&& value) { SetGameSessionArn(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Resource Name (<a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * that is assigned to a game session and uniquely identifies it. </p>
      */
     inline StartMatchBackfillRequest& WithGameSessionArn(const char* value) { SetGameSessionArn(value); return *this;}
@@ -249,7 +249,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -265,7 +265,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -281,7 +281,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -297,7 +297,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -313,7 +313,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -329,7 +329,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other
@@ -345,7 +345,7 @@ namespace Model
      * <code>MatchmakerData</code> property, for all players who are currently assigned
      * to the game session. The matchmaker data is in JSON syntax, formatted as a
      * string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      * Match Data</a>. </p> </li> <li> <p>LatencyInMs -\\- If the matchmaker uses
      * player latency, include a latency value, in milliseconds, for the region that
      * the game session is currently in. Do not include latency values for any other

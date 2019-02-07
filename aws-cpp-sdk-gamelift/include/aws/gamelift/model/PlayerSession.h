@@ -44,12 +44,12 @@ namespace Model
    * player data) is automatically passed to a game session when the player connects
    * to the game session and is validated.</p> <p>When a player disconnects, the
    * player session status changes to <code>COMPLETED</code>. Once the session ends,
-   * the player session object is retained for 30 days and then removed.</p>
-   * <p>Player-session-related operations include:</p> <ul> <li> <p>
-   * <a>CreatePlayerSession</a> </p> </li> <li> <p> <a>CreatePlayerSessions</a> </p>
-   * </li> <li> <p> <a>DescribePlayerSessions</a> </p> </li> <li> <p>Game session
-   * placements</p> <ul> <li> <p> <a>StartGameSessionPlacement</a> </p> </li> <li>
-   * <p> <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
+   * the player session object is retained for 30 days and then removed.</p> <ul>
+   * <li> <p> <a>CreatePlayerSession</a> </p> </li> <li> <p>
+   * <a>CreatePlayerSessions</a> </p> </li> <li> <p> <a>DescribePlayerSessions</a>
+   * </p> </li> <li> <p>Game session placements</p> <ul> <li> <p>
+   * <a>StartGameSessionPlacement</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessionPlacement</a> </p> </li> <li> <p>
    * <a>StopGameSessionPlacement</a> </p> </li> </ul> </li> </ul><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerSession">AWS

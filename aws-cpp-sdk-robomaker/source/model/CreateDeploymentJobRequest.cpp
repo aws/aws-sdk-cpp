@@ -27,7 +27,8 @@ CreateDeploymentJobRequest::CreateDeploymentJobRequest() :
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_fleetHasBeenSet(false),
-    m_deploymentApplicationConfigsHasBeenSet(false)
+    m_deploymentApplicationConfigsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String CreateDeploymentJobRequest::SerializePayload() const
      deploymentApplicationConfigsJsonList[deploymentApplicationConfigsIndex].AsObject(m_deploymentApplicationConfigs[deploymentApplicationConfigsIndex].Jsonize());
    }
    payload.WithArray("deploymentApplicationConfigs", std::move(deploymentApplicationConfigsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

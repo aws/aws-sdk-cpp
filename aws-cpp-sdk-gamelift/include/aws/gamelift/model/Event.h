@@ -179,7 +179,7 @@ namespace Model
      * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
      * addresses. To resolve this, change the CIDR block for the VPC in your AWS
      * account. For more information on VPC peering failures, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
@@ -250,7 +250,7 @@ namespace Model
      * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
      * addresses. To resolve this, change the CIDR block for the VPC in your AWS
      * account. For more information on VPC peering failures, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
@@ -321,7 +321,7 @@ namespace Model
      * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
      * addresses. To resolve this, change the CIDR block for the VPC in your AWS
      * account. For more information on VPC peering failures, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
@@ -392,7 +392,7 @@ namespace Model
      * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
      * addresses. To resolve this, change the CIDR block for the VPC in your AWS
      * account. For more information on VPC peering failures, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2
@@ -463,7 +463,7 @@ namespace Model
      * for peering failure is that the two VPCs have overlapping CIDR blocks of IPv4
      * addresses. To resolve this, change the CIDR block for the VPC in your AWS
      * account. For more information on VPC peering failures, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html">https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/invalid-peering-configurations.html</a>
      * </p> </li> <li> <p>FLEET_VPC_PEERING_DELETED -- A VPC peering connection has
      * been successfully deleted.</p> </li> </ul> <p> <b>Spot instance events:</b> </p>
      * <ul> <li> <p> INSTANCE_INTERRUPTED -- A spot instance was interrupted by EC2

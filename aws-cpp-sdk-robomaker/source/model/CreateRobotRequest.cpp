@@ -26,7 +26,8 @@ CreateRobotRequest::CreateRobotRequest() :
     m_nameHasBeenSet(false),
     m_architecture(Architecture::NOT_SET),
     m_architectureHasBeenSet(false),
-    m_greengrassGroupIdHasBeenSet(false)
+    m_greengrassGroupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,17 @@ Aws::String CreateRobotRequest::SerializePayload() const
   if(m_greengrassGroupIdHasBeenSet)
   {
    payload.WithString("greengrassGroupId", m_greengrassGroupId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

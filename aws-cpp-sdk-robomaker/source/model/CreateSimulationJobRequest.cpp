@@ -33,6 +33,7 @@ CreateSimulationJobRequest::CreateSimulationJobRequest() :
     m_failureBehaviorHasBeenSet(false),
     m_robotApplicationsHasBeenSet(false),
     m_simulationApplicationsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_vpcConfigHasBeenSet(false)
 {
 }
@@ -89,6 +90,17 @@ Aws::String CreateSimulationJobRequest::SerializePayload() const
      simulationApplicationsJsonList[simulationApplicationsIndex].AsObject(m_simulationApplications[simulationApplicationsIndex].Jsonize());
    }
    payload.WithArray("simulationApplications", std::move(simulationApplicationsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

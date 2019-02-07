@@ -87,195 +87,195 @@ namespace Model
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline const Aws::String& GetPreLaunchFile() const{ return m_preLaunchFile; }
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline void SetPreLaunchFile(const Aws::String& value) { m_preLaunchFileHasBeenSet = true; m_preLaunchFile = value; }
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline void SetPreLaunchFile(Aws::String&& value) { m_preLaunchFileHasBeenSet = true; m_preLaunchFile = std::move(value); }
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline void SetPreLaunchFile(const char* value) { m_preLaunchFileHasBeenSet = true; m_preLaunchFile.assign(value); }
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline DeploymentLaunchConfig& WithPreLaunchFile(const Aws::String& value) { SetPreLaunchFile(value); return *this;}
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline DeploymentLaunchConfig& WithPreLaunchFile(Aws::String&& value) { SetPreLaunchFile(std::move(value)); return *this;}
 
     /**
      * <p>The deployment pre-launch file. This file will be executed prior to the
-     * deployment launch file.</p>
+     * launch file.</p>
      */
     inline DeploymentLaunchConfig& WithPreLaunchFile(const char* value) { SetPreLaunchFile(value); return *this;}
 
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline const Aws::String& GetLaunchFile() const{ return m_launchFile; }
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(const Aws::String& value) { m_launchFileHasBeenSet = true; m_launchFile = value; }
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(Aws::String&& value) { m_launchFileHasBeenSet = true; m_launchFile = std::move(value); }
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline void SetLaunchFile(const char* value) { m_launchFileHasBeenSet = true; m_launchFile.assign(value); }
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline DeploymentLaunchConfig& WithLaunchFile(const Aws::String& value) { SetLaunchFile(value); return *this;}
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline DeploymentLaunchConfig& WithLaunchFile(Aws::String&& value) { SetLaunchFile(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment launch file.</p>
+     * <p>The launch file name.</p>
      */
     inline DeploymentLaunchConfig& WithLaunchFile(const char* value) { SetLaunchFile(value); return *this;}
 
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline const Aws::String& GetPostLaunchFile() const{ return m_postLaunchFile; }
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline void SetPostLaunchFile(const Aws::String& value) { m_postLaunchFileHasBeenSet = true; m_postLaunchFile = value; }
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline void SetPostLaunchFile(Aws::String&& value) { m_postLaunchFileHasBeenSet = true; m_postLaunchFile = std::move(value); }
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline void SetPostLaunchFile(const char* value) { m_postLaunchFileHasBeenSet = true; m_postLaunchFile.assign(value); }
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline DeploymentLaunchConfig& WithPostLaunchFile(const Aws::String& value) { SetPostLaunchFile(value); return *this;}
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline DeploymentLaunchConfig& WithPostLaunchFile(Aws::String&& value) { SetPostLaunchFile(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment post-launch file. This file will be executed after the
-     * deployment launch file.</p>
+     * <p>The deployment post-launch file. This file will be executed after the launch
+     * file.</p>
      */
     inline DeploymentLaunchConfig& WithPostLaunchFile(const char* value) { SetPostLaunchFile(value); return *this;}
 
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironmentVariables() const{ return m_environmentVariables; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline void SetEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline void SetEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& WithEnvironmentVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironmentVariables(value); return *this;}
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& WithEnvironmentVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(const Aws::String& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(Aws::String&& key, const Aws::String& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(const Aws::String& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(Aws::String&& key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(const char* key, Aws::String&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(Aws::String&& key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of key/value pairs specifying environment variables for the
-     * deployment application.</p>
+     * <p>An array of key/value pairs specifying environment variables for the robot
+     * application</p>
      */
     inline DeploymentLaunchConfig& AddEnvironmentVariables(const char* key, const char* value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace(key, value); return *this; }
 

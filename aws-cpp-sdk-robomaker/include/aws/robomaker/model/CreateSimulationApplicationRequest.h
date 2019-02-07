@@ -21,6 +21,7 @@
 #include <aws/robomaker/model/SimulationSoftwareSuite.h>
 #include <aws/robomaker/model/RobotSoftwareSuite.h>
 #include <aws/robomaker/model/RenderingEngine.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/SourceConfig.h>
 #include <utility>
 
@@ -196,6 +197,79 @@ namespace Model
      */
     inline CreateSimulationApplicationRequest& WithRenderingEngine(RenderingEngine&& value) { SetRenderingEngine(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values that are attached to the
+     * simulation application.</p>
+     */
+    inline CreateSimulationApplicationRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -212,6 +286,9 @@ namespace Model
 
     RenderingEngine m_renderingEngine;
     bool m_renderingEngineHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

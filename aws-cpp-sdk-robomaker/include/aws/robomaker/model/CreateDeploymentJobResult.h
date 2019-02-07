@@ -21,6 +21,7 @@
 #include <aws/robomaker/model/DeploymentJobErrorCode.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/robomaker/model/DeploymentConfig.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/robomaker/model/DeploymentApplicationConfig.h>
 #include <utility>
 
@@ -219,27 +220,147 @@ namespace Model
 
 
     /**
-     * <p>The failure code of the deployment job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>BadPermissionError</dt> <dd> <p>AWS Greengrass requires a service-level role
+     * permission to access other services. The role must include the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+     * <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+     * </dd> <dt>ExtractingBundleFailure</dt> <dd> <p>The robot application could not
+     * be extracted from the bundle.</p> </dd> <dt>FailureThresholdBreached</dt> <dd>
+     * <p>The percentage of robots that could not be updated exceeded the percentage
+     * set for the deployment.</p> </dd> <dt>GreengrassDeploymentFailed</dt> <dd>
+     * <p>The robot application could not be deployed to the robot.</p> </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> <p>The AWS Greengrass group or
+     * version associated with a robot is missing.</p> </dd>
+     * <dt>InternalServerError</dt> <dd> <p>An internal error has occurred. Retry your
+     * request, but if the problem persists, contact us with details.</p> </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt> <dd> <p>The robot application does
+     * not have a source that matches the architecture of the robot.</p> </dd>
+     * <dt>MissingRobotDeploymentResource</dt> <dd> <p>One or more of the resources
+     * specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?</p> </dd>
+     * <dt>PostLaunchFileFailure</dt> <dd> <p>The post-launch script failed.</p> </dd>
+     * <dt>PreLaunchFileFailure</dt> <dd> <p>The pre-launch script failed.</p> </dd>
+     * <dt>ResourceNotFound</dt> <dd> <p>One or more deployment resources are missing.
+     * For example, do robot application source bundles still exist? </p> </dd>
+     * <dt>RobotDeploymentNoResponse</dt> <dd> <p>There is no response from the robot.
+     * It might not be powered on or connected to the internet.</p> </dd> </dl>
      */
     inline const DeploymentJobErrorCode& GetFailureCode() const{ return m_failureCode; }
 
     /**
-     * <p>The failure code of the deployment job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>BadPermissionError</dt> <dd> <p>AWS Greengrass requires a service-level role
+     * permission to access other services. The role must include the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+     * <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+     * </dd> <dt>ExtractingBundleFailure</dt> <dd> <p>The robot application could not
+     * be extracted from the bundle.</p> </dd> <dt>FailureThresholdBreached</dt> <dd>
+     * <p>The percentage of robots that could not be updated exceeded the percentage
+     * set for the deployment.</p> </dd> <dt>GreengrassDeploymentFailed</dt> <dd>
+     * <p>The robot application could not be deployed to the robot.</p> </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> <p>The AWS Greengrass group or
+     * version associated with a robot is missing.</p> </dd>
+     * <dt>InternalServerError</dt> <dd> <p>An internal error has occurred. Retry your
+     * request, but if the problem persists, contact us with details.</p> </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt> <dd> <p>The robot application does
+     * not have a source that matches the architecture of the robot.</p> </dd>
+     * <dt>MissingRobotDeploymentResource</dt> <dd> <p>One or more of the resources
+     * specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?</p> </dd>
+     * <dt>PostLaunchFileFailure</dt> <dd> <p>The post-launch script failed.</p> </dd>
+     * <dt>PreLaunchFileFailure</dt> <dd> <p>The pre-launch script failed.</p> </dd>
+     * <dt>ResourceNotFound</dt> <dd> <p>One or more deployment resources are missing.
+     * For example, do robot application source bundles still exist? </p> </dd>
+     * <dt>RobotDeploymentNoResponse</dt> <dd> <p>There is no response from the robot.
+     * It might not be powered on or connected to the internet.</p> </dd> </dl>
      */
     inline void SetFailureCode(const DeploymentJobErrorCode& value) { m_failureCode = value; }
 
     /**
-     * <p>The failure code of the deployment job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>BadPermissionError</dt> <dd> <p>AWS Greengrass requires a service-level role
+     * permission to access other services. The role must include the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+     * <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+     * </dd> <dt>ExtractingBundleFailure</dt> <dd> <p>The robot application could not
+     * be extracted from the bundle.</p> </dd> <dt>FailureThresholdBreached</dt> <dd>
+     * <p>The percentage of robots that could not be updated exceeded the percentage
+     * set for the deployment.</p> </dd> <dt>GreengrassDeploymentFailed</dt> <dd>
+     * <p>The robot application could not be deployed to the robot.</p> </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> <p>The AWS Greengrass group or
+     * version associated with a robot is missing.</p> </dd>
+     * <dt>InternalServerError</dt> <dd> <p>An internal error has occurred. Retry your
+     * request, but if the problem persists, contact us with details.</p> </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt> <dd> <p>The robot application does
+     * not have a source that matches the architecture of the robot.</p> </dd>
+     * <dt>MissingRobotDeploymentResource</dt> <dd> <p>One or more of the resources
+     * specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?</p> </dd>
+     * <dt>PostLaunchFileFailure</dt> <dd> <p>The post-launch script failed.</p> </dd>
+     * <dt>PreLaunchFileFailure</dt> <dd> <p>The pre-launch script failed.</p> </dd>
+     * <dt>ResourceNotFound</dt> <dd> <p>One or more deployment resources are missing.
+     * For example, do robot application source bundles still exist? </p> </dd>
+     * <dt>RobotDeploymentNoResponse</dt> <dd> <p>There is no response from the robot.
+     * It might not be powered on or connected to the internet.</p> </dd> </dl>
      */
     inline void SetFailureCode(DeploymentJobErrorCode&& value) { m_failureCode = std::move(value); }
 
     /**
-     * <p>The failure code of the deployment job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>BadPermissionError</dt> <dd> <p>AWS Greengrass requires a service-level role
+     * permission to access other services. The role must include the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+     * <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+     * </dd> <dt>ExtractingBundleFailure</dt> <dd> <p>The robot application could not
+     * be extracted from the bundle.</p> </dd> <dt>FailureThresholdBreached</dt> <dd>
+     * <p>The percentage of robots that could not be updated exceeded the percentage
+     * set for the deployment.</p> </dd> <dt>GreengrassDeploymentFailed</dt> <dd>
+     * <p>The robot application could not be deployed to the robot.</p> </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> <p>The AWS Greengrass group or
+     * version associated with a robot is missing.</p> </dd>
+     * <dt>InternalServerError</dt> <dd> <p>An internal error has occurred. Retry your
+     * request, but if the problem persists, contact us with details.</p> </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt> <dd> <p>The robot application does
+     * not have a source that matches the architecture of the robot.</p> </dd>
+     * <dt>MissingRobotDeploymentResource</dt> <dd> <p>One or more of the resources
+     * specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?</p> </dd>
+     * <dt>PostLaunchFileFailure</dt> <dd> <p>The post-launch script failed.</p> </dd>
+     * <dt>PreLaunchFileFailure</dt> <dd> <p>The pre-launch script failed.</p> </dd>
+     * <dt>ResourceNotFound</dt> <dd> <p>One or more deployment resources are missing.
+     * For example, do robot application source bundles still exist? </p> </dd>
+     * <dt>RobotDeploymentNoResponse</dt> <dd> <p>There is no response from the robot.
+     * It might not be powered on or connected to the internet.</p> </dd> </dl>
      */
     inline CreateDeploymentJobResult& WithFailureCode(const DeploymentJobErrorCode& value) { SetFailureCode(value); return *this;}
 
     /**
-     * <p>The failure code of the deployment job if it failed.</p>
+     * <p>The failure code of the simulation job if it failed:</p> <dl>
+     * <dt>BadPermissionError</dt> <dd> <p>AWS Greengrass requires a service-level role
+     * permission to access other services. The role must include the <a
+     * href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
+     * <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. </p>
+     * </dd> <dt>ExtractingBundleFailure</dt> <dd> <p>The robot application could not
+     * be extracted from the bundle.</p> </dd> <dt>FailureThresholdBreached</dt> <dd>
+     * <p>The percentage of robots that could not be updated exceeded the percentage
+     * set for the deployment.</p> </dd> <dt>GreengrassDeploymentFailed</dt> <dd>
+     * <p>The robot application could not be deployed to the robot.</p> </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt> <dd> <p>The AWS Greengrass group or
+     * version associated with a robot is missing.</p> </dd>
+     * <dt>InternalServerError</dt> <dd> <p>An internal error has occurred. Retry your
+     * request, but if the problem persists, contact us with details.</p> </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt> <dd> <p>The robot application does
+     * not have a source that matches the architecture of the robot.</p> </dd>
+     * <dt>MissingRobotDeploymentResource</dt> <dd> <p>One or more of the resources
+     * specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?</p> </dd>
+     * <dt>PostLaunchFileFailure</dt> <dd> <p>The post-launch script failed.</p> </dd>
+     * <dt>PreLaunchFileFailure</dt> <dd> <p>The pre-launch script failed.</p> </dd>
+     * <dt>ResourceNotFound</dt> <dd> <p>One or more deployment resources are missing.
+     * For example, do robot application source bundles still exist? </p> </dd>
+     * <dt>RobotDeploymentNoResponse</dt> <dd> <p>There is no response from the robot.
+     * It might not be powered on or connected to the internet.</p> </dd> </dl>
      */
     inline CreateDeploymentJobResult& WithFailureCode(DeploymentJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
 
@@ -295,6 +416,67 @@ namespace Model
      */
     inline CreateDeploymentJobResult& WithDeploymentConfig(DeploymentConfig&& value) { SetDeploymentConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The list of all tags added to the deployment job.</p>
+     */
+    inline CreateDeploymentJobResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -312,6 +494,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     DeploymentConfig m_deploymentConfig;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
   };
 
 } // namespace Model

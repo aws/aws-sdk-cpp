@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateInputSecurityGroupRequest::CreateInputSecurityGroupRequest() : 
+    m_tagsHasBeenSet(false),
     m_whitelistRulesHasBeenSet(false)
 {
 }
@@ -30,6 +31,17 @@ CreateInputSecurityGroupRequest::CreateInputSecurityGroupRequest() :
 Aws::String CreateInputSecurityGroupRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
 
   if(m_whitelistRulesHasBeenSet)
   {

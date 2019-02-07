@@ -309,7 +309,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetLogPaths() const{ return m_logPaths; }
@@ -319,7 +319,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline void SetLogPaths(const Aws::Vector<Aws::String>& value) { m_logPathsHasBeenSet = true; m_logPaths = value; }
@@ -329,7 +329,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline void SetLogPaths(Aws::Vector<Aws::String>&& value) { m_logPathsHasBeenSet = true; m_logPaths = std::move(value); }
@@ -339,7 +339,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(const Aws::Vector<Aws::String>& value) { SetLogPaths(value); return *this;}
@@ -349,7 +349,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline CreateFleetRequest& WithLogPaths(Aws::Vector<Aws::String>&& value) { SetLogPaths(std::move(value)); return *this;}
@@ -359,7 +359,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const Aws::String& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
@@ -369,7 +369,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(Aws::String&& value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(std::move(value)); return *this; }
@@ -379,7 +379,7 @@ namespace Model
      * should store log files once a server process shuts down, use the Amazon GameLift
      * server API <code>ProcessReady()</code> and specify one or more directory paths
      * in <code>logParameters</code>. See more information in the <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
      * API Reference</a>. </p>
      */
     inline CreateFleetRequest& AddLogPaths(const char* value) { m_logPathsHasBeenSet = true; m_logPaths.push_back(value); return *this; }
@@ -674,66 +674,66 @@ namespace Model
 
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricGroups() const{ return m_metricGroups; }
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline void SetMetricGroups(const Aws::Vector<Aws::String>& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = value; }
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline void SetMetricGroups(Aws::Vector<Aws::String>&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups = std::move(value); }
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline CreateFleetRequest& WithMetricGroups(const Aws::Vector<Aws::String>& value) { SetMetricGroups(value); return *this;}
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline CreateFleetRequest& WithMetricGroups(Aws::Vector<Aws::String>&& value) { SetMetricGroups(std::move(value)); return *this;}
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline CreateFleetRequest& AddMetricGroups(const Aws::String& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline CreateFleetRequest& AddMetricGroups(Aws::String&& value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Name of a metric group to add this fleet to. A metric group tracks metrics
-     * across all fleets in the group. Use an existing metric group name to add this
-     * fleet to the group, or use a new name to create a new metric group. A fleet can
-     * only be included in one metric group at a time.</p>
+     * <p>Name of an Amazon CloudWatch metric group to add this fleet to. A metric
+     * group aggregates the metrics for all fleets in the group. Specify an existing
+     * metric group name, or provide a new name to create a new metric group. A fleet
+     * can only be included in one metric group at a time. </p>
      */
     inline CreateFleetRequest& AddMetricGroups(const char* value) { m_metricGroupsHasBeenSet = true; m_metricGroups.push_back(value); return *this; }
 
@@ -741,49 +741,49 @@ namespace Model
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for the AWS account with the VPC that you want to peer your
      * Amazon GameLift fleet with. You can find your Account ID in the AWS Management
-     * Console under account settings.</p>
+     * Console under account settings. </p>
      */
     inline CreateFleetRequest& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
 
@@ -791,56 +791,70 @@ namespace Model
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline CreateFleetRequest& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>. </p>
      */
     inline CreateFleetRequest& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
@@ -854,8 +868,8 @@ namespace Model
      * spot pricing is variable, and while in use they can be interrupted (with a
      * two-minute notification). Learn more about Amazon GameLift spot instances with
      * at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
-     * Choose Computing Resources</a>. </p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     * Set up Access to External Services</a>. </p>
      */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
 
@@ -868,8 +882,8 @@ namespace Model
      * spot pricing is variable, and while in use they can be interrupted (with a
      * two-minute notification). Learn more about Amazon GameLift spot instances with
      * at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
-     * Choose Computing Resources</a>. </p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     * Set up Access to External Services</a>. </p>
      */
     inline void SetFleetType(const FleetType& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
@@ -882,8 +896,8 @@ namespace Model
      * spot pricing is variable, and while in use they can be interrupted (with a
      * two-minute notification). Learn more about Amazon GameLift spot instances with
      * at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
-     * Choose Computing Resources</a>. </p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     * Set up Access to External Services</a>. </p>
      */
     inline void SetFleetType(FleetType&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
@@ -896,8 +910,8 @@ namespace Model
      * spot pricing is variable, and while in use they can be interrupted (with a
      * two-minute notification). Learn more about Amazon GameLift spot instances with
      * at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
-     * Choose Computing Resources</a>. </p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     * Set up Access to External Services</a>. </p>
      */
     inline CreateFleetRequest& WithFleetType(const FleetType& value) { SetFleetType(value); return *this;}
 
@@ -910,8 +924,8 @@ namespace Model
      * spot pricing is variable, and while in use they can be interrupted (with a
      * two-minute notification). Learn more about Amazon GameLift spot instances with
      * at <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html">
-     * Choose Computing Resources</a>. </p>
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-credentials.html">
+     * Set up Access to External Services</a>. </p>
      */
     inline CreateFleetRequest& WithFleetType(FleetType&& value) { SetFleetType(std::move(value)); return *this;}
 

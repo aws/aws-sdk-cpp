@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateRobotApplicationRequest::CreateRobotApplicationRequest() : 
     m_nameHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_robotSoftwareSuiteHasBeenSet(false)
+    m_robotSoftwareSuiteHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String CreateRobotApplicationRequest::SerializePayload() const
   if(m_robotSoftwareSuiteHasBeenSet)
   {
    payload.WithObject("robotSoftwareSuite", m_robotSoftwareSuite.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

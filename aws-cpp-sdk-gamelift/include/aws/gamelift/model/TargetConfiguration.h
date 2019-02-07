@@ -37,11 +37,10 @@ namespace Model
    * for the metric. As player usage changes, the policy triggers Amazon GameLift to
    * adjust capacity so that the metric returns to the target value. The target
    * configuration specifies settings as needed for the target based policy,
-   * including the target value. </p> <p>Operations related to fleet capacity scaling
-   * include:</p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-   * <a>UpdateFleetCapacity</a> </p> </li> <li> <p> <a>DescribeEC2InstanceLimits</a>
-   * </p> </li> <li> <p>Manage scaling policies:</p> <ul> <li> <p>
-   * <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
+   * including the target value. </p> <ul> <li> <p> <a>DescribeFleetCapacity</a> </p>
+   * </li> <li> <p> <a>UpdateFleetCapacity</a> </p> </li> <li> <p>
+   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p>Manage scaling policies:</p>
+   * <ul> <li> <p> <a>PutScalingPolicy</a> (auto-scaling)</p> </li> <li> <p>
    * <a>DescribeScalingPolicies</a> (auto-scaling)</p> </li> <li> <p>
    * <a>DeleteScalingPolicy</a> (auto-scaling)</p> </li> </ul> </li> <li> <p>Manage
    * fleet actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
