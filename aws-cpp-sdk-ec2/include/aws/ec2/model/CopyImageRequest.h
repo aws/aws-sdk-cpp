@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -97,7 +97,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
      * using <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -166,7 +166,7 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
      * using <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -177,7 +177,7 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK
      * using <code>KmsKeyId</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CopyImageRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

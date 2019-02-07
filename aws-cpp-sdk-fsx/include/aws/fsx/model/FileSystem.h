@@ -353,7 +353,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -365,7 +365,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -377,7 +377,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -389,7 +389,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -401,7 +401,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -413,7 +413,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -425,7 +425,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -437,7 +437,7 @@ namespace Model
      * <p>The IDs of the elastic network interface from which a specific file system is
      * accessible. The elastic network interface is automatically created in the same
      * VPC that the Amazon FSx file system was created in. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
      * Network Interfaces</a> in the <i>Amazon EC2 User Guide.</i> </p> <p>For an
      * Amazon FSx for Windows File Server file system, you can have one network
      * interface Id. For an Amazon FSx for Lustre file system, you can have more than
@@ -563,49 +563,49 @@ namespace Model
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FileSystem& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FileSystem& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FileSystem& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
      * Your Amazon EC2 Resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline FileSystem& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

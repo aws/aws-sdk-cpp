@@ -234,7 +234,7 @@ namespace Model
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
@@ -242,7 +242,7 @@ namespace Model
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
@@ -250,7 +250,7 @@ namespace Model
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
@@ -258,7 +258,7 @@ namespace Model
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline ImportInstanceLaunchSpecification& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
@@ -266,7 +266,7 @@ namespace Model
     /**
      * <p>The instance type. For more information about the instance types that you can
      * import, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmie_prereqs.html#vmimport-instance-types">Instance
      * Types</a> in the VM Import/Export User Guide.</p>
      */
     inline ImportInstanceLaunchSpecification& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}

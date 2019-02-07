@@ -85,8 +85,10 @@ namespace Model
 
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -94,8 +96,10 @@ namespace Model
     inline const Aws::String& GetImportPath() const{ return m_importPath; }
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -103,8 +107,10 @@ namespace Model
     inline void SetImportPath(const Aws::String& value) { m_importPathHasBeenSet = true; m_importPath = value; }
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -112,8 +118,10 @@ namespace Model
     inline void SetImportPath(Aws::String&& value) { m_importPathHasBeenSet = true; m_importPath = std::move(value); }
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -121,8 +129,10 @@ namespace Model
     inline void SetImportPath(const char* value) { m_importPathHasBeenSet = true; m_importPath.assign(value); }
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -130,8 +140,10 @@ namespace Model
     inline CreateFileSystemLustreConfiguration& WithImportPath(const Aws::String& value) { SetImportPath(value); return *this;}
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
@@ -139,13 +151,149 @@ namespace Model
     inline CreateFileSystemLustreConfiguration& WithImportPath(Aws::String&& value) { SetImportPath(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) The path to the Amazon S3 bucket (and optional prefix) that you're
-     * using as the data repository for your FSx for Lustre file system, for example
+     * <p>(Optional) The path to the Amazon S3 bucket (including the optional prefix)
+     * that you're using as the data repository for your Amazon FSx for Lustre file
+     * system. The root of your FSx for Lustre file system will be mapped to the root
+     * of the Amazon S3 bucket you select. An example is
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>
      */
     inline CreateFileSystemLustreConfiguration& WithImportPath(const char* value) { SetImportPath(value); return *this;}
+
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline const Aws::String& GetExportPath() const{ return m_exportPath; }
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline void SetExportPath(const Aws::String& value) { m_exportPathHasBeenSet = true; m_exportPath = value; }
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline void SetExportPath(Aws::String&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::move(value); }
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline void SetExportPath(const char* value) { m_exportPathHasBeenSet = true; m_exportPath.assign(value); }
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithExportPath(const Aws::String& value) { SetExportPath(value); return *this;}
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithExportPath(Aws::String&& value) { SetExportPath(std::move(value)); return *this;}
+
+    /**
+     * <p>(Optional) The path in Amazon S3 where the root of your Amazon FSx file
+     * system is exported. The path must use the same Amazon S3 bucket as specified in
+     * ImportPath. You can provide an optional prefix to which new and changed data is
+     * to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export
+     * path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
+     * export bucket must be the same as the import bucket specified by
+     * <code>ImportPath</code>. If you only specify a bucket name, such as
+     * <code>s3://import-bucket</code>, you get a 1:1 mapping of file system objects to
+     * S3 bucket objects. This mapping means that the input data in S3 is overwritten
+     * on export. If you provide a custom prefix in the export path, such as
+     * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
+     * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
+     */
+    inline CreateFileSystemLustreConfiguration& WithExportPath(const char* value) { SetExportPath(value); return *this;}
 
 
     /**
@@ -185,6 +333,9 @@ namespace Model
 
     Aws::String m_importPath;
     bool m_importPathHasBeenSet;
+
+    Aws::String m_exportPath;
+    bool m_exportPathHasBeenSet;
 
     int m_importedFileChunkSize;
     bool m_importedFileChunkSizeHasBeenSet;

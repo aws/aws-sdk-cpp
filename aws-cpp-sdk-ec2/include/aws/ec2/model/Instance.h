@@ -1238,7 +1238,7 @@ namespace Model
      * value of <code>true</code> means that checking is enabled, and
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
@@ -1249,7 +1249,7 @@ namespace Model
      * value of <code>true</code> means that checking is enabled, and
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
@@ -1260,7 +1260,7 @@ namespace Model
      * value of <code>true</code> means that checking is enabled, and
      * <code>false</code> means that checking is disabled. The value must be
      * <code>false</code> for the instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline Instance& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}

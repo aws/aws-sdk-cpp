@@ -53,49 +53,49 @@ namespace Model
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const char* value) { SetCode(value); return *this;}

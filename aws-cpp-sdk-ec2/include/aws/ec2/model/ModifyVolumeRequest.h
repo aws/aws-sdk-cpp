@@ -112,7 +112,7 @@ namespace Model
      * <p>The target size of the volume, in GiB. The target volume size must be greater
      * than or equal to than the existing size of the volume. For information about
      * available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
@@ -122,7 +122,7 @@ namespace Model
      * <p>The target size of the volume, in GiB. The target volume size must be greater
      * than or equal to than the existing size of the volume. For information about
      * available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
@@ -132,7 +132,7 @@ namespace Model
      * <p>The target size of the volume, in GiB. The target volume size must be greater
      * than or equal to than the existing size of the volume. For information about
      * available EBS volume sizes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a>.</p> <p>Default: If no size is specified, the existing size
      * is retained.</p>
      */
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
      * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
      * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
      * existing value is retained.</p>
      */
@@ -182,7 +182,7 @@ namespace Model
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
      * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
      * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
      * existing value is retained.</p>
      */
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>The target IOPS rate of the volume.</p> <p>This is only valid for Provisioned
      * IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
      * IOPS SSD (io1) Volumes</a>.</p> <p>Default: If no IOPS value is specified, the
      * existing value is retained.</p>
      */

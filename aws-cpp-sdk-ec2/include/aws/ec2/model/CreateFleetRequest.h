@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
@@ -123,7 +123,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
      * the request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateFleetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -324,7 +324,7 @@ namespace Model
      * not be launched. A value of <code>request</code> places an asynchronous one-time
      * request without maintaining capacity or submitting requests in alternative
      * capacity pools if capacity is unavailable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
      * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -338,7 +338,7 @@ namespace Model
      * not be launched. A value of <code>request</code> places an asynchronous one-time
      * request without maintaining capacity or submitting requests in alternative
      * capacity pools if capacity is unavailable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
      * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -352,7 +352,7 @@ namespace Model
      * not be launched. A value of <code>request</code> places an asynchronous one-time
      * request without maintaining capacity or submitting requests in alternative
      * capacity pools if capacity is unavailable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
      * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -366,7 +366,7 @@ namespace Model
      * not be launched. A value of <code>request</code> places an asynchronous one-time
      * request without maintaining capacity or submitting requests in alternative
      * capacity pools if capacity is unavailable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
      * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -380,7 +380,7 @@ namespace Model
      * not be launched. A value of <code>request</code> places an asynchronous one-time
      * request without maintaining capacity or submitting requests in alternative
      * capacity pools if capacity is unavailable. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type">EC2
      * Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -484,9 +484,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
@@ -495,9 +495,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
@@ -506,9 +506,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
@@ -517,9 +517,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
@@ -528,9 +528,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
@@ -539,9 +539,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
@@ -550,9 +550,9 @@ namespace Model
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. The value
      * for <code>ResourceType</code> must be <code>fleet</code>, otherwise the fleet
      * request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
      * Your Resources</a>. </p>
      */
     inline CreateFleetRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }

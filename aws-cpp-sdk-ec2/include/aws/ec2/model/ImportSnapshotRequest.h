@@ -205,7 +205,7 @@ namespace Model
      * encrypted. The default CMK for EBS is used unless you specify a non-default AWS
      * Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -215,7 +215,7 @@ namespace Model
      * encrypted. The default CMK for EBS is used unless you specify a non-default AWS
      * Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -225,7 +225,7 @@ namespace Model
      * encrypted. The default CMK for EBS is used unless you specify a non-default AWS
      * Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
      * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline ImportSnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}

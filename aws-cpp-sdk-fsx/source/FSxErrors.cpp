@@ -31,6 +31,7 @@ namespace FSxErrorMapper
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
 static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("IncompatibleParameterError");
+static const int INVALID_EXPORT_PATH_HASH = HashingUtils::HashString("InvalidExportPath");
 static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
 static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
 static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServiceResourceError");
@@ -58,6 +59,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INCOMPATIBLE_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), false);
+  }
+  else if (hashCode == INVALID_EXPORT_PATH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_EXPORT_PATH), false);
   }
   else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
   {

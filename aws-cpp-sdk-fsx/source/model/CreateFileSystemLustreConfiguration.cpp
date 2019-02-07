@@ -31,6 +31,7 @@ namespace Model
 CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() : 
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_importPathHasBeenSet(false),
+    m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
     m_importedFileChunkSizeHasBeenSet(false)
 {
@@ -39,6 +40,7 @@ CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration() :
 CreateFileSystemLustreConfiguration::CreateFileSystemLustreConfiguration(JsonView jsonValue) : 
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
     m_importPathHasBeenSet(false),
+    m_exportPathHasBeenSet(false),
     m_importedFileChunkSize(0),
     m_importedFileChunkSizeHasBeenSet(false)
 {
@@ -59,6 +61,13 @@ CreateFileSystemLustreConfiguration& CreateFileSystemLustreConfiguration::operat
     m_importPath = jsonValue.GetString("ImportPath");
 
     m_importPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExportPath"))
+  {
+    m_exportPath = jsonValue.GetString("ExportPath");
+
+    m_exportPathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ImportedFileChunkSize"))
@@ -84,6 +93,12 @@ JsonValue CreateFileSystemLustreConfiguration::Jsonize() const
   if(m_importPathHasBeenSet)
   {
    payload.WithString("ImportPath", m_importPath);
+
+  }
+
+  if(m_exportPathHasBeenSet)
+  {
+   payload.WithString("ExportPath", m_exportPath);
 
   }
 

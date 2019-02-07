@@ -92,7 +92,7 @@ namespace Model
      * <p>Hibernates the instance if the instance was enabled for hibernation at
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
@@ -102,7 +102,7 @@ namespace Model
      * <p>Hibernates the instance if the instance was enabled for hibernation at
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */
@@ -112,7 +112,7 @@ namespace Model
      * <p>Hibernates the instance if the instance was enabled for hibernation at
      * launch. If the instance cannot hibernate successfully, a normal shutdown occurs.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
      * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>
      * Default: <code>false</code> </p>
      */

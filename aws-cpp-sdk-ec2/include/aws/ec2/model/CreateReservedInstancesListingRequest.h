@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -63,7 +63,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateReservedInstancesListingRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateReservedInstancesListingRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
@@ -103,7 +103,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of your
      * listings. This helps avoid duplicate listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline CreateReservedInstancesListingRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}

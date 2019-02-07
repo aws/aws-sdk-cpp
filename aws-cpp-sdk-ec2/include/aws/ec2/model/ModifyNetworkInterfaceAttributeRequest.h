@@ -242,7 +242,7 @@ namespace Model
      * <code>true</code> means checking is enabled, and <code>false</code> means
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
@@ -252,7 +252,7 @@ namespace Model
      * <code>true</code> means checking is enabled, and <code>false</code> means
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline void SetSourceDestCheck(const AttributeBooleanValue& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
@@ -262,7 +262,7 @@ namespace Model
      * <code>true</code> means checking is enabled, and <code>false</code> means
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline void SetSourceDestCheck(AttributeBooleanValue&& value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = std::move(value); }
@@ -272,7 +272,7 @@ namespace Model
      * <code>true</code> means checking is enabled, and <code>false</code> means
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(const AttributeBooleanValue& value) { SetSourceDestCheck(value); return *this;}
@@ -282,7 +282,7 @@ namespace Model
      * <code>true</code> means checking is enabled, and <code>false</code> means
      * checking is disabled. This value must be <code>false</code> for a NAT instance
      * to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
      * Instances</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithSourceDestCheck(AttributeBooleanValue&& value) { SetSourceDestCheck(std::move(value)); return *this;}

@@ -116,11 +116,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline const Aws::String& GetImportManifestUrl() const{ return m_importManifestUrl; }
@@ -129,11 +129,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(const Aws::String& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = value; }
@@ -142,11 +142,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(Aws::String&& value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl = std::move(value); }
@@ -155,11 +155,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline void SetImportManifestUrl(const char* value) { m_importManifestUrlHasBeenSet = true; m_importManifestUrl.assign(value); }
@@ -168,11 +168,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline DiskImageDescription& WithImportManifestUrl(const Aws::String& value) { SetImportManifestUrl(value); return *this;}
@@ -181,11 +181,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline DiskImageDescription& WithImportManifestUrl(Aws::String&& value) { SetImportManifestUrl(std::move(value)); return *this;}
@@ -194,11 +194,11 @@ namespace Model
      * <p>A presigned URL for the import manifest stored in Amazon S3. For information
      * about creating a presigned URL for an Amazon S3 object, read the "Query String
      * Request Authentication Alternative" section of the <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">Authenticating
      * REST Requests</a> topic in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p> <p>For information about the import manifest referenced by this
      * API action, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
      * Import Manifest</a>.</p>
      */
     inline DiskImageDescription& WithImportManifestUrl(const char* value) { SetImportManifestUrl(value); return *this;}

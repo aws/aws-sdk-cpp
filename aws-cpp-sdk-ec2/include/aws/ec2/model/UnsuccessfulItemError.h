@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Information about the error that occurred. For more information about errors,
    * see <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
    * Codes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulItemError">AWS
    * API Reference</a></p>

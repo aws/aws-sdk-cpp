@@ -1899,7 +1899,7 @@ namespace Model
          * created from a public IPv4 address range that you have brought to AWS for use
          * with your AWS resources using bring your own IP addresses (BYOIP). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
          * able to recover it. You cannot recover an Elastic IP address that you released
@@ -1909,7 +1909,7 @@ namespace Model
          * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
          * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
          * EC2-VPC per region.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
@@ -1926,7 +1926,7 @@ namespace Model
          * created from a public IPv4 address range that you have brought to AWS for use
          * with your AWS resources using bring your own IP addresses (BYOIP). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
          * able to recover it. You cannot recover an Elastic IP address that you released
@@ -1936,7 +1936,7 @@ namespace Model
          * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
          * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
          * EC2-VPC per region.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
@@ -1955,7 +1955,7 @@ namespace Model
          * created from a public IPv4 address range that you have brought to AWS for use
          * with your AWS resources using bring your own IP addresses (BYOIP). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>[EC2-VPC] If you release an Elastic IP address, you might be
          * able to recover it. You cannot recover an Elastic IP address that you released
@@ -1965,7 +1965,7 @@ namespace Model
          * either in the EC2-Classic platform or in a VPC. By default, you can allocate 5
          * Elastic IP addresses for EC2-Classic per region and 5 Elastic IP addresses for
          * EC2-VPC per region.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateAddress">AWS
@@ -2044,7 +2044,7 @@ namespace Model
          * CIDR block range. You can assign as many IPv6 addresses to a network interface
          * as you can assign private IPv4 addresses, and the limit varies per instance
          * type. For information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
@@ -2059,7 +2059,7 @@ namespace Model
          * CIDR block range. You can assign as many IPv6 addresses to a network interface
          * as you can assign private IPv4 addresses, and the limit varies per instance
          * type. For information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
@@ -2076,7 +2076,7 @@ namespace Model
          * CIDR block range. You can assign as many IPv6 addresses to a network interface
          * as you can assign private IPv4 addresses, and the limit varies per instance
          * type. For information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP
          * Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic
          * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignIpv6Addresses">AWS
@@ -2093,10 +2093,10 @@ namespace Model
          * assigned within the subnet's CIDR block range. The number of secondary IP
          * addresses that you can assign to an instance varies by instance type. For
          * information about instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>When you move a secondary private IP address to another network interface,
          * any Elastic IP address that is associated with the IP address is also moved.</p>
@@ -2116,10 +2116,10 @@ namespace Model
          * assigned within the subnet's CIDR block range. The number of secondary IP
          * addresses that you can assign to an instance varies by instance type. For
          * information about instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>When you move a secondary private IP address to another network interface,
          * any Elastic IP address that is associated with the IP address is also moved.</p>
@@ -2141,10 +2141,10 @@ namespace Model
          * assigned within the subnet's CIDR block range. The number of secondary IP
          * addresses that you can assign to an instance varies by instance type. For
          * information about instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more
          * information about Elastic IP addresses, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>When you move a secondary private IP address to another network interface,
          * any Elastic IP address that is associated with the IP address is also moved.</p>
@@ -2164,7 +2164,7 @@ namespace Model
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
@@ -2193,7 +2193,7 @@ namespace Model
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
@@ -2224,7 +2224,7 @@ namespace Model
          * Before you can use an Elastic IP address, you must allocate it to your
          * account.</p> <p>An Elastic IP address is for use in either the EC2-Classic
          * platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>[EC2-Classic, VPC in an EC2-VPC-only account] If the Elastic IP address is
          * already associated with a different instance, it is disassociated from that
@@ -2296,7 +2296,7 @@ namespace Model
          * hours, depending on how frequently the instance renews its DHCP lease. You can
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
@@ -2313,7 +2313,7 @@ namespace Model
          * hours, depending on how frequently the instance renews its DHCP lease. You can
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
@@ -2332,7 +2332,7 @@ namespace Model
          * hours, depending on how frequently the instance renews its DHCP lease. You can
          * explicitly renew the lease using the operating system on the instance.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateDhcpOptions">AWS
@@ -2380,7 +2380,7 @@ namespace Model
          * association ID, which you need in order to disassociate the route table from the
          * subnet later. A route table can be associated with multiple subnets.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
@@ -2395,7 +2395,7 @@ namespace Model
          * association ID, which you need in order to disassociate the route table from the
          * subnet later. A route table can be associated with multiple subnets.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
@@ -2412,7 +2412,7 @@ namespace Model
          * association ID, which you need in order to disassociate the route table from the
          * subnet later. A route table can be associated with multiple subnets.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateRouteTable">AWS
@@ -2489,7 +2489,7 @@ namespace Model
          * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
          * CIDR block size is fixed at /56.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
@@ -2502,7 +2502,7 @@ namespace Model
          * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
          * CIDR block size is fixed at /56.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
@@ -2517,7 +2517,7 @@ namespace Model
          * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
          * CIDR block size is fixed at /56.</p> <p>For more information about associating
          * CIDR blocks with your VPC and applicable restrictions, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateVpcCidrBlock">AWS
@@ -2582,7 +2582,7 @@ namespace Model
         /**
          * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
          * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+         * see the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
          * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
@@ -2592,7 +2592,7 @@ namespace Model
         /**
          * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
          * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+         * see the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
          * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
@@ -2604,7 +2604,7 @@ namespace Model
         /**
          * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
          * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
+         * see the <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon
          * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
@@ -2643,13 +2643,13 @@ namespace Model
          * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
          * be attached to instances that support Amazon EBS encryption. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>For a list of supported device names, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
          * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
          * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
          * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
@@ -2658,7 +2658,7 @@ namespace Model
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
          * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
@@ -2671,13 +2671,13 @@ namespace Model
          * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
          * be attached to instances that support Amazon EBS encryption. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>For a list of supported device names, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
          * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
          * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
          * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
@@ -2686,7 +2686,7 @@ namespace Model
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
          * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
@@ -2701,13 +2701,13 @@ namespace Model
          * instance with the specified device name.</p> <p>Encrypted EBS volumes may only
          * be attached to instances that support Amazon EBS encryption. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>For a list of supported device names, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * an EBS Volume to an Instance</a>. Any device names that aren't reserved for
          * instance store volumes can be used for EBS volumes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html">Amazon
          * EC2 Instance Store</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>If a volume has an AWS Marketplace product code:</p> <ul> <li>
          * <p>The volume can be attached only to a stopped instance.</p> </li> <li> <p>AWS
@@ -2716,7 +2716,7 @@ namespace Model
          * type and operating system of the instance must support the product. For example,
          * you can't detach a volume from a Windows instance and attach it to a Linux
          * instance.</p> </li> </ul> <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching
          * Amazon EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
@@ -2729,7 +2729,7 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
@@ -2740,7 +2740,7 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
@@ -2753,7 +2753,7 @@ namespace Model
         /**
          * <p>Attaches a virtual private gateway to a VPC. You can attach one virtual
          * private gateway to one VPC at a time.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVpnGateway">AWS
@@ -2803,10 +2803,10 @@ namespace Model
          * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
          * security groups for the same VPC. This action doesn't apply to security groups
          * for use in EC2-Classic. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
@@ -2825,10 +2825,10 @@ namespace Model
          * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
          * security groups for the same VPC. This action doesn't apply to security groups
          * for use in EC2-Classic. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
@@ -2849,10 +2849,10 @@ namespace Model
          * more destination IPv4 or IPv6 CIDR address ranges, or to one or more destination
          * security groups for the same VPC. This action doesn't apply to security groups
          * for use in EC2-Classic. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * For more information about security group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>Each rule consists of the protocol (for example, TCP),
          * plus either a CIDR range or a source group. For the TCP and UDP protocols, you
          * must also specify the destination port or port range. For the ICMP protocol, you
@@ -2881,7 +2881,7 @@ namespace Model
          * security group for your VPC. The security groups must all be for the same VPC or
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -2903,7 +2903,7 @@ namespace Model
          * security group for your VPC. The security groups must all be for the same VPC or
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -2927,7 +2927,7 @@ namespace Model
          * security group for your VPC. The security groups must all be for the same VPC or
          * a peer VPC in a VPC peering connection. For more information about VPC security
          * group limits, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon
          * VPC Limits</a>.</p> <p>You can optionally specify a description for the security
          * group rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
@@ -3054,7 +3054,7 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">AWS
          * API Reference</a></p>
@@ -3067,7 +3067,7 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">AWS
          * API Reference</a></p>
@@ -3082,7 +3082,7 @@ namespace Model
          * partially uploaded volume or instance. If the conversion is complete or is in
          * the process of transferring the final disk image, the command fails and returns
          * an exception.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelConversionTask">AWS
          * API Reference</a></p>
@@ -3156,7 +3156,7 @@ namespace Model
         /**
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
@@ -3167,7 +3167,7 @@ namespace Model
         /**
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
@@ -3180,7 +3180,7 @@ namespace Model
         /**
          * <p>Cancels the specified Reserved Instance listing in the Reserved Instance
          * Marketplace.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelReservedInstancesListing">AWS
@@ -3337,7 +3337,7 @@ namespace Model
          * <code>Encrypted</code> during the copy operation. You cannot create an
          * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
          * about the prerequisites and limits when copying an AMI, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
@@ -3353,7 +3353,7 @@ namespace Model
          * <code>Encrypted</code> during the copy operation. You cannot create an
          * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
          * about the prerequisites and limits when copying an AMI, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
@@ -3371,7 +3371,7 @@ namespace Model
          * <code>Encrypted</code> during the copy operation. You cannot create an
          * unencrypted copy of an encrypted backing snapshot.</p> <p>For more information
          * about the prerequisites and limits when copying an AMI, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying
          * an AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopyImage">AWS API
@@ -3396,7 +3396,7 @@ namespace Model
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -3419,7 +3419,7 @@ namespace Model
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -3444,7 +3444,7 @@ namespace Model
          * snapshot.</p> <p>Snapshots created by copying another snapshot have an arbitrary
          * volume ID that should not be used for any purpose.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
@@ -3462,7 +3462,7 @@ namespace Model
          * RI discounts for that usage. By creating Capacity Reservations, you ensure that
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
          * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
          * not have sufficient capacity to fulfill the request. If your request fails due
@@ -3474,7 +3474,7 @@ namespace Model
          * for the selected instance type. If your request fails due to limit constraints,
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
          * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
@@ -3490,7 +3490,7 @@ namespace Model
          * RI discounts for that usage. By creating Capacity Reservations, you ensure that
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
          * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
          * not have sufficient capacity to fulfill the request. If your request fails due
@@ -3502,7 +3502,7 @@ namespace Model
          * for the selected instance type. If your request fails due to limit constraints,
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
          * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
@@ -3520,7 +3520,7 @@ namespace Model
          * RI discounts for that usage. By creating Capacity Reservations, you ensure that
          * you always have access to Amazon EC2 capacity when you need it, for as long as
          * you need it. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">Capacity
          * Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>Your request to create a Capacity Reservation could fail if Amazon EC2 does
          * not have sufficient capacity to fulfill the request. If your request fails due
@@ -3532,7 +3532,7 @@ namespace Model
          * for the selected instance type. If your request fails due to limit constraints,
          * increase your On-Demand Instance limit for the required instance type and try
          * again. For more information about increasing your instance limits, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-resource-limits.html">Amazon
          * EC2 Service Limits</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCapacityReservation">AWS
@@ -3624,7 +3624,7 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          * <important> <p>You cannot create more than one customer gateway with the same
          * VPN type, IP address, and BGP ASN parameter values. If you run an identical
@@ -3651,7 +3651,7 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          * <important> <p>You cannot create more than one customer gateway with the same
          * VPN type, IP address, and BGP ASN parameter values. If you run an identical
@@ -3680,7 +3680,7 @@ namespace Model
          * with the exception of 7224, which is reserved in the <code>us-east-1</code>
          * region, and 9059, which is reserved in the <code>eu-west-1</code> region.</p>
          * </note> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
          * <important> <p>You cannot create more than one customer gateway with the same
          * VPN type, IP address, and BGP ASN parameter values. If you run an identical
@@ -3699,7 +3699,7 @@ namespace Model
          * <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
          * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
@@ -3711,7 +3711,7 @@ namespace Model
          * <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
          * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
@@ -3725,7 +3725,7 @@ namespace Model
          * <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
          * specified Availability Zone in your default VPC. You can have only one default
          * subnet per Availability Zone. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#create-default-subnet">Creating
          * a Default Subnet</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDefaultSubnet">AWS
@@ -3739,7 +3739,7 @@ namespace Model
          * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
@@ -3759,7 +3759,7 @@ namespace Model
          * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
@@ -3781,7 +3781,7 @@ namespace Model
          * <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a
          * default subnet in each Availability Zone. For more information about the
          * components of a default VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html">Default
          * VPC and Default Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>. You cannot specify the components of the default VPC yourself.</p>
          * <p>If you deleted your previous default VPC, you can create a default VPC. You
@@ -3834,7 +3834,7 @@ namespace Model
          * options, and if your VPC has an internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
@@ -3877,7 +3877,7 @@ namespace Model
          * options, and if your VPC has an internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
@@ -3922,7 +3922,7 @@ namespace Model
          * options, and if your VPC has an internet gateway, make sure to set the
          * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
          * or to a domain name server of your choice. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
@@ -3973,7 +3973,7 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
          * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
@@ -3985,7 +3985,7 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
          * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
@@ -3999,7 +3999,7 @@ namespace Model
          * <p>Launches an EC2 Fleet.</p> <p>You can create a single EC2 Fleet that includes
          * multiple launch specifications that vary by instance type, AMI, Availability
          * Zone, or subnet.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching
          * an EC2 Fleet</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API
@@ -4015,14 +4015,14 @@ namespace Model
          * monitored network interface is recorded as flow log records, which are log
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
          * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
          * interfaces are published to a single log file object that is stored in the
          * specified bucket.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
          * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">AWS
@@ -4036,14 +4036,14 @@ namespace Model
          * monitored network interface is recorded as flow log records, which are log
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
          * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
          * interfaces are published to a single log file object that is stored in the
          * specified bucket.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
          * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">AWS
@@ -4059,14 +4059,14 @@ namespace Model
          * monitored network interface is recorded as flow log records, which are log
          * events consisting of fields that describe the traffic flow. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html#flow-log-records">Flow
          * Log Records</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>When publishing to CloudWatch Logs, flow log records are published to a log
          * group, and each network interface has a unique log stream in the log group. When
          * publishing to Amazon S3, flow log records for all of the monitored network
          * interfaces are published to a single log file object that is stored in the
          * specified bucket.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html">VPC
          * Flow Logs</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFlowLogs">AWS
@@ -4126,7 +4126,7 @@ namespace Model
          * contains block device mapping information for those volumes. When you launch an
          * instance from this new AMI, the instance automatically launches with those
          * additional volumes.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">AWS API
@@ -4141,7 +4141,7 @@ namespace Model
          * contains block device mapping information for those volumes. When you launch an
          * instance from this new AMI, the instance automatically launches with those
          * additional volumes.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">AWS API
@@ -4158,7 +4158,7 @@ namespace Model
          * contains block device mapping information for those volumes. When you launch an
          * instance from this new AMI, the instance automatically launches with those
          * additional volumes.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
          * Amazon EBS-Backed Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateImage">AWS API
@@ -4172,7 +4172,7 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
@@ -4184,7 +4184,7 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
@@ -4198,7 +4198,7 @@ namespace Model
          * <p>Exports a running or stopped instance to an S3 bucket.</p> <p>For information
          * about the supported operating systems, image formats, and known limitations for
          * the types of instances you can export, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html">Exporting
          * an Instance as a VM Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInstanceExportTask">AWS
@@ -4212,7 +4212,7 @@ namespace Model
          * <p>Creates an internet gateway for use with a VPC. After creating the internet
          * gateway, you attach it to a VPC using <a>AttachInternetGateway</a>.</p> <p>For
          * more information about your VPC and internet gateway, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
          * Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">AWS
          * API Reference</a></p>
@@ -4223,7 +4223,7 @@ namespace Model
          * <p>Creates an internet gateway for use with a VPC. After creating the internet
          * gateway, you attach it to a VPC using <a>AttachInternetGateway</a>.</p> <p>For
          * more information about your VPC and internet gateway, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
          * Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">AWS
          * API Reference</a></p>
@@ -4236,7 +4236,7 @@ namespace Model
          * <p>Creates an internet gateway for use with a VPC. After creating the internet
          * gateway, you attach it to a VPC using <a>AttachInternetGateway</a>.</p> <p>For
          * more information about your VPC and internet gateway, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/">Amazon Virtual
          * Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateInternetGateway">AWS
          * API Reference</a></p>
@@ -4254,7 +4254,7 @@ namespace Model
          * returned to you is available only in the region in which you create it. If you
          * prefer, you can create your own key pair using a third-party tool and upload it
          * to any region using <a>ImportKeyPair</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">AWS
@@ -4271,7 +4271,7 @@ namespace Model
          * returned to you is available only in the region in which you create it. If you
          * prefer, you can create your own key pair using a third-party tool and upload it
          * to any region using <a>ImportKeyPair</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">AWS
@@ -4290,7 +4290,7 @@ namespace Model
          * returned to you is available only in the region in which you create it. If you
          * prefer, you can create your own key pair using a third-party tool and upload it
          * to any region using <a>ImportKeyPair</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateKeyPair">AWS
@@ -4377,7 +4377,7 @@ namespace Model
          * address range of the subnet. Internet-bound traffic from a private subnet can be
          * routed to the NAT gateway, therefore enabling instances in the private subnet to
          * connect to the internet. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
@@ -4391,7 +4391,7 @@ namespace Model
          * address range of the subnet. Internet-bound traffic from a private subnet can be
          * routed to the NAT gateway, therefore enabling instances in the private subnet to
          * connect to the internet. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
@@ -4407,7 +4407,7 @@ namespace Model
          * address range of the subnet. Internet-bound traffic from a private subnet can be
          * routed to the NAT gateway, therefore enabling instances in the private subnet to
          * connect to the internet. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">NAT
          * Gateways</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNatGateway">AWS
@@ -4421,7 +4421,7 @@ namespace Model
          * <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of
          * security (in addition to security groups) for the instances in your VPC.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">AWS
@@ -4433,7 +4433,7 @@ namespace Model
          * <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of
          * security (in addition to security groups) for the instances in your VPC.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">AWS
@@ -4447,7 +4447,7 @@ namespace Model
          * <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of
          * security (in addition to security groups) for the instances in your VPC.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAcl">AWS
@@ -4470,7 +4470,7 @@ namespace Model
          * the rules.</p> <p>After you add an entry, you can't modify it; you must either
          * replace it, or create an entry and delete the old one.</p> <p>For more
          * information about network ACLs, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">AWS
@@ -4491,7 +4491,7 @@ namespace Model
          * the rules.</p> <p>After you add an entry, you can't modify it; you must either
          * replace it, or create an entry and delete the old one.</p> <p>For more
          * information about network ACLs, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">AWS
@@ -4514,7 +4514,7 @@ namespace Model
          * the rules.</p> <p>After you add an entry, you can't modify it; you must either
          * replace it, or create an entry and delete the old one.</p> <p>For more
          * information about network ACLs, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkAclEntry">AWS
@@ -4527,7 +4527,7 @@ namespace Model
         /**
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
          * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">AWS
@@ -4538,7 +4538,7 @@ namespace Model
         /**
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
          * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">AWS
@@ -4551,7 +4551,7 @@ namespace Model
         /**
          * <p>Creates a network interface in the specified subnet.</p> <p>For more
          * information about network interfaces, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic
          * Network Interfaces</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateNetworkInterface">AWS
@@ -4605,7 +4605,7 @@ namespace Model
          * groups of instances in different partitions, where instances in one partition do
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
@@ -4623,7 +4623,7 @@ namespace Model
          * groups of instances in different partitions, where instances in one partition do
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
@@ -4643,7 +4643,7 @@ namespace Model
          * groups of instances in different partitions, where instances in one partition do
          * not share the same hardware with instances in another partition.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroup">AWS
@@ -4673,7 +4673,7 @@ namespace Model
          * details of your Standard Reserved Instance listing, you can use the
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
@@ -4701,7 +4701,7 @@ namespace Model
          * details of your Standard Reserved Instance listing, you can use the
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
@@ -4731,7 +4731,7 @@ namespace Model
          * details of your Standard Reserved Instance listing, you can use the
          * <a>DescribeReservedInstancesListings</a> operation.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateReservedInstancesListing">AWS
@@ -4755,7 +4755,7 @@ namespace Model
          * number of IP addresses and is therefore more specific, so we use that route to
          * determine where to target the traffic.</p> <p>For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
@@ -4777,7 +4777,7 @@ namespace Model
          * number of IP addresses and is therefore more specific, so we use that route to
          * determine where to target the traffic.</p> <p>For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
@@ -4801,7 +4801,7 @@ namespace Model
          * number of IP addresses and is therefore more specific, so we use that route to
          * determine where to target the traffic.</p> <p>For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRoute">AWS API
@@ -4815,7 +4815,7 @@ namespace Model
          * <p>Creates a route table for the specified VPC. After you create a route table,
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
@@ -4827,7 +4827,7 @@ namespace Model
          * <p>Creates a route table for the specified VPC. After you create a route table,
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
@@ -4841,7 +4841,7 @@ namespace Model
          * <p>Creates a route table for the specified VPC. After you create a route table,
          * you can add routes and associate the table with a subnet.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateRouteTable">AWS
@@ -4855,10 +4855,10 @@ namespace Model
          * <p>Creates a security group.</p> <p>A security group is for use with instances
          * either in the EC2-Classic platform or in a specific VPC. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p> <important> <p>EC2-Classic: You can have up to 500 security
          * groups.</p> <p>EC2-VPC: You can create up to 500 security groups per VPC.</p>
@@ -4884,10 +4884,10 @@ namespace Model
          * <p>Creates a security group.</p> <p>A security group is for use with instances
          * either in the EC2-Classic platform or in a specific VPC. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p> <important> <p>EC2-Classic: You can have up to 500 security
          * groups.</p> <p>EC2-VPC: You can create up to 500 security groups per VPC.</p>
@@ -4915,10 +4915,10 @@ namespace Model
          * <p>Creates a security group.</p> <p>A security group is for use with instances
          * either in the EC2-Classic platform or in a specific VPC. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p> <important> <p>EC2-Classic: You can have up to 500 security
          * groups.</p> <p>EC2-VPC: You can create up to 500 security groups per VPC.</p>
@@ -4963,12 +4963,12 @@ namespace Model
          * encrypted. Your encrypted volumes and any associated snapshots always remain
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">AWS
@@ -4997,12 +4997,12 @@ namespace Model
          * encrypted. Your encrypted volumes and any associated snapshots always remain
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">AWS
@@ -5033,12 +5033,12 @@ namespace Model
          * encrypted. Your encrypted volumes and any associated snapshots always remain
          * protected.</p> <p>You can tag your snapshots during creation. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
          * Elastic Block Store</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">AWS
@@ -5052,7 +5052,7 @@ namespace Model
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
@@ -5064,7 +5064,7 @@ namespace Model
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
@@ -5078,7 +5078,7 @@ namespace Model
          * <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance
          * usage logs. You can create one data feed per AWS account. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSpotDatafeedSubscription">AWS
@@ -5107,7 +5107,7 @@ namespace Model
          * gets a new IP address when restarted). It's therefore possible to have a subnet
          * with no running instances (they're all stopped), but no remaining IP addresses
          * available.</p> <p>For more information about subnets, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
@@ -5134,7 +5134,7 @@ namespace Model
          * gets a new IP address when restarted). It's therefore possible to have a subnet
          * with no running instances (they're all stopped), but no remaining IP addresses
          * available.</p> <p>For more information about subnets, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
@@ -5163,7 +5163,7 @@ namespace Model
          * gets a new IP address when restarted). It's therefore possible to have a subnet
          * with no running instances (they're all stopped), but no remaining IP addresses
          * available.</p> <p>For more information about subnets, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSubnet">AWS
@@ -5178,11 +5178,11 @@ namespace Model
          * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to
          * resources based on tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
          * Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon
          * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">AWS API
@@ -5195,11 +5195,11 @@ namespace Model
          * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to
          * resources based on tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
          * Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon
          * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">AWS API
@@ -5214,11 +5214,11 @@ namespace Model
          * resources. Each resource can have a maximum of 50 tags. Each tag consists of a
          * key and optional value. Tag keys must be unique per resource.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For
          * more information about creating IAM policies that control users' access to
          * resources based on tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-iam-actions-resources.html">Supported
          * Resource-Level Permissions for Amazon EC2 API Actions</a> in the <i>Amazon
          * Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTags">AWS API
@@ -5404,7 +5404,7 @@ namespace Model
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone. The volume is created in the regional endpoint that you send
          * the HTTP request to. For more information see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes with the
@@ -5412,13 +5412,13 @@ namespace Model
          * instances that support Amazon EBS encryption. Volumes that are created from
          * encrypted snapshots are also automatically encrypted. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -5430,7 +5430,7 @@ namespace Model
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone. The volume is created in the regional endpoint that you send
          * the HTTP request to. For more information see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes with the
@@ -5438,13 +5438,13 @@ namespace Model
          * instances that support Amazon EBS encryption. Volumes that are created from
          * encrypted snapshots are also automatically encrypted. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -5458,7 +5458,7 @@ namespace Model
          * <p>Creates an EBS volume that can be attached to an instance in the same
          * Availability Zone. The volume is created in the regional endpoint that you send
          * the HTTP request to. For more information see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
          * Endpoints</a>.</p> <p>You can create a new empty volume or restore a volume from
          * an EBS snapshot. Any AWS Marketplace product codes from the snapshot are
          * propagated to the volume.</p> <p>You can create encrypted volumes with the
@@ -5466,13 +5466,13 @@ namespace Model
          * instances that support Amazon EBS encryption. Volumes that are created from
          * encrypted snapshots are also automatically encrypted. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>You can tag your volumes during creation. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
@@ -5487,7 +5487,7 @@ namespace Model
          * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
          * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
@@ -5495,12 +5495,12 @@ namespace Model
          * default, each instance you launch in the VPC has the default DHCP options, which
          * include only a default DNS server that we provide (AmazonProvidedDNS). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
@@ -5513,7 +5513,7 @@ namespace Model
          * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
          * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
@@ -5521,12 +5521,12 @@ namespace Model
          * default, each instance you launch in the VPC has the default DHCP options, which
          * include only a default DNS server that we provide (AmazonProvidedDNS). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
@@ -5541,7 +5541,7 @@ namespace Model
          * create uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16
          * netmask (65,536 IPv4 addresses). For more information about how large to make
          * your VPC, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
          * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
@@ -5549,12 +5549,12 @@ namespace Model
          * default, each instance you launch in the VPC has the default DHCP options, which
          * include only a default DNS server that we provide (AmazonProvidedDNS). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
          * You can't change this value for the VPC after you create it. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpc">AWS API
@@ -5569,7 +5569,7 @@ namespace Model
          * create a private connection between your VPC and the service. The service may be
          * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
@@ -5591,7 +5591,7 @@ namespace Model
          * create a private connection between your VPC and the service. The service may be
          * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
@@ -5615,7 +5615,7 @@ namespace Model
          * create a private connection between your VPC and the service. The service may be
          * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
@@ -5639,7 +5639,7 @@ namespace Model
          * endpoint service. A connection notification notifies you of specific endpoint
          * events. You must create an SNS topic to receive notifications. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
          * Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
          * <p>You can create a connection notification for interface endpoints
          * only.</p><p><h3>See Also:</h3>   <a
@@ -5653,7 +5653,7 @@ namespace Model
          * endpoint service. A connection notification notifies you of specific endpoint
          * events. You must create an SNS topic to receive notifications. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
          * Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
          * <p>You can create a connection notification for interface endpoints
          * only.</p><p><h3>See Also:</h3>   <a
@@ -5669,7 +5669,7 @@ namespace Model
          * endpoint service. A connection notification notifies you of specific endpoint
          * events. You must create an SNS topic to receive notifications. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a
          * Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
          * <p>You can create a connection notification for interface endpoints
          * only.</p><p><h3>See Also:</h3>   <a
@@ -5686,7 +5686,7 @@ namespace Model
          * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
          * service configuration, you must first create a Network Load Balancer for your
          * service. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
@@ -5700,7 +5700,7 @@ namespace Model
          * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
          * service configuration, you must first create a Network Load Balancer for your
          * service. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
@@ -5716,7 +5716,7 @@ namespace Model
          * interface VPC endpoint to connect to your service.</p> <p>To create an endpoint
          * service configuration, you must first create a Network Load Balancer for your
          * service. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
@@ -5733,7 +5733,7 @@ namespace Model
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
          * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
@@ -5752,7 +5752,7 @@ namespace Model
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
          * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
@@ -5773,7 +5773,7 @@ namespace Model
          * requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR
          * blocks.</p> <note> <p>Limitations and rules apply to a VPC peering connection.
          * For more information, see the <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/PeeringGuide/vpc-peering-basics.html#vpc-peering-limitations">limitations</a>
          * section in the <i>VPC Peering Guide</i>.</p> </note> <p>The owner of the
          * accepter VPC must accept the peering request to activate the peering connection.
          * The VPC peering connection request expires after 7 days, after which it cannot
@@ -5800,7 +5800,7 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
@@ -5821,7 +5821,7 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
@@ -5844,7 +5844,7 @@ namespace Model
          * from this call.</p> <p>This is an idempotent operation. If you perform the
          * operation more than once, Amazon EC2 doesn't return an error.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnection">AWS
@@ -5859,7 +5859,7 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
@@ -5872,7 +5872,7 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
@@ -5887,7 +5887,7 @@ namespace Model
          * virtual private gateway and a VPN customer gateway. The static route allows
          * traffic to be routed from the virtual private gateway to the VPN customer
          * gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnConnectionRoute">AWS
@@ -5901,7 +5901,7 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
@@ -5913,7 +5913,7 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
@@ -5927,7 +5927,7 @@ namespace Model
          * <p>Creates a virtual private gateway. A virtual private gateway is the endpoint
          * on the VPC side of your VPN connection. You can create a virtual private gateway
          * before creating the VPC itself.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpnGateway">AWS
@@ -6462,7 +6462,7 @@ namespace Model
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
@@ -6474,7 +6474,7 @@ namespace Model
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
@@ -6488,7 +6488,7 @@ namespace Model
          * <p>Deletes the specified placement group. You must terminate all instances in
          * the placement group before you can delete the placement group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeletePlacementGroup">AWS
@@ -6601,7 +6601,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -6619,7 +6619,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -6639,7 +6639,7 @@ namespace Model
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting
          * an Amazon EBS Snapshot</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
@@ -6706,7 +6706,7 @@ namespace Model
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
          * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
          * tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">AWS API
@@ -6718,7 +6718,7 @@ namespace Model
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
          * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
          * tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">AWS API
@@ -6732,7 +6732,7 @@ namespace Model
          * <p>Deletes the specified set of tags from the specified set of resources.</p>
          * <p>To list the current tags, use <a>DescribeTags</a>. For more information about
          * tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTags">AWS API
@@ -6856,7 +6856,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -6869,7 +6869,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -6884,7 +6884,7 @@ namespace Model
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
@@ -7338,7 +7338,7 @@ namespace Model
          * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
          * address is for use in either the EC2-Classic platform or in a VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">AWS
@@ -7350,7 +7350,7 @@ namespace Model
          * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
          * address is for use in either the EC2-Classic platform or in a VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">AWS
@@ -7364,7 +7364,7 @@ namespace Model
          * <p>Describes one or more of your Elastic IP addresses.</p> <p>An Elastic IP
          * address is for use in either the EC2-Classic platform or in a VPC. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddresses">AWS
@@ -7462,7 +7462,7 @@ namespace Model
          * is an event impacting an Availability Zone, you can use this request to view the
          * state and any provided message for that Availability Zone.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
@@ -7476,7 +7476,7 @@ namespace Model
          * is an event impacting an Availability Zone, you can use this request to view the
          * state and any provided message for that Availability Zone.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
@@ -7492,7 +7492,7 @@ namespace Model
          * is an event impacting an Availability Zone, you can use this request to view the
          * state and any provided message for that Availability Zone.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
@@ -7783,10 +7783,10 @@ namespace Model
 
         /**
          * <p>Describes one or more of your conversion tasks. For more information, see the
-         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM
          * Import/Export User Guide</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">AWS
          * API Reference</a></p>
@@ -7795,10 +7795,10 @@ namespace Model
 
         /**
          * <p>Describes one or more of your conversion tasks. For more information, see the
-         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM
          * Import/Export User Guide</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">AWS
          * API Reference</a></p>
@@ -7809,10 +7809,10 @@ namespace Model
 
         /**
          * <p>Describes one or more of your conversion tasks. For more information, see the
-         * <a href="http://docs.aws.amazon.com/vm-import/latest/userguide/">VM
+         * <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM
          * Import/Export User Guide</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeConversionTasks">AWS
          * API Reference</a></p>
@@ -7824,7 +7824,7 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
@@ -7835,7 +7835,7 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
@@ -7848,7 +7848,7 @@ namespace Model
         /**
          * <p>Describes one or more of your VPN customer gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS
@@ -7861,7 +7861,7 @@ namespace Model
         /**
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
@@ -7872,7 +7872,7 @@ namespace Model
         /**
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
@@ -7885,7 +7885,7 @@ namespace Model
         /**
          * <p>Describes one or more of your DHCP options sets.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeDhcpOptions">AWS
@@ -7926,7 +7926,7 @@ namespace Model
         /**
          * <p>Describes the Elastic Graphics accelerator associated with your instances.
          * For more information about Elastic Graphics, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
          * Elastic Graphics</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">AWS
          * API Reference</a></p>
@@ -7936,7 +7936,7 @@ namespace Model
         /**
          * <p>Describes the Elastic Graphics accelerator associated with your instances.
          * For more information about Elastic Graphics, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
          * Elastic Graphics</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">AWS
          * API Reference</a></p>
@@ -7948,7 +7948,7 @@ namespace Model
         /**
          * <p>Describes the Elastic Graphics accelerator associated with your instances.
          * For more information about Elastic Graphics, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon
          * Elastic Graphics</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus">AWS
          * API Reference</a></p>
@@ -8160,7 +8160,7 @@ namespace Model
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
@@ -8175,7 +8175,7 @@ namespace Model
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
@@ -8192,7 +8192,7 @@ namespace Model
          * Hosts. When purchasing an offering, ensure that the instance family and Region
          * of the offering matches that of the Dedicated Hosts with which it is to be
          * associated. For more information about supported instance types, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Hosts Overview</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHostReservationOfferings">AWS
@@ -8401,7 +8401,7 @@ namespace Model
          * enabled for longer IDs. This request only returns information about resource
          * types whose ID formats can be modified; it does not return information about
          * other resource types. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
          * following resource types support longer IDs: <code>bundle</code> |
          * <code>conversion-task</code> | <code>customer-gateway</code> |
@@ -8431,7 +8431,7 @@ namespace Model
          * enabled for longer IDs. This request only returns information about resource
          * types whose ID formats can be modified; it does not return information about
          * other resource types. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
          * following resource types support longer IDs: <code>bundle</code> |
          * <code>conversion-task</code> | <code>customer-gateway</code> |
@@ -8463,7 +8463,7 @@ namespace Model
          * enabled for longer IDs. This request only returns information about resource
          * types whose ID formats can be modified; it does not return information about
          * other resource types. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>The
          * following resource types support longer IDs: <code>bundle</code> |
          * <code>conversion-task</code> | <code>customer-gateway</code> |
@@ -8674,7 +8674,7 @@ namespace Model
          * specify any instance IDs at all, the call fails. If you specify only instance
          * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
@@ -8700,7 +8700,7 @@ namespace Model
          * specify any instance IDs at all, the call fails. If you specify only instance
          * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
@@ -8728,7 +8728,7 @@ namespace Model
          * specify any instance IDs at all, the call fails. If you specify only instance
          * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications">AWS
@@ -8745,20 +8745,20 @@ namespace Model
          * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
          * running EC2 instances to identify hardware and software issues. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
@@ -8773,20 +8773,20 @@ namespace Model
          * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
          * running EC2 instances to identify hardware and software issues. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
@@ -8803,20 +8803,20 @@ namespace Model
          * <ul> <li> <p> <b>Status checks</b> - Amazon EC2 performs status checks on
          * running EC2 instances to identify hardware and software issues. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
          * Checks for Your Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshooting
          * Instances with Failed Status Checks</a> in the <i>Amazon Elastic Compute Cloud
          * User Guide</i>.</p> </li> <li> <p> <b>Scheduled events</b> - Amazon EC2 can
          * schedule events (such as reboot, stop, or terminate) for your instances related
          * to hardware issues, software updates, or system maintenance. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
          * Events for Your Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> </li> <li> <p> <b>Instance state</b> - You can manage your
          * instances from the moment you launch them through their termination. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceStatus">AWS
@@ -8915,7 +8915,7 @@ namespace Model
         /**
          * <p>Describes one or more of your key pairs.</p> <p>For more information about
          * key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">AWS
@@ -8926,7 +8926,7 @@ namespace Model
         /**
          * <p>Describes one or more of your key pairs.</p> <p>For more information about
          * key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">AWS
@@ -8939,7 +8939,7 @@ namespace Model
         /**
          * <p>Describes one or more of your key pairs.</p> <p>For more information about
          * key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeKeyPairs">AWS
@@ -9067,7 +9067,7 @@ namespace Model
         /**
          * <p>Describes one or more of your network ACLs.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">AWS
@@ -9078,7 +9078,7 @@ namespace Model
         /**
          * <p>Describes one or more of your network ACLs.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">AWS
@@ -9091,7 +9091,7 @@ namespace Model
         /**
          * <p>Describes one or more of your network ACLs.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeNetworkAcls">AWS
@@ -9187,7 +9187,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your placement groups. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
@@ -9197,7 +9197,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your placement groups. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
@@ -9209,7 +9209,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your placement groups. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
          * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribePlacementGroups">AWS
@@ -9372,7 +9372,7 @@ namespace Model
         /**
          * <p>Describes one or more regions that are currently available to you.</p> <p>For
          * a list of the regions supported by Amazon EC2, see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
@@ -9382,7 +9382,7 @@ namespace Model
         /**
          * <p>Describes one or more regions that are currently available to you.</p> <p>For
          * a list of the regions supported by Amazon EC2, see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
@@ -9394,7 +9394,7 @@ namespace Model
         /**
          * <p>Describes one or more regions that are currently available to you.</p> <p>For
          * a list of the regions supported by Amazon EC2, see <a
-         * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
+         * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region">Regions
          * and Endpoints</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
@@ -9406,7 +9406,7 @@ namespace Model
         /**
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
@@ -9417,7 +9417,7 @@ namespace Model
         /**
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
@@ -9430,7 +9430,7 @@ namespace Model
         /**
          * <p>Describes one or more of the Reserved Instances that you purchased.</p>
          * <p>For more information about Reserved Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstances">AWS
@@ -9455,7 +9455,7 @@ namespace Model
          * Instances to you, and continues to sell available Reserved Instance listings to
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
@@ -9478,7 +9478,7 @@ namespace Model
          * Instances to you, and continues to sell available Reserved Instance listings to
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
@@ -9503,7 +9503,7 @@ namespace Model
          * Instances to you, and continues to sell available Reserved Instance listings to
          * you until your demand is met. You are charged based on the total price of all of
          * the listings that you purchase.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesListings">AWS
@@ -9518,7 +9518,7 @@ namespace Model
          * is specified, information about all your Reserved Instances modification
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
@@ -9531,7 +9531,7 @@ namespace Model
          * is specified, information about all your Reserved Instances modification
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
@@ -9546,7 +9546,7 @@ namespace Model
          * is specified, information about all your Reserved Instances modification
          * requests is returned. If a modification ID is specified, only information about
          * the specific modification is returned.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesModifications">AWS
@@ -9565,7 +9565,7 @@ namespace Model
          * sale in the Reserved Instance Marketplace, they will be excluded from these
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
@@ -9582,7 +9582,7 @@ namespace Model
          * sale in the Reserved Instance Marketplace, they will be excluded from these
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
@@ -9601,7 +9601,7 @@ namespace Model
          * sale in the Reserved Instance Marketplace, they will be excluded from these
          * results. This is to ensure that you do not purchase your own Reserved
          * Instances.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeReservedInstancesOfferings">AWS
@@ -9617,7 +9617,7 @@ namespace Model
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
@@ -9631,7 +9631,7 @@ namespace Model
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
@@ -9647,7 +9647,7 @@ namespace Model
          * with any route table, it is implicitly associated with the main route table.
          * This command does not return the subnet ID for implicit associations.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRouteTables">AWS
@@ -9763,10 +9763,10 @@ namespace Model
          * <p>Describes one or more of your security groups.</p> <p>A security group is for
          * use with instances either in the EC2-Classic platform or in a specific VPC. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">AWS
@@ -9778,10 +9778,10 @@ namespace Model
          * <p>Describes one or more of your security groups.</p> <p>A security group is for
          * use with instances either in the EC2-Classic platform or in a specific VPC. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">AWS
@@ -9795,10 +9795,10 @@ namespace Model
          * <p>Describes one or more of your security groups.</p> <p>A security group is for
          * use with instances either in the EC2-Classic platform or in a specific VPC. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon
          * EC2 Security Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>
          * and <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
          * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroups">AWS
@@ -9812,7 +9812,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">AWS
@@ -9824,7 +9824,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">AWS
@@ -9838,7 +9838,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">AWS
@@ -9882,7 +9882,7 @@ namespace Model
          * returned along with a <code>NextToken</code> value that can be passed to a
          * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
          * results.</p> <p>For more information about EBS snapshots, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">AWS
@@ -9924,7 +9924,7 @@ namespace Model
          * returned along with a <code>NextToken</code> value that can be passed to a
          * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
          * results.</p> <p>For more information about EBS snapshots, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">AWS
@@ -9968,7 +9968,7 @@ namespace Model
          * returned along with a <code>NextToken</code> value that can be passed to a
          * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
          * results.</p> <p>For more information about EBS snapshots, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">AWS
@@ -9980,7 +9980,7 @@ namespace Model
 
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
@@ -9990,7 +9990,7 @@ namespace Model
 
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
@@ -10002,7 +10002,7 @@ namespace Model
 
         /**
          * <p>Describes the data feed for Spot Instances. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot
          * Instance Data Feed</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSpotDatafeedSubscription">AWS
@@ -10177,7 +10177,7 @@ namespace Model
 
         /**
          * <p>Describes the Spot price history. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
@@ -10191,7 +10191,7 @@ namespace Model
 
         /**
          * <p>Describes the Spot price history. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
@@ -10207,7 +10207,7 @@ namespace Model
 
         /**
          * <p>Describes the Spot price history. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot
          * Instance Pricing History</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p> <p>When you specify a start and end time, this operation
          * returns the prices of the instance types within the time range that you
@@ -10257,7 +10257,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
@@ -10267,7 +10267,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
@@ -10279,7 +10279,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your subnets.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSubnets">AWS
@@ -10292,7 +10292,7 @@ namespace Model
         /**
          * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">AWS
@@ -10303,7 +10303,7 @@ namespace Model
         /**
          * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">AWS
@@ -10316,7 +10316,7 @@ namespace Model
         /**
          * <p>Describes one or more of the tags for your EC2 resources.</p> <p>For more
          * information about tags, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">AWS
@@ -10457,7 +10457,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">AWS
@@ -10469,7 +10469,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">AWS
@@ -10483,7 +10483,7 @@ namespace Model
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">AWS
@@ -10510,7 +10510,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
          * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
          * require you to take action. For example, if your volume returns an
@@ -10549,7 +10549,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
          * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
          * require you to take action. For example, if your volume returns an
@@ -10590,7 +10590,7 @@ namespace Model
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks may still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring
          * the Status of Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and may
          * require you to take action. For example, if your volume returns an
@@ -10623,7 +10623,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">AWS
@@ -10640,7 +10640,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">AWS
@@ -10659,7 +10659,7 @@ namespace Model
          * <code>NextToken</code> value that can be passed to a subsequent
          * <code>DescribeVolumes</code> request to retrieve the remaining results.</p>
          * <p>For more information about EBS volumes, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
          * EBS Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">AWS
@@ -10680,9 +10680,9 @@ namespace Model
          * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
          * can also use CloudWatch Events to check the status of a modification to an EBS
          * volume. For information about CloudWatch Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
@@ -10701,9 +10701,9 @@ namespace Model
          * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
          * can also use CloudWatch Events to check the status of a modification to an EBS
          * volume. For information about CloudWatch Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
@@ -10724,9 +10724,9 @@ namespace Model
          * of the returned <code>VolumeModification</code> objects are null. </p> <p> You
          * can also use CloudWatch Events to check the status of a modification to an EBS
          * volume. For information about CloudWatch Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications"</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
@@ -10799,7 +10799,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
@@ -10814,7 +10814,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
@@ -10831,7 +10831,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcClassicLinkDnsSupport">AWS
@@ -11064,7 +11064,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
@@ -11074,7 +11074,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
@@ -11086,7 +11086,7 @@ namespace Model
 
         /**
          * <p>Describes one or more of your VPN connections.</p> <p>For more information,
-         * see <a href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnConnections">AWS
@@ -11099,7 +11099,7 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
@@ -11110,7 +11110,7 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
@@ -11123,7 +11123,7 @@ namespace Model
         /**
          * <p>Describes one or more of your virtual private gateways.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
+         * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpnGateways">AWS
@@ -11234,7 +11234,7 @@ namespace Model
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -11253,7 +11253,7 @@ namespace Model
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -11274,7 +11274,7 @@ namespace Model
          * the instance first.</p> <p>When a volume with an AWS Marketplace product code is
          * detached from an instance, the product code is no longer associated with the
          * instance.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching
          * an Amazon EBS Volume</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
@@ -11416,7 +11416,7 @@ namespace Model
          * resolve to public IP addresses when addressed between a linked EC2-Classic
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
@@ -11429,7 +11429,7 @@ namespace Model
          * resolve to public IP addresses when addressed between a linked EC2-Classic
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
@@ -11444,7 +11444,7 @@ namespace Model
          * resolve to public IP addresses when addressed between a linked EC2-Classic
          * instance and instances in the VPC to which it's linked. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableVpcClassicLinkDnsSupport">AWS
@@ -11458,7 +11458,7 @@ namespace Model
          * <p>Disassociates an Elastic IP address from the instance or network interface
          * it's associated with.</p> <p>An Elastic IP address is for use in either the
          * EC2-Classic platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>This is an idempotent operation. If you perform the operation more than once,
          * Amazon EC2 doesn't return an error.</p><p><h3>See Also:</h3>   <a
@@ -11471,7 +11471,7 @@ namespace Model
          * <p>Disassociates an Elastic IP address from the instance or network interface
          * it's associated with.</p> <p>An Elastic IP address is for use in either the
          * EC2-Classic platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>This is an idempotent operation. If you perform the operation more than once,
          * Amazon EC2 doesn't return an error.</p><p><h3>See Also:</h3>   <a
@@ -11486,7 +11486,7 @@ namespace Model
          * <p>Disassociates an Elastic IP address from the instance or network interface
          * it's associated with.</p> <p>An Elastic IP address is for use in either the
          * EC2-Classic platform or in a VPC. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
          * IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>This is an idempotent operation. If you perform the operation more than once,
          * Amazon EC2 doesn't return an error.</p><p><h3>See Also:</h3>   <a
@@ -11576,7 +11576,7 @@ namespace Model
          * action, the subnet no longer uses the routes in the route table. Instead, it
          * uses the routes in the VPC's main route table. For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
@@ -11589,7 +11589,7 @@ namespace Model
          * action, the subnet no longer uses the routes in the route table. Instead, it
          * uses the routes in the VPC's main route table. For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
@@ -11604,7 +11604,7 @@ namespace Model
          * action, the subnet no longer uses the routes in the route table. Instead, it
          * uses the routes in the VPC's main route table. For more information about route
          * tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateRouteTable">AWS
@@ -11810,7 +11810,7 @@ namespace Model
          * existing routes for address ranges within the <code>10.0.0.0/8</code> IP address
          * range, excluding local routes for VPCs in the <code>10.0.0.0/16</code> and
          * <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
@@ -11825,7 +11825,7 @@ namespace Model
          * existing routes for address ranges within the <code>10.0.0.0/8</code> IP address
          * range, excluding local routes for VPCs in the <code>10.0.0.0/16</code> and
          * <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
@@ -11842,7 +11842,7 @@ namespace Model
          * existing routes for address ranges within the <code>10.0.0.0/8</code> IP address
          * range, excluding local routes for VPCs in the <code>10.0.0.0/16</code> and
          * <code>10.1.0.0/16</code> IP address ranges. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLink">AWS
@@ -11859,7 +11859,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
@@ -11874,7 +11874,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
@@ -11891,7 +11891,7 @@ namespace Model
          * Similarly, the DNS hostname of an instance in a VPC resolves to its private IP
          * address when addressed from a linked EC2-Classic instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
          * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableVpcClassicLinkDnsSupport">AWS
@@ -12009,7 +12009,7 @@ namespace Model
          * optionally retrieve the latest serial console output at any time during the
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
          * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
@@ -12029,7 +12029,7 @@ namespace Model
          * optionally retrieve the latest serial console output at any time during the
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
          * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
@@ -12051,7 +12051,7 @@ namespace Model
          * optionally retrieve the latest serial console output at any time during the
          * instance lifecycle. This option is supported on instance types that use the
          * Nitro hypervisor.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#instance-console-console-output">Instance
          * Console Output</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetConsoleOutput">AWS
@@ -12163,9 +12163,9 @@ namespace Model
          * <code>EC2Config</code> service or <code>EC2Launch</code> scripts (Windows Server
          * 2016 and later). This usually only happens the first time an instance is
          * launched. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
          * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
          * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
          * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
@@ -12187,9 +12187,9 @@ namespace Model
          * <code>EC2Config</code> service or <code>EC2Launch</code> scripts (Windows Server
          * 2016 and later). This usually only happens the first time an instance is
          * launched. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
          * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
          * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
          * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
@@ -12213,9 +12213,9 @@ namespace Model
          * <code>EC2Config</code> service or <code>EC2Launch</code> scripts (Windows Server
          * 2016 and later). This usually only happens the first time an instance is
          * launched. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
          * and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
          * in the Amazon Elastic Compute Cloud User Guide.</p> <p>For the
          * <code>EC2Config</code> service, the password is not generated for rebundled AMIs
          * unless <code>Ec2SetPassword</code> is enabled before bundling.</p> <p>The
@@ -12394,7 +12394,7 @@ namespace Model
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
          * Machine Image (AMI). For more information, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
@@ -12405,7 +12405,7 @@ namespace Model
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
          * Machine Image (AMI). For more information, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
@@ -12418,7 +12418,7 @@ namespace Model
         /**
          * <p>Import single or multi-volume disk images or EBS snapshots into an Amazon
          * Machine Image (AMI). For more information, see <a
-         * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+         * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
          * a VM as an Image Using VM Import/Export</a> in the <i>VM Import/Export User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImage">AWS API
@@ -12432,10 +12432,10 @@ namespace Model
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
          * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
          * API Reference</a></p>
@@ -12446,10 +12446,10 @@ namespace Model
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
          * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
          * API Reference</a></p>
@@ -12462,10 +12462,10 @@ namespace Model
          * <p>Creates an import instance task using metadata from the specified disk image.
          * <code>ImportInstance</code> only supports single-volume VMs. To import
          * multi-volume VMs, use <a>ImportImage</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/ec2-cli-vmimport-export.html">Importing
          * a Virtual Machine Using the Amazon EC2 CLI</a>.</p> <p>For information about the
          * import manifest referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportInstance">AWS
          * API Reference</a></p>
@@ -12481,7 +12481,7 @@ namespace Model
          * With ImportKeyPair, you create the key pair and give AWS just the public key.
          * The private key is never transferred between you and AWS.</p> <p>For more
          * information about key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">AWS
@@ -12496,7 +12496,7 @@ namespace Model
          * With ImportKeyPair, you create the key pair and give AWS just the public key.
          * The private key is never transferred between you and AWS.</p> <p>For more
          * information about key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">AWS
@@ -12513,7 +12513,7 @@ namespace Model
          * With ImportKeyPair, you create the key pair and give AWS just the public key.
          * The private key is never transferred between you and AWS.</p> <p>For more
          * information about key pairs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportKeyPair">AWS
@@ -12551,10 +12551,10 @@ namespace Model
         /**
          * <p>Creates an import volume task using metadata from the specified disk
          * image.For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
          * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
          * API Reference</a></p>
@@ -12564,10 +12564,10 @@ namespace Model
         /**
          * <p>Creates an import volume task using metadata from the specified disk
          * image.For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
          * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
          * API Reference</a></p>
@@ -12579,10 +12579,10 @@ namespace Model
         /**
          * <p>Creates an import volume task using metadata from the specified disk
          * image.For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/CommandLineReference/importing-your-volumes-into-amazon-ebs.html">Importing
          * Disks to Amazon EBS</a>.</p> <p>For information about the import manifest
          * referenced by this API action, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/manifest.html">VM
          * Import Manifest</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportVolume">AWS
          * API Reference</a></p>
@@ -12788,7 +12788,7 @@ namespace Model
          * as the root user, then these settings apply to the entire account, unless an IAM
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
@@ -12823,7 +12823,7 @@ namespace Model
          * as the root user, then these settings apply to the entire account, unless an IAM
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
@@ -12860,7 +12860,7 @@ namespace Model
          * as the root user, then these settings apply to the entire account, unless an IAM
          * user explicitly overrides these settings for themselves. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>Resources
          * created with longer IDs are visible to all IAM roles and users, regardless of
          * these settings and provided that they have permission to use the relevant
@@ -12893,7 +12893,7 @@ namespace Model
          * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> |
          * <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
          * <code>vpn-gateway</code>. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
          * the principal that makes the request. </p> <p>Resources created with longer IDs
@@ -12925,7 +12925,7 @@ namespace Model
          * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> |
          * <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
          * <code>vpn-gateway</code>. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
          * the principal that makes the request. </p> <p>Resources created with longer IDs
@@ -12959,7 +12959,7 @@ namespace Model
          * <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> |
          * <code>vpc-peering-connection</code> | <code>vpn-connection</code> |
          * <code>vpn-gateway</code>. </p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/resource-ids.html">Resource
          * IDs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. </p> <p>This
          * setting applies to the principal specified in the request; it does not apply to
          * the principal that makes the request. </p> <p>Resources created with longer IDs
@@ -13031,7 +13031,7 @@ namespace Model
          * instance that has multiple ENIs, we recommend that you use the
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
@@ -13048,7 +13048,7 @@ namespace Model
          * instance that has multiple ENIs, we recommend that you use the
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
@@ -13067,7 +13067,7 @@ namespace Model
          * instance that has multiple ENIs, we recommend that you use the
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modifying
          * Attributes of a Stopped Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttribute">AWS
@@ -13115,7 +13115,7 @@ namespace Model
          * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
          * instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
@@ -13127,7 +13127,7 @@ namespace Model
          * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
          * instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
@@ -13141,7 +13141,7 @@ namespace Model
          * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
          * instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceCreditSpecification">AWS
@@ -13154,7 +13154,7 @@ namespace Model
         /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
          * following:</p> <ul> <li> <p>Modify the affinity between an instance and a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Host</a>. When affinity is set to <code>host</code> and the instance is not
          * associated with a specific Dedicated Host, the next time the instance is
          * launched, it is automatically associated with the host on which it lands. If the
@@ -13163,7 +13163,7 @@ namespace Model
          * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
          * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
          * </li> <li> <p>Move an instance to or from a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
@@ -13177,7 +13177,7 @@ namespace Model
         /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
          * following:</p> <ul> <li> <p>Modify the affinity between an instance and a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Host</a>. When affinity is set to <code>host</code> and the instance is not
          * associated with a specific Dedicated Host, the next time the instance is
          * launched, it is automatically associated with the host on which it lands. If the
@@ -13186,7 +13186,7 @@ namespace Model
          * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
          * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
          * </li> <li> <p>Move an instance to or from a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
@@ -13202,7 +13202,7 @@ namespace Model
         /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
          * following:</p> <ul> <li> <p>Modify the affinity between an instance and a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
          * Host</a>. When affinity is set to <code>host</code> and the instance is not
          * associated with a specific Dedicated Host, the next time the instance is
          * launched, it is automatically associated with the host on which it lands. If the
@@ -13211,7 +13211,7 @@ namespace Model
          * <li> <p>Change the instance tenancy of an instance from <code>host</code> to
          * <code>dedicated</code>, or from <code>dedicated</code> to <code>host</code>.</p>
          * </li> <li> <p>Move an instance to or from a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">placement
          * group</a>.</p> </li> </ul> <p>At least one attribute for affinity, host ID,
          * tenancy, or placement group name must be specified in the request. Affinity and
          * tenancy can be modified in the same request.</p> <p>To modify the host ID,
@@ -13291,7 +13291,7 @@ namespace Model
          * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
@@ -13304,7 +13304,7 @@ namespace Model
          * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
@@ -13319,7 +13319,7 @@ namespace Model
          * platform (EC2-Classic or EC2-VPC) of your Reserved Instances. The Reserved
          * Instances to be modified must be identical, except for Availability Zone,
          * network platform, and instance type.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
          * Reserved Instances</a> in the Amazon Elastic Compute Cloud User
          * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
@@ -13338,7 +13338,7 @@ namespace Model
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
@@ -13355,7 +13355,7 @@ namespace Model
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
@@ -13374,7 +13374,7 @@ namespace Model
          * be made public. Snapshots encrypted with your default CMK cannot be shared with
          * other accounts.</p> <p>For more information about modifying snapshot
          * permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
@@ -13522,32 +13522,32 @@ namespace Model
          * current-generation EC2 instance type, you may be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
          * information about modifying an EBS volume running Linux, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
          * about modifying an EBS volume running Windows, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>. </p> <p> When you
          * complete a resize operation on your volume, you need to extend the volume's
          * file-system size to take advantage of the new storage capacity. For information
          * about extending a Linux file system, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
          * a Linux File System</a>. For information about extending a Windows file system,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
          * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
          * stopping and restarting the instance. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
          * maximum volume modification rate per volume limit, you will need to wait at
          * least six hours before applying further modifications to the affected EBS
@@ -13563,32 +13563,32 @@ namespace Model
          * current-generation EC2 instance type, you may be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
          * information about modifying an EBS volume running Linux, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
          * about modifying an EBS volume running Windows, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>. </p> <p> When you
          * complete a resize operation on your volume, you need to extend the volume's
          * file-system size to take advantage of the new storage capacity. For information
          * about extending a Linux file system, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
          * a Linux File System</a>. For information about extending a Windows file system,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
          * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
          * stopping and restarting the instance. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
          * maximum volume modification rate per volume limit, you will need to wait at
          * least six hours before applying further modifications to the affected EBS
@@ -13606,32 +13606,32 @@ namespace Model
          * current-generation EC2 instance type, you may be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
          * information about modifying an EBS volume running Linux, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a>. For more information
          * about modifying an EBS volume running Windows, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>. </p> <p> When you
          * complete a resize operation on your volume, you need to extend the volume's
          * file-system size to take advantage of the new storage capacity. For information
          * about extending a Linux file system, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending
          * a Linux File System</a>. For information about extending a Windows file system,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending
          * a Windows File System</a>. </p> <p> You can use CloudWatch Events to check the
          * status of a modification to an EBS volume. For information about CloudWatch
          * Events, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using the <a>DescribeVolumesModifications</a> API. For information
          * about tracking status changes using either method, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
          * Volume Modifications</a>. </p> <p>With previous-generation instance types,
          * resizing an EBS volume may require detaching and reattaching the volume or
          * stopping and restarting the instance. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Linux</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying
          * the Size, IOPS, or Type of an EBS Volume on Windows</a>.</p> <p>If you reach the
          * maximum volume modification rate per volume limit, you will need to wait at
          * least six hours before applying further modifications to the affected EBS
@@ -13718,7 +13718,7 @@ namespace Model
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
          * modify depend on the type of VPC endpoint (interface or gateway). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">AWS
@@ -13730,7 +13730,7 @@ namespace Model
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
          * modify depend on the type of VPC endpoint (interface or gateway). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">AWS
@@ -13744,7 +13744,7 @@ namespace Model
          * <p>Modifies attributes of a specified VPC endpoint. The attributes that you can
          * modify depend on the type of VPC endpoint (interface or gateway). For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpoint">AWS
@@ -13821,7 +13821,7 @@ namespace Model
 
         /**
          * <p>Modifies the permissions for your <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * endpoint service</a>. You can add or remove permissions for service consumers
          * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
          * service.</p> <p>If you grant permissions to all principals, the service is
@@ -13835,7 +13835,7 @@ namespace Model
 
         /**
          * <p>Modifies the permissions for your <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * endpoint service</a>. You can add or remove permissions for service consumers
          * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
          * service.</p> <p>If you grant permissions to all principals, the service is
@@ -13851,7 +13851,7 @@ namespace Model
 
         /**
          * <p>Modifies the permissions for your <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/endpoint-service.html">VPC
          * endpoint service</a>. You can add or remove permissions for service consumers
          * (IAM users, IAM roles, and AWS accounts) to connect to your endpoint
          * service.</p> <p>If you grant permissions to all principals, the service is
@@ -13952,7 +13952,7 @@ namespace Model
          * VPC have a tenancy of <code>default</code>, unless you specify otherwise during
          * launch. The tenancy of any existing instances in the VPC is not affected.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">AWS
@@ -13968,7 +13968,7 @@ namespace Model
          * VPC have a tenancy of <code>default</code>, unless you specify otherwise during
          * launch. The tenancy of any existing instances in the VPC is not affected.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">AWS
@@ -13986,7 +13986,7 @@ namespace Model
          * VPC have a tenancy of <code>default</code>, unless you specify otherwise during
          * launch. The tenancy of any existing instances in the VPC is not affected.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcTenancy">AWS
@@ -13999,7 +13999,7 @@ namespace Model
         /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
@@ -14011,7 +14011,7 @@ namespace Model
         /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
@@ -14025,7 +14025,7 @@ namespace Model
         /**
          * <p>Enables detailed monitoring for a running instance. Otherwise, basic
          * monitoring is enabled. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>To disable detailed monitoring, see .</p><p><h3>See Also:</h3>
          * <a
@@ -14087,7 +14087,7 @@ namespace Model
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
          * 16509 and 14618 to advertise the address range. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
          * the call returns immediately, but the address range is not ready to use until
@@ -14109,7 +14109,7 @@ namespace Model
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
          * 16509 and 14618 to advertise the address range. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
          * the call returns immediately, but the address range is not ready to use until
@@ -14133,7 +14133,7 @@ namespace Model
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
          * 16509 and 14618 to advertise the address range. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
          * Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>Provisioning an address range is an asynchronous operation, so
          * the call returns immediately, but the address range is not ready to use until
@@ -14190,9 +14190,9 @@ namespace Model
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
@@ -14207,9 +14207,9 @@ namespace Model
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
@@ -14226,9 +14226,9 @@ namespace Model
          * Reserved Instance offerings that match your specifications. After you've
          * purchased a Reserved Instance, you can check for your new Reserved Instance with
          * <a>DescribeReservedInstances</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
          * Instance Marketplace</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
@@ -14291,7 +14291,7 @@ namespace Model
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
@@ -14306,7 +14306,7 @@ namespace Model
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
@@ -14323,7 +14323,7 @@ namespace Model
          * terminated instances are ignored.</p> <p>If an instance does not cleanly shut
          * down within four minutes, Amazon EC2 performs a hard reboot.</p> <p>For more
          * information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html">Getting
          * Console Output and Rebooting Instances</a> in the <i>Amazon Elastic Compute
          * Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RebootInstances">AWS
@@ -14337,7 +14337,7 @@ namespace Model
          * <p>Registers an AMI. When you're creating an AMI, this is the final step you
          * must complete before you can launch an instance from the AMI. For more
          * information about creating AMIs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
@@ -14345,7 +14345,7 @@ namespace Model
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
          * a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>You can't register an image where a secondary (non-root)
          * snapshot has AWS Marketplace product codes.</p> <p>Some Linux distributions,
@@ -14371,7 +14371,7 @@ namespace Model
          * <p>Registers an AMI. When you're creating an AMI, this is the final step you
          * must complete before you can launch an instance from the AMI. For more
          * information about creating AMIs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
@@ -14379,7 +14379,7 @@ namespace Model
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
          * a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>You can't register an image where a secondary (non-root)
          * snapshot has AWS Marketplace product codes.</p> <p>Some Linux distributions,
@@ -14407,7 +14407,7 @@ namespace Model
          * <p>Registers an AMI. When you're creating an AMI, this is the final step you
          * must complete before you can launch an instance from the AMI. For more
          * information about creating AMIs, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating
          * Your Own AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <note> <p>For Amazon EBS-backed instances, <a>CreateImage</a> creates and
          * registers the AMI in a single request, so you don't have to register the AMI
@@ -14415,7 +14415,7 @@ namespace Model
          * an Amazon EBS-backed Linux AMI from a snapshot of a root device volume. You
          * specify the snapshot using the block device mapping. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-launch-snapshot.html">Launching
          * a Linux Instance from a Backup</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>You can't register an image where a secondary (non-root)
          * snapshot has AWS Marketplace product codes.</p> <p>Some Linux distributions,
@@ -14701,7 +14701,7 @@ namespace Model
          * <p>Changes which network ACL a subnet is associated with. By default when you
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
          * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
@@ -14713,7 +14713,7 @@ namespace Model
          * <p>Changes which network ACL a subnet is associated with. By default when you
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
          * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
@@ -14727,7 +14727,7 @@ namespace Model
          * <p>Changes which network ACL a subnet is associated with. By default when you
          * create a subnet, it's automatically associated with the default network ACL. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>This is
          * an idempotent operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclAssociation">AWS
@@ -14739,7 +14739,7 @@ namespace Model
 
         /**
          * <p>Replaces an entry (rule) in a network ACL. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">AWS
@@ -14749,7 +14749,7 @@ namespace Model
 
         /**
          * <p>Replaces an entry (rule) in a network ACL. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">AWS
@@ -14761,7 +14761,7 @@ namespace Model
 
         /**
          * <p>Replaces an entry (rule) in a network ACL. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_ACLs.html">Network
          * ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceNetworkAclEntry">AWS
@@ -14776,7 +14776,7 @@ namespace Model
          * only one of the following: internet gateway or virtual private gateway, NAT
          * instance, NAT gateway, VPC peering connection, network interface, or egress-only
          * internet gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
@@ -14789,7 +14789,7 @@ namespace Model
          * only one of the following: internet gateway or virtual private gateway, NAT
          * instance, NAT gateway, VPC peering connection, network interface, or egress-only
          * internet gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
@@ -14804,7 +14804,7 @@ namespace Model
          * only one of the following: internet gateway or virtual private gateway, NAT
          * instance, NAT gateway, VPC peering connection, network interface, or egress-only
          * internet gateway.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRoute">AWS
@@ -14818,7 +14818,7 @@ namespace Model
          * <p>Changes the route table associated with a given subnet in a VPC. After the
          * operation completes, the subnet uses the routes in the new route table it's
          * associated with. For more information about route tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use ReplaceRouteTableAssociation to change which table is the main route
          * table in the VPC. You just specify the main route table's association ID and the
@@ -14832,7 +14832,7 @@ namespace Model
          * <p>Changes the route table associated with a given subnet in a VPC. After the
          * operation completes, the subnet uses the routes in the new route table it's
          * associated with. For more information about route tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use ReplaceRouteTableAssociation to change which table is the main route
          * table in the VPC. You just specify the main route table's association ID and the
@@ -14848,7 +14848,7 @@ namespace Model
          * <p>Changes the route table associated with a given subnet in a VPC. After the
          * operation completes, the subnet uses the routes in the new route table it's
          * associated with. For more information about route tables, see <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
          * also use ReplaceRouteTableAssociation to change which table is the main route
          * table in the VPC. You just specify the main route table's association ID and the
@@ -14948,7 +14948,7 @@ namespace Model
          * other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
@@ -14973,7 +14973,7 @@ namespace Model
          * other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
@@ -15000,7 +15000,7 @@ namespace Model
          * other resource types in a Spot Fleet request because only the
          * <code>instance</code> resource type is supported.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot
          * Fleet Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS
@@ -15012,7 +15012,7 @@ namespace Model
 
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
@@ -15022,7 +15022,7 @@ namespace Model
 
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
@@ -15034,7 +15034,7 @@ namespace Model
 
         /**
          * <p>Creates a Spot Instance request.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html">Spot
          * Instance Requests</a> in the <i>Amazon EC2 User Guide for Linux
          * Instances</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
@@ -15112,7 +15112,7 @@ namespace Model
          * <code>true</code>, which means checking is enabled. This value must be
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
          * Instances</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
@@ -15129,7 +15129,7 @@ namespace Model
          * <code>true</code>, which means checking is enabled. This value must be
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
          * Instances</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
@@ -15148,7 +15148,7 @@ namespace Model
          * <code>true</code>, which means checking is enabled. This value must be
          * <code>false</code> for a NAT instance to perform NAT. For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+         * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
          * Instances</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetInstanceAttribute">AWS
@@ -15189,7 +15189,7 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
@@ -15200,7 +15200,7 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
@@ -15213,7 +15213,7 @@ namespace Model
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
          * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
@@ -15411,20 +15411,20 @@ namespace Model
          * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
          * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a>, which is a resource that contains the parameters to launch an
          * instance. When you launch an instance using <a>RunInstances</a>, you can specify
          * the launch template instead of specifying the launch parameters.</p> <p>To
@@ -15435,17 +15435,17 @@ namespace Model
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
          * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
@@ -15463,20 +15463,20 @@ namespace Model
          * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
          * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a>, which is a resource that contains the parameters to launch an
          * instance. When you launch an instance using <a>RunInstances</a>, you can specify
          * the launch template instead of specifying the launch parameters.</p> <p>To
@@ -15487,17 +15487,17 @@ namespace Model
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
          * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
@@ -15517,20 +15517,20 @@ namespace Model
          * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
          * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
          * ID, the request fails. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
          * Types Available Only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
          * have a network interface with a primary private IPv4 address. If you don't
          * specify this address, we choose one from the IPv4 range of your subnet.</p>
          * </li> <li> <p>Not all instance types support IPv6 addresses. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * Types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Security
          * Groups</a>.</p> </li> <li> <p>If any of the AMIs have a product code attached
          * for which the user has not subscribed, the request fails.</p> </li> </ul> <p>You
          * can create a <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
          * template</a>, which is a resource that contains the parameters to launch an
          * instance. When you launch an instance using <a>RunInstances</a>, you can specify
          * the launch template instead of specifying the launch parameters.</p> <p>To
@@ -15541,17 +15541,17 @@ namespace Model
          * instance using <a>DescribeInstances</a>. You can tag instances and EBS volumes
          * during launch, after launch, or both. For more information, see
          * <a>CreateTags</a> and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
          * Your Amazon EC2 Resources</a>.</p> <p>Linux instances have access to the public
          * key of the key pair at boot. You can use this key to provide secure access to
          * the instance. Amazon EC2 public images use this feature to provide secure access
          * without passwords. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key
          * Pairs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * To Do If An Instance Immediately Terminates</a>, and <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
          * Connecting to Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
@@ -15569,7 +15569,7 @@ namespace Model
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
@@ -15585,7 +15585,7 @@ namespace Model
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
@@ -15603,7 +15603,7 @@ namespace Model
          * but you can terminate it as needed. If you terminate a Scheduled Instance before
          * the current scheduled time period ends, you can launch it again after a few
          * minutes. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html">Scheduled
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunScheduledInstances">AWS
@@ -15658,7 +15658,7 @@ namespace Model
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
@@ -15683,7 +15683,7 @@ namespace Model
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
@@ -15710,7 +15710,7 @@ namespace Model
          * restarted. Stopping an instance does not preserve data stored in RAM.</p>
          * <p>Performing this operation on an instance that uses an instance store as its
          * root device returns an error.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stopping
          * Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartInstances">AWS
@@ -15723,11 +15723,11 @@ namespace Model
         /**
          * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
          * hibernate an instance if the instance is <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
          * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
@@ -15740,7 +15740,7 @@ namespace Model
          * charges per second for instance usage.</p> <p>You can't start, stop, or
          * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
          * instances. For information about using hibernation for Spot Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
@@ -15754,13 +15754,13 @@ namespace Model
          * attached during the instance launch are automatically deleted. For more
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
          * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
@@ -15771,11 +15771,11 @@ namespace Model
         /**
          * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
          * hibernate an instance if the instance is <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
          * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
@@ -15788,7 +15788,7 @@ namespace Model
          * charges per second for instance usage.</p> <p>You can't start, stop, or
          * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
          * instances. For information about using hibernation for Spot Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
@@ -15802,13 +15802,13 @@ namespace Model
          * attached during the instance launch are automatically deleted. For more
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
          * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
@@ -15821,11 +15821,11 @@ namespace Model
         /**
          * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
          * hibernate an instance if the instance is <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
          * for hibernation</a> and it meets the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
          * prerequisites</a>. For more information, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
          * Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
          * <p>We don't charge usage for a stopped instance, or data transfer fees; however,
          * your root partition Amazon EBS volume remains and continues to persist your
@@ -15838,7 +15838,7 @@ namespace Model
          * charges per second for instance usage.</p> <p>You can't start, stop, or
          * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
          * instances. For information about using hibernation for Spot Instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
          * can restart your instance at any time. Before stopping or hibernating an
@@ -15852,13 +15852,13 @@ namespace Model
          * attached during the instance launch are automatically deleted. For more
          * information about the differences between rebooting, stopping, hibernating, and
          * terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>When
          * you stop an instance, we attempt to shut it down forcibly after a short while.
          * If your instance appears stuck in the stopping state after a period of time,
          * there may be an issue with the underlying host computer. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesStopping.html">Troubleshooting
          * Stopping Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StopInstances">AWS
@@ -15915,10 +15915,10 @@ namespace Model
          * <code>DeleteOnTermination</code> block device mapping parameter set to
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
@@ -15942,10 +15942,10 @@ namespace Model
          * <code>DeleteOnTermination</code> block device mapping parameter set to
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
@@ -15971,10 +15971,10 @@ namespace Model
          * <code>DeleteOnTermination</code> block device mapping parameter set to
          * <code>true</code> are automatically deleted. For more information about the
          * differences between stopping and terminating instances, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
          * Lifecycle</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <p>For
          * more information about troubleshooting, see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesShuttingDown.html">Troubleshooting
          * Terminating Your Instance</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstances">AWS
@@ -16043,7 +16043,7 @@ namespace Model
         /**
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
@@ -16054,7 +16054,7 @@ namespace Model
         /**
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
@@ -16067,7 +16067,7 @@ namespace Model
         /**
          * <p>Disables detailed monitoring for a running instance. For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring
          * Your Instances and Volumes</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnmonitorInstances">AWS
