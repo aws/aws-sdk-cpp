@@ -629,7 +629,7 @@ namespace Model
 
     /**
      * <p>The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -637,7 +637,7 @@ namespace Model
 
     /**
      * <p>The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -645,7 +645,7 @@ namespace Model
 
     /**
      * <p>The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -653,7 +653,7 @@ namespace Model
 
     /**
      * <p>The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -661,7 +661,7 @@ namespace Model
 
     /**
      * <p>The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -673,7 +673,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -684,7 +684,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -695,7 +695,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -706,7 +706,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -717,7 +717,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -728,7 +728,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -739,7 +739,7 @@ namespace Model
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -765,7 +765,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
@@ -789,7 +789,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
@@ -813,7 +813,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
@@ -837,7 +837,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
@@ -861,7 +861,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const Aws::String& value) { SetRole(value); return *this;}
@@ -885,7 +885,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
@@ -909,7 +909,7 @@ namespace Model
      * role with the name <code>bar</code> has a path of <code>/foo/</code> then you
      * would specify <code>/foo/bar</code> as the role name. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * Names and Paths</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateServiceRequest& WithRole(const char* value) { SetRole(value); return *this;}

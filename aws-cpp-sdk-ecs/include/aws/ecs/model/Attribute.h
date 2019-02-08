@@ -38,7 +38,7 @@ namespace Model
    * <p>An attribute is a name-value pair associated with an Amazon ECS object.
    * Attributes enable you to extend the Amazon ECS data model by adding custom
    * metadata to your resources. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
    * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute">AWS API

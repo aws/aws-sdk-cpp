@@ -115,13 +115,13 @@ namespace Model
      * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
      * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
-     * and the Amazon ECS container agent ports 51678 and 51679. Any host port that was
+     * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * <a>DescribeContainerInstances</a> output. A container instance can have up to
      * 100 reserved ports at a time, including the default reserved ports.
-     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * Automatically assigned ports don't count toward the 100 reserved ports
      * limit.</p>
      */
     inline int GetHostPort() const{ return m_hostPort; }
@@ -145,13 +145,13 @@ namespace Model
      * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
      * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
-     * and the Amazon ECS container agent ports 51678 and 51679. Any host port that was
+     * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * <a>DescribeContainerInstances</a> output. A container instance can have up to
      * 100 reserved ports at a time, including the default reserved ports.
-     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * Automatically assigned ports don't count toward the 100 reserved ports
      * limit.</p>
      */
     inline void SetHostPort(int value) { m_hostPortHasBeenSet = true; m_hostPort = value; }
@@ -175,13 +175,13 @@ namespace Model
      * the ephemeral port range.</p> <note> <p>The default ephemeral port range from
      * 49153 through 65535 is always used for Docker versions before 1.6.0.</p> </note>
      * <p>The default reserved ports are 22 for SSH, the Docker ports 2375 and 2376,
-     * and the Amazon ECS container agent ports 51678 and 51679. Any host port that was
+     * and the Amazon ECS container agent ports 51678-51680. Any host port that was
      * previously specified in a running task is also reserved while the task is
      * running (after a task stops, the host port is released). The current reserved
      * ports are displayed in the <code>remainingResources</code> of
-     * <a>DescribeContainerInstances</a> output. A container instance may have up to
+     * <a>DescribeContainerInstances</a> output. A container instance can have up to
      * 100 reserved ports at a time, including the default reserved ports.
-     * Aautomatically assigned ports do not count toward the 100 reserved ports
+     * Automatically assigned ports don't count toward the 100 reserved ports
      * limit.</p>
      */
     inline PortMapping& WithHostPort(int value) { SetHostPort(value); return *this;}

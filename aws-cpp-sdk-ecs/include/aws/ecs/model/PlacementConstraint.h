@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>An object representing a constraint on task placement. For more information,
    * see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint">AWS
@@ -102,7 +102,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -112,7 +112,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -122,7 +122,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -132,7 +132,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -142,7 +142,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -162,7 +162,7 @@ namespace Model
      * <p>A cluster query language expression to apply to the constraint. You cannot
      * specify an expression if the constraint type is <code>distinctInstance</code>.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

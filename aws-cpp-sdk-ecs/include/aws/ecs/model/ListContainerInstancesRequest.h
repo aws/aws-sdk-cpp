@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>You can filter the results of a <code>ListContainerInstances</code> operation
      * with cluster query language statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

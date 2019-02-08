@@ -121,7 +121,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -141,7 +141,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -151,7 +151,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -171,7 +171,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the IAM role that
      * containers in this task can assume. All containers in this task are granted the
      * permissions that are specified in this role. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
      * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

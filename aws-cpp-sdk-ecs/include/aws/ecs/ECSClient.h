@@ -45,6 +45,7 @@
 #include <aws/ecs/model/ListTaskDefinitionsResult.h>
 #include <aws/ecs/model/ListTasksResult.h>
 #include <aws/ecs/model/PutAccountSettingResult.h>
+#include <aws/ecs/model/PutAccountSettingDefaultResult.h>
 #include <aws/ecs/model/PutAttributesResult.h>
 #include <aws/ecs/model/RegisterContainerInstanceResult.h>
 #include <aws/ecs/model/RegisterTaskDefinitionResult.h>
@@ -122,6 +123,7 @@ namespace Model
         class ListTaskDefinitionsRequest;
         class ListTasksRequest;
         class PutAccountSettingRequest;
+        class PutAccountSettingDefaultRequest;
         class PutAttributesRequest;
         class RegisterContainerInstanceRequest;
         class RegisterTaskDefinitionRequest;
@@ -160,6 +162,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTaskDefinitionsResult, Aws::Client::AWSError<ECSErrors>> ListTaskDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListTasksResult, Aws::Client::AWSError<ECSErrors>> ListTasksOutcome;
         typedef Aws::Utils::Outcome<PutAccountSettingResult, Aws::Client::AWSError<ECSErrors>> PutAccountSettingOutcome;
+        typedef Aws::Utils::Outcome<PutAccountSettingDefaultResult, Aws::Client::AWSError<ECSErrors>> PutAccountSettingDefaultOutcome;
         typedef Aws::Utils::Outcome<PutAttributesResult, Aws::Client::AWSError<ECSErrors>> PutAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterContainerInstanceResult, Aws::Client::AWSError<ECSErrors>> RegisterContainerInstanceOutcome;
         typedef Aws::Utils::Outcome<RegisterTaskDefinitionResult, Aws::Client::AWSError<ECSErrors>> RegisterTaskDefinitionOutcome;
@@ -198,6 +201,7 @@ namespace Model
         typedef std::future<ListTaskDefinitionsOutcome> ListTaskDefinitionsOutcomeCallable;
         typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
         typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
+        typedef std::future<PutAccountSettingDefaultOutcome> PutAccountSettingDefaultOutcomeCallable;
         typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
         typedef std::future<RegisterContainerInstanceOutcome> RegisterContainerInstanceOutcomeCallable;
         typedef std::future<RegisterTaskDefinitionOutcome> RegisterTaskDefinitionOutcomeCallable;
@@ -239,6 +243,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTasksRequest&, const Model::ListTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTasksResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::PutAccountSettingRequest&, const Model::PutAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::PutAccountSettingDefaultRequest&, const Model::PutAccountSettingDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingDefaultResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::RegisterContainerInstanceRequest&, const Model::RegisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterContainerInstanceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskDefinitionResponseReceivedHandler;
@@ -367,7 +372,7 @@ namespace Model
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
          * service. The deployment is triggered by changing properties, such as the task
@@ -442,7 +447,7 @@ namespace Model
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
          * service. The deployment is triggered by changing properties, such as the task
@@ -519,7 +524,7 @@ namespace Model
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
          * service. The deployment is triggered by changing properties, such as the task
@@ -1168,7 +1173,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1181,7 +1186,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1196,7 +1201,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1377,22 +1382,36 @@ namespace Model
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -1401,11 +1420,18 @@ namespace Model
         virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -1414,11 +1440,45 @@ namespace Model
         virtual void PutAccountSettingAsync(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountSettingDefaultOutcome PutAccountSettingDefault(const Model::PutAccountSettingDefaultRequest& request) const;
+
+        /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountSettingDefaultOutcomeCallable PutAccountSettingDefaultCallable(const Model::PutAccountSettingDefaultRequest& request) const;
+
+        /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountSettingDefaultAsync(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Create or update an attribute on an Amazon ECS resource. If the attribute
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1431,7 +1491,7 @@ namespace Model
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1446,7 +1506,7 @@ namespace Model
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1495,14 +1555,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1525,14 +1585,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1557,14 +1617,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1589,7 +1649,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1618,7 +1678,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1649,7 +1709,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1679,7 +1739,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1691,7 +1751,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1705,7 +1765,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1726,7 +1786,7 @@ namespace Model
          * <p>The default 30-second timeout can be configured on the Amazon ECS container
          * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1745,7 +1805,7 @@ namespace Model
          * <p>The default 30-second timeout can be configured on the Amazon ECS container
          * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1766,7 +1826,7 @@ namespace Model
          * <p>The default 30-second timeout can be configured on the Amazon ECS container
          * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1906,7 +1966,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -1923,7 +1983,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -1942,7 +2002,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -2346,6 +2406,7 @@ namespace Model
         void ListTaskDefinitionsAsyncHelper(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTasksAsyncHelper(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountSettingAsyncHelper(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccountSettingDefaultAsyncHelper(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterContainerInstanceAsyncHelper(const Model::RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTaskDefinitionAsyncHelper(const Model::RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

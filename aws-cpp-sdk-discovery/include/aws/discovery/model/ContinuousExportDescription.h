@@ -192,7 +192,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
 
@@ -225,7 +228,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline void SetStatusDetail(const Aws::String& value) { m_statusDetailHasBeenSet = true; m_statusDetail = value; }
 
@@ -258,7 +264,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline void SetStatusDetail(Aws::String&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::move(value); }
 
@@ -291,7 +300,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline void SetStatusDetail(const char* value) { m_statusDetailHasBeenSet = true; m_statusDetail.assign(value); }
 
@@ -324,7 +336,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
 
@@ -357,7 +372,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
 
@@ -390,7 +408,10 @@ namespace Model
      * more information, see <a
      * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket
      * Restrictions and Limitations</a> in the Amazon Simple Storage Service Developer
-     * Guide.</p> </li> </ul>
+     * Guide.</p> </li> <li> <p>S3_NOT_SIGNED_UP - Your account is not signed up for
+     * the Amazon S3 service. You must sign up before you can use Amazon S3. You can
+     * sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.</p> </li> </ul>
      */
     inline ContinuousExportDescription& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
 

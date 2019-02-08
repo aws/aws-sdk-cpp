@@ -56,7 +56,7 @@ namespace Model
      * with by default. If you are using the Fargate launch type, the only supported
      * value is <code>awslogs</code>. For more information about using the
      * <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
      * that you would like to work with the Amazon ECS container agent, you can fork
@@ -78,7 +78,7 @@ namespace Model
      * with by default. If you are using the Fargate launch type, the only supported
      * value is <code>awslogs</code>. For more information about using the
      * <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
      * that you would like to work with the Amazon ECS container agent, you can fork
@@ -100,7 +100,7 @@ namespace Model
      * with by default. If you are using the Fargate launch type, the only supported
      * value is <code>awslogs</code>. For more information about using the
      * <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
      * that you would like to work with the Amazon ECS container agent, you can fork
@@ -122,7 +122,7 @@ namespace Model
      * with by default. If you are using the Fargate launch type, the only supported
      * value is <code>awslogs</code>. For more information about using the
      * <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
      * that you would like to work with the Amazon ECS container agent, you can fork
@@ -144,7 +144,7 @@ namespace Model
      * with by default. If you are using the Fargate launch type, the only supported
      * value is <code>awslogs</code>. For more information about using the
      * <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using
      * the awslogs Log Driver</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <note> <p>If you have a custom driver that is not listed above
      * that you would like to work with the Amazon ECS container agent, you can fork

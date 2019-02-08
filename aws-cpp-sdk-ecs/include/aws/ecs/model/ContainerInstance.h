@@ -398,7 +398,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -411,7 +411,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -424,7 +424,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -437,7 +437,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -450,7 +450,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -463,7 +463,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -476,7 +476,7 @@ namespace Model
      * <code>DRAINING</code> indicates that new tasks are not placed on the container
      * instance and any service tasks running on the container instance are removed if
      * possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

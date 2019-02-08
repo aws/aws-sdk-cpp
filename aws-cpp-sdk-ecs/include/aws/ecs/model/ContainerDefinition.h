@@ -1127,7 +1127,7 @@ namespace Model
      * containers, you should group containers that are used for a common purpose into
      * components, and separate the different components into multiple task
      * definitions. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1144,7 +1144,7 @@ namespace Model
      * containers, you should group containers that are used for a common purpose into
      * components, and separate the different components into multiple task
      * definitions. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1161,7 +1161,7 @@ namespace Model
      * containers, you should group containers that are used for a common purpose into
      * components, and separate the different components into multiple task
      * definitions. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/application_architecture.html">Application
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -1314,7 +1314,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
 
@@ -1327,7 +1329,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
 
@@ -1340,7 +1344,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
 
@@ -1353,7 +1359,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline ContainerDefinition& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
 
@@ -1366,7 +1374,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline ContainerDefinition& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
 
@@ -1379,7 +1389,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline ContainerDefinition& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
@@ -1392,7 +1404,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline ContainerDefinition& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
 
@@ -1405,7 +1419,9 @@ namespace Model
      * <code>COMMAND</code> parameter to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.
+     * If there are multiple arguments, each argument should be a separated string in
+     * the array.</p>
      */
     inline ContainerDefinition& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
 
@@ -1716,37 +1732,58 @@ namespace Model
 
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
 
     /**
-     * <p>The secrets to pass to the container.</p>
+     * <p>The secrets to pass to the container. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline ContainerDefinition& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
 
@@ -2425,7 +2462,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2447,7 +2484,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2469,7 +2506,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2491,7 +2528,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2513,7 +2550,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2535,7 +2572,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2557,7 +2594,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2579,7 +2616,7 @@ namespace Model
      * <code>ECS_APPARMOR_CAPABLE=true</code> environment variables before containers
      * placed on that instance can use these security options. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter is not supported for Windows
      * containers.</p> </note>
@@ -2990,7 +3027,7 @@ namespace Model
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -3027,7 +3064,7 @@ namespace Model
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -3064,7 +3101,7 @@ namespace Model
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -3101,7 +3138,7 @@ namespace Model
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> </note>
      */
@@ -3138,7 +3175,7 @@ namespace Model
      * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> </note>
      */
