@@ -16,8 +16,10 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/model/DashEncryption.h>
+#include <aws/mediapackage/model/ManifestLayout.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackage/model/Profile.h>
+#include <aws/mediapackage/model/SegmentTemplateFormat.h>
 #include <aws/mediapackage/model/StreamSelection.h>
 #include <aws/mediapackage/model/__PeriodTriggersElement.h>
 #include <utility>
@@ -66,6 +68,47 @@ namespace Model
 
     
     inline DashPackage& WithEncryption(DashEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline const ManifestLayout& GetManifestLayout() const{ return m_manifestLayout; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(const ManifestLayout& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = value; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(ManifestLayout&& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = std::move(value); }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashPackage& WithManifestLayout(const ManifestLayout& value) { SetManifestLayout(value); return *this;}
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashPackage& WithManifestLayout(ManifestLayout&& value) { SetManifestLayout(std::move(value)); return *this;}
 
 
     /**
@@ -270,6 +313,52 @@ rounded to the
     inline DashPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
 
 
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline const SegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(const SegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(SegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(const SegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
+
+
     
     inline const StreamSelection& GetStreamSelection() const{ return m_streamSelection; }
 
@@ -306,6 +395,9 @@ rounded to the
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;
 
+    ManifestLayout m_manifestLayout;
+    bool m_manifestLayoutHasBeenSet;
+
     int m_manifestWindowSeconds;
     bool m_manifestWindowSecondsHasBeenSet;
 
@@ -323,6 +415,9 @@ rounded to the
 
     int m_segmentDurationSeconds;
     bool m_segmentDurationSecondsHasBeenSet;
+
+    SegmentTemplateFormat m_segmentTemplateFormat;
+    bool m_segmentTemplateFormatHasBeenSet;
 
     StreamSelection m_streamSelection;
     bool m_streamSelectionHasBeenSet;

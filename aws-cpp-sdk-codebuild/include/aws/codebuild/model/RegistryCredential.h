@@ -40,8 +40,8 @@ namespace Model
    * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>.
    * </p> </li> <li> <p> images cannot be curated or an Amazon ECR image.</p> </li>
    * </ul> <p> For more information, see <a
-   * href="http://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private
-   * Registry with AWS Secrets Manager Samle for AWS CodeBuild</a>. </p><p><h3>See
+   * href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html">Private
+   * Registry with AWS Secrets Manager Sample for AWS CodeBuild</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RegistryCredential">AWS
    * API Reference</a></p>

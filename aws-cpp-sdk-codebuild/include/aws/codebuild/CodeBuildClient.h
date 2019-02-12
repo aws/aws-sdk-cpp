@@ -356,7 +356,7 @@ namespace Model
          * billed for both builds. Therefore, if you are using AWS CodePipeline, we
          * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
          * console, clear the Webhook box. For more information, see step 5 in <a
-         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
          * API Reference</a></p>
@@ -374,7 +374,7 @@ namespace Model
          * billed for both builds. Therefore, if you are using AWS CodePipeline, we
          * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
          * console, clear the Webhook box. For more information, see step 5 in <a
-         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
          * API Reference</a></p>
@@ -394,7 +394,7 @@ namespace Model
          * billed for both builds. Therefore, if you are using AWS CodePipeline, we
          * recommend that you disable webhooks in AWS CodeBuild. In the AWS CodeBuild
          * console, clear the Webhook box. For more information, see step 5 in <a
-         * href="http://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
+         * href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change
          * a Build Project's Settings</a>.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateWebhook">AWS
          * API Reference</a></p>

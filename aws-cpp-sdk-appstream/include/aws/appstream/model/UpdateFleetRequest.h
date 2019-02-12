@@ -345,19 +345,22 @@ namespace Model
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000. By default, the value is 900 seconds (15
+     * minutes).</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000. By default, the value is 900 seconds (15
+     * minutes).</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000. By default, the value is 900 seconds (15
+     * minutes).</p>
      */
     inline UpdateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
@@ -366,7 +369,7 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, the value is 900 seconds (15 minutes).</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
@@ -374,7 +377,7 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, the value is 900 seconds (15 minutes).</p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
@@ -382,7 +385,7 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, the value is 900 seconds (15 minutes).</p>
      */
     inline UpdateFleetRequest& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 

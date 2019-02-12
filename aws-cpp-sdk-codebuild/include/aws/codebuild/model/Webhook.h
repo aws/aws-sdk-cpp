@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/codebuild/model/WebhookFilter.h>
 #include <utility>
 
 namespace Aws
@@ -168,7 +170,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
 
@@ -176,7 +179,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
 
@@ -184,7 +188,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
 
@@ -192,7 +197,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
 
@@ -200,7 +206,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline Webhook& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
 
@@ -208,7 +215,8 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline Webhook& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
 
@@ -216,9 +224,81 @@ namespace Model
      * <p>A regular expression used to determine which repository branches are built
      * when a webhook is triggered. If the name of a branch matches the regular
      * expression, then it is built. If <code>branchFilter</code> is empty, then all
-     * branches are built.</p>
+     * branches are built.</p> <note> <p> It is recommended that you use
+     * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> </note>
      */
     inline Webhook& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
+
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline void SetFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline Webhook& WithFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { SetFilterGroups(value); return *this;}
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline Webhook& WithFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { SetFilterGroups(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline Webhook& AddFilterGroups(const Aws::Vector<WebhookFilter>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
+
+    /**
+     * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
+     * which webhooks are triggered. At least one <code>WebhookFilter</code> in the
+     * array must specify <code>EVENT</code> as its <code>type</code>. </p> <p> For a
+     * build to be triggered, at least one filter group in the
+     * <code>filterGroups</code> array must pass. For a filter group to pass, each of
+     * its filters must pass. </p>
+     */
+    inline Webhook& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -264,6 +344,9 @@ namespace Model
 
     Aws::String m_branchFilter;
     bool m_branchFilterHasBeenSet;
+
+    Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
+    bool m_filterGroupsHasBeenSet;
 
     Aws::Utils::DateTime m_lastModifiedSecret;
     bool m_lastModifiedSecretHasBeenSet;

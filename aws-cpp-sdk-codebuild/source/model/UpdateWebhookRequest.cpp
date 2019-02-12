@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 UpdateWebhookRequest::UpdateWebhookRequest() : 
     m_projectNameHasBeenSet(false),
     m_branchFilterHasBeenSet(false),
+    m_filterGroupsHasBeenSet(false),
     m_rotateSecret(false),
     m_rotateSecretHasBeenSet(false)
 {
@@ -43,6 +44,22 @@ Aws::String UpdateWebhookRequest::SerializePayload() const
   if(m_branchFilterHasBeenSet)
   {
    payload.WithString("branchFilter", m_branchFilter);
+
+  }
+
+  if(m_filterGroupsHasBeenSet)
+  {
+   Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
+   for(unsigned filterGroupsIndex = 0; filterGroupsIndex < filterGroupsJsonList.GetLength(); ++filterGroupsIndex)
+   {
+     Array<JsonValue> filterGroupJsonList(m_filterGroups[filterGroupsIndex].size());
+     for(unsigned filterGroupIndex = 0; filterGroupIndex < filterGroupJsonList.GetLength(); ++filterGroupIndex)
+     {
+       filterGroupJsonList[filterGroupIndex].AsObject(m_filterGroups[filterGroupsIndex][filterGroupIndex].Jsonize());
+     }
+     filterGroupsJsonList[filterGroupsIndex].AsArray(std::move(filterGroupJsonList));
+   }
+   payload.WithArray("filterGroups", std::move(filterGroupsJsonList));
 
   }
 
