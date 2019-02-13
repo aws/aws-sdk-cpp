@@ -52,20 +52,20 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Maximum number of mount targets to return in the response. It must
-     * be an integer with a value greater than zero.</p>
+     * <p>(Optional) Maximum number of mount targets to return in the response.
+     * Currently, this number is automatically set to 10.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Maximum number of mount targets to return in the response. It must
-     * be an integer with a value greater than zero.</p>
+     * <p>(Optional) Maximum number of mount targets to return in the response.
+     * Currently, this number is automatically set to 10.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Maximum number of mount targets to return in the response. It must
-     * be an integer with a value greater than zero.</p>
+     * <p>(Optional) Maximum number of mount targets to return in the response.
+     * Currently, this number is automatically set to 10.</p>
      */
     inline DescribeMountTargetsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

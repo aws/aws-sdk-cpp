@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A tag is a key-value pair. Allowed characters: letters, whitespace, and
+   * <p>A tag is a key-value pair. Allowed characters: letters, white space, and
    * numbers, representable in UTF-8, and the following characters:<code> + - = . _ :
    * /</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/Tag">AWS

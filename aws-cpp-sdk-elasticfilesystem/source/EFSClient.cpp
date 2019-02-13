@@ -37,10 +37,12 @@
 #include <aws/elasticfilesystem/model/DeleteMountTargetRequest.h>
 #include <aws/elasticfilesystem/model/DeleteTagsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeTagsRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
+#include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemRequest.h>
 
 using namespace Aws;
@@ -363,6 +365,43 @@ void EFSClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest&
   handler(this, request, DescribeFileSystems(request), context);
 }
 
+DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(const DescribeLifecycleConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/lifecycle-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLifecycleConfigurationOutcome(DescribeLifecycleConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLifecycleConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DescribeLifecycleConfigurationOutcomeCallable EFSClient::DescribeLifecycleConfigurationCallable(const DescribeLifecycleConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLifecycleConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DescribeLifecycleConfigurationAsync(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DescribeLifecycleConfigurationAsyncHelper(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLifecycleConfiguration(request), context);
+}
+
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -507,6 +546,43 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsync(const ModifyMountTargetSecu
 void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyMountTargetSecurityGroups(request), context);
+}
+
+PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/lifecycle-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutLifecycleConfigurationOutcome(PutLifecycleConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutLifecycleConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutLifecycleConfigurationOutcomeCallable EFSClient::PutLifecycleConfigurationCallable(const PutLifecycleConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLifecycleConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::PutLifecycleConfigurationAsync(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::PutLifecycleConfigurationAsyncHelper(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutLifecycleConfiguration(request), context);
 }
 
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const

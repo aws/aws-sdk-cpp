@@ -68,6 +68,12 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("PlaybackConfigurationArn"))
+  {
+    m_playbackConfigurationArn = jsonValue.GetString("PlaybackConfigurationArn");
+
+  }
+
   if(jsonValue.ValueExists("PlaybackEndpointPrefix"))
   {
     m_playbackEndpointPrefix = jsonValue.GetString("PlaybackEndpointPrefix");
@@ -84,6 +90,15 @@ GetPlaybackConfigurationResult& GetPlaybackConfigurationResult::operator =(const
   {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");
 
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
   if(jsonValue.ValueExists("TranscodeProfileName"))

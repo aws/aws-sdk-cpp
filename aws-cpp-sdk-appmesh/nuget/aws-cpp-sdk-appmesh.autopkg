@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-AppMesh;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20181001.48;
+        version : 1.7.20181001.49;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS App Mesh);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.48
+            AWSSDKCPP-Core/1.7.49
        }
     }
 

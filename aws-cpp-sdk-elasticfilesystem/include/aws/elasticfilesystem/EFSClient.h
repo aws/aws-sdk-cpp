@@ -24,9 +24,11 @@
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
+#include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
 #include <aws/elasticfilesystem/model/DescribeTagsResult.h>
+#include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -76,10 +78,12 @@ namespace Model
         class DeleteMountTargetRequest;
         class DeleteTagsRequest;
         class DescribeFileSystemsRequest;
+        class DescribeLifecycleConfigurationRequest;
         class DescribeMountTargetSecurityGroupsRequest;
         class DescribeMountTargetsRequest;
         class DescribeTagsRequest;
         class ModifyMountTargetSecurityGroupsRequest;
+        class PutLifecycleConfigurationRequest;
         class UpdateFileSystemRequest;
 
         typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<EFSErrors>> CreateFileSystemOutcome;
@@ -89,10 +93,12 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteMountTargetOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> DescribeLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<EFSErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> PutLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<UpdateFileSystemResult, Aws::Client::AWSError<EFSErrors>> UpdateFileSystemOutcome;
 
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
@@ -102,10 +108,12 @@ namespace Model
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
+        typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
         typedef std::future<DescribeMountTargetSecurityGroupsOutcome> DescribeMountTargetSecurityGroupsOutcomeCallable;
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
+        typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
         typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
 } // namespace Model
 
@@ -118,10 +126,12 @@ namespace Model
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetSecurityGroupsRequest&, const Model::DescribeMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
 
   /**
@@ -198,7 +208,7 @@ namespace Model
          * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
          * you can create one or more mount targets for the file system in your VPC. For
          * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC via the mount target. For more
+         * system on an EC2 instances in your VPC by using the mount target. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
@@ -244,7 +254,7 @@ namespace Model
          * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
          * you can create one or more mount targets for the file system in your VPC. For
          * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC via the mount target. For more
+         * system on an EC2 instances in your VPC by using the mount target. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
@@ -292,7 +302,7 @@ namespace Model
          * Amazon EFS sets its lifecycle state to <code>available</code>, at which point
          * you can create one or more mount targets for the file system in your VPC. For
          * more information, see <a>CreateMountTarget</a>. You mount your Amazon EFS file
-         * system on an EC2 instances in your VPC via the mount target. For more
+         * system on an EC2 instances in your VPC by using the mount target. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p> This operation requires permissions for the
@@ -307,12 +317,12 @@ namespace Model
 
         /**
          * <p>Creates a mount target for a file system. You can then mount the file system
-         * on EC2 instances via the mount target.</p> <p>You can create one mount target in
-         * each Availability Zone in your VPC. All EC2 instances in a VPC within a given
-         * Availability Zone share a single mount target for a given file system. If you
-         * have multiple subnets in an Availability Zone, you create a mount target in one
-         * of the subnets. EC2 instances do not need to be in the same subnet as the mount
-         * target in order to access their file system. For more information, see <a
+         * on EC2 instances by using the mount target.</p> <p>You can create one mount
+         * target in each Availability Zone in your VPC. All EC2 instances in a VPC within
+         * a given Availability Zone share a single mount target for a given file system.
+         * If you have multiple subnets in an Availability Zone, you create a mount target
+         * in one of the subnets. EC2 instances do not need to be in the same subnet as the
+         * mount target in order to access their file system. For more information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
          * which you are creating the mount target and the file system's lifecycle state
@@ -326,8 +336,8 @@ namespace Model
          * returns a response that includes, a <code>MountTargetId</code> and an
          * <code>IpAddress</code>. You use this IP address when mounting the file system in
          * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system via the mount
-         * target can resolve the mount target's DNS name to its IP address. For more
+         * file system. The EC2 instance on which you mount the file system by using the
+         * mount target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
@@ -363,9 +373,9 @@ namespace Model
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend you create a mount target in
-         * each of the Availability Zones. There are cost considerations for using a file
-         * system in an Availability Zone through a mount target created in another
+         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * in each of the Availability Zones. There are cost considerations for using a
+         * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
          * href="http://aws.amazon.com/efs/">Amazon EFS</a>. In addition, by always using a
          * mount target local to the instance's Availability Zone, you eliminate a partial
@@ -386,12 +396,12 @@ namespace Model
 
         /**
          * <p>Creates a mount target for a file system. You can then mount the file system
-         * on EC2 instances via the mount target.</p> <p>You can create one mount target in
-         * each Availability Zone in your VPC. All EC2 instances in a VPC within a given
-         * Availability Zone share a single mount target for a given file system. If you
-         * have multiple subnets in an Availability Zone, you create a mount target in one
-         * of the subnets. EC2 instances do not need to be in the same subnet as the mount
-         * target in order to access their file system. For more information, see <a
+         * on EC2 instances by using the mount target.</p> <p>You can create one mount
+         * target in each Availability Zone in your VPC. All EC2 instances in a VPC within
+         * a given Availability Zone share a single mount target for a given file system.
+         * If you have multiple subnets in an Availability Zone, you create a mount target
+         * in one of the subnets. EC2 instances do not need to be in the same subnet as the
+         * mount target in order to access their file system. For more information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
          * which you are creating the mount target and the file system's lifecycle state
@@ -405,8 +415,8 @@ namespace Model
          * returns a response that includes, a <code>MountTargetId</code> and an
          * <code>IpAddress</code>. You use this IP address when mounting the file system in
          * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system via the mount
-         * target can resolve the mount target's DNS name to its IP address. For more
+         * file system. The EC2 instance on which you mount the file system by using the
+         * mount target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
@@ -442,9 +452,9 @@ namespace Model
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend you create a mount target in
-         * each of the Availability Zones. There are cost considerations for using a file
-         * system in an Availability Zone through a mount target created in another
+         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * in each of the Availability Zones. There are cost considerations for using a
+         * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
          * href="http://aws.amazon.com/efs/">Amazon EFS</a>. In addition, by always using a
          * mount target local to the instance's Availability Zone, you eliminate a partial
@@ -467,12 +477,12 @@ namespace Model
 
         /**
          * <p>Creates a mount target for a file system. You can then mount the file system
-         * on EC2 instances via the mount target.</p> <p>You can create one mount target in
-         * each Availability Zone in your VPC. All EC2 instances in a VPC within a given
-         * Availability Zone share a single mount target for a given file system. If you
-         * have multiple subnets in an Availability Zone, you create a mount target in one
-         * of the subnets. EC2 instances do not need to be in the same subnet as the mount
-         * target in order to access their file system. For more information, see <a
+         * on EC2 instances by using the mount target.</p> <p>You can create one mount
+         * target in each Availability Zone in your VPC. All EC2 instances in a VPC within
+         * a given Availability Zone share a single mount target for a given file system.
+         * If you have multiple subnets in an Availability Zone, you create a mount target
+         * in one of the subnets. EC2 instances do not need to be in the same subnet as the
+         * mount target in order to access their file system. For more information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS:
          * How it Works</a>. </p> <p>In the request, you also specify a file system ID for
          * which you are creating the mount target and the file system's lifecycle state
@@ -486,8 +496,8 @@ namespace Model
          * returns a response that includes, a <code>MountTargetId</code> and an
          * <code>IpAddress</code>. You use this IP address when mounting the file system in
          * an EC2 instance. You can also use the mount target's DNS name when mounting the
-         * file system. The EC2 instance on which you mount the file system via the mount
-         * target can resolve the mount target's DNS name to its IP address. For more
+         * file system. The EC2 instance on which you mount the file system by using the
+         * mount target can resolve the mount target's DNS name to its IP address. For more
          * information, see <a
          * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
          * it Works: Implementation Overview</a>. </p> <p>Note that you can create mount
@@ -523,9 +533,9 @@ namespace Model
          * creating the network interface, but while the mount target state is still
          * <code>creating</code>, you can check the mount target creation status by calling
          * the <a>DescribeMountTargets</a> operation, which among other things returns the
-         * mount target state.</p> </note> <p>We recommend you create a mount target in
-         * each of the Availability Zones. There are cost considerations for using a file
-         * system in an Availability Zone through a mount target created in another
+         * mount target state.</p> </note> <p>We recommend that you create a mount target
+         * in each of the Availability Zones. There are cost considerations for using a
+         * file system in an Availability Zone through a mount target created in another
          * Availability Zone. For more information, see <a
          * href="http://aws.amazon.com/efs/">Amazon EFS</a>. In addition, by always using a
          * mount target local to the instance's Availability Zone, you eliminate a partial
@@ -655,15 +665,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any
-         * mounts of the file system via the mount target that is being deleted, which
+         * mounts of the file system by using the mount target that is being deleted, which
          * might disrupt instances or applications using those mounts. To avoid
          * applications getting cut off abruptly, you might consider unmounting any mounts
          * of the mount target, if feasible. The operation also deletes the associated
-         * network interface. Uncommitted writes may be lost, but breaking a mount target
+         * network interface. Uncommitted writes might be lost, but breaking a mount target
          * using this operation does not corrupt the file system itself. The file system
-         * you created remains. You can mount an EC2 instance in your VPC via another mount
-         * target.</p> <p>This operation requires permissions for the following action on
-         * the file system:</p> <ul> <li> <p>
+         * you created remains. You can mount an EC2 instance in your VPC by using another
+         * mount target.</p> <p>This operation requires permissions for the following
+         * action on the file system:</p> <ul> <li> <p>
          * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
@@ -679,15 +689,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any
-         * mounts of the file system via the mount target that is being deleted, which
+         * mounts of the file system by using the mount target that is being deleted, which
          * might disrupt instances or applications using those mounts. To avoid
          * applications getting cut off abruptly, you might consider unmounting any mounts
          * of the mount target, if feasible. The operation also deletes the associated
-         * network interface. Uncommitted writes may be lost, but breaking a mount target
+         * network interface. Uncommitted writes might be lost, but breaking a mount target
          * using this operation does not corrupt the file system itself. The file system
-         * you created remains. You can mount an EC2 instance in your VPC via another mount
-         * target.</p> <p>This operation requires permissions for the following action on
-         * the file system:</p> <ul> <li> <p>
+         * you created remains. You can mount an EC2 instance in your VPC by using another
+         * mount target.</p> <p>This operation requires permissions for the following
+         * action on the file system:</p> <ul> <li> <p>
          * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
@@ -705,15 +715,15 @@ namespace Model
 
         /**
          * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any
-         * mounts of the file system via the mount target that is being deleted, which
+         * mounts of the file system by using the mount target that is being deleted, which
          * might disrupt instances or applications using those mounts. To avoid
          * applications getting cut off abruptly, you might consider unmounting any mounts
          * of the mount target, if feasible. The operation also deletes the associated
-         * network interface. Uncommitted writes may be lost, but breaking a mount target
+         * network interface. Uncommitted writes might be lost, but breaking a mount target
          * using this operation does not corrupt the file system itself. The file system
-         * you created remains. You can mount an EC2 instance in your VPC via another mount
-         * target.</p> <p>This operation requires permissions for the following action on
-         * the file system:</p> <ul> <li> <p>
+         * you created remains. You can mount an EC2 instance in your VPC by using another
+         * mount target.</p> <p>This operation requires permissions for the following
+         * action on the file system:</p> <ul> <li> <p>
          * <code>elasticfilesystem:DeleteMountTarget</code> </p> </li> </ul> <note> <p>The
          * <code>DeleteMountTarget</code> call returns while the mount target state is
          * still <code>deleting</code>. You can check the mount target deletion by calling
@@ -780,23 +790,21 @@ namespace Model
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
          * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p> When retrieving all file system descriptions, you can optionally specify the
+         * <p>When retrieving all file system descriptions, you can optionally specify the
          * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. If more file system descriptions remain, Amazon EFS returns a
-         * <code>NextMarker</code>, an opaque token, in the response. In this case, you
-         * should send a subsequent request with the <code>Marker</code> request parameter
-         * set to the value of <code>NextMarker</code>. </p> <p>To retrieve a list of your
-         * file system descriptions, this operation is used in an iterative process, where
+         * response. Currently, this number is automatically set to 10. If more file system
+         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
+         * token, in the response. In this case, you should send a subsequent request with
+         * the <code>Marker</code> request parameter set to the value of
+         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
+         * descriptions, this operation is used in an iterative process, where
          * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
          * and then the operation continues to call it with the <code>Marker</code>
          * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p>The
-         * implementation may return fewer than <code>MaxItems</code> file system
-         * descriptions while still including a <code>NextMarker</code> value. </p> <p> The
-         * order of file systems returned in the response of one
-         * <code>DescribeFileSystems</code> call and the order of file systems returned
-         * across the responses of a multi-call iteration is unspecified. </p> <p> This
-         * operation requires permissions for the
+         * response until the response has no <code>NextMarker</code>. </p> <p> The order
+         * of file systems returned in the response of one <code>DescribeFileSystems</code>
+         * call and the order of file systems returned across the responses of a multi-call
+         * iteration is unspecified. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -809,23 +817,21 @@ namespace Model
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
          * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p> When retrieving all file system descriptions, you can optionally specify the
+         * <p>When retrieving all file system descriptions, you can optionally specify the
          * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. If more file system descriptions remain, Amazon EFS returns a
-         * <code>NextMarker</code>, an opaque token, in the response. In this case, you
-         * should send a subsequent request with the <code>Marker</code> request parameter
-         * set to the value of <code>NextMarker</code>. </p> <p>To retrieve a list of your
-         * file system descriptions, this operation is used in an iterative process, where
+         * response. Currently, this number is automatically set to 10. If more file system
+         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
+         * token, in the response. In this case, you should send a subsequent request with
+         * the <code>Marker</code> request parameter set to the value of
+         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
+         * descriptions, this operation is used in an iterative process, where
          * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
          * and then the operation continues to call it with the <code>Marker</code>
          * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p>The
-         * implementation may return fewer than <code>MaxItems</code> file system
-         * descriptions while still including a <code>NextMarker</code> value. </p> <p> The
-         * order of file systems returned in the response of one
-         * <code>DescribeFileSystems</code> call and the order of file systems returned
-         * across the responses of a multi-call iteration is unspecified. </p> <p> This
-         * operation requires permissions for the
+         * response until the response has no <code>NextMarker</code>. </p> <p> The order
+         * of file systems returned in the response of one <code>DescribeFileSystems</code>
+         * call and the order of file systems returned across the responses of a multi-call
+         * iteration is unspecified. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -840,23 +846,21 @@ namespace Model
          * file system <code>CreationToken</code> or the <code>FileSystemId</code> is
          * provided. Otherwise, it returns descriptions of all file systems owned by the
          * caller's AWS account in the AWS Region of the endpoint that you're calling.</p>
-         * <p> When retrieving all file system descriptions, you can optionally specify the
+         * <p>When retrieving all file system descriptions, you can optionally specify the
          * <code>MaxItems</code> parameter to limit the number of descriptions in a
-         * response. If more file system descriptions remain, Amazon EFS returns a
-         * <code>NextMarker</code>, an opaque token, in the response. In this case, you
-         * should send a subsequent request with the <code>Marker</code> request parameter
-         * set to the value of <code>NextMarker</code>. </p> <p>To retrieve a list of your
-         * file system descriptions, this operation is used in an iterative process, where
+         * response. Currently, this number is automatically set to 10. If more file system
+         * descriptions remain, Amazon EFS returns a <code>NextMarker</code>, an opaque
+         * token, in the response. In this case, you should send a subsequent request with
+         * the <code>Marker</code> request parameter set to the value of
+         * <code>NextMarker</code>. </p> <p>To retrieve a list of your file system
+         * descriptions, this operation is used in an iterative process, where
          * <code>DescribeFileSystems</code> is called first without the <code>Marker</code>
          * and then the operation continues to call it with the <code>Marker</code>
          * parameter set to the value of the <code>NextMarker</code> from the previous
-         * response until the response has no <code>NextMarker</code>. </p> <p>The
-         * implementation may return fewer than <code>MaxItems</code> file system
-         * descriptions while still including a <code>NextMarker</code> value. </p> <p> The
-         * order of file systems returned in the response of one
-         * <code>DescribeFileSystems</code> call and the order of file systems returned
-         * across the responses of a multi-call iteration is unspecified. </p> <p> This
-         * operation requires permissions for the
+         * response until the response has no <code>NextMarker</code>. </p> <p> The order
+         * of file systems returned in the response of one <code>DescribeFileSystems</code>
+         * call and the order of file systems returned across the responses of a multi-call
+         * iteration is unspecified. </p> <p> This operation requires permissions for the
          * <code>elasticfilesystem:DescribeFileSystems</code> action. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystems">AWS
@@ -865,6 +869,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the current <code>LifecycleConfiguration</code> object for the
+         * specified Amazon EFS file system. EFS lifecycle management uses the
+         * <code>LifecycleConfiguration</code> to identify which files to move to the EFS
+         * Infrequent Access (IA) storage class. For a file system without a
+         * <code>LifecycleConfiguration</code>, the call returns an empty array in the
+         * response.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLifecycleConfigurationOutcome DescribeLifecycleConfiguration(const Model::DescribeLifecycleConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the current <code>LifecycleConfiguration</code> object for the
+         * specified Amazon EFS file system. EFS lifecycle management uses the
+         * <code>LifecycleConfiguration</code> to identify which files to move to the EFS
+         * Infrequent Access (IA) storage class. For a file system without a
+         * <code>LifecycleConfiguration</code>, the call returns an empty array in the
+         * response.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLifecycleConfigurationOutcomeCallable DescribeLifecycleConfigurationCallable(const Model::DescribeLifecycleConfigurationRequest& request) const;
+
+        /**
+         * <p>Returns the current <code>LifecycleConfiguration</code> object for the
+         * specified Amazon EFS file system. EFS lifecycle management uses the
+         * <code>LifecycleConfiguration</code> to identify which files to move to the EFS
+         * Infrequent Access (IA) storage class. For a file system without a
+         * <code>LifecycleConfiguration</code>, the call returns an empty array in the
+         * response.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
+         * operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLifecycleConfigurationAsync(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the security groups currently in effect for a mount target. This
@@ -1060,6 +1110,103 @@ namespace Model
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Enables lifecycle management by creating a new
+         * <code>LifecycleConfiguration</code> object. A
+         * <code>LifecycleConfiguration</code> defines when files in an Amazon EFS file
+         * system are automatically transitioned to the lower-cost EFS Infrequent Access
+         * (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files
+         * in a file system.</p> <p>Each Amazon EFS file system supports one lifecycle
+         * configuration, which applies to all files in the file system. If a
+         * <code>LifecycleConfiguration</code> already exists for the specified file
+         * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
+         * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
+         * <code>LifecyclePolicies</code> array in the request body deletes any existing
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
+         * <note> <p>You can enable lifecycle management only for EFS file systems created
+         * after the release of EFS infrequent access.</p> </note> <p>In the request,
+         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
+         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
+         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
+         * that define when files are moved to the IA storage class. The array can contain
+         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
+         * <code>LifecyclePolicy</code> object.</p> </li> </ul> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
+         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
+         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
+         * permissions as when you created the encrypted file system. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutLifecycleConfigurationOutcome PutLifecycleConfiguration(const Model::PutLifecycleConfigurationRequest& request) const;
+
+        /**
+         * <p>Enables lifecycle management by creating a new
+         * <code>LifecycleConfiguration</code> object. A
+         * <code>LifecycleConfiguration</code> defines when files in an Amazon EFS file
+         * system are automatically transitioned to the lower-cost EFS Infrequent Access
+         * (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files
+         * in a file system.</p> <p>Each Amazon EFS file system supports one lifecycle
+         * configuration, which applies to all files in the file system. If a
+         * <code>LifecycleConfiguration</code> already exists for the specified file
+         * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
+         * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
+         * <code>LifecyclePolicies</code> array in the request body deletes any existing
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
+         * <note> <p>You can enable lifecycle management only for EFS file systems created
+         * after the release of EFS infrequent access.</p> </note> <p>In the request,
+         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
+         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
+         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
+         * that define when files are moved to the IA storage class. The array can contain
+         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
+         * <code>LifecyclePolicy</code> object.</p> </li> </ul> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
+         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
+         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
+         * permissions as when you created the encrypted file system. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutLifecycleConfigurationOutcomeCallable PutLifecycleConfigurationCallable(const Model::PutLifecycleConfigurationRequest& request) const;
+
+        /**
+         * <p>Enables lifecycle management by creating a new
+         * <code>LifecycleConfiguration</code> object. A
+         * <code>LifecycleConfiguration</code> defines when files in an Amazon EFS file
+         * system are automatically transitioned to the lower-cost EFS Infrequent Access
+         * (IA) storage class. A <code>LifecycleConfiguration</code> applies to all files
+         * in a file system.</p> <p>Each Amazon EFS file system supports one lifecycle
+         * configuration, which applies to all files in the file system. If a
+         * <code>LifecycleConfiguration</code> already exists for the specified file
+         * system, a <code>PutLifecycleConfiguration</code> call modifies the existing
+         * configuration. A <code>PutLifecycleConfiguration</code> call with an empty
+         * <code>LifecyclePolicies</code> array in the request body deletes any existing
+         * <code>LifecycleConfiguration</code> and disables lifecycle management.</p>
+         * <note> <p>You can enable lifecycle management only for EFS file systems created
+         * after the release of EFS infrequent access.</p> </note> <p>In the request,
+         * specify the following: </p> <ul> <li> <p>The ID for the file system for which
+         * you are creating a lifecycle management configuration.</p> </li> <li> <p>A
+         * <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects
+         * that define when files are moved to the IA storage class. The array can contain
+         * only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
+         * <code>LifecyclePolicy</code> object.</p> </li> </ul> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
+         * operation.</p> <p>To apply a <code>LifecycleConfiguration</code> object to an
+         * encrypted file system, you need the same AWS Key Management Service (AWS KMS)
+         * permissions as when you created the encrypted file system. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutLifecycleConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutLifecycleConfigurationAsync(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the throughput mode or the amount of provisioned throughput of an
          * existing file system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">AWS
@@ -1099,10 +1246,12 @@ namespace Model
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetSecurityGroupsAsyncHelper(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFileSystemAsyncHelper(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

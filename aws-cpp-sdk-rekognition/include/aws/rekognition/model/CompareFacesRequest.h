@@ -47,35 +47,50 @@ namespace Model
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline const Image& GetSourceImage() const{ return m_sourceImage; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetSourceImage(const Image& value) { m_sourceImageHasBeenSet = true; m_sourceImage = value; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetSourceImage(Image&& value) { m_sourceImageHasBeenSet = true; m_sourceImage = std::move(value); }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline CompareFacesRequest& WithSourceImage(const Image& value) { SetSourceImage(value); return *this;}
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline CompareFacesRequest& WithSourceImage(Image&& value) { SetSourceImage(std::move(value)); return *this;}
 
@@ -83,35 +98,50 @@ namespace Model
     /**
      * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline const Image& GetTargetImage() const{ return m_targetImage; }
 
     /**
      * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetTargetImage(const Image& value) { m_targetImageHasBeenSet = true; m_targetImage = value; }
 
     /**
      * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetTargetImage(Image&& value) { m_targetImageHasBeenSet = true; m_targetImage = std::move(value); }
 
     /**
      * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline CompareFacesRequest& WithTargetImage(const Image& value) { SetTargetImage(value); return *this;}
 
     /**
      * <p>The target image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline CompareFacesRequest& WithTargetImage(Image&& value) { SetTargetImage(std::move(value)); return *this;}
 

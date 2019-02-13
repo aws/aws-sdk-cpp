@@ -24,7 +24,9 @@
 #include <aws/mediatailor/model/DeletePlaybackConfigurationResult.h>
 #include <aws/mediatailor/model/GetPlaybackConfigurationResult.h>
 #include <aws/mediatailor/model/ListPlaybackConfigurationsResult.h>
+#include <aws/mediatailor/model/ListTagsForResourceResult.h>
 #include <aws/mediatailor/model/PutPlaybackConfigurationResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -68,17 +70,26 @@ namespace Model
         class DeletePlaybackConfigurationRequest;
         class GetPlaybackConfigurationRequest;
         class ListPlaybackConfigurationsRequest;
+        class ListTagsForResourceRequest;
         class PutPlaybackConfigurationRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
 
         typedef Aws::Utils::Outcome<DeletePlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> DeletePlaybackConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetPlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> GetPlaybackConfigurationOutcome;
         typedef Aws::Utils::Outcome<ListPlaybackConfigurationsResult, Aws::Client::AWSError<MediaTailorErrors>> ListPlaybackConfigurationsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaTailorErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutPlaybackConfigurationResult, Aws::Client::AWSError<MediaTailorErrors>> PutPlaybackConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaTailorErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaTailorErrors>> UntagResourceOutcome;
 
         typedef std::future<DeletePlaybackConfigurationOutcome> DeletePlaybackConfigurationOutcomeCallable;
         typedef std::future<GetPlaybackConfigurationOutcome> GetPlaybackConfigurationOutcomeCallable;
         typedef std::future<ListPlaybackConfigurationsOutcome> ListPlaybackConfigurationsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutPlaybackConfigurationOutcome> PutPlaybackConfigurationOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 } // namespace Model
 
   class MediaTailorClient;
@@ -86,7 +97,10 @@ namespace Model
     typedef std::function<void(const MediaTailorClient*, const Model::DeletePlaybackConfigurationRequest&, const Model::DeletePlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePlaybackConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::GetPlaybackConfigurationRequest&, const Model::GetPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPlaybackConfigurationResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::ListPlaybackConfigurationsRequest&, const Model::ListPlaybackConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPlaybackConfigurationsResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaTailorClient*, const Model::PutPlaybackConfigurationRequest&, const Model::PutPlaybackConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPlaybackConfigurationResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaTailorClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
 
   /**
    * <p>Use the AWS Elemental MediaTailor SDK to configure scalable ad insertion for
@@ -129,16 +143,16 @@ namespace Model
 
 
         /**
-         * <p>Deletes the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePlaybackConfigurationOutcome DeletePlaybackConfiguration(const Model::DeletePlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">AWS
          * API Reference</a></p>
          *
@@ -147,8 +161,8 @@ namespace Model
         virtual Model::DeletePlaybackConfigurationOutcomeCallable DeletePlaybackConfigurationCallable(const Model::DeletePlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DeletePlaybackConfiguration">AWS
          * API Reference</a></p>
          *
@@ -157,16 +171,16 @@ namespace Model
         virtual void DeletePlaybackConfigurationAsync(const Model::DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetPlaybackConfigurationOutcome GetPlaybackConfiguration(const Model::GetPlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Returns the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">AWS
          * API Reference</a></p>
          *
@@ -175,8 +189,8 @@ namespace Model
         virtual Model::GetPlaybackConfigurationOutcomeCallable GetPlaybackConfigurationCallable(const Model::GetPlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Returns the configuration for the specified name. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns the playback configuration for the specified name. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration">AWS
          * API Reference</a></p>
          *
@@ -185,24 +199,24 @@ namespace Model
         virtual void GetPlaybackConfigurationAsync(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a list of the configurations defined in AWS Elemental MediaTailor.
-         * You can specify a max number of configurations to return at a time. The default
-         * max is 50. Results are returned in pagefuls. If AWS Elemental MediaTailor has
-         * more configurations than the specified max, it provides parameters in the
-         * response that you can use to retrieve the next pageful. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the playback configurations defined in AWS Elemental
+         * MediaTailor. You can specify a maximum number of configurations to return at a
+         * time. The default maximum is 50. Results are returned in pagefuls. If
+         * MediaTailor has more configurations than the specified maximum, it provides
+         * parameters in the response that you can use to retrieve the next pageful.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListPlaybackConfigurationsOutcome ListPlaybackConfigurations(const Model::ListPlaybackConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of the configurations defined in AWS Elemental MediaTailor.
-         * You can specify a max number of configurations to return at a time. The default
-         * max is 50. Results are returned in pagefuls. If AWS Elemental MediaTailor has
-         * more configurations than the specified max, it provides parameters in the
-         * response that you can use to retrieve the next pageful. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the playback configurations defined in AWS Elemental
+         * MediaTailor. You can specify a maximum number of configurations to return at a
+         * time. The default maximum is 50. Results are returned in pagefuls. If
+         * MediaTailor has more configurations than the specified maximum, it provides
+         * parameters in the response that you can use to retrieve the next pageful.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">AWS
          * API Reference</a></p>
          *
@@ -211,12 +225,12 @@ namespace Model
         virtual Model::ListPlaybackConfigurationsOutcomeCallable ListPlaybackConfigurationsCallable(const Model::ListPlaybackConfigurationsRequest& request) const;
 
         /**
-         * <p>Returns a list of the configurations defined in AWS Elemental MediaTailor.
-         * You can specify a max number of configurations to return at a time. The default
-         * max is 50. Results are returned in pagefuls. If AWS Elemental MediaTailor has
-         * more configurations than the specified max, it provides parameters in the
-         * response that you can use to retrieve the next pageful. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the playback configurations defined in AWS Elemental
+         * MediaTailor. You can specify a maximum number of configurations to return at a
+         * time. The default maximum is 50. Results are returned in pagefuls. If
+         * MediaTailor has more configurations than the specified maximum, it provides
+         * parameters in the response that you can use to retrieve the next pageful.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListPlaybackConfigurations">AWS
          * API Reference</a></p>
          *
@@ -225,16 +239,44 @@ namespace Model
         virtual void ListPlaybackConfigurationsAsync(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds a new configuration to AWS Elemental MediaTailor.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns a list of the tags assigned to the specified playback configuration
+         * resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags assigned to the specified playback configuration
+         * resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of the tags assigned to the specified playback configuration
+         * resource. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a new playback configuration to AWS Elemental MediaTailor.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::PutPlaybackConfigurationOutcome PutPlaybackConfiguration(const Model::PutPlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Adds a new configuration to AWS Elemental MediaTailor.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a new playback configuration to AWS Elemental MediaTailor.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">AWS
          * API Reference</a></p>
          *
@@ -243,14 +285,70 @@ namespace Model
         virtual Model::PutPlaybackConfigurationOutcomeCallable PutPlaybackConfigurationCallable(const Model::PutPlaybackConfigurationRequest& request) const;
 
         /**
-         * <p>Adds a new configuration to AWS Elemental MediaTailor.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds a new playback configuration to AWS Elemental MediaTailor.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/PutPlaybackConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutPlaybackConfigurationAsync(const Model::PutPlaybackConfigurationRequest& request, const PutPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds tags to the specified playback configuration resource. You can specify
+         * one or more tags to add. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to the specified playback configuration resource. You can specify
+         * one or more tags to add. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds tags to the specified playback configuration resource. You can specify
+         * one or more tags to add. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from the specified playback configuration resource. You can
+         * specify one or more tags to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from the specified playback configuration resource. You can
+         * specify one or more tags to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from the specified playback configuration resource. You can
+         * specify one or more tags to remove. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
       
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -260,7 +358,10 @@ namespace Model
         void DeletePlaybackConfigurationAsyncHelper(const Model::DeletePlaybackConfigurationRequest& request, const DeletePlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPlaybackConfigurationAsyncHelper(const Model::GetPlaybackConfigurationRequest& request, const GetPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPlaybackConfigurationsAsyncHelper(const Model::ListPlaybackConfigurationsRequest& request, const ListPlaybackConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPlaybackConfigurationAsyncHelper(const Model::PutPlaybackConfigurationRequest& request, const PutPlaybackConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

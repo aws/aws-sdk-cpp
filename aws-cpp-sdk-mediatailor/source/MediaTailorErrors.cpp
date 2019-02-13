@@ -16,7 +16,6 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/mediatailor/MediaTailorErrors.h>
-#include <aws/core/utils/UnreferencedParam.h>
 
 using namespace Aws::Client;
 using namespace Aws::MediaTailor;
@@ -29,11 +28,17 @@ namespace MediaTailor
 namespace MediaTailorErrorMapper
 {
 
+static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
-  AWS_UNREFERENCED_PARAM(errorName);
+  int hashCode = HashingUtils::HashString(errorName);
+
+  if (hashCode == BAD_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaTailorErrors::BAD_REQUEST), false);
+  }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }
 

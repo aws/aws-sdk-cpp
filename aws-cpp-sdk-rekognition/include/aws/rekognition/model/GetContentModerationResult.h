@@ -236,6 +236,49 @@ namespace Model
      */
     inline GetContentModerationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline const Aws::String& GetModerationModelVersion() const{ return m_moderationModelVersion; }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(const Aws::String& value) { m_moderationModelVersion = value; }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(Aws::String&& value) { m_moderationModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline void SetModerationModelVersion(const char* value) { m_moderationModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline GetContentModerationResult& WithModerationModelVersion(const Aws::String& value) { SetModerationModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline GetContentModerationResult& WithModerationModelVersion(Aws::String&& value) { SetModerationModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the moderation detection model that was used to detect
+     * unsafe content.</p>
+     */
+    inline GetContentModerationResult& WithModerationModelVersion(const char* value) { SetModerationModelVersion(value); return *this;}
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -247,6 +290,8 @@ namespace Model
     Aws::Vector<ContentModerationDetection> m_moderationLabels;
 
     Aws::String m_nextToken;
+
+    Aws::String m_moderationModelVersion;
   };
 
 } // namespace Model

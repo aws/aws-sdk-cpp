@@ -65,44 +65,44 @@ namespace Model
 
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

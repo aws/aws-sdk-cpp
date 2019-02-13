@@ -1788,7 +1788,7 @@ namespace Model
          * This includes: </p> <ul> <li> <p>The bounding box, <code>BoundingBox</code>, of
          * the detected face. </p> </li> <li> <p>A confidence value,
          * <code>Confidence</code>, which indicates the confidence that the bounding box
-         * contains a face.</p> </li> <li> <p>A face ID, <code>faceId</code>, assigned by
+         * contains a face.</p> </li> <li> <p>A face ID, <code>FaceId</code>, assigned by
          * the service for each face that's detected and stored.</p> </li> <li> <p>An image
          * ID, <code>ImageId</code>, assigned by the service for the input image.</p> </li>
          * </ul> <p>If you request all facial attributes (by using the
@@ -1858,7 +1858,7 @@ namespace Model
          * This includes: </p> <ul> <li> <p>The bounding box, <code>BoundingBox</code>, of
          * the detected face. </p> </li> <li> <p>A confidence value,
          * <code>Confidence</code>, which indicates the confidence that the bounding box
-         * contains a face.</p> </li> <li> <p>A face ID, <code>faceId</code>, assigned by
+         * contains a face.</p> </li> <li> <p>A face ID, <code>FaceId</code>, assigned by
          * the service for each face that's detected and stored.</p> </li> <li> <p>An image
          * ID, <code>ImageId</code>, assigned by the service for the input image.</p> </li>
          * </ul> <p>If you request all facial attributes (by using the
@@ -1930,7 +1930,7 @@ namespace Model
          * This includes: </p> <ul> <li> <p>The bounding box, <code>BoundingBox</code>, of
          * the detected face. </p> </li> <li> <p>A confidence value,
          * <code>Confidence</code>, which indicates the confidence that the bounding box
-         * contains a face.</p> </li> <li> <p>A face ID, <code>faceId</code>, assigned by
+         * contains a face.</p> </li> <li> <p>A face ID, <code>FaceId</code>, assigned by
          * the service for each face that's detected and stored.</p> </li> <li> <p>An image
          * ID, <code>ImageId</code>, assigned by the service for the input image.</p> </li>
          * </ul> <p>If you request all facial attributes (by using the

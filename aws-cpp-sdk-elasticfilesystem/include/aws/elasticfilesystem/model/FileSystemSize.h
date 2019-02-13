@@ -105,6 +105,44 @@ namespace Model
      */
     inline FileSystemSize& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
+     * Access storage class.</p>
+     */
+    inline long long GetValueInIA() const{ return m_valueInIA; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
+     * Access storage class.</p>
+     */
+    inline void SetValueInIA(long long value) { m_valueInIAHasBeenSet = true; m_valueInIA = value; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Infrequent
+     * Access storage class.</p>
+     */
+    inline FileSystemSize& WithValueInIA(long long value) { SetValueInIA(value); return *this;}
+
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Standard
+     * storage class.</p>
+     */
+    inline long long GetValueInStandard() const{ return m_valueInStandard; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Standard
+     * storage class.</p>
+     */
+    inline void SetValueInStandard(long long value) { m_valueInStandardHasBeenSet = true; m_valueInStandard = value; }
+
+    /**
+     * <p>The latest known metered size (in bytes) of data stored in the Standard
+     * storage class.</p>
+     */
+    inline FileSystemSize& WithValueInStandard(long long value) { SetValueInStandard(value); return *this;}
+
   private:
 
     long long m_value;
@@ -112,6 +150,12 @@ namespace Model
 
     Aws::Utils::DateTime m_timestamp;
     bool m_timestampHasBeenSet;
+
+    long long m_valueInIA;
+    bool m_valueInIAHasBeenSet;
+
+    long long m_valueInStandard;
+    bool m_valueInStandardHasBeenSet;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration object for DASH content. </p><p><h3>See Also:</h3>   <a
+   * <p>The configuration for DASH PUT operations. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/DashConfigurationForPut">AWS
    * API Reference</a></p>
    */
@@ -49,85 +49,85 @@ namespace Model
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline const Aws::String& GetMpdLocation() const{ return m_mpdLocation; }
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline void SetMpdLocation(const Aws::String& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = value; }
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline void SetMpdLocation(Aws::String&& value) { m_mpdLocationHasBeenSet = true; m_mpdLocation = std::move(value); }
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline void SetMpdLocation(const char* value) { m_mpdLocationHasBeenSet = true; m_mpdLocation.assign(value); }
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline DashConfigurationForPut& WithMpdLocation(const Aws::String& value) { SetMpdLocation(value); return *this;}
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline DashConfigurationForPut& WithMpdLocation(Aws::String&& value) { SetMpdLocation(std::move(value)); return *this;}
 
     /**
      * <p>The setting that controls whether MediaTailor includes the Location tag in
-     * DASH Manifests. MediaTailor populates the Location tag with the URL for manifest
+     * DASH manifests. MediaTailor populates the Location tag with the URL for manifest
      * update requests, to be used by players that don't support sticky redirects.
      * Disable this if you have CDN routing rules set up for accessing MediaTailor
      * manifests and you are either using client-side reporting or your players support
      * sticky HTTP redirects. Valid values are DISABLED and EMT_DEFAULT. The
-     * EMT_DEFAULT setting enables the inclusion of the tag and is the default
-     * value.</p>
+     * EMT_DEFAULT setting enables the inclusion of the tag and is the default value.
+     * </p>
      */
     inline DashConfigurationForPut& WithMpdLocation(const char* value) { SetMpdLocation(value); return *this;}
 

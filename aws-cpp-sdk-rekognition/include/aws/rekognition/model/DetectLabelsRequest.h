@@ -46,36 +46,51 @@ namespace Model
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * Images stored in an S3 Bucket do not need to be base64-encoded.</p> <p>If you
+     * are using an AWS SDK to call Amazon Rekognition, you might not need to
+     * base64-encode image bytes passed using the <code>Bytes</code> field. For more
+     * information, see Images in the Amazon Rekognition developer guide.</p>
      */
     inline const Image& GetImage() const{ return m_image; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * Images stored in an S3 Bucket do not need to be base64-encoded.</p> <p>If you
+     * are using an AWS SDK to call Amazon Rekognition, you might not need to
+     * base64-encode image bytes passed using the <code>Bytes</code> field. For more
+     * information, see Images in the Amazon Rekognition developer guide.</p>
      */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * Images stored in an S3 Bucket do not need to be base64-encoded.</p> <p>If you
+     * are using an AWS SDK to call Amazon Rekognition, you might not need to
+     * base64-encode image bytes passed using the <code>Bytes</code> field. For more
+     * information, see Images in the Amazon Rekognition developer guide.</p>
      */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * Images stored in an S3 Bucket do not need to be base64-encoded.</p> <p>If you
+     * are using an AWS SDK to call Amazon Rekognition, you might not need to
+     * base64-encode image bytes passed using the <code>Bytes</code> field. For more
+     * information, see Images in the Amazon Rekognition developer guide.</p>
      */
     inline DetectLabelsRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * CLI to call Amazon Rekognition operations, passing image bytes is not supported.
+     * Images stored in an S3 Bucket do not need to be base64-encoded.</p> <p>If you
+     * are using an AWS SDK to call Amazon Rekognition, you might not need to
+     * base64-encode image bytes passed using the <code>Bytes</code> field. For more
+     * information, see Images in the Amazon Rekognition developer guide.</p>
      */
     inline DetectLabelsRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 

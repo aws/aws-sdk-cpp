@@ -219,37 +219,44 @@ namespace Model
 
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddress = value; }
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddress = std::move(value); }
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddress.assign(value); }
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>Address at which the file system may be mounted via the mount target.</p>
+     * <p>Address at which the file system can be mounted by using the mount
+     * target.</p>
      */
     inline CreateMountTargetResult& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 

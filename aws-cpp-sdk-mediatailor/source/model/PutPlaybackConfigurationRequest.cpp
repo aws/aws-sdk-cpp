@@ -28,6 +28,7 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_dashConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_transcodeProfileNameHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
@@ -64,6 +65,17 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_slateAdUrlHasBeenSet)
   {
    payload.WithString("SlateAdUrl", m_slateAdUrl);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 
