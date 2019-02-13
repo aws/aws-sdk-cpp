@@ -49,7 +49,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -61,7 +61,7 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -73,7 +73,7 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -85,7 +85,7 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -97,7 +97,7 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -109,7 +109,7 @@ namespace Model
     inline ListVersionsByFunctionRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -121,7 +121,7 @@ namespace Model
     inline ListVersionsByFunctionRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -134,60 +134,60 @@ namespace Model
 
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListVersionsByFunctionRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
     /**
-     * <p>Limit the number of versions returned.</p>
+     * <p>Limit the number of versions that are returned.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>Limit the number of versions returned.</p>
+     * <p>Limit the number of versions that are returned.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>Limit the number of versions returned.</p>
+     * <p>Limit the number of versions that are returned.</p>
      */
     inline ListVersionsByFunctionRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

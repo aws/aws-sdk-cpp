@@ -145,7 +145,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -153,7 +153,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -169,7 +169,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -177,7 +177,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -185,7 +185,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */
@@ -193,7 +193,7 @@ namespace Model
 
     /**
      * <p>A list of compatible <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and
      * <a>ListLayerVersions</a>.</p>
      */

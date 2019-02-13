@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>An <a
-   * href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
    * Lambda layer</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Layer">AWS API
    * Reference</a></p>

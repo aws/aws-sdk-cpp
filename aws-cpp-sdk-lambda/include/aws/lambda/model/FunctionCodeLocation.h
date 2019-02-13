@@ -48,73 +48,73 @@ namespace Model
 
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline const Aws::String& GetRepositoryType() const{ return m_repositoryType; }
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::move(value); }
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline void SetRepositoryType(const char* value) { m_repositoryTypeHasBeenSet = true; m_repositoryType.assign(value); }
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(std::move(value)); return *this;}
 
     /**
-     * <p>The service hosting the file.</p>
+     * <p>The service that's hosting the file.</p>
      */
     inline FunctionCodeLocation& WithRepositoryType(const char* value) { SetRepositoryType(value); return *this;}
 
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p>A pre-signed URL that you can use to download the deployment package.</p>
+     * <p>A presigned URL that you can use to download the deployment package.</p>
      */
     inline FunctionCodeLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
 

@@ -48,133 +48,133 @@ namespace Model
 
 
     /**
-     * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * <code>RequestResponse</code> invocation type this status code will be 200. For
-     * the <code>Event</code> invocation type this status code will be 202. For the
-     * <code>DryRun</code> invocation type the status code will be 204.</p>
+     * <p>The HTTP status code is in the 200 range for a successful request. For the
+     * <code>RequestResponse</code> invocation type, this status code is 200. For the
+     * <code>Event</code> invocation type, this status code is 202. For the
+     * <code>DryRun</code> invocation type, the status code is 204.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
 
     /**
-     * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * <code>RequestResponse</code> invocation type this status code will be 200. For
-     * the <code>Event</code> invocation type this status code will be 202. For the
-     * <code>DryRun</code> invocation type the status code will be 204.</p>
+     * <p>The HTTP status code is in the 200 range for a successful request. For the
+     * <code>RequestResponse</code> invocation type, this status code is 200. For the
+     * <code>Event</code> invocation type, this status code is 202. For the
+     * <code>DryRun</code> invocation type, the status code is 204.</p>
      */
     inline void SetStatusCode(int value) { m_statusCode = value; }
 
     /**
-     * <p>The HTTP status code will be in the 200 range for successful request. For the
-     * <code>RequestResponse</code> invocation type this status code will be 200. For
-     * the <code>Event</code> invocation type this status code will be 202. For the
-     * <code>DryRun</code> invocation type the status code will be 204.</p>
+     * <p>The HTTP status code is in the 200 range for a successful request. For the
+     * <code>RequestResponse</code> invocation type, this status code is 200. For the
+     * <code>Event</code> invocation type, this status code is 202. For the
+     * <code>DryRun</code> invocation type, the status code is 204.</p>
      */
     inline InvokeResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
 
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline const Aws::String& GetFunctionError() const{ return m_functionError; }
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline void SetFunctionError(const Aws::String& value) { m_functionError = value; }
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline void SetFunctionError(Aws::String&& value) { m_functionError = std::move(value); }
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline void SetFunctionError(const char* value) { m_functionError.assign(value); }
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline InvokeResult& WithFunctionError(const Aws::String& value) { SetFunctionError(value); return *this;}
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline InvokeResult& WithFunctionError(Aws::String&& value) { SetFunctionError(std::move(value)); return *this;}
 
     /**
-     * <p>If present, indicates that an error occured during function execution.
+     * <p>If present, indicates that an error occurred during function execution.
      * Details about the error are included in the response payload.</p> <ul> <li> <p>
      * <code>Handled</code> - The runtime caught an error thrown by the function and
      * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime did not handle the error. For example, the function ran out of
-     * memory or timed out.</p> </li> </ul>
+     * The runtime didn't handle the error. For example, the function ran out of memory
+     * or timed out.</p> </li> </ul>
      */
     inline InvokeResult& WithFunctionError(const char* value) { SetFunctionError(value); return *this;}
 
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline const Aws::String& GetLogResult() const{ return m_logResult; }
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline void SetLogResult(const Aws::String& value) { m_logResult = value; }
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline void SetLogResult(Aws::String&& value) { m_logResult = std::move(value); }
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline void SetLogResult(const char* value) { m_logResult.assign(value); }
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline InvokeResult& WithLogResult(const Aws::String& value) { SetLogResult(value); return *this;}
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline InvokeResult& WithLogResult(Aws::String&& value) { SetLogResult(std::move(value)); return *this;}
 
     /**
-     * <p>The last 4 KB of the execution log, base64 encoded.</p>
+     * <p>The last 4 KB of the execution log, which is base64 encoded.</p>
      */
     inline InvokeResult& WithLogResult(const char* value) { SetLogResult(value); return *this;}
 
@@ -192,43 +192,43 @@ namespace Model
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline const Aws::String& GetExecutedVersion() const{ return m_executedVersion; }
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline void SetExecutedVersion(const Aws::String& value) { m_executedVersion = value; }
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline void SetExecutedVersion(Aws::String&& value) { m_executedVersion = std::move(value); }
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline void SetExecutedVersion(const char* value) { m_executedVersion.assign(value); }
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline InvokeResult& WithExecutedVersion(const Aws::String& value) { SetExecutedVersion(value); return *this;}
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline InvokeResult& WithExecutedVersion(Aws::String&& value) { SetExecutedVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the function that executed. When you invoke a function with an
-     * alias, indicates which version the alias resolved to.</p>
+     * alias, this indicates which version the alias resolved to.</p>
      */
     inline InvokeResult& WithExecutedVersion(const char* value) { SetExecutedVersion(value); return *this;}
 

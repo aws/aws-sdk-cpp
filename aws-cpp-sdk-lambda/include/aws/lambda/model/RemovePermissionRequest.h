@@ -227,44 +227,51 @@ namespace Model
 
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline RemovePermissionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline RemovePermissionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline RemovePermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

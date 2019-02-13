@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Error messages for environment variables that could not be
+   * <p>Error messages for environment variables that couldn't be
    * applied.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/EnvironmentError">AWS
    * API Reference</a></p>

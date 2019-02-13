@@ -47,20 +47,20 @@ namespace Model
 
 
     /**
-     * <p>The amount of storage space, in bytes, in use by deployment packages and
-     * layer archives.</p>
+     * <p>The amount of storage space, in bytes, that's being used by deployment
+     * packages and layer archives.</p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
 
     /**
-     * <p>The amount of storage space, in bytes, in use by deployment packages and
-     * layer archives.</p>
+     * <p>The amount of storage space, in bytes, that's being used by deployment
+     * packages and layer archives.</p>
      */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
-     * <p>The amount of storage space, in bytes, in use by deployment packages and
-     * layer archives.</p>
+     * <p>The amount of storage space, in bytes, that's being used by deployment
+     * packages and layer archives.</p>
      */
     inline AccountUsage& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
 

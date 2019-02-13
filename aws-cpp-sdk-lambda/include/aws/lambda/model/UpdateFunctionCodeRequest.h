@@ -160,44 +160,44 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline UpdateFunctionCodeRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 
@@ -320,51 +320,51 @@ namespace Model
 
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline UpdateFunctionCodeRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline UpdateFunctionCodeRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>Only update the function if the revision ID matches the ID specified. Use
-     * this option to avoid modifying a function that has changed since you last read
-     * it.</p>
+     * <p>Only update the function if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a function that has changed since you last
+     * read it.</p>
      */
     inline UpdateFunctionCodeRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

@@ -112,27 +112,27 @@ namespace Model
 
 
     /**
-     * <p>Error messages for environment variables that could not be applied.</p>
+     * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline const EnvironmentError& GetError() const{ return m_error; }
 
     /**
-     * <p>Error messages for environment variables that could not be applied.</p>
+     * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline void SetError(const EnvironmentError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
-     * <p>Error messages for environment variables that could not be applied.</p>
+     * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline void SetError(EnvironmentError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
 
     /**
-     * <p>Error messages for environment variables that could not be applied.</p>
+     * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline EnvironmentResponse& WithError(const EnvironmentError& value) { SetError(value); return *this;}
 
     /**
-     * <p>Error messages for environment variables that could not be applied.</p>
+     * <p>Error messages for environment variables that couldn't be applied.</p>
      */
     inline EnvironmentResponse& WithError(EnvironmentError&& value) { SetError(std::move(value)); return *this;}
 

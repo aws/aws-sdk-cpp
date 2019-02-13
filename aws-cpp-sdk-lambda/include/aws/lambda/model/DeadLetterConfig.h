@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The <a href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
+   * <p>The <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
    * letter queue</a> for failed asynchronous invocations.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeadLetterConfig">AWS

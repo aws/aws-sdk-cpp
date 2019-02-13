@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Limits related to concurrency and code storage. All file and storage sizes
-   * are in bytes.</p><p><h3>See Also:</h3>   <a
+   * <p>Limits that are related to concurrency and code storage. All file and storage
+   * sizes are in bytes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit">AWS
    * API Reference</a></p>
    */
@@ -66,36 +66,39 @@ namespace Model
 
 
     /**
-     * <p>The maximum size of your function's code and layers when extracted.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline long long GetCodeSizeUnzipped() const{ return m_codeSizeUnzipped; }
 
     /**
-     * <p>The maximum size of your function's code and layers when extracted.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline void SetCodeSizeUnzipped(long long value) { m_codeSizeUnzippedHasBeenSet = true; m_codeSizeUnzipped = value; }
 
     /**
-     * <p>The maximum size of your function's code and layers when extracted.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline AccountLimit& WithCodeSizeUnzipped(long long value) { SetCodeSizeUnzipped(value); return *this;}
 
 
     /**
-     * <p>The maximum size of a deployment package when uploaded direcly to AWS Lambda.
-     * Use Amazon S3 for larger files.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline long long GetCodeSizeZipped() const{ return m_codeSizeZipped; }
 
     /**
-     * <p>The maximum size of a deployment package when uploaded direcly to AWS Lambda.
-     * Use Amazon S3 for larger files.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline void SetCodeSizeZipped(long long value) { m_codeSizeZippedHasBeenSet = true; m_codeSizeZipped = value; }
 
     /**
-     * <p>The maximum size of a deployment package when uploaded direcly to AWS Lambda.
-     * Use Amazon S3 for larger files.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline AccountLimit& WithCodeSizeZipped(long long value) { SetCodeSizeZipped(value); return *this;}
 
@@ -117,20 +120,20 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of simultaneous function executions, less the concurrency
-     * reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline int GetUnreservedConcurrentExecutions() const{ return m_unreservedConcurrentExecutions; }
 
     /**
-     * <p>The maximum number of simultaneous function executions, less the concurrency
-     * reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline void SetUnreservedConcurrentExecutions(int value) { m_unreservedConcurrentExecutionsHasBeenSet = true; m_unreservedConcurrentExecutions = value; }
 
     /**
-     * <p>The maximum number of simultaneous function executions, less the concurrency
-     * reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline AccountLimit& WithUnreservedConcurrentExecutions(int value) { SetUnreservedConcurrentExecutions(value); return *this;}
 

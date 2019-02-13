@@ -37,7 +37,7 @@ namespace Model
 {
   /**
    * <p>Provides configuration information about a Lambda function <a
-   * href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasConfiguration">AWS
    * API Reference</a></p>
@@ -196,35 +196,35 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfig = value; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfig = std::move(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline GetAliasResult& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline GetAliasResult& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}

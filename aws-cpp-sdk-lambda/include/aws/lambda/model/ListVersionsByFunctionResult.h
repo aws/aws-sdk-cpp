@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListVersionsByFunctionResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListVersionsByFunctionResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token included if more results are available.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListVersionsByFunctionResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

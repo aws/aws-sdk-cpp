@@ -81,44 +81,44 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline FunctionCode& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline FunctionCode& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 bucket in the same region as your function. The bucket can be in
-     * a different AWS account.</p>
+     * <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can
+     * be in a different AWS account.</p>
      */
     inline FunctionCode& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
 

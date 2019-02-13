@@ -327,72 +327,72 @@ namespace Model
 
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline const Aws::String& GetSourceAccount() const{ return m_sourceAccount; }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(const Aws::String& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = value; }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(Aws::String&& value) { m_sourceAccountHasBeenSet = true; m_sourceAccount = std::move(value); }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline void SetSourceAccount(const char* value) { m_sourceAccountHasBeenSet = true; m_sourceAccount.assign(value); }
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const Aws::String& value) { SetSourceAccount(value); return *this;}
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(Aws::String&& value) { SetSourceAccount(std::move(value)); return *this;}
 
     /**
-     * <p>For AWS services, the ID of the account that owns the resource. Use instead
-     * of <code>SourceArn</code> to grant permission to resources owned by another
-     * account (e.g. all of an account's Amazon S3 buckets). Or use together with
-     * <code>SourceArn</code> to ensure that the resource is owned by the specified
-     * account. For example, an Amazon S3 bucket could be deleted by its owner and
-     * recreated by another account.</p>
+     * <p>For AWS services, the ID of the account that owns the resource. Use this
+     * instead of <code>SourceArn</code> to grant permission to resources that are
+     * owned by another account (for example, all of an account's Amazon S3 buckets).
+     * Or use it together with <code>SourceArn</code> to ensure that the resource is
+     * owned by the specified account. For example, an Amazon S3 bucket could be
+     * deleted by its owner and recreated by another account.</p>
      */
     inline AddPermissionRequest& WithSourceAccount(const char* value) { SetSourceAccount(value); return *this;}
 
@@ -484,44 +484,51 @@ namespace Model
 
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>Only update the policy if the revision ID matches the ID specified. Use this
-     * option to avoid modifying a policy that has changed since you last read it.</p>
+     * <p>Only update the policy if the revision ID matches the ID that's specified.
+     * Use this option to avoid modifying a policy that has changed since you last read
+     * it.</p>
      */
     inline AddPermissionRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

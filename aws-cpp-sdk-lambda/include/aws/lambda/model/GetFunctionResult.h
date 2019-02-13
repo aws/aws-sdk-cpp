@@ -100,108 +100,108 @@ namespace Model
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
      * concurrency</a>.</p>
      */
     inline const Concurrency& GetConcurrency() const{ return m_concurrency; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
      * concurrency</a>.</p>
      */
     inline void SetConcurrency(const Concurrency& value) { m_concurrency = value; }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
      * concurrency</a>.</p>
      */
     inline void SetConcurrency(Concurrency&& value) { m_concurrency = std::move(value); }
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
      * concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(const Concurrency& value) { SetConcurrency(value); return *this;}
 
     /**
      * <p>The function's <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
      * concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}

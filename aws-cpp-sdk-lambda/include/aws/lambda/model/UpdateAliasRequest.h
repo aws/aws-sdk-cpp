@@ -44,7 +44,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -56,7 +56,7 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -68,7 +68,7 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -80,7 +80,7 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -92,7 +92,7 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -104,7 +104,7 @@ namespace Model
     inline UpdateAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -116,7 +116,7 @@ namespace Model
     inline UpdateAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -238,79 +238,86 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline const AliasRoutingConfiguration& GetRoutingConfig() const{ return m_routingConfig; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(const AliasRoutingConfiguration& value) { m_routingConfigHasBeenSet = true; m_routingConfig = value; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline void SetRoutingConfig(AliasRoutingConfiguration&& value) { m_routingConfigHasBeenSet = true; m_routingConfig = std::move(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline UpdateAliasRequest& WithRoutingConfig(const AliasRoutingConfiguration& value) { SetRoutingConfig(value); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.</p>
      */
     inline UpdateAliasRequest& WithRoutingConfig(AliasRoutingConfiguration&& value) { SetRoutingConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
 
     /**
-     * <p>Only update the alias if the revision ID matches the ID specified. Use this
-     * option to avoid modifying an alias that has changed since you last read it.</p>
+     * <p>Only update the alias if the revision ID matches the ID that's specified. Use
+     * this option to avoid modifying an alias that has changed since you last read
+     * it.</p>
      */
     inline UpdateAliasRequest& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
 

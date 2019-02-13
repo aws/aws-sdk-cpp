@@ -50,50 +50,50 @@ namespace Model
 
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline const Aws::String& GetMasterRegion() const{ return m_masterRegion; }
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(const Aws::String& value) { m_masterRegionHasBeenSet = true; m_masterRegion = value; }
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(Aws::String&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::move(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(const char* value) { m_masterRegionHasBeenSet = true; m_masterRegion.assign(value); }
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const Aws::String& value) { SetMasterRegion(value); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(Aws::String&& value) { SetMasterRegion(std::move(value)); return *this;}
 
     /**
-     * <p>For Lambda@Edge functions, the region of the master function. For example,
-     * <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
+     * <p>For Lambda@Edge functions, the AWS Region of the master function. For
+     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
      * <code>FunctionVersion</code> to <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
@@ -131,44 +131,44 @@ namespace Model
 
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListFunctionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListFunctionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Specify the pagination token returned by a previous request to retrieve the
-     * next page of results.</p>
+     * <p>Specify the pagination token that's returned by a previous request to
+     * retrieve the next page of results.</p>
      */
     inline ListFunctionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
 

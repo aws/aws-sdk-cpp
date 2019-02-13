@@ -148,44 +148,44 @@ namespace Model
 
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
 
     /**
-     * <p>Specify a version to delete. You cannot delete a version that is referenced
-     * by an alias.</p>
+     * <p>Specify a version to delete. You can't delete a version that's referenced by
+     * an alias.</p>
      */
     inline DeleteFunctionRequest& WithQualifier(const char* value) { SetQualifier(value); return *this;}
 
