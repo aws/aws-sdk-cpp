@@ -30,6 +30,7 @@ namespace Aws
       namespace ResourceTypeMapper
       {
 
+        static const int client_vpn_endpoint_HASH = HashingUtils::HashString("client-vpn-endpoint");
         static const int customer_gateway_HASH = HashingUtils::HashString("customer-gateway");
         static const int dedicated_host_HASH = HashingUtils::HashString("dedicated-host");
         static const int dhcp_options_HASH = HashingUtils::HashString("dhcp-options");
@@ -62,7 +63,11 @@ namespace Aws
         ResourceType GetResourceTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == customer_gateway_HASH)
+          if (hashCode == client_vpn_endpoint_HASH)
+          {
+            return ResourceType::client_vpn_endpoint;
+          }
+          else if (hashCode == customer_gateway_HASH)
           {
             return ResourceType::customer_gateway;
           }
@@ -184,6 +189,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::client_vpn_endpoint:
+            return "client-vpn-endpoint";
           case ResourceType::customer_gateway:
             return "customer-gateway";
           case ResourceType::dedicated_host:

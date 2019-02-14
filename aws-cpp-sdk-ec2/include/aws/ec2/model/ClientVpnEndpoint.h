@@ -18,12 +18,12 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/ClientVpnEndpointStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/VpnProtocol.h>
 #include <aws/ec2/model/TransportProtocol.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ConnectionLogResponseOptions.h>
-#include <aws/ec2/model/AssociatedTargetNetwork.h>
 #include <aws/ec2/model/ClientVpnAuthentication.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -191,87 +191,80 @@ namespace Model
 
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline const Aws::String& GetDeletionTime() const{ return m_deletionTime; }
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline void SetDeletionTime(const Aws::String& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = value; }
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline void SetDeletionTime(Aws::String&& value) { m_deletionTimeHasBeenSet = true; m_deletionTime = std::move(value); }
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline void SetDeletionTime(const char* value) { m_deletionTimeHasBeenSet = true; m_deletionTime.assign(value); }
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline ClientVpnEndpoint& WithDeletionTime(const Aws::String& value) { SetDeletionTime(value); return *this;}
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline ClientVpnEndpoint& WithDeletionTime(Aws::String&& value) { SetDeletionTime(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time the Client VPN endpoint was deleted, if applicable.
-     * Information about deleted Client VPN endpoints is retained for 24 hours, unless
-     * a new Client VPN is created with the same name.</p>
+     * <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
      */
     inline ClientVpnEndpoint& WithDeletionTime(const char* value) { SetDeletionTime(value); return *this;}
 
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline ClientVpnEndpoint& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline ClientVpnEndpoint& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name to be used by clients when establishing a connection.</p>
+     * <p>The DNS name to be used by clients when connecting to the Client VPN
+     * endpoint.</p>
      */
     inline ClientVpnEndpoint& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
@@ -320,17 +313,58 @@ namespace Model
 
 
     /**
-     * <p> <b>Indicates whether VPN split tunneling is supported.</b> </p>
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline void SetDnsServers(const Aws::Vector<Aws::String>& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline ClientVpnEndpoint& WithDnsServers(const Aws::Vector<Aws::String>& value) { SetDnsServers(value); return *this;}
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline ClientVpnEndpoint& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline ClientVpnEndpoint& AddDnsServers(const Aws::String& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline ClientVpnEndpoint& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Information about the DNS servers to be used for DNS resolution. </p>
+     */
+    inline ClientVpnEndpoint& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
+
+
+    /**
+     * <p>Indicates whether VPN split tunneling is supported.</p>
      */
     inline bool GetSplitTunnel() const{ return m_splitTunnel; }
 
     /**
-     * <p> <b>Indicates whether VPN split tunneling is supported.</b> </p>
+     * <p>Indicates whether VPN split tunneling is supported.</p>
      */
     inline void SetSplitTunnel(bool value) { m_splitTunnelHasBeenSet = true; m_splitTunnel = value; }
 
     /**
-     * <p> <b>Indicates whether VPN split tunneling is supported.</b> </p>
+     * <p>Indicates whether VPN split tunneling is supported.</p>
      */
     inline ClientVpnEndpoint& WithSplitTunnel(bool value) { SetSplitTunnel(value); return *this;}
 
@@ -385,49 +419,6 @@ namespace Model
      * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
      */
     inline ClientVpnEndpoint& WithTransportProtocol(TransportProtocol&& value) { SetTransportProtocol(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline const Aws::Vector<AssociatedTargetNetwork>& GetAssociatedTargetNetworks() const{ return m_associatedTargetNetworks; }
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline void SetAssociatedTargetNetworks(const Aws::Vector<AssociatedTargetNetwork>& value) { m_associatedTargetNetworksHasBeenSet = true; m_associatedTargetNetworks = value; }
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline void SetAssociatedTargetNetworks(Aws::Vector<AssociatedTargetNetwork>&& value) { m_associatedTargetNetworksHasBeenSet = true; m_associatedTargetNetworks = std::move(value); }
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline ClientVpnEndpoint& WithAssociatedTargetNetworks(const Aws::Vector<AssociatedTargetNetwork>& value) { SetAssociatedTargetNetworks(value); return *this;}
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline ClientVpnEndpoint& WithAssociatedTargetNetworks(Aws::Vector<AssociatedTargetNetwork>&& value) { SetAssociatedTargetNetworks(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline ClientVpnEndpoint& AddAssociatedTargetNetworks(const AssociatedTargetNetwork& value) { m_associatedTargetNetworksHasBeenSet = true; m_associatedTargetNetworks.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the associated target networks. A target network is a
-     * subnet in a VPC.</p>
-     */
-    inline ClientVpnEndpoint& AddAssociatedTargetNetworks(AssociatedTargetNetwork&& value) { m_associatedTargetNetworksHasBeenSet = true; m_associatedTargetNetworks.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -539,6 +530,42 @@ namespace Model
      */
     inline ClientVpnEndpoint& WithConnectionLogOptions(ConnectionLogResponseOptions&& value) { SetConnectionLogOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline ClientVpnEndpoint& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline ClientVpnEndpoint& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline ClientVpnEndpoint& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags assigned to the Client VPN endpoint.</p>
+     */
+    inline ClientVpnEndpoint& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clientVpnEndpointId;
@@ -562,6 +589,9 @@ namespace Model
     Aws::String m_clientCidrBlock;
     bool m_clientCidrBlockHasBeenSet;
 
+    Aws::Vector<Aws::String> m_dnsServers;
+    bool m_dnsServersHasBeenSet;
+
     bool m_splitTunnel;
     bool m_splitTunnelHasBeenSet;
 
@@ -571,9 +601,6 @@ namespace Model
     TransportProtocol m_transportProtocol;
     bool m_transportProtocolHasBeenSet;
 
-    Aws::Vector<AssociatedTargetNetwork> m_associatedTargetNetworks;
-    bool m_associatedTargetNetworksHasBeenSet;
-
     Aws::String m_serverCertificateArn;
     bool m_serverCertificateArnHasBeenSet;
 
@@ -582,6 +609,9 @@ namespace Model
 
     ConnectionLogResponseOptions m_connectionLogOptions;
     bool m_connectionLogOptionsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

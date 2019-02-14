@@ -156,7 +156,7 @@ namespace Model
          * metadata, Kinesis Video Streams updates the version. </p> <p>
          * <code>CreateStream</code> is an asynchronous operation.</p> <p>For information
          * about how the service works, see <a
-         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
+         * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
          * it Works</a>. </p> <p>You must have permissions for the
          * <code>KinesisVideo:CreateStream</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">AWS
@@ -170,7 +170,7 @@ namespace Model
          * metadata, Kinesis Video Streams updates the version. </p> <p>
          * <code>CreateStream</code> is an asynchronous operation.</p> <p>For information
          * about how the service works, see <a
-         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
+         * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
          * it Works</a>. </p> <p>You must have permissions for the
          * <code>KinesisVideo:CreateStream</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">AWS
@@ -186,7 +186,7 @@ namespace Model
          * metadata, Kinesis Video Streams updates the version. </p> <p>
          * <code>CreateStream</code> is an asynchronous operation.</p> <p>For information
          * about how the service works, see <a
-         * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
+         * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html">How
          * it Works</a>. </p> <p>You must have permissions for the
          * <code>KinesisVideo:CreateStream</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/CreateStream">AWS
@@ -389,7 +389,7 @@ namespace Model
          * value is optional) that you can define and assign to AWS resources. If you
          * specify a tag that already exists, the tag value is replaced with the value that
          * you specify in the request. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
          * <code>StreamARN</code>.</p> <p>This operation requires permission for the
@@ -405,7 +405,7 @@ namespace Model
          * value is optional) that you can define and assign to AWS resources. If you
          * specify a tag that already exists, the tag value is replaced with the value that
          * you specify in the request. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
          * <code>StreamARN</code>.</p> <p>This operation requires permission for the
@@ -423,7 +423,7 @@ namespace Model
          * value is optional) that you can define and assign to AWS resources. If you
          * specify a tag that already exists, the tag value is replaced with the value that
          * you specify in the request. For more information, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
          * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
          * Guide</i>. </p> <p>You must provide either the <code>StreamName</code> or the
          * <code>StreamARN</code>.</p> <p>This operation requires permission for the

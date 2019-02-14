@@ -218,7 +218,8 @@ namespace Model
      * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
      * You cannot specify this option and the option to assign specific IPv6 addresses
      * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * number of instances to launch.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
 
@@ -227,7 +228,8 @@ namespace Model
      * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
      * You cannot specify this option and the option to assign specific IPv6 addresses
      * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * number of instances to launch.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
@@ -236,7 +238,8 @@ namespace Model
      * interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
      * You cannot specify this option and the option to assign specific IPv6 addresses
      * in the same request. You can specify this option if you've specified a minimum
-     * number of instances to launch.</p>
+     * number of instances to launch.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
 
@@ -246,7 +249,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
 
@@ -255,7 +259,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
 
@@ -264,7 +269,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
 
@@ -273,7 +279,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
 
@@ -282,7 +289,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
 
@@ -291,7 +299,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
@@ -300,7 +309,8 @@ namespace Model
      * associate with the primary network interface. You cannot specify this option and
      * the option to assign a number of IPv6 addresses in the same request. You cannot
      * specify this option if you've specified a minimum number of instances to
-     * launch.</p>
+     * launch.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
 
@@ -616,149 +626,172 @@ namespace Model
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>One or more security group IDs. You can create a security group using
      * <a>CreateSecurityGroup</a>.</p> <p>Default: Amazon EC2 uses the default security
-     * group.</p>
+     * group.</p> <p>You cannot specify this option and the network interfaces option
+     * in the same request.</p>
      */
     inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
      * <p>[EC2-Classic, default VPC] One or more security group names. For a nondefault
-     * VPC, you must use security group IDs instead.</p> <p>Default: Amazon EC2 uses
-     * the default security group.</p>
+     * VPC, you must use security group IDs instead.</p> <p>You cannot specify this
+     * option and the network interfaces option in the same request.</p> <p>Default:
+     * Amazon EC2 uses the default security group.</p>
      */
     inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     * <p>[EC2-VPC] The ID of the subnet to launch the instance into.</p> <p>You cannot
+     * specify this option and the network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -1087,37 +1120,44 @@ namespace Model
 
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces.</p>
+     * <p>One or more network interfaces.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 
@@ -1128,7 +1168,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
 
@@ -1138,7 +1179,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
 
@@ -1148,7 +1190,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
 
@@ -1158,7 +1201,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
 
@@ -1168,7 +1212,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
 
@@ -1178,7 +1223,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
 
@@ -1188,7 +1234,8 @@ namespace Model
      * designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network
      * interface specification. You cannot specify this option if you're launching more
-     * than one instance in the request.</p>
+     * than one instance in the request.</p> <p>You cannot specify this option and the
+     * network interfaces option in the same request.</p>
      */
     inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
 

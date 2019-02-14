@@ -200,19 +200,19 @@ namespace Model
 
     /**
      * <p>The retention period, in hours. The value you specify replaces the current
-     * value.</p>
+     * value. The maximum value for this parameter is 87600 (ten years).</p>
      */
     inline int GetDataRetentionChangeInHours() const{ return m_dataRetentionChangeInHours; }
 
     /**
      * <p>The retention period, in hours. The value you specify replaces the current
-     * value.</p>
+     * value. The maximum value for this parameter is 87600 (ten years).</p>
      */
     inline void SetDataRetentionChangeInHours(int value) { m_dataRetentionChangeInHoursHasBeenSet = true; m_dataRetentionChangeInHours = value; }
 
     /**
      * <p>The retention period, in hours. The value you specify replaces the current
-     * value.</p>
+     * value. The maximum value for this parameter is 87600 (ten years).</p>
      */
     inline UpdateDataRetentionRequest& WithDataRetentionChangeInHours(int value) { SetDataRetentionChangeInHours(value); return *this;}
 

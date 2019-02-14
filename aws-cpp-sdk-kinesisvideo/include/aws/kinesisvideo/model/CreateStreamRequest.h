@@ -17,6 +17,7 @@
 #include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
 #include <aws/kinesisvideo/KinesisVideoRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -142,10 +143,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
 
@@ -156,10 +156,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(const Aws::String& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
 
@@ -170,10 +169,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::move(value); }
 
@@ -184,10 +182,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(const char* value) { m_mediaTypeHasBeenSet = true; m_mediaType.assign(value); }
 
@@ -198,10 +195,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(const Aws::String& value) { SetMediaType(value); return *this;}
 
@@ -212,10 +208,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(Aws::String&& value) { SetMediaType(std::move(value)); return *this;}
 
@@ -226,10 +221,9 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>To play video on the console, the media must be H.264
-     * encoded, and you need to specify this video type in this parameter as
-     * <code>video/h264</code>. </p> <p>This parameter is optional; the default value
-     * is <code>null</code> (or empty in JSON).</p>
+     * for guidelines.</p> <p>Example valid values include "video/h264" and
+     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(const char* value) { SetMediaType(value); return *this;}
 
@@ -239,7 +233,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
@@ -249,7 +243,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
@@ -259,7 +253,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
@@ -269,7 +263,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
@@ -279,7 +273,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
@@ -289,7 +283,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
@@ -299,7 +293,7 @@ namespace Model
      * Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified,
      * the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is
      * used.</p> <p> For more information, see <a
-     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
+     * href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">DescribeKey</a>.
      * </p>
      */
     inline CreateStreamRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
@@ -341,6 +335,79 @@ namespace Model
      */
     inline CreateStreamRequest& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
 
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A list of tags to associate with the specified stream. Each tag is a
+     * key-value pair (the value is optional).</p>
+     */
+    inline CreateStreamRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_deviceName;
@@ -357,6 +424,9 @@ namespace Model
 
     int m_dataRetentionInHours;
     bool m_dataRetentionInHoursHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

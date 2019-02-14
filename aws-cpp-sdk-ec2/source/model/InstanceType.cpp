@@ -174,6 +174,7 @@ namespace Aws
         static const int m5_4xlarge_HASH = HashingUtils::HashString("m5.4xlarge");
         static const int m5_12xlarge_HASH = HashingUtils::HashString("m5.12xlarge");
         static const int m5_24xlarge_HASH = HashingUtils::HashString("m5.24xlarge");
+        static const int m5_metal_HASH = HashingUtils::HashString("m5.metal");
         static const int m5a_large_HASH = HashingUtils::HashString("m5a.large");
         static const int m5a_xlarge_HASH = HashingUtils::HashString("m5a.xlarge");
         static const int m5a_2xlarge_HASH = HashingUtils::HashString("m5a.2xlarge");
@@ -186,6 +187,7 @@ namespace Aws
         static const int m5d_4xlarge_HASH = HashingUtils::HashString("m5d.4xlarge");
         static const int m5d_12xlarge_HASH = HashingUtils::HashString("m5d.12xlarge");
         static const int m5d_24xlarge_HASH = HashingUtils::HashString("m5d.24xlarge");
+        static const int m5d_metal_HASH = HashingUtils::HashString("m5d.metal");
         static const int h1_2xlarge_HASH = HashingUtils::HashString("h1.2xlarge");
         static const int h1_4xlarge_HASH = HashingUtils::HashString("h1.4xlarge");
         static const int h1_8xlarge_HASH = HashingUtils::HashString("h1.8xlarge");
@@ -196,6 +198,7 @@ namespace Aws
         static const int z1d_3xlarge_HASH = HashingUtils::HashString("z1d.3xlarge");
         static const int z1d_6xlarge_HASH = HashingUtils::HashString("z1d.6xlarge");
         static const int z1d_12xlarge_HASH = HashingUtils::HashString("z1d.12xlarge");
+        static const int z1d_metal_HASH = HashingUtils::HashString("z1d.metal");
         static const int u_6tb1_metal_HASH = HashingUtils::HashString("u-6tb1.metal");
         static const int u_9tb1_metal_HASH = HashingUtils::HashString("u-9tb1.metal");
         static const int u_12tb1_metal_HASH = HashingUtils::HashString("u-12tb1.metal");
@@ -936,6 +939,11 @@ namespace Aws
             enumValue = InstanceType::m5_24xlarge;
             return true;
           }
+          else if (hashCode == m5_metal_HASH)
+          {
+            enumValue = InstanceType::m5_metal;
+            return true;
+          }
           else if (hashCode == m5a_large_HASH)
           {
             enumValue = InstanceType::m5a_large;
@@ -996,6 +1004,11 @@ namespace Aws
             enumValue = InstanceType::m5d_24xlarge;
             return true;
           }
+          else if (hashCode == m5d_metal_HASH)
+          {
+            enumValue = InstanceType::m5d_metal;
+            return true;
+          }
           else if (hashCode == h1_2xlarge_HASH)
           {
             enumValue = InstanceType::h1_2xlarge;
@@ -1044,6 +1057,11 @@ namespace Aws
           else if (hashCode == z1d_12xlarge_HASH)
           {
             enumValue = InstanceType::z1d_12xlarge;
+            return true;
+          }
+          else if (hashCode == z1d_metal_HASH)
+          {
+            enumValue = InstanceType::z1d_metal;
             return true;
           }
           else if (hashCode == u_6tb1_metal_HASH)
@@ -1533,6 +1551,9 @@ namespace Aws
           case InstanceType::m5_24xlarge:
             value = "m5.24xlarge";
             return true;
+          case InstanceType::m5_metal:
+            value = "m5.metal";
+            return true;
           case InstanceType::m5a_large:
             value = "m5a.large";
             return true;
@@ -1569,6 +1590,9 @@ namespace Aws
           case InstanceType::m5d_24xlarge:
             value = "m5d.24xlarge";
             return true;
+          case InstanceType::m5d_metal:
+            value = "m5d.metal";
+            return true;
           case InstanceType::h1_2xlarge:
             value = "h1.2xlarge";
             return true;
@@ -1598,6 +1622,9 @@ namespace Aws
             return true;
           case InstanceType::z1d_12xlarge:
             value = "z1d.12xlarge";
+            return true;
+          case InstanceType::z1d_metal:
+            value = "z1d.metal";
             return true;
           case InstanceType::u_6tb1_metal:
             value = "u-6tb1.metal";

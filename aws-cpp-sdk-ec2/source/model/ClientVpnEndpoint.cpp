@@ -38,16 +38,17 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_deletionTimeHasBeenSet(false),
     m_dnsNameHasBeenSet(false),
     m_clientCidrBlockHasBeenSet(false),
+    m_dnsServersHasBeenSet(false),
     m_splitTunnel(false),
     m_splitTunnelHasBeenSet(false),
     m_vpnProtocol(VpnProtocol::NOT_SET),
     m_vpnProtocolHasBeenSet(false),
     m_transportProtocol(TransportProtocol::NOT_SET),
     m_transportProtocolHasBeenSet(false),
-    m_associatedTargetNetworksHasBeenSet(false),
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false)
+    m_connectionLogOptionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,16 +60,17 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_deletionTimeHasBeenSet(false),
     m_dnsNameHasBeenSet(false),
     m_clientCidrBlockHasBeenSet(false),
+    m_dnsServersHasBeenSet(false),
     m_splitTunnel(false),
     m_splitTunnelHasBeenSet(false),
     m_vpnProtocol(VpnProtocol::NOT_SET),
     m_vpnProtocolHasBeenSet(false),
     m_transportProtocol(TransportProtocol::NOT_SET),
     m_transportProtocolHasBeenSet(false),
-    m_associatedTargetNetworksHasBeenSet(false),
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
-    m_connectionLogOptionsHasBeenSet(false)
+    m_connectionLogOptionsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -121,6 +123,18 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
       m_clientCidrBlock = StringUtils::Trim(clientCidrBlockNode.GetText().c_str());
       m_clientCidrBlockHasBeenSet = true;
     }
+    XmlNode dnsServersNode = resultNode.FirstChild("dnsServer");
+    if(!dnsServersNode.IsNull())
+    {
+      XmlNode dnsServersMember = dnsServersNode.FirstChild("item");
+      while(!dnsServersMember.IsNull())
+      {
+        m_dnsServers.push_back(StringUtils::Trim(dnsServersMember.GetText().c_str()));
+        dnsServersMember = dnsServersMember.NextNode("item");
+      }
+
+      m_dnsServersHasBeenSet = true;
+    }
     XmlNode splitTunnelNode = resultNode.FirstChild("splitTunnel");
     if(!splitTunnelNode.IsNull())
     {
@@ -138,18 +152,6 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(transportProtocolNode.GetText().c_str()).c_str());
       m_transportProtocolHasBeenSet = true;
-    }
-    XmlNode associatedTargetNetworksNode = resultNode.FirstChild("associatedTargetNetwork");
-    if(!associatedTargetNetworksNode.IsNull())
-    {
-      XmlNode associatedTargetNetworksMember = associatedTargetNetworksNode.FirstChild("item");
-      while(!associatedTargetNetworksMember.IsNull())
-      {
-        m_associatedTargetNetworks.push_back(associatedTargetNetworksMember);
-        associatedTargetNetworksMember = associatedTargetNetworksMember.NextNode("item");
-      }
-
-      m_associatedTargetNetworksHasBeenSet = true;
     }
     XmlNode serverCertificateArnNode = resultNode.FirstChild("serverCertificateArn");
     if(!serverCertificateArnNode.IsNull())
@@ -174,6 +176,18 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_connectionLogOptions = connectionLogOptionsNode;
       m_connectionLogOptionsHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -219,6 +233,15 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".ClientCidrBlock=" << StringUtils::URLEncode(m_clientCidrBlock.c_str()) << "&";
   }
 
+  if(m_dnsServersHasBeenSet)
+  {
+      unsigned dnsServersIdx = 1;
+      for(auto& item : m_dnsServers)
+      {
+        oStream << location << index << locationValue << ".DnsServer." << dnsServersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
   if(m_splitTunnelHasBeenSet)
   {
       oStream << location << index << locationValue << ".SplitTunnel=" << std::boolalpha << m_splitTunnel << "&";
@@ -232,17 +255,6 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_transportProtocolHasBeenSet)
   {
       oStream << location << index << locationValue << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
-  }
-
-  if(m_associatedTargetNetworksHasBeenSet)
-  {
-      unsigned associatedTargetNetworksIdx = 1;
-      for(auto& item : m_associatedTargetNetworks)
-      {
-        Aws::StringStream associatedTargetNetworksSs;
-        associatedTargetNetworksSs << location << index << locationValue << ".AssociatedTargetNetwork." << associatedTargetNetworksIdx++;
-        item.OutputToStream(oStream, associatedTargetNetworksSs.str().c_str());
-      }
   }
 
   if(m_serverCertificateArnHasBeenSet)
@@ -266,6 +278,17 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::StringStream connectionLogOptionsLocationAndMemberSs;
       connectionLogOptionsLocationAndMemberSs << location << index << locationValue << ".ConnectionLogOptions";
       m_connectionLogOptions.OutputToStream(oStream, connectionLogOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 
 }
@@ -302,6 +325,14 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   {
       oStream << location << ".ClientCidrBlock=" << StringUtils::URLEncode(m_clientCidrBlock.c_str()) << "&";
   }
+  if(m_dnsServersHasBeenSet)
+  {
+      unsigned dnsServersIdx = 1;
+      for(auto& item : m_dnsServers)
+      {
+        oStream << location << ".DnsServer." << dnsServersIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
   if(m_splitTunnelHasBeenSet)
   {
       oStream << location << ".SplitTunnel=" << std::boolalpha << m_splitTunnel << "&";
@@ -313,16 +344,6 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_transportProtocolHasBeenSet)
   {
       oStream << location << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
-  }
-  if(m_associatedTargetNetworksHasBeenSet)
-  {
-      unsigned associatedTargetNetworksIdx = 1;
-      for(auto& item : m_associatedTargetNetworks)
-      {
-        Aws::StringStream associatedTargetNetworksSs;
-        associatedTargetNetworksSs << location <<  ".AssociatedTargetNetwork." << associatedTargetNetworksIdx++;
-        item.OutputToStream(oStream, associatedTargetNetworksSs.str().c_str());
-      }
   }
   if(m_serverCertificateArnHasBeenSet)
   {
@@ -343,6 +364,16 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       Aws::String connectionLogOptionsLocationAndMember(location);
       connectionLogOptionsLocationAndMember += ".ConnectionLogOptions";
       m_connectionLogOptions.OutputToStream(oStream, connectionLogOptionsLocationAndMember.c_str());
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 
