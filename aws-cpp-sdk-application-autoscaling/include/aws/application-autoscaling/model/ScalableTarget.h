@@ -475,33 +475,33 @@ namespace Model
 
 
     /**
-     * <p>The minimum value to scale to in response to a scale in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
-     * <p>The minimum value to scale to in response to a scale in event.</p>
+     * <p>The minimum value to scale to in response to a scale-in event.</p>
      */
     inline ScalableTarget& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 
 
     /**
-     * <p>The maximum value to scale to in response to a scale out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.</p>
      */
     inline void SetMaxCapacity(int value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>The maximum value to scale to in response to a scale out event.</p>
+     * <p>The maximum value to scale to in response to a scale-out event.</p>
      */
     inline ScalableTarget& WithMaxCapacity(int value) { SetMaxCapacity(value); return *this;}
 

@@ -163,22 +163,22 @@ namespace Model
    * href="http://aws.amazon.com/developer/">AWS Developer Center</a>.</p> </dd>
    * <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make
    * API calls. For information about setting up the AWS CLI, see <a
-   * href="http://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
+   * href="https://docs.aws.amazon.com/cli/latest/userguide/installing.html">Installing
    * the AWS Command Line Interface</a> in the <i>AWS Command Line Interface User
    * Guide</i>. For a list of available Amazon Chime commands, see the <a
-   * href="http://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
+   * href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
    * Chime commands</a> in the <i>AWS CLI Command Reference</i>.</p> </dd> <dt>Using
    * REST API</dt> <dd> <p>If you use REST to make API calls, you must authenticate
    * your request by providing a signature. Amazon Chime supports signature version
    * 4. For more information, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a> in the <i>Amazon Web Services General
    * Reference</i>.</p> <p>When making REST API calls, use the service name
    * <code>chime</code> and REST endpoint
    * <code>https://service.chime.aws.amazon.com</code>.</p> </dd> </dl>
    * <p>Administrative permissions are controlled using AWS Identity and Access
    * Management (IAM). For more information, see <a
-   * href="http://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
+   * href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
    * Access to the Amazon Chime Console</a> in the <i>Amazon Chime Administration
    * Guide</i>.</p>
    */
@@ -215,7 +215,7 @@ namespace Model
          * <p>Suspends up to 50 users from a <code>Team</code> or
          * <code>EnterpriseLWA</code> Amazon Chime account. For more information about
          * different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
          * dissociated from the account, but they can continue to use Amazon Chime as free
@@ -236,7 +236,7 @@ namespace Model
          * <p>Suspends up to 50 users from a <code>Team</code> or
          * <code>EnterpriseLWA</code> Amazon Chime account. For more information about
          * different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
          * dissociated from the account, but they can continue to use Amazon Chime as free
@@ -259,7 +259,7 @@ namespace Model
          * <p>Suspends up to 50 users from a <code>Team</code> or
          * <code>EnterpriseLWA</code> Amazon Chime account. For more information about
          * different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Users suspended from a <code>Team</code> account are
          * dissociated from the account, but they can continue to use Amazon Chime as free
@@ -283,7 +283,7 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
@@ -298,7 +298,7 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
@@ -315,7 +315,7 @@ namespace Model
          * specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on
          * <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p> <p>Previously suspended users who are unsuspended using this
          * action are returned to <code>Registered</code> status. Users who are not
@@ -365,7 +365,7 @@ namespace Model
          * <p>Creates an Amazon Chime account under the administrator's AWS account. Only
          * <code>Team</code> account types are currently supported for this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAccount">AWS
@@ -377,7 +377,7 @@ namespace Model
          * <p>Creates an Amazon Chime account under the administrator's AWS account. Only
          * <code>Team</code> account types are currently supported for this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAccount">AWS
@@ -391,7 +391,7 @@ namespace Model
          * <p>Creates an Amazon Chime account under the administrator's AWS account. Only
          * <code>Team</code> account types are currently supported for this action. For
          * more information about different account types, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+         * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
          * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAccount">AWS
@@ -484,7 +484,7 @@ namespace Model
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dial out settings. For more information about these settings,
-         * see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
@@ -495,7 +495,7 @@ namespace Model
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dial out settings. For more information about these settings,
-         * see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
@@ -508,7 +508,7 @@ namespace Model
         /**
          * <p>Retrieves account settings for the specified Amazon Chime account ID, such as
          * remote control and dial out settings. For more information about these settings,
-         * see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
          * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAccountSettings">AWS
@@ -742,8 +742,8 @@ namespace Model
          * <p>Updates the settings for the specified Amazon Chime account. You can update
          * settings for remote control of shared screens, or for the dial-out option. For
          * more information about these settings, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies
-         * Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
@@ -754,8 +754,8 @@ namespace Model
          * <p>Updates the settings for the specified Amazon Chime account. You can update
          * settings for remote control of shared screens, or for the dial-out option. For
          * more information about these settings, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies
-         * Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
@@ -768,8 +768,8 @@ namespace Model
          * <p>Updates the settings for the specified Amazon Chime account. You can update
          * settings for remote control of shared screens, or for the dial-out option. For
          * more information about these settings, see <a
-         * href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies
-         * Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
+         * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+         * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAccountSettings">AWS
          * API Reference</a></p>

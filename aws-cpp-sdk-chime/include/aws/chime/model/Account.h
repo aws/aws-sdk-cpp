@@ -163,7 +163,7 @@ namespace Model
     /**
      * <p>The Amazon Chime account type. For more information about different account
      * types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The Amazon Chime account type. For more information about different account
      * types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */
@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p>The Amazon Chime account type. For more information about different account
      * types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */
@@ -190,7 +190,7 @@ namespace Model
     /**
      * <p>The Amazon Chime account type. For more information about different account
      * types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>The Amazon Chime account type. For more information about different account
      * types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
      * Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration
      * Guide</i>.</p>
      */

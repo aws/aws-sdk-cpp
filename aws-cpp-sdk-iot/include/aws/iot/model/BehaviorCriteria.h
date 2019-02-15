@@ -51,31 +51,31 @@ namespace Model
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (<code>value</code>).</p>
+     * criteria (containing a <code>value</code>.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (<code>value</code>).</p>
+     * criteria (containing a <code>value</code>.</p>
      */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (<code>value</code>).</p>
+     * criteria (containing a <code>value</code>.</p>
      */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (<code>value</code>).</p>
+     * criteria (containing a <code>value</code>.</p>
      */
     inline BehaviorCriteria& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (<code>value</code>).</p>
+     * criteria (containing a <code>value</code>.</p>
      */
     inline BehaviorCriteria& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
@@ -107,23 +107,23 @@ namespace Model
 
 
     /**
-     * <p>Use this to specify the period of time over which the behavior is evaluated,
+     * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>).</p>
+     * <code>NUM_MESSAGES_SENT</code>). </p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
-     * <p>Use this to specify the period of time over which the behavior is evaluated,
+     * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>).</p>
+     * <code>NUM_MESSAGES_SENT</code>). </p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
-     * <p>Use this to specify the period of time over which the behavior is evaluated,
+     * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>).</p>
+     * <code>NUM_MESSAGES_SENT</code>). </p>
      */
     inline BehaviorCriteria& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

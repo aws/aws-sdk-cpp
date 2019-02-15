@@ -476,12 +476,11 @@ namespace Model
 
 
     /**
-     * <p>The scalable dimension. This parameter is required if you are creating a
-     * scheduled action. This string consists of the service namespace, resource type,
-     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
-     * The desired task count of an ECS service.</p> </li> <li> <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -505,12 +504,11 @@ namespace Model
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
     /**
-     * <p>The scalable dimension. This parameter is required if you are creating a
-     * scheduled action. This string consists of the service namespace, resource type,
-     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
-     * The desired task count of an ECS service.</p> </li> <li> <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -534,12 +532,11 @@ namespace Model
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
     /**
-     * <p>The scalable dimension. This parameter is required if you are creating a
-     * scheduled action. This string consists of the service namespace, resource type,
-     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
-     * The desired task count of an ECS service.</p> </li> <li> <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -563,12 +560,11 @@ namespace Model
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
     /**
-     * <p>The scalable dimension. This parameter is required if you are creating a
-     * scheduled action. This string consists of the service namespace, resource type,
-     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
-     * The desired task count of an ECS service.</p> </li> <li> <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an
@@ -592,12 +588,11 @@ namespace Model
     inline PutScheduledActionRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
     /**
-     * <p>The scalable dimension. This parameter is required if you are creating a
-     * scheduled action. This string consists of the service namespace, resource type,
-     * and scaling property.</p> <ul> <li> <p> <code>ecs:service:DesiredCount</code> -
-     * The desired task count of an ECS service.</p> </li> <li> <p>
-     * <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a
-     * Spot fleet request.</p> </li> <li> <p>
+     * <p>The scalable dimension. This string consists of the service namespace,
+     * resource type, and scaling property.</p> <ul> <li> <p>
+     * <code>ecs:service:DesiredCount</code> - The desired task count of an ECS
+     * service.</p> </li> <li> <p> <code>ec2:spot-fleet-request:TargetCapacity</code> -
+     * The target capacity of a Spot fleet request.</p> </li> <li> <p>
      * <code>elasticmapreduce:instancegroup:InstanceCount</code> - The instance count
      * of an EMR Instance Group.</p> </li> <li> <p>
      * <code>appstream:fleet:DesiredCapacity</code> - The desired capacity of an

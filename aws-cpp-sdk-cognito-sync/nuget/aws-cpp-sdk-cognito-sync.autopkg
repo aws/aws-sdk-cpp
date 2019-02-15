@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-CognitoSync;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20140630.50;
+        version : 1.7.20140630.51;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Cognito Sync);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.50
+            AWSSDKCPP-Core/1.7.51
        }
     }
 

@@ -51,49 +51,49 @@ namespace Model
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSql() const{ return m_sql; }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(const Aws::String& value) { SetSql(value); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(const char* value) { SetSql(value); return *this;}

@@ -864,10 +864,10 @@ namespace Model
    * with each device (Registry), configure logging, and create and manage policies
    * and credentials to authenticate devices.</p> <p>For more information about how
    * AWS IoT works, see the <a
-   * href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer
    * Guide</a>.</p> <p>For information about how to use the credentials provider for
    * AWS IoT, see <a
-   * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
+   * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing
    * Direct Calls to AWS Services</a>.</p>
    */
   class AWS_IOT_API IoTClient : public Aws::Client::AWSJsonClient
@@ -1728,7 +1728,7 @@ namespace Model
         /**
          * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
          * operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -1739,7 +1739,7 @@ namespace Model
         /**
          * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
          * operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -1752,7 +1752,7 @@ namespace Model
         /**
          * <p>Creates a thing record in the registry.</p> <note> <p>This is a control plane
          * operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThing">AWS API
@@ -1764,7 +1764,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
@@ -1774,7 +1774,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS
@@ -1786,7 +1786,7 @@ namespace Model
 
         /**
          * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a
-         * href="http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
+         * href="https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html">Authorization</a>
          * for information about authorizing control plane actions.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateThingGroup">AWS

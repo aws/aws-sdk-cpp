@@ -127,7 +127,7 @@ namespace Model
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
      * SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
      * refer to their official documentation.</p>
      */
     inline const MessageFormat& GetMessageFormat() const{ return m_messageFormat; }
@@ -138,7 +138,7 @@ namespace Model
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
      * SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
      * refer to their official documentation.</p>
      */
     inline void SetMessageFormat(const MessageFormat& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
@@ -149,7 +149,7 @@ namespace Model
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
      * SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
      * refer to their official documentation.</p>
      */
     inline void SetMessageFormat(MessageFormat&& value) { m_messageFormatHasBeenSet = true; m_messageFormat = std::move(value); }
@@ -160,7 +160,7 @@ namespace Model
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
      * SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
      * refer to their official documentation.</p>
      */
     inline SnsAction& WithMessageFormat(const MessageFormat& value) { SetMessageFormat(value); return *this;}
@@ -171,7 +171,7 @@ namespace Model
      * setting to determine if the payload should be parsed and relevant
      * platform-specific bits of the payload should be extracted. To read more about
      * SNS message formats, see <a
-     * href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
+     * href="https://docs.aws.amazon.com/sns/latest/dg/json-formats.html">https://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a>
      * refer to their official documentation.</p>
      */
     inline SnsAction& WithMessageFormat(MessageFormat&& value) { SetMessageFormat(std::move(value)); return *this;}

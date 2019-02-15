@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the dimension of a metric.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the dimension names and values associated with a
+   * metric.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/MetricDimension">AWS
    * API Reference</a></p>
    */

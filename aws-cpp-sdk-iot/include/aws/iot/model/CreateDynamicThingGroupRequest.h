@@ -152,49 +152,49 @@ namespace Model
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline CreateDynamicThingGroupRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline CreateDynamicThingGroupRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
      * <p>The dynamic thing group search query string.</p> <p>See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query
      * Syntax</a> for information about query string syntax.</p>
      */
     inline CreateDynamicThingGroupRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}

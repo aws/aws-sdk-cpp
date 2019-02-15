@@ -470,79 +470,79 @@ namespace Model
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was created.</p>
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was created.</p>
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was created.</p>
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was created.</p>
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline Job& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was created.</p>
+     * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
     inline Job& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was last updated.</p>
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was last updated.</p>
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was last updated.</p>
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was last updated.</p>
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
     inline Job& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was last updated.</p>
+     * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
     inline Job& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was completed.</p>
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was completed.</p>
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline void SetCompletedAt(const Aws::Utils::DateTime& value) { m_completedAtHasBeenSet = true; m_completedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was completed.</p>
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline void SetCompletedAt(Aws::Utils::DateTime&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was completed.</p>
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline Job& WithCompletedAt(const Aws::Utils::DateTime& value) { SetCompletedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job was completed.</p>
+     * <p>The time, in seconds since the epoch, when the job was completed.</p>
      */
     inline Job& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
 

@@ -194,49 +194,49 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline const Aws::String& GetMetricUnit() const{ return m_metricUnit; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline void SetMetricUnit(const Aws::String& value) { m_metricUnitHasBeenSet = true; m_metricUnit = value; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline void SetMetricUnit(Aws::String&& value) { m_metricUnitHasBeenSet = true; m_metricUnit = std::move(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline void SetMetricUnit(const char* value) { m_metricUnitHasBeenSet = true; m_metricUnit.assign(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline CloudwatchMetricAction& WithMetricUnit(const Aws::String& value) { SetMetricUnit(value); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline CloudwatchMetricAction& WithMetricUnit(Aws::String&& value) { SetMetricUnit(std::move(value)); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric
      * unit</a> supported by CloudWatch.</p>
      */
     inline CloudwatchMetricAction& WithMetricUnit(const char* value) { SetMetricUnit(value); return *this;}
@@ -244,49 +244,49 @@ namespace Model
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline const Aws::String& GetMetricTimestamp() const{ return m_metricTimestamp; }
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline void SetMetricTimestamp(const Aws::String& value) { m_metricTimestampHasBeenSet = true; m_metricTimestamp = value; }
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline void SetMetricTimestamp(Aws::String&& value) { m_metricTimestampHasBeenSet = true; m_metricTimestamp = std::move(value); }
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline void SetMetricTimestamp(const char* value) { m_metricTimestampHasBeenSet = true; m_metricTimestamp.assign(value); }
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline CloudwatchMetricAction& WithMetricTimestamp(const Aws::String& value) { SetMetricTimestamp(value); return *this;}
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline CloudwatchMetricAction& WithMetricTimestamp(Aws::String&& value) { SetMetricTimestamp(std::move(value)); return *this;}
 
     /**
      * <p>An optional <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix
      * timestamp</a>.</p>
      */
     inline CloudwatchMetricAction& WithMetricTimestamp(const char* value) { SetMetricTimestamp(value); return *this;}
