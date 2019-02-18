@@ -662,6 +662,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     if (!httpResponse)
     {
         error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        error.SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
