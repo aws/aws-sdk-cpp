@@ -48,7 +48,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -65,7 +65,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -82,7 +82,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -99,7 +99,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -116,7 +116,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -133,7 +133,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has
@@ -150,7 +150,7 @@ namespace Model
      * <p>The identifier of the secret whose details you want to retrieve. You can
      * specify either the Amazon Resource Name (ARN) or the friendly name of the
      * secret.</p> <note> <p>If you specify an ARN, we generally recommend that you
-     * specify a complete ARN. You can specify a partial ARN too—for example, if you
+     * specify a complete ARN. You can specify a partial ARN too���for example, if you
      * don’t include the final hyphen and six random characters that Secrets Manager
      * adds at the end of the ARN when you created the secret. A partial ARN match can
      * work as long as it uniquely matches only one secret. However, if your secret has

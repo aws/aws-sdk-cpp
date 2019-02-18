@@ -432,7 +432,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -453,7 +453,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -474,7 +474,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -495,7 +495,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -516,7 +516,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -537,7 +537,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the
@@ -558,7 +558,7 @@ namespace Model
      * recommend that you use a JSON text string argument and specify key/value pairs.
      * For information on how to format a JSON parameter for the various command line
      * tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p> <p> For
      * example:</p> <p> <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
      * </p> <p>If your command-line tool or SDK requires quotation marks around the

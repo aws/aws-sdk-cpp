@@ -102,6 +102,42 @@ namespace Model
      */
     inline ListQueryExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline ListQueryExecutionsRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline ListQueryExecutionsRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workgroup from which queries are being returned.</p>
+     */
+    inline ListQueryExecutionsRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -109,6 +145,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::String m_workGroup;
+    bool m_workGroupHasBeenSet;
   };
 
 } // namespace Model

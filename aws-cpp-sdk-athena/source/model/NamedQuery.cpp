@@ -33,7 +33,8 @@ NamedQuery::NamedQuery() :
     m_descriptionHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_queryStringHasBeenSet(false),
-    m_namedQueryIdHasBeenSet(false)
+    m_namedQueryIdHasBeenSet(false),
+    m_workGroupHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ NamedQuery::NamedQuery(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_queryStringHasBeenSet(false),
-    m_namedQueryIdHasBeenSet(false)
+    m_namedQueryIdHasBeenSet(false),
+    m_workGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,13 @@ NamedQuery& NamedQuery::operator =(JsonView jsonValue)
     m_namedQueryIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkGroup"))
+  {
+    m_workGroup = jsonValue.GetString("WorkGroup");
+
+    m_workGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +127,12 @@ JsonValue NamedQuery::Jsonize() const
   if(m_namedQueryIdHasBeenSet)
   {
    payload.WithString("NamedQueryId", m_namedQueryId);
+
+  }
+
+  if(m_workGroupHasBeenSet)
+  {
+   payload.WithString("WorkGroup", m_workGroup);
 
   }
 

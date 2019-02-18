@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A query, where <code>QueryString</code> is the SQL query statements that
-   * comprise the query.</p><p><h3>See Also:</h3>   <a
+   * <p>A query, where <code>QueryString</code> is the list of SQL query statements
+   * that comprise the query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NamedQuery">AWS
    * API Reference</a></p>
    */
@@ -49,73 +49,73 @@ namespace Model
 
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline NamedQuery& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline NamedQuery& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The plain-language name of the query.</p>
+     * <p>The query name.</p>
      */
     inline NamedQuery& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline NamedQuery& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline NamedQuery& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief description of the query.</p>
+     * <p>The query description.</p>
      */
     inline NamedQuery& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -227,6 +227,42 @@ namespace Model
      */
     inline NamedQuery& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
 
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline NamedQuery& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline NamedQuery& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workgroup that contains the named query.</p>
+     */
+    inline NamedQuery& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -243,6 +279,9 @@ namespace Model
 
     Aws::String m_namedQueryId;
     bool m_namedQueryIdHasBeenSet;
+
+    Aws::String m_workGroup;
+    bool m_workGroupHasBeenSet;
   };
 
 } // namespace Model

@@ -55,9 +55,9 @@ namespace Model
      * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
      * that the query has been submitted to the service, and Athena will execute the
      * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without error. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing.<code>CANCELLED</code>
-     * indicates that user input interrupted query execution. </p>
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
      */
     inline const QueryExecutionState& GetState() const{ return m_state; }
 
@@ -66,9 +66,9 @@ namespace Model
      * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
      * that the query has been submitted to the service, and Athena will execute the
      * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without error. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing.<code>CANCELLED</code>
-     * indicates that user input interrupted query execution. </p>
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
      */
     inline void SetState(const QueryExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -77,9 +77,9 @@ namespace Model
      * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
      * that the query has been submitted to the service, and Athena will execute the
      * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without error. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing.<code>CANCELLED</code>
-     * indicates that user input interrupted query execution. </p>
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
      */
     inline void SetState(QueryExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -88,9 +88,9 @@ namespace Model
      * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
      * that the query has been submitted to the service, and Athena will execute the
      * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without error. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing.<code>CANCELLED</code>
-     * indicates that user input interrupted query execution. </p>
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
      */
     inline QueryExecutionStatus& WithState(const QueryExecutionState& value) { SetState(value); return *this;}
 
@@ -99,9 +99,9 @@ namespace Model
      * used by Athena and is reserved for future use. <code>RUNNING</code> indicates
      * that the query has been submitted to the service, and Athena will execute the
      * query as soon as resources are available. <code>SUCCEEDED</code> indicates that
-     * the query completed without error. <code>FAILED</code> indicates that the query
-     * experienced an error and did not complete processing.<code>CANCELLED</code>
-     * indicates that user input interrupted query execution. </p>
+     * the query completed without errors. <code>FAILED</code> indicates that the query
+     * experienced an error and did not complete processing. <code>CANCELLED</code>
+     * indicates that a user input interrupted query execution. </p>
      */
     inline QueryExecutionStatus& WithState(QueryExecutionState&& value) { SetState(std::move(value)); return *this;}
 

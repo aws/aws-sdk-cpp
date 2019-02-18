@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
@@ -90,7 +90,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline SecretListEntry& WithARN(const Aws::String& value) { SetARN(value); return *this;}
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline SecretListEntry& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
@@ -106,7 +106,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p> <p>For more information
      * about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy
      * Resources</a> in the <i>AWS Secrets Manager User Guide</i>.</p>
      */
     inline SecretListEntry& WithARN(const char* value) { SetARN(value); return *this;}

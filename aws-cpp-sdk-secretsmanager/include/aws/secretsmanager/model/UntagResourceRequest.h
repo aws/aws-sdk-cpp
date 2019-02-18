@@ -170,7 +170,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
@@ -180,7 +180,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
@@ -190,7 +190,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
@@ -200,7 +200,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline UntagResourceRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
@@ -210,7 +210,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline UntagResourceRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
@@ -220,7 +220,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
@@ -230,7 +230,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline UntagResourceRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
@@ -240,7 +240,7 @@ namespace Model
      * value. Both the key and its associated value are removed.</p> <p>This parameter
      * to the API requires a JSON text string argument. For information on how to
      * format a JSON parameter for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
      */
     inline UntagResourceRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
