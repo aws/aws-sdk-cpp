@@ -36,7 +36,8 @@ CreateMaintenanceWindowRequest::CreateMaintenanceWindowRequest() :
     m_allowUnassociatedTargets(false),
     m_allowUnassociatedTargetsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,17 @@ Aws::String CreateMaintenanceWindowRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("ClientToken", m_clientToken);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

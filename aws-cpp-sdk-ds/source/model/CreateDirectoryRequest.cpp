@@ -29,7 +29,8 @@ CreateDirectoryRequest::CreateDirectoryRequest() :
     m_descriptionHasBeenSet(false),
     m_size(DirectorySize::NOT_SET),
     m_sizeHasBeenSet(false),
-    m_vpcSettingsHasBeenSet(false)
+    m_vpcSettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,17 @@ Aws::String CreateDirectoryRequest::SerializePayload() const
   if(m_vpcSettingsHasBeenSet)
   {
    payload.WithObject("VpcSettings", m_vpcSettings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

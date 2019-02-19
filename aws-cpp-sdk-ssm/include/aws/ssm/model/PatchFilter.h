@@ -55,7 +55,8 @@ namespace Model
    * </p> </li> <li> <p> <code>WindowsServer2008R2</code> </p> </li> <li> <p>
    * <code>WindowsServer2012</code> </p> </li> <li> <p>
    * <code>WindowsServer2012R2</code> </p> </li> <li> <p>
-   * <code>WindowsServer2016</code> </p> </li> <li> <p> <code>*</code> </p> <p>
+   * <code>WindowsServer2016</code> </p> </li> <li> <p>
+   * <code>WindowsServer2019</code> </p> </li> <li> <p> <code>*</code> </p> <p>
    * <i>Use a wildcard character (*) to target all supported operating system
    * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
@@ -138,7 +139,9 @@ namespace Model
    * <code>RedhatEnterpriseLinux7.1</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.2</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.3</code> </p> </li> <li> <p>
-   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p> <code>*</code> </p>
+   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p>
+   * <code>RedhatEnterpriseLinux7.5</code> </p> </li> <li> <p>
+   * <code>RedhatEnterpriseLinux7.6</code> </p> </li> <li> <p> <code>*</code> </p>
    * <p> <i>Use a wildcard character (*) to target all supported operating system
    * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>

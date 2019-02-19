@@ -31,7 +31,8 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_documentTypeHasBeenSet(false),
     m_documentFormat(DocumentFormat::NOT_SET),
     m_documentFormatHasBeenSet(false),
-    m_targetTypeHasBeenSet(false)
+    m_targetTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,17 @@ Aws::String CreateDocumentRequest::SerializePayload() const
   if(m_targetTypeHasBeenSet)
   {
    payload.WithString("TargetType", m_targetType);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

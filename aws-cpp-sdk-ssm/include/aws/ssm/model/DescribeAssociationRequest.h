@@ -155,63 +155,63 @@ namespace Model
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline void SetAssociationVersion(Aws::String&& value) { m_associationVersionHasBeenSet = true; m_associationVersion = std::move(value); }
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline void SetAssociationVersion(const char* value) { m_associationVersionHasBeenSet = true; m_associationVersion.assign(value); }
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline DescribeAssociationRequest& WithAssociationVersion(const Aws::String& value) { SetAssociationVersion(value); return *this;}
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline DescribeAssociationRequest& WithAssociationVersion(Aws::String&& value) { SetAssociationVersion(std::move(value)); return *this;}
 
     /**
      * <p>Specify the association version to retrieve. To view the latest version,
      * either specify <code>$LATEST</code> for this parameter, or omit this parameter.
-     * To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association,
-     * use ListAssociationVersions. </p>
+     * To view a list of all associations for an instance, use <a>ListAssociations</a>.
+     * To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>. </p>
      */
     inline DescribeAssociationRequest& WithAssociationVersion(const char* value) { SetAssociationVersion(value); return *this;}
 

@@ -21,6 +21,8 @@
 #include <aws/elasticfilesystem/model/FileSystemSize.h>
 #include <aws/elasticfilesystem/model/PerformanceMode.h>
 #include <aws/elasticfilesystem/model/ThroughputMode.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticfilesystem/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -40,7 +42,7 @@ namespace EFS
 namespace Model
 {
   /**
-   * <p>Description of the file system.</p><p><h3>See Also:</h3>   <a
+   * <p>A description of the file system.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/FileSystemDescription">AWS
    * API Reference</a></p>
    */
@@ -53,250 +55,250 @@ namespace Model
 
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account that created the file system. If the file system was created by
-     * an IAM user, the parent account to which the user belongs is the owner.</p>
+     * <p>The AWS account that created the file system. If the file system was created
+     * by an IAM user, the parent account to which the user belongs is the owner.</p>
      */
     inline CreateFileSystemResult& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline const Aws::String& GetCreationToken() const{ return m_creationToken; }
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline void SetCreationToken(const Aws::String& value) { m_creationToken = value; }
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline void SetCreationToken(Aws::String&& value) { m_creationToken = std::move(value); }
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline void SetCreationToken(const char* value) { m_creationToken.assign(value); }
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline CreateFileSystemResult& WithCreationToken(const Aws::String& value) { SetCreationToken(value); return *this;}
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline CreateFileSystemResult& WithCreationToken(Aws::String&& value) { SetCreationToken(std::move(value)); return *this;}
 
     /**
-     * <p>Opaque string specified in the request.</p>
+     * <p>The opaque string specified in the request.</p>
      */
     inline CreateFileSystemResult& WithCreationToken(const char* value) { SetCreationToken(value); return *this;}
 
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = std::move(value); }
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline CreateFileSystemResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline CreateFileSystemResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the file system, assigned by Amazon EFS.</p>
+     * <p>The ID of the file system, assigned by Amazon EFS.</p>
      */
     inline CreateFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
 
     /**
-     * <p>Time that the file system was created, in seconds (since
+     * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time that the file system was created, in seconds (since
+     * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
 
     /**
-     * <p>Time that the file system was created, in seconds (since
+     * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
 
     /**
-     * <p>Time that the file system was created, in seconds (since
+     * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
     inline CreateFileSystemResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time that the file system was created, in seconds (since
+     * <p>The time that the file system was created, in seconds (since
      * 1970-01-01T00:00:00Z).</p>
      */
     inline CreateFileSystemResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Lifecycle phase of the file system.</p>
+     * <p>The lifecycle phase of the file system.</p>
      */
     inline const LifeCycleState& GetLifeCycleState() const{ return m_lifeCycleState; }
 
     /**
-     * <p>Lifecycle phase of the file system.</p>
+     * <p>The lifecycle phase of the file system.</p>
      */
     inline void SetLifeCycleState(const LifeCycleState& value) { m_lifeCycleState = value; }
 
     /**
-     * <p>Lifecycle phase of the file system.</p>
+     * <p>The lifecycle phase of the file system.</p>
      */
     inline void SetLifeCycleState(LifeCycleState&& value) { m_lifeCycleState = std::move(value); }
 
     /**
-     * <p>Lifecycle phase of the file system.</p>
+     * <p>The lifecycle phase of the file system.</p>
      */
     inline CreateFileSystemResult& WithLifeCycleState(const LifeCycleState& value) { SetLifeCycleState(value); return *this;}
 
     /**
-     * <p>Lifecycle phase of the file system.</p>
+     * <p>The lifecycle phase of the file system.</p>
      */
     inline CreateFileSystemResult& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
 
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline CreateFileSystemResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline CreateFileSystemResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>You can add tags to a file system, including a <code>Name</code> tag. For
-     * more information, see <a>CreateTags</a>. If the file system has a
+     * more information, see <a>CreateFileSystem</a>. If the file system has a
      * <code>Name</code> tag, Amazon EFS returns the value in this field. </p>
      */
     inline CreateFileSystemResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Current number of mount targets that the file system has. For more
+     * <p>The current number of mount targets that the file system has. For more
      * information, see <a>CreateMountTarget</a>.</p>
      */
     inline int GetNumberOfMountTargets() const{ return m_numberOfMountTargets; }
 
     /**
-     * <p>Current number of mount targets that the file system has. For more
+     * <p>The current number of mount targets that the file system has. For more
      * information, see <a>CreateMountTarget</a>.</p>
      */
     inline void SetNumberOfMountTargets(int value) { m_numberOfMountTargets = value; }
 
     /**
-     * <p>Current number of mount targets that the file system has. For more
+     * <p>The current number of mount targets that the file system has. For more
      * information, see <a>CreateMountTarget</a>.</p>
      */
     inline CreateFileSystemResult& WithNumberOfMountTargets(int value) { SetNumberOfMountTargets(value); return *this;}
 
 
     /**
-     * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * its <code>Value</code> field, and the time at which that size was determined in
-     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
      * integer number of seconds since 1970-01-01T00:00:00Z. The
      * <code>SizeInBytes</code> value doesn't represent the size of a consistent
      * snapshot of the file system, but it is eventually consistent when there are no
@@ -308,9 +310,9 @@ namespace Model
     inline const FileSystemSize& GetSizeInBytes() const{ return m_sizeInBytes; }
 
     /**
-     * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * its <code>Value</code> field, and the time at which that size was determined in
-     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
      * integer number of seconds since 1970-01-01T00:00:00Z. The
      * <code>SizeInBytes</code> value doesn't represent the size of a consistent
      * snapshot of the file system, but it is eventually consistent when there are no
@@ -322,9 +324,9 @@ namespace Model
     inline void SetSizeInBytes(const FileSystemSize& value) { m_sizeInBytes = value; }
 
     /**
-     * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * its <code>Value</code> field, and the time at which that size was determined in
-     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
      * integer number of seconds since 1970-01-01T00:00:00Z. The
      * <code>SizeInBytes</code> value doesn't represent the size of a consistent
      * snapshot of the file system, but it is eventually consistent when there are no
@@ -336,9 +338,9 @@ namespace Model
     inline void SetSizeInBytes(FileSystemSize&& value) { m_sizeInBytes = std::move(value); }
 
     /**
-     * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * its <code>Value</code> field, and the time at which that size was determined in
-     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
      * integer number of seconds since 1970-01-01T00:00:00Z. The
      * <code>SizeInBytes</code> value doesn't represent the size of a consistent
      * snapshot of the file system, but it is eventually consistent when there are no
@@ -350,9 +352,9 @@ namespace Model
     inline CreateFileSystemResult& WithSizeInBytes(const FileSystemSize& value) { SetSizeInBytes(value); return *this;}
 
     /**
-     * <p>Latest known metered size (in bytes) of data stored in the file system, in
-     * its <code>Value</code> field, and the time at which that size was determined in
-     * its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
+     * <p>The latest known metered size (in bytes) of data stored in the file system,
+     * in its <code>Value</code> field, and the time at which that size was determined
+     * in its <code>Timestamp</code> field. The <code>Timestamp</code> value is the
      * integer number of seconds since 1970-01-01T00:00:00Z. The
      * <code>SizeInBytes</code> value doesn't represent the size of a consistent
      * snapshot of the file system, but it is eventually consistent when there are no
@@ -365,27 +367,27 @@ namespace Model
 
 
     /**
-     * <p>The <code>PerformanceMode</code> of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
 
     /**
-     * <p>The <code>PerformanceMode</code> of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceMode = value; }
 
     /**
-     * <p>The <code>PerformanceMode</code> of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceMode = std::move(value); }
 
     /**
-     * <p>The <code>PerformanceMode</code> of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline CreateFileSystemResult& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
 
     /**
-     * <p>The <code>PerformanceMode</code> of the file system.</p>
+     * <p>The performance mode of the file system.</p>
      */
     inline CreateFileSystemResult& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
@@ -502,7 +504,7 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system. The limit on throughput is 1024 MiB/s. You can get these limits
      * increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
@@ -511,7 +513,7 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system. The limit on throughput is 1024 MiB/s. You can get these limits
      * increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibps = value; }
@@ -520,10 +522,53 @@ namespace Model
      * <p>The throughput, measured in MiB/s, that you want to provision for a file
      * system. The limit on throughput is 1024 MiB/s. You can get these limits
      * increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS Limits That You Can Increase</a> in the <i>Amazon EFS User Guide.</i> </p>
      */
     inline CreateFileSystemResult& WithProvisionedThroughputInMibps(double value) { SetProvisionedThroughputInMibps(value); return *this;}
+
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline CreateFileSystemResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline CreateFileSystemResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline CreateFileSystemResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags associated with the file system, presented as an array of
+     * <code>Tag</code> objects.</p>
+     */
+    inline CreateFileSystemResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -552,6 +597,8 @@ namespace Model
     ThroughputMode m_throughputMode;
 
     double m_provisionedThroughputInMibps;
+
+    Aws::Vector<Tag> m_tags;
   };
 
 } // namespace Model

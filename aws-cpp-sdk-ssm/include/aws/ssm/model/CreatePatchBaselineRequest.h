@@ -24,6 +24,7 @@
 #include <aws/ssm/model/PatchComplianceLevel.h>
 #include <aws/ssm/model/PatchAction.h>
 #include <aws/ssm/model/PatchSource.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -583,6 +584,98 @@ namespace Model
      */
     inline CreatePatchBaselineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreatePatchBaselineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreatePatchBaselineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreatePatchBaselineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it
+     * applies to. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=PatchSeverity,Value=Critical</code> </p>
+     * </li> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreatePatchBaselineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     OperatingSystem m_operatingSystem;
@@ -620,6 +713,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

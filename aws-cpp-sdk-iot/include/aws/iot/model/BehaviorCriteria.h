@@ -17,6 +17,7 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/model/ComparisonOperator.h>
 #include <aws/iot/model/MetricValue.h>
+#include <aws/iot/model/StatisticalThreshold.h>
 #include <utility>
 
 namespace Aws
@@ -51,31 +52,36 @@ namespace Model
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (containing a <code>value</code>.</p>
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (containing a <code>value</code>.</p>
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
      */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (containing a <code>value</code>.</p>
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
      */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (containing a <code>value</code>.</p>
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
      */
     inline BehaviorCriteria& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
 
     /**
      * <p>The operator that relates the thing measured (<code>metric</code>) to the
-     * criteria (containing a <code>value</code>.</p>
+     * criteria (containing a <code>value</code> or
+     * <code>statisticalThreshold</code>).</p>
      */
     inline BehaviorCriteria& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 
@@ -109,23 +115,112 @@ namespace Model
     /**
      * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>). </p>
+     * <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time
+     * duration before being used to calculate percentiles, and later, measurements
+     * from an individual device are also accumulated over this time duration before
+     * being given a percentile rank.</p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
      * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>). </p>
+     * <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time
+     * duration before being used to calculate percentiles, and later, measurements
+     * from an individual device are also accumulated over this time duration before
+     * being given a percentile rank.</p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
      * <p>Use this to specify the time duration over which the behavior is evaluated,
      * for those criteria which have a time dimension (for example,
-     * <code>NUM_MESSAGES_SENT</code>). </p>
+     * <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time
+     * duration before being used to calculate percentiles, and later, measurements
+     * from an individual device are also accumulated over this time duration before
+     * being given a percentile rank.</p>
      */
     inline BehaviorCriteria& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
+
+
+    /**
+     * <p>If a device is in violation of the behavior for the specified number of
+     * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+     */
+    inline int GetConsecutiveDatapointsToAlarm() const{ return m_consecutiveDatapointsToAlarm; }
+
+    /**
+     * <p>If a device is in violation of the behavior for the specified number of
+     * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+     */
+    inline void SetConsecutiveDatapointsToAlarm(int value) { m_consecutiveDatapointsToAlarmHasBeenSet = true; m_consecutiveDatapointsToAlarm = value; }
+
+    /**
+     * <p>If a device is in violation of the behavior for the specified number of
+     * consecutive datapoints, an alarm occurs. If not specified, the default is 1.</p>
+     */
+    inline BehaviorCriteria& WithConsecutiveDatapointsToAlarm(int value) { SetConsecutiveDatapointsToAlarm(value); return *this;}
+
+
+    /**
+     * <p>If an alarm has occurred and the offending device is no longer in violation
+     * of the behavior for the specified number of consecutive datapoints, the alarm is
+     * cleared. If not specified, the default is 1.</p>
+     */
+    inline int GetConsecutiveDatapointsToClear() const{ return m_consecutiveDatapointsToClear; }
+
+    /**
+     * <p>If an alarm has occurred and the offending device is no longer in violation
+     * of the behavior for the specified number of consecutive datapoints, the alarm is
+     * cleared. If not specified, the default is 1.</p>
+     */
+    inline void SetConsecutiveDatapointsToClear(int value) { m_consecutiveDatapointsToClearHasBeenSet = true; m_consecutiveDatapointsToClear = value; }
+
+    /**
+     * <p>If an alarm has occurred and the offending device is no longer in violation
+     * of the behavior for the specified number of consecutive datapoints, the alarm is
+     * cleared. If not specified, the default is 1.</p>
+     */
+    inline BehaviorCriteria& WithConsecutiveDatapointsToClear(int value) { SetConsecutiveDatapointsToClear(value); return *this;}
+
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline const StatisticalThreshold& GetStatisticalThreshold() const{ return m_statisticalThreshold; }
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline void SetStatisticalThreshold(const StatisticalThreshold& value) { m_statisticalThresholdHasBeenSet = true; m_statisticalThreshold = value; }
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline void SetStatisticalThreshold(StatisticalThreshold&& value) { m_statisticalThresholdHasBeenSet = true; m_statisticalThreshold = std::move(value); }
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline BehaviorCriteria& WithStatisticalThreshold(const StatisticalThreshold& value) { SetStatisticalThreshold(value); return *this;}
+
+    /**
+     * <p>A statistical ranking (percentile) which indicates a threshold value by which
+     * a behavior is determined to be in compliance or in violation of the
+     * behavior.</p>
+     */
+    inline BehaviorCriteria& WithStatisticalThreshold(StatisticalThreshold&& value) { SetStatisticalThreshold(std::move(value)); return *this;}
 
   private:
 
@@ -137,6 +232,15 @@ namespace Model
 
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+
+    int m_consecutiveDatapointsToAlarm;
+    bool m_consecutiveDatapointsToAlarmHasBeenSet;
+
+    int m_consecutiveDatapointsToClear;
+    bool m_consecutiveDatapointsToClearHasBeenSet;
+
+    StatisticalThreshold m_statisticalThreshold;
+    bool m_statisticalThresholdHasBeenSet;
   };
 
 } // namespace Model

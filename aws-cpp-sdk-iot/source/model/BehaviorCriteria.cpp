@@ -33,7 +33,12 @@ BehaviorCriteria::BehaviorCriteria() :
     m_comparisonOperatorHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_consecutiveDatapointsToAlarm(0),
+    m_consecutiveDatapointsToAlarmHasBeenSet(false),
+    m_consecutiveDatapointsToClear(0),
+    m_consecutiveDatapointsToClearHasBeenSet(false),
+    m_statisticalThresholdHasBeenSet(false)
 {
 }
 
@@ -42,7 +47,12 @@ BehaviorCriteria::BehaviorCriteria(JsonView jsonValue) :
     m_comparisonOperatorHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_consecutiveDatapointsToAlarm(0),
+    m_consecutiveDatapointsToAlarmHasBeenSet(false),
+    m_consecutiveDatapointsToClear(0),
+    m_consecutiveDatapointsToClearHasBeenSet(false),
+    m_statisticalThresholdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +80,27 @@ BehaviorCriteria& BehaviorCriteria::operator =(JsonView jsonValue)
     m_durationSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("consecutiveDatapointsToAlarm"))
+  {
+    m_consecutiveDatapointsToAlarm = jsonValue.GetInteger("consecutiveDatapointsToAlarm");
+
+    m_consecutiveDatapointsToAlarmHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("consecutiveDatapointsToClear"))
+  {
+    m_consecutiveDatapointsToClear = jsonValue.GetInteger("consecutiveDatapointsToClear");
+
+    m_consecutiveDatapointsToClearHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statisticalThreshold"))
+  {
+    m_statisticalThreshold = jsonValue.GetObject("statisticalThreshold");
+
+    m_statisticalThresholdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +122,24 @@ JsonValue BehaviorCriteria::Jsonize() const
   if(m_durationSecondsHasBeenSet)
   {
    payload.WithInteger("durationSeconds", m_durationSeconds);
+
+  }
+
+  if(m_consecutiveDatapointsToAlarmHasBeenSet)
+  {
+   payload.WithInteger("consecutiveDatapointsToAlarm", m_consecutiveDatapointsToAlarm);
+
+  }
+
+  if(m_consecutiveDatapointsToClearHasBeenSet)
+  {
+   payload.WithInteger("consecutiveDatapointsToClear", m_consecutiveDatapointsToClear);
+
+  }
+
+  if(m_statisticalThresholdHasBeenSet)
+  {
+   payload.WithObject("statisticalThreshold", m_statisticalThreshold.Jsonize());
 
   }
 

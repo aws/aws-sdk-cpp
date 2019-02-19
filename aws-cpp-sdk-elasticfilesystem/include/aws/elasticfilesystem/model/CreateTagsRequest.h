@@ -48,87 +48,87 @@ namespace Model
 
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline CreateTagsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline CreateTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the file system whose tags you want to modify (String). This operation
-     * modifies the tags only, not the file system.</p>
+     * <p>The ID of the file system whose tags you want to modify (String). This
+     * operation modifies the tags only, not the file system.</p>
      */
     inline CreateTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline CreateTagsRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline CreateTagsRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline CreateTagsRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a
-     * key-value pair. </p>
+     * <p>An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is
+     * a key-value pair. </p>
      */
     inline CreateTagsRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

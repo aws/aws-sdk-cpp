@@ -32,7 +32,8 @@ CreateFileSystemRequest::CreateFileSystemRequest() :
     m_throughputMode(ThroughputMode::NOT_SET),
     m_throughputModeHasBeenSet(false),
     m_provisionedThroughputInMibps(0.0),
-    m_provisionedThroughputInMibpsHasBeenSet(false)
+    m_provisionedThroughputInMibpsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,17 @@ Aws::String CreateFileSystemRequest::SerializePayload() const
   if(m_provisionedThroughputInMibpsHasBeenSet)
   {
    payload.WithDouble("ProvisionedThroughputInMibps", m_provisionedThroughputInMibps);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

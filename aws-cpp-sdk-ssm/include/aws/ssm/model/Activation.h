@@ -17,6 +17,8 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -309,6 +311,42 @@ namespace Model
      */
     inline Activation& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_activationId;
@@ -337,6 +375,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

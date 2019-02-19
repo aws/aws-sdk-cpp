@@ -18,6 +18,8 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -244,6 +246,154 @@ namespace Model
      */
     inline CreateActivationRequest& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline CreateActivationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline CreateActivationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline CreateActivationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an activation to identify which
+     * servers or virtual machines (VMs) in your on-premises environment you intend to
+     * activate. In this case, you could specify the following key name/value
+     * pairs:</p> <ul> <li> <p> <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <important>
+     * <p>When you install SSM Agent on your on-premises servers and VMs, you specify
+     * an activation ID and code. When you specify the activation ID and code, tags
+     * assigned to the activation are automatically applied to the on-premises servers
+     * or VMs.</p> </important> <p>You can't add tags to or delete tags from an
+     * existing activation. You can tag your on-premises servers and VMs after they
+     * connect to Systems Manager for the first time and are assigned a managed
+     * instance ID. This means they are listed in the AWS Systems Manager console with
+     * an ID that is prefixed with "mi-". For information about how to add tags to your
+     * managed instances, see <a>AddTagsToResource</a>. For information about how to
+     * remove tags from your managed instances, see <a>RemoveTagsFromResource</a>.</p>
+     */
+    inline CreateActivationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_description;
@@ -260,6 +410,9 @@ namespace Model
 
     Aws::Utils::DateTime m_expirationDate;
     bool m_expirationDateHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

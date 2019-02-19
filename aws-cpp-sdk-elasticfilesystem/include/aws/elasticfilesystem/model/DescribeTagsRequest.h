@@ -52,68 +52,68 @@ namespace Model
 
 
     /**
-     * <p>(Optional) Maximum number of file system tags to return in the response.
+     * <p>(Optional) The maximum number of file system tags to return in the response.
      * Currently, this number is automatically set to 10.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
-     * <p>(Optional) Maximum number of file system tags to return in the response.
+     * <p>(Optional) The maximum number of file system tags to return in the response.
      * Currently, this number is automatically set to 10.</p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
-     * <p>(Optional) Maximum number of file system tags to return in the response.
+     * <p>(Optional) The maximum number of file system tags to return in the response.
      * Currently, this number is automatically set to 10.</p>
      */
     inline DescribeTagsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline DescribeTagsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
     inline DescribeTagsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Opaque pagination token returned from a previous
+     * <p>(Optional) An opaque pagination token returned from a previous
      * <code>DescribeTags</code> operation (String). If present, it specifies to
      * continue the list from where the previous call left off.</p>
      */
@@ -121,37 +121,37 @@ namespace Model
 
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the file system whose tag set you want to retrieve.</p>
+     * <p>The ID of the file system whose tag set you want to retrieve.</p>
      */
     inline DescribeTagsRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 

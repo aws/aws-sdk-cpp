@@ -18,6 +18,8 @@
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ssm/model/ParameterType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -504,6 +506,112 @@ namespace Model
      */
     inline PutParameterRequest& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
 
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline PutParameterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline PutParameterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline PutParameterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Systems Manager parameter to
+     * identify the type of resource to which it applies, the environment, or the type
+     * of configuration data referenced by the parameter. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=Resource,Value=S3bucket</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code> </p> </li> </ul> <note> <p>To
+     * add tags to an existing Systems Manager parameter, use the
+     * <a>AddTagsToResource</a> action.</p> </note>
+     */
+    inline PutParameterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -526,6 +634,9 @@ namespace Model
 
     Aws::String m_allowedPattern;
     bool m_allowedPatternHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

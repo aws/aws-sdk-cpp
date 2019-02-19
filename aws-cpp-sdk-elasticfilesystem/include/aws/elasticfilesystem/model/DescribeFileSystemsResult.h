@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline const Aws::Vector<FileSystemDescription>& GetFileSystems() const{ return m_fileSystems; }
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline void SetFileSystems(const Aws::Vector<FileSystemDescription>& value) { m_fileSystems = value; }
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline void SetFileSystems(Aws::Vector<FileSystemDescription>&& value) { m_fileSystems = std::move(value); }
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline DescribeFileSystemsResult& WithFileSystems(const Aws::Vector<FileSystemDescription>& value) { SetFileSystems(value); return *this;}
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline DescribeFileSystemsResult& WithFileSystems(Aws::Vector<FileSystemDescription>&& value) { SetFileSystems(std::move(value)); return *this;}
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline DescribeFileSystemsResult& AddFileSystems(const FileSystemDescription& value) { m_fileSystems.push_back(value); return *this; }
 
     /**
-     * <p>Array of file system descriptions.</p>
+     * <p>An array of file system descriptions.</p>
      */
     inline DescribeFileSystemsResult& AddFileSystems(FileSystemDescription&& value) { m_fileSystems.push_back(std::move(value)); return *this; }
 

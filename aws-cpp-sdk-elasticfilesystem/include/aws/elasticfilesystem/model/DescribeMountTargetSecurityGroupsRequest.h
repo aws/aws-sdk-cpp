@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the mount target whose security groups you want to retrieve.</p>
+     * <p>The ID of the mount target whose security groups you want to retrieve.</p>
      */
     inline DescribeMountTargetSecurityGroupsRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
 

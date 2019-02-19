@@ -249,42 +249,6 @@ namespace Model
 
 
     /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline const Aws::String& GetScheduledAuditName() const{ return m_scheduledAuditName; }
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline void SetScheduledAuditName(Aws::String&& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = std::move(value); }
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline void SetScheduledAuditName(const char* value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName.assign(value); }
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline CreateScheduledAuditRequest& WithScheduledAuditName(const Aws::String& value) { SetScheduledAuditName(value); return *this;}
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline CreateScheduledAuditRequest& WithScheduledAuditName(Aws::String&& value) { SetScheduledAuditName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-     */
-    inline CreateScheduledAuditRequest& WithScheduledAuditName(const char* value) { SetScheduledAuditName(value); return *this;}
-
-
-    /**
      * <p>Metadata which can be used to manage the scheduled audit.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -319,6 +283,42 @@ namespace Model
      */
     inline CreateScheduledAuditRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline const Aws::String& GetScheduledAuditName() const{ return m_scheduledAuditName; }
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline void SetScheduledAuditName(Aws::String&& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = std::move(value); }
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline void SetScheduledAuditName(const char* value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName.assign(value); }
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline CreateScheduledAuditRequest& WithScheduledAuditName(const Aws::String& value) { SetScheduledAuditName(value); return *this;}
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline CreateScheduledAuditRequest& WithScheduledAuditName(Aws::String&& value) { SetScheduledAuditName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
+     */
+    inline CreateScheduledAuditRequest& WithScheduledAuditName(const char* value) { SetScheduledAuditName(value); return *this;}
+
   private:
 
     AuditFrequency m_frequency;
@@ -333,11 +333,11 @@ namespace Model
     Aws::Vector<Aws::String> m_targetCheckNames;
     bool m_targetCheckNamesHasBeenSet;
 
-    Aws::String m_scheduledAuditName;
-    bool m_scheduledAuditNameHasBeenSet;
-
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_scheduledAuditName;
+    bool m_scheduledAuditNameHasBeenSet;
   };
 
 } // namespace Model

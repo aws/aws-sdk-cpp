@@ -31,7 +31,8 @@ PutParameterRequest::PutParameterRequest() :
     m_keyIdHasBeenSet(false),
     m_overwrite(false),
     m_overwriteHasBeenSet(false),
-    m_allowedPatternHasBeenSet(false)
+    m_allowedPatternHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,17 @@ Aws::String PutParameterRequest::SerializePayload() const
   if(m_allowedPatternHasBeenSet)
   {
    payload.WithString("AllowedPattern", m_allowedPattern);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

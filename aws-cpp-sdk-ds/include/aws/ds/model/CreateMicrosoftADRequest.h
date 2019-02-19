@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/DirectoryVpcSettings.h>
 #include <aws/ds/model/DirectoryEdition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -303,6 +305,42 @@ namespace Model
      */
     inline CreateMicrosoftADRequest& WithEdition(DirectoryEdition&& value) { SetEdition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline CreateMicrosoftADRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline CreateMicrosoftADRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline CreateMicrosoftADRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+     */
+    inline CreateMicrosoftADRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -322,6 +360,9 @@ namespace Model
 
     DirectoryEdition m_edition;
     bool m_editionHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

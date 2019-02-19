@@ -21,6 +21,7 @@
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/AttachmentsSource.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -385,6 +386,98 @@ namespace Model
      */
     inline CreateDocumentRequest& WithTargetType(const char* value) { SetTargetType(value); return *this;}
 
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline CreateDocumentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline CreateDocumentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline CreateDocumentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag an SSM document to identify the
+     * types of targets or the environment where it will run. In this case, you could
+     * specify the following key name/value pairs:</p> <ul> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing SSM document, use the <a>AddTagsToResource</a> action.</p>
+     * </note>
+     */
+    inline CreateDocumentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_content;
@@ -407,6 +500,9 @@ namespace Model
 
     Aws::String m_targetType;
     bool m_targetTypeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model
