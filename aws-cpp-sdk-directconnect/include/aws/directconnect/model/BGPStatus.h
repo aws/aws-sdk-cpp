@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     up,
-    down
+    down,
+    unknown
   };
 
 namespace BGPStatusMapper

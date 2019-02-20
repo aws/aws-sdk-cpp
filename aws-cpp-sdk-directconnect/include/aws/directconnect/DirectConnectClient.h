@@ -1583,7 +1583,7 @@ namespace Model
          * (LAG).</p> <p>The Letter of Authorization - Connecting Facility Assignment
          * (LOA-CFA) is a document that is used when establishing your cross connect to AWS
          * at the colocation facility. For more information, see <a
-         * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">AWS
@@ -1596,7 +1596,7 @@ namespace Model
          * (LAG).</p> <p>The Letter of Authorization - Connecting Facility Assignment
          * (LOA-CFA) is a document that is used when establishing your cross connect to AWS
          * at the colocation facility. For more information, see <a
-         * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">AWS
@@ -1611,7 +1611,7 @@ namespace Model
          * (LAG).</p> <p>The Letter of Authorization - Connecting Facility Assignment
          * (LOA-CFA) is a document that is used when establishing your cross connect to AWS
          * at the colocation facility. For more information, see <a
-         * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+         * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
          * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DescribeLoa">AWS

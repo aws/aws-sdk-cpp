@@ -33,7 +33,8 @@ namespace Model
     down,
     deleting,
     deleted,
-    rejected
+    rejected,
+    unknown
   };
 
 namespace VirtualInterfaceStateMapper

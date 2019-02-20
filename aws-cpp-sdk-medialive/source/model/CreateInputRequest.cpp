@@ -33,7 +33,8 @@ CreateInputRequest::CreateInputRequest() :
     m_sourcesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,12 @@ Aws::String CreateInputRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", InputTypeMapper::GetNameForInputType(m_type));
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

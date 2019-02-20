@@ -32,6 +32,7 @@
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
+#include <aws/codecommit/model/CreateCommitRequest.h>
 #include <aws/codecommit/model/CreatePullRequestRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/DeleteBranchRequest.h>
@@ -209,6 +210,41 @@ void CodeCommitClient::CreateBranchAsync(const CreateBranchRequest& request, con
 void CodeCommitClient::CreateBranchAsyncHelper(const CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateBranch(request), context);
+}
+
+CreateCommitOutcome CodeCommitClient::CreateCommit(const CreateCommitRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateCommitOutcome(CreateCommitResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateCommitOutcome(outcome.GetError());
+  }
+}
+
+CreateCommitOutcomeCallable CodeCommitClient::CreateCommitCallable(const CreateCommitRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCommitOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCommit(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::CreateCommitAsync(const CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCommitAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::CreateCommitAsyncHelper(const CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCommit(request), context);
 }
 
 CreatePullRequestOutcome CodeCommitClient::CreatePullRequest(const CreatePullRequestRequest& request) const

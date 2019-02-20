@@ -131,8 +131,9 @@ namespace Model
      * <code>available</code>: The network link is up, and the interconnect is ready
      * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
      * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
-     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-     * </ul>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
      */
     inline const InterconnectState& GetInterconnectState() const{ return m_interconnectState; }
 
@@ -145,8 +146,9 @@ namespace Model
      * <code>available</code>: The network link is up, and the interconnect is ready
      * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
      * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
-     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-     * </ul>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
      */
     inline void SetInterconnectState(const InterconnectState& value) { m_interconnectStateHasBeenSet = true; m_interconnectState = value; }
 
@@ -159,8 +161,9 @@ namespace Model
      * <code>available</code>: The network link is up, and the interconnect is ready
      * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
      * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
-     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-     * </ul>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
      */
     inline void SetInterconnectState(InterconnectState&& value) { m_interconnectStateHasBeenSet = true; m_interconnectState = std::move(value); }
 
@@ -173,8 +176,9 @@ namespace Model
      * <code>available</code>: The network link is up, and the interconnect is ready
      * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
      * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
-     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-     * </ul>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
      */
     inline Interconnect& WithInterconnectState(const InterconnectState& value) { SetInterconnectState(value); return *this;}
 
@@ -187,8 +191,9 @@ namespace Model
      * <code>available</code>: The network link is up, and the interconnect is ready
      * for use.</p> </li> <li> <p> <code>down</code>: The network link is down.</p>
      * </li> <li> <p> <code>deleting</code>: The interconnect is being deleted.</p>
-     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li>
-     * </ul>
+     * </li> <li> <p> <code>deleted</code>: The interconnect is deleted.</p> </li> <li>
+     * <p> <code>unknown</code>: The state of the interconnect is not available.</p>
+     * </li> </ul>
      */
     inline Interconnect& WithInterconnectState(InterconnectState&& value) { SetInterconnectState(std::move(value)); return *this;}
 

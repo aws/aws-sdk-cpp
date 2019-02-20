@@ -231,6 +231,7 @@ namespace Model
      * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
      * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
      * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> <li> <p> <code>unknown</code>: The state of the LAG is not available.</p>
      * </li> </ul>
      */
     inline const LagState& GetLagState() const{ return m_lagState; }
@@ -244,6 +245,7 @@ namespace Model
      * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
      * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
      * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> <li> <p> <code>unknown</code>: The state of the LAG is not available.</p>
      * </li> </ul>
      */
     inline void SetLagState(const LagState& value) { m_lagStateHasBeenSet = true; m_lagState = value; }
@@ -257,6 +259,7 @@ namespace Model
      * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
      * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
      * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> <li> <p> <code>unknown</code>: The state of the LAG is not available.</p>
      * </li> </ul>
      */
     inline void SetLagState(LagState&& value) { m_lagStateHasBeenSet = true; m_lagState = std::move(value); }
@@ -270,6 +273,7 @@ namespace Model
      * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
      * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
      * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> <li> <p> <code>unknown</code>: The state of the LAG is not available.</p>
      * </li> </ul>
      */
     inline Lag& WithLagState(const LagState& value) { SetLagState(value); return *this;}
@@ -283,6 +287,7 @@ namespace Model
      * established and the LAG is ready for use.</p> </li> <li> <p> <code>down</code>:
      * The network link is down.</p> </li> <li> <p> <code>deleting</code>: The LAG is
      * being deleted.</p> </li> <li> <p> <code>deleted</code>: The LAG is deleted.</p>
+     * </li> <li> <p> <code>unknown</code>: The state of the LAG is not available.</p>
      * </li> </ul>
      */
     inline Lag& WithLagState(LagState&& value) { SetLagState(std::move(value)); return *this;}

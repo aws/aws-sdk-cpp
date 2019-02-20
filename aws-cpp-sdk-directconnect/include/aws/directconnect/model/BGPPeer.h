@@ -310,8 +310,8 @@ namespace Model
      * <li> <p> <code>up</code>: The BGP peer is established. This state does not
      * indicate the state of the routing function. Ensure that you are receiving routes
      * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
-     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
-     * unknown.</p> </li> </ul>
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
      */
     inline const BGPStatus& GetBgpStatus() const{ return m_bgpStatus; }
 
@@ -320,8 +320,8 @@ namespace Model
      * <li> <p> <code>up</code>: The BGP peer is established. This state does not
      * indicate the state of the routing function. Ensure that you are receiving routes
      * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
-     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
-     * unknown.</p> </li> </ul>
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
      */
     inline void SetBgpStatus(const BGPStatus& value) { m_bgpStatusHasBeenSet = true; m_bgpStatus = value; }
 
@@ -330,8 +330,8 @@ namespace Model
      * <li> <p> <code>up</code>: The BGP peer is established. This state does not
      * indicate the state of the routing function. Ensure that you are receiving routes
      * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
-     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
-     * unknown.</p> </li> </ul>
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
      */
     inline void SetBgpStatus(BGPStatus&& value) { m_bgpStatusHasBeenSet = true; m_bgpStatus = std::move(value); }
 
@@ -340,8 +340,8 @@ namespace Model
      * <li> <p> <code>up</code>: The BGP peer is established. This state does not
      * indicate the state of the routing function. Ensure that you are receiving routes
      * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
-     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
-     * unknown.</p> </li> </ul>
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
      */
     inline BGPPeer& WithBgpStatus(const BGPStatus& value) { SetBgpStatus(value); return *this;}
 
@@ -350,8 +350,8 @@ namespace Model
      * <li> <p> <code>up</code>: The BGP peer is established. This state does not
      * indicate the state of the routing function. Ensure that you are receiving routes
      * over the BGP session.</p> </li> <li> <p> <code>down</code>: The BGP peer is
-     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is
-     * unknown.</p> </li> </ul>
+     * down.</p> </li> <li> <p> <code>unknown</code>: The BGP peer status is not
+     * available.</p> </li> </ul>
      */
     inline BGPPeer& WithBgpStatus(BGPStatus&& value) { SetBgpStatus(std::move(value)); return *this;}
 

@@ -62,7 +62,9 @@ namespace Model
      * traffic.</p> </li> <li> <p> <code>rejected</code>: The virtual interface owner
      * has declined creation of the virtual interface. If a virtual interface in the
      * <code>Confirming</code> state is deleted by the virtual interface owner, the
-     * virtual interface enters the <code>Rejected</code> state.</p> </li> </ul>
+     * virtual interface enters the <code>Rejected</code> state.</p> </li> <li> <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.</p>
+     * </li> </ul>
      */
     inline const VirtualInterfaceState& GetVirtualInterfaceState() const{ return m_virtualInterfaceState; }
 
@@ -86,7 +88,9 @@ namespace Model
      * traffic.</p> </li> <li> <p> <code>rejected</code>: The virtual interface owner
      * has declined creation of the virtual interface. If a virtual interface in the
      * <code>Confirming</code> state is deleted by the virtual interface owner, the
-     * virtual interface enters the <code>Rejected</code> state.</p> </li> </ul>
+     * virtual interface enters the <code>Rejected</code> state.</p> </li> <li> <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.</p>
+     * </li> </ul>
      */
     inline void SetVirtualInterfaceState(const VirtualInterfaceState& value) { m_virtualInterfaceState = value; }
 
@@ -110,7 +114,9 @@ namespace Model
      * traffic.</p> </li> <li> <p> <code>rejected</code>: The virtual interface owner
      * has declined creation of the virtual interface. If a virtual interface in the
      * <code>Confirming</code> state is deleted by the virtual interface owner, the
-     * virtual interface enters the <code>Rejected</code> state.</p> </li> </ul>
+     * virtual interface enters the <code>Rejected</code> state.</p> </li> <li> <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.</p>
+     * </li> </ul>
      */
     inline void SetVirtualInterfaceState(VirtualInterfaceState&& value) { m_virtualInterfaceState = std::move(value); }
 
@@ -134,7 +140,9 @@ namespace Model
      * traffic.</p> </li> <li> <p> <code>rejected</code>: The virtual interface owner
      * has declined creation of the virtual interface. If a virtual interface in the
      * <code>Confirming</code> state is deleted by the virtual interface owner, the
-     * virtual interface enters the <code>Rejected</code> state.</p> </li> </ul>
+     * virtual interface enters the <code>Rejected</code> state.</p> </li> <li> <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.</p>
+     * </li> </ul>
      */
     inline DeleteVirtualInterfaceResult& WithVirtualInterfaceState(const VirtualInterfaceState& value) { SetVirtualInterfaceState(value); return *this;}
 
@@ -158,7 +166,9 @@ namespace Model
      * traffic.</p> </li> <li> <p> <code>rejected</code>: The virtual interface owner
      * has declined creation of the virtual interface. If a virtual interface in the
      * <code>Confirming</code> state is deleted by the virtual interface owner, the
-     * virtual interface enters the <code>Rejected</code> state.</p> </li> </ul>
+     * virtual interface enters the <code>Rejected</code> state.</p> </li> <li> <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.</p>
+     * </li> </ul>
      */
     inline DeleteVirtualInterfaceResult& WithVirtualInterfaceState(VirtualInterfaceState&& value) { SetVirtualInterfaceState(std::move(value)); return *this;}
 

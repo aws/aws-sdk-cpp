@@ -31,14 +31,16 @@ namespace Model
 InputDestination::InputDestination() : 
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
 InputDestination::InputDestination(JsonView jsonValue) : 
     m_ipHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ InputDestination& InputDestination::operator =(JsonView jsonValue)
     m_urlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpc"))
+  {
+    m_vpc = jsonValue.GetObject("vpc");
+
+    m_vpcHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue InputDestination::Jsonize() const
   if(m_urlHasBeenSet)
   {
    payload.WithString("url", m_url);
+
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
 
   }
 

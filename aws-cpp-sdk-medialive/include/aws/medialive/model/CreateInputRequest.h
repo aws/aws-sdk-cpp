@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/InputType.h>
+#include <aws/medialive/model/InputVpcRequest.h>
 #include <aws/medialive/model/InputDestinationRequest.h>
 #include <aws/medialive/model/MediaConnectFlowRequest.h>
 #include <aws/medialive/model/InputSourceRequest.h>
@@ -490,6 +491,22 @@ Only specify sources for PULL type Inputs. Leave
     
     inline CreateInputRequest& WithType(InputType&& value) { SetType(std::move(value)); return *this;}
 
+
+    
+    inline const InputVpcRequest& GetVpc() const{ return m_vpc; }
+
+    
+    inline void SetVpc(const InputVpcRequest& value) { m_vpcHasBeenSet = true; m_vpc = value; }
+
+    
+    inline void SetVpc(InputVpcRequest&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
+
+    
+    inline CreateInputRequest& WithVpc(const InputVpcRequest& value) { SetVpc(value); return *this;}
+
+    
+    inline CreateInputRequest& WithVpc(InputVpcRequest&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<InputDestinationRequest> m_destinations;
@@ -518,6 +535,9 @@ Only specify sources for PULL type Inputs. Leave
 
     InputType m_type;
     bool m_typeHasBeenSet;
+
+    InputVpcRequest m_vpc;
+    bool m_vpcHasBeenSet;
   };
 
 } // namespace Model

@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/codecommit/model/BatchGetRepositoriesResult.h>
+#include <aws/codecommit/model/CreateCommitResult.h>
 #include <aws/codecommit/model/CreatePullRequestResult.h>
 #include <aws/codecommit/model/CreateRepositoryResult.h>
 #include <aws/codecommit/model/DeleteBranchResult.h>
@@ -99,6 +100,7 @@ namespace Model
 {
         class BatchGetRepositoriesRequest;
         class CreateBranchRequest;
+        class CreateCommitRequest;
         class CreatePullRequestRequest;
         class CreateRepositoryRequest;
         class DeleteBranchRequest;
@@ -139,6 +141,7 @@ namespace Model
 
         typedef Aws::Utils::Outcome<BatchGetRepositoriesResult, Aws::Client::AWSError<CodeCommitErrors>> BatchGetRepositoriesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CodeCommitErrors>> CreateBranchOutcome;
+        typedef Aws::Utils::Outcome<CreateCommitResult, Aws::Client::AWSError<CodeCommitErrors>> CreateCommitOutcome;
         typedef Aws::Utils::Outcome<CreatePullRequestResult, Aws::Client::AWSError<CodeCommitErrors>> CreatePullRequestOutcome;
         typedef Aws::Utils::Outcome<CreateRepositoryResult, Aws::Client::AWSError<CodeCommitErrors>> CreateRepositoryOutcome;
         typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<CodeCommitErrors>> DeleteBranchOutcome;
@@ -179,6 +182,7 @@ namespace Model
 
         typedef std::future<BatchGetRepositoriesOutcome> BatchGetRepositoriesOutcomeCallable;
         typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
+        typedef std::future<CreateCommitOutcome> CreateCommitOutcomeCallable;
         typedef std::future<CreatePullRequestOutcome> CreatePullRequestOutcomeCallable;
         typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
         typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
@@ -222,6 +226,7 @@ namespace Model
 
     typedef std::function<void(const CodeCommitClient*, const Model::BatchGetRepositoriesRequest&, const Model::BatchGetRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetRepositoriesResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::CreateCommitRequest&, const Model::CreateCommitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCommitResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreatePullRequestRequest&, const Model::CreatePullRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePullRequestResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
@@ -291,8 +296,9 @@ namespace Model
    * returns the contents of a specified folder or directory.</p> </li> <li> <p>
    * <a>PutFile</a>, which adds or modifies a file in a specified repository and
    * branch.</p> </li> </ul> <p>Information about committed code in a repository, by
-   * calling the following:</p> <ul> <li> <p> <a>GetBlob</a>, which returns the
-   * base-64 encoded content of an individual Git blob object within a
+   * calling the following:</p> <ul> <li> <p> <a>CreateCommit</a>, which creates a
+   * commit for changes to a repository.</p> </li> <li> <p> <a>GetBlob</a>, which
+   * returns the base-64 encoded content of an individual Git blob object within a
    * repository.</p> </li> <li> <p> <a>GetCommit</a>, which returns information about
    * a commit, including commit messages and author and committer information.</p>
    * </li> <li> <p> <a>GetDifferences</a>, which returns information about the
@@ -442,6 +448,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBranchAsync(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a commit for a repository on the tip of a specified
+         * branch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCommitOutcome CreateCommit(const Model::CreateCommitRequest& request) const;
+
+        /**
+         * <p>Creates a commit for a repository on the tip of a specified
+         * branch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCommitOutcomeCallable CreateCommitCallable(const Model::CreateCommitRequest& request) const;
+
+        /**
+         * <p>Creates a commit for a repository on the tip of a specified
+         * branch.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCommitAsync(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a pull request in the specified repository.</p><p><h3>See Also:</h3> 
@@ -1552,6 +1586,7 @@ namespace Model
         /**Async helpers**/
         void BatchGetRepositoriesAsyncHelper(const Model::BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateCommitAsyncHelper(const Model::CreateCommitRequest& request, const CreateCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePullRequestAsyncHelper(const Model::CreatePullRequestRequest& request, const CreatePullRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRepositoryAsyncHelper(const Model::CreateRepositoryRequest& request, const CreateRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -31,7 +31,8 @@ namespace Model
     available,
     down,
     deleting,
-    deleted
+    deleted,
+    unknown
   };
 
 namespace LagStateMapper

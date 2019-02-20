@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/InputDestinationVpc.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +190,22 @@ pushed to.
      */
     inline InputDestination& WithUrl(const char* value) { SetUrl(value); return *this;}
 
+
+    
+    inline const InputDestinationVpc& GetVpc() const{ return m_vpc; }
+
+    
+    inline void SetVpc(const InputDestinationVpc& value) { m_vpcHasBeenSet = true; m_vpc = value; }
+
+    
+    inline void SetVpc(InputDestinationVpc&& value) { m_vpcHasBeenSet = true; m_vpc = std::move(value); }
+
+    
+    inline InputDestination& WithVpc(const InputDestinationVpc& value) { SetVpc(value); return *this;}
+
+    
+    inline InputDestination& WithVpc(InputDestinationVpc&& value) { SetVpc(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ip;
@@ -199,6 +216,9 @@ pushed to.
 
     Aws::String m_url;
     bool m_urlHasBeenSet;
+
+    InputDestinationVpc m_vpc;
+    bool m_vpcHasBeenSet;
   };
 
 } // namespace Model
