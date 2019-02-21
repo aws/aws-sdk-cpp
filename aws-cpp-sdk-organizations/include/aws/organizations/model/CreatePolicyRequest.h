@@ -47,77 +47,77 @@ namespace Model
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The policy content to add to the new policy. For example, if you create a <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">service
      * control policy</a> (SCP), this string must be JSON text that specifies the
      * permissions that admins in attached accounts can delegate to their users,
      * groups, and roles. For more information about the SCP syntax, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      * Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}

@@ -28,8 +28,12 @@ GetHLSStreamingSessionURLRequest::GetHLSStreamingSessionURLRequest() :
     m_playbackMode(PlaybackMode::NOT_SET),
     m_playbackModeHasBeenSet(false),
     m_hLSFragmentSelectorHasBeenSet(false),
+    m_containerFormat(ContainerFormat::NOT_SET),
+    m_containerFormatHasBeenSet(false),
     m_discontinuityMode(DiscontinuityMode::NOT_SET),
     m_discontinuityModeHasBeenSet(false),
+    m_displayFragmentTimestamp(DisplayFragmentTimestamp::NOT_SET),
+    m_displayFragmentTimestampHasBeenSet(false),
     m_expires(0),
     m_expiresHasBeenSet(false),
     m_maxMediaPlaylistFragmentResults(0),
@@ -64,9 +68,19 @@ Aws::String GetHLSStreamingSessionURLRequest::SerializePayload() const
 
   }
 
+  if(m_containerFormatHasBeenSet)
+  {
+   payload.WithString("ContainerFormat", ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat));
+  }
+
   if(m_discontinuityModeHasBeenSet)
   {
    payload.WithString("DiscontinuityMode", DiscontinuityModeMapper::GetNameForDiscontinuityMode(m_discontinuityMode));
+  }
+
+  if(m_displayFragmentTimestampHasBeenSet)
+  {
+   payload.WithString("DisplayFragmentTimestamp", DisplayFragmentTimestampMapper::GetNameForDisplayFragmentTimestamp(m_displayFragmentTimestamp));
   }
 
   if(m_expiresHasBeenSet)

@@ -272,7 +272,7 @@ namespace Model
    * <i>organization</i> and centrally manage your accounts and their resources.</p>
    * <p>This guide provides descriptions of the Organizations API. For more
    * information about using this service, see the <a
-   * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS
    * Organizations User Guide</a>.</p> <p> <b>API Version</b> </p> <p>This version of
    * the Organizations API Reference documents the Organizations API version
    * 2016-11-28.</p> <note> <p>As an alternative to using the API directly, you can
@@ -287,7 +287,7 @@ namespace Model
    * to Organizations. However, you also can use the Organizations Query API to make
    * direct calls to the Organizations web service. To learn more about the
    * Organizations Query API, see <a
-   * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
    * Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations
    * supports GET and POST requests for all actions. That is, the API does not
    * require you to use GET for some actions and POST for others. However, GET
@@ -302,7 +302,7 @@ namespace Model
    * that has administrative privileges. As another option, use AWS Security Token
    * Service to generate temporary security credentials, and use those credentials to
    * sign requests. </p> <p>To sign requests, we recommend that you use <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+   * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4</a>. If you have an existing application that uses Signature Version
    * 2, you do not have to update it to use Signature Version 4. However, some
    * operations now require Signature Version 4. The documentation for operations
@@ -331,7 +331,7 @@ namespace Model
    * various SDKs used to call the APIs, see the documentation for the SDK of
    * interest to learn how to direct the requests to a specific endpoint. For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
+   * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions
    * and Endpoints</a> in the <i>AWS General Reference</i>. </p> <p> <b>How examples
    * are presented</b> </p> <p>The JSON returned by the AWS Organizations service as
    * response to your requests is returned as a single long string without line
@@ -346,11 +346,11 @@ namespace Model
    * successfully made to Organizations, who made the request, when it was made, and
    * so on. For more about AWS Organizations and its support for AWS CloudTrail, see
    * <a
-   * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration">Logging
+   * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration">Logging
    * AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations
    * User Guide</i>. To learn more about CloudTrail, including how to turn it on and
    * find your log files, see the <a
-   * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
+   * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS
    * CloudTrail User Guide</a>.</p>
    */
   class AWS_ORGANIZATIONS_API OrganizationsClient : public Aws::Client::AWSJsonClient
@@ -399,11 +399,11 @@ namespace Model
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
          * handshake: only a principal from the master account.</p> <p>For more information
          * about invitations, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
          * organization, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
          * appear in the results of relevant APIs for only 30 days. After that it is
@@ -430,11 +430,11 @@ namespace Model
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
          * handshake: only a principal from the master account.</p> <p>For more information
          * about invitations, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
          * organization, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
          * appear in the results of relevant APIs for only 30 days. After that it is
@@ -463,11 +463,11 @@ namespace Model
          * Guide</i>.</p> </li> <li> <p> <b>Enable all features final confirmation</b>
          * handshake: only a principal from the master account.</p> <p>For more information
          * about invitations, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting
          * an AWS Account to Join Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>. For more information about requests to enable all features in the
          * organization, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> </li> </ul> <p>After you accept a handshake, it continues to
          * appear in the results of relevant APIs for only 30 days. After that it is
@@ -488,8 +488,9 @@ namespace Model
          * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
          * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
          * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, then it affects only that account.</p> </li> </ul> <p>SCPs essentially
-         * are permission "filters". When you attach one SCP to a higher level root or OU,
+         * account, then it affects only that account.</p> </li> </ul> <p>SCPs are JSON
+         * policies that specify the maximum permissions for an organization or
+         * organizational unit (OU). When you attach one SCP to a higher level root or OU,
          * and you also attach a different SCP to a child OU or to an account, the child
          * policy can further restrict only the permissions that pass through the parent
          * filter and are available to the child. An SCP that is attached to a child cannot
@@ -507,7 +508,7 @@ namespace Model
          * must replace it with a policy that specifies the permissions that you want to
          * allow in that OU or account.</p> <p>For more information about how Organizations
          * policies permissions work, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
          * Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.</p>
          * </li> </ul> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -525,8 +526,9 @@ namespace Model
          * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
          * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
          * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, then it affects only that account.</p> </li> </ul> <p>SCPs essentially
-         * are permission "filters". When you attach one SCP to a higher level root or OU,
+         * account, then it affects only that account.</p> </li> </ul> <p>SCPs are JSON
+         * policies that specify the maximum permissions for an organization or
+         * organizational unit (OU). When you attach one SCP to a higher level root or OU,
          * and you also attach a different SCP to a child OU or to an account, the child
          * policy can further restrict only the permissions that pass through the parent
          * filter and are available to the child. An SCP that is attached to a child cannot
@@ -544,7 +546,7 @@ namespace Model
          * must replace it with a policy that specifies the permissions that you want to
          * allow in that OU or account.</p> <p>For more information about how Organizations
          * policies permissions work, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
          * Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.</p>
          * </li> </ul> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -564,8 +566,9 @@ namespace Model
          * attach an SCP to a root, it affects all accounts in the organization.</p> </li>
          * <li> <p>If you attach an SCP to an OU, it affects all accounts in that OU and in
          * any child OUs.</p> </li> <li> <p>If you attach the policy directly to an
-         * account, then it affects only that account.</p> </li> </ul> <p>SCPs essentially
-         * are permission "filters". When you attach one SCP to a higher level root or OU,
+         * account, then it affects only that account.</p> </li> </ul> <p>SCPs are JSON
+         * policies that specify the maximum permissions for an organization or
+         * organizational unit (OU). When you attach one SCP to a higher level root or OU,
          * and you also attach a different SCP to a child OU or to an account, the child
          * policy can further restrict only the permissions that pass through the parent
          * filter and are available to the child. An SCP that is attached to a child cannot
@@ -583,7 +586,7 @@ namespace Model
          * must replace it with a policy that specifies the permissions that you want to
          * allow in that OU or account.</p> <p>For more information about how Organizations
          * policies permissions work, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using
          * Service Control Policies</a> in the <i>AWS Organizations User Guide</i>.</p>
          * </li> </ul> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -651,7 +654,7 @@ namespace Model
          * For information on using AWS CloudTrail with Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul> <p/> <p>The user who calls the API to create an
+         * Guide.</i> </p> </li> </ul> <p/> <p>The user who calls the API to create an
          * account must have the <code>organizations:CreateAccount</code> permission. If
          * you enabled all features in the organization, AWS Organizations will create the
          * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
@@ -666,9 +669,9 @@ namespace Model
          * organization's master account.</p> <p>This operation can be called only from the
          * organization's master account.</p> <p>For more information about creating
          * accounts, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
          * information required for the account to operate as a standalone account, such as
          * a payment method and signing the end user license agreement (EULA) is <i>not</i>
@@ -684,7 +687,7 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * <li> <p>Using CreateAccount to create multiple temporary accounts isn't
          * recommended. You can only close an account from the Billing and Cost Management
          * Console, and you must be signed in as the root user. For information on the
          * requirements and process for closing an account, see <a
@@ -696,7 +699,7 @@ namespace Model
          * that have appropriate permissions can view billing information for the account.
          * If you disable it, only the account root user can access billing information.
          * For information about how to disable this switch for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
@@ -718,7 +721,7 @@ namespace Model
          * For information on using AWS CloudTrail with Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul> <p/> <p>The user who calls the API to create an
+         * Guide.</i> </p> </li> </ul> <p/> <p>The user who calls the API to create an
          * account must have the <code>organizations:CreateAccount</code> permission. If
          * you enabled all features in the organization, AWS Organizations will create the
          * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
@@ -733,9 +736,9 @@ namespace Model
          * organization's master account.</p> <p>This operation can be called only from the
          * organization's master account.</p> <p>For more information about creating
          * accounts, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
          * information required for the account to operate as a standalone account, such as
          * a payment method and signing the end user license agreement (EULA) is <i>not</i>
@@ -751,7 +754,7 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * <li> <p>Using CreateAccount to create multiple temporary accounts isn't
          * recommended. You can only close an account from the Billing and Cost Management
          * Console, and you must be signed in as the root user. For information on the
          * requirements and process for closing an account, see <a
@@ -763,7 +766,7 @@ namespace Model
          * that have appropriate permissions can view billing information for the account.
          * If you disable it, only the account root user can access billing information.
          * For information about how to disable this switch for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
@@ -787,7 +790,7 @@ namespace Model
          * For information on using AWS CloudTrail with Organizations, see <a
          * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring
          * the Activity in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> </li> </ul> <p/> <p>The user who calls the API to create an
+         * Guide.</i> </p> </li> </ul> <p/> <p>The user who calls the API to create an
          * account must have the <code>organizations:CreateAccount</code> permission. If
          * you enabled all features in the organization, AWS Organizations will create the
          * required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
@@ -802,9 +805,9 @@ namespace Model
          * organization's master account.</p> <p>This operation can be called only from the
          * organization's master account.</p> <p>For more information about creating
          * accounts, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating
          * an AWS Account in Your Organization</a> in the <i>AWS Organizations User
-         * Guide</i>.</p> <important> <ul> <li> <p>When you create an account in an
+         * Guide.</i> </p> <important> <ul> <li> <p>When you create an account in an
          * organization using the AWS Organizations console, API, or CLI commands, the
          * information required for the account to operate as a standalone account, such as
          * a payment method and signing the end user license agreement (EULA) is <i>not</i>
@@ -820,7 +823,7 @@ namespace Model
          * your organization is still initializing, wait one hour and then try again. If
          * the error persists, contact <a
          * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.</p> </li>
-         * <li> <p>Using CreateAccount to create multiple temporary accounts is not
+         * <li> <p>Using CreateAccount to create multiple temporary accounts isn't
          * recommended. You can only close an account from the Billing and Cost Management
          * Console, and you must be signed in as the root user. For information on the
          * requirements and process for closing an account, see <a
@@ -832,7 +835,7 @@ namespace Model
          * that have appropriate permissions can view billing information for the account.
          * If you disable it, only the account root user can access billing information.
          * For information about how to disable this switch for an account, see <a
-         * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
+         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting
          * Access to Your Billing Information and Tools</a>.</p> </note><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount">AWS
@@ -845,7 +848,7 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * CreateOrganization operation automatically becomes the <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
          * account</a> of the new organization.</p> <p>This operation must be called using
          * credentials from the account that is to become the new organization's master
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
@@ -864,7 +867,7 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * CreateOrganization operation automatically becomes the <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
          * account</a> of the new organization.</p> <p>This operation must be called using
          * credentials from the account that is to become the new organization's master
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
@@ -885,7 +888,7 @@ namespace Model
         /**
          * <p>Creates an AWS organization. The account whose user is calling the
          * CreateOrganization operation automatically becomes the <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
          * account</a> of the new organization.</p> <p>This operation must be called using
          * credentials from the account that is to become the new organization's master
          * account. The principal must also have the relevant IAM permissions.</p> <p>By
@@ -910,7 +913,7 @@ namespace Model
          * you can nest OUs is dependent upon the policy types enabled for that root. For
          * service control policies, the limit is five. </p> <p>For more information about
          * OUs, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
          * Organizational Units</a> in the <i>AWS Organizations User Guide</i>.</p> <p>This
          * operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -926,7 +929,7 @@ namespace Model
          * you can nest OUs is dependent upon the policy types enabled for that root. For
          * service control policies, the limit is five. </p> <p>For more information about
          * OUs, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
          * Organizational Units</a> in the <i>AWS Organizations User Guide</i>.</p> <p>This
          * operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -944,7 +947,7 @@ namespace Model
          * you can nest OUs is dependent upon the policy types enabled for that root. For
          * service control policies, the limit is five. </p> <p>For more information about
          * OUs, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing
          * Organizational Units</a> in the <i>AWS Organizations User Guide</i>.</p> <p>This
          * operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
@@ -959,7 +962,7 @@ namespace Model
          * <p>Creates a policy of a specified type that you can attach to a root, an
          * organizational unit (OU), or an individual AWS account.</p> <p>For more
          * information about policies and their use, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
@@ -971,7 +974,7 @@ namespace Model
          * <p>Creates a policy of a specified type that you can attach to a root, an
          * organizational unit (OU), or an individual AWS account.</p> <p>For more
          * information about policies and their use, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
@@ -985,7 +988,7 @@ namespace Model
          * <p>Creates a policy of a specified type that you can attach to a root, an
          * organizational unit (OU), or an individual AWS account.</p> <p>For more
          * information about policies and their use, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing
          * Organization Policies</a>.</p> <p>This operation can be called only from the
          * organization's master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy">AWS
@@ -1348,13 +1351,13 @@ namespace Model
          * limits the permissions that can be delegated, then you must attach the
          * replacement policy before you can remove the default one. This is the
          * authorization strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
          * If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP
          * still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
          * override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code>
          * policy (or any other attached SCP), then you are using the authorization
          * strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
          * </p> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1371,13 +1374,13 @@ namespace Model
          * limits the permissions that can be delegated, then you must attach the
          * replacement policy before you can remove the default one. This is the
          * authorization strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
          * If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP
          * still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
          * override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code>
          * policy (or any other attached SCP), then you are using the authorization
          * strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
          * </p> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1396,13 +1399,13 @@ namespace Model
          * limits the permissions that can be delegated, then you must attach the
          * replacement policy before you can remove the default one. This is the
          * authorization strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist">whitelisting</a>.
          * If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP
          * still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
          * override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code>
          * policy (or any other attached SCP), then you are using the authorization
          * strategy of <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist">blacklisting</a>.
          * </p> <p>This operation can be called only from the organization's master
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DetachPolicy">AWS
@@ -1652,7 +1655,7 @@ namespace Model
          * account. Until you enable all features, you have access only to consolidated
          * billing, and you can't use any of the advanced account administration features
          * that AWS Organizations supports. For more information, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features
@@ -1683,7 +1686,7 @@ namespace Model
          * account. Until you enable all features, you have access only to consolidated
          * billing, and you can't use any of the advanced account administration features
          * that AWS Organizations supports. For more information, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features
@@ -1716,7 +1719,7 @@ namespace Model
          * account. Until you enable all features, you have access only to consolidated
          * billing, and you can't use any of the advanced account administration features
          * that AWS Organizations supports. For more information, see <a
-         * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
+         * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling
          * All Features in Your Organization</a> in the <i>AWS Organizations User
          * Guide</i>.</p> <important> <p>This operation is required only for organizations
          * that were created explicitly with only the consolidated billing features

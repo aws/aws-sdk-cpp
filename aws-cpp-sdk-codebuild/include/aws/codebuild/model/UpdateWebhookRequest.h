@@ -147,6 +147,28 @@ namespace Model
 
 
     /**
+     * <p> A boolean value that specifies whether the associated GitHub repository's
+     * secret token should be updated. If you use Bitbucket for your repository,
+     * <code>rotateSecret</code> is ignored. </p>
+     */
+    inline bool GetRotateSecret() const{ return m_rotateSecret; }
+
+    /**
+     * <p> A boolean value that specifies whether the associated GitHub repository's
+     * secret token should be updated. If you use Bitbucket for your repository,
+     * <code>rotateSecret</code> is ignored. </p>
+     */
+    inline void SetRotateSecret(bool value) { m_rotateSecretHasBeenSet = true; m_rotateSecret = value; }
+
+    /**
+     * <p> A boolean value that specifies whether the associated GitHub repository's
+     * secret token should be updated. If you use Bitbucket for your repository,
+     * <code>rotateSecret</code> is ignored. </p>
+     */
+    inline UpdateWebhookRequest& WithRotateSecret(bool value) { SetRotateSecret(value); return *this;}
+
+
+    /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
      * if a webhook event can trigger a build. A filter group must pcontain at least
      * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
@@ -195,28 +217,6 @@ namespace Model
      */
     inline UpdateWebhookRequest& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository,
-     * <code>rotateSecret</code> is ignored. </p>
-     */
-    inline bool GetRotateSecret() const{ return m_rotateSecret; }
-
-    /**
-     * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository,
-     * <code>rotateSecret</code> is ignored. </p>
-     */
-    inline void SetRotateSecret(bool value) { m_rotateSecretHasBeenSet = true; m_rotateSecret = value; }
-
-    /**
-     * <p> A boolean value that specifies whether the associated GitHub repository's
-     * secret token should be updated. If you use Bitbucket for your repository,
-     * <code>rotateSecret</code> is ignored. </p>
-     */
-    inline UpdateWebhookRequest& WithRotateSecret(bool value) { SetRotateSecret(value); return *this;}
-
   private:
 
     Aws::String m_projectName;
@@ -225,11 +225,11 @@ namespace Model
     Aws::String m_branchFilter;
     bool m_branchFilterHasBeenSet;
 
-    Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
-    bool m_filterGroupsHasBeenSet;
-
     bool m_rotateSecret;
     bool m_rotateSecretHasBeenSet;
+
+    Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
+    bool m_filterGroupsHasBeenSet;
   };
 
 } // namespace Model

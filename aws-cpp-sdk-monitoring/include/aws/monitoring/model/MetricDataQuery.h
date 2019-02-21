@@ -49,10 +49,12 @@ namespace Model
    * <code>MetricDataQuery</code> structures in the array. The 20 structures can
    * include as many as 10 structures that contain a <code>MetricStat</code>
    * parameter to retrieve a metric, and as many as 10 structures that contain the
-   * <code>Expression</code> parameter to perform a math expression. Any expression
-   * used in a <code>PutMetricAlarm</code> operation must return a single time
-   * series. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+   * <code>Expression</code> parameter to perform a math expression. Of those
+   * <code>Expression</code> structures, one must have <code>True</code> as the value
+   * for <code>ReturnData</code>. The result of this expression is the value the
+   * alarm watches.</p> <p>Any expression used in a <code>PutMetricAlarm</code>
+   * operation must return a single time series. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
    * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
    * <p>Some of the parameters of this structure also have different uses whether you
    * are using this structure in a <code>GetMetricData</code> operation or a
@@ -195,7 +197,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -208,7 +210,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -221,7 +223,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -234,7 +236,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -247,7 +249,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -260,7 +262,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>
@@ -273,7 +275,7 @@ namespace Model
      * other metrics to refer to those metrics, and can also use the <code>Id</code> of
      * other expressions to use the result of those expressions. For more information
      * about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
      * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      * <p>Within each MetricDataQuery object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code> but not both.</p>

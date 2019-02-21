@@ -136,8 +136,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -160,8 +159,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -184,8 +182,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -208,8 +205,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -232,8 +228,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -256,8 +251,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>
@@ -280,8 +274,7 @@ namespace Model
      * default is <code>png</code>. If you specify <code>png</code>, the API returns an
      * HTTP response with the content-type set to <code>text/xml</code>. The image data
      * is in a <code>MetricWidgetImage</code> field. For example:</p> <p> <code>
-     * &lt;GetMetricWidgetImageResponse
-     * xmlns="http://monitoring.amazonaws.com/doc/2010-08-01/"&gt;</code> </p> <p>
+     * &lt;GetMetricWidgetImageResponse xmlns=&lt;URLstring&gt;&gt;</code> </p> <p>
      * <code> &lt;GetMetricWidgetImageResult&gt;</code> </p> <p> <code>
      * &lt;MetricWidgetImage&gt;</code> </p> <p> <code>
      * iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</code> </p> <p> <code>

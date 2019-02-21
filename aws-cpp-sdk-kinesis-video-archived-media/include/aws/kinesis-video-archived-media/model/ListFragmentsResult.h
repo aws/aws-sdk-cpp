@@ -45,44 +45,44 @@ namespace Model
 
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline const Aws::Vector<Fragment>& GetFragments() const{ return m_fragments; }
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline void SetFragments(const Aws::Vector<Fragment>& value) { m_fragments = value; }
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline void SetFragments(Aws::Vector<Fragment>&& value) { m_fragments = std::move(value); }
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline ListFragmentsResult& WithFragments(const Aws::Vector<Fragment>& value) { SetFragments(value); return *this;}
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline ListFragmentsResult& WithFragments(Aws::Vector<Fragment>&& value) { SetFragments(std::move(value)); return *this;}
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline ListFragmentsResult& AddFragments(const Fragment& value) { m_fragments.push_back(value); return *this; }
 
     /**
-     * <p>A list of fragment numbers that correspond to the time stamp range
-     * provided.</p>
+     * <p>A list of archived <a>Fragment</a> objects from the stream that meet the
+     * selector criteria. Results are in no specific order, even across pages.</p>
      */
     inline ListFragmentsResult& AddFragments(Fragment&& value) { m_fragments.push_back(std::move(value)); return *this; }
 

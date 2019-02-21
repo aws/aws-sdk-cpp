@@ -129,10 +129,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
@@ -143,10 +143,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
@@ -157,10 +157,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
@@ -171,10 +171,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
@@ -185,10 +185,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
@@ -199,10 +199,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
@@ -213,10 +213,10 @@ namespace Model
      * dimensions as a separate metric. If a specific combination of dimensions was not
      * published, you can't retrieve statistics for it. You must specify the same
      * dimensions that were used when the metrics were created. For an example, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension
      * Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more
      * information about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline GetMetricStatisticsRequest& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }

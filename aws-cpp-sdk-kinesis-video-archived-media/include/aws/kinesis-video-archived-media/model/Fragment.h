@@ -105,53 +105,53 @@ namespace Model
 
 
     /**
-     * <p>The time stamp from the producer corresponding to the fragment.</p>
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetProducerTimestamp() const{ return m_producerTimestamp; }
 
     /**
-     * <p>The time stamp from the producer corresponding to the fragment.</p>
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline void SetProducerTimestamp(const Aws::Utils::DateTime& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = value; }
 
     /**
-     * <p>The time stamp from the producer corresponding to the fragment.</p>
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline void SetProducerTimestamp(Aws::Utils::DateTime&& value) { m_producerTimestampHasBeenSet = true; m_producerTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp from the producer corresponding to the fragment.</p>
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline Fragment& WithProducerTimestamp(const Aws::Utils::DateTime& value) { SetProducerTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp from the producer corresponding to the fragment.</p>
+     * <p>The timestamp from the producer corresponding to the fragment.</p>
      */
     inline Fragment& WithProducerTimestamp(Aws::Utils::DateTime&& value) { SetProducerTimestamp(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
     inline const Aws::Utils::DateTime& GetServerTimestamp() const{ return m_serverTimestamp; }
 
     /**
-     * <p>The time stamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
     inline void SetServerTimestamp(const Aws::Utils::DateTime& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = value; }
 
     /**
-     * <p>The time stamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
     inline void SetServerTimestamp(Aws::Utils::DateTime&& value) { m_serverTimestampHasBeenSet = true; m_serverTimestamp = std::move(value); }
 
     /**
-     * <p>The time stamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
     inline Fragment& WithServerTimestamp(const Aws::Utils::DateTime& value) { SetServerTimestamp(value); return *this;}
 
     /**
-     * <p>The time stamp from the AWS server corresponding to the fragment.</p>
+     * <p>The timestamp from the AWS server corresponding to the fragment.</p>
      */
     inline Fragment& WithServerTimestamp(Aws::Utils::DateTime&& value) { SetServerTimestamp(std::move(value)); return *this;}
 

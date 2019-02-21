@@ -526,7 +526,7 @@ namespace Model
          * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
          * receives a confirmation message, and must confirm the subscription.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
          * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
@@ -538,7 +538,7 @@ namespace Model
          * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
          * receives a confirmation message, and must confirm the subscription.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
          * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
@@ -552,7 +552,7 @@ namespace Model
          * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
          * receives a confirmation message, and must confirm the subscription.</p> <p>For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
          * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
@@ -1051,7 +1051,7 @@ namespace Model
          * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
          * requires an authentication token. To get an authentication token, register an
          * application with Amazon WorkDocs. For more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
          * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
@@ -1066,7 +1066,7 @@ namespace Model
          * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
          * requires an authentication token. To get an authentication token, register an
          * application with Amazon WorkDocs. For more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
          * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
@@ -1083,7 +1083,7 @@ namespace Model
          * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
          * requires an authentication token. To get an authentication token, register an
          * application with Amazon WorkDocs. For more information, see <a
-         * href="http://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
          * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS

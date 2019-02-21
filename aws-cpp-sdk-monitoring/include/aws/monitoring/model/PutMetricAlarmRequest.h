@@ -310,6 +310,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -329,6 +330,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -348,6 +350,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -367,6 +370,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -386,6 +390,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -405,6 +410,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -424,6 +430,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -443,6 +450,7 @@ namespace Model
      * (ARN).</p> <p>Valid Values: <code>arn:aws:automate:<i>region</i>:ec2:stop</code>
      * | <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -464,6 +472,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -484,6 +493,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -504,6 +514,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -524,6 +535,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -544,6 +556,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -564,6 +577,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -584,6 +598,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -604,6 +619,7 @@ namespace Model
      * <code>arn:aws:automate:<i>region</i>:ec2:stop</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:terminate</code> |
      * <code>arn:aws:automate:<i>region</i>:ec2:recover</code> |
+     * <code>arn:aws:automate:<i>region</i>:ec2:reboot</code> |
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
      * |
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
@@ -1018,7 +1034,7 @@ namespace Model
      * <p>The number of datapoints that must be breaching to trigger the alarm. This is
      * used only if you are setting an "M out of N" alarm. In that case, this value is
      * the M. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
@@ -1027,7 +1043,7 @@ namespace Model
      * <p>The number of datapoints that must be breaching to trigger the alarm. This is
      * used only if you are setting an "M out of N" alarm. In that case, this value is
      * the M. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
@@ -1036,7 +1052,7 @@ namespace Model
      * <p>The number of datapoints that must be breaching to trigger the alarm. This is
      * used only if you are setting an "M out of N" alarm. In that case, this value is
      * the M. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline PutMetricAlarmRequest& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
@@ -1093,7 +1109,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1103,7 +1119,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1113,7 +1129,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1123,7 +1139,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1133,7 +1149,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1143,7 +1159,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1153,7 +1169,7 @@ namespace Model
      * <p> Sets how this alarm is to handle missing data points. If
      * <code>TreatMissingData</code> is omitted, the default behavior of
      * <code>missing</code> is used. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
      * How CloudWatch Alarms Treats Missing Data</a>.</p> <p>Valid Values:
      * <code>breaching | notBreaching | ignore | missing</code> </p>
      */
@@ -1167,7 +1183,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1180,7 +1196,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1193,7 +1209,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1206,7 +1222,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1219,7 +1235,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1232,7 +1248,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1245,7 +1261,7 @@ namespace Model
      * <code>evaluate</code> or omit this parameter, the alarm is always evaluated and
      * possibly changes state no matter how many data points are available. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#percentiles-with-low-samples">Percentile-Based
      * CloudWatch Alarms and Low Data Samples</a>.</p> <p>Valid Values: <code>evaluate
      * | ignore</code> </p>
      */
@@ -1256,12 +1272,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
 
@@ -1269,12 +1289,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -1282,12 +1306,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
@@ -1295,12 +1323,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
 
@@ -1308,12 +1340,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
 
@@ -1321,12 +1357,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -1334,12 +1374,16 @@ namespace Model
      * <p>An array of <code>MetricDataQuery</code> structures that enable you to create
      * an alarm based on the result of a metric math expression. Each item in the
      * <code>Metrics</code> array either retrieves a metric or performs a math
-     * expression.</p> <p>If you use the <code>Metrics</code> parameter, you cannot
-     * include the <code>MetricName</code>, <code>Dimensions</code>,
-     * <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or
-     * <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the
-     * same operation. Instead, you retrieve the metrics you are using in your math
-     * expression as part of the <code>Metrics</code> array.</p>
+     * expression.</p> <p>One item in the <code>Metrics</code> array is the expression
+     * that the alarm watches. You designate this expression by setting
+     * <code>ReturnValue</code> to true for this object in the array. For more
+     * information, see <a>MetricDataQuery</a>.</p> <p>If you use the
+     * <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>,
+     * <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>,
+     * <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of
+     * <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the
+     * metrics you are using in your math expression as part of the
+     * <code>Metrics</code> array.</p>
      */
     inline PutMetricAlarmRequest& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 

@@ -143,8 +143,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
@@ -156,8 +155,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(const Aws::String& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
@@ -169,8 +167,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::move(value); }
@@ -182,8 +179,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline void SetMediaType(const char* value) { m_mediaTypeHasBeenSet = true; m_mediaType.assign(value); }
@@ -195,8 +191,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(const Aws::String& value) { SetMediaType(value); return *this;}
@@ -208,8 +203,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(Aws::String&& value) { SetMediaType(std::move(value)); return *this;}
@@ -221,8 +215,7 @@ namespace Model
      * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
      * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
      * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming Requirements</a>
-     * for guidelines.</p> <p>Example valid values include "video/h264" and
-     * "video/h264,audio/aac".</p> <p>This parameter is optional; the default value is
+     * for guidelines.</p> <p>This parameter is optional; the default value is
      * <code>null</code> (or empty in JSON).</p>
      */
     inline CreateStreamRequest& WithMediaType(const char* value) { SetMediaType(value); return *this;}

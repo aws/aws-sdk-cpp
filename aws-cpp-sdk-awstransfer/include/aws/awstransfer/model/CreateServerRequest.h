@@ -49,7 +49,7 @@ namespace Model
 
 
     /**
-     * <p> An array containing all of the information required to call a
+     * <p>An array containing all of the information required to call a
      * customer-supplied authentication API. This parameter is not required when the
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>
@@ -57,7 +57,7 @@ namespace Model
     inline const IdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
 
     /**
-     * <p> An array containing all of the information required to call a
+     * <p>An array containing all of the information required to call a
      * customer-supplied authentication API. This parameter is not required when the
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>
@@ -65,7 +65,7 @@ namespace Model
     inline void SetIdentityProviderDetails(const IdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
 
     /**
-     * <p> An array containing all of the information required to call a
+     * <p>An array containing all of the information required to call a
      * customer-supplied authentication API. This parameter is not required when the
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>
@@ -73,7 +73,7 @@ namespace Model
     inline void SetIdentityProviderDetails(IdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
 
     /**
-     * <p> An array containing all of the information required to call a
+     * <p>An array containing all of the information required to call a
      * customer-supplied authentication API. This parameter is not required when the
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>
@@ -81,7 +81,7 @@ namespace Model
     inline CreateServerRequest& WithIdentityProviderDetails(const IdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
 
     /**
-     * <p> An array containing all of the information required to call a
+     * <p>An array containing all of the information required to call a
      * customer-supplied authentication API. This parameter is not required when the
      * <code>IdentityProviderType</code> value of server that is created uses the
      * <code>SERVICE_MANAGED</code> authentication method.</p>

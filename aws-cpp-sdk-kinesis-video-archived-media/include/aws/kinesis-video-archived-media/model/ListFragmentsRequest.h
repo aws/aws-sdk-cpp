@@ -148,32 +148,32 @@ namespace Model
 
 
     /**
-     * <p>Describes the time stamp range and time stamp origin for the range of
-     * fragments to return.</p>
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
      */
     inline const FragmentSelector& GetFragmentSelector() const{ return m_fragmentSelector; }
 
     /**
-     * <p>Describes the time stamp range and time stamp origin for the range of
-     * fragments to return.</p>
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
      */
     inline void SetFragmentSelector(const FragmentSelector& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = value; }
 
     /**
-     * <p>Describes the time stamp range and time stamp origin for the range of
-     * fragments to return.</p>
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
      */
     inline void SetFragmentSelector(FragmentSelector&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::move(value); }
 
     /**
-     * <p>Describes the time stamp range and time stamp origin for the range of
-     * fragments to return.</p>
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
      */
     inline ListFragmentsRequest& WithFragmentSelector(const FragmentSelector& value) { SetFragmentSelector(value); return *this;}
 
     /**
-     * <p>Describes the time stamp range and time stamp origin for the range of
-     * fragments to return.</p>
+     * <p>Describes the timestamp range and timestamp origin for the range of fragments
+     * to return.</p>
      */
     inline ListFragmentsRequest& WithFragmentSelector(FragmentSelector&& value) { SetFragmentSelector(std::move(value)); return *this;}
 

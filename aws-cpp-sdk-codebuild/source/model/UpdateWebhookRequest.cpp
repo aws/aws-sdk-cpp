@@ -25,9 +25,9 @@ using namespace Aws::Utils;
 UpdateWebhookRequest::UpdateWebhookRequest() : 
     m_projectNameHasBeenSet(false),
     m_branchFilterHasBeenSet(false),
-    m_filterGroupsHasBeenSet(false),
     m_rotateSecret(false),
-    m_rotateSecretHasBeenSet(false)
+    m_rotateSecretHasBeenSet(false),
+    m_filterGroupsHasBeenSet(false)
 {
 }
 
@@ -47,6 +47,12 @@ Aws::String UpdateWebhookRequest::SerializePayload() const
 
   }
 
+  if(m_rotateSecretHasBeenSet)
+  {
+   payload.WithBool("rotateSecret", m_rotateSecret);
+
+  }
+
   if(m_filterGroupsHasBeenSet)
   {
    Array<JsonValue> filterGroupsJsonList(m_filterGroups.size());
@@ -60,12 +66,6 @@ Aws::String UpdateWebhookRequest::SerializePayload() const
      filterGroupsJsonList[filterGroupsIndex].AsArray(std::move(filterGroupJsonList));
    }
    payload.WithArray("filterGroups", std::move(filterGroupsJsonList));
-
-  }
-
-  if(m_rotateSecretHasBeenSet)
-  {
-   payload.WithBool("rotateSecret", m_rotateSecret);
 
   }
 

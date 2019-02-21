@@ -82,43 +82,43 @@ namespace Model
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint to receive the notifications. If the protocol is HTTPS, the
-     * endpoint is a URL that begins with "https://".</p>
+     * endpoint is a URL that begins with <code>https</code>.</p>
      */
     inline CreateNotificationSubscriptionRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 

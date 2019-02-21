@@ -391,7 +391,7 @@ namespace Model
      * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
      * Currently, high resolution is available only for custom metrics. For more
      * information about high-resolution metrics, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
      * optional, if you do not specify it the default of 60 is used.</p>
      */
@@ -404,7 +404,7 @@ namespace Model
      * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
      * Currently, high resolution is available only for custom metrics. For more
      * information about high-resolution metrics, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
      * optional, if you do not specify it the default of 60 is used.</p>
      */
@@ -417,7 +417,7 @@ namespace Model
      * regular-resolution metric, which CloudWatch stores at 1-minute resolution.
      * Currently, high resolution is available only for custom metrics. For more
      * information about high-resolution metrics, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html#high-resolution-metrics">High-Resolution
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>. </p> <p>This field is
      * optional, if you do not specify it the default of 60 is used.</p>
      */

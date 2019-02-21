@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     NO_CACHE,
-    S3
+    S3,
+    LOCAL
   };
 
 namespace CacheTypeMapper

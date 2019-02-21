@@ -64,58 +64,58 @@ namespace Model
 
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>When you can get additional results from the <code>ListUsers</code>ListUsers
-     * call, a <code>NextToken</code> parameter is returned in the output. You can then
-     * pass in a subsequent command the <code>NextToken</code> parameter to continue
-     * listing additional users.</p>
+     * <p>When you can get additional results from the <code>ListUsers</code> call, a
+     * <code>NextToken</code> parameter is returned in the output. You can then pass in
+     * a subsequent command the <code>NextToken</code> parameter to continue listing
+     * additional users.</p>
      */
     inline ListUsersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

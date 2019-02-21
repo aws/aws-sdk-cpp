@@ -80,25 +80,60 @@ namespace Model
     inline ListTagsForResourceResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline ListTagsForResourceResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline ListTagsForResourceResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>When you can get additional results from the <code>ListTagsForResource</code>
+     * call, a <code>NextToken</code> parameter is returned in the output. You can then
+     * pass in a subsequent command the <code>NextToken</code> parameter to continue
+     * listing additional tags.</p>
+     */
     inline ListTagsForResourceResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 

@@ -35,8 +35,15 @@ namespace Model
 {
 
   /**
-   * <p>Describes the time stamp range and time stamp origin of a range of
-   * fragments.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the timestamp range and timestamp origin of a range of
+   * fragments.</p> <p>Only fragments with a start timestamp greater than or equal to
+   * the given start time and less than or equal to the end time are returned. For
+   * example, if a stream contains fragments with the following start timestamps:
+   * </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li>
+   * <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector
+   * range with a start time of 00:00:01 and end time of 00:00:04 would return the
+   * fragments with start times of 00:00:02 and 00:00:04. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/FragmentSelector">AWS
    * API Reference</a></p>
    */
@@ -50,53 +57,53 @@ namespace Model
 
 
     /**
-     * <p>The origin of the time stamps to use (Server or Producer).</p>
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline const FragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
 
     /**
-     * <p>The origin of the time stamps to use (Server or Producer).</p>
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline void SetFragmentSelectorType(const FragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
 
     /**
-     * <p>The origin of the time stamps to use (Server or Producer).</p>
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline void SetFragmentSelectorType(FragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
 
     /**
-     * <p>The origin of the time stamps to use (Server or Producer).</p>
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline FragmentSelector& WithFragmentSelectorType(const FragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
 
     /**
-     * <p>The origin of the time stamps to use (Server or Producer).</p>
+     * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline FragmentSelector& WithFragmentSelectorType(FragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The range of time stamps to return.</p>
+     * <p>The range of timestamps to return.</p>
      */
     inline const TimestampRange& GetTimestampRange() const{ return m_timestampRange; }
 
     /**
-     * <p>The range of time stamps to return.</p>
+     * <p>The range of timestamps to return.</p>
      */
     inline void SetTimestampRange(const TimestampRange& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = value; }
 
     /**
-     * <p>The range of time stamps to return.</p>
+     * <p>The range of timestamps to return.</p>
      */
     inline void SetTimestampRange(TimestampRange&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::move(value); }
 
     /**
-     * <p>The range of time stamps to return.</p>
+     * <p>The range of timestamps to return.</p>
      */
     inline FragmentSelector& WithTimestampRange(const TimestampRange& value) { SetTimestampRange(value); return *this;}
 
     /**
-     * <p>The range of time stamps to return.</p>
+     * <p>The range of timestamps to return.</p>
      */
     inline FragmentSelector& WithTimestampRange(TimestampRange&& value) { SetTimestampRange(std::move(value)); return *this;}
 

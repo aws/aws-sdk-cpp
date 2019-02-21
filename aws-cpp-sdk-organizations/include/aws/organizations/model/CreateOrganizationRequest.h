@@ -49,12 +49,12 @@ namespace Model
      * supports different levels of functionality.</p> <ul> <li> <p>
      * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
      * to and paid by the master account. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
      * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
      * <i>ALL</i>: In addition to all the features supported by the consolidated
      * billing feature set, the master account can also apply any type of policy to any
      * member account in the organization. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
     inline const OrganizationFeatureSet& GetFeatureSet() const{ return m_featureSet; }
@@ -64,12 +64,12 @@ namespace Model
      * supports different levels of functionality.</p> <ul> <li> <p>
      * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
      * to and paid by the master account. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
      * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
      * <i>ALL</i>: In addition to all the features supported by the consolidated
      * billing feature set, the master account can also apply any type of policy to any
      * member account in the organization. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
     inline void SetFeatureSet(const OrganizationFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
@@ -79,12 +79,12 @@ namespace Model
      * supports different levels of functionality.</p> <ul> <li> <p>
      * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
      * to and paid by the master account. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
      * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
      * <i>ALL</i>: In addition to all the features supported by the consolidated
      * billing feature set, the master account can also apply any type of policy to any
      * member account in the organization. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
     inline void SetFeatureSet(OrganizationFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
@@ -94,12 +94,12 @@ namespace Model
      * supports different levels of functionality.</p> <ul> <li> <p>
      * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
      * to and paid by the master account. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
      * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
      * <i>ALL</i>: In addition to all the features supported by the consolidated
      * billing feature set, the master account can also apply any type of policy to any
      * member account in the organization. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
     inline CreateOrganizationRequest& WithFeatureSet(const OrganizationFeatureSet& value) { SetFeatureSet(value); return *this;}
@@ -109,12 +109,12 @@ namespace Model
      * supports different levels of functionality.</p> <ul> <li> <p>
      * <i>CONSOLIDATED_BILLING</i>: All member accounts have their bills consolidated
      * to and paid by the master account. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-cb-only">Consolidated
      * billing</a> in the <i>AWS Organizations User Guide</i>.</p> </li> <li> <p>
      * <i>ALL</i>: In addition to all the features supported by the consolidated
      * billing feature set, the master account can also apply any type of policy to any
      * member account in the organization. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#feature-set-all">All
      * features</a> in the <i>AWS Organizations User Guide</i>.</p> </li> </ul>
      */
     inline CreateOrganizationRequest& WithFeatureSet(OrganizationFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}

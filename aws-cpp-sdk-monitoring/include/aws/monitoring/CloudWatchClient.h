@@ -456,7 +456,7 @@ namespace Model
          * into your data. For example, using Lambda metrics, you could divide the Errors
          * metric by the Invocations metric to get an error rate time series. For more
          * information about metric math expressions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
@@ -489,7 +489,7 @@ namespace Model
          * into your data. For example, using Lambda metrics, you could divide the Errors
          * metric by the Invocations metric to get an error rate time series. For more
          * information about metric math expressions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
@@ -524,7 +524,7 @@ namespace Model
          * into your data. For example, using Lambda metrics, you could divide the Errors
          * metric by the Invocations metric to get an error rate time series. For more
          * information about metric math expressions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
          * Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
          * <p>Calls to the <code>GetMetricData</code> API have a different pricing
          * structure than calls to <code>GetMetricStatistics</code>. For more information
@@ -585,7 +585,7 @@ namespace Model
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
          * dimensions supported by AWS services, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
@@ -627,7 +627,7 @@ namespace Model
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
          * dimensions supported by AWS services, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
@@ -671,7 +671,7 @@ namespace Model
          * resolution of 1 hour.</p> <p>CloudWatch started retaining 5-minute and 1-hour
          * metric data as of July 9, 2016.</p> <p>For information about metrics and
          * dimensions supported by AWS services, see the <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon
          * CloudWatch Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStatistics">AWS
@@ -925,7 +925,7 @@ namespace Model
          * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
          * role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
@@ -962,7 +962,7 @@ namespace Model
          * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
          * role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
@@ -1001,7 +1001,7 @@ namespace Model
          * by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
          * role for you. The service-linked role is called
          * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">AWS
          * service-linked role</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricAlarm">AWS
          * API Reference</a></p>
@@ -1029,9 +1029,10 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
          * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
@@ -1067,9 +1068,10 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
          * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
@@ -1107,9 +1109,10 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. For more
-         * information about specifying dimensions, see <a
-         * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+         * per metric to further clarify what data the metric collects. Each dimension
+         * consists of a Name and Value pair. For more information about specifying
+         * dimensions, see <a
+         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
          * available for <a>GetMetricData</a> or <a>GetMetricStatistics</a> from the time
