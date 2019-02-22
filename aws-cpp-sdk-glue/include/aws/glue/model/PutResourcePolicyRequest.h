@@ -82,51 +82,58 @@ namespace Model
 
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline const Aws::String& GetPolicyHashCondition() const{ return m_policyHashCondition; }
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline void SetPolicyHashCondition(const Aws::String& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = value; }
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline void SetPolicyHashCondition(Aws::String&& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = std::move(value); }
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline void SetPolicyHashCondition(const char* value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition.assign(value); }
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHashCondition(const Aws::String& value) { SetPolicyHashCondition(value); return *this;}
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHashCondition(Aws::String&& value) { SetPolicyHashCondition(std::move(value)); return *this;}
 
     /**
-     * <p>This is the hash value returned when the previous policy was set using
-     * PutResourcePolicy. Its purpose is to prevent concurrent modifications of a
-     * policy. Do not use this parameter if no previous policy has been set.</p>
+     * <p>The hash value returned when the previous policy was set using
+     * <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent
+     * modifications of a policy. Do not use this parameter if no previous policy has
+     * been set.</p>
      */
     inline PutResourcePolicyRequest& WithPolicyHashCondition(const char* value) { SetPolicyHashCondition(value); return *this;}
 

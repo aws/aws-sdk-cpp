@@ -17,6 +17,7 @@
 #include <aws/cloud9/Cloud9_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloud9/model/EnvironmentType.h>
+#include <aws/cloud9/model/EnvironmentLifecycle.h>
 #include <utility>
 
 namespace Aws
@@ -269,6 +270,32 @@ namespace Model
      */
     inline Environment& WithOwnerArn(const char* value) { SetOwnerArn(value); return *this;}
 
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline const EnvironmentLifecycle& GetLifecycle() const{ return m_lifecycle; }
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline void SetLifecycle(const EnvironmentLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline void SetLifecycle(EnvironmentLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline Environment& WithLifecycle(const EnvironmentLifecycle& value) { SetLifecycle(value); return *this;}
+
+    /**
+     * <p>The state of the environment in its creation or deletion lifecycle.</p>
+     */
+    inline Environment& WithLifecycle(EnvironmentLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -288,6 +315,9 @@ namespace Model
 
     Aws::String m_ownerArn;
     bool m_ownerArnHasBeenSet;
+
+    EnvironmentLifecycle m_lifecycle;
+    bool m_lifecycleHasBeenSet;
   };
 
 } // namespace Model

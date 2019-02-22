@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateStateMachineRequest::CreateStateMachineRequest() : 
     m_nameHasBeenSet(false),
     m_definitionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,17 @@ Aws::String CreateStateMachineRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

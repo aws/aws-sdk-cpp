@@ -35,7 +35,8 @@ Environment::Environment() :
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
+    m_ownerArnHasBeenSet(false),
+    m_lifecycleHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Environment::Environment(JsonView jsonValue) :
     m_type(EnvironmentType::NOT_SET),
     m_typeHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_ownerArnHasBeenSet(false)
+    m_ownerArnHasBeenSet(false),
+    m_lifecycleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -95,6 +97,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_ownerArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lifecycle"))
+  {
+    m_lifecycle = jsonValue.GetObject("lifecycle");
+
+    m_lifecycleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -134,6 +143,12 @@ JsonValue Environment::Jsonize() const
   if(m_ownerArnHasBeenSet)
   {
    payload.WithString("ownerArn", m_ownerArn);
+
+  }
+
+  if(m_lifecycleHasBeenSet)
+  {
+   payload.WithObject("lifecycle", m_lifecycle.Jsonize());
 
   }
 

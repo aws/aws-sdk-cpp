@@ -169,7 +169,7 @@ namespace Model
 
         virtual ~Cloud9Client();
 
-        inline virtual const char* GetServiceClientName() const override { return "cloud9"; }
+        inline virtual const char* GetServiceClientName() const override { return "Cloud9"; }
 
 
         /**

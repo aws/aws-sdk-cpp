@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies encryption-at-rest configuration for the Data
+   * <p>Specifies the encryption-at-rest configuration for the Data
    * Catalog.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EncryptionAtRest">AWS
    * API Reference</a></p>

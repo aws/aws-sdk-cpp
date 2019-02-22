@@ -33,9 +33,12 @@
 #include <aws/athena/model/GetWorkGroupResult.h>
 #include <aws/athena/model/ListNamedQueriesResult.h>
 #include <aws/athena/model/ListQueryExecutionsResult.h>
+#include <aws/athena/model/ListTagsForResourceResult.h>
 #include <aws/athena/model/ListWorkGroupsResult.h>
 #include <aws/athena/model/StartQueryExecutionResult.h>
 #include <aws/athena/model/StopQueryExecutionResult.h>
+#include <aws/athena/model/TagResourceResult.h>
+#include <aws/athena/model/UntagResourceResult.h>
 #include <aws/athena/model/UpdateWorkGroupResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -89,9 +92,12 @@ namespace Model
         class GetWorkGroupRequest;
         class ListNamedQueriesRequest;
         class ListQueryExecutionsRequest;
+        class ListTagsForResourceRequest;
         class ListWorkGroupsRequest;
         class StartQueryExecutionRequest;
         class StopQueryExecutionRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateWorkGroupRequest;
 
         typedef Aws::Utils::Outcome<BatchGetNamedQueryResult, Aws::Client::AWSError<AthenaErrors>> BatchGetNamedQueryOutcome;
@@ -106,9 +112,12 @@ namespace Model
         typedef Aws::Utils::Outcome<GetWorkGroupResult, Aws::Client::AWSError<AthenaErrors>> GetWorkGroupOutcome;
         typedef Aws::Utils::Outcome<ListNamedQueriesResult, Aws::Client::AWSError<AthenaErrors>> ListNamedQueriesOutcome;
         typedef Aws::Utils::Outcome<ListQueryExecutionsResult, Aws::Client::AWSError<AthenaErrors>> ListQueryExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<AthenaErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListWorkGroupsResult, Aws::Client::AWSError<AthenaErrors>> ListWorkGroupsOutcome;
         typedef Aws::Utils::Outcome<StartQueryExecutionResult, Aws::Client::AWSError<AthenaErrors>> StartQueryExecutionOutcome;
         typedef Aws::Utils::Outcome<StopQueryExecutionResult, Aws::Client::AWSError<AthenaErrors>> StopQueryExecutionOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AthenaErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AthenaErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkGroupResult, Aws::Client::AWSError<AthenaErrors>> UpdateWorkGroupOutcome;
 
         typedef std::future<BatchGetNamedQueryOutcome> BatchGetNamedQueryOutcomeCallable;
@@ -123,9 +132,12 @@ namespace Model
         typedef std::future<GetWorkGroupOutcome> GetWorkGroupOutcomeCallable;
         typedef std::future<ListNamedQueriesOutcome> ListNamedQueriesOutcomeCallable;
         typedef std::future<ListQueryExecutionsOutcome> ListQueryExecutionsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListWorkGroupsOutcome> ListWorkGroupsOutcomeCallable;
         typedef std::future<StartQueryExecutionOutcome> StartQueryExecutionOutcomeCallable;
         typedef std::future<StopQueryExecutionOutcome> StopQueryExecutionOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateWorkGroupOutcome> UpdateWorkGroupOutcomeCallable;
 } // namespace Model
 
@@ -143,9 +155,12 @@ namespace Model
     typedef std::function<void(const AthenaClient*, const Model::GetWorkGroupRequest&, const Model::GetWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkGroupResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListNamedQueriesRequest&, const Model::ListNamedQueriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamedQueriesResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListQueryExecutionsRequest&, const Model::ListQueryExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQueryExecutionsResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListWorkGroupsRequest&, const Model::ListWorkGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkGroupsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::StartQueryExecutionRequest&, const Model::StartQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::StopQueryExecutionRequest&, const Model::StopQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopQueryExecutionResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateWorkGroupRequest&, const Model::UpdateWorkGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkGroupResponseReceivedHandler;
 
   /**
@@ -515,7 +530,7 @@ namespace Model
         virtual void GetQueryResultsAsync(const Model::GetQueryResultsRequest& request, const GetQueryResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the workgroup with the speficied
+         * <p>Returns information about the workgroup with the specified
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">AWS
          * API Reference</a></p>
@@ -523,7 +538,7 @@ namespace Model
         virtual Model::GetWorkGroupOutcome GetWorkGroup(const Model::GetWorkGroupRequest& request) const;
 
         /**
-         * <p>Returns information about the workgroup with the speficied
+         * <p>Returns information about the workgroup with the specified
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">AWS
          * API Reference</a></p>
@@ -533,7 +548,7 @@ namespace Model
         virtual Model::GetWorkGroupOutcomeCallable GetWorkGroupCallable(const Model::GetWorkGroupRequest& request) const;
 
         /**
-         * <p>Returns information about the workgroup with the speficied
+         * <p>Returns information about the workgroup with the specified
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup">AWS
          * API Reference</a></p>
@@ -621,6 +636,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListQueryExecutionsAsync(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the tags associated with this workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags associated with this workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Lists the tags associated with this workgroup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists available workgroups for the account.</p><p><h3>See Also:</h3>   <a
@@ -725,6 +765,98 @@ namespace Model
         virtual void StopQueryExecutionAsync(const Model::StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds one or more tags to the resource, such as a workgroup. A tag is a label
+         * that you assign to an AWS Athena resource (a workgroup). Each tag consists of a
+         * key and an optional value, both of which you define. Tags enable you to
+         * categorize resources (workgroups) in Athena, for example, by purpose, owner, or
+         * environment. Use a consistent set of tag keys to make it easier to search and
+         * filter workgroups in your account. For best practices, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>. The key length is from 1 (minimum) to 128 (maximum)
+         * Unicode characters in UTF-8. The tag value length is from 0 (minimum) to 256
+         * (maximum) Unicode characters in UTF-8. You can use letters and numbers
+         * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+         * and values are case-sensitive. Tag keys must be unique per resource. If you
+         * specify more than one, separate them by commas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to the resource, such as a workgroup. A tag is a label
+         * that you assign to an AWS Athena resource (a workgroup). Each tag consists of a
+         * key and an optional value, both of which you define. Tags enable you to
+         * categorize resources (workgroups) in Athena, for example, by purpose, owner, or
+         * environment. Use a consistent set of tag keys to make it easier to search and
+         * filter workgroups in your account. For best practices, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>. The key length is from 1 (minimum) to 128 (maximum)
+         * Unicode characters in UTF-8. The tag value length is from 0 (minimum) to 256
+         * (maximum) Unicode characters in UTF-8. You can use letters and numbers
+         * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+         * and values are case-sensitive. Tag keys must be unique per resource. If you
+         * specify more than one, separate them by commas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Adds one or more tags to the resource, such as a workgroup. A tag is a label
+         * that you assign to an AWS Athena resource (a workgroup). Each tag consists of a
+         * key and an optional value, both of which you define. Tags enable you to
+         * categorize resources (workgroups) in Athena, for example, by purpose, owner, or
+         * environment. Use a consistent set of tag keys to make it easier to search and
+         * filter workgroups in your account. For best practices, see <a
+         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+         * Tagging Strategies</a>. The key length is from 1 (minimum) to 128 (maximum)
+         * Unicode characters in UTF-8. The tag value length is from 0 (minimum) to 256
+         * (maximum) Unicode characters in UTF-8. You can use letters and numbers
+         * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+         * and values are case-sensitive. Tag keys must be unique per resource. If you
+         * specify more than one, separate them by commas.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes one or more tags from the workgroup resource. Takes as an input a
+         * list of TagKey Strings separated by commas, and removes their tags at the same
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the workgroup resource. Takes as an input a
+         * list of TagKey Strings separated by commas, and removes their tags at the same
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes one or more tags from the workgroup resource. Takes as an input a
+         * list of TagKey Strings separated by commas, and removes their tags at the same
+         * time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the workgroup with the specified name. The workgroup's name cannot be
          * changed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">AWS
@@ -769,9 +901,12 @@ namespace Model
         void GetWorkGroupAsyncHelper(const Model::GetWorkGroupRequest& request, const GetWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNamedQueriesAsyncHelper(const Model::ListNamedQueriesRequest& request, const ListNamedQueriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListQueryExecutionsAsyncHelper(const Model::ListQueryExecutionsRequest& request, const ListQueryExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkGroupsAsyncHelper(const Model::ListWorkGroupsRequest& request, const ListWorkGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartQueryExecutionAsyncHelper(const Model::StartQueryExecutionRequest& request, const StartQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopQueryExecutionAsyncHelper(const Model::StopQueryExecutionRequest& request, const StopQueryExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkGroupAsyncHelper(const Model::UpdateWorkGroupRequest& request, const UpdateWorkGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

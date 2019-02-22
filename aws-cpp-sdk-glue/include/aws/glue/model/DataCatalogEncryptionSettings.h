@@ -50,33 +50,33 @@ namespace Model
 
 
     /**
-     * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
     inline const EncryptionAtRest& GetEncryptionAtRest() const{ return m_encryptionAtRest; }
 
     /**
-     * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
     inline void SetEncryptionAtRest(const EncryptionAtRest& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = value; }
 
     /**
-     * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
     inline void SetEncryptionAtRest(EncryptionAtRest&& value) { m_encryptionAtRestHasBeenSet = true; m_encryptionAtRest = std::move(value); }
 
     /**
-     * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
     inline DataCatalogEncryptionSettings& WithEncryptionAtRest(const EncryptionAtRest& value) { SetEncryptionAtRest(value); return *this;}
 
     /**
-     * <p>Specifies encryption-at-rest configuration for the Data Catalog.</p>
+     * <p>Specifies the encryption-at-rest configuration for the Data Catalog.</p>
      */
     inline DataCatalogEncryptionSettings& WithEncryptionAtRest(EncryptionAtRest&& value) { SetEncryptionAtRest(std::move(value)); return *this;}
 
 
     /**
-     * <p>When password protection is enabled, the Data Catalog uses a
+     * <p>When connection password protection is enabled, the Data Catalog uses a
      * customer-provided key to encrypt the password as part of
      * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
@@ -85,7 +85,7 @@ namespace Model
     inline const ConnectionPasswordEncryption& GetConnectionPasswordEncryption() const{ return m_connectionPasswordEncryption; }
 
     /**
-     * <p>When password protection is enabled, the Data Catalog uses a
+     * <p>When connection password protection is enabled, the Data Catalog uses a
      * customer-provided key to encrypt the password as part of
      * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
@@ -94,7 +94,7 @@ namespace Model
     inline void SetConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = value; }
 
     /**
-     * <p>When password protection is enabled, the Data Catalog uses a
+     * <p>When connection password protection is enabled, the Data Catalog uses a
      * customer-provided key to encrypt the password as part of
      * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
@@ -103,7 +103,7 @@ namespace Model
     inline void SetConnectionPasswordEncryption(ConnectionPasswordEncryption&& value) { m_connectionPasswordEncryptionHasBeenSet = true; m_connectionPasswordEncryption = std::move(value); }
 
     /**
-     * <p>When password protection is enabled, the Data Catalog uses a
+     * <p>When connection password protection is enabled, the Data Catalog uses a
      * customer-provided key to encrypt the password as part of
      * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can
@@ -112,7 +112,7 @@ namespace Model
     inline DataCatalogEncryptionSettings& WithConnectionPasswordEncryption(const ConnectionPasswordEncryption& value) { SetConnectionPasswordEncryption(value); return *this;}
 
     /**
-     * <p>When password protection is enabled, the Data Catalog uses a
+     * <p>When connection password protection is enabled, the Data Catalog uses a
      * customer-provided key to encrypt the password as part of
      * <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
      * the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can

@@ -86,10 +86,11 @@ namespace Model
 
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -99,10 +100,11 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -112,10 +114,11 @@ namespace Model
     inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -125,10 +128,11 @@ namespace Model
     inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -138,10 +142,11 @@ namespace Model
     inline Action& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -151,10 +156,11 @@ namespace Model
     inline Action& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -164,10 +170,11 @@ namespace Model
     inline Action& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -177,10 +184,11 @@ namespace Model
     inline Action& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -190,10 +198,11 @@ namespace Model
     inline Action& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -203,10 +212,11 @@ namespace Model
     inline Action& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -216,10 +226,11 @@ namespace Model
     inline Action& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a
@@ -229,10 +240,11 @@ namespace Model
     inline Action& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Arguments to be passed to the job run.</p> <p>You can specify arguments here
-     * that your own job-execution script consumes, as well as arguments that AWS Glue
-     * itself consumes.</p> <p>For information about how to specify and consume your
-     * own Job arguments, see the <a
+     * <p>The job arguments used when this trigger fires. For this job run, they
+     * replace the default arguments set in the job definition itself.</p> <p>You can
+     * specify arguments here that your own job-execution script consumes, as well as
+     * arguments that AWS Glue itself consumes.</p> <p>For information about how to
+     * specify and consume your own Job arguments, see the <a
      * href="http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * AWS Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
      * about the key-value pairs that AWS Glue consumes to set up your job, see the <a

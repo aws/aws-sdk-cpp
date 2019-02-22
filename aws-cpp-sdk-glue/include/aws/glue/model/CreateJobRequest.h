@@ -479,26 +479,50 @@ namespace Model
 
 
     /**
-     * <p>AWS Glue supports running jobs on a
-     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
-     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
-     * running in any other way cannot have fractional DPU allocations.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
     /**
-     * <p>AWS Glue supports running jobs on a
-     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
-     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
-     * running in any other way cannot have fractional DPU allocations.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
     /**
-     * <p>AWS Glue supports running jobs on a
-     * <code>JobCommand.Name</code>="pythonshell" with allocated processing as low as
-     * 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs
-     * running in any other way cannot have fractional DPU allocations.</p>
+     * <p>The number of AWS Glue data processing units (DPUs) that can be allocated
+     * when this job runs. A DPU is a relative measure of processing power that
+     * consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue
+     * pricing page</a>.</p> <p>The value that can be allocated for
+     * <code>MaxCapacity</code> depends on whether you are running a python shell job,
+     * or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a python shell job
+     * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
+     * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
+     * Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul>
      */
     inline CreateJobRequest& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
@@ -564,6 +588,103 @@ namespace Model
      */
     inline CreateJobRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags to use with this job. You may use tags to limit access to the job.
+     * For more information about tags in AWS Glue, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">AWS Tags in
+     * AWS Glue</a> in the developer guide.</p>
+     */
+    inline CreateJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -604,6 +725,9 @@ namespace Model
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

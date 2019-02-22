@@ -90,37 +90,37 @@ namespace Model
 
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline Connection& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline Connection& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Description of the connection.</p>
+     * <p>The description of the connection.</p>
      */
     inline Connection& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -208,9 +208,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -218,8 +218,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline const Aws::Map<ConnectionPropertyKey, Aws::String>& GetConnectionProperties() const{ return m_connectionProperties; }
 
@@ -234,9 +235,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -244,8 +245,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = value; }
 
@@ -260,9 +262,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -270,8 +272,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline void SetConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties = std::move(value); }
 
@@ -286,9 +289,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -296,8 +299,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(const Aws::Map<ConnectionPropertyKey, Aws::String>& value) { SetConnectionProperties(value); return *this;}
 
@@ -312,9 +316,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -322,8 +326,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& WithConnectionProperties(Aws::Map<ConnectionPropertyKey, Aws::String>&& value) { SetConnectionProperties(std::move(value)); return *this;}
 
@@ -338,9 +343,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -348,8 +353,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
@@ -364,9 +370,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -374,8 +380,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const Aws::String& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -390,9 +397,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -400,8 +407,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, std::move(value)); return *this; }
 
@@ -416,9 +424,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -426,8 +434,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, Aws::String&& value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -442,9 +451,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -452,8 +461,9 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(ConnectionPropertyKey&& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(std::move(key), value); return *this; }
 
@@ -468,9 +478,9 @@ namespace Model
      * <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li>
      * <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password
      * protection by setting <code>ConnectionPasswordEncryption</code> in the Data
-     * Catalog encryption settings, this field stores the key you designate to encrypt
-     * the password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The S3 path
-     * of the a jar file that contains the JDBC driver to use.</p> </li> <li> <p>
+     * Catalog encryption settings, this field stores the encrypted password.</p> </li>
+     * <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon S3 path of the JAR file
+     * that contains the JDBC driver to use.</p> </li> <li> <p>
      * <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to
      * use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine
      * to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the
@@ -478,127 +488,133 @@ namespace Model
      * future use).</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to
      * use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for the JDBC
      * connection.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string
-     * (true, false) specifying whether SSL with hostname matching will be enforced for
-     * the JDBC connection on the client. The default is false.</p> </li> </ul>
+     * (true, false) specifying whether Secure Sockets Layer (SSL) with hostname
+     * matching will be enforced for the JDBC connection on the client. The default is
+     * false.</p> </li> </ul>
      */
     inline Connection& AddConnectionProperties(const ConnectionPropertyKey& key, const char* value) { m_connectionPropertiesHasBeenSet = true; m_connectionProperties.emplace(key, value); return *this; }
 
 
     /**
-     * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
-     * needed for making this connection successfully.</p>
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
      */
     inline const PhysicalConnectionRequirements& GetPhysicalConnectionRequirements() const{ return m_physicalConnectionRequirements; }
 
     /**
-     * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
-     * needed for making this connection successfully.</p>
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
      */
     inline void SetPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = value; }
 
     /**
-     * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
-     * needed for making this connection successfully.</p>
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
      */
     inline void SetPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { m_physicalConnectionRequirementsHasBeenSet = true; m_physicalConnectionRequirements = std::move(value); }
 
     /**
-     * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
-     * needed for making this connection successfully.</p>
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
      */
     inline Connection& WithPhysicalConnectionRequirements(const PhysicalConnectionRequirements& value) { SetPhysicalConnectionRequirements(value); return *this;}
 
     /**
-     * <p>A map of physical connection requirements, such as VPC and SecurityGroup,
-     * needed for making this connection successfully.</p>
+     * <p>A map of physical connection requirements, such as virtual private cloud
+     * (VPC) and <code>SecurityGroup</code>, that are needed to make this connection
+     * successfully.</p>
      */
     inline Connection& WithPhysicalConnectionRequirements(PhysicalConnectionRequirements&& value) { SetPhysicalConnectionRequirements(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time this connection definition was created.</p>
+     * <p>The time that this connection definition was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The time this connection definition was created.</p>
+     * <p>The time that this connection definition was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The time this connection definition was created.</p>
+     * <p>The time that this connection definition was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The time this connection definition was created.</p>
+     * <p>The time that this connection definition was created.</p>
      */
     inline Connection& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The time this connection definition was created.</p>
+     * <p>The time that this connection definition was created.</p>
      */
     inline Connection& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time this connection definition was updated.</p>
+     * <p>The last time that this connection definition was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The last time this connection definition was updated.</p>
+     * <p>The last time that this connection definition was updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The last time this connection definition was updated.</p>
+     * <p>The last time that this connection definition was updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The last time this connection definition was updated.</p>
+     * <p>The last time that this connection definition was updated.</p>
      */
     inline Connection& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The last time this connection definition was updated.</p>
+     * <p>The last time that this connection definition was updated.</p>
      */
     inline Connection& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline Connection& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline Connection& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
 
     /**
-     * <p>The user, group or role that last updated this connection definition.</p>
+     * <p>The user, group, or role that last updated this connection definition.</p>
      */
     inline Connection& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
 

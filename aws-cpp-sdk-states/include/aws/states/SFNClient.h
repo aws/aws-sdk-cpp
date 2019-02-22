@@ -194,8 +194,8 @@ namespace Model
    * servers, or any system that has access to AWS. You can access and use Step
    * Functions using the console, the AWS SDKs, or an HTTP API. For more information
    * about Step Functions, see the <i> <a
-   * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step
-   * Functions Developer Guide</a> </i>.</p>
+   * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS
+   * Step Functions Developer Guide</a> </i>.</p>
    */
   class AWS_SFN_API SFNClient : public Aws::Client::AWSJsonClient
   {
@@ -232,8 +232,9 @@ namespace Model
          * Activities must poll Step Functions using the <code>GetActivityTask</code> API
          * action and respond using <code>SendTask*</code> API actions. This function lets
          * Step Functions know the existence of your activity and returns an identifier for
-         * use in a state machine and when polling from the activity.</p><p><h3>See
-         * Also:</h3>   <a
+         * use in a state machine and when polling from the activity.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          */
@@ -245,8 +246,9 @@ namespace Model
          * Activities must poll Step Functions using the <code>GetActivityTask</code> API
          * action and respond using <code>SendTask*</code> API actions. This function lets
          * Step Functions know the existence of your activity and returns an identifier for
-         * use in a state machine and when polling from the activity.</p><p><h3>See
-         * Also:</h3>   <a
+         * use in a state machine and when polling from the activity.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -260,8 +262,9 @@ namespace Model
          * Activities must poll Step Functions using the <code>GetActivityTask</code> API
          * action and respond using <code>SendTask*</code> API actions. This function lets
          * Step Functions know the existence of your activity and returns an identifier for
-         * use in a state machine and when polling from the activity.</p><p><h3>See
-         * Also:</h3>   <a
+         * use in a state machine and when polling from the activity.</p> <note> <p>This
+         * operation is eventually consistent. The results are best effort and may not
+         * reflect very recent updates and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity">AWS
          * API Reference</a></p>
          *
@@ -274,7 +277,9 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language.</p> <note> <p>This operation is eventually
+         * consistent. The results are best effort and may not reflect very recent updates
+         * and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          */
@@ -285,7 +290,9 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language.</p> <note> <p>This operation is eventually
+         * consistent. The results are best effort and may not reflect very recent updates
+         * and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -298,7 +305,9 @@ namespace Model
          * that can do work (<code>Task</code> states), determine to which states to
          * transition next (<code>Choice</code> states), stop an execution with an error
          * (<code>Fail</code> states), and so on. State machines are specified using a
-         * JSON-based, structured language.</p><p><h3>See Also:</h3>   <a
+         * JSON-based, structured language.</p> <note> <p>This operation is eventually
+         * consistent. The results are best effort and may not reflect very recent updates
+         * and changes.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine">AWS
          * API Reference</a></p>
          *
@@ -506,7 +515,7 @@ namespace Model
          * their client side socket timeout to at least 65 seconds (5 seconds higher than
          * the maximum time the service may hold the poll request).</p> <p>Polling with
          * <code>GetActivityTask</code> can cause latency in some implementations. See <a
-         * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
          * Latency When Polling for Activity Tasks</a> in the Step Functions Developer
          * Guide.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
@@ -525,7 +534,7 @@ namespace Model
          * their client side socket timeout to at least 65 seconds (5 seconds higher than
          * the maximum time the service may hold the poll request).</p> <p>Polling with
          * <code>GetActivityTask</code> can cause latency in some implementations. See <a
-         * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
          * Latency When Polling for Activity Tasks</a> in the Step Functions Developer
          * Guide.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS
@@ -546,7 +555,7 @@ namespace Model
          * their client side socket timeout to at least 65 seconds (5 seconds higher than
          * the maximum time the service may hold the poll request).</p> <p>Polling with
          * <code>GetActivityTask</code> can cause latency in some implementations. See <a
-         * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
+         * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid
          * Latency When Polling for Activity Tasks</a> in the Step Functions Developer
          * Guide.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask">AWS

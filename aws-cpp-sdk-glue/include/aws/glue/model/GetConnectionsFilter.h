@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Filters the connection definitions returned by the
-   * <code>GetConnections</code> API.</p><p><h3>See Also:</h3>   <a
+   * <p>Filters the connection definitions that are returned by the
+   * <code>GetConnections</code> API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnectionsFilter">AWS
    * API Reference</a></p>
    */

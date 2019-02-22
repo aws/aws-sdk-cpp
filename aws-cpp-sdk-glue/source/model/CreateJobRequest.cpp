@@ -38,7 +38,8 @@ CreateJobRequest::CreateJobRequest() :
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_notificationPropertyHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,17 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_securityConfigurationHasBeenSet)
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

@@ -39,11 +39,11 @@ namespace Model
    * in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You
    * can enable catalog encryption or only password encryption.</p> <p>When a
    * <code>CreationConnection</code> request arrives containing a password, the Data
-   * Catalog first encrypts the password using your KMS key, and then encrypts the
+   * Catalog first encrypts the password using your AWS KMS key. It then encrypts the
    * whole connection object again if catalog encryption is also enabled.</p> <p>This
-   * encryption requires that you set KMS key permissions to enable or restrict
+   * encryption requires that you set AWS KMS key permissions to enable or restrict
    * access on the password key according to your security requirements. For example,
-   * you may want only admin users to have decrypt permission on the password
+   * you might want only admin users to have decrypt permission on the password
    * key.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ConnectionPasswordEncryption">AWS
    * API Reference</a></p>
@@ -83,72 +83,79 @@ namespace Model
 
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline const Aws::String& GetAwsKmsKeyId() const{ return m_awsKmsKeyId; }
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline void SetAwsKmsKeyId(const Aws::String& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = value; }
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline void SetAwsKmsKeyId(Aws::String&& value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId = std::move(value); }
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline void SetAwsKmsKeyId(const char* value) { m_awsKmsKeyIdHasBeenSet = true; m_awsKmsKeyId.assign(value); }
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline ConnectionPasswordEncryption& WithAwsKmsKeyId(const Aws::String& value) { SetAwsKmsKeyId(value); return *this;}
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline ConnectionPasswordEncryption& WithAwsKmsKeyId(Aws::String&& value) { SetAwsKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>A KMS key used to protect access to the JDBC source. </p> <p>All users in
-     * your account should be granted the <code>kms:encrypt</code> permission to
-     * encrypt passwords before storing them in the Data Catalog (through the AWS Glue
-     * <code>CreateConnection</code> operation).</p> <p>The decrypt permission should
-     * be granted only to KMS key admins and IAM roles designated for AWS Glue
-     * crawlers.</p>
+     * <p>An AWS KMS key that is used to encrypt the connection password. </p> <p>If
+     * connection password protection is enabled, the caller of
+     * <code>CreateConnection</code> and <code>UpdateConnection</code> needs at least
+     * <code>kms:Encrypt</code> permission on the specified AWS KMS key, to encrypt
+     * passwords before storing them in the Data Catalog. </p> <p>You can set the
+     * decrypt permission to enable or restrict access on the password key according to
+     * your security requirements.</p>
      */
     inline ConnectionPasswordEncryption& WithAwsKmsKeyId(const char* value) { SetAwsKmsKeyId(value); return *this;}
 

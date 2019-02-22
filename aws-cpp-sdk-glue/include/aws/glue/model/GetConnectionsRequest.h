@@ -47,43 +47,43 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -115,32 +115,29 @@ namespace Model
 
 
     /**
-     * <p>Allow you to retrieve the connection metadata without displaying the
-     * password. For instance, the AWS Glue console uses this flag to retrieve
-     * connections, since the console does not display passwords. Set this parameter
-     * where the caller may not have permission to use the KMS key to decrypt the
-     * password, but does have permission to access the rest of the connection metadata
-     * (that is, the other connection properties).</p>
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
      */
     inline bool GetHidePassword() const{ return m_hidePassword; }
 
     /**
-     * <p>Allow you to retrieve the connection metadata without displaying the
-     * password. For instance, the AWS Glue console uses this flag to retrieve
-     * connections, since the console does not display passwords. Set this parameter
-     * where the caller may not have permission to use the KMS key to decrypt the
-     * password, but does have permission to access the rest of the connection metadata
-     * (that is, the other connection properties).</p>
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
      */
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
 
     /**
-     * <p>Allow you to retrieve the connection metadata without displaying the
-     * password. For instance, the AWS Glue console uses this flag to retrieve
-     * connections, since the console does not display passwords. Set this parameter
-     * where the caller may not have permission to use the KMS key to decrypt the
-     * password, but does have permission to access the rest of the connection metadata
-     * (that is, the other connection properties).</p>
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
      */
     inline GetConnectionsRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
 
