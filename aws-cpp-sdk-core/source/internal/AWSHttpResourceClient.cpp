@@ -40,6 +40,14 @@ static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
 
+namespace Aws
+{
+    namespace Client
+    {
+        Aws::String ComputeUserAgentString();
+    }
+}
+
 static ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char *logtag)
 {
     ClientConfiguration res;
@@ -103,6 +111,8 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
     {
         std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                     Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+        request->SetUserAgent(ComputeUserAgentString());
 
         if (authToken)
         {
