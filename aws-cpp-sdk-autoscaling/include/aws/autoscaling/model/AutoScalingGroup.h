@@ -579,7 +579,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -587,7 +587,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -595,7 +595,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
@@ -603,7 +603,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -611,7 +611,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -619,7 +619,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
@@ -627,7 +627,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -847,19 +847,25 @@ namespace Model
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingGroup& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 

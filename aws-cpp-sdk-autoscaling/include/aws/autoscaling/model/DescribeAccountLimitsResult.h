@@ -44,38 +44,38 @@ namespace Model
 
     /**
      * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 20 per region.</p>
+     * is 200 per region.</p>
      */
     inline int GetMaxNumberOfAutoScalingGroups() const{ return m_maxNumberOfAutoScalingGroups; }
 
     /**
      * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 20 per region.</p>
+     * is 200 per region.</p>
      */
     inline void SetMaxNumberOfAutoScalingGroups(int value) { m_maxNumberOfAutoScalingGroups = value; }
 
     /**
      * <p>The maximum number of groups allowed for your AWS account. The default limit
-     * is 20 per region.</p>
+     * is 200 per region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfAutoScalingGroups(int value) { SetMaxNumberOfAutoScalingGroups(value); return *this;}
 
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 100 per region.</p>
+     * default limit is 200 per region.</p>
      */
     inline int GetMaxNumberOfLaunchConfigurations() const{ return m_maxNumberOfLaunchConfigurations; }
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 100 per region.</p>
+     * default limit is 200 per region.</p>
      */
     inline void SetMaxNumberOfLaunchConfigurations(int value) { m_maxNumberOfLaunchConfigurations = value; }
 
     /**
      * <p>The maximum number of launch configurations allowed for your AWS account. The
-     * default limit is 100 per region.</p>
+     * default limit is 200 per region.</p>
      */
     inline DescribeAccountLimitsResult& WithMaxNumberOfLaunchConfigurations(int value) { SetMaxNumberOfLaunchConfigurations(value); return *this;}
 

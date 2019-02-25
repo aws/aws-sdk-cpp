@@ -228,44 +228,58 @@ namespace Model
 
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
-     * <p>The recurring schedule for this action, in Unix cron syntax format. For more
-     * information about this format, see <a href="http://crontab.org">Crontab</a>.</p>
+     * <p>The recurring schedule for this action, in Unix cron syntax format. This
+     * format consists of five fields separated by white spaces: [Minute] [Hour]
+     * [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithRecurrence(const char* value) { SetRecurrence(value); return *this;}
 

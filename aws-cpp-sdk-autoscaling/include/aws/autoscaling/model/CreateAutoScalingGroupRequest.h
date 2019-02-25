@@ -443,72 +443,80 @@ namespace Model
 
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer,
-     * use <code>TargetGroupARNs</code> instead.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using
+     * <p>One or more Classic Load Balancers. To specify an Application Load Balancer
+     * or a Network Load Balancer, use <code>TargetGroupARNs</code> instead.</p> <p>For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using
      * a Load Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
@@ -665,7 +673,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -673,7 +681,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -681,7 +689,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
@@ -689,7 +697,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -697,7 +705,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -705,7 +713,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
@@ -713,7 +721,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -801,8 +809,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
@@ -811,8 +819,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
@@ -821,8 +829,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
 
@@ -831,8 +839,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
@@ -841,8 +849,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
 
@@ -851,8 +859,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
@@ -861,8 +869,8 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
 
@@ -871,27 +879,36 @@ namespace Model
      * These policies are executed in the order that they are listed.</p> <p>For more
      * information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 

@@ -34,7 +34,9 @@ Container::Container() :
     m_aRNHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ContainerStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_accessLoggingEnabled(false),
+    m_accessLoggingEnabledHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ Container::Container(JsonView jsonValue) :
     m_aRNHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_status(ContainerStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_accessLoggingEnabled(false),
+    m_accessLoggingEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +90,13 @@ Container& Container::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AccessLoggingEnabled"))
+  {
+    m_accessLoggingEnabled = jsonValue.GetBool("AccessLoggingEnabled");
+
+    m_accessLoggingEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -119,6 +130,12 @@ JsonValue Container::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", ContainerStatusMapper::GetNameForContainerStatus(m_status));
+  }
+
+  if(m_accessLoggingEnabledHasBeenSet)
+  {
+   payload.WithBool("AccessLoggingEnabled", m_accessLoggingEnabled);
+
   }
 
   return payload;

@@ -337,19 +337,25 @@ namespace Model
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetProtectedFromScaleIn(bool value) { m_protectedFromScaleInHasBeenSet = true; m_protectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline AutoScalingInstanceDetails& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
 

@@ -141,7 +141,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline const Aws::String& GetSslPolicy() const{ return m_sslPolicy; }
@@ -149,7 +149,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const Aws::String& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = value; }
@@ -157,7 +157,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(Aws::String&& value) { m_sslPolicyHasBeenSet = true; m_sslPolicy = std::move(value); }
@@ -165,7 +165,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline void SetSslPolicy(const char* value) { m_sslPolicyHasBeenSet = true; m_sslPolicy.assign(value); }
@@ -173,7 +173,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(const Aws::String& value) { SetSslPolicy(value); return *this;}
@@ -181,7 +181,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(Aws::String&& value) { SetSslPolicy(std::move(value)); return *this;}
@@ -189,7 +189,7 @@ namespace Model
     /**
      * <p>[HTTPS and TLS listeners] The security policy that defines which protocols
      * and ciphers are supported. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
      * Policies</a> in the <i>Application Load Balancers Guide</i>.</p>
      */
     inline ModifyListenerRequest& WithSslPolicy(const char* value) { SetSslPolicy(value); return *this;}

@@ -310,28 +310,60 @@ namespace Model
     inline GetReservationCoverageRequest& WithFilter(Expression&& value) { SetFilter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline void SetMetrics(const Aws::Vector<Aws::String>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline void SetMetrics(Aws::Vector<Aws::String>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline GetReservationCoverageRequest& WithMetrics(const Aws::Vector<Aws::String>& value) { SetMetrics(value); return *this;}
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline GetReservationCoverageRequest& WithMetrics(Aws::Vector<Aws::String>&& value) { SetMetrics(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline GetReservationCoverageRequest& AddMetrics(const Aws::String& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline GetReservationCoverageRequest& AddMetrics(Aws::String&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>The measurement that you want your reservation coverage reported in.</p>
+     * <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>.
+     * You can use multiple values in a request.</p>
+     */
     inline GetReservationCoverageRequest& AddMetrics(const char* value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
 

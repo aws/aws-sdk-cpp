@@ -278,50 +278,57 @@ namespace Model
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
 

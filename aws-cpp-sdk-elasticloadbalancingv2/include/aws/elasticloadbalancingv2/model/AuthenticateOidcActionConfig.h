@@ -261,37 +261,51 @@ namespace Model
 
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
 
@@ -526,6 +540,25 @@ namespace Model
      */
     inline AuthenticateOidcActionConfig& WithOnUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum&& value) { SetOnUnauthenticatedRequest(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline bool GetUseExistingClientSecret() const{ return m_useExistingClientSecret; }
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline void SetUseExistingClientSecret(bool value) { m_useExistingClientSecretHasBeenSet = true; m_useExistingClientSecret = value; }
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline AuthenticateOidcActionConfig& WithUseExistingClientSecret(bool value) { SetUseExistingClientSecret(value); return *this;}
+
   private:
 
     Aws::String m_issuer;
@@ -560,6 +593,9 @@ namespace Model
 
     AuthenticateOidcActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
     bool m_onUnauthenticatedRequestHasBeenSet;
+
+    bool m_useExistingClientSecret;
+    bool m_useExistingClientSecretHasBeenSet;
   };
 
 } // namespace Model

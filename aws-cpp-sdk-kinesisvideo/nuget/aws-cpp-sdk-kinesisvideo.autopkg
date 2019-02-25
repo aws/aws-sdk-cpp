@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-KinesisVideo;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20170930.56;
+        version : 1.7.20170930.57;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon Kinesis Video Streams);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.56
+            AWSSDKCPP-Core/1.7.57
        }
     }
 

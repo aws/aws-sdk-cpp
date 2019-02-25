@@ -119,63 +119,63 @@ namespace Model
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
     /**
      * <p>The volume type. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code>
-     * </p>
+     * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * <code>gp2</code> </p>
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
@@ -228,7 +228,7 @@ namespace Model
      * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
      * from an encrypted snapshot. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -239,7 +239,7 @@ namespace Model
      * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
      * from an encrypted snapshot. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -250,7 +250,7 @@ namespace Model
      * create an encrypted volume from an unencrypted snapshot or an unencrypted volume
      * from an encrypted snapshot. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * EBS Encryption</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline Ebs& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

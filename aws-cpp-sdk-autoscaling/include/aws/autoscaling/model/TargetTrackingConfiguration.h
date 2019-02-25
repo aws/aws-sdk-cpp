@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a target tracking policy configuration.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Represents a target tracking policy configuration to use with Amazon EC2 Auto
+   * Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */

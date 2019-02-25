@@ -265,7 +265,7 @@ namespace Model
    * load balancing decisions either at the transport layer (TCP/SSL) or the
    * application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. For
    * more information, see the <a
-   * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
+   * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic
    * Load Balancing User Guide</a>.</p> <p>This reference covers the 2015-12-01 API,
    * which supports Application Load Balancers and Network Load Balancers. The
    * 2012-06-01 API supports Classic Load Balancers.</p> <p>To get started, complete
@@ -408,10 +408,10 @@ namespace Model
          * which means that it completes at most one time. If you attempt to create
          * multiple listeners with the same settings, each call succeeds.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
@@ -428,10 +428,10 @@ namespace Model
          * which means that it completes at most one time. If you attempt to create
          * multiple listeners with the same settings, each call succeeds.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
@@ -450,10 +450,10 @@ namespace Model
          * which means that it completes at most one time. If you attempt to create
          * multiple listeners with the same settings, each call succeeds.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners
          * for Your Application Load Balancers</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateListener">AWS
@@ -473,17 +473,17 @@ namespace Model
          * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
          * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
          * <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
          * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
          * most one time. If you attempt to create multiple load balancers with the same
          * settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
          * Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
@@ -501,17 +501,17 @@ namespace Model
          * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
          * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
          * <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
          * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
          * most one time. If you attempt to create multiple load balancers with the same
          * settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
          * Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
@@ -531,17 +531,17 @@ namespace Model
          * <a>DescribeLoadBalancers</a>. When you are finished with a load balancer, you
          * can delete it using <a>DeleteLoadBalancer</a>.</p> <p>For limit information, see
          * <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancer</a> in the <i>Application Load Balancers
          * Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancer</a> in the <i>Network Load Balancers
          * Guide</i>.</p> <p>This operation is idempotent, which means that it completes at
          * most one time. If you attempt to create multiple load balancers with the same
          * settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html">Application
          * Load Balancers</a> in the <i>Application Load Balancers Guide</i> and <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html">Network
          * Load Balancers</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateLoadBalancer">AWS
@@ -557,7 +557,7 @@ namespace Model
          * from the lowest value to the highest value. When the conditions for a rule are
          * met, its actions are performed. If the conditions for no rules are met, the
          * actions for the default rule are performed. For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
@@ -574,7 +574,7 @@ namespace Model
          * from the lowest value to the highest value. When the conditions for a rule are
          * met, its actions are performed. If the conditions for no rules are met, the
          * actions for the default rule are performed. For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
@@ -593,7 +593,7 @@ namespace Model
          * from the lowest value to the highest value. When the conditions for a rule are
          * met, its actions are performed. If the conditions for no rules are met, the
          * actions for the default rule are performed. For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules">Listener
          * Rules</a> in the <i>Application Load Balancers Guide</i>.</p> <p>To view your
          * current rules, use <a>DescribeRules</a>. To update a rule, use
          * <a>ModifyRule</a>. To set the priorities of your rules, use
@@ -616,10 +616,10 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
          * it completes at most one time. If you attempt to create multiple target groups
          * with the same settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
          * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
@@ -637,10 +637,10 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
          * it completes at most one time. If you attempt to create multiple target groups
          * with the same settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
          * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
@@ -660,10 +660,10 @@ namespace Model
          * <a>DeleteTargetGroup</a>.</p> <p>This operation is idempotent, which means that
          * it completes at most one time. If you attempt to create multiple target groups
          * with the same settings, each call succeeds.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target
          * Groups for Your Application Load Balancers</a> in the <i>Application Load
          * Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target
          * Groups for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS
@@ -837,10 +837,10 @@ namespace Model
         /**
          * <p>Describes the current Elastic Load Balancing resource limits for your AWS
          * account.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancers</a> in the <i>Application Load Balancer
          * Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
@@ -851,10 +851,10 @@ namespace Model
         /**
          * <p>Describes the current Elastic Load Balancing resource limits for your AWS
          * account.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancers</a> in the <i>Application Load Balancer
          * Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
@@ -867,10 +867,10 @@ namespace Model
         /**
          * <p>Describes the current Elastic Load Balancing resource limits for your AWS
          * account.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Limits
          * for Your Application Load Balancers</a> in the <i>Application Load Balancer
          * Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-limits.html">Limits
          * for Your Network Load Balancers</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeAccountLimits">AWS
@@ -942,9 +942,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
          * Network Load Balancer.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
@@ -955,9 +955,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
          * Network Load Balancer.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
@@ -970,9 +970,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified Application Load Balancer or
          * Network Load Balancer.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/network-load-balancers.html#load-balancer-attributes">Load
          * Balancer Attributes</a> in the <i>Network Load Balancers
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeLoadBalancerAttributes">AWS
@@ -1050,7 +1050,7 @@ namespace Model
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
          * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
@@ -1061,7 +1061,7 @@ namespace Model
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
          * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
@@ -1074,7 +1074,7 @@ namespace Model
         /**
          * <p>Describes the specified policies or all policies used for SSL
          * negotiation.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security
          * Policies</a> in the <i>Application Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeSSLPolicies">AWS
@@ -1118,9 +1118,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified target group.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
@@ -1131,9 +1131,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified target group.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS
@@ -1146,9 +1146,9 @@ namespace Model
         /**
          * <p>Describes the attributes for the specified target group.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Application Load Balancers Guide</i> or <a
-         * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
+         * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html#target-group-attributes">Target
          * Group Attributes</a> in the <i>Network Load Balancers Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/DescribeTargetGroupAttributes">AWS

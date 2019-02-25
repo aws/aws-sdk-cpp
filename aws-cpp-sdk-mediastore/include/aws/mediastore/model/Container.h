@@ -271,6 +271,37 @@ namespace Model
      */
     inline Container& WithStatus(ContainerStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The state of access logging on the container. This value is
+     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
+     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
+     * the container, MediaStore changes this value to <code>true</code>, indicating
+     * that the service delivers access logs for objects stored in that container to
+     * CloudWatch Logs.</p>
+     */
+    inline bool GetAccessLoggingEnabled() const{ return m_accessLoggingEnabled; }
+
+    /**
+     * <p>The state of access logging on the container. This value is
+     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
+     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
+     * the container, MediaStore changes this value to <code>true</code>, indicating
+     * that the service delivers access logs for objects stored in that container to
+     * CloudWatch Logs.</p>
+     */
+    inline void SetAccessLoggingEnabled(bool value) { m_accessLoggingEnabledHasBeenSet = true; m_accessLoggingEnabled = value; }
+
+    /**
+     * <p>The state of access logging on the container. This value is
+     * <code>false</code> by default, indicating that AWS Elemental MediaStore does not
+     * send access logs to Amazon CloudWatch Logs. When you enable access logging on
+     * the container, MediaStore changes this value to <code>true</code>, indicating
+     * that the service delivers access logs for objects stored in that container to
+     * CloudWatch Logs.</p>
+     */
+    inline Container& WithAccessLoggingEnabled(bool value) { SetAccessLoggingEnabled(value); return *this;}
+
   private:
 
     Aws::String m_endpoint;
@@ -287,6 +318,9 @@ namespace Model
 
     ContainerStatus m_status;
     bool m_statusHasBeenSet;
+
+    bool m_accessLoggingEnabled;
+    bool m_accessLoggingEnabledHasBeenSet;
   };
 
 } // namespace Model

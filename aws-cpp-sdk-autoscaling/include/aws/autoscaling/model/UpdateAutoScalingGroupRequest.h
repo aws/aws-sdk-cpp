@@ -393,7 +393,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
@@ -401,7 +401,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
@@ -409,7 +409,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
@@ -417,7 +417,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
@@ -425,7 +425,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
@@ -433,7 +433,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
@@ -441,7 +441,7 @@ namespace Model
      * <p>The name of the placement group into which to launch your instances, if any.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
@@ -536,8 +536,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminationPolicies() const{ return m_terminationPolicies; }
 
@@ -546,8 +546,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(const Aws::Vector<Aws::String>& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = value; }
 
@@ -556,8 +556,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline void SetTerminationPolicies(Aws::Vector<Aws::String>&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies = std::move(value); }
 
@@ -566,8 +566,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(const Aws::Vector<Aws::String>& value) { SetTerminationPolicies(value); return *this;}
 
@@ -576,8 +576,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithTerminationPolicies(Aws::Vector<Aws::String>&& value) { SetTerminationPolicies(std::move(value)); return *this;}
 
@@ -586,8 +586,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const Aws::String& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
@@ -596,8 +596,8 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(Aws::String&& value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(std::move(value)); return *this; }
 
@@ -606,27 +606,36 @@ namespace Model
      * select the instance to terminate. The policies are executed in the order that
      * they are listed.</p> <p>For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto
-     * Scaling User Guide</i>.</p>
+     * Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2
+     * Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& AddTerminationPolicies(const char* value) { m_terminationPoliciesHasBeenSet = true; m_terminationPolicies.push_back(value); return *this; }
 
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p>
+     * Auto Scaling when scaling in.</p> <p>For more information about preventing
+     * instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 

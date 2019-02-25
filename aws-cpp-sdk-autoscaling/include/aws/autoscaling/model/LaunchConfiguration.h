@@ -243,7 +243,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
@@ -252,7 +255,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
@@ -261,7 +267,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
@@ -270,7 +279,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
@@ -279,7 +291,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
@@ -288,7 +303,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
@@ -297,7 +315,10 @@ namespace Model
      * This parameter can only be used if you are launching EC2-Classic instances. For
      * more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
@@ -308,7 +329,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
@@ -318,7 +342,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
@@ -328,7 +355,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
@@ -338,7 +368,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
@@ -348,7 +381,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
@@ -358,7 +394,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
@@ -368,7 +407,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
@@ -378,7 +420,10 @@ namespace Model
      * ClassicLink-enabled VPC, and cannot be used otherwise. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
-     * in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
+     * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 

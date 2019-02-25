@@ -34,10 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a policy adjustment type.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
-   * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes a policy adjustment type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AdjustmentType">AWS
    * API Reference</a></p>
    */

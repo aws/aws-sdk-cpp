@@ -43,6 +43,8 @@
 #include <aws/mediastore/model/PutContainerPolicyRequest.h>
 #include <aws/mediastore/model/PutCorsPolicyRequest.h>
 #include <aws/mediastore/model/PutLifecyclePolicyRequest.h>
+#include <aws/mediastore/model/StartAccessLoggingRequest.h>
+#include <aws/mediastore/model/StopAccessLoggingRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -568,5 +570,75 @@ void MediaStoreClient::PutLifecyclePolicyAsync(const PutLifecyclePolicyRequest& 
 void MediaStoreClient::PutLifecyclePolicyAsyncHelper(const PutLifecyclePolicyRequest& request, const PutLifecyclePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutLifecyclePolicy(request), context);
+}
+
+StartAccessLoggingOutcome MediaStoreClient::StartAccessLogging(const StartAccessLoggingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartAccessLoggingOutcome(StartAccessLoggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartAccessLoggingOutcome(outcome.GetError());
+  }
+}
+
+StartAccessLoggingOutcomeCallable MediaStoreClient::StartAccessLoggingCallable(const StartAccessLoggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartAccessLoggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAccessLogging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::StartAccessLoggingAsync(const StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartAccessLoggingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::StartAccessLoggingAsyncHelper(const StartAccessLoggingRequest& request, const StartAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartAccessLogging(request), context);
+}
+
+StopAccessLoggingOutcome MediaStoreClient::StopAccessLogging(const StopAccessLoggingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopAccessLoggingOutcome(StopAccessLoggingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopAccessLoggingOutcome(outcome.GetError());
+  }
+}
+
+StopAccessLoggingOutcomeCallable MediaStoreClient::StopAccessLoggingCallable(const StopAccessLoggingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopAccessLoggingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopAccessLogging(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MediaStoreClient::StopAccessLoggingAsync(const StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopAccessLoggingAsyncHelper( request, handler, context ); } );
+}
+
+void MediaStoreClient::StopAccessLoggingAsyncHelper(const StopAccessLoggingRequest& request, const StopAccessLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopAccessLogging(request), context);
 }
 
