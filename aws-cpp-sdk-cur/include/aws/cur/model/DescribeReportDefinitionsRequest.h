@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * Request of DescribeReportDefinitions<p><h3>See Also:</h3>   <a
+   * <p>Requests a list of AWS Cost and Usage reports owned by the
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitionsRequest">AWS
    * API Reference</a></p>
    */

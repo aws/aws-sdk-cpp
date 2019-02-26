@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * Request of PutReportDefinition<p><h3>See Also:</h3>   <a
+   * <p>Creates a Cost and Usage Report.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinitionRequest">AWS
    * API Reference</a></p>
    */
@@ -47,19 +47,34 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
 
-    
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
 
-    
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::move(value); }
 
-    
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline PutReportDefinitionRequest& WithReportDefinition(const ReportDefinition& value) { SetReportDefinition(value); return *this;}
 
-    
+    /**
+     * <p>Represents the output of the PutReportDefinition operation. The content
+     * consists of the detailed metadata and data file information. </p>
+     */
     inline PutReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
 
   private:

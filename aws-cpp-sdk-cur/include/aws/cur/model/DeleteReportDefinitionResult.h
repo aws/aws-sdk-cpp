@@ -35,7 +35,8 @@ namespace CostandUsageReportService
 namespace Model
 {
   /**
-   * Response of DeleteReportDefinition<p><h3>See Also:</h3>   <a
+   * <p>If the action is successful, the service sends back an HTTP 200
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinitionResponse">AWS
    * API Reference</a></p>
    */

@@ -297,6 +297,31 @@ namespace Model
 
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline CreateJobRequest& WithStatusUpdateIntervalInSecs(long long value) { SetStatusUpdateIntervalInSecs(value); return *this;}
+
+
+    /**
      * User-defined metadata that you want to associate with an MediaConvert job. You
      * specify metadata in key/value pairs.
      */
@@ -390,6 +415,9 @@ namespace Model
 
     JobSettings m_settings;
     bool m_settingsHasBeenSet;
+
+    long long m_statusUpdateIntervalInSecs;
+    bool m_statusUpdateIntervalInSecsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
     bool m_userMetadataHasBeenSet;

@@ -30,6 +30,7 @@ namespace Model
 
 SegmentResponse::SegmentResponse() : 
     m_applicationIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -39,6 +40,7 @@ SegmentResponse::SegmentResponse() :
     m_segmentGroupsHasBeenSet(false),
     m_segmentType(SegmentType::NOT_SET),
     m_segmentTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
 {
@@ -46,6 +48,7 @@ SegmentResponse::SegmentResponse() :
 
 SegmentResponse::SegmentResponse(JsonView jsonValue) : 
     m_applicationIdHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_idHasBeenSet(false),
@@ -55,6 +58,7 @@ SegmentResponse::SegmentResponse(JsonView jsonValue) :
     m_segmentGroupsHasBeenSet(false),
     m_segmentType(SegmentType::NOT_SET),
     m_segmentTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false)
 {
@@ -68,6 +72,13 @@ SegmentResponse& SegmentResponse::operator =(JsonView jsonValue)
     m_applicationId = jsonValue.GetString("ApplicationId");
 
     m_applicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Arn"))
+  {
+    m_arn = jsonValue.GetString("Arn");
+
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationDate"))
@@ -126,6 +137,16 @@ SegmentResponse& SegmentResponse::operator =(JsonView jsonValue)
     m_segmentTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
@@ -143,6 +164,12 @@ JsonValue SegmentResponse::Jsonize() const
   if(m_applicationIdHasBeenSet)
   {
    payload.WithString("ApplicationId", m_applicationId);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("Arn", m_arn);
 
   }
 
@@ -191,6 +218,17 @@ JsonValue SegmentResponse::Jsonize() const
   if(m_segmentTypeHasBeenSet)
   {
    payload.WithString("SegmentType", SegmentTypeMapper::GetNameForSegmentType(m_segmentType));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_versionHasBeenSet)

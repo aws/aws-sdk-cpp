@@ -32,6 +32,8 @@ CreateJobRequest::CreateJobRequest() :
     m_queueHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_statusUpdateIntervalInSecs(0),
+    m_statusUpdateIntervalInSecsHasBeenSet(false),
     m_userMetadataHasBeenSet(false)
 {
 }
@@ -78,6 +80,12 @@ Aws::String CreateJobRequest::SerializePayload() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("settings", m_settings.Jsonize());
+
+  }
+
+  if(m_statusUpdateIntervalInSecsHasBeenSet)
+  {
+   payload.WithInt64("statusUpdateIntervalInSecs", m_statusUpdateIntervalInSecs);
 
   }
 

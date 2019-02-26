@@ -28,7 +28,9 @@ UpdateJobTemplateRequest::UpdateJobTemplateRequest() :
     m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_queueHasBeenSet(false),
-    m_settingsHasBeenSet(false)
+    m_settingsHasBeenSet(false),
+    m_statusUpdateIntervalInSecs(0),
+    m_statusUpdateIntervalInSecsHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,12 @@ Aws::String UpdateJobTemplateRequest::SerializePayload() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("settings", m_settings.Jsonize());
+
+  }
+
+  if(m_statusUpdateIntervalInSecsHasBeenSet)
+  {
+   payload.WithInt64("statusUpdateIntervalInSecs", m_statusUpdateIntervalInSecs);
 
   }
 

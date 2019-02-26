@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/HlsEncryptionType.h>
 #include <aws/mediaconvert/model/HlsInitializationVectorInManifest.h>
+#include <aws/mediaconvert/model/HlsOfflineEncrypted.h>
 #include <aws/mediaconvert/model/SpekeKeyProvider.h>
 #include <aws/mediaconvert/model/StaticKeyProvider.h>
 #include <aws/mediaconvert/model/HlsKeyProviderType.h>
@@ -135,6 +136,22 @@ namespace Model
 
 
     
+    inline const HlsOfflineEncrypted& GetOfflineEncrypted() const{ return m_offlineEncrypted; }
+
+    
+    inline void SetOfflineEncrypted(const HlsOfflineEncrypted& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = value; }
+
+    
+    inline void SetOfflineEncrypted(HlsOfflineEncrypted&& value) { m_offlineEncryptedHasBeenSet = true; m_offlineEncrypted = std::move(value); }
+
+    
+    inline HlsEncryptionSettings& WithOfflineEncrypted(const HlsOfflineEncrypted& value) { SetOfflineEncrypted(value); return *this;}
+
+    
+    inline HlsEncryptionSettings& WithOfflineEncrypted(HlsOfflineEncrypted&& value) { SetOfflineEncrypted(std::move(value)); return *this;}
+
+
+    
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
 
     
@@ -191,6 +208,9 @@ namespace Model
 
     HlsInitializationVectorInManifest m_initializationVectorInManifest;
     bool m_initializationVectorInManifestHasBeenSet;
+
+    HlsOfflineEncrypted m_offlineEncrypted;
+    bool m_offlineEncryptedHasBeenSet;
 
     SpekeKeyProvider m_spekeKeyProvider;
     bool m_spekeKeyProviderHasBeenSet;

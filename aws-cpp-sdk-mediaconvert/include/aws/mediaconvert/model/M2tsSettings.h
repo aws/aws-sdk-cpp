@@ -28,6 +28,7 @@
 #include <aws/mediaconvert/model/M2tsNielsenId3.h>
 #include <aws/mediaconvert/model/M2tsPcrControl.h>
 #include <aws/mediaconvert/model/M2tsRateMode.h>
+#include <aws/mediaconvert/model/M2tsScte35Esam.h>
 #include <aws/mediaconvert/model/M2tsScte35Source.h>
 #include <aws/mediaconvert/model/M2tsSegmentationMarkers.h>
 #include <aws/mediaconvert/model/M2tsSegmentationStyle.h>
@@ -49,7 +50,16 @@ namespace Model
 {
 
   /**
-   * Settings for M2TS Container.<p><h3>See Also:</h3>   <a
+   * MPEG-2 TS container settings. These apply to outputs in a File output group when
+   * the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In
+   * these assets, data is organized by the program map table (PMT). Each transport
+   * stream program contains subsets of data, including audio, video, and metadata.
+   * Each of these subsets of data has a numerical label called a packet identifier
+   * (PID). Each transport stream program corresponds to one MediaConvert output. The
+   * PMT lists the types of data in a program along with their PID. Downstream
+   * systems and players use the program map table to look up the PID for each type
+   * of data it accesses and then uses the PIDs to locate specific data within the
+   * asset.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings">AWS
    * API Reference</a></p>
    */
@@ -95,66 +105,66 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline const Aws::Vector<int>& GetAudioPids() const{ return m_audioPids; }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline void SetAudioPids(const Aws::Vector<int>& value) { m_audioPidsHasBeenSet = true; m_audioPids = value; }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline void SetAudioPids(Aws::Vector<int>&& value) { m_audioPidsHasBeenSet = true; m_audioPids = std::move(value); }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline M2tsSettings& WithAudioPids(const Aws::Vector<int>& value) { SetAudioPids(value); return *this;}
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline M2tsSettings& WithAudioPids(Aws::Vector<int>&& value) { SetAudioPids(std::move(value)); return *this;}
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
-     * stream. Multiple values are accepted, and can be entered in ranges and/or by
-     * comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you
+     * include in this output. Specify multiple PIDs as a JSON array. Default is the
+     * range 482-492.
      */
     inline M2tsSettings& AddAudioPids(int value) { m_audioPidsHasBeenSet = true; m_audioPids.push_back(value); return *this; }
 
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets
-     * the muxer automatically determine the appropriate bitrate. Other common values
-     * are 3750000, 7500000, and 15000000.
+     * Specify the output bitrate of the transport stream in bits per second. Setting
+     * to 0 lets the muxer automatically determine the appropriate bitrate. Other
+     * common values are 3750000, 7500000, and 15000000.
      */
     inline int GetBitrate() const{ return m_bitrate; }
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets
-     * the muxer automatically determine the appropriate bitrate. Other common values
-     * are 3750000, 7500000, and 15000000.
+     * Specify the output bitrate of the transport stream in bits per second. Setting
+     * to 0 lets the muxer automatically determine the appropriate bitrate. Other
+     * common values are 3750000, 7500000, and 15000000.
      */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets
-     * the muxer automatically determine the appropriate bitrate. Other common values
-     * are 3750000, 7500000, and 15000000.
+     * Specify the output bitrate of the transport stream in bits per second. Setting
+     * to 0 lets the muxer automatically determine the appropriate bitrate. Other
+     * common values are 3750000, 7500000, and 15000000.
      */
     inline M2tsSettings& WithBitrate(int value) { SetBitrate(value); return *this;}
 
@@ -208,44 +218,38 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline const Aws::Vector<int>& GetDvbSubPids() const{ return m_dvbSubPids; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline void SetDvbSubPids(const Aws::Vector<int>& value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids = value; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline void SetDvbSubPids(Aws::Vector<int>&& value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids = std::move(value); }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline M2tsSettings& WithDvbSubPids(const Aws::Vector<int>& value) { SetDvbSubPids(value); return *this;}
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline M2tsSettings& WithDvbSubPids(Aws::Vector<int>&& value) { SetDvbSubPids(std::move(value)); return *this;}
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
-     * Multiple values are accepted, and can be entered in ranges and/or by comma
-     * separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this
+     * output. Specify multiple PIDs as a JSON array. Default is the range 460-479.
      */
     inline M2tsSettings& AddDvbSubPids(int value) { m_dvbSubPidsHasBeenSet = true; m_dvbSubPids.push_back(value); return *this; }
 
@@ -267,17 +271,20 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this
+     * output. Default is 499.
      */
     inline int GetDvbTeletextPid() const{ return m_dvbTeletextPid; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this
+     * output. Default is 499.
      */
     inline void SetDvbTeletextPid(int value) { m_dvbTeletextPidHasBeenSet = true; m_dvbTeletextPid = value; }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this
+     * output. Default is 499.
      */
     inline M2tsSettings& WithDvbTeletextPid(int value) { SetDvbTeletextPid(value); return *this;}
 
@@ -330,53 +337,73 @@ namespace Model
     inline M2tsSettings& WithEsRateInPes(M2tsEsRateInPes&& value) { SetEsRateInPes(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
     inline const M2tsForceTsVideoEbpOrder& GetForceTsVideoEbpOrder() const{ return m_forceTsVideoEbpOrder; }
 
-    
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
     inline void SetForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = value; }
 
-    
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
     inline void SetForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { m_forceTsVideoEbpOrderHasBeenSet = true; m_forceTsVideoEbpOrder = std::move(value); }
 
-    
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
     inline M2tsSettings& WithForceTsVideoEbpOrder(const M2tsForceTsVideoEbpOrder& value) { SetForceTsVideoEbpOrder(value); return *this;}
 
-    
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are
+     * incorrectly appearing before your video EBP markers. To correct this problem,
+     * set this value to Force (FORCE).
+     */
     inline M2tsSettings& WithForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder&& value) { SetForceTsVideoEbpOrder(std::move(value)); return *this;}
 
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline double GetFragmentTime() const{ return m_fragmentTime; }
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline void SetFragmentTime(double value) { m_fragmentTimeHasBeenSet = true; m_fragmentTime = value; }
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      */
     inline M2tsSettings& WithFragmentTime(double value) { SetFragmentTime(value); return *this;}
 
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted
-     * into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
      */
     inline int GetMaxPcrInterval() const{ return m_maxPcrInterval; }
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted
-     * into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
      */
     inline void SetMaxPcrInterval(int value) { m_maxPcrIntervalHasBeenSet = true; m_maxPcrInterval = value; }
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted
-     * into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References
+     * (PCRs) inserted into the transport stream.
      */
     inline M2tsSettings& WithMaxPcrInterval(int value) { SetMaxPcrInterval(value); return *this;}
 
@@ -486,90 +513,105 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
-     * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in
+     * this output. If you do not specify a value, the service will use the value for
+     * Video PID (VideoPid).
      */
     inline int GetPcrPid() const{ return m_pcrPid; }
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
-     * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in
+     * this output. If you do not specify a value, the service will use the value for
+     * Video PID (VideoPid).
      */
     inline void SetPcrPid(int value) { m_pcrPidHasBeenSet = true; m_pcrPid = value; }
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
-     * stream. When no value is given, the encoder will assign the same value as the
-     * Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in
+     * this output. If you do not specify a value, the service will use the value for
+     * Video PID (VideoPid).
      */
     inline M2tsSettings& WithPcrPid(int value) { SetPcrPid(value); return *this;}
 
 
     /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
+     * Specify the number of milliseconds between instances of the program map table
+     * (PMT) in the output transport stream.
      */
     inline int GetPmtInterval() const{ return m_pmtInterval; }
 
     /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
+     * Specify the number of milliseconds between instances of the program map table
+     * (PMT) in the output transport stream.
      */
     inline void SetPmtInterval(int value) { m_pmtIntervalHasBeenSet = true; m_pmtInterval = value; }
 
     /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
+     * Specify the number of milliseconds between instances of the program map table
+     * (PMT) in the output transport stream.
      */
     inline M2tsSettings& WithPmtInterval(int value) { SetPmtInterval(value); return *this;}
 
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself.
+     * Default is 480.
      */
     inline int GetPmtPid() const{ return m_pmtPid; }
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself.
+     * Default is 480.
      */
     inline void SetPmtPid(int value) { m_pmtPidHasBeenSet = true; m_pmtPid = value; }
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself.
+     * Default is 480.
      */
     inline M2tsSettings& WithPmtPid(int value) { SetPmtPid(value); return *this;}
 
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is
+     * 503.
      */
     inline int GetPrivateMetadataPid() const{ return m_privateMetadataPid; }
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is
+     * 503.
      */
     inline void SetPrivateMetadataPid(int value) { m_privateMetadataPidHasBeenSet = true; m_privateMetadataPid = value; }
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is
+     * 503.
      */
     inline M2tsSettings& WithPrivateMetadataPid(int value) { SetPrivateMetadataPid(value); return *this;}
 
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the
+     * program map table (PMT) for this output. Default is 1. Program numbers and
+     * program map tables are parts of MPEG-2 transport stream containers, used for
+     * organizing data.
      */
     inline int GetProgramNumber() const{ return m_programNumber; }
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the
+     * program map table (PMT) for this output. Default is 1. Program numbers and
+     * program map tables are parts of MPEG-2 transport stream containers, used for
+     * organizing data.
      */
     inline void SetProgramNumber(int value) { m_programNumberHasBeenSet = true; m_programNumber = value; }
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the
+     * program map table (PMT) for this output. Default is 1. Program numbers and
+     * program map tables are parts of MPEG-2 transport stream containers, used for
+     * organizing data.
      */
     inline M2tsSettings& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
 
@@ -591,17 +633,56 @@ namespace Model
 
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline const M2tsScte35Esam& GetScte35Esam() const{ return m_scte35Esam; }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline void SetScte35Esam(const M2tsScte35Esam& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = value; }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline void SetScte35Esam(M2tsScte35Esam&& value) { m_scte35EsamHasBeenSet = true; m_scte35Esam = std::move(value); }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline M2tsSettings& WithScte35Esam(const M2tsScte35Esam& value) { SetScte35Esam(value); return *this;}
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and
+     * transport stream outputs at the insertion points that you specify in an ESAM XML
+     * document. Provide the document in the setting SCC XML (sccXml).
+     */
+    inline M2tsSettings& WithScte35Esam(M2tsScte35Esam&& value) { SetScte35Esam(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport
+     * stream.
      */
     inline int GetScte35Pid() const{ return m_scte35Pid; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport
+     * stream.
      */
     inline void SetScte35Pid(int value) { m_scte35PidHasBeenSet = true; m_scte35Pid = value; }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport
+     * stream.
      */
     inline M2tsSettings& WithScte35Pid(int value) { SetScte35Pid(value); return *this;}
 
@@ -655,65 +736,80 @@ namespace Model
 
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set
+     * to _none_.
      */
     inline double GetSegmentationTime() const{ return m_segmentationTime; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set
+     * to _none_.
      */
     inline void SetSegmentationTime(double value) { m_segmentationTimeHasBeenSet = true; m_segmentationTime = value; }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set
+     * to _none_.
      */
     inline M2tsSettings& WithSegmentationTime(double value) { SetSegmentationTime(value); return *this;}
 
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default
+     * is 502.
      */
     inline int GetTimedMetadataPid() const{ return m_timedMetadataPid; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default
+     * is 502.
      */
     inline void SetTimedMetadataPid(int value) { m_timedMetadataPidHasBeenSet = true; m_timedMetadataPid = value; }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default
+     * is 502.
      */
     inline M2tsSettings& WithTimedMetadataPid(int value) { SetTimedMetadataPid(value); return *this;}
 
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this
+     * output. Transport stream IDs and program map tables are parts of MPEG-2
+     * transport stream containers, used for organizing data.
      */
     inline int GetTransportStreamId() const{ return m_transportStreamId; }
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this
+     * output. Transport stream IDs and program map tables are parts of MPEG-2
+     * transport stream containers, used for organizing data.
      */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this
+     * output. Transport stream IDs and program map tables are parts of MPEG-2
+     * transport stream containers, used for organizing data.
      */
     inline M2tsSettings& WithTransportStreamId(int value) { SetTransportStreamId(value); return *this;}
 
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the
+     * transport stream.
      */
     inline int GetVideoPid() const{ return m_videoPid; }
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the
+     * transport stream.
      */
     inline void SetVideoPid(int value) { m_videoPidHasBeenSet = true; m_videoPid = value; }
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the
+     * transport stream.
      */
     inline M2tsSettings& WithVideoPid(int value) { SetVideoPid(value); return *this;}
 
@@ -799,6 +895,9 @@ namespace Model
 
     M2tsRateMode m_rateMode;
     bool m_rateModeHasBeenSet;
+
+    M2tsScte35Esam m_scte35Esam;
+    bool m_scte35EsamHasBeenSet;
 
     int m_scte35Pid;
     bool m_scte35PidHasBeenSet;

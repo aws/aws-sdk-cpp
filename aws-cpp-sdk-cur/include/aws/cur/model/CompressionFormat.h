@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ZIP,
-    GZIP
+    GZIP,
+    Parquet
   };
 
 namespace CompressionFormatMapper

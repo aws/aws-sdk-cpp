@@ -41,7 +41,11 @@ ReportDefinition::ReportDefinition() :
     m_s3PrefixHasBeenSet(false),
     m_s3Region(AWSRegion::NOT_SET),
     m_s3RegionHasBeenSet(false),
-    m_additionalArtifactsHasBeenSet(false)
+    m_additionalArtifactsHasBeenSet(false),
+    m_refreshClosedReports(false),
+    m_refreshClosedReportsHasBeenSet(false),
+    m_reportVersioning(ReportVersioning::NOT_SET),
+    m_reportVersioningHasBeenSet(false)
 {
 }
 
@@ -58,7 +62,11 @@ ReportDefinition::ReportDefinition(JsonView jsonValue) :
     m_s3PrefixHasBeenSet(false),
     m_s3Region(AWSRegion::NOT_SET),
     m_s3RegionHasBeenSet(false),
-    m_additionalArtifactsHasBeenSet(false)
+    m_additionalArtifactsHasBeenSet(false),
+    m_refreshClosedReports(false),
+    m_refreshClosedReportsHasBeenSet(false),
+    m_reportVersioning(ReportVersioning::NOT_SET),
+    m_reportVersioningHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -134,6 +142,20 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
     m_additionalArtifactsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RefreshClosedReports"))
+  {
+    m_refreshClosedReports = jsonValue.GetBool("RefreshClosedReports");
+
+    m_refreshClosedReportsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReportVersioning"))
+  {
+    m_reportVersioning = ReportVersioningMapper::GetReportVersioningForName(jsonValue.GetString("ReportVersioning"));
+
+    m_reportVersioningHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -199,6 +221,17 @@ JsonValue ReportDefinition::Jsonize() const
    }
    payload.WithArray("AdditionalArtifacts", std::move(additionalArtifactsJsonList));
 
+  }
+
+  if(m_refreshClosedReportsHasBeenSet)
+  {
+   payload.WithBool("RefreshClosedReports", m_refreshClosedReports);
+
+  }
+
+  if(m_reportVersioningHasBeenSet)
+  {
+   payload.WithString("ReportVersioning", ReportVersioningMapper::GetNameForReportVersioning(m_reportVersioning));
   }
 
   return payload;

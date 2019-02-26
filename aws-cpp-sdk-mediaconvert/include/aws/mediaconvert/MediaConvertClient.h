@@ -254,16 +254,16 @@ namespace Model
         virtual void AssociateCertificateAsync(const Model::AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          *
@@ -272,8 +272,8 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          *

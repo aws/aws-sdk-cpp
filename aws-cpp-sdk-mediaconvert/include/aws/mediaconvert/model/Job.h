@@ -476,6 +476,31 @@ namespace Model
     inline Job& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline Job& WithStatusUpdateIntervalInSecs(long long value) { SetStatusUpdateIntervalInSecs(value); return *this;}
+
+
     
     inline const Timing& GetTiming() const{ return m_timing; }
 
@@ -604,6 +629,9 @@ namespace Model
 
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
+    long long m_statusUpdateIntervalInSecs;
+    bool m_statusUpdateIntervalInSecsHasBeenSet;
 
     Timing m_timing;
     bool m_timingHasBeenSet;

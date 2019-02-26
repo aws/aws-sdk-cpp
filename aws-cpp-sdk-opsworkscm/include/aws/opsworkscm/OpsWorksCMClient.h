@@ -948,7 +948,7 @@ namespace Model
          * <p> Updates engine-specific attributes on a specified server. The server enters
          * the <code>MODIFYING</code> state when this operation is in progress. Only one
          * update can occur at a time. You can use this command to reset a Chef server's
-         * private key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
+         * public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
          * (<code>PUPPET_ADMIN_PASSWORD</code>). </p> <p> This operation is asynchronous.
          * </p> <p> This operation can only be called for servers in <code>HEALTHY</code>
          * or <code>UNHEALTHY</code> states. Otherwise, an
@@ -965,7 +965,7 @@ namespace Model
          * <p> Updates engine-specific attributes on a specified server. The server enters
          * the <code>MODIFYING</code> state when this operation is in progress. Only one
          * update can occur at a time. You can use this command to reset a Chef server's
-         * private key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
+         * public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
          * (<code>PUPPET_ADMIN_PASSWORD</code>). </p> <p> This operation is asynchronous.
          * </p> <p> This operation can only be called for servers in <code>HEALTHY</code>
          * or <code>UNHEALTHY</code> states. Otherwise, an
@@ -984,7 +984,7 @@ namespace Model
          * <p> Updates engine-specific attributes on a specified server. The server enters
          * the <code>MODIFYING</code> state when this operation is in progress. Only one
          * update can occur at a time. You can use this command to reset a Chef server's
-         * private key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
+         * public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password
          * (<code>PUPPET_ADMIN_PASSWORD</code>). </p> <p> This operation is asynchronous.
          * </p> <p> This operation can only be called for servers in <code>HEALTHY</code>
          * or <code>UNHEALTHY</code> states. Otherwise, an

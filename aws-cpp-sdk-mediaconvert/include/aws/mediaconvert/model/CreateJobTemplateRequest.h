@@ -244,6 +244,31 @@ namespace Model
 
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline long long GetStatusUpdateIntervalInSecs() const{ return m_statusUpdateIntervalInSecs; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline void SetStatusUpdateIntervalInSecs(long long value) { m_statusUpdateIntervalInSecsHasBeenSet = true; m_statusUpdateIntervalInSecs = value; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline CreateJobTemplateRequest& WithStatusUpdateIntervalInSecs(long long value) { SetStatusUpdateIntervalInSecs(value); return *this;}
+
+
+    /**
      * The tags that you want to add to the resource. You can tag resources with a
      * key-value pair or with only a key.
      */
@@ -334,6 +359,9 @@ namespace Model
 
     JobTemplateSettings m_settings;
     bool m_settingsHasBeenSet;
+
+    long long m_statusUpdateIntervalInSecs;
+    bool m_statusUpdateIntervalInSecsHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

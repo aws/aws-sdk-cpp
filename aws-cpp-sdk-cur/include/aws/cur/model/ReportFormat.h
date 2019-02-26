@@ -26,7 +26,8 @@ namespace Model
   enum class ReportFormat
   {
     NOT_SET,
-    textORcsv
+    textORcsv,
+    Parquet
   };
 
 namespace ReportFormatMapper

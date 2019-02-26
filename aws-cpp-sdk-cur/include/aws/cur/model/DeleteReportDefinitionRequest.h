@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * Request of DeleteReportDefinition<p><h3>See Also:</h3>   <a
+   * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinitionRequest">AWS
    * API Reference</a></p>
    */

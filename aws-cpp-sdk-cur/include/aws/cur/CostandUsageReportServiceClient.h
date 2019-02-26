@@ -84,7 +84,15 @@ namespace Model
     typedef std::function<void(const CostandUsageReportServiceClient*, const Model::PutReportDefinitionRequest&, const Model::PutReportDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutReportDefinitionResponseReceivedHandler;
 
   /**
-   * All public APIs for AWS Cost and Usage Report service
+   * <p>The AWS Cost and Usage Report API enables you to programmatically create,
+   * query, and delete AWS Cost and Usage report definitions.</p> <p>AWS Cost and
+   * Usage reports track the monthly AWS costs and usage associated with your AWS
+   * account. The report contains line items for each unique combination of AWS
+   * product, usage type, and operation that your AWS account uses. You can configure
+   * the AWS Cost and Usage report to show only the data that you want, using the AWS
+   * Cost and Usage API.</p> <p>Service Endpoint</p> <p>The AWS Cost and Usage Report
+   * API provides the following endpoint:</p> <ul> <li>
+   * <p>cur.us-east-1.amazonaws.com</p> </li> </ul>
    */
   class AWS_COSTANDUSAGEREPORTSERVICE_API CostandUsageReportServiceClient : public Aws::Client::AWSJsonClient
   {
@@ -112,18 +120,18 @@ namespace Model
 
         virtual ~CostandUsageReportServiceClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "cur"; }
+        inline virtual const char* GetServiceClientName() const override { return "Cost and Usage Report Service"; }
 
 
         /**
-         * Delete a specified report definition<p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteReportDefinitionOutcome DeleteReportDefinition(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * Delete a specified report definition<p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
          * API Reference</a></p>
          *
@@ -132,7 +140,7 @@ namespace Model
         virtual Model::DeleteReportDefinitionOutcomeCallable DeleteReportDefinitionCallable(const Model::DeleteReportDefinitionRequest& request) const;
 
         /**
-         * Delete a specified report definition<p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified report.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition">AWS
          * API Reference</a></p>
          *
@@ -141,16 +149,16 @@ namespace Model
         virtual void DeleteReportDefinitionAsync(const Model::DeleteReportDefinitionRequest& request, const DeleteReportDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Describe a list of report definitions owned by the account<p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeReportDefinitionsOutcome DescribeReportDefinitions(const Model::DescribeReportDefinitionsRequest& request) const;
 
         /**
-         * Describe a list of report definitions owned by the account<p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
          * API Reference</a></p>
          *
@@ -159,8 +167,8 @@ namespace Model
         virtual Model::DescribeReportDefinitionsOutcomeCallable DescribeReportDefinitionsCallable(const Model::DescribeReportDefinitionsRequest& request) const;
 
         /**
-         * Describe a list of report definitions owned by the account<p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the AWS Cost and Usage reports available to this account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions">AWS
          * API Reference</a></p>
          *
@@ -169,14 +177,16 @@ namespace Model
         virtual void DescribeReportDefinitionsAsync(const Model::DescribeReportDefinitionsRequest& request, const DescribeReportDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new report definition<p><h3>See Also:</h3>   <a
+         * <p>Creates a new report using the description that you provide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::PutReportDefinitionOutcome PutReportDefinition(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * Create a new report definition<p><h3>See Also:</h3>   <a
+         * <p>Creates a new report using the description that you provide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
          * API Reference</a></p>
          *
@@ -185,7 +195,8 @@ namespace Model
         virtual Model::PutReportDefinitionOutcomeCallable PutReportDefinitionCallable(const Model::PutReportDefinitionRequest& request) const;
 
         /**
-         * Create a new report definition<p><h3>See Also:</h3>   <a
+         * <p>Creates a new report using the description that you provide.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition">AWS
          * API Reference</a></p>
          *

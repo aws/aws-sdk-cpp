@@ -37,7 +37,9 @@ VideoSelector::VideoSelector() :
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
-    m_programNumberHasBeenSet(false)
+    m_programNumberHasBeenSet(false),
+    m_rotate(InputRotate::NOT_SET),
+    m_rotateHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
     m_pid(0),
     m_pidHasBeenSet(false),
     m_programNumber(0),
-    m_programNumberHasBeenSet(false)
+    m_programNumberHasBeenSet(false),
+    m_rotate(InputRotate::NOT_SET),
+    m_rotateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
     m_programNumberHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rotate"))
+  {
+    m_rotate = InputRotateMapper::GetInputRotateForName(jsonValue.GetString("rotate"));
+
+    m_rotateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +136,11 @@ JsonValue VideoSelector::Jsonize() const
   {
    payload.WithInteger("programNumber", m_programNumber);
 
+  }
+
+  if(m_rotateHasBeenSet)
+  {
+   payload.WithString("rotate", InputRotateMapper::GetNameForInputRotate(m_rotate));
   }
 
   return payload;

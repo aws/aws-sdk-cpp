@@ -21,6 +21,7 @@
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pinpoint/model/WriteTreatmentResource.h>
 #include <utility>
 
@@ -356,6 +357,67 @@ namespace Model
 
 
     /**
+     * The Tags for the campaign.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline WriteCampaignRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * A custom description for the treatment.
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
@@ -460,6 +522,9 @@ namespace Model
 
     int m_segmentVersion;
     bool m_segmentVersionHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;

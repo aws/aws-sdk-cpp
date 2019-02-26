@@ -78,6 +78,7 @@ M2tsSettings::M2tsSettings() :
     m_programNumberHasBeenSet(false),
     m_rateMode(M2tsRateMode::NOT_SET),
     m_rateModeHasBeenSet(false),
+    m_scte35EsamHasBeenSet(false),
     m_scte35Pid(0),
     m_scte35PidHasBeenSet(false),
     m_scte35Source(M2tsScte35Source::NOT_SET),
@@ -147,6 +148,7 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_programNumberHasBeenSet(false),
     m_rateMode(M2tsRateMode::NOT_SET),
     m_rateModeHasBeenSet(false),
+    m_scte35EsamHasBeenSet(false),
     m_scte35Pid(0),
     m_scte35PidHasBeenSet(false),
     m_scte35Source(M2tsScte35Source::NOT_SET),
@@ -362,6 +364,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_rateMode = M2tsRateModeMapper::GetM2tsRateModeForName(jsonValue.GetString("rateMode"));
 
     m_rateModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("scte35Esam"))
+  {
+    m_scte35Esam = jsonValue.GetObject("scte35Esam");
+
+    m_scte35EsamHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35Pid"))
@@ -588,6 +597,12 @@ JsonValue M2tsSettings::Jsonize() const
   if(m_rateModeHasBeenSet)
   {
    payload.WithString("rateMode", M2tsRateModeMapper::GetNameForM2tsRateMode(m_rateMode));
+  }
+
+  if(m_scte35EsamHasBeenSet)
+  {
+   payload.WithObject("scte35Esam", m_scte35Esam.Jsonize());
+
   }
 
   if(m_scte35PidHasBeenSet)

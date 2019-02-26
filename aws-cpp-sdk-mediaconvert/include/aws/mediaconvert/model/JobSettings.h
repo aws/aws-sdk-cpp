@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
+#include <aws/mediaconvert/model/EsamSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
@@ -103,6 +104,32 @@ namespace Model
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline JobSettings& WithAvailBlanking(AvailBlanking&& value) { SetAvailBlanking(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline const EsamSettings& GetEsam() const{ return m_esam; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline void SetEsam(EsamSettings&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline JobSettings& WithEsam(const EsamSettings& value) { SetEsam(value); return *this;}
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline JobSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
 
 
     /**
@@ -349,6 +376,9 @@ namespace Model
 
     AvailBlanking m_availBlanking;
     bool m_availBlankingHasBeenSet;
+
+    EsamSettings m_esam;
+    bool m_esamHasBeenSet;
 
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet;

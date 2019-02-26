@@ -22,6 +22,7 @@
 #include <aws/pinpoint/model/CampaignLimits.h>
 #include <aws/pinpoint/model/MessageConfiguration.h>
 #include <aws/pinpoint/model/Schedule.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/pinpoint/model/TreatmentResource.h>
 #include <utility>
 
@@ -124,6 +125,42 @@ namespace Model
      * The ID of the application to which the campaign applies.
      */
     inline CampaignResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * The arn for the campaign.
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * The arn for the campaign.
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * The arn for the campaign.
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * The arn for the campaign.
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * The arn for the campaign.
+     */
+    inline CampaignResponse& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * The arn for the campaign.
+     */
+    inline CampaignResponse& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * The arn for the campaign.
+     */
+    inline CampaignResponse& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -573,6 +610,67 @@ An A/B test campaign will have a status of COMPLETED only
 
 
     /**
+     * The Tags for the campaign.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the campaign.
+     */
+    inline CampaignResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * A custom description for the treatment.
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
@@ -667,6 +765,9 @@ An A/B test campaign will have a status of COMPLETED only
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
 
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
 
@@ -711,6 +812,9 @@ An A/B test campaign will have a status of COMPLETED only
 
     CampaignState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_treatmentDescription;
     bool m_treatmentDescriptionHasBeenSet;

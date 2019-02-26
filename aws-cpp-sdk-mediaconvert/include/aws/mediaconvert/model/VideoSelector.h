@@ -18,6 +18,7 @@
 #include <aws/mediaconvert/model/ColorSpace.h>
 #include <aws/mediaconvert/model/ColorSpaceUsage.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
+#include <aws/mediaconvert/model/InputRotate.h>
 #include <utility>
 
 namespace Aws
@@ -140,6 +141,22 @@ namespace Model
      */
     inline VideoSelector& WithProgramNumber(int value) { SetProgramNumber(value); return *this;}
 
+
+    
+    inline const InputRotate& GetRotate() const{ return m_rotate; }
+
+    
+    inline void SetRotate(const InputRotate& value) { m_rotateHasBeenSet = true; m_rotate = value; }
+
+    
+    inline void SetRotate(InputRotate&& value) { m_rotateHasBeenSet = true; m_rotate = std::move(value); }
+
+    
+    inline VideoSelector& WithRotate(const InputRotate& value) { SetRotate(value); return *this;}
+
+    
+    inline VideoSelector& WithRotate(InputRotate&& value) { SetRotate(std::move(value)); return *this;}
+
   private:
 
     ColorSpace m_colorSpace;
@@ -156,6 +173,9 @@ namespace Model
 
     int m_programNumber;
     bool m_programNumberHasBeenSet;
+
+    InputRotate m_rotate;
+    bool m_rotateHasBeenSet;
   };
 
 } // namespace Model

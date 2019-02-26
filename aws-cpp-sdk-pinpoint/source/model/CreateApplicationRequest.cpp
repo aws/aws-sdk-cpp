@@ -29,12 +29,14 @@ namespace Model
 {
 
 CreateApplicationRequest::CreateApplicationRequest() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 CreateApplicationRequest::CreateApplicationRequest(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,16 @@ CreateApplicationRequest& CreateApplicationRequest::operator =(JsonView jsonValu
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +70,17 @@ JsonValue CreateApplicationRequest::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

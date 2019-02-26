@@ -34,6 +34,8 @@ HlsEncryptionSettings::HlsEncryptionSettings() :
     m_encryptionMethodHasBeenSet(false),
     m_initializationVectorInManifest(HlsInitializationVectorInManifest::NOT_SET),
     m_initializationVectorInManifestHasBeenSet(false),
+    m_offlineEncrypted(HlsOfflineEncrypted::NOT_SET),
+    m_offlineEncryptedHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false),
     m_staticKeyProviderHasBeenSet(false),
     m_type(HlsKeyProviderType::NOT_SET),
@@ -47,6 +49,8 @@ HlsEncryptionSettings::HlsEncryptionSettings(JsonView jsonValue) :
     m_encryptionMethodHasBeenSet(false),
     m_initializationVectorInManifest(HlsInitializationVectorInManifest::NOT_SET),
     m_initializationVectorInManifestHasBeenSet(false),
+    m_offlineEncrypted(HlsOfflineEncrypted::NOT_SET),
+    m_offlineEncryptedHasBeenSet(false),
     m_spekeKeyProviderHasBeenSet(false),
     m_staticKeyProviderHasBeenSet(false),
     m_type(HlsKeyProviderType::NOT_SET),
@@ -76,6 +80,13 @@ HlsEncryptionSettings& HlsEncryptionSettings::operator =(JsonView jsonValue)
     m_initializationVectorInManifest = HlsInitializationVectorInManifestMapper::GetHlsInitializationVectorInManifestForName(jsonValue.GetString("initializationVectorInManifest"));
 
     m_initializationVectorInManifestHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("offlineEncrypted"))
+  {
+    m_offlineEncrypted = HlsOfflineEncryptedMapper::GetHlsOfflineEncryptedForName(jsonValue.GetString("offlineEncrypted"));
+
+    m_offlineEncryptedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("spekeKeyProvider"))
@@ -120,6 +131,11 @@ JsonValue HlsEncryptionSettings::Jsonize() const
   if(m_initializationVectorInManifestHasBeenSet)
   {
    payload.WithString("initializationVectorInManifest", HlsInitializationVectorInManifestMapper::GetNameForHlsInitializationVectorInManifest(m_initializationVectorInManifest));
+  }
+
+  if(m_offlineEncryptedHasBeenSet)
+  {
+   payload.WithString("offlineEncrypted", HlsOfflineEncryptedMapper::GetNameForHlsOfflineEncrypted(m_offlineEncrypted));
   }
 
   if(m_spekeKeyProviderHasBeenSet)

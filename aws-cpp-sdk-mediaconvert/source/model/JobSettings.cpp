@@ -32,6 +32,7 @@ JobSettings::JobSettings() :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
@@ -45,6 +46,7 @@ JobSettings::JobSettings(JsonView jsonValue) :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
     m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
@@ -69,6 +71,13 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     m_availBlanking = jsonValue.GetObject("availBlanking");
 
     m_availBlankingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("esam"))
+  {
+    m_esam = jsonValue.GetObject("esam");
+
+    m_esamHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputs"))
@@ -135,6 +144,12 @@ JsonValue JobSettings::Jsonize() const
   if(m_availBlankingHasBeenSet)
   {
    payload.WithObject("availBlanking", m_availBlanking.Jsonize());
+
+  }
+
+  if(m_esamHasBeenSet)
+  {
+   payload.WithObject("esam", m_esam.Jsonize());
 
   }
 

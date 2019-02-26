@@ -83,12 +83,15 @@
 #include <aws/pinpoint/model/GetSmsChannelRequest.h>
 #include <aws/pinpoint/model/GetUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetVoiceChannelRequest.h>
+#include <aws/pinpoint/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
 #include <aws/pinpoint/model/PutEventsRequest.h>
 #include <aws/pinpoint/model/RemoveAttributesRequest.h>
 #include <aws/pinpoint/model/SendMessagesRequest.h>
 #include <aws/pinpoint/model/SendUsersMessagesRequest.h>
+#include <aws/pinpoint/model/TagResourceRequest.h>
+#include <aws/pinpoint/model/UntagResourceRequest.h>
 #include <aws/pinpoint/model/UpdateAdmChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h>
@@ -2157,6 +2160,42 @@ void PinpointClient::GetVoiceChannelAsyncHelper(const GetVoiceChannelRequest& re
   handler(this, request, GetVoiceChannel(request), context);
 }
 
+ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable PinpointClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -2376,6 +2415,78 @@ void PinpointClient::SendUsersMessagesAsync(const SendUsersMessagesRequest& requ
 void PinpointClient::SendUsersMessagesAsyncHelper(const SendUsersMessagesRequest& request, const SendUsersMessagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SendUsersMessages(request), context);
+}
+
+TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable PinpointClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable PinpointClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const

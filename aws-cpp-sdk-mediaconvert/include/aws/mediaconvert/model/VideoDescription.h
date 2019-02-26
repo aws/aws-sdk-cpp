@@ -72,19 +72,34 @@ namespace Model
     inline VideoDescription& WithAfdSignaling(AfdSignaling&& value) { SetAfdSignaling(std::move(value)); return *this;}
 
 
-    
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
     inline const AntiAlias& GetAntiAlias() const{ return m_antiAlias; }
 
-    
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
     inline void SetAntiAlias(const AntiAlias& value) { m_antiAliasHasBeenSet = true; m_antiAlias = value; }
 
-    
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
     inline void SetAntiAlias(AntiAlias&& value) { m_antiAliasHasBeenSet = true; m_antiAlias = std::move(value); }
 
-    
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
     inline VideoDescription& WithAntiAlias(const AntiAlias& value) { SetAntiAlias(value); return *this;}
 
-    
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically
+     * applied to all outputs. This property is deprecated.
+     */
     inline VideoDescription& WithAntiAlias(AntiAlias&& value) { SetAntiAlias(std::move(value)); return *this;}
 
 
@@ -295,29 +310,29 @@ namespace Model
 
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This
      * setting changes the width of the anti-alias filter kernel used for scaling.
      * Sharpness only applies if your output resolution is different from your input
-     * resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     * most content.
      */
     inline int GetSharpness() const{ return m_sharpness; }
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This
      * setting changes the width of the anti-alias filter kernel used for scaling.
      * Sharpness only applies if your output resolution is different from your input
-     * resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     * most content.
      */
     inline void SetSharpness(int value) { m_sharpnessHasBeenSet = true; m_sharpness = value; }
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This
      * setting changes the width of the anti-alias filter kernel used for scaling.
      * Sharpness only applies if your output resolution is different from your input
-     * resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     * setting, 100 the sharpest, and 50 recommended for most content.
+     * resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     * most content.
      */
     inline VideoDescription& WithSharpness(int value) { SetSharpness(value); return *this;}
 

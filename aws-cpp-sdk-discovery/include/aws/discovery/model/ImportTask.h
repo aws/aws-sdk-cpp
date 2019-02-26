@@ -461,7 +461,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline const Aws::String& GetErrorsAndFailedEntriesZip() const{ return m_errorsAndFailedEntriesZip; }
@@ -475,7 +475,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline void SetErrorsAndFailedEntriesZip(const Aws::String& value) { m_errorsAndFailedEntriesZipHasBeenSet = true; m_errorsAndFailedEntriesZip = value; }
@@ -489,7 +489,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline void SetErrorsAndFailedEntriesZip(Aws::String&& value) { m_errorsAndFailedEntriesZipHasBeenSet = true; m_errorsAndFailedEntriesZip = std::move(value); }
@@ -503,7 +503,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline void SetErrorsAndFailedEntriesZip(const char* value) { m_errorsAndFailedEntriesZipHasBeenSet = true; m_errorsAndFailedEntriesZip.assign(value); }
@@ -517,7 +517,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline ImportTask& WithErrorsAndFailedEntriesZip(const Aws::String& value) { SetErrorsAndFailedEntriesZip(value); return *this;}
@@ -531,7 +531,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline ImportTask& WithErrorsAndFailedEntriesZip(Aws::String&& value) { SetErrorsAndFailedEntriesZip(std::move(value)); return *this;}
@@ -545,7 +545,7 @@ namespace Model
      * information so you can confirm the authenticity of the compressed archive before
      * you download it.</p> <p>If some records failed to be imported we recommend that
      * you correct the records in the failed entries file and then imports that failed
-     * entries file. This prevents you frmo having to correct and update the larger
+     * entries file. This prevents you from having to correct and update the larger
      * original file and attempt importing it again.</p>
      */
     inline ImportTask& WithErrorsAndFailedEntriesZip(const char* value) { SetErrorsAndFailedEntriesZip(value); return *this;}

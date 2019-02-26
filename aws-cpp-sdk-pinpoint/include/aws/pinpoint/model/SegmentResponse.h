@@ -20,6 +20,7 @@
 #include <aws/pinpoint/model/SegmentImportResource.h>
 #include <aws/pinpoint/model/SegmentGroupList.h>
 #include <aws/pinpoint/model/SegmentType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +86,42 @@ namespace Model
      * The ID of the application that the segment applies to.
      */
     inline SegmentResponse& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+
+
+    /**
+     * The arn for the segment.
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * The arn for the segment.
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * The arn for the segment.
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * The arn for the segment.
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * The arn for the segment.
+     */
+    inline SegmentResponse& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * The arn for the segment.
+     */
+    inline SegmentResponse& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * The arn for the segment.
+     */
+    inline SegmentResponse& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -381,6 +418,67 @@ IMPORT - A static segment built from an
 
 
     /**
+     * The Tags for the segment.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the segment.
+     */
+    inline SegmentResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * The segment version number.
      */
     inline int GetVersion() const{ return m_version; }
@@ -399,6 +497,9 @@ IMPORT - A static segment built from an
 
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_creationDate;
     bool m_creationDateHasBeenSet;
@@ -423,6 +524,9 @@ IMPORT - A static segment built from an
 
     SegmentType m_segmentType;
     bool m_segmentTypeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     int m_version;
     bool m_versionHasBeenSet;

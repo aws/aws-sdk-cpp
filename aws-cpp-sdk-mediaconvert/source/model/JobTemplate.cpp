@@ -38,6 +38,8 @@ JobTemplate::JobTemplate() :
     m_nameHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_statusUpdateIntervalInSecs(0),
+    m_statusUpdateIntervalInSecsHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -53,6 +55,8 @@ JobTemplate::JobTemplate(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_queueHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_statusUpdateIntervalInSecs(0),
+    m_statusUpdateIntervalInSecsHasBeenSet(false),
     m_type(Type::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -124,6 +128,13 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
     m_settingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("statusUpdateIntervalInSecs"))
+  {
+    m_statusUpdateIntervalInSecs = jsonValue.GetInt64("statusUpdateIntervalInSecs");
+
+    m_statusUpdateIntervalInSecsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
@@ -187,6 +198,12 @@ JsonValue JobTemplate::Jsonize() const
   if(m_settingsHasBeenSet)
   {
    payload.WithObject("settings", m_settings.Jsonize());
+
+  }
+
+  if(m_statusUpdateIntervalInSecsHasBeenSet)
+  {
+   payload.WithInt64("statusUpdateIntervalInSecs", m_statusUpdateIntervalInSecs);
 
   }
 

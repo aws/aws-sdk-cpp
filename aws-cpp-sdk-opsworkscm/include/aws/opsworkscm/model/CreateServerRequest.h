@@ -226,10 +226,10 @@ namespace Model
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -238,17 +238,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -257,17 +263,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline void SetEngineAttributes(const Aws::Vector<EngineAttribute>& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = value; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -276,17 +288,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline void SetEngineAttributes(Aws::Vector<EngineAttribute>&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes = std::move(value); }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -295,17 +313,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(const Aws::Vector<EngineAttribute>& value) { SetEngineAttributes(value); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -314,17 +338,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline CreateServerRequest& WithEngineAttributes(Aws::Vector<EngineAttribute>&& value) { SetEngineAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -333,17 +363,23 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(const EngineAttribute& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(value); return *this; }
 
     /**
      * <p>Optional engine attributes on a specified server. </p> <p class="title">
      * <b>Attributes accepted in a Chef createServer request:</b> </p> <ul> <li> <p>
-     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA private key that is not
-     * stored by AWS OpsWorks for Chef Automate. This private key is required to access
-     * the Chef API. When no CHEF_PIVOTAL_KEY is set, one is generated and returned in
-     * the response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
+     * <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA public key. The
+     * corresponding private key is required to access the Chef API. When no
+     * CHEF_PIVOTAL_KEY is set, a private key is generated and returned in the
+     * response. </p> </li> <li> <p> <code>CHEF_DELIVERY_ADMIN_PASSWORD</code>: The
      * password for the administrative user in the Chef Automate GUI. The password
      * length is a minimum of eight characters, and a maximum of 32. The password can
      * contain letters, numbers, and special characters (!/@#$%^&amp;+=_). The password
@@ -352,7 +388,13 @@ namespace Model
      * generated and returned in the response.</p> </li> </ul> <p class="title">
      * <b>Attributes accepted in a Puppet createServer request:</b> </p> <ul> <li> <p>
      * <code>PUPPET_ADMIN_PASSWORD</code>: To work with the Puppet Enterprise console,
-     * a password must use ASCII characters.</p> </li> </ul>
+     * a password must use ASCII characters.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_REMOTE</code>: The r10k remote is the URL of your control
+     * repository (for example, ssh://git@your.git-repo.com:user/control-repo.git).
+     * Specifying an r10k remote opens TCP port 8170.</p> </li> <li> <p>
+     * <code>PUPPET_R10K_PRIVATE_KEY</code>: If you are using a private Git repository,
+     * add PUPPET_R10K_PRIVATE_KEY to specify an SSH URL and a PEM-encoded private SSH
+     * key.</p> </li> </ul>
      */
     inline CreateServerRequest& AddEngineAttributes(EngineAttribute&& value) { m_engineAttributesHasBeenSet = true; m_engineAttributes.push_back(std::move(value)); return *this; }
 
@@ -944,7 +986,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
@@ -958,7 +1000,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
@@ -972,7 +1014,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
@@ -986,7 +1028,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
@@ -1000,7 +1042,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
@@ -1014,7 +1056,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
@@ -1028,7 +1070,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
@@ -1042,7 +1084,7 @@ namespace Model
      * EC2. If you specify subnet IDs, the VPC must have "Auto Assign Public IP"
      * enabled. </p> <p>For more information about supported Amazon EC2 platforms, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
      * Platforms</a>.</p>
      */
     inline CreateServerRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
