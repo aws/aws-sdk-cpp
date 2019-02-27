@@ -441,7 +441,7 @@ namespace Model
    * for developers who need detailed information about the AWS WAF API actions, data
    * types, and errors. For detailed information about AWS WAF features and an
    * overview of how to use the AWS WAF API, see the <a
-   * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
    * Guide</a>.</p>
    */
   class AWS_WAF_API WAFClient : public Aws::Client::AWSJsonClient
@@ -492,7 +492,7 @@ namespace Model
          * the header or the URI) and the value that you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
          * API Reference</a></p>
@@ -518,7 +518,7 @@ namespace Model
          * the header or the URI) and the value that you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
          * API Reference</a></p>
@@ -546,7 +546,7 @@ namespace Model
          * the header or the URI) and the value that you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateByteMatchSet">AWS
          * API Reference</a></p>
@@ -572,7 +572,7 @@ namespace Model
          * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -596,7 +596,7 @@ namespace Model
          * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -622,7 +622,7 @@ namespace Model
          * to specify the countries that you want AWS WAF to watch for.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -647,7 +647,7 @@ namespace Model
          * <li> <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
          * Reference</a></p>
@@ -670,7 +670,7 @@ namespace Model
          * <li> <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
          * Reference</a></p>
@@ -695,7 +695,7 @@ namespace Model
          * <li> <p>Submit an <code>UpdateIPSet</code> request to specify the IP addresses
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateIPSet">AWS API
          * Reference</a></p>
@@ -751,7 +751,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
          * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
          * API Reference</a></p>
@@ -805,7 +805,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
          * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
          * API Reference</a></p>
@@ -861,7 +861,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>RateBasedRule</code>. For
          * more information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRateBasedRule">AWS
          * API Reference</a></p>
@@ -890,7 +890,7 @@ namespace Model
          * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
          * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
          * to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -917,7 +917,7 @@ namespace Model
          * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
          * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
          * to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -946,7 +946,7 @@ namespace Model
          * the header or the URI) and the value, using a <code>RegexPatternSet</code>, that
          * you want AWS WAF to watch for.</p> </li> </ol> <p>For more information about how
          * to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -970,7 +970,7 @@ namespace Model
          * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
          * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -992,7 +992,7 @@ namespace Model
          * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
          * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -1016,7 +1016,7 @@ namespace Model
          * <a>UpdateRegexPatternSet</a> request to specify the string that you want AWS WAF
          * to watch for.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -1053,7 +1053,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>Rule</code>. For more
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
          * Reference</a></p>
@@ -1088,7 +1088,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>Rule</code>. For more
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
          * Reference</a></p>
@@ -1125,7 +1125,7 @@ namespace Model
          * update a <code>WebACL</code> that contains the <code>Rule</code>. For more
          * information, see <a>CreateWebACL</a>.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRule">AWS API
          * Reference</a></p>
@@ -1142,7 +1142,7 @@ namespace Model
          * by contacting customer support.</p> </li> <li> <p>One rule group per web
          * ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">AWS
          * API Reference</a></p>
@@ -1157,7 +1157,7 @@ namespace Model
          * by contacting customer support.</p> </li> <li> <p>One rule group per web
          * ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">AWS
          * API Reference</a></p>
@@ -1174,7 +1174,7 @@ namespace Model
          * by contacting customer support.</p> </li> <li> <p>One rule group per web
          * ACL.</p> </li> <li> <p>Ten rules per rule group.</p> </li> </ul> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateRuleGroup">AWS
          * API Reference</a></p>
@@ -1202,7 +1202,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -1228,7 +1228,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -1256,7 +1256,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -1281,7 +1281,7 @@ namespace Model
          * in which you want to allow, block, or count malicious SQL code.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -1304,7 +1304,7 @@ namespace Model
          * in which you want to allow, block, or count malicious SQL code.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -1329,7 +1329,7 @@ namespace Model
          * in which you want to allow, block, or count malicious SQL code.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -1364,7 +1364,7 @@ namespace Model
          * action, and to associate the <code>WebACL</code> with a CloudFront
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
          * API Reference</a></p>
@@ -1397,7 +1397,7 @@ namespace Model
          * action, and to associate the <code>WebACL</code> with a CloudFront
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
          * API Reference</a></p>
@@ -1432,7 +1432,7 @@ namespace Model
          * action, and to associate the <code>WebACL</code> with a CloudFront
          * distribution.</p> </li> </ol> <p>For more information about how to use the AWS
          * WAF API, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateWebACL">AWS
          * API Reference</a></p>
@@ -1456,7 +1456,7 @@ namespace Model
          * web requests in which you want to allow, block, or count cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
          * API Reference</a></p>
@@ -1478,7 +1478,7 @@ namespace Model
          * web requests in which you want to allow, block, or count cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
          * API Reference</a></p>
@@ -1502,7 +1502,7 @@ namespace Model
          * web requests in which you want to allow, block, or count cross-site scripting
          * attacks.</p> </li> </ol> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/CreateXssMatchSet">AWS
          * API Reference</a></p>
@@ -2311,7 +2311,7 @@ namespace Model
          * token by calling <code>GetChangeToken</code>, but you haven't used it yet in a
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
-         * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
+         * request to all AWS WAF servers.</p> </li> <li> <p> <code>INSYNC</code>:
          * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
          * API Reference</a></p>
@@ -2325,7 +2325,7 @@ namespace Model
          * token by calling <code>GetChangeToken</code>, but you haven't used it yet in a
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
-         * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
+         * request to all AWS WAF servers.</p> </li> <li> <p> <code>INSYNC</code>:
          * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
          * API Reference</a></p>
@@ -2341,7 +2341,7 @@ namespace Model
          * token by calling <code>GetChangeToken</code>, but you haven't used it yet in a
          * call to create, update, or delete an AWS WAF object.</p> </li> <li> <p>
          * <code>PENDING</code>: AWS WAF is propagating the create, update, or delete
-         * request to all AWS WAF servers.</p> </li> <li> <p> <code>IN_SYNC</code>:
+         * request to all AWS WAF servers.</p> </li> <li> <p> <code>INSYNC</code>:
          * Propagation is complete.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/GetChangeTokenStatus">AWS
          * API Reference</a></p>
@@ -3224,13 +3224,15 @@ namespace Model
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
          * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
-         * </li> <li> <p>Associate that firehose to your web ACL using a
-         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
-         * successfully enable logging using a <code>PutLoggingConfiguration</code>
-         * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * <p>Create the data firehose with a PUT source and in the region that you are
+         * operating. However, if you are capturing logs for Amazon CloudFront, always
+         * create the firehose in US East (N. Virginia). </p> </li> <li> <p>Associate that
+         * firehose to your web ACL using a <code>PutLoggingConfiguration</code>
+         * request.</p> </li> </ol> <p>When you successfully enable logging using a
+         * <code>PutLoggingConfiguration</code> request, AWS WAF will create a service
+         * linked role with the necessary permissions to write logs to the Amazon Kinesis
+         * Data Firehose. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
@@ -3242,13 +3244,15 @@ namespace Model
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
          * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
-         * </li> <li> <p>Associate that firehose to your web ACL using a
-         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
-         * successfully enable logging using a <code>PutLoggingConfiguration</code>
-         * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * <p>Create the data firehose with a PUT source and in the region that you are
+         * operating. However, if you are capturing logs for Amazon CloudFront, always
+         * create the firehose in US East (N. Virginia). </p> </li> <li> <p>Associate that
+         * firehose to your web ACL using a <code>PutLoggingConfiguration</code>
+         * request.</p> </li> </ol> <p>When you successfully enable logging using a
+         * <code>PutLoggingConfiguration</code> request, AWS WAF will create a service
+         * linked role with the necessary permissions to write logs to the Amazon Kinesis
+         * Data Firehose. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
@@ -3262,13 +3266,15 @@ namespace Model
          * <p>Associates a <a>LoggingConfiguration</a> with a specified web ACL.</p> <p>You
          * can access information about all traffic that AWS WAF inspects using the
          * following steps:</p> <ol> <li> <p>Create an Amazon Kinesis Data Firehose . </p>
-         * </li> <li> <p>Associate that firehose to your web ACL using a
-         * <code>PutLoggingConfiguration</code> request.</p> </li> </ol> <p>When you
-         * successfully enable logging using a <code>PutLoggingConfiguration</code>
-         * request, AWS WAF will create a service linked role with the necessary
-         * permissions to write logs to the Amazon Kinesis Data Firehose. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+         * <p>Create the data firehose with a PUT source and in the region that you are
+         * operating. However, if you are capturing logs for Amazon CloudFront, always
+         * create the firehose in US East (N. Virginia). </p> </li> <li> <p>Associate that
+         * firehose to your web ACL using a <code>PutLoggingConfiguration</code>
+         * request.</p> </li> </ol> <p>When you successfully enable logging using a
+         * <code>PutLoggingConfiguration</code> request, AWS WAF will create a service
+         * linked role with the necessary permissions to write logs to the Amazon Kinesis
+         * Data Firehose. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
          * Web ACL Traffic Information</a> in the <i>AWS WAF Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration">AWS
@@ -3384,7 +3390,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
          * API Reference</a></p>
@@ -3418,7 +3424,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
          * API Reference</a></p>
@@ -3454,7 +3460,7 @@ namespace Model
          * you want AWS WAF to inspect (for example, the header or the URI) and the value
          * that you want AWS WAF to watch for.</p> </li> </ol> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateByteMatchSet">AWS
          * API Reference</a></p>
@@ -3483,7 +3489,7 @@ namespace Model
          * add and/or the country that you want to delete. If you want to change a country,
          * you delete the existing country and add the new one.</p> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -3510,7 +3516,7 @@ namespace Model
          * add and/or the country that you want to delete. If you want to change a country,
          * you delete the existing country and add the new one.</p> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -3539,7 +3545,7 @@ namespace Model
          * add and/or the country that you want to delete. If you want to change a country,
          * you delete the existing country and add the new one.</p> <p>For more information
          * about how to use the AWS WAF API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateGeoMatchSet">AWS
          * API Reference</a></p>
@@ -3560,7 +3566,7 @@ namespace Model
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
          * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR
          * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
@@ -3584,7 +3590,7 @@ namespace Model
          * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
          * in a single request.</p> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
          * Reference</a></p>
@@ -3603,7 +3609,7 @@ namespace Model
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
          * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR
          * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
@@ -3627,7 +3633,7 @@ namespace Model
          * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
          * in a single request.</p> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
          * Reference</a></p>
@@ -3648,7 +3654,7 @@ namespace Model
          * <code>192.0.2.44/32</code> (for the individual IP address
          * <code>192.0.2.44</code>). </p> </li> </ul> <p>AWS WAF supports IPv4 address
          * ranges: /8 and any range between /16 through /32. AWS WAF supports IPv6 address
-         * ranges: /16, /24, /32, /48, /56, /64, and /128. For more information about CIDR
+         * ranges: /24, /32, /48, /56, /64, and /128. For more information about CIDR
          * notation, see the Wikipedia entry <a
          * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
          * Inter-Domain Routing</a>.</p> <p>IPv6 addresses can be represented using any of
@@ -3672,7 +3678,7 @@ namespace Model
          * address and add the new one.</p> <p>You can insert a maximum of 1000 addresses
          * in a single request.</p> <p>For more information about how to use the AWS WAF
          * API to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateIPSet">AWS API
          * Reference</a></p>
@@ -3816,7 +3822,7 @@ namespace Model
          * that contain the regular expression patters you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -3849,7 +3855,7 @@ namespace Model
          * that contain the regular expression patters you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -3884,7 +3890,7 @@ namespace Model
          * that contain the regular expression patters you want AWS WAF to watch for.</p>
          * </li> </ol> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexMatchSet">AWS
          * API Reference</a></p>
@@ -3912,7 +3918,7 @@ namespace Model
          * to specify the regular expression pattern that you want AWS WAF to watch
          * for.</p> </li> </ol> <p>For more information about how to use the AWS WAF API to
          * allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -3938,7 +3944,7 @@ namespace Model
          * to specify the regular expression pattern that you want AWS WAF to watch
          * for.</p> </li> </ol> <p>For more information about how to use the AWS WAF API to
          * allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -3966,7 +3972,7 @@ namespace Model
          * to specify the regular expression pattern that you want AWS WAF to watch
          * for.</p> </li> </ol> <p>For more information about how to use the AWS WAF API to
          * allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRegexPatternSet">AWS
          * API Reference</a></p>
@@ -4002,7 +4008,7 @@ namespace Model
          * <p>If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code>
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
          * Reference</a></p>
@@ -4036,7 +4042,7 @@ namespace Model
          * <p>If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code>
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
          * Reference</a></p>
@@ -4072,7 +4078,7 @@ namespace Model
          * <p>If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code>
          * with another, you delete the existing one and add the new one.</p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRule">AWS API
          * Reference</a></p>
@@ -4097,7 +4103,7 @@ namespace Model
          * <code>Rule</code> with another, you delete the existing one and add the new
          * one.</p> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">AWS
          * API Reference</a></p>
@@ -4120,7 +4126,7 @@ namespace Model
          * <code>Rule</code> with another, you delete the existing one and add the new
          * one.</p> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">AWS
          * API Reference</a></p>
@@ -4145,7 +4151,7 @@ namespace Model
          * <code>Rule</code> with another, you delete the existing one and add the new
          * one.</p> <p>For more information about how to use the AWS WAF API to allow or
          * block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateRuleGroup">AWS
          * API Reference</a></p>
@@ -4185,7 +4191,7 @@ namespace Model
          * that you want AWS WAF to inspect (for example, the header or the URI) and the
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -4223,7 +4229,7 @@ namespace Model
          * that you want AWS WAF to inspect (for example, the header or the URI) and the
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -4263,7 +4269,7 @@ namespace Model
          * that you want AWS WAF to inspect (for example, the header or the URI) and the
          * value that you want AWS WAF to watch for.</p> </li> </ol> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSizeConstraintSet">AWS
          * API Reference</a></p>
@@ -4298,7 +4304,7 @@ namespace Model
          * parts of web requests that you want AWS WAF to inspect for snippets of SQL
          * code.</p> </li> </ol> <p>For more information about how to use the AWS WAF API
          * to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -4331,7 +4337,7 @@ namespace Model
          * parts of web requests that you want AWS WAF to inspect for snippets of SQL
          * code.</p> </li> </ol> <p>For more information about how to use the AWS WAF API
          * to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -4366,7 +4372,7 @@ namespace Model
          * parts of web requests that you want AWS WAF to inspect for snippets of SQL
          * code.</p> </li> </ol> <p>For more information about how to use the AWS WAF API
          * to allow or block HTTP requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateSqlInjectionMatchSet">AWS
          * API Reference</a></p>
@@ -4422,7 +4428,7 @@ namespace Model
          * request will fail because the request tries to add a REGULAR rule (the default
          * rule type) with the specified ID, which does not exist. </p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
          * API Reference</a></p>
@@ -4476,7 +4482,7 @@ namespace Model
          * request will fail because the request tries to add a REGULAR rule (the default
          * rule type) with the specified ID, which does not exist. </p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
          * API Reference</a></p>
@@ -4532,7 +4538,7 @@ namespace Model
          * request will fail because the request tries to add a REGULAR rule (the default
          * rule type) with the specified ID, which does not exist. </p> <p>For more
          * information about how to use the AWS WAF API to allow or block HTTP requests,
-         * see the <a href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
+         * see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF
          * Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateWebACL">AWS
          * API Reference</a></p>
@@ -4567,7 +4573,7 @@ namespace Model
          * you want AWS WAF to inspect for cross-site scripting attacks.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
          * API Reference</a></p>
@@ -4600,7 +4606,7 @@ namespace Model
          * you want AWS WAF to inspect for cross-site scripting attacks.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
          * API Reference</a></p>
@@ -4635,7 +4641,7 @@ namespace Model
          * you want AWS WAF to inspect for cross-site scripting attacks.</p> </li> </ol>
          * <p>For more information about how to use the AWS WAF API to allow or block HTTP
          * requests, see the <a
-         * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF Developer
          * Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/UpdateXssMatchSet">AWS
          * API Reference</a></p>

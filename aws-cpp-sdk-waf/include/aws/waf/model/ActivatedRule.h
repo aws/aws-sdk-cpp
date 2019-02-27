@@ -425,7 +425,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -457,7 +457,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -489,7 +489,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -521,7 +521,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -553,7 +553,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -585,7 +585,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
@@ -617,7 +617,7 @@ namespace Model
      * that is already associated with a web ACL, perform the following steps:</p> <ol>
      * <li> <p>Use the AWS WAF logs to identify the IDs of the rules that you want to
      * exclude. For more information about the logs, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
      * Web ACL Traffic Information</a>.</p> </li> <li> <p>Submit an <a>UpdateWebACL</a>
      * request that has two actions:</p> <ul> <li> <p>The first action deletes the
      * existing rule group from the web ACL. That is, in the <a>UpdateWebACL</a>
