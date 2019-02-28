@@ -38,27 +38,18 @@ GetApiMappingsResult::GetApiMappingsResult(const Aws::AmazonWebServiceResult<Jso
 GetApiMappingsResult& GetApiMappingsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("apiId"))
+  if(jsonValue.ValueExists("items"))
   {
-    m_apiId = jsonValue.GetString("apiId");
-
+    Array<JsonView> itemsJsonList = jsonValue.GetArray("items");
+    for(unsigned itemsIndex = 0; itemsIndex < itemsJsonList.GetLength(); ++itemsIndex)
+    {
+      m_items.push_back(itemsJsonList[itemsIndex].AsObject());
+    }
   }
 
-  if(jsonValue.ValueExists("apiMappingId"))
+  if(jsonValue.ValueExists("nextToken"))
   {
-    m_apiMappingId = jsonValue.GetString("apiMappingId");
-
-  }
-
-  if(jsonValue.ValueExists("apiMappingKey"))
-  {
-    m_apiMappingKey = jsonValue.GetString("apiMappingKey");
-
-  }
-
-  if(jsonValue.ValueExists("stage"))
-  {
-    m_stage = jsonValue.GetString("stage");
+    m_nextToken = jsonValue.GetString("nextToken");
 
   }
 

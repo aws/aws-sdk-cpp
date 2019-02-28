@@ -85,37 +85,51 @@ namespace Model
 
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline CreateBusinessReportScheduleRequest& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline CreateBusinessReportScheduleRequest& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 bucket name of the output reports.</p>
+     * <p>The S3 bucket name of the output reports. If this isn't specified, the report
+     * can be retrieved from a download link by calling ListBusinessReportSchedule.
+     * </p>
      */
     inline CreateBusinessReportScheduleRequest& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
 
@@ -214,27 +228,32 @@ namespace Model
 
 
     /**
-     * <p>The recurrence of the reports.</p>
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
      */
     inline const BusinessReportRecurrence& GetRecurrence() const{ return m_recurrence; }
 
     /**
-     * <p>The recurrence of the reports.</p>
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
      */
     inline void SetRecurrence(const BusinessReportRecurrence& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
-     * <p>The recurrence of the reports.</p>
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
      */
     inline void SetRecurrence(BusinessReportRecurrence&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
-     * <p>The recurrence of the reports.</p>
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
      */
     inline CreateBusinessReportScheduleRequest& WithRecurrence(const BusinessReportRecurrence& value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p>The recurrence of the reports.</p>
+     * <p>The recurrence of the reports. If this isn't specified, the report will only
+     * be delivered one time when the API is called. </p>
      */
     inline CreateBusinessReportScheduleRequest& WithRecurrence(BusinessReportRecurrence&& value) { SetRecurrence(std::move(value)); return *this;}
 

@@ -181,16 +181,17 @@ namespace Model
    * </p> </li> <li> <p> <code>CentOS7.0</code> </p> </li> <li> <p>
    * <code>CentOS7.1</code> </p> </li> <li> <p> <code>CentOS7.2</code> </p> </li>
    * <li> <p> <code>CentOS7.3</code> </p> </li> <li> <p> <code>CentOS7.4</code> </p>
-   * </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target
-   * all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported
-   * key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul>
-   * <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p>
-   * </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p>
-   * <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li>
-   * </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported
-   * values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p>
-   * <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li>
-   * <p> <code>Low</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </li> <li> <p> <code>CentOS7.5</code> </p> </li> <li> <p> <code>CentOS7.6</code>
+   * </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to
+   * target all supported operating system versions.</i> </p> </li> </ul> <p>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported
+   * values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p>
+   * <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li>
+   * <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p>
+   * </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p>
+   * <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li>
+   * <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p>
+   * </li> <li> <p> <code>Low</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS API
    * Reference</a></p>
    */

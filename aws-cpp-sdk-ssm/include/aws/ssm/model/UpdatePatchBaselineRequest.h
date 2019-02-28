@@ -123,27 +123,27 @@ namespace Model
 
 
     /**
-     * <p>A set of global filters used to exclude patches from the baseline.</p>
+     * <p>A set of global filters used to include patches in the baseline.</p>
      */
     inline const PatchFilterGroup& GetGlobalFilters() const{ return m_globalFilters; }
 
     /**
-     * <p>A set of global filters used to exclude patches from the baseline.</p>
+     * <p>A set of global filters used to include patches in the baseline.</p>
      */
     inline void SetGlobalFilters(const PatchFilterGroup& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = value; }
 
     /**
-     * <p>A set of global filters used to exclude patches from the baseline.</p>
+     * <p>A set of global filters used to include patches in the baseline.</p>
      */
     inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = std::move(value); }
 
     /**
-     * <p>A set of global filters used to exclude patches from the baseline.</p>
+     * <p>A set of global filters used to include patches in the baseline.</p>
      */
     inline UpdatePatchBaselineRequest& WithGlobalFilters(const PatchFilterGroup& value) { SetGlobalFilters(value); return *this;}
 
     /**
-     * <p>A set of global filters used to exclude patches from the baseline.</p>
+     * <p>A set of global filters used to include patches in the baseline.</p>
      */
     inline UpdatePatchBaselineRequest& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
 

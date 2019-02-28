@@ -48,22 +48,28 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether (true) or not (false) data trace logging is enabled for
-     * this route. This property affects the log entries pushed to Amazon CloudWatch
+     * <p>Specifies whether (true) or not (false) data trace
+ logging is enabled for
+     * this route. This property affects the log entries pushed to
+ Amazon CloudWatch
      * Logs.</p>
      */
     inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
 
     /**
-     * <p>Specifies whether (true) or not (false) data trace logging is enabled for
-     * this route. This property affects the log entries pushed to Amazon CloudWatch
+     * <p>Specifies whether (true) or not (false) data trace
+ logging is enabled for
+     * this route. This property affects the log entries pushed to
+ Amazon CloudWatch
      * Logs.</p>
      */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
-     * <p>Specifies whether (true) or not (false) data trace logging is enabled for
-     * this route. This property affects the log entries pushed to Amazon CloudWatch
+     * <p>Specifies whether (true) or not (false) data trace
+ logging is enabled for
+     * this route. This property affects the log entries pushed to
+ Amazon CloudWatch
      * Logs.</p>
      */
     inline RouteSettings& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
@@ -86,32 +92,42 @@ namespace Model
 
 
     /**
-     * <p>Specifies the logging level for this route: DEBUG, INFO, or WARN. This
-     * property affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
      */
     inline const LoggingLevel& GetLoggingLevel() const{ return m_loggingLevel; }
 
     /**
-     * <p>Specifies the logging level for this route: DEBUG, INFO, or WARN. This
-     * property affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
      */
     inline void SetLoggingLevel(const LoggingLevel& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = value; }
 
     /**
-     * <p>Specifies the logging level for this route: DEBUG, INFO, or WARN. This
-     * property affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
      */
     inline void SetLoggingLevel(LoggingLevel&& value) { m_loggingLevelHasBeenSet = true; m_loggingLevel = std::move(value); }
 
     /**
-     * <p>Specifies the logging level for this route: DEBUG, INFO, or WARN. This
-     * property affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
      */
     inline RouteSettings& WithLoggingLevel(const LoggingLevel& value) { SetLoggingLevel(value); return *this;}
 
     /**
-     * <p>Specifies the logging level for this route: DEBUG, INFO, or WARN. This
-     * property affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * <p>Specifies the logging level for this route: DEBUG, INFO,
+ or WARN. This
+     * property affects the log entries pushed to Amazon
+ CloudWatch Logs.</p>
      */
     inline RouteSettings& WithLoggingLevel(LoggingLevel&& value) { SetLoggingLevel(std::move(value)); return *this;}
 

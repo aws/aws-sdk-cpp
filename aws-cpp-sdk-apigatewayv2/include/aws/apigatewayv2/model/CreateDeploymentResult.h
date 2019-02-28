@@ -107,27 +107,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline const DeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatus = value; }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline void SetDeploymentStatus(DeploymentStatus&& value) { m_deploymentStatus = std::move(value); }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline CreateDeploymentResult& WithDeploymentStatus(const DeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline CreateDeploymentResult& WithDeploymentStatus(DeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 

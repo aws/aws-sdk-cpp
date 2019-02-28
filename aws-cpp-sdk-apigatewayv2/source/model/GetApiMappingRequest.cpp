@@ -15,18 +15,14 @@
 
 #include <aws/apigatewayv2/model/GetApiMappingRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/http/URI.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
 GetApiMappingRequest::GetApiMappingRequest() : 
-    m_apiIdHasBeenSet(false),
     m_apiMappingIdHasBeenSet(false),
     m_domainNameHasBeenSet(false)
 {
@@ -37,17 +33,6 @@ Aws::String GetApiMappingRequest::SerializePayload() const
   return {};
 }
 
-void GetApiMappingRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_apiIdHasBeenSet)
-    {
-      ss << m_apiId;
-      uri.AddQueryStringParameter("apiId", ss.str());
-      ss.str("");
-    }
-
-}
 
 
 

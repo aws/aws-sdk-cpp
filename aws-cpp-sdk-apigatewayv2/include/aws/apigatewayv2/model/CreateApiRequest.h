@@ -182,27 +182,27 @@ namespace Model
 
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline const ProtocolType& GetProtocolType() const{ return m_protocolType; }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline void SetProtocolType(const ProtocolType& value) { m_protocolTypeHasBeenSet = true; m_protocolType = value; }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline void SetProtocolType(ProtocolType&& value) { m_protocolTypeHasBeenSet = true; m_protocolType = std::move(value); }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline CreateApiRequest& WithProtocolType(const ProtocolType& value) { SetProtocolType(value); return *this;}
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline CreateApiRequest& WithProtocolType(ProtocolType&& value) { SetProtocolType(std::move(value)); return *this;}
 

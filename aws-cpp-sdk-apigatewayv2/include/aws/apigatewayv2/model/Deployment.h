@@ -37,7 +37,9 @@ namespace Model
 
   /**
    * <p>An immutable representation of an API that can be called by users. A
-   * Deployment must be associated with a Stage for it to be callable over the
+
+   * Deployment must be associated with a Stage for it to be
+ callable over the
    * internet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Deployment">AWS
    * API Reference</a></p>
@@ -114,27 +116,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline const DeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline void SetDeploymentStatus(DeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline Deployment& WithDeploymentStatus(const DeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment: PENDING, FAILED, or SUCCEEDED.</p>
+     * <p>The status of the deployment: PENDING, FAILED, or
+ SUCCEEDED.</p>
      */
     inline Deployment& WithDeploymentStatus(DeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 

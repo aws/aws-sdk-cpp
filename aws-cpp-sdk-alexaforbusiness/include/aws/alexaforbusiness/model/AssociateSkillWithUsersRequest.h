@@ -45,80 +45,41 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline AssociateSkillWithUsersRequest& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline AssociateSkillWithUsersRequest& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline AssociateSkillWithUsersRequest& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
-
-
-    /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline const Aws::String& GetSkillId() const{ return m_skillId; }
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline void SetSkillId(Aws::String&& value) { m_skillIdHasBeenSet = true; m_skillId = std::move(value); }
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline void SetSkillId(const char* value) { m_skillIdHasBeenSet = true; m_skillId.assign(value); }
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline AssociateSkillWithUsersRequest& WithSkillId(const Aws::String& value) { SetSkillId(value); return *this;}
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline AssociateSkillWithUsersRequest& WithSkillId(Aws::String&& value) { SetSkillId(std::move(value)); return *this;}
 
     /**
-     * <p>The private skill ID you want to make available to enrolled users.&gt;</p>
+     * <p>The private skill ID you want to make available to enrolled users.</p>
      */
     inline AssociateSkillWithUsersRequest& WithSkillId(const char* value) { SetSkillId(value); return *this;}
 
   private:
-
-    Aws::String m_organizationArn;
-    bool m_organizationArnHasBeenSet;
 
     Aws::String m_skillId;
     bool m_skillIdHasBeenSet;

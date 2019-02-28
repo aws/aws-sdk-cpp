@@ -45,42 +45,6 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(const Aws::String& value) { m_organizationArnHasBeenSet = true; m_organizationArn = value; }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(Aws::String&& value) { m_organizationArnHasBeenSet = true; m_organizationArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline void SetOrganizationArn(const char* value) { m_organizationArnHasBeenSet = true; m_organizationArn.assign(value); }
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline DisassociateSkillFromUsersRequest& WithOrganizationArn(const Aws::String& value) { SetOrganizationArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline DisassociateSkillFromUsersRequest& WithOrganizationArn(Aws::String&& value) { SetOrganizationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the organization.</p>
-     */
-    inline DisassociateSkillFromUsersRequest& WithOrganizationArn(const char* value) { SetOrganizationArn(value); return *this;}
-
-
-    /**
      * <p> The private skill ID you want to make unavailable for enrolled users.</p>
      */
     inline const Aws::String& GetSkillId() const{ return m_skillId; }
@@ -116,9 +80,6 @@ namespace Model
     inline DisassociateSkillFromUsersRequest& WithSkillId(const char* value) { SetSkillId(value); return *this;}
 
   private:
-
-    Aws::String m_organizationArn;
-    bool m_organizationArnHasBeenSet;
 
     Aws::String m_skillId;
     bool m_skillIdHasBeenSet;

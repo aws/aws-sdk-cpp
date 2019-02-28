@@ -63,116 +63,268 @@ namespace Model
 
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopes = value; }
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopes = std::move(value); }
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline GetRouteResult& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline GetRouteResult& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline GetRouteResult& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopes.push_back(value); return *this; }
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline GetRouteResult& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The authorization scopes supported by this route. </p>
+     * <p>A list of authorization scopes configured on a route. The scopes are used
+     * with a
+ COGNITO_USER_POOLS authorizer to authorize the method invocation. The
+     * authorization
+ works by matching the route scopes against the scopes parsed from
+     * the access token in
+ the incoming request. The method invocation is authorized
+     * if any route scope matches
+ a claimed scope in the access token. Otherwise, the
+     * invocation is not authorized.
+ When the route scope is configured, the client
+     * must provide an access token instead
+ of an identity token for authorization
+     * purposes.</p>
      */
     inline GetRouteResult& AddAuthorizationScopes(const char* value) { m_authorizationScopes.push_back(value); return *this; }
 
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer</p>
      */
     inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer</p>
      */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationType = value; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer</p>
      */
     inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationType = std::move(value); }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer</p>
      */
     inline GetRouteResult& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer</p>
      */
     inline GetRouteResult& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerId = value; }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(Aws::String&& value) { m_authorizerId = std::move(value); }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(const char* value) { m_authorizerId.assign(value); }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline GetRouteResult& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline GetRouteResult& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline GetRouteResult& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 

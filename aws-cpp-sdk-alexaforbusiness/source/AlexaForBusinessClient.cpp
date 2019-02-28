@@ -66,6 +66,7 @@
 #include <aws/alexaforbusiness/model/GetConferenceProviderRequest.h>
 #include <aws/alexaforbusiness/model/GetContactRequest.h>
 #include <aws/alexaforbusiness/model/GetDeviceRequest.h>
+#include <aws/alexaforbusiness/model/GetInvitationConfigurationRequest.h>
 #include <aws/alexaforbusiness/model/GetProfileRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomRequest.h>
 #include <aws/alexaforbusiness/model/GetRoomSkillParameterRequest.h>
@@ -79,6 +80,7 @@
 #include <aws/alexaforbusiness/model/ListSmartHomeAppliancesRequest.h>
 #include <aws/alexaforbusiness/model/ListTagsRequest.h>
 #include <aws/alexaforbusiness/model/PutConferencePreferenceRequest.h>
+#include <aws/alexaforbusiness/model/PutInvitationConfigurationRequest.h>
 #include <aws/alexaforbusiness/model/PutRoomSkillParameterRequest.h>
 #include <aws/alexaforbusiness/model/PutSkillAuthorizationRequest.h>
 #include <aws/alexaforbusiness/model/RegisterAVSDeviceRequest.h>
@@ -1437,6 +1439,41 @@ void AlexaForBusinessClient::GetDeviceAsyncHelper(const GetDeviceRequest& reques
   handler(this, request, GetDevice(request), context);
 }
 
+GetInvitationConfigurationOutcome AlexaForBusinessClient::GetInvitationConfiguration(const GetInvitationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetInvitationConfigurationOutcome(GetInvitationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetInvitationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+GetInvitationConfigurationOutcomeCallable AlexaForBusinessClient::GetInvitationConfigurationCallable(const GetInvitationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInvitationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInvitationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::GetInvitationConfigurationAsync(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInvitationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::GetInvitationConfigurationAsyncHelper(const GetInvitationConfigurationRequest& request, const GetInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInvitationConfiguration(request), context);
+}
+
 GetProfileOutcome AlexaForBusinessClient::GetProfile(const GetProfileRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1890,6 +1927,41 @@ void AlexaForBusinessClient::PutConferencePreferenceAsync(const PutConferencePre
 void AlexaForBusinessClient::PutConferencePreferenceAsyncHelper(const PutConferencePreferenceRequest& request, const PutConferencePreferenceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutConferencePreference(request), context);
+}
+
+PutInvitationConfigurationOutcome AlexaForBusinessClient::PutInvitationConfiguration(const PutInvitationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutInvitationConfigurationOutcome(PutInvitationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutInvitationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutInvitationConfigurationOutcomeCallable AlexaForBusinessClient::PutInvitationConfigurationCallable(const PutInvitationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutInvitationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutInvitationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AlexaForBusinessClient::PutInvitationConfigurationAsync(const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutInvitationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void AlexaForBusinessClient::PutInvitationConfigurationAsyncHelper(const PutInvitationConfigurationRequest& request, const PutInvitationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutInvitationConfiguration(request), context);
 }
 
 PutRoomSkillParameterOutcome AlexaForBusinessClient::PutRoomSkillParameter(const PutRoomSkillParameterRequest& request) const

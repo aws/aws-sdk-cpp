@@ -47,50 +47,64 @@ namespace Model
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline const Aws::String& GetApiEndpoint() const{ return m_apiEndpoint; }
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline void SetApiEndpoint(const Aws::String& value) { m_apiEndpoint = value; }
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline void SetApiEndpoint(Aws::String&& value) { m_apiEndpoint = std::move(value); }
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline void SetApiEndpoint(const char* value) { m_apiEndpoint.assign(value); }
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline UpdateApiResult& WithApiEndpoint(const Aws::String& value) { SetApiEndpoint(value); return *this;}
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline UpdateApiResult& WithApiEndpoint(Aws::String&& value) { SetApiEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The URI of the API, of the form {api-id}.execute-api.{region}.amazonaws.com.
-     * The stage name is typically appended to this URI to form a complete path to a
-     * deployed API stage.</p>
+     * The
+ stage name is typically appended to this URI to form a complete path to a
+     * deployed
+ API stage.</p>
      */
     inline UpdateApiResult& WithApiEndpoint(const char* value) { SetApiEndpoint(value); return *this;}
 
@@ -296,27 +310,27 @@ namespace Model
 
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline const ProtocolType& GetProtocolType() const{ return m_protocolType; }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline void SetProtocolType(const ProtocolType& value) { m_protocolType = value; }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline void SetProtocolType(ProtocolType&& value) { m_protocolType = std::move(value); }
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline UpdateApiResult& WithProtocolType(const ProtocolType& value) { SetProtocolType(value); return *this;}
 
     /**
-     * <p>The API protocol: HTTP or WEBSOCKET.</p>
+     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
      */
     inline UpdateApiResult& WithProtocolType(ProtocolType&& value) { SetProtocolType(std::move(value)); return *this;}
 
@@ -394,49 +408,57 @@ namespace Model
 
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warnings = value; }
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warnings = std::move(value); }
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline UpdateApiResult& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline UpdateApiResult& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline UpdateApiResult& AddWarnings(const Aws::String& value) { m_warnings.push_back(value); return *this; }
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline UpdateApiResult& AddWarnings(Aws::String&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The warning messages reported when failonwarnings is turned on during API
+     * <p>The warning messages reported when failonwarnings is turned on during
+ API
      * import.</p>
      */
     inline UpdateApiResult& AddWarnings(const char* value) { m_warnings.push_back(value); return *this; }

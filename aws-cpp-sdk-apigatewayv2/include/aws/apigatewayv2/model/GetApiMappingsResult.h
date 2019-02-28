@@ -15,7 +15,9 @@
 
 #pragma once
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigatewayv2/model/ApiMapping.h>
 #include <utility>
 
 namespace Aws
@@ -43,157 +45,95 @@ namespace Model
 
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::Vector<ApiMapping>& GetItems() const{ return m_items; }
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline void SetApiId(const Aws::String& value) { m_apiId = value; }
+    inline void SetItems(const Aws::Vector<ApiMapping>& value) { m_items = value; }
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline void SetApiId(Aws::String&& value) { m_apiId = std::move(value); }
+    inline void SetItems(Aws::Vector<ApiMapping>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline void SetApiId(const char* value) { m_apiId.assign(value); }
+    inline GetApiMappingsResult& WithItems(const Aws::Vector<ApiMapping>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline GetApiMappingsResult& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
+    inline GetApiMappingsResult& WithItems(Aws::Vector<ApiMapping>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline GetApiMappingsResult& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
+    inline GetApiMappingsResult& AddItems(const ApiMapping& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>The API identifier.</p>
+     * <p>The elements from this collection.</p>
      */
-    inline GetApiMappingsResult& WithApiId(const char* value) { SetApiId(value); return *this;}
-
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline const Aws::String& GetApiMappingId() const{ return m_apiMappingId; }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline void SetApiMappingId(const Aws::String& value) { m_apiMappingId = value; }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline void SetApiMappingId(Aws::String&& value) { m_apiMappingId = std::move(value); }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline void SetApiMappingId(const char* value) { m_apiMappingId.assign(value); }
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline GetApiMappingsResult& WithApiMappingId(const Aws::String& value) { SetApiMappingId(value); return *this;}
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline GetApiMappingsResult& WithApiMappingId(Aws::String&& value) { SetApiMappingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The API mapping identifier.</p>
-     */
-    inline GetApiMappingsResult& WithApiMappingId(const char* value) { SetApiMappingId(value); return *this;}
+    inline GetApiMappingsResult& AddItems(ApiMapping&& value) { m_items.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline const Aws::String& GetApiMappingKey() const{ return m_apiMappingKey; }
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline void SetApiMappingKey(const Aws::String& value) { m_apiMappingKey = value; }
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline void SetApiMappingKey(Aws::String&& value) { m_apiMappingKey = std::move(value); }
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline void SetApiMappingKey(const char* value) { m_apiMappingKey.assign(value); }
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline GetApiMappingsResult& WithApiMappingKey(const Aws::String& value) { SetApiMappingKey(value); return *this;}
+    inline GetApiMappingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline GetApiMappingsResult& WithApiMappingKey(Aws::String&& value) { SetApiMappingKey(std::move(value)); return *this;}
+    inline GetApiMappingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The API mapping key.</p>
+     * <p>The next page of elements from this collection. Not valid for the last
+     * element of
+ the collection.</p>
      */
-    inline GetApiMappingsResult& WithApiMappingKey(const char* value) { SetApiMappingKey(value); return *this;}
-
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline const Aws::String& GetStage() const{ return m_stage; }
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline void SetStage(const Aws::String& value) { m_stage = value; }
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline void SetStage(Aws::String&& value) { m_stage = std::move(value); }
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline void SetStage(const char* value) { m_stage.assign(value); }
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline GetApiMappingsResult& WithStage(const Aws::String& value) { SetStage(value); return *this;}
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline GetApiMappingsResult& WithStage(Aws::String&& value) { SetStage(std::move(value)); return *this;}
-
-    /**
-     * <p>The API stage.</p>
-     */
-    inline GetApiMappingsResult& WithStage(const char* value) { SetStage(value); return *this;}
+    inline GetApiMappingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
 
-    Aws::String m_apiId;
+    Aws::Vector<ApiMapping> m_items;
 
-    Aws::String m_apiMappingId;
-
-    Aws::String m_apiMappingKey;
-
-    Aws::String m_stage;
+    Aws::String m_nextToken;
   };
 
 } // namespace Model

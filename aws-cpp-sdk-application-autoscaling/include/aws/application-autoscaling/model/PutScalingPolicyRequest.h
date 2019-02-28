@@ -89,7 +89,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline const ServiceNamespace& GetServiceNamespace() const{ return m_serviceNamespace; }
@@ -98,7 +98,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(const ServiceNamespace& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = value; }
@@ -107,7 +107,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline void SetServiceNamespace(ServiceNamespace&& value) { m_serviceNamespaceHasBeenSet = true; m_serviceNamespace = std::move(value); }
@@ -116,7 +116,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(const ServiceNamespace& value) { SetServiceNamespace(value); return *this;}
@@ -125,7 +125,7 @@ namespace Model
      * <p>The namespace of the AWS service that provides the resource or
      * <code>custom-resource</code> for a resource provided by your own application or
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
      * Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
      */
     inline PutScalingPolicyRequest& WithServiceNamespace(ServiceNamespace&& value) { SetServiceNamespace(std::move(value)); return *this;}
@@ -507,60 +507,65 @@ namespace Model
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
      * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see <a
+     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
+     * information about <b>Limits</b> in <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
+     * Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
      * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see <a
+     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
+     * information about <b>Limits</b> in <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
+     * Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
      * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see <a
+     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
+     * information about <b>Limits</b> in <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
+     * Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
      * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see <a
+     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
+     * information about <b>Limits</b> in <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
+     * Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
      * <p>The policy type. This parameter is required if you are creating a scaling
      * policy.</p> <p>For information on which services do not support
-     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see <a
+     * <code>StepScaling</code> or <code>TargetTrackingScaling</code>, see the
+     * information about <b>Limits</b> in <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html">Step
-     * Scaling Policies for Application Auto Scaling</a> and <a
+     * Scaling Policies</a> and <a
      * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html">Target
-     * Tracking Scaling Policies for Application Auto Scaling</a> in the <i>Application
-     * Auto Scaling User Guide</i>.</p>
+     * Tracking Scaling Policies</a> in the <i>Application Auto Scaling User
+     * Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
 

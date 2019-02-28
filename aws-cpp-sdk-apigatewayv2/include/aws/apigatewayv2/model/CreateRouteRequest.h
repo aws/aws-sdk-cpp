@@ -99,116 +99,172 @@ namespace Model
 
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = value; }
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes = std::move(value); }
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline CreateRouteRequest& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline CreateRouteRequest& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline CreateRouteRequest& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline CreateRouteRequest& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The authorization scopes supported by this route.</p>
+     * <p>The authorization scopes supported by this
+ route.</p>
      */
     inline CreateRouteRequest& AddAuthorizationScopes(const char* value) { m_authorizationScopesHasBeenSet = true; m_authorizationScopes.push_back(value); return *this; }
 
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer.</p>
      */
     inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer.</p>
      */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = value; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer.</p>
      */
     inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationTypeHasBeenSet = true; m_authorizationType = std::move(value); }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer.</p>
      */
     inline CreateRouteRequest& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open access,
-     * AWS_IAM for using AWS IAM permissions.</p>
+     * <p>The authorization type for the route. Valid values are NONE for open
+ access,
+     * AWS_IAM for using AWS IAM permissions, and CUSTOM
+ for using a Lambda
+
+     * authorizer.</p>
      */
     inline CreateRouteRequest& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline CreateRouteRequest& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline CreateRouteRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of the Authorizer resource to be associated with this
-     * route.</p>
+ route,
+     * if the authorizationType is CUSTOM
+ . The authorizer identifier is generated by
+     * API Gateway
+ when you created the authorizer.</p>
      */
     inline CreateRouteRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 

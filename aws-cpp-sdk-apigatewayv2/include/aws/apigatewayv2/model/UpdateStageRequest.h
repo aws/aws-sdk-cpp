@@ -334,85 +334,109 @@ namespace Model
 
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline void SetStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = value; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline void SetStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = std::move(value); }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& WithStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetStageVariables(value); return *this;}
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& WithStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetStageVariables(std::move(value)); return *this;}
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const Aws::String& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const Aws::String& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const char* key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names can have
+     * <p>A map that defines the stage variables for a Stage. Variable names
+ can have
      * alphanumeric and underscore characters, and the values must match
+
      * [A-Za-z0-9-._~:/?#&=,]+.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }

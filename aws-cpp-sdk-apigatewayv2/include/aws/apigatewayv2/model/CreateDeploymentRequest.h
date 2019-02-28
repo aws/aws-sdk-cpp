@@ -115,37 +115,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline CreateDeploymentRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline CreateDeploymentRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Stage resource for the Deployment resource to create.</p>
+     * <p>The name of the Stage resource for the Deployment
+ resource to create.</p>
      */
     inline CreateDeploymentRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 

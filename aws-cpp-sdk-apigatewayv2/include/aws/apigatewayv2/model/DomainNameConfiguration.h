@@ -87,117 +87,136 @@ namespace Model
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline DomainNameConfiguration& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline DomainNameConfiguration& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>An AWS-managed certificate that will be used by the edge-optimized endpoint
-     * for this domain name. AWS Certificate Manager is the only supported source.</p>
+     * for
+ this domain name. AWS Certificate Manager is the only supported source.</p>
      */
     inline DomainNameConfiguration& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
 
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline DomainNameConfiguration& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline DomainNameConfiguration& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
 
     /**
      * <p>The user-friendly name of the certificate that will be used by the
-     * edge-optimized endpoint for this domain name.</p>
+     * edge-optimized
+ endpoint for this domain name.</p>
      */
     inline DomainNameConfiguration& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
 
 
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for
+ this domain name was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetCertificateUploadDate() const{ return m_certificateUploadDate; }
 
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for
+ this domain name was uploaded.</p>
      */
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
 
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for
+ this domain name was uploaded.</p>
      */
     inline void SetCertificateUploadDate(Aws::Utils::DateTime&& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = std::move(value); }
 
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for
+ this domain name was uploaded.</p>
      */
     inline DomainNameConfiguration& WithCertificateUploadDate(const Aws::Utils::DateTime& value) { SetCertificateUploadDate(value); return *this;}
 
     /**
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
-     * for this domain name was uploaded.</p>
+     * for
+ this domain name was uploaded.</p>
      */
     inline DomainNameConfiguration& WithCertificateUploadDate(Aws::Utils::DateTime&& value) { SetCertificateUploadDate(std::move(value)); return *this;}
 
@@ -229,51 +248,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline DomainNameConfiguration& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline DomainNameConfiguration& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint. See <a
-     * href="docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
-     * Regions and Endpoints for API Gateway</a>.</p>
+     * <p>The Amazon Route 53 Hosted Zone ID of the endpoint.</p>
      */
     inline DomainNameConfiguration& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
 

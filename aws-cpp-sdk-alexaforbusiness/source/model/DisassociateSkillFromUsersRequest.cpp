@@ -23,7 +23,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DisassociateSkillFromUsersRequest::DisassociateSkillFromUsersRequest() : 
-    m_organizationArnHasBeenSet(false),
     m_skillIdHasBeenSet(false)
 {
 }
@@ -31,12 +30,6 @@ DisassociateSkillFromUsersRequest::DisassociateSkillFromUsersRequest() :
 Aws::String DisassociateSkillFromUsersRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_organizationArnHasBeenSet)
-  {
-   payload.WithString("OrganizationArn", m_organizationArn);
-
-  }
 
   if(m_skillIdHasBeenSet)
   {

@@ -82,43 +82,50 @@ namespace Model
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline GetModelsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline GetModelsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>The next page of elements from this collection. Not valid for the last
-     * element of the collection.</p>
+     * element of
+ the collection.</p>
      */
     inline GetModelsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

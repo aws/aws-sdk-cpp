@@ -1039,10 +1039,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
@@ -1057,10 +1056,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
@@ -1077,10 +1075,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
