@@ -31,20 +31,24 @@ namespace Model
 {
 
 InstanceStatusEvent::InstanceStatusEvent() : 
+    m_instanceEventIdHasBeenSet(false),
     m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false)
+    m_notBeforeHasBeenSet(false),
+    m_notBeforeDeadlineHasBeenSet(false)
 {
 }
 
 InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode) : 
+    m_instanceEventIdHasBeenSet(false),
     m_code(EventCode::NOT_SET),
     m_codeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false)
+    m_notBeforeHasBeenSet(false),
+    m_notBeforeDeadlineHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -55,6 +59,12 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
+    XmlNode instanceEventIdNode = resultNode.FirstChild("instanceEventId");
+    if(!instanceEventIdNode.IsNull())
+    {
+      m_instanceEventId = StringUtils::Trim(instanceEventIdNode.GetText().c_str());
+      m_instanceEventIdHasBeenSet = true;
+    }
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
@@ -79,6 +89,12 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
       m_notBefore = DateTime(StringUtils::Trim(notBeforeNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
       m_notBeforeHasBeenSet = true;
     }
+    XmlNode notBeforeDeadlineNode = resultNode.FirstChild("notBeforeDeadline");
+    if(!notBeforeDeadlineNode.IsNull())
+    {
+      m_notBeforeDeadline = DateTime(StringUtils::Trim(notBeforeDeadlineNode.GetText().c_str()).c_str(), DateFormat::ISO_8601);
+      m_notBeforeDeadlineHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -86,6 +102,11 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
 
 void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_instanceEventIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceEventId=" << StringUtils::URLEncode(m_instanceEventId.c_str()) << "&";
+  }
+
   if(m_codeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Code=" << EventCodeMapper::GetNameForEventCode(m_code) << "&";
@@ -106,10 +127,19 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
       oStream << location << index << locationValue << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 
+  if(m_notBeforeDeadlineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_instanceEventIdHasBeenSet)
+  {
+      oStream << location << ".InstanceEventId=" << StringUtils::URLEncode(m_instanceEventId.c_str()) << "&";
+  }
   if(m_codeHasBeenSet)
   {
       oStream << location << ".Code=" << EventCodeMapper::GetNameForEventCode(m_code) << "&";
@@ -125,6 +155,10 @@ void InstanceStatusEvent::OutputToStream(Aws::OStream& oStream, const char* loca
   if(m_notBeforeHasBeenSet)
   {
       oStream << location << ".NotBefore=" << StringUtils::URLEncode(m_notBefore.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+  if(m_notBeforeDeadlineHasBeenSet)
+  {
+      oStream << location << ".NotBeforeDeadline=" << StringUtils::URLEncode(m_notBeforeDeadline.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

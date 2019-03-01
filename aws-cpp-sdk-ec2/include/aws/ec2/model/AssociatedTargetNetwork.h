@@ -52,63 +52,63 @@ namespace Model
 
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetNetworkId() const{ return m_networkId; }
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline AssociatedTargetNetwork& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline AssociatedTargetNetwork& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The ID of the subnet.</b> </p>
+     * <p>The ID of the subnet.</p>
      */
     inline AssociatedTargetNetwork& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
 
 
     /**
-     * <p> <b>The target network type.</b> </p>
+     * <p>The target network type.</p>
      */
     inline const AssociatedNetworkType& GetNetworkType() const{ return m_networkType; }
 
     /**
-     * <p> <b>The target network type.</b> </p>
+     * <p>The target network type.</p>
      */
     inline void SetNetworkType(const AssociatedNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
     /**
-     * <p> <b>The target network type.</b> </p>
+     * <p>The target network type.</p>
      */
     inline void SetNetworkType(AssociatedNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
     /**
-     * <p> <b>The target network type.</b> </p>
+     * <p>The target network type.</p>
      */
     inline AssociatedTargetNetwork& WithNetworkType(const AssociatedNetworkType& value) { SetNetworkType(value); return *this;}
 
     /**
-     * <p> <b>The target network type.</b> </p>
+     * <p>The target network type.</p>
      */
     inline AssociatedTargetNetwork& WithNetworkType(AssociatedNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
 

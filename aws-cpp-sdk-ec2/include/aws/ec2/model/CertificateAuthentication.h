@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>Information about the client certificate used for authentication.</b>
-   * </p><p><h3>See Also:</h3>   <a
+   * <p>Information about the client certificate used for
+   * authentication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CertificateAuthentication">AWS
    * API Reference</a></p>
    */
@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline const Aws::String& GetClientRootCertificateChain() const{ return m_clientRootCertificateChain; }
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline void SetClientRootCertificateChain(const Aws::String& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = value; }
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline void SetClientRootCertificateChain(Aws::String&& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = std::move(value); }
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline void SetClientRootCertificateChain(const char* value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain.assign(value); }
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline CertificateAuthentication& WithClientRootCertificateChain(const Aws::String& value) { SetClientRootCertificateChain(value); return *this;}
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline CertificateAuthentication& WithClientRootCertificateChain(Aws::String&& value) { SetClientRootCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The ARN of the client certificate. </b> </p>
+     * <p>The ARN of the client certificate. </p>
      */
     inline CertificateAuthentication& WithClientRootCertificateChain(const char* value) { SetClientRootCertificateChain(value); return *this;}
 

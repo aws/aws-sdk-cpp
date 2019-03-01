@@ -396,27 +396,27 @@ namespace Model
 
 
     /**
-     * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
     inline const TransportProtocol& GetTransportProtocol() const{ return m_transportProtocol; }
 
     /**
-     * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
     inline void SetTransportProtocol(const TransportProtocol& value) { m_transportProtocolHasBeenSet = true; m_transportProtocol = value; }
 
     /**
-     * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
     inline void SetTransportProtocol(TransportProtocol&& value) { m_transportProtocolHasBeenSet = true; m_transportProtocol = std::move(value); }
 
     /**
-     * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
     inline ClientVpnEndpoint& WithTransportProtocol(const TransportProtocol& value) { SetTransportProtocol(value); return *this;}
 
     /**
-     * <p> <b>The transport protocol used by the Client VPN endpoint.</b> </p>
+     * <p>The transport protocol used by the Client VPN endpoint.</p>
      */
     inline ClientVpnEndpoint& WithTransportProtocol(TransportProtocol&& value) { SetTransportProtocol(std::move(value)); return *this;}
 

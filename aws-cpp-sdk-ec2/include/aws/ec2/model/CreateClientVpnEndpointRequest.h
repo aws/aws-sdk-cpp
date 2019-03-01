@@ -118,50 +118,50 @@ namespace Model
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const Aws::String& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = value; }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(Aws::String&& value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn = std::move(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline void SetServerCertificateArn(const char* value) { m_serverCertificateArnHasBeenSet = true; m_serverCertificateArn.assign(value); }
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const Aws::String& value) { SetServerCertificateArn(value); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(Aws::String&& value) { SetServerCertificateArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the server certificate. For more information, see the <a
-     * href="acm/latest/userguide/acm-overview.html">AWS Certificate Manager User
-     * Guide</a> .</p>
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager
+     * User Guide</a>.</p>
      */
     inline CreateClientVpnEndpointRequest& WithServerCertificateArn(const char* value) { SetServerCertificateArn(value); return *this;}
 

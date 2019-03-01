@@ -105,8 +105,10 @@ namespace Model
    * Use this service in conjunction with the Amazon EC2 Auto Scaling, Application
    * Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services. </p>
    * <p>Currently, predictive scaling is only available for Amazon EC2 Auto Scaling
-   * groups.</p> <p>For more information about AWS Auto Scaling, see the <a
-   * href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
+   * groups.</p> <p>For more information about AWS Auto Scaling, including
+   * information about granting IAM users required permissions for AWS Auto Scaling
+   * actions, see the <a
+   * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
    * Auto Scaling User Guide</a>.</p>
    */
   class AWS_AUTOSCALINGPLANS_API AutoScalingPlansClient : public Aws::Client::AWSJsonClient

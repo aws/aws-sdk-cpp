@@ -89,10 +89,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -121,11 +118,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline const Aws::String& GetEventSubType() const{ return m_eventSubType; }
 
@@ -133,10 +133,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -165,11 +162,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline void SetEventSubType(const Aws::String& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = value; }
 
@@ -177,10 +177,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -209,11 +206,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline void SetEventSubType(Aws::String&& value) { m_eventSubTypeHasBeenSet = true; m_eventSubType = std::move(value); }
 
@@ -221,10 +221,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -253,11 +250,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline void SetEventSubType(const char* value) { m_eventSubTypeHasBeenSet = true; m_eventSubType.assign(value); }
 
@@ -265,10 +265,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -297,11 +294,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline EventInformation& WithEventSubType(const Aws::String& value) { SetEventSubType(value); return *this;}
 
@@ -309,10 +309,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -341,11 +338,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline EventInformation& WithEventSubType(Aws::String&& value) { SetEventSubType(std::move(value)); return *this;}
 
@@ -353,10 +353,7 @@ namespace Model
      * <p>The event.</p> <p>The following are the <code>error</code> events:</p> <ul>
      * <li> <p> <code>iamFleetRoleInvalid</code> - The Spot Fleet did not have the
      * required permissions either to launch or terminate an instance.</p> </li> <li>
-     * <p> <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not
-     * valid and several attempts to launch instances have failed. For more
-     * information, see the description of the event.</p> </li> <li> <p>
-     * <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
+     * <p> <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not
      * valid. For more information, see the description of the event.</p> </li> <li>
      * <p> <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on
      * the number of Spot Instances that you can launch.</p> </li> </ul> <p>The
@@ -385,11 +382,14 @@ namespace Model
      * launched.</p> </li> <li> <p> <code>terminated</code> - An instance was
      * terminated by the user.</p> </li> </ul> <p>The following are the
      * <code>Information</code> events:</p> <ul> <li> <p>
-     * <code>launchSpecUnusable</code> - The price in a launch specification is not
-     * valid because it is below the Spot price or the Spot price is above the
-     * On-Demand price.</p> </li> <li> <p> <code>fleetProgressHalted</code> - The price
-     * in every launch specification is not valid. A launch specification might become
-     * valid if the Spot price changes.</p> </li> </ul>
+     * <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid
+     * and several attempts to launch instances have failed. For more information, see
+     * the description of the event.</p> </li> <li> <p> <code>launchSpecUnusable</code>
+     * - The price in a launch specification is not valid because it is below the Spot
+     * price or the Spot price is above the On-Demand price.</p> </li> <li> <p>
+     * <code>fleetProgressHalted</code> - The price in every launch specification is
+     * not valid. A launch specification might become valid if the Spot price
+     * changes.</p> </li> </ul>
      */
     inline EventInformation& WithEventSubType(const char* value) { SetEventSubType(value); return *this;}
 

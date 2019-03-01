@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>Information about a Client VPN endpoint route.</b> </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Information about a Client VPN endpoint route.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ClientVpnRoute">AWS
    * API Reference</a></p>
    */
@@ -160,37 +159,37 @@ namespace Model
 
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline ClientVpnRoute& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline ClientVpnRoute& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The route type.</b> </p>
+     * <p>The route type.</p>
      */
     inline ClientVpnRoute& WithType(const char* value) { SetType(value); return *this;}
 

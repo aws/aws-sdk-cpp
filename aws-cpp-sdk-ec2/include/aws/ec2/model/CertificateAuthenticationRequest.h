@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>Information about the client certificate to be used for
-   * authentication.</b> </p><p><h3>See Also:</h3>   <a
+   * <p>Information about the client certificate to be used for
+   * authentication.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CertificateAuthenticationRequest">AWS
    * API Reference</a></p>
    */
@@ -51,51 +51,51 @@ namespace Model
 
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline const Aws::String& GetClientRootCertificateChainArn() const{ return m_clientRootCertificateChainArn; }
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(const Aws::String& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = value; }
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(Aws::String&& value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn = std::move(value); }
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline void SetClientRootCertificateChainArn(const char* value) { m_clientRootCertificateChainArnHasBeenSet = true; m_clientRootCertificateChainArn.assign(value); }
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const Aws::String& value) { SetClientRootCertificateChainArn(value); return *this;}
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(Aws::String&& value) { SetClientRootCertificateChainArn(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The ARN of the client certificate. The certificate must be signed by a
+     * <p>The ARN of the client certificate. The certificate must be signed by a
      * certificate authority (CA) and it must be provisioned in AWS Certificate Manager
-     * (ACM).</b> </p>
+     * (ACM).</p>
      */
     inline CertificateAuthenticationRequest& WithClientRootCertificateChainArn(const char* value) { SetClientRootCertificateChainArn(value); return *this;}
 

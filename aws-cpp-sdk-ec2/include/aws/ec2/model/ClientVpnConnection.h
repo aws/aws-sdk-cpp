@@ -87,37 +87,37 @@ namespace Model
 
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline ClientVpnConnection& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline ClientVpnConnection& WithTimestamp(Aws::String&& value) { SetTimestamp(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The current date and time.</b> </p>
+     * <p>The current date and time.</p>
      */
     inline ClientVpnConnection& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
 
@@ -425,44 +425,44 @@ namespace Model
 
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline const Aws::String& GetCommonName() const{ return m_commonName; }
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline void SetCommonName(const Aws::String& value) { m_commonNameHasBeenSet = true; m_commonName = value; }
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline void SetCommonName(Aws::String&& value) { m_commonNameHasBeenSet = true; m_commonName = std::move(value); }
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline void SetCommonName(const char* value) { m_commonNameHasBeenSet = true; m_commonName.assign(value); }
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline ClientVpnConnection& WithCommonName(const Aws::String& value) { SetCommonName(value); return *this;}
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline ClientVpnConnection& WithCommonName(Aws::String&& value) { SetCommonName(std::move(value)); return *this;}
 
     /**
-     * <p> <b>The common name associated with the client. This is either the name of
-     * the client certificate, or the Active Directory user name.</b> </p>
+     * <p>The common name associated with the client. This is either the name of the
+     * client certificate, or the Active Directory user name.</p>
      */
     inline ClientVpnConnection& WithCommonName(const char* value) { SetCommonName(value); return *this;}
 

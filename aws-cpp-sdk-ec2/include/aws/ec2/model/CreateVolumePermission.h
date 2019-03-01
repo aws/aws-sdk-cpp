@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the user or group to be added or removed from the permissions for a
-   * volume.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the user or group to be added or removed from the list of create
+   * volume permissions for a volume.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumePermission">AWS
    * API Reference</a></p>
    */
@@ -52,75 +52,63 @@ namespace Model
 
 
     /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline const PermissionGroup& GetGroup() const{ return m_group; }
 
     /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
 
     /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
 
     /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
 
     /**
-     * <p>The specific group that is to be added or removed from a volume's list of
-     * create volume permissions.</p>
+     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
 
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The specific AWS account ID that is to be added or removed from a volume's
-     * list of create volume permissions.</p>
+     * <p>The AWS account ID to be added or removed.</p>
      */
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
 

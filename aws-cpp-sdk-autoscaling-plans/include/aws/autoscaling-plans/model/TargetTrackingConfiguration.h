@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes a target tracking configuration. Used with
-   * <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes a target tracking configuration to use with AWS Auto Scaling. Used
+   * with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -51,53 +51,63 @@ namespace Model
 
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline const PredefinedScalingMetricSpecification& GetPredefinedScalingMetricSpecification() const{ return m_predefinedScalingMetricSpecification; }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = value; }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = std::move(value); }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { SetPredefinedScalingMetricSpecification(value); return *this;}
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { SetPredefinedScalingMetricSpecification(std::move(value)); return *this;}
 
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline const CustomizedScalingMetricSpecification& GetCustomizedScalingMetricSpecification() const{ return m_customizedScalingMetricSpecification; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline void SetCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = value; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline void SetCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = std::move(value); }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { SetCustomizedScalingMetricSpecification(value); return *this;}
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { SetCustomizedScalingMetricSpecification(std::move(value)); return *this;}
 

@@ -246,6 +246,7 @@
 #include <aws/ec2/model/ModifyHostsResponse.h>
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
+#include <aws/ec2/model/ModifyInstanceEventStartTimeResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -604,6 +605,7 @@ namespace Model
         class ModifyInstanceAttributeRequest;
         class ModifyInstanceCapacityReservationAttributesRequest;
         class ModifyInstanceCreditSpecificationRequest;
+        class ModifyInstanceEventStartTimeRequest;
         class ModifyInstancePlacementRequest;
         class ModifyLaunchTemplateRequest;
         class ModifyNetworkInterfaceAttributeRequest;
@@ -934,6 +936,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceCapacityReservationAttributesResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceCapacityReservationAttributesOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceCreditSpecificationOutcome;
+        typedef Aws::Utils::Outcome<ModifyInstanceEventStartTimeResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceEventStartTimeOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> ModifyLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
@@ -1264,6 +1267,7 @@ namespace Model
         typedef std::future<ModifyInstanceAttributeOutcome> ModifyInstanceAttributeOutcomeCallable;
         typedef std::future<ModifyInstanceCapacityReservationAttributesOutcome> ModifyInstanceCapacityReservationAttributesOutcomeCallable;
         typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
+        typedef std::future<ModifyInstanceEventStartTimeOutcome> ModifyInstanceEventStartTimeOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
@@ -1597,6 +1601,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceAttributeRequest&, const Model::ModifyInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCapacityReservationAttributesRequest&, const Model::ModifyInstanceCapacityReservationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCapacityReservationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventStartTimeRequest&, const Model::ModifyInstanceEventStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventStartTimeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
@@ -3383,7 +3388,7 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same region or from one region to another.
+         * You can copy the snapshot within the same Region or from one Region to another.
          * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
          * The snapshot is copied to the regional endpoint that you send the HTTP request
          * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
@@ -3406,7 +3411,7 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same region or from one region to another.
+         * You can copy the snapshot within the same Region or from one Region to another.
          * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
          * The snapshot is copied to the regional endpoint that you send the HTTP request
          * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
@@ -3431,7 +3436,7 @@ namespace Model
 
         /**
          * <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3.
-         * You can copy the snapshot within the same region or from one region to another.
+         * You can copy the snapshot within the same Region or from one Region to another.
          * You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).
          * The snapshot is copied to the regional endpoint that you send the HTTP request
          * to.</p> <p>Copies of encrypted EBS snapshots remain encrypted. Copies of
@@ -4658,16 +4663,15 @@ namespace Model
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
          * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
-         * Reserved Instances with a capacity reservation can be sold in the Reserved
-         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
-         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
-         * Instance Marketplace matches sellers who want to resell Standard Reserved
-         * Instance capacity that they no longer need with buyers who want to purchase
-         * additional capacity. Reserved Instances bought and sold through the Reserved
-         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
-         * Standard Reserved Instances, you must first register as a seller in the Reserved
-         * Instance Marketplace. After completing the registration process, you can create
-         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
+         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -4686,16 +4690,15 @@ namespace Model
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
          * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
-         * Reserved Instances with a capacity reservation can be sold in the Reserved
-         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
-         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
-         * Instance Marketplace matches sellers who want to resell Standard Reserved
-         * Instance capacity that they no longer need with buyers who want to purchase
-         * additional capacity. Reserved Instances bought and sold through the Reserved
-         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
-         * Standard Reserved Instances, you must first register as a seller in the Reserved
-         * Instance Marketplace. After completing the registration process, you can create
-         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
+         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -4716,16 +4719,15 @@ namespace Model
          * the Reserved Instance Marketplace. You can submit one Standard Reserved Instance
          * listing at a time. To get a list of your Standard Reserved Instances, you can
          * use the <a>DescribeReservedInstances</a> operation.</p> <note> <p>Only Standard
-         * Reserved Instances with a capacity reservation can be sold in the Reserved
-         * Instance Marketplace. Convertible Reserved Instances and Standard Reserved
-         * Instances with a regional benefit cannot be sold.</p> </note> <p>The Reserved
-         * Instance Marketplace matches sellers who want to resell Standard Reserved
-         * Instance capacity that they no longer need with buyers who want to purchase
-         * additional capacity. Reserved Instances bought and sold through the Reserved
-         * Instance Marketplace work like any other Reserved Instances.</p> <p>To sell your
-         * Standard Reserved Instances, you must first register as a seller in the Reserved
-         * Instance Marketplace. After completing the registration process, you can create
-         * a Reserved Instance Marketplace listing of some or all of your Standard Reserved
+         * Reserved Instances can be sold in the Reserved Instance Marketplace. Convertible
+         * Reserved Instances cannot be sold.</p> </note> <p>The Reserved Instance
+         * Marketplace matches sellers who want to resell Standard Reserved Instance
+         * capacity that they no longer need with buyers who want to purchase additional
+         * capacity. Reserved Instances bought and sold through the Reserved Instance
+         * Marketplace work like any other Reserved Instances.</p> <p>To sell your Standard
+         * Reserved Instances, you must first register as a seller in the Reserved Instance
+         * Marketplace. After completing the registration process, you can create a
+         * Reserved Instance Marketplace listing of some or all of your Standard Reserved
          * Instances, and specify the upfront price to receive for them. Your Standard
          * Reserved Instance listings then become available for purchase. To view the
          * details of your Standard Reserved Instance listing, you can use the
@@ -9850,38 +9852,38 @@ namespace Model
 
         /**
          * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for any AWS account to launch,
-         * private snapshots that you own, and private snapshots owned by another AWS
-         * account but for which you've been given explicit create volume permissions.</p>
-         * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
-         * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li> <p>
-         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
-         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
-         * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
-         * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
-         * snapshot owners, or AWS accounts with create volume permissions. If no options
-         * are specified, Amazon EC2 returns all snapshots for which you have create volume
-         * permissions.</p> <p>If you specify one or more snapshot IDs, only snapshots that
-         * have the specified IDs are returned. If you specify an invalid snapshot ID, an
-         * error is returned. If you specify a snapshot ID for which you do not have
-         * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
-         * the specified owners and for which you have access are returned. The results can
-         * include the AWS account IDs of the specified owners, <code>amazon</code> for
-         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
-         * <p>If you specify a list of restorable users, only snapshots with create
-         * snapshot permissions for those users are returned. You can specify AWS account
-         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
-         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
-         * <p>If you are describing a long list of snapshots, you can paginate the output
-         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
-         * maximum number of results returned in a single page. If the list of results
-         * exceeds your <code>MaxResults</code> value, then that number of results is
-         * returned along with a <code>NextToken</code> value that can be passed to a
-         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
-         * results.</p> <p>For more information about EBS snapshots, see <a
+         * snapshots include public snapshots available for use by any AWS account, private
+         * snapshots that you own, and private snapshots owned by another AWS account for
+         * which you've been given explicit create volume permissions.</p> <p>The create
+         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <i>public</i>: The owner of the snapshot granted create volume permissions for
+         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
+         * of the snapshot granted create volume permissions to a specific AWS account.</p>
+         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
+         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * accounts with create volume permissions. If no options are specified, Amazon EC2
+         * returns all snapshots for which you have create volume permissions.</p> <p>If
+         * you specify one or more snapshot IDs, only snapshots that have the specified IDs
+         * are returned. If you specify an invalid snapshot ID, an error is returned. If
+         * you specify a snapshot ID for which you do not have access, it is not included
+         * in the returned results.</p> <p>If you specify one or more snapshot owners using
+         * the <code>OwnerIds</code> option, only snapshots from the specified owners and
+         * for which you have access are returned. The results can include the AWS account
+         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
+         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * restorable users, only snapshots with create snapshot permissions for those
+         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * <code>self</code> for snapshots for which you own or have explicit permissions,
+         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
+         * list of snapshots, you can paginate the output to make the list more manageable.
+         * The <code>MaxResults</code> parameter sets the maximum number of results
+         * returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
+         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
+         * <p>For more information about EBS snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9892,38 +9894,38 @@ namespace Model
 
         /**
          * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for any AWS account to launch,
-         * private snapshots that you own, and private snapshots owned by another AWS
-         * account but for which you've been given explicit create volume permissions.</p>
-         * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
-         * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li> <p>
-         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
-         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
-         * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
-         * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
-         * snapshot owners, or AWS accounts with create volume permissions. If no options
-         * are specified, Amazon EC2 returns all snapshots for which you have create volume
-         * permissions.</p> <p>If you specify one or more snapshot IDs, only snapshots that
-         * have the specified IDs are returned. If you specify an invalid snapshot ID, an
-         * error is returned. If you specify a snapshot ID for which you do not have
-         * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
-         * the specified owners and for which you have access are returned. The results can
-         * include the AWS account IDs of the specified owners, <code>amazon</code> for
-         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
-         * <p>If you specify a list of restorable users, only snapshots with create
-         * snapshot permissions for those users are returned. You can specify AWS account
-         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
-         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
-         * <p>If you are describing a long list of snapshots, you can paginate the output
-         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
-         * maximum number of results returned in a single page. If the list of results
-         * exceeds your <code>MaxResults</code> value, then that number of results is
-         * returned along with a <code>NextToken</code> value that can be passed to a
-         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
-         * results.</p> <p>For more information about EBS snapshots, see <a
+         * snapshots include public snapshots available for use by any AWS account, private
+         * snapshots that you own, and private snapshots owned by another AWS account for
+         * which you've been given explicit create volume permissions.</p> <p>The create
+         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <i>public</i>: The owner of the snapshot granted create volume permissions for
+         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
+         * of the snapshot granted create volume permissions to a specific AWS account.</p>
+         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
+         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * accounts with create volume permissions. If no options are specified, Amazon EC2
+         * returns all snapshots for which you have create volume permissions.</p> <p>If
+         * you specify one or more snapshot IDs, only snapshots that have the specified IDs
+         * are returned. If you specify an invalid snapshot ID, an error is returned. If
+         * you specify a snapshot ID for which you do not have access, it is not included
+         * in the returned results.</p> <p>If you specify one or more snapshot owners using
+         * the <code>OwnerIds</code> option, only snapshots from the specified owners and
+         * for which you have access are returned. The results can include the AWS account
+         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
+         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * restorable users, only snapshots with create snapshot permissions for those
+         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * <code>self</code> for snapshots for which you own or have explicit permissions,
+         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
+         * list of snapshots, you can paginate the output to make the list more manageable.
+         * The <code>MaxResults</code> parameter sets the maximum number of results
+         * returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
+         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
+         * <p>For more information about EBS snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9936,38 +9938,38 @@ namespace Model
 
         /**
          * <p>Describes one or more of the EBS snapshots available to you. Available
-         * snapshots include public snapshots available for any AWS account to launch,
-         * private snapshots that you own, and private snapshots owned by another AWS
-         * account but for which you've been given explicit create volume permissions.</p>
-         * <p>The create volume permissions fall into the following categories:</p> <ul>
-         * <li> <p> <i>public</i>: The owner of the snapshot granted create volume
-         * permissions for the snapshot to the <code>all</code> group. All AWS accounts
-         * have create volume permissions for these snapshots.</p> </li> <li> <p>
-         * <i>explicit</i>: The owner of the snapshot granted create volume permissions to
-         * a specific AWS account.</p> </li> <li> <p> <i>implicit</i>: An AWS account has
-         * implicit create volume permissions for all snapshots it owns.</p> </li> </ul>
-         * <p>The list of snapshots returned can be modified by specifying snapshot IDs,
-         * snapshot owners, or AWS accounts with create volume permissions. If no options
-         * are specified, Amazon EC2 returns all snapshots for which you have create volume
-         * permissions.</p> <p>If you specify one or more snapshot IDs, only snapshots that
-         * have the specified IDs are returned. If you specify an invalid snapshot ID, an
-         * error is returned. If you specify a snapshot ID for which you do not have
-         * access, it is not included in the returned results.</p> <p>If you specify one or
-         * more snapshot owners using the <code>OwnerIds</code> option, only snapshots from
-         * the specified owners and for which you have access are returned. The results can
-         * include the AWS account IDs of the specified owners, <code>amazon</code> for
-         * snapshots owned by Amazon, or <code>self</code> for snapshots that you own.</p>
-         * <p>If you specify a list of restorable users, only snapshots with create
-         * snapshot permissions for those users are returned. You can specify AWS account
-         * IDs (if you own the snapshots), <code>self</code> for snapshots for which you
-         * own or have explicit permissions, or <code>all</code> for public snapshots.</p>
-         * <p>If you are describing a long list of snapshots, you can paginate the output
-         * to make the list more manageable. The <code>MaxResults</code> parameter sets the
-         * maximum number of results returned in a single page. If the list of results
-         * exceeds your <code>MaxResults</code> value, then that number of results is
-         * returned along with a <code>NextToken</code> value that can be passed to a
-         * subsequent <code>DescribeSnapshots</code> request to retrieve the remaining
-         * results.</p> <p>For more information about EBS snapshots, see <a
+         * snapshots include public snapshots available for use by any AWS account, private
+         * snapshots that you own, and private snapshots owned by another AWS account for
+         * which you've been given explicit create volume permissions.</p> <p>The create
+         * volume permissions fall into the following categories:</p> <ul> <li> <p>
+         * <i>public</i>: The owner of the snapshot granted create volume permissions for
+         * the snapshot to the <code>all</code> group. All AWS accounts have create volume
+         * permissions for these snapshots.</p> </li> <li> <p> <i>explicit</i>: The owner
+         * of the snapshot granted create volume permissions to a specific AWS account.</p>
+         * </li> <li> <p> <i>implicit</i>: An AWS account has implicit create volume
+         * permissions for all snapshots it owns.</p> </li> </ul> <p>The list of snapshots
+         * returned can be modified by specifying snapshot IDs, snapshot owners, or AWS
+         * accounts with create volume permissions. If no options are specified, Amazon EC2
+         * returns all snapshots for which you have create volume permissions.</p> <p>If
+         * you specify one or more snapshot IDs, only snapshots that have the specified IDs
+         * are returned. If you specify an invalid snapshot ID, an error is returned. If
+         * you specify a snapshot ID for which you do not have access, it is not included
+         * in the returned results.</p> <p>If you specify one or more snapshot owners using
+         * the <code>OwnerIds</code> option, only snapshots from the specified owners and
+         * for which you have access are returned. The results can include the AWS account
+         * IDs of the specified owners, <code>amazon</code> for snapshots owned by Amazon,
+         * or <code>self</code> for snapshots that you own.</p> <p>If you specify a list of
+         * restorable users, only snapshots with create snapshot permissions for those
+         * users are returned. You can specify AWS account IDs (if you own the snapshots),
+         * <code>self</code> for snapshots for which you own or have explicit permissions,
+         * or <code>all</code> for public snapshots.</p> <p>If you are describing a long
+         * list of snapshots, you can paginate the output to make the list more manageable.
+         * The <code>MaxResults</code> parameter sets the maximum number of results
+         * returned in a single page. If the list of results exceeds your
+         * <code>MaxResults</code> value, then that number of results is returned along
+         * with a <code>NextToken</code> value that can be passed to a subsequent
+         * <code>DescribeSnapshots</code> request to retrieve the remaining results.</p>
+         * <p>For more information about EBS snapshots, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
          * EBS Snapshots</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13150,6 +13152,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyInstanceCreditSpecificationAsync(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the start time for a scheduled Amazon EC2 instance
+         * event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceEventStartTimeOutcome ModifyInstanceEventStartTime(const Model::ModifyInstanceEventStartTimeRequest& request) const;
+
+        /**
+         * <p>Modifies the start time for a scheduled Amazon EC2 instance
+         * event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceEventStartTimeOutcomeCallable ModifyInstanceEventStartTimeCallable(const Model::ModifyInstanceEventStartTimeRequest& request) const;
+
+        /**
+         * <p>Modifies the start time for a scheduled Amazon EC2 instance
+         * event.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceEventStartTime">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceEventStartTimeAsync(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
@@ -16464,6 +16494,7 @@ namespace Model
         void ModifyInstanceAttributeAsyncHelper(const Model::ModifyInstanceAttributeRequest& request, const ModifyInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceCapacityReservationAttributesAsyncHelper(const Model::ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceCreditSpecificationAsyncHelper(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceEventStartTimeAsyncHelper(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

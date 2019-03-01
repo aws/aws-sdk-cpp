@@ -53,73 +53,80 @@ namespace Model
 
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline const Aws::Vector<CreateVolumePermission>& GetCreateVolumePermissions() const{ return m_createVolumePermissions; }
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline void SetCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { m_createVolumePermissions = value; }
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline void SetCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { m_createVolumePermissions = std::move(value); }
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { SetCreateVolumePermissions(value); return *this;}
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { SetCreateVolumePermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(const CreateVolumePermission& value) { m_createVolumePermissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of permissions for creating volumes from the snapshot.</p>
+     * <p>The users and groups that have the permissions for creating volumes from the
+     * snapshot.</p>
      */
     inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermission&& value) { m_createVolumePermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeSnapshotAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeSnapshotAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeSnapshotAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
 
     /**
-     * <p>A list of product codes.</p>
+     * <p>The product codes.</p>
      */
     inline DescribeSnapshotAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
 

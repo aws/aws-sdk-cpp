@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
-#include <aws/ec2/model/EventCode.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/EventCode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -49,6 +49,42 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline const Aws::String& GetInstanceEventId() const{ return m_instanceEventId; }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline void SetInstanceEventId(const Aws::String& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = value; }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline void SetInstanceEventId(Aws::String&& value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId = std::move(value); }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline void SetInstanceEventId(const char* value) { m_instanceEventIdHasBeenSet = true; m_instanceEventId.assign(value); }
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline InstanceStatusEvent& WithInstanceEventId(const Aws::String& value) { SetInstanceEventId(value); return *this;}
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline InstanceStatusEvent& WithInstanceEventId(Aws::String&& value) { SetInstanceEventId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the event.</p>
+     */
+    inline InstanceStatusEvent& WithInstanceEventId(const char* value) { SetInstanceEventId(value); return *this;}
 
 
     /**
@@ -178,7 +214,36 @@ namespace Model
      */
     inline InstanceStatusEvent& WithNotBefore(Aws::Utils::DateTime&& value) { SetNotBefore(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline const Aws::Utils::DateTime& GetNotBeforeDeadline() const{ return m_notBeforeDeadline; }
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline void SetNotBeforeDeadline(const Aws::Utils::DateTime& value) { m_notBeforeDeadlineHasBeenSet = true; m_notBeforeDeadline = value; }
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline void SetNotBeforeDeadline(Aws::Utils::DateTime&& value) { m_notBeforeDeadlineHasBeenSet = true; m_notBeforeDeadline = std::move(value); }
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBeforeDeadline(const Aws::Utils::DateTime& value) { SetNotBeforeDeadline(value); return *this;}
+
+    /**
+     * <p>The deadline for starting the event.</p>
+     */
+    inline InstanceStatusEvent& WithNotBeforeDeadline(Aws::Utils::DateTime&& value) { SetNotBeforeDeadline(std::move(value)); return *this;}
+
   private:
+
+    Aws::String m_instanceEventId;
+    bool m_instanceEventIdHasBeenSet;
 
     EventCode m_code;
     bool m_codeHasBeenSet;
@@ -191,6 +256,9 @@ namespace Model
 
     Aws::Utils::DateTime m_notBefore;
     bool m_notBeforeHasBeenSet;
+
+    Aws::Utils::DateTime m_notBeforeDeadline;
+    bool m_notBeforeDeadlineHasBeenSet;
   };
 
 } // namespace Model

@@ -58,9 +58,12 @@ namespace Model
    * capacity of the resource. With predictive scaling, AWS Auto Scaling generates
    * forecasts with traffic predictions for the two days ahead and schedules scaling
    * actions that proactively add and remove resource capacity to match the forecast.
-   * </p> <p>For more information, see the <a
-   * href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS
-   * Auto Scaling User Guide</a>.</p><p><h3>See Also:</h3>   <a
+   * </p> <p>We recommend waiting a minimum of 24 hours after creating an Auto
+   * Scaling group to configure predictive scaling. At minimum, there must be 24
+   * hours of historical data to generate a forecast.</p> <p>For more information,
+   * see <a
+   * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting
+   * Started with AWS Auto Scaling</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/ScalingInstruction">AWS
    * API Reference</a></p>
    */
@@ -263,8 +266,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -284,8 +287,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -305,8 +308,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -326,8 +329,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline ScalingInstruction& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -347,8 +350,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline ScalingInstruction& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

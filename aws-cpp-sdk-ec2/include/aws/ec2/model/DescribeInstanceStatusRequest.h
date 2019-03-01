@@ -55,9 +55,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -90,9 +94,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -125,9 +133,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -160,9 +172,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -195,9 +211,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -230,9 +250,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
@@ -265,9 +289,13 @@ namespace Model
      * <code>system-reboot</code> | <code>system-maintenance</code> |
      * <code>instance-retirement</code> | <code>instance-stop</code>).</p> </li> <li>
      * <p> <code>event.description</code> - A description of the event.</p> </li> <li>
-     * <p> <code>event.not-after</code> - The latest end time for the scheduled event
-     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <p> <code>event.instance-event-id</code> - The ID of the event whose date and
+     * time you are modifying.</p> </li> <li> <p> <code>event.not-after</code> - The
+     * latest end time for the scheduled event (for example,
+     * <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>event.not-before</code> - The earliest start time for the scheduled event
+     * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
+     * <code>event.not-before-deadline</code> - The deadline for starting the event
      * (for example, <code>2014-09-15T17:15:20.000Z</code>).</p> </li> <li> <p>
      * <code>instance-state-code</code> - The code for the instance state, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be

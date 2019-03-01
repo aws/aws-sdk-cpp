@@ -637,40 +637,40 @@ namespace Model
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or able to fulfill the request. The
-     * default end date is 7 days from the current date.</p>
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or able to fulfill the request. The
-     * default end date is 7 days from the current date.</p>
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or able to fulfill the request. The
-     * default end date is 7 days from the current date.</p>
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or able to fulfill the request. The
-     * default end date is 7 days from the current date.</p>
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline SpotFleetRequestConfigData& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
 
     /**
      * <p>The end date and time of the request, in UTC format (for example,
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). At this point,
-     * no new Spot Instance requests are placed or able to fulfill the request. The
-     * default end date is 7 days from the current date.</p>
+     * no new Spot Instance requests are placed or able to fulfill the request. If no
+     * value is specified, the Spot Fleet request remains until you cancel it.</p>
      */
     inline SpotFleetRequestConfigData& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
 

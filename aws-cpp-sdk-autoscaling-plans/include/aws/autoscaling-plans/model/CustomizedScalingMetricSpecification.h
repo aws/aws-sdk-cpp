@@ -38,10 +38,19 @@ namespace Model
 
   /**
    * <p>Represents a CloudWatch metric of your choosing that can be used for dynamic
-   * scaling as part of a target tracking scaling policy. </p> <p>For information
-   * about terminology, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
-   * CloudWatch Concepts</a>.</p><p><h3>See Also:</h3>   <a
+   * scaling as part of a target tracking scaling policy. </p> <p>To create your
+   * customized scaling metric specification:</p> <ul> <li> <p>Add values for each
+   * required parameter from CloudWatch. You can use an existing metric, or a new
+   * metric that you create. To use your own metric, you must first publish the
+   * metric to CloudWatch. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish
+   * Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li>
+   * <p>Choose a metric that changes proportionally with capacity. The value of the
+   * metric should increase or decrease in inverse proportion to the number of
+   * capacity units. That is, the value of the metric should decrease when capacity
+   * increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon
+   * CloudWatch Concepts</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/CustomizedScalingMetricSpecification">AWS
    * API Reference</a></p>
    */
@@ -127,37 +136,51 @@ namespace Model
 
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline const Aws::Vector<MetricDimension>& GetDimensions() const{ return m_dimensions; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline void SetDimensions(const Aws::Vector<MetricDimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline void SetDimensions(Aws::Vector<MetricDimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline CustomizedScalingMetricSpecification& WithDimensions(const Aws::Vector<MetricDimension>& value) { SetDimensions(value); return *this;}
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline CustomizedScalingMetricSpecification& WithDimensions(Aws::Vector<MetricDimension>&& value) { SetDimensions(std::move(value)); return *this;}
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline CustomizedScalingMetricSpecification& AddDimensions(const MetricDimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
 
     /**
-     * <p>The dimensions of the metric.</p>
+     * <p>The dimensions of the metric.</p> <p>Conditional: If you published your
+     * metric with dimensions, you must specify the same dimensions in your customized
+     * scaling metric specification.</p>
      */
     inline CustomizedScalingMetricSpecification& AddDimensions(MetricDimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
 

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-WorkLink;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20180925.60;
+        version : 1.7.20180925.61;
 
         // Display name for package.
         title: AWS SDK for C++ (Amazon WorkLink);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.60
+            AWSSDKCPP-Core/1.7.61
        }
     }
 

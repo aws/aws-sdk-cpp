@@ -142,8 +142,8 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
-     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
@@ -155,8 +155,8 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
-     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
@@ -168,8 +168,8 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) to provision for the volume,
      * with a maximum ratio of 50 IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in
-     * most regions. Maximum IOPS of 64,000 is guaranteed only on <a
-     * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * most Regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      * instances</a>. Other instance families guarantee performance up to 32,000 IOPS.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
@@ -428,7 +428,7 @@ namespace Model
      * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
      * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
      * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
@@ -440,7 +440,7 @@ namespace Model
      * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
      * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
      * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
@@ -452,7 +452,7 @@ namespace Model
      * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
      * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
      * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
@@ -464,7 +464,7 @@ namespace Model
      * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
      * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
      * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
@@ -476,7 +476,7 @@ namespace Model
      * Magnetic volumes.</p> <p>Defaults: If no volume type is specified, the default
      * is <code>standard</code> in us-east-1, eu-west-1, eu-central-1, us-west-2,
      * us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1,
-     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions,
+     * ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other Regions,
      * EBS defaults to <code>gp2</code>.</p>
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}

@@ -294,8 +294,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -315,8 +315,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -336,8 +336,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -357,8 +357,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline ScalingPlanResource& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -378,8 +378,8 @@ namespace Model
      * <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity
      * for a DynamoDB global secondary index.</p> </li> <li> <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an
-     * Aurora DB cluster. Available for Aurora MySQL-compatible edition.</p> </li>
-     * </ul>
+     * Aurora DB cluster. Available for Aurora MySQL-compatible edition and Aurora
+     * PostgreSQL-compatible edition.</p> </li> </ul>
      */
     inline ScalingPlanResource& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

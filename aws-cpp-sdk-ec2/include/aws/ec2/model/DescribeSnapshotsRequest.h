@@ -349,50 +349,42 @@ namespace Model
 
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOwnerIds() const{ return m_ownerIds; }
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline void SetOwnerIds(const Aws::Vector<Aws::String>& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = value; }
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline void SetOwnerIds(Aws::Vector<Aws::String>&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds = std::move(value); }
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline DescribeSnapshotsRequest& WithOwnerIds(const Aws::Vector<Aws::String>& value) { SetOwnerIds(value); return *this;}
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline DescribeSnapshotsRequest& WithOwnerIds(Aws::Vector<Aws::String>&& value) { SetOwnerIds(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(const Aws::String& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(Aws::String&& value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Returns the snapshots owned by the specified owner. Multiple owners can be
-     * specified.</p>
+     * <p>Describes the snapshots owned by one or more owners.</p>
      */
     inline DescribeSnapshotsRequest& AddOwnerIds(const char* value) { m_ownerIdsHasBeenSet = true; m_ownerIds.push_back(value); return *this; }
 
@@ -439,50 +431,50 @@ namespace Model
 
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more snapshot IDs.</p> <p>Default: Describes snapshots for which you
-     * have launch permissions.</p>
+     * <p>One or more snapshot IDs.</p> <p>Default: Describes the snapshots for which
+     * you have create volume permissions.</p>
      */
     inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
 

@@ -131,44 +131,51 @@ namespace Model
 
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>(Gateway endpoint) A policy document to attach to the endpoint. The policy
-     * must be in valid JSON format.</p>
+     * <p>A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we
+     * attach a default policy that allows full access to the service.</p>
      */
     inline ModifyVpcEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

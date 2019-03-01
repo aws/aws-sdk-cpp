@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>Information about an authorization rule.</b> </p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Information about an authorization rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizationRule">AWS
    * API Reference</a></p>
    */
