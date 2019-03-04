@@ -40,6 +40,7 @@ OriginEndpoint::OriginEndpoint() :
     m_mssPackageHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_timeDelaySeconds(0),
     m_timeDelaySecondsHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -59,6 +60,7 @@ OriginEndpoint::OriginEndpoint(JsonView jsonValue) :
     m_mssPackageHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_timeDelaySeconds(0),
     m_timeDelaySecondsHasBeenSet(false),
     m_urlHasBeenSet(false),
@@ -137,6 +139,16 @@ OriginEndpoint& OriginEndpoint::operator =(JsonView jsonValue)
     m_startoverWindowSeconds = jsonValue.GetInteger("startoverWindowSeconds");
 
     m_startoverWindowSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("timeDelaySeconds"))
@@ -227,6 +239,17 @@ JsonValue OriginEndpoint::Jsonize() const
   if(m_startoverWindowSecondsHasBeenSet)
   {
    payload.WithInteger("startoverWindowSeconds", m_startoverWindowSeconds);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

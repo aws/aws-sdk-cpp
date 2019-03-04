@@ -102,6 +102,7 @@
 #include <aws/ssm/model/GetParametersByPathRequest.h>
 #include <aws/ssm/model/GetPatchBaselineRequest.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupRequest.h>
+#include <aws/ssm/model/GetServiceSettingRequest.h>
 #include <aws/ssm/model/LabelParameterVersionRequest.h>
 #include <aws/ssm/model/ListAssociationVersionsRequest.h>
 #include <aws/ssm/model/ListAssociationsRequest.h>
@@ -124,6 +125,7 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowRequest.h>
 #include <aws/ssm/model/RemoveTagsFromResourceRequest.h>
+#include <aws/ssm/model/ResetServiceSettingRequest.h>
 #include <aws/ssm/model/ResumeSessionRequest.h>
 #include <aws/ssm/model/SendAutomationSignalRequest.h>
 #include <aws/ssm/model/SendCommandRequest.h>
@@ -141,6 +143,7 @@
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskRequest.h>
 #include <aws/ssm/model/UpdateManagedInstanceRoleRequest.h>
 #include <aws/ssm/model/UpdatePatchBaselineRequest.h>
+#include <aws/ssm/model/UpdateServiceSettingRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -2733,6 +2736,41 @@ void SSMClient::GetPatchBaselineForPatchGroupAsyncHelper(const GetPatchBaselineF
   handler(this, request, GetPatchBaselineForPatchGroup(request), context);
 }
 
+GetServiceSettingOutcome SSMClient::GetServiceSetting(const GetServiceSettingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetServiceSettingOutcome(GetServiceSettingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetServiceSettingOutcome(outcome.GetError());
+  }
+}
+
+GetServiceSettingOutcomeCallable SSMClient::GetServiceSettingCallable(const GetServiceSettingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetServiceSettingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetServiceSetting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetServiceSettingAsync(const GetServiceSettingRequest& request, const GetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetServiceSettingAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetServiceSettingAsyncHelper(const GetServiceSettingRequest& request, const GetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetServiceSetting(request), context);
+}
+
 LabelParameterVersionOutcome SSMClient::LabelParameterVersion(const LabelParameterVersionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3503,6 +3541,41 @@ void SSMClient::RemoveTagsFromResourceAsyncHelper(const RemoveTagsFromResourceRe
   handler(this, request, RemoveTagsFromResource(request), context);
 }
 
+ResetServiceSettingOutcome SSMClient::ResetServiceSetting(const ResetServiceSettingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ResetServiceSettingOutcome(ResetServiceSettingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ResetServiceSettingOutcome(outcome.GetError());
+  }
+}
+
+ResetServiceSettingOutcomeCallable SSMClient::ResetServiceSettingCallable(const ResetServiceSettingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ResetServiceSettingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ResetServiceSetting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::ResetServiceSettingAsync(const ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ResetServiceSettingAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::ResetServiceSettingAsyncHelper(const ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ResetServiceSetting(request), context);
+}
+
 ResumeSessionOutcome SSMClient::ResumeSession(const ResumeSessionRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4096,5 +4169,40 @@ void SSMClient::UpdatePatchBaselineAsync(const UpdatePatchBaselineRequest& reque
 void SSMClient::UpdatePatchBaselineAsyncHelper(const UpdatePatchBaselineRequest& request, const UpdatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdatePatchBaseline(request), context);
+}
+
+UpdateServiceSettingOutcome SSMClient::UpdateServiceSetting(const UpdateServiceSettingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateServiceSettingOutcome(UpdateServiceSettingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateServiceSettingOutcome(outcome.GetError());
+  }
+}
+
+UpdateServiceSettingOutcomeCallable SSMClient::UpdateServiceSettingCallable(const UpdateServiceSettingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateServiceSettingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateServiceSetting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::UpdateServiceSettingAsync(const UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateServiceSettingAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::UpdateServiceSettingAsyncHelper(const UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateServiceSetting(request), context);
 }
 

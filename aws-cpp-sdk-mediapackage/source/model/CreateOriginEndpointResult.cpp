@@ -102,6 +102,15 @@ CreateOriginEndpointResult& CreateOriginEndpointResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("timeDelaySeconds"))
   {
     m_timeDelaySeconds = jsonValue.GetInteger("timeDelaySeconds");

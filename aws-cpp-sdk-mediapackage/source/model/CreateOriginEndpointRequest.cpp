@@ -33,6 +33,7 @@ CreateOriginEndpointRequest::CreateOriginEndpointRequest() :
     m_mssPackageHasBeenSet(false),
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_timeDelaySeconds(0),
     m_timeDelaySecondsHasBeenSet(false),
     m_whitelistHasBeenSet(false)
@@ -94,6 +95,17 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const
   if(m_startoverWindowSecondsHasBeenSet)
   {
    payload.WithInteger("startoverWindowSeconds", m_startoverWindowSeconds);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

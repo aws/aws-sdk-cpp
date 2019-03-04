@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
     m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

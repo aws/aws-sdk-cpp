@@ -29,9 +29,11 @@
 #include <aws/mediapackage/model/DescribeOriginEndpointResult.h>
 #include <aws/mediapackage/model/ListChannelsResult.h>
 #include <aws/mediapackage/model/ListOriginEndpointsResult.h>
+#include <aws/mediapackage/model/ListTagsForResourceResult.h>
 #include <aws/mediapackage/model/RotateIngestEndpointCredentialsResult.h>
 #include <aws/mediapackage/model/UpdateChannelResult.h>
 #include <aws/mediapackage/model/UpdateOriginEndpointResult.h>
+#include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -80,7 +82,10 @@ namespace Model
         class DescribeOriginEndpointRequest;
         class ListChannelsRequest;
         class ListOriginEndpointsRequest;
+        class ListTagsForResourceRequest;
         class RotateIngestEndpointCredentialsRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateChannelRequest;
         class UpdateOriginEndpointRequest;
 
@@ -92,7 +97,10 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> DescribeOriginEndpointOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<MediaPackageErrors>> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListOriginEndpointsResult, Aws::Client::AWSError<MediaPackageErrors>> ListOriginEndpointsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaPackageErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RotateIngestEndpointCredentialsResult, Aws::Client::AWSError<MediaPackageErrors>> RotateIngestEndpointCredentialsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaPackageErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateOriginEndpointResult, Aws::Client::AWSError<MediaPackageErrors>> UpdateOriginEndpointOutcome;
 
@@ -104,7 +112,10 @@ namespace Model
         typedef std::future<DescribeOriginEndpointOutcome> DescribeOriginEndpointOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListOriginEndpointsOutcome> ListOriginEndpointsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RotateIngestEndpointCredentialsOutcome> RotateIngestEndpointCredentialsOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
         typedef std::future<UpdateOriginEndpointOutcome> UpdateOriginEndpointOutcomeCallable;
 } // namespace Model
@@ -119,7 +130,10 @@ namespace Model
     typedef std::function<void(const MediaPackageClient*, const Model::DescribeOriginEndpointRequest&, const Model::DescribeOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOriginEndpointResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::ListOriginEndpointsRequest&, const Model::ListOriginEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOriginEndpointsResponseReceivedHandler;
+    typedef std::function<void(const MediaPackageClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::RotateIngestEndpointCredentialsRequest&, const Model::RotateIngestEndpointCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RotateIngestEndpointCredentialsResponseReceivedHandler;
+    typedef std::function<void(const MediaPackageClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const MediaPackageClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaPackageClient*, const Model::UpdateOriginEndpointRequest&, const Model::UpdateOriginEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOriginEndpointResponseReceivedHandler;
 
@@ -356,6 +370,25 @@ namespace Model
         virtual void ListOriginEndpointsAsync(const Model::ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * 
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Rotate the IngestEndpoint's username and password, as specified by the
          * IngestEndpoint's id.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-2017-10-12/RotateIngestEndpointCredentials">AWS
@@ -382,6 +415,44 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RotateIngestEndpointCredentialsAsync(const Model::RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * 
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * 
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates an existing Channel.<p><h3>See Also:</h3>   <a
@@ -446,7 +517,10 @@ namespace Model
         void DescribeOriginEndpointAsyncHelper(const Model::DescribeOriginEndpointRequest& request, const DescribeOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOriginEndpointsAsyncHelper(const Model::ListOriginEndpointsRequest& request, const ListOriginEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RotateIngestEndpointCredentialsAsyncHelper(const Model::RotateIngestEndpointCredentialsRequest& request, const RotateIngestEndpointCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateOriginEndpointAsyncHelper(const Model::UpdateOriginEndpointRequest& request, const UpdateOriginEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

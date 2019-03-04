@@ -86,6 +86,7 @@ static const int ITEM_CONTENT_MISMATCH_HASH = HashingUtils::HashString("ItemCont
 static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
+static const int SERVICE_SETTING_NOT_FOUND_HASH = HashingUtils::HashString("ServiceSettingNotFound");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRole");
 static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAssociation");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
@@ -364,6 +365,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+  }
+  else if (hashCode == SERVICE_SETTING_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {
