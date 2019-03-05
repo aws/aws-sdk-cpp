@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/HlsTimedMetadataScheduleActionSettings.h>
 #include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
+#include <aws/medialive/model/PauseStateScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35ReturnToNetworkScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35SpliceInsertScheduleActionSettings.h>
 #include <aws/medialive/model/Scte35TimeSignalScheduleActionSettings.h>
@@ -54,183 +55,209 @@ namespace Model
 
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      */
     inline const HlsTimedMetadataScheduleActionSettings& GetHlsTimedMetadataSettings() const{ return m_hlsTimedMetadataSettings; }
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      */
     inline void SetHlsTimedMetadataSettings(const HlsTimedMetadataScheduleActionSettings& value) { m_hlsTimedMetadataSettingsHasBeenSet = true; m_hlsTimedMetadataSettings = value; }
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      */
     inline void SetHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings&& value) { m_hlsTimedMetadataSettingsHasBeenSet = true; m_hlsTimedMetadataSettings = std::move(value); }
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      */
     inline ScheduleActionSettings& WithHlsTimedMetadataSettings(const HlsTimedMetadataScheduleActionSettings& value) { SetHlsTimedMetadataSettings(value); return *this;}
 
     /**
-     * Settings to emit HLS metadata
+     * Action to insert HLS metadata
      */
     inline ScheduleActionSettings& WithHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings&& value) { SetHlsTimedMetadataSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      */
     inline const InputSwitchScheduleActionSettings& GetInputSwitchSettings() const{ return m_inputSwitchSettings; }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      */
     inline void SetInputSwitchSettings(const InputSwitchScheduleActionSettings& value) { m_inputSwitchSettingsHasBeenSet = true; m_inputSwitchSettings = value; }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      */
     inline void SetInputSwitchSettings(InputSwitchScheduleActionSettings&& value) { m_inputSwitchSettingsHasBeenSet = true; m_inputSwitchSettings = std::move(value); }
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      */
     inline ScheduleActionSettings& WithInputSwitchSettings(const InputSwitchScheduleActionSettings& value) { SetInputSwitchSettings(value); return *this;}
 
     /**
-     * Settings to switch an input
+     * Action to switch the input
      */
     inline ScheduleActionSettings& WithInputSwitchSettings(InputSwitchScheduleActionSettings&& value) { SetInputSwitchSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to pause or unpause one or both channel pipelines
+     */
+    inline const PauseStateScheduleActionSettings& GetPauseStateSettings() const{ return m_pauseStateSettings; }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     */
+    inline void SetPauseStateSettings(const PauseStateScheduleActionSettings& value) { m_pauseStateSettingsHasBeenSet = true; m_pauseStateSettings = value; }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     */
+    inline void SetPauseStateSettings(PauseStateScheduleActionSettings&& value) { m_pauseStateSettingsHasBeenSet = true; m_pauseStateSettings = std::move(value); }
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     */
+    inline ScheduleActionSettings& WithPauseStateSettings(const PauseStateScheduleActionSettings& value) { SetPauseStateSettings(value); return *this;}
+
+    /**
+     * Action to pause or unpause one or both channel pipelines
+     */
+    inline ScheduleActionSettings& WithPauseStateSettings(PauseStateScheduleActionSettings&& value) { SetPauseStateSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Action to insert SCTE-35 return_to_network message
      */
     inline const Scte35ReturnToNetworkScheduleActionSettings& GetScte35ReturnToNetworkSettings() const{ return m_scte35ReturnToNetworkSettings; }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      */
     inline void SetScte35ReturnToNetworkSettings(const Scte35ReturnToNetworkScheduleActionSettings& value) { m_scte35ReturnToNetworkSettingsHasBeenSet = true; m_scte35ReturnToNetworkSettings = value; }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      */
     inline void SetScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettings&& value) { m_scte35ReturnToNetworkSettingsHasBeenSet = true; m_scte35ReturnToNetworkSettings = std::move(value); }
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      */
     inline ScheduleActionSettings& WithScte35ReturnToNetworkSettings(const Scte35ReturnToNetworkScheduleActionSettings& value) { SetScte35ReturnToNetworkSettings(value); return *this;}
 
     /**
-     * Settings for SCTE-35 return_to_network message
+     * Action to insert SCTE-35 return_to_network message
      */
     inline ScheduleActionSettings& WithScte35ReturnToNetworkSettings(Scte35ReturnToNetworkScheduleActionSettings&& value) { SetScte35ReturnToNetworkSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      */
     inline const Scte35SpliceInsertScheduleActionSettings& GetScte35SpliceInsertSettings() const{ return m_scte35SpliceInsertSettings; }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      */
     inline void SetScte35SpliceInsertSettings(const Scte35SpliceInsertScheduleActionSettings& value) { m_scte35SpliceInsertSettingsHasBeenSet = true; m_scte35SpliceInsertSettings = value; }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      */
     inline void SetScte35SpliceInsertSettings(Scte35SpliceInsertScheduleActionSettings&& value) { m_scte35SpliceInsertSettingsHasBeenSet = true; m_scte35SpliceInsertSettings = std::move(value); }
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      */
     inline ScheduleActionSettings& WithScte35SpliceInsertSettings(const Scte35SpliceInsertScheduleActionSettings& value) { SetScte35SpliceInsertSettings(value); return *this;}
 
     /**
-     * Settings for SCTE-35 splice_insert message
+     * Action to insert SCTE-35 splice_insert message
      */
     inline ScheduleActionSettings& WithScte35SpliceInsertSettings(Scte35SpliceInsertScheduleActionSettings&& value) { SetScte35SpliceInsertSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      */
     inline const Scte35TimeSignalScheduleActionSettings& GetScte35TimeSignalSettings() const{ return m_scte35TimeSignalSettings; }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      */
     inline void SetScte35TimeSignalSettings(const Scte35TimeSignalScheduleActionSettings& value) { m_scte35TimeSignalSettingsHasBeenSet = true; m_scte35TimeSignalSettings = value; }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      */
     inline void SetScte35TimeSignalSettings(Scte35TimeSignalScheduleActionSettings&& value) { m_scte35TimeSignalSettingsHasBeenSet = true; m_scte35TimeSignalSettings = std::move(value); }
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      */
     inline ScheduleActionSettings& WithScte35TimeSignalSettings(const Scte35TimeSignalScheduleActionSettings& value) { SetScte35TimeSignalSettings(value); return *this;}
 
     /**
-     * Settings for SCTE-35 time_signal message
+     * Action to insert SCTE-35 time_signal message
      */
     inline ScheduleActionSettings& WithScte35TimeSignalSettings(Scte35TimeSignalScheduleActionSettings&& value) { SetScte35TimeSignalSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      */
     inline const StaticImageActivateScheduleActionSettings& GetStaticImageActivateSettings() const{ return m_staticImageActivateSettings; }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      */
     inline void SetStaticImageActivateSettings(const StaticImageActivateScheduleActionSettings& value) { m_staticImageActivateSettingsHasBeenSet = true; m_staticImageActivateSettings = value; }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      */
     inline void SetStaticImageActivateSettings(StaticImageActivateScheduleActionSettings&& value) { m_staticImageActivateSettingsHasBeenSet = true; m_staticImageActivateSettings = std::move(value); }
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      */
     inline ScheduleActionSettings& WithStaticImageActivateSettings(const StaticImageActivateScheduleActionSettings& value) { SetStaticImageActivateSettings(value); return *this;}
 
     /**
-     * Settings to activate a static image overlay
+     * Action to activate a static image overlay
      */
     inline ScheduleActionSettings& WithStaticImageActivateSettings(StaticImageActivateScheduleActionSettings&& value) { SetStaticImageActivateSettings(std::move(value)); return *this;}
 
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      */
     inline const StaticImageDeactivateScheduleActionSettings& GetStaticImageDeactivateSettings() const{ return m_staticImageDeactivateSettings; }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      */
     inline void SetStaticImageDeactivateSettings(const StaticImageDeactivateScheduleActionSettings& value) { m_staticImageDeactivateSettingsHasBeenSet = true; m_staticImageDeactivateSettings = value; }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      */
     inline void SetStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { m_staticImageDeactivateSettingsHasBeenSet = true; m_staticImageDeactivateSettings = std::move(value); }
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      */
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(const StaticImageDeactivateScheduleActionSettings& value) { SetStaticImageDeactivateSettings(value); return *this;}
 
     /**
-     * Settings to deactivate a static image overlay
+     * Action to deactivate a static image overlay
      */
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { SetStaticImageDeactivateSettings(std::move(value)); return *this;}
 
@@ -241,6 +268,9 @@ namespace Model
 
     InputSwitchScheduleActionSettings m_inputSwitchSettings;
     bool m_inputSwitchSettingsHasBeenSet;
+
+    PauseStateScheduleActionSettings m_pauseStateSettings;
+    bool m_pauseStateSettingsHasBeenSet;
 
     Scte35ReturnToNetworkScheduleActionSettings m_scte35ReturnToNetworkSettings;
     bool m_scte35ReturnToNetworkSettingsHasBeenSet;

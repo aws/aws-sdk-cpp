@@ -87,7 +87,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
@@ -97,7 +97,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
@@ -107,7 +107,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
@@ -117,7 +117,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
@@ -127,7 +127,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
@@ -137,7 +137,7 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
@@ -147,72 +147,86 @@ namespace Model
      * cached volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateCachediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
 

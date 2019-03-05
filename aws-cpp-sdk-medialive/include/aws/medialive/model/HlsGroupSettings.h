@@ -722,20 +722,20 @@ omit: Omit any CLOSED-CAPTIONS line
 
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination
-     * directory. If mode is "vod", this parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
+     * files) to retain in the destination directory.
      */
     inline int GetKeepSegments() const{ return m_keepSegments; }
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination
-     * directory. If mode is "vod", this parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
+     * files) to retain in the destination directory.
      */
     inline void SetKeepSegments(int value) { m_keepSegmentsHasBeenSet = true; m_keepSegments = value; }
 
     /**
-     * If mode is "live", the number of TS segments to retain in the destination
-     * directory. If mode is "vod", this parameter has no effect.
+     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts
+     * files) to retain in the destination directory.
      */
     inline HlsGroupSettings& WithKeepSegments(int value) { SetKeepSegments(value); return *this;}
 
@@ -997,32 +997,47 @@ VOD
 
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly
-     * option will output segments without the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * media manifests) for this output group.
+
+SEGMENTSONLY: Does not generate any
+     * manifests for this output group.
      */
     inline const HlsOutputSelection& GetOutputSelection() const{ return m_outputSelection; }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly
-     * option will output segments without the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * media manifests) for this output group.
+
+SEGMENTSONLY: Does not generate any
+     * manifests for this output group.
      */
     inline void SetOutputSelection(const HlsOutputSelection& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = value; }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly
-     * option will output segments without the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * media manifests) for this output group.
+
+SEGMENTSONLY: Does not generate any
+     * manifests for this output group.
      */
     inline void SetOutputSelection(HlsOutputSelection&& value) { m_outputSelectionHasBeenSet = true; m_outputSelection = std::move(value); }
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly
-     * option will output segments without the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * media manifests) for this output group.
+
+SEGMENTSONLY: Does not generate any
+     * manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(const HlsOutputSelection& value) { SetOutputSelection(value); return *this;}
 
     /**
-     * Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly
-     * option will output segments without the .m3u8 file.
+     * MANIFESTSANDSEGMENTS: Generates manifests (master manifest, if applicable, and
+     * media manifests) for this output group.
+
+SEGMENTSONLY: Does not generate any
+     * manifests for this output group.
      */
     inline HlsGroupSettings& WithOutputSelection(HlsOutputSelection&& value) { SetOutputSelection(std::move(value)); return *this;}
 
@@ -1280,37 +1295,67 @@ VOD
 
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts)
-     * file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of
-     * VOD mode content during event is not guaranteed due to HTTP server caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * files.
+
+SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+     * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
+     * index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file.
+     * Playback while the channel is running is not guaranteed due to HTTP server
+     * caching.
      */
     inline const HlsTsFileMode& GetTsFileMode() const{ return m_tsFileMode; }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts)
-     * file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of
-     * VOD mode content during event is not guaranteed due to HTTP server caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * files.
+
+SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+     * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
+     * index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file.
+     * Playback while the channel is running is not guaranteed due to HTTP server
+     * caching.
      */
     inline void SetTsFileMode(const HlsTsFileMode& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = value; }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts)
-     * file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of
-     * VOD mode content during event is not guaranteed due to HTTP server caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * files.
+
+SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+     * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
+     * index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file.
+     * Playback while the channel is running is not guaranteed due to HTTP server
+     * caching.
      */
     inline void SetTsFileMode(HlsTsFileMode&& value) { m_tsFileModeHasBeenSet = true; m_tsFileMode = std::move(value); }
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts)
-     * file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of
-     * VOD mode content during event is not guaranteed due to HTTP server caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * files.
+
+SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+     * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
+     * index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file.
+     * Playback while the channel is running is not guaranteed due to HTTP server
+     * caching.
      */
     inline HlsGroupSettings& WithTsFileMode(const HlsTsFileMode& value) { SetTsFileMode(value); return *this;}
 
     /**
-     * When set to "singleFile", emits the program as a single media resource (.ts)
-     * file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of
-     * VOD mode content during event is not guaranteed due to HTTP server caching.
+     * SEGMENTEDFILES: Emit the program as segments - multiple .ts media
+     * files.
+
+SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
+     * single .ts media file. The media manifest includes #EXT-X-BYTERANGE tags to
+     * index segments for playback. A typical use for this value is when sending the
+     * output to AWS Elemental MediaConvert, which can accept only a single media file.
+     * Playback while the channel is running is not guaranteed due to HTTP server
+     * caching.
      */
     inline HlsGroupSettings& WithTsFileMode(HlsTsFileMode&& value) { SetTsFileMode(std::move(value)); return *this;}
 

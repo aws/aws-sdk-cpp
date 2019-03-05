@@ -45,28 +45,60 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetVolumeARNs() const{ return m_volumeARNs; }
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline void SetVolumeARNs(const Aws::Vector<Aws::String>& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = value; }
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline void SetVolumeARNs(Aws::Vector<Aws::String>&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs = std::move(value); }
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline DescribeCachediSCSIVolumesRequest& WithVolumeARNs(const Aws::Vector<Aws::String>& value) { SetVolumeARNs(value); return *this;}
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline DescribeCachediSCSIVolumesRequest& WithVolumeARNs(Aws::Vector<Aws::String>&& value) { SetVolumeARNs(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline DescribeCachediSCSIVolumesRequest& AddVolumeARNs(const Aws::String& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline DescribeCachediSCSIVolumesRequest& AddVolumeARNs(Aws::String&& value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>An array of strings where each string represents the Amazon Resource Name
+     * (ARN) of a cached volume. All of the specified cached volumes must from the same
+     * gateway. Use <a>ListVolumes</a> to get volume ARNs for a gateway.</p>
+     */
     inline DescribeCachediSCSIVolumesRequest& AddVolumeARNs(const char* value) { m_volumeARNsHasBeenSet = true; m_volumeARNs.push_back(value); return *this; }
 
   private:

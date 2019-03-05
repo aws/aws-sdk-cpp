@@ -304,12 +304,12 @@ namespace Model
    * CodeDeploy deployments, to get details about a Lambda function deployment, and
    * to get details about Amazon ECS service deployments.</p> <p> <b>AWS CodeDeploy
    * Information Resources</b> </p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+   * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
    * User Guide</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy
-   * API Reference Guide</a> </p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI
-   * Reference for AWS CodeDeploy</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS
+   * CodeDeploy API Reference Guide</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS
+   * CLI Reference for AWS CodeDeploy</a> </p> </li> <li> <p> <a
    * href="https://forums.aws.amazon.com/forum.jspa?forumID=179">AWS CodeDeploy
    * Developer Forum</a> </p> </li> </ul>
    */
@@ -878,14 +878,22 @@ namespace Model
         virtual void GetApplicationRevisionAsync(const Model::GetApplicationRevisionRequest& request, const GetApplicationRevisionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about a deployment.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * property of the <code>appSpecContent</code> object in the returned revision is
+         * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
+         * property of the returned <code>appSpecContent</code> object to get the content
+         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDeploymentOutcome GetDeployment(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * property of the <code>appSpecContent</code> object in the returned revision is
+         * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
+         * property of the returned <code>appSpecContent</code> object to get the content
+         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *
@@ -894,7 +902,11 @@ namespace Model
         virtual Model::GetDeploymentOutcomeCallable GetDeploymentCallable(const Model::GetDeploymentRequest& request) const;
 
         /**
-         * <p>Gets information about a deployment.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a deployment.</p> <note> <p> The <code>content</code>
+         * property of the <code>appSpecContent</code> object in the returned revision is
+         * always null. Use <code>GetApplicationRevision</code> and the <code>sha256</code>
+         * property of the returned <code>appSpecContent</code> object to get the content
+         * of the deployment’s AppSpec file. </p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetDeployment">AWS
          * API Reference</a></p>
          *

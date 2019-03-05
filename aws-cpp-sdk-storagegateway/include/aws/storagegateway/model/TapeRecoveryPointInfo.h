@@ -136,25 +136,39 @@ namespace Model
     inline TapeRecoveryPointInfo& WithTapeSizeInBytes(long long value) { SetTapeSizeInBytes(value); return *this;}
 
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline void SetTapeStatus(const Aws::String& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = value; }
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline void SetTapeStatus(Aws::String&& value) { m_tapeStatusHasBeenSet = true; m_tapeStatus = std::move(value); }
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline void SetTapeStatus(const char* value) { m_tapeStatusHasBeenSet = true; m_tapeStatus.assign(value); }
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline TapeRecoveryPointInfo& WithTapeStatus(const Aws::String& value) { SetTapeStatus(value); return *this;}
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline TapeRecoveryPointInfo& WithTapeStatus(Aws::String&& value) { SetTapeStatus(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The status of the virtual tapes.</p>
+     */
     inline TapeRecoveryPointInfo& WithTapeStatus(const char* value) { SetTapeStatus(value); return *this;}
 
   private:

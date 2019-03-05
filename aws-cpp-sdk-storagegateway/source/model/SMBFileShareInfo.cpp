@@ -50,7 +50,8 @@ SMBFileShareInfo::SMBFileShareInfo() :
     m_requesterPaysHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
-    m_authenticationHasBeenSet(false)
+    m_authenticationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ SMBFileShareInfo::SMBFileShareInfo(JsonView jsonValue) :
     m_requesterPaysHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
-    m_authenticationHasBeenSet(false)
+    m_authenticationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -208,6 +210,16 @@ SMBFileShareInfo& SMBFileShareInfo::operator =(JsonView jsonValue)
     m_authenticationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -323,6 +335,17 @@ JsonValue SMBFileShareInfo::Jsonize() const
   if(m_authenticationHasBeenSet)
   {
    payload.WithString("Authentication", m_authentication);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

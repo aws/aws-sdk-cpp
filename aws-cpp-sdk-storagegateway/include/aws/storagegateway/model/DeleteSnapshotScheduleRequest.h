@@ -44,25 +44,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline DeleteSnapshotScheduleRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline DeleteSnapshotScheduleRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The volume which snapshot schedule to delete.</p>
+     */
     inline DeleteSnapshotScheduleRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:

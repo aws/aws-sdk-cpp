@@ -36,6 +36,13 @@ namespace StorageGateway
 {
 namespace Model
 {
+  /**
+   * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+   * <a>ListVolumesOutput$Marker</a> </p> </li> <li> <p>
+   * <a>ListVolumesOutput$VolumeInfos</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListVolumesOutput">AWS
+   * API Reference</a></p>
+   */
   class AWS_STORAGEGATEWAY_API ListVolumesResult
   {
   public:
@@ -66,47 +73,103 @@ namespace Model
     inline ListVolumesResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline ListVolumesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline ListVolumesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
+     * If there are no more volumes to list, this field does not appear in the response
+     * body.</p>
+     */
     inline ListVolumesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline const Aws::Vector<VolumeInfo>& GetVolumeInfos() const{ return m_volumeInfos; }
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline void SetVolumeInfos(const Aws::Vector<VolumeInfo>& value) { m_volumeInfos = value; }
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline void SetVolumeInfos(Aws::Vector<VolumeInfo>&& value) { m_volumeInfos = std::move(value); }
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline ListVolumesResult& WithVolumeInfos(const Aws::Vector<VolumeInfo>& value) { SetVolumeInfos(value); return *this;}
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline ListVolumesResult& WithVolumeInfos(Aws::Vector<VolumeInfo>&& value) { SetVolumeInfos(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline ListVolumesResult& AddVolumeInfos(const VolumeInfo& value) { m_volumeInfos.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
+     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
+     * is an empty array "[]".</p>
+     */
     inline ListVolumesResult& AddVolumeInfos(VolumeInfo&& value) { m_volumeInfos.push_back(std::move(value)); return *this; }
 
   private:

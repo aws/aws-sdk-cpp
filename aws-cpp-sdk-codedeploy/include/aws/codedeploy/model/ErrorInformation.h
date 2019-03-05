@@ -50,9 +50,9 @@ namespace Model
 
     /**
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
      * Codes for AWS CodeDeploy</a> in the <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
@@ -80,9 +80,9 @@ namespace Model
 
     /**
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
      * Codes for AWS CodeDeploy</a> in the <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
@@ -110,9 +110,9 @@ namespace Model
 
     /**
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
      * Codes for AWS CodeDeploy</a> in the <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
@@ -140,9 +140,9 @@ namespace Model
 
     /**
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
      * Codes for AWS CodeDeploy</a> in the <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is
@@ -170,9 +170,9 @@ namespace Model
 
     /**
      * <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/error-codes.html">Error
      * Codes for AWS CodeDeploy</a> in the <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy
      * User Guide</a>.</p> <p>The error code:</p> <ul> <li> <p>APPLICATION_MISSING: The
      * application was missing. This error code is most likely raised if the
      * application is deleted after the deployment is created, but before it is

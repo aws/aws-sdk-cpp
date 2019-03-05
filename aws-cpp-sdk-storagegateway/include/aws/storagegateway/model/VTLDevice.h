@@ -92,69 +92,111 @@ namespace Model
     inline VTLDevice& WithVTLDeviceARN(const char* value) { SetVTLDeviceARN(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline const Aws::String& GetVTLDeviceType() const{ return m_vTLDeviceType; }
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceType(const Aws::String& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = value; }
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceType(Aws::String&& value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceType(const char* value) { m_vTLDeviceTypeHasBeenSet = true; m_vTLDeviceType.assign(value); }
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceType(const Aws::String& value) { SetVTLDeviceType(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceType(Aws::String&& value) { SetVTLDeviceType(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Specifies the type of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceType(const char* value) { SetVTLDeviceType(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline const Aws::String& GetVTLDeviceVendor() const{ return m_vTLDeviceVendor; }
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline void SetVTLDeviceVendor(const Aws::String& value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor = value; }
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline void SetVTLDeviceVendor(Aws::String&& value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline void SetVTLDeviceVendor(const char* value) { m_vTLDeviceVendorHasBeenSet = true; m_vTLDeviceVendor.assign(value); }
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceVendor(const Aws::String& value) { SetVTLDeviceVendor(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceVendor(Aws::String&& value) { SetVTLDeviceVendor(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Specifies the vendor of the device that the VTL device object emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceVendor(const char* value) { SetVTLDeviceVendor(value); return *this;}
 
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline const Aws::String& GetVTLDeviceProductIdentifier() const{ return m_vTLDeviceProductIdentifier; }
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceProductIdentifier(const Aws::String& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = value; }
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceProductIdentifier(Aws::String&& value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier = std::move(value); }
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline void SetVTLDeviceProductIdentifier(const char* value) { m_vTLDeviceProductIdentifierHasBeenSet = true; m_vTLDeviceProductIdentifier.assign(value); }
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceProductIdentifier(const Aws::String& value) { SetVTLDeviceProductIdentifier(value); return *this;}
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceProductIdentifier(Aws::String&& value) { SetVTLDeviceProductIdentifier(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Specifies the model number of device that the VTL device emulates.</p>
+     */
     inline VTLDevice& WithVTLDeviceProductIdentifier(const char* value) { SetVTLDeviceProductIdentifier(value); return *this;}
 
 

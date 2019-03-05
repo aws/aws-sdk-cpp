@@ -17,6 +17,8 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -252,12 +254,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
 
@@ -266,12 +267,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
 
@@ -280,12 +280,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
 
@@ -294,12 +293,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
 
@@ -308,12 +306,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
 
@@ -322,12 +319,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
 
@@ -336,12 +332,11 @@ namespace Model
      * gateway region specified must be the same region as the region in your
      * <code>Host</code> header in the request. For more information about available
      * regions and endpoints for AWS Storage Gateway, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p> <p> Valid
-     * Values: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "ca-central-1",
-     * "eu-west-1", "eu-central-1", "eu-west-2", "eu-west-3", "ap-northeast-1",
-     * "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-south-1",
-     * "sa-east-1"</p>
+     * Values: See <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS
+     * Storage Gateway Regions and Endpoints</a> in the AWS General Reference. </p>
      */
     inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
 
@@ -488,6 +483,70 @@ namespace Model
      */
     inline ActivateGatewayRequest& WithMediumChangerType(const char* value) { SetMediumChangerType(value); return *this;}
 
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline ActivateGatewayRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline ActivateGatewayRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline ActivateGatewayRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to ten (10) tags assigned to the gateway may be specified. Every
+     * tag is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline ActivateGatewayRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_activationKey;
@@ -510,6 +569,9 @@ namespace Model
 
     Aws::String m_mediumChangerType;
     bool m_mediumChangerTypeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

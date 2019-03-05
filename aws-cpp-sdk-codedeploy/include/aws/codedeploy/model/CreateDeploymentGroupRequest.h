@@ -147,7 +147,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -175,7 +175,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -189,7 +189,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -203,7 +203,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -217,7 +217,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -231,7 +231,7 @@ namespace Model
      * configuration. It is used if a configuration isn't specified for the deployment
      * or deployment group.</p> <p>For more information about the predefined deployment
      * configurations in AWS CodeDeploy, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/deployment-configurations.html">Working
      * with Deployment Groups in AWS CodeDeploy</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -425,7 +425,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline const Aws::Vector<TriggerConfig>& GetTriggerConfigurations() const{ return m_triggerConfigurations; }
@@ -433,7 +433,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline void SetTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = value; }
@@ -441,7 +441,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline void SetTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations = std::move(value); }
@@ -449,7 +449,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& WithTriggerConfigurations(const Aws::Vector<TriggerConfig>& value) { SetTriggerConfigurations(value); return *this;}
@@ -457,7 +457,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& WithTriggerConfigurations(Aws::Vector<TriggerConfig>&& value) { SetTriggerConfigurations(std::move(value)); return *this;}
@@ -465,7 +465,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& AddTriggerConfigurations(const TriggerConfig& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(value); return *this; }
@@ -473,7 +473,7 @@ namespace Model
     /**
      * <p>Information about triggers to create when the deployment group is created.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-sns.html">Create
      * a Trigger for an AWS CodeDeploy Event</a> in the AWS CodeDeploy User Guide.</p>
      */
     inline CreateDeploymentGroupRequest& AddTriggerConfigurations(TriggerConfig&& value) { m_triggerConfigurationsHasBeenSet = true; m_triggerConfigurations.push_back(std::move(value)); return *this; }

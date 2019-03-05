@@ -209,43 +209,57 @@ namespace Model
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
 
     /**
      * <p>A value that indicates whether a storage volume is attached to or detached
-     * from a gateway.</p>
+     * from a gateway. For more information, see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume">Moving
+     * Your Volumes to a Different Gateway</a>.</p>
      */
     inline CachediSCSIVolume& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
 
@@ -441,58 +455,79 @@ namespace Model
 
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CachediSCSIVolume& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CachediSCSIVolume& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the iSCSI target that is used by an initiator to connect to a
-     * volume and used as a suffix for the target ARN. For example, specifying
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
      * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
-     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.</p>
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CachediSCSIVolume& WithTargetName(const char* value) { SetTargetName(value); return *this;}
 

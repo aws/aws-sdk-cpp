@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Glue;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20170331.62;
+        version : 1.7.20170331.63;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Glue);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.62
+            AWSSDKCPP-Core/1.7.63
        }
     }
 

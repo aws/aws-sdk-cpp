@@ -70,25 +70,39 @@ namespace Model
     inline UpdateGatewayInformationResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline void SetGatewayName(const Aws::String& value) { m_gatewayName = value; }
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline void SetGatewayName(Aws::String&& value) { m_gatewayName = std::move(value); }
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline void SetGatewayName(const char* value) { m_gatewayName.assign(value); }
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline UpdateGatewayInformationResult& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline UpdateGatewayInformationResult& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name you configured for your gateway.</p>
+     */
     inline UpdateGatewayInformationResult& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
 
   private:

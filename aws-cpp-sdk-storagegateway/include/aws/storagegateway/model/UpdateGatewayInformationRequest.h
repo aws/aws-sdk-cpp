@@ -88,25 +88,39 @@ namespace Model
     inline UpdateGatewayInformationRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
 
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline void SetGatewayTimezone(const Aws::String& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline void SetGatewayTimezone(const char* value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone.assign(value); }
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline UpdateGatewayInformationRequest& WithGatewayTimezone(const Aws::String& value) { SetGatewayTimezone(value); return *this;}
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline UpdateGatewayInformationRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A value that indicates the time zone of the gateway.</p>
+     */
     inline UpdateGatewayInformationRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
 
   private:

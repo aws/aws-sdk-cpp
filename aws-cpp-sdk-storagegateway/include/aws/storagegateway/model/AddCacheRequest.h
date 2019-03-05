@@ -67,28 +67,60 @@ namespace Model
     inline AddCacheRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIdsHasBeenSet = true; m_diskIds = value; }
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIdsHasBeenSet = true; m_diskIds = std::move(value); }
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline AddCacheRequest& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline AddCacheRequest& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline AddCacheRequest& AddDiskIds(const Aws::String& value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline AddCacheRequest& AddDiskIds(Aws::String&& value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(std::move(value)); return *this; }
 
-    
+    /**
+     * <p>An array of strings that identify disks that are to be configured as working
+     * storage. Each string have a minimum length of 1 and maximum length of 300. You
+     * can get the disk IDs from the <a>ListLocalDisks</a> API.</p>
+     */
     inline AddCacheRequest& AddDiskIds(const char* value) { m_diskIdsHasBeenSet = true; m_diskIds.push_back(value); return *this; }
 
   private:

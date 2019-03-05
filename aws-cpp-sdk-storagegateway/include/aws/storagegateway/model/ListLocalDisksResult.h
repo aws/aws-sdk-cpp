@@ -66,25 +66,46 @@ namespace Model
     inline ListLocalDisksResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline void SetDisks(const Aws::Vector<Disk>& value) { m_disks = value; }
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline void SetDisks(Aws::Vector<Disk>&& value) { m_disks = std::move(value); }
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline ListLocalDisksResult& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline ListLocalDisksResult& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline ListLocalDisksResult& AddDisks(const Disk& value) { m_disks.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
+     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
+     */
     inline ListLocalDisksResult& AddDisks(Disk&& value) { m_disks.push_back(std::move(value)); return *this; }
 
   private:

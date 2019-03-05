@@ -415,7 +415,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -424,7 +424,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -433,7 +433,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -442,7 +442,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -451,7 +451,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -460,7 +460,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */
@@ -469,7 +469,7 @@ namespace Model
     /**
      * <p>Information about triggers to change when the deployment group is updated.
      * For examples, see <a
-     * href="http://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/how-to-notify-edit.html">Modify
      * Triggers in an AWS CodeDeploy Deployment Group</a> in the AWS CodeDeploy User
      * Guide.</p>
      */

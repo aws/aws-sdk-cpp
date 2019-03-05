@@ -140,25 +140,46 @@ namespace Model
     inline DescribeMaintenanceStartTimeResult& WithDayOfWeek(int value) { SetDayOfWeek(value); return *this;}
 
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline void SetTimezone(const Aws::String& value) { m_timezone = value; }
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline void SetTimezone(Aws::String&& value) { m_timezone = std::move(value); }
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline void SetTimezone(const char* value) { m_timezone.assign(value); }
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A value that indicates the time zone that is set for the gateway. The start
+     * time and day of week specified should be in the time zone of the gateway.</p>
+     */
     inline DescribeMaintenanceStartTimeResult& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 
   private:

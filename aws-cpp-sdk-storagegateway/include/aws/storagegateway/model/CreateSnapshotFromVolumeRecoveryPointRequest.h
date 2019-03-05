@@ -44,47 +44,103 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon Resource Name (ARN) of the iSCSI volume target. Use the
+     * <a>DescribeStorediSCSIVolumes</a> operation to return to retrieve the TargetARN
+     * for specified VolumeARN.</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline const Aws::String& GetSnapshotDescription() const{ return m_snapshotDescription; }
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline void SetSnapshotDescription(const Aws::String& value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription = value; }
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline void SetSnapshotDescription(Aws::String&& value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription = std::move(value); }
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline void SetSnapshotDescription(const char* value) { m_snapshotDescriptionHasBeenSet = true; m_snapshotDescription.assign(value); }
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithSnapshotDescription(const Aws::String& value) { SetSnapshotDescription(value); return *this;}
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithSnapshotDescription(Aws::String&& value) { SetSnapshotDescription(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Textual description of the snapshot that appears in the Amazon EC2 console,
+     * Elastic Block Store snapshots panel in the <b>Description</b> field, and in the
+     * AWS Storage Gateway snapshot <b>Details</b> pane, <b>Description</b> field</p>
+     */
     inline CreateSnapshotFromVolumeRecoveryPointRequest& WithSnapshotDescription(const char* value) { SetSnapshotDescription(value); return *this;}
 
   private:

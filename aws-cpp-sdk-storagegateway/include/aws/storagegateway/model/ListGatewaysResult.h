@@ -44,47 +44,89 @@ namespace Model
     ListGatewaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline const Aws::Vector<GatewayInfo>& GetGateways() const{ return m_gateways; }
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline void SetGateways(const Aws::Vector<GatewayInfo>& value) { m_gateways = value; }
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline void SetGateways(Aws::Vector<GatewayInfo>&& value) { m_gateways = std::move(value); }
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline ListGatewaysResult& WithGateways(const Aws::Vector<GatewayInfo>& value) { SetGateways(value); return *this;}
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline ListGatewaysResult& WithGateways(Aws::Vector<GatewayInfo>&& value) { SetGateways(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline ListGatewaysResult& AddGateways(const GatewayInfo& value) { m_gateways.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An array of <a>GatewayInfo</a> objects.</p>
+     */
     inline ListGatewaysResult& AddGateways(GatewayInfo&& value) { m_gateways.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline ListGatewaysResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline ListGatewaysResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Use the marker in your next request to fetch the next set of gateways in the
+     * list. If there are no more gateways to list, this field does not appear in the
+     * response.</p>
+     */
     inline ListGatewaysResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
   private:

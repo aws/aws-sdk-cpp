@@ -247,25 +247,46 @@ namespace Model
     inline VolumeInfo& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline VolumeInfo& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline VolumeInfo& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>One of the VolumeType enumeration values describing the type of the
+     * volume.</p>
+     */
     inline VolumeInfo& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
 
 
@@ -288,25 +309,46 @@ namespace Model
     inline VolumeInfo& WithVolumeSizeInBytes(long long value) { SetVolumeSizeInBytes(value); return *this;}
 
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline const Aws::String& GetVolumeAttachmentStatus() const{ return m_volumeAttachmentStatus; }
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline void SetVolumeAttachmentStatus(const Aws::String& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = value; }
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline void SetVolumeAttachmentStatus(Aws::String&& value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus = std::move(value); }
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline void SetVolumeAttachmentStatus(const char* value) { m_volumeAttachmentStatusHasBeenSet = true; m_volumeAttachmentStatus.assign(value); }
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline VolumeInfo& WithVolumeAttachmentStatus(const Aws::String& value) { SetVolumeAttachmentStatus(value); return *this;}
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline VolumeInfo& WithVolumeAttachmentStatus(Aws::String&& value) { SetVolumeAttachmentStatus(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>One of the VolumeStatus values that indicates the state of the storage
+     * volume. </p>
+     */
     inline VolumeInfo& WithVolumeAttachmentStatus(const char* value) { SetVolumeAttachmentStatus(value); return *this;}
 
   private:
