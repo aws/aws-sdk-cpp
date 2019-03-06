@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/directconnect/DirectConnect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -162,6 +163,47 @@ namespace Model
      */
     inline Location& WithRegion(const char* value) { SetRegion(value); return *this;}
 
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailablePortSpeeds() const{ return m_availablePortSpeeds; }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline void SetAvailablePortSpeeds(const Aws::Vector<Aws::String>& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds = value; }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline void SetAvailablePortSpeeds(Aws::Vector<Aws::String>&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds = std::move(value); }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline Location& WithAvailablePortSpeeds(const Aws::Vector<Aws::String>& value) { SetAvailablePortSpeeds(value); return *this;}
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline Location& WithAvailablePortSpeeds(Aws::Vector<Aws::String>&& value) { SetAvailablePortSpeeds(std::move(value)); return *this;}
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline Location& AddAvailablePortSpeeds(const Aws::String& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(value); return *this; }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline Location& AddAvailablePortSpeeds(Aws::String&& value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The available port speeds for the location.</p>
+     */
+    inline Location& AddAvailablePortSpeeds(const char* value) { m_availablePortSpeedsHasBeenSet = true; m_availablePortSpeeds.push_back(value); return *this; }
+
   private:
 
     Aws::String m_locationCode;
@@ -172,6 +214,9 @@ namespace Model
 
     Aws::String m_region;
     bool m_regionHasBeenSet;
+
+    Aws::Vector<Aws::String> m_availablePortSpeeds;
+    bool m_availablePortSpeedsHasBeenSet;
   };
 
 } // namespace Model

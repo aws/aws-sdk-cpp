@@ -250,71 +250,62 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p> <p>Constraint: If the value is greater than
-     * 1000, we return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>Constraint: If the value is greater than 1000, we return only 1000
+     * items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p> <p>Constraint: If the value is greater than
-     * 1000, we return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>Constraint: If the value is greater than 1000, we return only 1000
+     * items.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results of the initial request can be seen by sending another request
-     * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000. If <code>MaxResults</code> is given a value larger than 1000, only 1000
-     * results are returned. You cannot specify this parameter and the instance IDs
-     * parameter in the same request.</p> <p>Constraint: If the value is greater than
-     * 1000, we return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>Constraint: If the value is greater than 1000, we return only 1000
+     * items.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeClassicLinkInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

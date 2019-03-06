@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -374,6 +374,64 @@ namespace Model
      */
     inline DescribeNetworkAclsRequest& AddNetworkAclIds(const char* value) { m_networkAclIdsHasBeenSet = true; m_networkAclIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline DescribeNetworkAclsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -384,6 +442,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_networkAclIds;
     bool m_networkAclIdsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

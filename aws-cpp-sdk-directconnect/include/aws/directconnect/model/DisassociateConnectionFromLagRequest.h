@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the connection. For example, dxcon-abc123.</p>
+     * <p>The ID of the connection.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
 
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the LAG. For example, dxlag-abc123.</p>
+     * <p>The ID of the LAG.</p>
      */
     inline DisassociateConnectionFromLagRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
 

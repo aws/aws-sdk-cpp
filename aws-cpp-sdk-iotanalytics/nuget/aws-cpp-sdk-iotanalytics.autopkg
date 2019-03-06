@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-IoTAnalytics;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20171127.63;
+        version : 1.7.20171127.64;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS IoT Analytics);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.63
+            AWSSDKCPP-Core/1.7.64
        }
     }
 

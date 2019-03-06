@@ -24,7 +24,10 @@ DescribeInternetGatewaysRequest::DescribeInternetGatewaysRequest() :
     m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_internetGatewayIdsHasBeenSet(false)
+    m_internetGatewayIdsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -56,6 +59,16 @@ Aws::String DescribeInternetGatewaysRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       internetGatewayIdsCount++;
     }
+  }
+
+  if(m_nextTokenHasBeenSet)
+  {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_maxResultsHasBeenSet)
+  {
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
   ss << "Version=2016-11-15";

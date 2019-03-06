@@ -183,26 +183,23 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline DescribeNatGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -249,37 +246,37 @@ namespace Model
 
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeNatGatewaysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeNatGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeNatGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

@@ -35,8 +35,11 @@ namespace Model
 
   /**
    * <p>Provides authorization for Amazon to bring a specific IP address range to a
-   * specific AWS account using bring your own IP addresses (BYOIP).</p><p><h3>See
-   * Also:</h3>   <a
+   * specific AWS account using bring your own IP addresses (BYOIP). For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Prepare
+   * to Bring Your Address Range to Your AWS Account</a> in the <i>Amazon Elastic
+   * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
