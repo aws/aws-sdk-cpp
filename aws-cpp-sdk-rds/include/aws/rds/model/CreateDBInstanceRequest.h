@@ -348,18 +348,18 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -387,18 +387,18 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -426,18 +426,18 @@ namespace Model
      * increases, though you are only charged for the space that you use in an Aurora
      * cluster volume.</p> <p> <b>MySQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>MariaDB</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
-     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 16384.</p> </li> <li>
-     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 16384.</p>
+     * Purpose (SSD) storage (gp2): Must be an integer from 20 to 32768.</p> </li> <li>
+     * <p>Provisioned IOPS storage (io1): Must be an integer from 100 to 32768.</p>
      * </li> <li> <p>Magnetic storage (standard): Must be an integer from 5 to
      * 3072.</p> </li> </ul> <p> <b>Oracle</b> </p> <p>Constraints to the amount of
      * storage for each storage type are the following: </p> <ul> <li> <p>General
@@ -464,7 +464,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
@@ -474,7 +474,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
@@ -484,7 +484,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
@@ -494,7 +494,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
@@ -504,7 +504,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
@@ -514,7 +514,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
@@ -524,7 +524,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
@@ -1036,7 +1036,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1049,7 +1049,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1062,7 +1062,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1075,7 +1075,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1088,7 +1088,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1101,7 +1101,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1114,7 +1114,7 @@ namespace Model
     /**
      * <p> The EC2 Availability Zone that the DB instance is created in. For
      * information on AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a>. </p> <p>Default: A random, system-chosen
      * Availability Zone in the endpoint's AWS Region.</p> <p> Example:
      * <code>us-east-1d</code> </p> <p> Constraint: The AvailabilityZone parameter
@@ -1171,7 +1171,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1183,7 +1183,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1195,7 +1195,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1207,7 +1207,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1219,7 +1219,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1231,7 +1231,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1243,7 +1243,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a>. </p> <p> Format:
      * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
      * selected at random from an 8-hour block of time for each AWS Region, occurring
@@ -1358,14 +1358,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1378,14 +1378,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1398,14 +1398,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1418,14 +1418,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1438,14 +1438,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1458,14 +1458,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1478,14 +1478,14 @@ namespace Model
      * <p> The daily time range during which automated backups are created if automated
      * backups are enabled, using the <code>BackupRetentionPeriod</code> parameter. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p> <p> <b>Amazon
      * Aurora</b> </p> <p>Not applicable. The daily time range for creating automated
      * backups is managed by the DB cluster. For more information, see
      * <a>CreateDBCluster</a>.</p> <p> The default is a 30-minute window selected at
      * random from an 8-hour block of time for each AWS Region. To see the time blocks
      * available, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow">
      * Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>hh24:mi-hh24:mi</code>.</p> </li> <li> <p>Must be in Universal Coordinated
@@ -1578,19 +1578,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
@@ -1604,19 +1604,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
@@ -1630,19 +1630,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
@@ -1656,19 +1656,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
@@ -1682,19 +1682,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
@@ -1708,19 +1708,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
@@ -1734,19 +1734,19 @@ namespace Model
      * version number of the database engine to be used by the DB instance is managed
      * by the DB cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>
      * <b>MariaDB</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html#MariaDB.Concepts.VersionMgmt">MariaDB
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Microsoft SQL Server</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport">Version
      * and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p> <b>MySQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
      * on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>Oracle</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.PatchComposition.html">Oracle
      * Database Engine Release Notes</a> in the <i>Amazon RDS User Guide.</i> </p> <p>
      * <b>PostgreSQL</b> </p> <p>See <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions">Supported
      * PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
@@ -1825,7 +1825,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
      * storage amount for the DB instance. </p>
@@ -1836,7 +1836,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
      * storage amount for the DB instance. </p>
@@ -1847,7 +1847,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. For information about valid Iops
      * values, see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
      * storage amount for the DB instance. </p>
@@ -2421,19 +2421,28 @@ namespace Model
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline CreateDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -2471,7 +2480,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2483,7 +2492,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2495,7 +2504,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2507,7 +2516,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2519,7 +2528,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2531,7 +2540,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2543,7 +2552,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.</p>
      * <p>If <code>MonitoringInterval</code> is set to a value other than 0, then you
      * must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2598,7 +2607,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2608,7 +2617,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2618,7 +2627,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2628,7 +2637,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
@@ -2636,7 +2645,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
@@ -2644,7 +2653,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
@@ -2652,7 +2661,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
@@ -2660,7 +2669,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
@@ -2668,7 +2677,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
@@ -2676,7 +2685,7 @@ namespace Model
     /**
      * <p>The time zone of the DB instance. The time zone parameter is currently
      * supported only by <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">Microsoft
      * SQL Server</a>. </p>
      */
     inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
@@ -2722,7 +2731,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2731,7 +2740,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2740,7 +2749,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2820,7 +2829,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2830,7 +2839,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2840,7 +2849,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2850,7 +2859,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2860,7 +2869,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2870,7 +2879,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2880,7 +2889,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2890,7 +2899,7 @@ namespace Model
      * <p>The list of log types that need to be enabled for exporting to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational
      * Database Service User Guide</i>.</p>
      */
@@ -2944,7 +2953,7 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
@@ -2953,7 +2962,7 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
@@ -2962,7 +2971,7 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}

@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>An object representing the health check policy for a virtual node's
    * listener.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HealthCheckPolicy">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HealthCheckPolicy">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API HealthCheckPolicy
@@ -88,58 +88,58 @@ namespace Model
 
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The destination path for the health check request. This is only required if
+     * <p>The destination path for the health check request. This is required only if
      * the
-         specified protocol is HTTP; if the protocol is TCP, then this
-     * parameter is ignored.</p>
+         specified protocol is HTTP. If the protocol is TCP, this parameter
+     * is ignored.</p>
      */
     inline HealthCheckPolicy& WithPath(const char* value) { SetPath(value); return *this;}
 

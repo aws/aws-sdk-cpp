@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Contains the available processor feature information for the DB instance
    * class of a DB instance.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
    * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailableProcessorFeature">AWS

@@ -17,6 +17,7 @@
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/medialive/model/MediaPackageOutputDestinationSettings.h>
 #include <aws/medialive/model/OutputDestinationSettings.h>
 #include <utility>
 
@@ -86,37 +87,87 @@ namespace Model
 
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline const Aws::Vector<MediaPackageOutputDestinationSettings>& GetMediaPackageSettings() const{ return m_mediaPackageSettings; }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline void SetMediaPackageSettings(const Aws::Vector<MediaPackageOutputDestinationSettings>& value) { m_mediaPackageSettingsHasBeenSet = true; m_mediaPackageSettings = value; }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline void SetMediaPackageSettings(Aws::Vector<MediaPackageOutputDestinationSettings>&& value) { m_mediaPackageSettingsHasBeenSet = true; m_mediaPackageSettings = std::move(value); }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline OutputDestination& WithMediaPackageSettings(const Aws::Vector<MediaPackageOutputDestinationSettings>& value) { SetMediaPackageSettings(value); return *this;}
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline OutputDestination& WithMediaPackageSettings(Aws::Vector<MediaPackageOutputDestinationSettings>&& value) { SetMediaPackageSettings(std::move(value)); return *this;}
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline OutputDestination& AddMediaPackageSettings(const MediaPackageOutputDestinationSettings& value) { m_mediaPackageSettingsHasBeenSet = true; m_mediaPackageSettings.push_back(value); return *this; }
+
+    /**
+     * Destination settings for a MediaPackage output; one destination for both
+     * encoders.
+     */
+    inline OutputDestination& AddMediaPackageSettings(MediaPackageOutputDestinationSettings&& value) { m_mediaPackageSettingsHasBeenSet = true; m_mediaPackageSettings.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline const Aws::Vector<OutputDestinationSettings>& GetSettings() const{ return m_settings; }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline void SetSettings(const Aws::Vector<OutputDestinationSettings>& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline void SetSettings(Aws::Vector<OutputDestinationSettings>&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline OutputDestination& WithSettings(const Aws::Vector<OutputDestinationSettings>& value) { SetSettings(value); return *this;}
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline OutputDestination& WithSettings(Aws::Vector<OutputDestinationSettings>&& value) { SetSettings(std::move(value)); return *this;}
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline OutputDestination& AddSettings(const OutputDestinationSettings& value) { m_settingsHasBeenSet = true; m_settings.push_back(value); return *this; }
 
     /**
-     * Destination settings for output; one for each redundant encoder.
+     * Destination settings for a standard output; one destination for each redundant
+     * encoder.
      */
     inline OutputDestination& AddSettings(OutputDestinationSettings&& value) { m_settingsHasBeenSet = true; m_settings.push_back(std::move(value)); return *this; }
 
@@ -124,6 +175,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet;
+
+    Aws::Vector<MediaPackageOutputDestinationSettings> m_mediaPackageSettings;
+    bool m_mediaPackageSettingsHasBeenSet;
 
     Aws::Vector<OutputDestinationSettings> m_settings;
     bool m_settingsHasBeenSet;

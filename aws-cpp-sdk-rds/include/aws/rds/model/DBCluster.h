@@ -1512,7 +1512,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
@@ -1521,7 +1521,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
@@ -1530,7 +1530,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
@@ -1539,7 +1539,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
@@ -1548,7 +1548,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
@@ -1557,7 +1557,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
@@ -1566,7 +1566,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
@@ -1575,7 +1575,7 @@ namespace Model
      * <p>A list of log types that this DB cluster is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon Aurora User Guide.</i> </p>
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
@@ -1585,7 +1585,7 @@ namespace Model
      * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
      * Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline int GetCapacity() const{ return m_capacity; }
@@ -1594,7 +1594,7 @@ namespace Model
      * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
      * Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
@@ -1603,7 +1603,7 @@ namespace Model
      * <p>The current capacity of an Aurora Serverless DB cluster. The capacity is 0
      * (zero) when the cluster is paused.</p> <p>For more information about Aurora
      * Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithCapacity(int value) { SetCapacity(value); return *this;}
@@ -1695,7 +1695,7 @@ namespace Model
      * service API for running SQL queries on the Aurora Serverless DB cluster. You can
      * also query your database from inside the RDS console with the query editor.</p>
      * <p>For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline bool GetHttpEndpointEnabled() const{ return m_httpEndpointEnabled; }
@@ -1708,7 +1708,7 @@ namespace Model
      * service API for running SQL queries on the Aurora Serverless DB cluster. You can
      * also query your database from inside the RDS console with the query editor.</p>
      * <p>For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline void SetHttpEndpointEnabled(bool value) { m_httpEndpointEnabledHasBeenSet = true; m_httpEndpointEnabled = value; }
@@ -1721,10 +1721,29 @@ namespace Model
      * service API for running SQL queries on the Aurora Serverless DB cluster. You can
      * also query your database from inside the RDS console with the query editor.</p>
      * <p>For more information about Aurora Serverless, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html">Using
      * Amazon Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
     inline DBCluster& WithHttpEndpointEnabled(bool value) { SetHttpEndpointEnabled(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB
+     * cluster.</p>
+     */
+    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+
+    /**
+     * <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB
+     * cluster.</p>
+     */
+    inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
+
+    /**
+     * <p>Specifies whether tags are copied from the DB cluster to snapshots of the DB
+     * cluster.</p>
+     */
+    inline DBCluster& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
   private:
 
@@ -1862,6 +1881,9 @@ namespace Model
 
     bool m_httpEndpointEnabled;
     bool m_httpEndpointEnabledHasBeenSet;
+
+    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshotHasBeenSet;
   };
 
 } // namespace Model

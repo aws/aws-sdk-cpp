@@ -160,43 +160,43 @@ namespace Model
 
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline void SetDeploymentStatus(const Aws::String& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline void SetDeploymentStatus(Aws::String&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline void SetDeploymentStatus(const char* value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus.assign(value); }
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline BulkDeploymentResult& WithDeploymentStatus(const Aws::String& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline BulkDeploymentResult& WithDeploymentStatus(Aws::String&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
     /**
-     * The current status of the group deployment: ''Pending'', ''InProgress'',
+     * The current status of the group deployment: ''InProgress'', ''Building'',
      * ''Success'', or ''Failure''.
      */
     inline BulkDeploymentResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}

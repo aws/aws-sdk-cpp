@@ -17,7 +17,7 @@
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appmesh/model/ServiceDiscovery.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/Backend.h>
 #include <aws/appmesh/model/Listener.h>
 #include <utility>
 
@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>An object representing the specification of a virtual node.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualNodeSpec">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeSpec">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API VirtualNodeSpec
@@ -52,93 +52,87 @@ namespace Model
 
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBackends() const{ return m_backends; }
+    inline const Aws::Vector<Backend>& GetBackends() const{ return m_backends; }
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline void SetBackends(const Aws::Vector<Aws::String>& value) { m_backendsHasBeenSet = true; m_backends = value; }
+    inline void SetBackends(const Aws::Vector<Backend>& value) { m_backendsHasBeenSet = true; m_backends = value; }
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline void SetBackends(Aws::Vector<Aws::String>&& value) { m_backendsHasBeenSet = true; m_backends = std::move(value); }
+    inline void SetBackends(Aws::Vector<Backend>&& value) { m_backendsHasBeenSet = true; m_backends = std::move(value); }
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline VirtualNodeSpec& WithBackends(const Aws::Vector<Aws::String>& value) { SetBackends(value); return *this;}
+    inline VirtualNodeSpec& WithBackends(const Aws::Vector<Backend>& value) { SetBackends(value); return *this;}
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline VirtualNodeSpec& WithBackends(Aws::Vector<Aws::String>&& value) { SetBackends(std::move(value)); return *this;}
+    inline VirtualNodeSpec& WithBackends(Aws::Vector<Backend>&& value) { SetBackends(std::move(value)); return *this;}
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline VirtualNodeSpec& AddBackends(const Aws::String& value) { m_backendsHasBeenSet = true; m_backends.push_back(value); return *this; }
+    inline VirtualNodeSpec& AddBackends(const Backend& value) { m_backendsHasBeenSet = true; m_backends.push_back(value); return *this; }
 
     /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
+     * <p>The backends that the virtual node is expected to send outbound traffic
+     * to.</p>
      */
-    inline VirtualNodeSpec& AddBackends(Aws::String&& value) { m_backendsHasBeenSet = true; m_backends.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The backends to which the virtual node is expected to send outbound
-     * traffic.</p>
-     */
-    inline VirtualNodeSpec& AddBackends(const char* value) { m_backendsHasBeenSet = true; m_backends.push_back(value); return *this; }
+    inline VirtualNodeSpec& AddBackends(Backend&& value) { m_backendsHasBeenSet = true; m_backends.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline void SetListeners(const Aws::Vector<Listener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline void SetListeners(Aws::Vector<Listener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& WithListeners(const Aws::Vector<Listener>& value) { SetListeners(value); return *this;}
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& WithListeners(Aws::Vector<Listener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& AddListeners(const Listener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
-     * <p>The listeners from which the virtual node is expected to receive inbound
-     * traffic.</p>
+     * <p>The listeners that the virtual node is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual node.</p>
      */
     inline VirtualNodeSpec& AddListeners(Listener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
@@ -170,7 +164,7 @@ namespace Model
 
   private:
 
-    Aws::Vector<Aws::String> m_backends;
+    Aws::Vector<Backend> m_backends;
     bool m_backendsHasBeenSet;
 
     Aws::Vector<Listener> m_listeners;

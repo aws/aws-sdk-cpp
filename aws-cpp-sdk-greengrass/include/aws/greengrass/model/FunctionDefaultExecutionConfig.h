@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/greengrass/model/FunctionIsolationMode.h>
+#include <aws/greengrass/model/FunctionRunAsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -34,9 +35,8 @@ namespace Model
 {
 
   /**
-   * Configuration that defines the default containerization used for when running
-   * Lambda functions in the group. Individual Lambda functions can be override this
-   * setting.<p><h3>See Also:</h3>   <a
+   * Configuration information that specifies how a Lambda function runs. <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefaultExecutionConfig">AWS
    * API Reference</a></p>
    */
@@ -64,10 +64,29 @@ namespace Model
     
     inline FunctionDefaultExecutionConfig& WithIsolationMode(FunctionIsolationMode&& value) { SetIsolationMode(std::move(value)); return *this;}
 
+
+    
+    inline const FunctionRunAsConfig& GetRunAs() const{ return m_runAs; }
+
+    
+    inline void SetRunAs(const FunctionRunAsConfig& value) { m_runAsHasBeenSet = true; m_runAs = value; }
+
+    
+    inline void SetRunAs(FunctionRunAsConfig&& value) { m_runAsHasBeenSet = true; m_runAs = std::move(value); }
+
+    
+    inline FunctionDefaultExecutionConfig& WithRunAs(const FunctionRunAsConfig& value) { SetRunAs(value); return *this;}
+
+    
+    inline FunctionDefaultExecutionConfig& WithRunAs(FunctionRunAsConfig&& value) { SetRunAs(std::move(value)); return *this;}
+
   private:
 
     FunctionIsolationMode m_isolationMode;
     bool m_isolationModeHasBeenSet;
+
+    FunctionRunAsConfig m_runAs;
+    bool m_runAsHasBeenSet;
   };
 
 } // namespace Model

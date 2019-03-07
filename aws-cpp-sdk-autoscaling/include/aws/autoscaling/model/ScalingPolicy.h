@@ -162,43 +162,43 @@ namespace Model
 
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
 
     /**
-     * <p>The policy type. Valid values are <code>SimpleScaling</code> and
+     * <p>The policy type. The valid values are <code>SimpleScaling</code> and
      * <code>StepScaling</code>.</p>
      */
     inline ScalingPolicy& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
@@ -206,49 +206,49 @@ namespace Model
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
 
     /**
      * <p>The adjustment type, which specifies how <code>ScalingAdjustment</code> is
-     * interpreted. Valid values are <code>ChangeInCapacity</code>,
+     * interpreted. The valid values are <code>ChangeInCapacity</code>,
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      */
     inline ScalingPolicy& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
@@ -386,43 +386,43 @@ namespace Model
 
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline const Aws::String& GetMetricAggregationType() const{ return m_metricAggregationType; }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline void SetMetricAggregationType(const Aws::String& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline void SetMetricAggregationType(Aws::String&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline void SetMetricAggregationType(const char* value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType.assign(value); }
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline ScalingPolicy& WithMetricAggregationType(const Aws::String& value) { SetMetricAggregationType(value); return *this;}
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline ScalingPolicy& WithMetricAggregationType(Aws::String&& value) { SetMetricAggregationType(std::move(value)); return *this;}
 
     /**
-     * <p>The aggregation type for the CloudWatch metrics. Valid values are
+     * <p>The aggregation type for the CloudWatch metrics. The valid values are
      * <code>Minimum</code>, <code>Maximum</code>, and <code>Average</code>.</p>
      */
     inline ScalingPolicy& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
@@ -484,27 +484,27 @@ namespace Model
 
 
     /**
-     * <p>A target tracking policy.</p>
+     * <p>A target tracking scaling policy.</p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>A target tracking policy.</p>
+     * <p>A target tracking scaling policy.</p>
      */
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>A target tracking policy.</p>
+     * <p>A target tracking scaling policy.</p>
      */
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>A target tracking policy.</p>
+     * <p>A target tracking scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>A target tracking policy.</p>
+     * <p>A target tracking scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
 

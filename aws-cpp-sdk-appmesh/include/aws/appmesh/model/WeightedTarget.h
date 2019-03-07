@@ -42,7 +42,7 @@ namespace Model
    * times as much traffic as one with a relative weight of
         
    * 10.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/WeightedTarget">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/WeightedTarget">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API WeightedTarget

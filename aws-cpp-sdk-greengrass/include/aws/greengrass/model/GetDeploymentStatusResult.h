@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline void SetDeploymentStatus(const Aws::String& value) { m_deploymentStatus = value; }
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline void SetDeploymentStatus(Aws::String&& value) { m_deploymentStatus = std::move(value); }
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline void SetDeploymentStatus(const char* value) { m_deploymentStatus.assign(value); }
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const Aws::String& value) { SetDeploymentStatus(value); return *this;}
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(Aws::String&& value) { SetDeploymentStatus(std::move(value)); return *this;}
 
     /**
-     * The status of the deployment: ''Pending'', ''InProgress'', ''Success'', or
+     * The status of the deployment: ''InProgress'', ''Building'', ''Success'', or
      * ''Failure''.
      */
     inline GetDeploymentStatusResult& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}

@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DescribeVirtualRouterInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouterInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API DescribeVirtualRouterRequest : public AppMeshRequest
@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline DescribeVirtualRouterRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline DescribeVirtualRouterRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the virtual router resides.</p>
+     * <p>The name of the service mesh that the virtual router resides in.</p>
      */
     inline DescribeVirtualRouterRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 

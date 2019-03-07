@@ -32,6 +32,7 @@ OutputSettings::OutputSettings() :
     m_archiveOutputSettingsHasBeenSet(false),
     m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
+    m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
@@ -42,6 +43,7 @@ OutputSettings::OutputSettings(JsonView jsonValue) :
     m_archiveOutputSettingsHasBeenSet(false),
     m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
+    m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
@@ -70,6 +72,13 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_hlsOutputSettings = jsonValue.GetObject("hlsOutputSettings");
 
     m_hlsOutputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaPackageOutputSettings"))
+  {
+    m_mediaPackageOutputSettings = jsonValue.GetObject("mediaPackageOutputSettings");
+
+    m_mediaPackageOutputSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("msSmoothOutputSettings"))
@@ -115,6 +124,12 @@ JsonValue OutputSettings::Jsonize() const
   if(m_hlsOutputSettingsHasBeenSet)
   {
    payload.WithObject("hlsOutputSettings", m_hlsOutputSettings.Jsonize());
+
+  }
+
+  if(m_mediaPackageOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("mediaPackageOutputSettings", m_mediaPackageOutputSettings.Jsonize());
 
   }
 

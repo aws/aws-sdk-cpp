@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -212,7 +212,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -221,7 +221,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -239,7 +239,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -257,7 +257,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */
@@ -266,7 +266,7 @@ namespace Model
     /**
      * <p> A list of event categories for a SourceType that you want to subscribe to.
      * You can see a list of the categories for a given SourceType in the <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the <i>Amazon RDS User Guide</i> or by using the
      * <b>DescribeEventCategories</b> action. </p>
      */

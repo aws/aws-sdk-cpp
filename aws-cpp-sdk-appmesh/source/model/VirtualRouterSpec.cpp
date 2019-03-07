@@ -29,26 +29,26 @@ namespace Model
 {
 
 VirtualRouterSpec::VirtualRouterSpec() : 
-    m_serviceNamesHasBeenSet(false)
+    m_listenersHasBeenSet(false)
 {
 }
 
 VirtualRouterSpec::VirtualRouterSpec(JsonView jsonValue) : 
-    m_serviceNamesHasBeenSet(false)
+    m_listenersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 VirtualRouterSpec& VirtualRouterSpec::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("serviceNames"))
+  if(jsonValue.ValueExists("listeners"))
   {
-    Array<JsonView> serviceNamesJsonList = jsonValue.GetArray("serviceNames");
-    for(unsigned serviceNamesIndex = 0; serviceNamesIndex < serviceNamesJsonList.GetLength(); ++serviceNamesIndex)
+    Array<JsonView> listenersJsonList = jsonValue.GetArray("listeners");
+    for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
     {
-      m_serviceNames.push_back(serviceNamesJsonList[serviceNamesIndex].AsString());
+      m_listeners.push_back(listenersJsonList[listenersIndex].AsObject());
     }
-    m_serviceNamesHasBeenSet = true;
+    m_listenersHasBeenSet = true;
   }
 
   return *this;
@@ -58,14 +58,14 @@ JsonValue VirtualRouterSpec::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_serviceNamesHasBeenSet)
+  if(m_listenersHasBeenSet)
   {
-   Array<JsonValue> serviceNamesJsonList(m_serviceNames.size());
-   for(unsigned serviceNamesIndex = 0; serviceNamesIndex < serviceNamesJsonList.GetLength(); ++serviceNamesIndex)
+   Array<JsonValue> listenersJsonList(m_listeners.size());
+   for(unsigned listenersIndex = 0; listenersIndex < listenersJsonList.GetLength(); ++listenersIndex)
    {
-     serviceNamesJsonList[serviceNamesIndex].AsString(m_serviceNames[serviceNamesIndex]);
+     listenersJsonList[listenersIndex].AsObject(m_listeners[listenersIndex].Jsonize());
    }
-   payload.WithArray("serviceNames", std::move(serviceNamesJsonList));
+   payload.WithArray("listeners", std::move(listenersJsonList));
 
   }
 

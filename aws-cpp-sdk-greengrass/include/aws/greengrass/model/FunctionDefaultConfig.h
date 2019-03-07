@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * Default configuration that will apply to all Lambda functions in the
-   * group.<p><h3>See Also:</h3>   <a
+   * The default configuration that applies to all Lambda functions in the group.
+   * Individual Lambda functions can override these settings.<p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionDefaultConfig">AWS
    * API Reference</a></p>
    */

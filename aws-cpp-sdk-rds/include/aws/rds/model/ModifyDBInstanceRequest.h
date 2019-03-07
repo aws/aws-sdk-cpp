@@ -138,7 +138,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -152,7 +152,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -166,7 +166,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -180,7 +180,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -194,7 +194,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -208,7 +208,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -222,7 +222,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>If you modify
      * the DB instance class, an outage occurs during the change. The change is applied
      * during the next maintenance window, unless <code>ApplyImmediately</code> is
@@ -492,7 +492,7 @@ namespace Model
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
      * failure reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> in the <i>Amazon RDS
      * User Guide.</i> to see the impact that setting <code>ApplyImmediately</code> to
      * <code>true</code> or <code>false</code> has for each modified parameter and to
@@ -508,7 +508,7 @@ namespace Model
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
      * failure reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> in the <i>Amazon RDS
      * User Guide.</i> to see the impact that setting <code>ApplyImmediately</code> to
      * <code>true</code> or <code>false</code> has for each modified parameter and to
@@ -524,7 +524,7 @@ namespace Model
      * applied during the next maintenance window. Some parameter changes can cause an
      * outage and are applied on the next call to <a>RebootDBInstance</a>, or the next
      * failure reboot. Review the table of parameters in <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
      * a DB Instance and Using the Apply Immediately Parameter</a> in the <i>Amazon RDS
      * User Guide.</i> to see the impact that setting <code>ApplyImmediately</code> to
      * <code>true</code> or <code>false</code> has for each modified parameter and to
@@ -1867,19 +1867,28 @@ namespace Model
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>ModifyDBCluster</a>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>ModifyDBCluster</a>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. The default is false.</p>
+     * and otherwise false. The default is false.</p> <p> <b>Amazon Aurora</b> </p>
+     * <p>Not applicable. Copying tags to snapshots is managed by the DB cluster.
+     * Setting this value for an Aurora DB instance has no effect on the DB cluster
+     * setting. For more information, see <a>ModifyDBCluster</a>.</p>
      */
     inline ModifyDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -2021,7 +2030,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2033,7 +2042,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2045,7 +2054,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2057,7 +2066,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2069,7 +2078,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2081,7 +2090,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2093,7 +2102,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
      * create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS
      * User Guide.</i> </p> <p>If <code>MonitoringInterval</code> is set to a value
      * other than 0, then you must supply a <code>MonitoringRoleArn</code> value.</p>
@@ -2148,7 +2157,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2158,7 +2167,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2168,7 +2177,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p> <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
@@ -2215,7 +2224,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
      * false.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2224,7 +2233,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
      * false.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2233,7 +2242,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise
      * false.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -2420,7 +2429,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
@@ -2428,7 +2437,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
@@ -2436,7 +2445,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}

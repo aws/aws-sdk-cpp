@@ -32,7 +32,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualRoutersInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRoutersInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API ListVirtualRoutersRequest : public AppMeshRequest
@@ -52,101 +52,98 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of mesh results returned by
-     * <code>ListVirtualRouters</code> in
-         paginated output. When this
-     * parameter is used, <code>ListVirtualRouters</code> only returns
+     * <p>The maximum number of results returned by <code>ListVirtualRouters</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualRouters</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * <code>limit</code> results in a single page along with a <code>nextToken</code>
-
-     * response element. The remaining results of the initial request can be seen by
-     * sending
-         another <code>ListVirtualRouters</code> request with the
-     * returned <code>nextToken</code>
-         value. This value can be between 1 and
-     * 100. If this
-         parameter is not used, then
-     * <code>ListVirtualRouters</code> returns up to
-         100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request  by sending
+     * another
+            <code>ListVirtualRouters</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter, 
+         <code>ListVirtualRouters</code> returns
+     * up to 100 results and
+         a <code>nextToken</code> value if applicable.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of mesh results returned by
-     * <code>ListVirtualRouters</code> in
-         paginated output. When this
-     * parameter is used, <code>ListVirtualRouters</code> only returns
+     * <p>The maximum number of results returned by <code>ListVirtualRouters</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualRouters</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * <code>limit</code> results in a single page along with a <code>nextToken</code>
-
-     * response element. The remaining results of the initial request can be seen by
-     * sending
-         another <code>ListVirtualRouters</code> request with the
-     * returned <code>nextToken</code>
-         value. This value can be between 1 and
-     * 100. If this
-         parameter is not used, then
-     * <code>ListVirtualRouters</code> returns up to
-         100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request  by sending
+     * another
+            <code>ListVirtualRouters</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter, 
+         <code>ListVirtualRouters</code> returns
+     * up to 100 results and
+         a <code>nextToken</code> value if applicable.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of mesh results returned by
-     * <code>ListVirtualRouters</code> in
-         paginated output. When this
-     * parameter is used, <code>ListVirtualRouters</code> only returns
+     * <p>The maximum number of results returned by <code>ListVirtualRouters</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualRouters</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * <code>limit</code> results in a single page along with a <code>nextToken</code>
-
-     * response element. The remaining results of the initial request can be seen by
-     * sending
-         another <code>ListVirtualRouters</code> request with the
-     * returned <code>nextToken</code>
-         value. This value can be between 1 and
-     * 100. If this
-         parameter is not used, then
-     * <code>ListVirtualRouters</code> returns up to
-         100 results and a
-     * <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request  by sending
+     * another
+            <code>ListVirtualRouters</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter, 
+         <code>ListVirtualRouters</code> returns
+     * up to 100 results and
+         a <code>nextToken</code> value if applicable.</p>
      */
     inline ListVirtualRoutersRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline ListVirtualRoutersRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline ListVirtualRoutersRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to list virtual routers.</p>
+     * <p>The name of the service mesh to list virtual routers in.</p>
      */
     inline ListVirtualRoutersRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 

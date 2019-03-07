@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>An object representing a virtual node returned by a describe
    * operation.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualNodeData">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualNodeData">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API VirtualNodeData
@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline VirtualNodeData& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline VirtualNodeData& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the virtual node resides.</p>
+     * <p>The name of the service mesh that the virtual node resides in.</p>
      */
     inline VirtualNodeData& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 

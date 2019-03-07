@@ -32,13 +32,13 @@ namespace Model
 {
 
   /**
-   * Specifies the user and/or group whose permissions are used when running the
-   * Lambda function. You can specify one or both values to override the default
-   * values (ggc_user/ggc_group). We recommend that you avoid running as root unless
-   * absolutely necessary to minimize the risk of unintended changes or malicious
-   * attacks. To run as root, you must set IsolationMode to NoContainer and you must
-   * update config.json in greengrass-root/config to set allowFunctionsToRunAsRoot to
-   * yes.<p><h3>See Also:</h3>   <a
+   * Specifies the user and group whose permissions are used when running the Lambda
+   * function. You can specify one or both values to override the default values. We
+   * recommend that you avoid running as root unless absolutely necessary to minimize
+   * the risk of unintended changes or malicious attacks. To run as root, you must
+   * set ''IsolationMode'' to ''NoContainer'' and update config.json in
+   * ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to
+   * ''yes''.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionRunAsConfig">AWS
    * API Reference</a></p>
    */
@@ -52,33 +52,33 @@ namespace Model
 
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      */
     inline int GetGid() const{ return m_gid; }
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      */
     inline void SetGid(int value) { m_gidHasBeenSet = true; m_gid = value; }
 
     /**
-     * The Group ID whose permissions are used to run a Lambda function.
+     * The group ID whose permissions are used to run a Lambda function.
      */
     inline FunctionRunAsConfig& WithGid(int value) { SetGid(value); return *this;}
 
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      */
     inline int GetUid() const{ return m_uid; }
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      */
     inline void SetUid(int value) { m_uidHasBeenSet = true; m_uid = value; }
 
     /**
-     * The User ID whose permissions are used to run a Lambda function.
+     * The user ID whose permissions are used to run a Lambda function.
      */
     inline FunctionRunAsConfig& WithUid(int value) { SetUid(value); return *this;}
 

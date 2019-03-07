@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -131,7 +131,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same
@@ -147,7 +147,7 @@ namespace Model
     /**
      * <p>The identifier or Amazon Resource Name (ARN) for the source DB cluster
      * parameter group. For information about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon Aurora User Guide</i>.
      * </p> <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB cluster parameter
      * group.</p> </li> <li> <p>If the source DB cluster parameter group is in the same

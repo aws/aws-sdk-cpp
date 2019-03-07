@@ -51,7 +51,8 @@ FleetAttributes::FleetAttributes() :
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_metricGroupsHasBeenSet(false),
-    m_stoppedActionsHasBeenSet(false)
+    m_stoppedActionsHasBeenSet(false),
+    m_instanceRoleArnHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ FleetAttributes::FleetAttributes(JsonView jsonValue) :
     m_operatingSystemHasBeenSet(false),
     m_resourceCreationLimitPolicyHasBeenSet(false),
     m_metricGroupsHasBeenSet(false),
-    m_stoppedActionsHasBeenSet(false)
+    m_stoppedActionsHasBeenSet(false),
+    m_instanceRoleArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +222,13 @@ FleetAttributes& FleetAttributes::operator =(JsonView jsonValue)
     m_stoppedActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceRoleArn"))
+  {
+    m_instanceRoleArn = jsonValue.GetString("InstanceRoleArn");
+
+    m_instanceRoleArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -340,6 +349,12 @@ JsonValue FleetAttributes::Jsonize() const
      stoppedActionsJsonList[stoppedActionsIndex].AsString(FleetActionMapper::GetNameForFleetAction(m_stoppedActions[stoppedActionsIndex]));
    }
    payload.WithArray("StoppedActions", std::move(stoppedActionsJsonList));
+
+  }
+
+  if(m_instanceRoleArnHasBeenSet)
+  {
+   payload.WithString("InstanceRoleArn", m_instanceRoleArn);
 
   }
 

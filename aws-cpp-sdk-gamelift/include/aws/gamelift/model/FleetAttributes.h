@@ -890,6 +890,98 @@ namespace Model
      */
     inline FleetAttributes& AddStoppedActions(FleetAction&& value) { m_stoppedActionsHasBeenSet = true; m_stoppedActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * services. Any application that runs on an instance in this fleet can assume the
+     * role, including install scripts, server processs, daemons (background
+     * processes). Create a role or look up a role's ARN using the <a
+     * href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the AWS
+     * Management Console. Learn more about using on-box credentials for your game
+     * servers at <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+     * Access external resources from a game server</a>.</p>
+     */
+    inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
+
   private:
 
     Aws::String m_fleetId;
@@ -945,6 +1037,9 @@ namespace Model
 
     Aws::Vector<FleetAction> m_stoppedActions;
     bool m_stoppedActionsHasBeenSet;
+
+    Aws::String m_instanceRoleArn;
+    bool m_instanceRoleArnHasBeenSet;
   };
 
 } // namespace Model

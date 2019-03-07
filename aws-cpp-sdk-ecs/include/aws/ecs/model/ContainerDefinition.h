@@ -27,6 +27,7 @@
 #include <aws/ecs/model/MountPoint.h>
 #include <aws/ecs/model/VolumeFrom.h>
 #include <aws/ecs/model/Secret.h>
+#include <aws/ecs/model/ContainerDependency.h>
 #include <aws/ecs/model/HostEntry.h>
 #include <aws/ecs/model/Ulimit.h>
 #include <aws/ecs/model/SystemControl.h>
@@ -1789,6 +1790,102 @@ namespace Model
 
 
     /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline ContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline ContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline ContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
+
+    /**
+     * <p>The dependencies defined for container startup. A container can contain
+     * multiple dependencies.</p>
+     */
+    inline ContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Time duration to wait before giving up on starting the container.</p> <note>
+     * <p>The <code>startTimeout</code> value for the container will take precedence
+     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
+     * parameter, if used.</p> </note>
+     */
+    inline int GetStartTimeout() const{ return m_startTimeout; }
+
+    /**
+     * <p>Time duration to wait before giving up on starting the container.</p> <note>
+     * <p>The <code>startTimeout</code> value for the container will take precedence
+     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
+     * parameter, if used.</p> </note>
+     */
+    inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
+
+    /**
+     * <p>Time duration to wait before giving up on starting the container.</p> <note>
+     * <p>The <code>startTimeout</code> value for the container will take precedence
+     * over the <code>ECS_CONTAINER_START_TIMEOUT</code> container agent configuration
+     * parameter, if used.</p> </note>
+     */
+    inline ContainerDefinition& WithStartTimeout(int value) { SetStartTimeout(value); return *this;}
+
+
+    /**
+     * <p>Time duration to wait before the container is forcefully killed if it does
+     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
+     * for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
+     * if used.</p> </note>
+     */
+    inline int GetStopTimeout() const{ return m_stopTimeout; }
+
+    /**
+     * <p>Time duration to wait before the container is forcefully killed if it does
+     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
+     * for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
+     * if used.</p> </note>
+     */
+    inline void SetStopTimeout(int value) { m_stopTimeoutHasBeenSet = true; m_stopTimeout = value; }
+
+    /**
+     * <p>Time duration to wait before the container is forcefully killed if it does
+     * not exit normally on its own.</p> <note> <p>The <code>stopTimeout</code> value
+     * for the container will take precedence over the
+     * <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter,
+     * if used.</p> </note>
+     */
+    inline ContainerDefinition& WithStopTimeout(int value) { SetStopTimeout(value); return *this;}
+
+
+    /**
      * <p>The hostname to use for your container. This parameter maps to
      * <code>Hostname</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -1881,86 +1978,121 @@ namespace Model
 
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
 
     /**
-     * <p>The user name to use inside the container. This parameter maps to
+     * <p>The username to use inside the container. This parameter maps to
      * <code>User</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
      * <code>--user</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <note>
-     * <p>This parameter is not supported for Windows containers.</p> </note>
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <p>This
+     * following formats can be used. If specifying a UID or GID, it must be specified
+     * as a positive integer.</p> <ul> <li> <p> <code>user</code> </p> </li> <li> <p>
+     * <code>user:group</code> </p> </li> <li> <p> <code>uid</code> </p> </li> <li> <p>
+     * <code>uid:gid</code> </p> </li> <li> <p> <code>user:gid</code> </p> </li> <li>
+     * <p> <code>uid:group</code> </p> </li> </ul> <note> <p>This parameter is not
+     * supported for Windows containers.</p> </note>
      */
     inline ContainerDefinition& WithUser(const char* value) { SetUser(value); return *this;}
 
@@ -3463,6 +3595,15 @@ namespace Model
 
     Aws::Vector<Secret> m_secrets;
     bool m_secretsHasBeenSet;
+
+    Aws::Vector<ContainerDependency> m_dependsOn;
+    bool m_dependsOnHasBeenSet;
+
+    int m_startTimeout;
+    bool m_startTimeoutHasBeenSet;
+
+    int m_stopTimeout;
+    bool m_stopTimeoutHasBeenSet;
 
     Aws::String m_hostname;
     bool m_hostnameHasBeenSet;

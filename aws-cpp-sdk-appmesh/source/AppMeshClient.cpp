@@ -34,21 +34,26 @@
 #include <aws/appmesh/model/CreateRouteRequest.h>
 #include <aws/appmesh/model/CreateVirtualNodeRequest.h>
 #include <aws/appmesh/model/CreateVirtualRouterRequest.h>
+#include <aws/appmesh/model/CreateVirtualServiceRequest.h>
 #include <aws/appmesh/model/DeleteMeshRequest.h>
 #include <aws/appmesh/model/DeleteRouteRequest.h>
 #include <aws/appmesh/model/DeleteVirtualNodeRequest.h>
 #include <aws/appmesh/model/DeleteVirtualRouterRequest.h>
+#include <aws/appmesh/model/DeleteVirtualServiceRequest.h>
 #include <aws/appmesh/model/DescribeMeshRequest.h>
 #include <aws/appmesh/model/DescribeRouteRequest.h>
 #include <aws/appmesh/model/DescribeVirtualNodeRequest.h>
 #include <aws/appmesh/model/DescribeVirtualRouterRequest.h>
+#include <aws/appmesh/model/DescribeVirtualServiceRequest.h>
 #include <aws/appmesh/model/ListMeshesRequest.h>
 #include <aws/appmesh/model/ListRoutesRequest.h>
 #include <aws/appmesh/model/ListVirtualNodesRequest.h>
 #include <aws/appmesh/model/ListVirtualRoutersRequest.h>
+#include <aws/appmesh/model/ListVirtualServicesRequest.h>
 #include <aws/appmesh/model/UpdateRouteRequest.h>
 #include <aws/appmesh/model/UpdateVirtualNodeRequest.h>
 #include <aws/appmesh/model/UpdateVirtualRouterRequest.h>
+#include <aws/appmesh/model/UpdateVirtualServiceRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -125,7 +130,7 @@ CreateMeshOutcome AppMeshClient::CreateMesh(const CreateMeshRequest& request) co
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes";
+  ss << "/v20190125/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -160,7 +165,7 @@ CreateRouteOutcome AppMeshClient::CreateRoute(const CreateRouteRequest& request)
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
   ss << request.GetVirtualRouterName();
@@ -199,7 +204,7 @@ CreateVirtualNodeOutcome AppMeshClient::CreateVirtualNode(const CreateVirtualNod
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -236,7 +241,7 @@ CreateVirtualRouterOutcome AppMeshClient::CreateVirtualRouter(const CreateVirtua
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -269,11 +274,48 @@ void AppMeshClient::CreateVirtualRouterAsyncHelper(const CreateVirtualRouterRequ
   handler(this, request, CreateVirtualRouter(request), context);
 }
 
+CreateVirtualServiceOutcome AppMeshClient::CreateVirtualService(const CreateVirtualServiceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualServices";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVirtualServiceOutcome(CreateVirtualServiceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVirtualServiceOutcome(outcome.GetError());
+  }
+}
+
+CreateVirtualServiceOutcomeCallable AppMeshClient::CreateVirtualServiceCallable(const CreateVirtualServiceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVirtualServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVirtualService(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::CreateVirtualServiceAsync(const CreateVirtualServiceRequest& request, const CreateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVirtualServiceAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::CreateVirtualServiceAsyncHelper(const CreateVirtualServiceRequest& request, const CreateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVirtualService(request), context);
+}
+
 DeleteMeshOutcome AppMeshClient::DeleteMesh(const DeleteMeshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -309,7 +351,7 @@ DeleteRouteOutcome AppMeshClient::DeleteRoute(const DeleteRouteRequest& request)
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
   ss << request.GetVirtualRouterName();
@@ -349,7 +391,7 @@ DeleteVirtualNodeOutcome AppMeshClient::DeleteVirtualNode(const DeleteVirtualNod
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
@@ -387,7 +429,7 @@ DeleteVirtualRouterOutcome AppMeshClient::DeleteVirtualRouter(const DeleteVirtua
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
@@ -421,11 +463,49 @@ void AppMeshClient::DeleteVirtualRouterAsyncHelper(const DeleteVirtualRouterRequ
   handler(this, request, DeleteVirtualRouter(request), context);
 }
 
+DeleteVirtualServiceOutcome AppMeshClient::DeleteVirtualService(const DeleteVirtualServiceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualServices/";
+  ss << request.GetVirtualServiceName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVirtualServiceOutcome(DeleteVirtualServiceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVirtualServiceOutcome(outcome.GetError());
+  }
+}
+
+DeleteVirtualServiceOutcomeCallable AppMeshClient::DeleteVirtualServiceCallable(const DeleteVirtualServiceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVirtualServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVirtualService(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DeleteVirtualServiceAsync(const DeleteVirtualServiceRequest& request, const DeleteVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVirtualServiceAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DeleteVirtualServiceAsyncHelper(const DeleteVirtualServiceRequest& request, const DeleteVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVirtualService(request), context);
+}
+
 DescribeMeshOutcome AppMeshClient::DescribeMesh(const DescribeMeshRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -461,7 +541,7 @@ DescribeRouteOutcome AppMeshClient::DescribeRoute(const DescribeRouteRequest& re
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
   ss << request.GetVirtualRouterName();
@@ -501,7 +581,7 @@ DescribeVirtualNodeOutcome AppMeshClient::DescribeVirtualNode(const DescribeVirt
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
@@ -539,7 +619,7 @@ DescribeVirtualRouterOutcome AppMeshClient::DescribeVirtualRouter(const Describe
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
@@ -573,11 +653,49 @@ void AppMeshClient::DescribeVirtualRouterAsyncHelper(const DescribeVirtualRouter
   handler(this, request, DescribeVirtualRouter(request), context);
 }
 
+DescribeVirtualServiceOutcome AppMeshClient::DescribeVirtualService(const DescribeVirtualServiceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualServices/";
+  ss << request.GetVirtualServiceName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeVirtualServiceOutcome(DescribeVirtualServiceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeVirtualServiceOutcome(outcome.GetError());
+  }
+}
+
+DescribeVirtualServiceOutcomeCallable AppMeshClient::DescribeVirtualServiceCallable(const DescribeVirtualServiceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeVirtualServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeVirtualService(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::DescribeVirtualServiceAsync(const DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeVirtualServiceAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::DescribeVirtualServiceAsyncHelper(const DescribeVirtualServiceRequest& request, const DescribeVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeVirtualService(request), context);
+}
+
 ListMeshesOutcome AppMeshClient::ListMeshes(const ListMeshesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes";
+  ss << "/v20190125/meshes";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -612,7 +730,7 @@ ListRoutesOutcome AppMeshClient::ListRoutes(const ListRoutesRequest& request) co
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
   ss << request.GetVirtualRouterName();
@@ -651,7 +769,7 @@ ListVirtualNodesOutcome AppMeshClient::ListVirtualNodes(const ListVirtualNodesRe
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -688,7 +806,7 @@ ListVirtualRoutersOutcome AppMeshClient::ListVirtualRouters(const ListVirtualRou
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters";
   uri.SetPath(uri.GetPath() + ss.str());
@@ -721,11 +839,48 @@ void AppMeshClient::ListVirtualRoutersAsyncHelper(const ListVirtualRoutersReques
   handler(this, request, ListVirtualRouters(request), context);
 }
 
+ListVirtualServicesOutcome AppMeshClient::ListVirtualServices(const ListVirtualServicesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualServices";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListVirtualServicesOutcome(ListVirtualServicesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListVirtualServicesOutcome(outcome.GetError());
+  }
+}
+
+ListVirtualServicesOutcomeCallable AppMeshClient::ListVirtualServicesCallable(const ListVirtualServicesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListVirtualServicesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListVirtualServices(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::ListVirtualServicesAsync(const ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListVirtualServicesAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::ListVirtualServicesAsyncHelper(const ListVirtualServicesRequest& request, const ListVirtualServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListVirtualServices(request), context);
+}
+
 UpdateRouteOutcome AppMeshClient::UpdateRoute(const UpdateRouteRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouter/";
   ss << request.GetVirtualRouterName();
@@ -765,7 +920,7 @@ UpdateVirtualNodeOutcome AppMeshClient::UpdateVirtualNode(const UpdateVirtualNod
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualNodes/";
   ss << request.GetVirtualNodeName();
@@ -803,7 +958,7 @@ UpdateVirtualRouterOutcome AppMeshClient::UpdateVirtualRouter(const UpdateVirtua
 {
   Aws::Http::URI uri = m_uri;
   Aws::StringStream ss;
-  ss << "/meshes/";
+  ss << "/v20190125/meshes/";
   ss << request.GetMeshName();
   ss << "/virtualRouters/";
   ss << request.GetVirtualRouterName();
@@ -835,5 +990,43 @@ void AppMeshClient::UpdateVirtualRouterAsync(const UpdateVirtualRouterRequest& r
 void AppMeshClient::UpdateVirtualRouterAsyncHelper(const UpdateVirtualRouterRequest& request, const UpdateVirtualRouterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateVirtualRouter(request), context);
+}
+
+UpdateVirtualServiceOutcome AppMeshClient::UpdateVirtualService(const UpdateVirtualServiceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v20190125/meshes/";
+  ss << request.GetMeshName();
+  ss << "/virtualServices/";
+  ss << request.GetVirtualServiceName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateVirtualServiceOutcome(UpdateVirtualServiceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateVirtualServiceOutcome(outcome.GetError());
+  }
+}
+
+UpdateVirtualServiceOutcomeCallable AppMeshClient::UpdateVirtualServiceCallable(const UpdateVirtualServiceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVirtualServiceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVirtualService(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AppMeshClient::UpdateVirtualServiceAsync(const UpdateVirtualServiceRequest& request, const UpdateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVirtualServiceAsyncHelper( request, handler, context ); } );
+}
+
+void AppMeshClient::UpdateVirtualServiceAsyncHelper(const UpdateVirtualServiceRequest& request, const UpdateVirtualServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVirtualService(request), context);
 }
 

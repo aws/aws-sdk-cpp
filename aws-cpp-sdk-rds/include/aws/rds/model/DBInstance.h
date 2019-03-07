@@ -1621,19 +1621,28 @@ namespace Model
 
     /**
      * <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
-     * instance.</p>
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
+     * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see
+     * <a>DBCluster</a>.</p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
      * <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
-     * instance.</p>
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
+     * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see
+     * <a>DBCluster</a>.</p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
      * <p>Specifies whether tags are copied from the DB instance to snapshots of the DB
-     * instance.</p>
+     * instance.</p> <p> <b>Amazon Aurora</b> </p> <p>Not applicable. Copying tags to
+     * snapshots is managed by the DB cluster. Setting this value for an Aurora DB
+     * instance has no effect on the DB cluster setting. For more information, see
+     * <a>DBCluster</a>.</p>
      */
     inline DBInstance& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1747,7 +1756,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p>
      */
@@ -1757,7 +1766,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p>
      */
@@ -1767,7 +1776,7 @@ namespace Model
      * <p>A value that specifies the order in which an Aurora Replica is promoted to
      * the primary instance after a failure of the existing primary instance. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.FaultTolerance">
      * Fault Tolerance for an Aurora DB Cluster</a> in the <i>Amazon Aurora User
      * Guide</i>. </p>
      */
@@ -1986,7 +1995,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::Vector<Aws::String>& GetEnabledCloudwatchLogsExports() const{ return m_enabledCloudwatchLogsExports; }
@@ -1995,7 +2004,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = value; }
@@ -2004,7 +2013,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports = std::move(value); }
@@ -2013,7 +2022,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnabledCloudwatchLogsExports(value); return *this;}
@@ -2022,7 +2031,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& WithEnabledCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnabledCloudwatchLogsExports(std::move(value)); return *this;}
@@ -2031,7 +2040,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const Aws::String& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
@@ -2040,7 +2049,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(Aws::String&& value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(std::move(value)); return *this; }
@@ -2049,7 +2058,7 @@ namespace Model
      * <p>A list of log types that this DB instance is configured to export to
      * CloudWatch Logs.</p> <p>Log types vary by DB engine. For information about the
      * log types for each DB engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html">Amazon
      * RDS Database Log Files</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
@@ -2101,7 +2110,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
@@ -2109,7 +2118,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
@@ -2117,7 +2126,7 @@ namespace Model
     /**
      * <p>Indicates if the DB instance has deletion protection enabled. The database
      * can't be deleted when this value is set to true. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline DBInstance& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}

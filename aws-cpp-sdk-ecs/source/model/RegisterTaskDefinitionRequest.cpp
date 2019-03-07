@@ -38,7 +38,8 @@ RegisterTaskDefinitionRequest::RegisterTaskDefinitionRequest() :
     m_pidMode(PidMode::NOT_SET),
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false)
+    m_ipcModeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,12 @@ Aws::String RegisterTaskDefinitionRequest::SerializePayload() const
   if(m_ipcModeHasBeenSet)
   {
    payload.WithString("ipcMode", IpcModeMapper::GetNameForIpcMode(m_ipcMode));
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

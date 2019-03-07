@@ -30,13 +30,15 @@ namespace Model
 
 FunctionDefaultExecutionConfig::FunctionDefaultExecutionConfig() : 
     m_isolationMode(FunctionIsolationMode::NOT_SET),
-    m_isolationModeHasBeenSet(false)
+    m_isolationModeHasBeenSet(false),
+    m_runAsHasBeenSet(false)
 {
 }
 
 FunctionDefaultExecutionConfig::FunctionDefaultExecutionConfig(JsonView jsonValue) : 
     m_isolationMode(FunctionIsolationMode::NOT_SET),
-    m_isolationModeHasBeenSet(false)
+    m_isolationModeHasBeenSet(false),
+    m_runAsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ FunctionDefaultExecutionConfig& FunctionDefaultExecutionConfig::operator =(JsonV
     m_isolationModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RunAs"))
+  {
+    m_runAs = jsonValue.GetObject("RunAs");
+
+    m_runAsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +69,12 @@ JsonValue FunctionDefaultExecutionConfig::Jsonize() const
   if(m_isolationModeHasBeenSet)
   {
    payload.WithString("IsolationMode", FunctionIsolationModeMapper::GetNameForFunctionIsolationMode(m_isolationMode));
+  }
+
+  if(m_runAsHasBeenSet)
+  {
+   payload.WithObject("RunAs", m_runAs.Jsonize());
+
   }
 
   return payload;

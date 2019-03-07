@@ -127,19 +127,19 @@ namespace Model
 
     /**
      * <p>The maximum number of items to return with this call. The default value is
-     * 100 and the maximum value is 100.</p>
+     * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p>The maximum number of items to return with this call. The default value is
-     * 100 and the maximum value is 100.</p>
+     * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p>The maximum number of items to return with this call. The default value is
-     * 100 and the maximum value is 100.</p>
+     * <code>100</code> and the maximum value is <code>100</code>.</p>
      */
     inline DescribeLoadBalancerTargetGroupsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

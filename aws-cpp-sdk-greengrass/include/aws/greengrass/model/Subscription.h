@@ -148,37 +148,37 @@ namespace Model
 
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline Subscription& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline Subscription& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
 
     /**
-     * The subject of the message.
+     * The MQTT topic used to route the message.
      */
     inline Subscription& WithSubject(const char* value) { SetSubject(value); return *this;}
 

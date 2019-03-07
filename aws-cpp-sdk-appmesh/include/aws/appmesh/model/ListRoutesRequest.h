@@ -32,7 +32,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListRoutesInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutesInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API ListRoutesRequest : public AppMeshRequest
@@ -52,60 +52,60 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListRoutes</code> in
-     * paginated
-         output. When this parameter is used, <code>ListRoutes</code>
-     * only returns
-            <code>limit</code> results in a single page along with
-     * a <code>nextToken</code> response
-         element. The remaining results of the
-     * initial request can be seen by sending another
+     * <p>The maximum number of results returned by <code>ListRoutes</code> in
+     * paginated output.
+         When you use this parameter, <code>ListRoutes</code>
+     * returns only <code>limit</code>
+         results in a single page along with a
+     * <code>nextToken</code> response element. You can see the
+         remaining
+     * results of the initial request by sending another
            
      * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
      * This
-         value can be between 1 and 100. If this parameter is not
-        
-     * used, then <code>ListRoutes</code> returns up to 100 results and a
+         value can be between 1 and 100. If you don't use this parameter,
+ 
+     * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListRoutes</code> in
-     * paginated
-         output. When this parameter is used, <code>ListRoutes</code>
-     * only returns
-            <code>limit</code> results in a single page along with
-     * a <code>nextToken</code> response
-         element. The remaining results of the
-     * initial request can be seen by sending another
+     * <p>The maximum number of results returned by <code>ListRoutes</code> in
+     * paginated output.
+         When you use this parameter, <code>ListRoutes</code>
+     * returns only <code>limit</code>
+         results in a single page along with a
+     * <code>nextToken</code> response element. You can see the
+         remaining
+     * results of the initial request by sending another
            
      * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
      * This
-         value can be between 1 and 100. If this parameter is not
-        
-     * used, then <code>ListRoutes</code> returns up to 100 results and a
+         value can be between 1 and 100. If you don't use this parameter,
+ 
+     * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListRoutes</code> in
-     * paginated
-         output. When this parameter is used, <code>ListRoutes</code>
-     * only returns
-            <code>limit</code> results in a single page along with
-     * a <code>nextToken</code> response
-         element. The remaining results of the
-     * initial request can be seen by sending another
+     * <p>The maximum number of results returned by <code>ListRoutes</code> in
+     * paginated output.
+         When you use this parameter, <code>ListRoutes</code>
+     * returns only <code>limit</code>
+         results in a single page along with a
+     * <code>nextToken</code> response element. You can see the
+         remaining
+     * results of the initial request by sending another
            
      * <code>ListRoutes</code> request with the returned <code>nextToken</code> value.
      * This
-         value can be between 1 and 100. If this parameter is not
-        
-     * used, then <code>ListRoutes</code> returns up to 100 results and a
+         value can be between 1 and 100. If you don't use this parameter,
+ 
+     * <code>ListRoutes</code> returns up to 100 results and a
            
      * <code>nextToken</code> value if applicable.</p>
      */
@@ -234,37 +234,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline ListRoutesRequest& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline ListRoutesRequest& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to list routes.</p>
+     * <p>The name of the virtual router to list routes in.</p>
      */
     inline ListRoutesRequest& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
 

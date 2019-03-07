@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing the status of a service mesh.</p><p><h3>See Also:</h3>
    * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/MeshStatus">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/MeshStatus">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API MeshStatus

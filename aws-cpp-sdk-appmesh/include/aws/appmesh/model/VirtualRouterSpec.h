@@ -16,7 +16,7 @@
 #pragma once
 #include <aws/appmesh/AppMesh_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appmesh/model/VirtualRouterListener.h>
 #include <utility>
 
 namespace Aws
@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>An object representing the specification of a virtual router.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualRouterSpec">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterSpec">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API VirtualRouterSpec
@@ -50,49 +50,51 @@ namespace Model
 
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceNames() const{ return m_serviceNames; }
+    inline const Aws::Vector<VirtualRouterListener>& GetListeners() const{ return m_listeners; }
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline void SetServiceNames(const Aws::Vector<Aws::String>& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = value; }
+    inline void SetListeners(const Aws::Vector<VirtualRouterListener>& value) { m_listenersHasBeenSet = true; m_listeners = value; }
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline void SetServiceNames(Aws::Vector<Aws::String>&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::move(value); }
+    inline void SetListeners(Aws::Vector<VirtualRouterListener>&& value) { m_listenersHasBeenSet = true; m_listeners = std::move(value); }
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline VirtualRouterSpec& WithServiceNames(const Aws::Vector<Aws::String>& value) { SetServiceNames(value); return *this;}
+    inline VirtualRouterSpec& WithListeners(const Aws::Vector<VirtualRouterListener>& value) { SetListeners(value); return *this;}
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline VirtualRouterSpec& WithServiceNames(Aws::Vector<Aws::String>&& value) { SetServiceNames(std::move(value)); return *this;}
+    inline VirtualRouterSpec& WithListeners(Aws::Vector<VirtualRouterListener>&& value) { SetListeners(std::move(value)); return *this;}
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline VirtualRouterSpec& AddServiceNames(const Aws::String& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
+    inline VirtualRouterSpec& AddListeners(const VirtualRouterListener& value) { m_listenersHasBeenSet = true; m_listeners.push_back(value); return *this; }
 
     /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
+     * <p>The listeners that the virtual router is expected to receive inbound traffic
+     * from. Currently only one listener is supported per virtual router.</p>
      */
-    inline VirtualRouterSpec& AddServiceNames(Aws::String&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The service mesh service names to associate with the virtual router.</p>
-     */
-    inline VirtualRouterSpec& AddServiceNames(const char* value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
+    inline VirtualRouterSpec& AddListeners(VirtualRouterListener&& value) { m_listenersHasBeenSet = true; m_listeners.push_back(std::move(value)); return *this; }
 
   private:
 
-    Aws::Vector<Aws::String> m_serviceNames;
-    bool m_serviceNamesHasBeenSet;
+    Aws::Vector<VirtualRouterListener> m_listeners;
+    bool m_listenersHasBeenSet;
   };
 
 } // namespace Model

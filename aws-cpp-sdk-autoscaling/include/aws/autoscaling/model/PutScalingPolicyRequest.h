@@ -176,7 +176,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
@@ -186,7 +186,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
@@ -196,7 +196,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
@@ -206,7 +206,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
@@ -216,7 +216,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
@@ -226,7 +226,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
@@ -236,7 +236,7 @@ namespace Model
      * <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.</p>
      * <p>This parameter is supported if the policy type is <code>SimpleScaling</code>
      * or <code>StepScaling</code>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic
      * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
@@ -295,24 +295,24 @@ namespace Model
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p> <p>This parameter is required if the policy type is
-     * <code>SimpleScaling</code> and not supported otherwise.</p>
+     * the current capacity.</p> <p>Conditional: This parameter is required if the
+     * policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
      */
     inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p> <p>This parameter is required if the policy type is
-     * <code>SimpleScaling</code> and not supported otherwise.</p>
+     * the current capacity.</p> <p>Conditional: This parameter is required if the
+     * policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
      */
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
 
     /**
      * <p>The amount by which to scale, based on the specified adjustment type. A
      * positive value adds to the current capacity while a negative number removes from
-     * the current capacity.</p> <p>This parameter is required if the policy type is
-     * <code>SimpleScaling</code> and not supported otherwise.</p>
+     * the current capacity.</p> <p>Conditional: This parameter is required if the
+     * policy type is <code>SimpleScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
 
@@ -323,7 +323,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is
      * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline int GetCooldown() const{ return m_cooldown; }
@@ -334,7 +334,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is
      * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
@@ -345,7 +345,7 @@ namespace Model
      * default cooldown period for the group applies.</p> <p>This parameter is
      * supported if the policy type is <code>SimpleScaling</code>.</p> <p>For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
      * Cooldowns</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
@@ -417,49 +417,49 @@ namespace Model
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const{ return m_stepAdjustments; }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline void SetStepAdjustments(const Aws::Vector<StepAdjustment>& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::move(value); }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithStepAdjustments(const Aws::Vector<StepAdjustment>& value) { SetStepAdjustments(value); return *this;}
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(std::move(value)); return *this;}
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& AddStepAdjustments(const StepAdjustment& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
 
     /**
      * <p>A set of adjustments that enable you to scale based on the size of the alarm
-     * breach.</p> <p>This parameter is required if the policy type is
+     * breach.</p> <p>Conditional: This parameter is required if the policy type is
      * <code>StepScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
@@ -494,31 +494,36 @@ namespace Model
 
 
     /**
-     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
 
     /**
-     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
 
     /**
-     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
 
     /**
-     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
 
     /**
-     * <p>A target tracking policy.</p> <p>This parameter is required if the policy
+     * <p>A target tracking scaling policy. Includes support for predefined or
+     * customized metrics.</p> <p>Conditional: This parameter is required if the policy
      * type is <code>TargetTrackingScaling</code> and not supported otherwise.</p>
      */
     inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}

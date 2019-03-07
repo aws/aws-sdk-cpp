@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing a route returned by a list operation.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/RouteRef">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/RouteRef">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API RouteRef
@@ -85,37 +85,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline RouteRef& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline RouteRef& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which the route resides.</p>
+     * <p>The name of the service mesh that the route resides in.</p>
      */
     inline RouteRef& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 
@@ -157,37 +157,37 @@ namespace Model
 
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline RouteRef& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline RouteRef& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
 
     /**
-     * <p>The virtual router with which the route is associated.</p>
+     * <p>The virtual router that the route is associated with.</p>
      */
     inline RouteRef& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
 

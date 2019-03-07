@@ -34,9 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>An object representing a virtual node listener port mapping.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/PortMapping">AWS
+   * <p>An object representing a virtual node or virtual router listener port
+   * mapping.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/PortMapping">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API PortMapping

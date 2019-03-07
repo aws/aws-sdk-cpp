@@ -88,43 +88,64 @@ namespace Model
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The device name exposed to the EC2 instance (for example,
-     * <code>/dev/sdh</code> or <code>xvdh</code>).</p>
+     * <code>/dev/sdh</code> or <code>xvdh</code>). For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
+     * Naming on Linux Instances</a> in the <i>Amazon EC2 User Guide for Linux
+     * Instances</i>.</p>
      */
     inline BlockDeviceMapping& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 

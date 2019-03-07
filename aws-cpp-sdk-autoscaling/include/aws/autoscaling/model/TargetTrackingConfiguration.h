@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents a target tracking policy configuration to use with Amazon EC2 Auto
-   * Scaling.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents a target tracking scaling policy configuration to use with Amazon
+   * EC2 Auto Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -83,27 +83,32 @@ namespace Model
 
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline const CustomizedMetricSpecification& GetCustomizedMetricSpecification() const{ return m_customizedMetricSpecification; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = value; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { m_customizedMetricSpecificationHasBeenSet = true; m_customizedMetricSpecification = std::move(value); }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithCustomizedMetricSpecification(const CustomizedMetricSpecification& value) { SetCustomizedMetricSpecification(value); return *this;}
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithCustomizedMetricSpecification(CustomizedMetricSpecification&& value) { SetCustomizedMetricSpecification(std::move(value)); return *this;}
 
@@ -125,26 +130,29 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
-     * scaling in is disabled, the target tracking policy doesn't remove instances from
-     * the Auto Scaling group. Otherwise, the target tracking policy can remove
-     * instances from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking scaling policy is
+     * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
+     * remove instances from the Auto Scaling group. Otherwise, the target tracking
+     * scaling policy can remove instances from the Auto Scaling group. The default is
+     * disabled.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
 
     /**
-     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
-     * scaling in is disabled, the target tracking policy doesn't remove instances from
-     * the Auto Scaling group. Otherwise, the target tracking policy can remove
-     * instances from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking scaling policy is
+     * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
+     * remove instances from the Auto Scaling group. Otherwise, the target tracking
+     * scaling policy can remove instances from the Auto Scaling group. The default is
+     * disabled.</p>
      */
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
 
     /**
-     * <p>Indicates whether scaling in by the target tracking policy is disabled. If
-     * scaling in is disabled, the target tracking policy doesn't remove instances from
-     * the Auto Scaling group. Otherwise, the target tracking policy can remove
-     * instances from the Auto Scaling group. The default is disabled.</p>
+     * <p>Indicates whether scaling in by the target tracking scaling policy is
+     * disabled. If scaling in is disabled, the target tracking scaling policy doesn't
+     * remove instances from the Auto Scaling group. Otherwise, the target tracking
+     * scaling policy can remove instances from the Auto Scaling group. The default is
+     * disabled.</p>
      */
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 

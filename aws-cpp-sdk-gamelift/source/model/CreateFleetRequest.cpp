@@ -40,7 +40,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_peerVpcAwsAccountIdHasBeenSet(false),
     m_peerVpcIdHasBeenSet(false),
     m_fleetType(FleetType::NOT_SET),
-    m_fleetTypeHasBeenSet(false)
+    m_fleetTypeHasBeenSet(false),
+    m_instanceRoleArnHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,12 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_fleetTypeHasBeenSet)
   {
    payload.WithString("FleetType", FleetTypeMapper::GetNameForFleetType(m_fleetType));
+  }
+
+  if(m_instanceRoleArnHasBeenSet)
+  {
+   payload.WithString("InstanceRoleArn", m_instanceRoleArn);
+
   }
 
   return payload.View().WriteReadable();

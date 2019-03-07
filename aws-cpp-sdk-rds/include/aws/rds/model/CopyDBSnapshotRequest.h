@@ -442,9 +442,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
@@ -481,9 +481,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
@@ -520,9 +520,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
@@ -559,9 +559,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
@@ -598,9 +598,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
@@ -637,9 +637,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
@@ -676,9 +676,9 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:snapshot:mysql-instance1-snapshot-20161115</code>.
      * </p> </li> </ul> <p>To learn how to generate a Signature Version 4 signed
      * request, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
      * Requests: Using Query Parameters (AWS Signature Version 4)</a> and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
      * Version 4 Signing Process</a>. </p>
      */
     inline CopyDBSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
@@ -691,7 +691,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
@@ -703,7 +703,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
@@ -715,7 +715,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
@@ -727,7 +727,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
@@ -739,7 +739,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
@@ -751,7 +751,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
@@ -763,7 +763,7 @@ namespace Model
      * instance uses Transparent Data Encryption for Oracle or Microsoft SQL Server,
      * you must specify this option when copying across AWS Regions. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopySnapshot.Options">Option
      * Group Considerations</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline CopyDBSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}

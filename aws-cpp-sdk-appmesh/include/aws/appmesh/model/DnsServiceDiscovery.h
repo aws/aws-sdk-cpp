@@ -34,9 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The DNS service discovery information for your virtual node.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DnsServiceDiscovery">AWS
+   * <p>An object representing the DNS service discovery information for your
+   * virtual
+         node.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DnsServiceDiscovery">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API DnsServiceDiscovery
@@ -49,44 +50,44 @@ namespace Model
 
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetHostname() const{ return m_hostname; }
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
+    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
+    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline DnsServiceDiscovery& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+    inline DnsServiceDiscovery& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline DnsServiceDiscovery& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
+    inline DnsServiceDiscovery& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS service name for your virtual node.</p>
+     * <p>Specifies the DNS service discovery hostname for the virtual node. </p>
      */
-    inline DnsServiceDiscovery& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    inline DnsServiceDiscovery& WithHostname(const char* value) { SetHostname(value); return *this;}
 
   private:
 
-    Aws::String m_serviceName;
-    bool m_serviceNameHasBeenSet;
+    Aws::String m_hostname;
+    bool m_hostnameHasBeenSet;
   };
 
 } // namespace Model

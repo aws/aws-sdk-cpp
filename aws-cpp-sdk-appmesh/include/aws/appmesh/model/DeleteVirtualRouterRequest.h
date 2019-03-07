@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteVirtualRouterInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouterInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API DeleteVirtualRouterRequest : public AppMeshRequest
@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline DeleteVirtualRouterRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline DeleteVirtualRouterRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to delete the virtual router.</p>
+     * <p>The name of the service mesh to delete the virtual router in.</p>
      */
     inline DeleteVirtualRouterRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 

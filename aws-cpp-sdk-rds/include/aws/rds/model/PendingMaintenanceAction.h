@@ -52,44 +52,44 @@ namespace Model
 
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline void SetAction(Aws::String&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline void SetAction(const char* value) { m_actionHasBeenSet = true; m_action.assign(value); }
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline PendingMaintenanceAction& WithAction(const Aws::String& value) { SetAction(value); return *this;}
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline PendingMaintenanceAction& WithAction(Aws::String&& value) { SetAction(std::move(value)); return *this;}
 
     /**
-     * <p>The type of pending maintenance action that is available for the
-     * resource.</p>
+     * <p>The type of pending maintenance action that is available for the resource.
+     * Valid actions are <code>system-update</code> and <code>db-upgrade</code>.</p>
      */
     inline PendingMaintenanceAction& WithAction(const char* value) { SetAction(value); return *this;}
 

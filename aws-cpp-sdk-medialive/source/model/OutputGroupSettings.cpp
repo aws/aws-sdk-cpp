@@ -32,6 +32,7 @@ OutputGroupSettings::OutputGroupSettings() :
     m_archiveGroupSettingsHasBeenSet(false),
     m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
+    m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
@@ -42,6 +43,7 @@ OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) :
     m_archiveGroupSettingsHasBeenSet(false),
     m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
+    m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
@@ -70,6 +72,13 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_hlsGroupSettings = jsonValue.GetObject("hlsGroupSettings");
 
     m_hlsGroupSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaPackageGroupSettings"))
+  {
+    m_mediaPackageGroupSettings = jsonValue.GetObject("mediaPackageGroupSettings");
+
+    m_mediaPackageGroupSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("msSmoothGroupSettings"))
@@ -115,6 +124,12 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_hlsGroupSettingsHasBeenSet)
   {
    payload.WithObject("hlsGroupSettings", m_hlsGroupSettings.Jsonize());
+
+  }
+
+  if(m_mediaPackageGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("mediaPackageGroupSettings", m_mediaPackageGroupSettings.Jsonize());
 
   }
 

@@ -576,115 +576,80 @@ namespace Model
 
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline const Aws::String& GetPlacementGroup() const{ return m_placementGroup; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline void SetPlacementGroup(const Aws::String& value) { m_placementGroupHasBeenSet = true; m_placementGroup = value; }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline void SetPlacementGroup(Aws::String&& value) { m_placementGroupHasBeenSet = true; m_placementGroup = std::move(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline void SetPlacementGroup(const char* value) { m_placementGroupHasBeenSet = true; m_placementGroup.assign(value); }
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const Aws::String& value) { SetPlacementGroup(value); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(Aws::String&& value) { SetPlacementGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the placement group into which to launch your instances, if any.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
-     * Groups</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * <p>The name of the placement group into which to launch your instances, if
+     * any.</p>
      */
     inline AutoScalingGroup& WithPlacementGroup(const char* value) { SetPlacementGroup(value); return *this;}
 
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline const Aws::String& GetVPCZoneIdentifier() const{ return m_vPCZoneIdentifier; }
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline void SetVPCZoneIdentifier(const Aws::String& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = value; }
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline void SetVPCZoneIdentifier(Aws::String&& value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier = std::move(value); }
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline void SetVPCZoneIdentifier(const char* value) { m_vPCZoneIdentifierHasBeenSet = true; m_vPCZoneIdentifier.assign(value); }
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline AutoScalingGroup& WithVPCZoneIdentifier(const Aws::String& value) { SetVPCZoneIdentifier(value); return *this;}
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline AutoScalingGroup& WithVPCZoneIdentifier(Aws::String&& value) { SetVPCZoneIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>One or more subnet IDs, if applicable, separated by commas.</p> <p>If you
-     * specify <code>VPCZoneIdentifier</code> and <code>AvailabilityZones</code>,
-     * ensure that the Availability Zones of the subnets match the values for
-     * <code>AvailabilityZones</code>.</p>
+     * <p>One or more subnet IDs, if applicable, separated by commas.</p>
      */
     inline AutoScalingGroup& WithVPCZoneIdentifier(const char* value) { SetVPCZoneIdentifier(value); return *this;}
 
@@ -847,25 +812,19 @@ namespace Model
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in.</p>
      */
     inline bool GetNewInstancesProtectedFromScaleIn() const{ return m_newInstancesProtectedFromScaleIn; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in.</p>
      */
     inline void SetNewInstancesProtectedFromScaleIn(bool value) { m_newInstancesProtectedFromScaleInHasBeenSet = true; m_newInstancesProtectedFromScaleIn = value; }
 
     /**
      * <p>Indicates whether newly launched instances are protected from termination by
-     * Auto Scaling when scaling in.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
-     * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * Amazon EC2 Auto Scaling when scaling in.</p>
      */
     inline AutoScalingGroup& WithNewInstancesProtectedFromScaleIn(bool value) { SetNewInstancesProtectedFromScaleIn(value); return *this;}
 

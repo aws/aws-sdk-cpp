@@ -50,7 +50,7 @@ VirtualNodeSpec& VirtualNodeSpec::operator =(JsonView jsonValue)
     Array<JsonView> backendsJsonList = jsonValue.GetArray("backends");
     for(unsigned backendsIndex = 0; backendsIndex < backendsJsonList.GetLength(); ++backendsIndex)
     {
-      m_backends.push_back(backendsJsonList[backendsIndex].AsString());
+      m_backends.push_back(backendsJsonList[backendsIndex].AsObject());
     }
     m_backendsHasBeenSet = true;
   }
@@ -84,7 +84,7 @@ JsonValue VirtualNodeSpec::Jsonize() const
    Array<JsonValue> backendsJsonList(m_backends.size());
    for(unsigned backendsIndex = 0; backendsIndex < backendsJsonList.GetLength(); ++backendsIndex)
    {
-     backendsJsonList[backendsIndex].AsString(m_backends[backendsIndex]);
+     backendsJsonList[backendsIndex].AsObject(m_backends[backendsIndex].Jsonize());
    }
    payload.WithArray("backends", std::move(backendsJsonList));
 

@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * Configuration information that specifies how the Lambda function runs.
-   * <p><h3>See Also:</h3>   <a
+   * Configuration information that specifies how a Lambda function runs. <p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/FunctionExecutionConfig">AWS
    * API Reference</a></p>
    */

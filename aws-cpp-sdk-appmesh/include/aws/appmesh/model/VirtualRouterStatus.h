@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing the status of a virtual router. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/VirtualRouterStatus">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/VirtualRouterStatus">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API VirtualRouterStatus

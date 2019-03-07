@@ -332,7 +332,7 @@ namespace Model
    * Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing.</p> <p>For more
    * information, including information about granting IAM users required permissions
    * for Amazon EC2 Auto Scaling actions, see the <a
-   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">Amazon
    * EC2 Auto Scaling User Guide</a>.</p>
    */
   class AWS_AUTOSCALING_API AutoScalingClient : public Aws::Client::AWSXMLClient
@@ -380,7 +380,7 @@ namespace Model
          * registered with the load balancer. If there are target groups attached to your
          * Auto Scaling group, the instances are also registered with the target
          * groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">AWS
@@ -398,7 +398,7 @@ namespace Model
          * registered with the load balancer. If there are target groups attached to your
          * Auto Scaling group, the instances are also registered with the target
          * groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">AWS
@@ -418,7 +418,7 @@ namespace Model
          * registered with the load balancer. If there are target groups attached to your
          * Auto Scaling group, the instances are also registered with the target
          * groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-instance-asg.html">Attach
          * EC2 Instances to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachInstances">AWS
@@ -436,7 +436,7 @@ namespace Model
          * Application Load Balancers and Network Load Balancers, instances are registered
          * as targets with a target group. With Classic Load Balancers, instances are
          * registered with the load balancer. For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
@@ -452,7 +452,7 @@ namespace Model
          * Application Load Balancers and Network Load Balancers, instances are registered
          * as targets with a target group. With Classic Load Balancers, instances are
          * registered with the load balancer. For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
@@ -470,7 +470,7 @@ namespace Model
          * Application Load Balancers and Network Load Balancers, instances are registered
          * as targets with a target group. With Classic Load Balancers, instances are
          * registered with the load balancer. For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancerTargetGroups">AWS
@@ -487,7 +487,7 @@ namespace Model
          * balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach
          * the load balancer from the Auto Scaling group, use
          * <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
@@ -502,7 +502,7 @@ namespace Model
          * balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach
          * the load balancer from the Auto Scaling group, use
          * <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
@@ -519,7 +519,7 @@ namespace Model
          * balancers for an Auto Scaling group, use <a>DescribeLoadBalancers</a>. To detach
          * the load balancer from the Auto Scaling group, use
          * <a>DetachLoadBalancers</a>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/attach-load-balancer-asg.html">Attaching
          * a Load Balancer to Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachLoadBalancers">AWS
@@ -603,8 +603,8 @@ namespace Model
          * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
          * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">AWS
          * API Reference</a></p>
@@ -626,8 +626,8 @@ namespace Model
          * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
          * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">AWS
          * API Reference</a></p>
@@ -651,8 +651,8 @@ namespace Model
          * state.</p> </li> <li> <p> <b>If you finish before the timeout period ends,
          * complete the lifecycle action.</b> </p> </li> </ol> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-         * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CompleteLifecycleAction">AWS
          * API Reference</a></p>
@@ -666,11 +666,8 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. For
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -682,11 +679,8 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. For
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -700,11 +694,8 @@ namespace Model
          * <p>If you exceed your maximum limit of Auto Scaling groups, the call fails. For
          * information about viewing this limit, see <a>DescribeAccountLimits</a>. For
          * information about updating this limit, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling Groups</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup">AWS
          * API Reference</a></p>
@@ -718,10 +709,10 @@ namespace Model
          * launch configurations, the call fails. For information about viewing this limit,
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">AWS
@@ -734,10 +725,10 @@ namespace Model
          * launch configurations, the call fails. For information about viewing this limit,
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">AWS
@@ -752,10 +743,10 @@ namespace Model
          * launch configurations, the call fails. For information about viewing this limit,
          * see <a>DescribeAccountLimits</a>. For information about updating this limit, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchConfiguration.html">Launch
          * Configurations</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateLaunchConfiguration">AWS
@@ -770,7 +761,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">AWS
@@ -783,7 +774,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">AWS
@@ -798,7 +789,7 @@ namespace Model
          * specify a tag with a key that already exists, the operation overwrites the
          * previous tag definition, and you do not get an error message.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html">Tagging
          * Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateOrUpdateTags">AWS
@@ -957,18 +948,18 @@ namespace Model
         virtual void DeleteNotificationConfigurationAsync(const Model::DeleteNotificationConfigurationRequest& request, const DeleteNotificationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
-         * the underlying alarm action, but does not delete the alarm, even if it no longer
-         * has an associated action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified scaling policy.</p> <p>Deleting a policy deletes the
+         * underlying alarm action, but does not delete the alarm, even if it no longer has
+         * an associated action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePolicyOutcome DeletePolicy(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
-         * the underlying alarm action, but does not delete the alarm, even if it no longer
-         * has an associated action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified scaling policy.</p> <p>Deleting a policy deletes the
+         * underlying alarm action, but does not delete the alarm, even if it no longer has
+         * an associated action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -977,9 +968,9 @@ namespace Model
         virtual Model::DeletePolicyOutcomeCallable DeletePolicyCallable(const Model::DeletePolicyRequest& request) const;
 
         /**
-         * <p>Deletes the specified Auto Scaling policy.</p> <p>Deleting a policy deletes
-         * the underlying alarm action, but does not delete the alarm, even if it no longer
-         * has an associated action.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified scaling policy.</p> <p>Deleting a policy deletes the
+         * underlying alarm action, but does not delete the alarm, even if it no longer has
+         * an associated action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DeletePolicy">AWS
          * API Reference</a></p>
          *
@@ -1038,9 +1029,10 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the current Auto Scaling resource limits for your AWS account.</p>
-         * <p>For information about requesting an increase in these limits, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
+         * account.</p> <p>For information about requesting an increase in these limits,
+         * see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
@@ -1049,9 +1041,10 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcome DescribeAccountLimits(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Auto Scaling resource limits for your AWS account.</p>
-         * <p>For information about requesting an increase in these limits, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
+         * account.</p> <p>For information about requesting an increase in these limits,
+         * see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
@@ -1062,9 +1055,10 @@ namespace Model
         virtual Model::DescribeAccountLimitsOutcomeCallable DescribeAccountLimitsCallable(const Model::DescribeAccountLimitsRequest& request) const;
 
         /**
-         * <p>Describes the current Auto Scaling resource limits for your AWS account.</p>
-         * <p>For information about requesting an increase in these limits, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
+         * <p>Describes the current Amazon EC2 Auto Scaling resource limits for your AWS
+         * account.</p> <p>For information about requesting an increase in these limits,
+         * see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html">Amazon
          * EC2 Auto Scaling Limits</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeAccountLimits">AWS
@@ -1552,7 +1546,7 @@ namespace Model
         /**
          * <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
          * Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2
          * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">AWS
@@ -1563,7 +1557,7 @@ namespace Model
         /**
          * <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
          * Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2
          * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">AWS
@@ -1576,7 +1570,7 @@ namespace Model
         /**
          * <p>Describes the termination policies supported by Amazon EC2 Auto Scaling.</p>
          * <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
          * Which Auto Scaling Instances Terminate During Scale In</a> in the <i>Amazon EC2
          * Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTerminationPolicyTypes">AWS
@@ -1595,7 +1589,7 @@ namespace Model
          * Scaling group, the instances are deregistered from the load balancer. If there
          * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">AWS
@@ -1612,7 +1606,7 @@ namespace Model
          * Scaling group, the instances are deregistered from the load balancer. If there
          * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">AWS
@@ -1631,7 +1625,7 @@ namespace Model
          * Scaling group, the instances are deregistered from the load balancer. If there
          * are target groups attached to the Auto Scaling group, the instances are
          * deregistered from the target groups.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/detach-instance-asg.html">Detach
          * EC2 Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachInstances">AWS
@@ -1746,7 +1740,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">AWS
@@ -1757,7 +1751,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">AWS
@@ -1770,7 +1764,7 @@ namespace Model
         /**
          * <p>Enables group metrics for the specified Auto Scaling group. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html">Monitoring
          * Your Auto Scaling Groups and Instances</a> in the <i>Amazon EC2 Auto Scaling
          * User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnableMetricsCollection">AWS
@@ -1783,7 +1777,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
@@ -1794,7 +1788,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
@@ -1807,7 +1801,7 @@ namespace Model
         /**
          * <p>Moves the specified instances into the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS
@@ -1845,7 +1839,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
@@ -1856,7 +1850,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
@@ -1869,7 +1863,7 @@ namespace Model
         /**
          * <p>Moves the specified instances out of the standby state.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ExitStandby">AWS
@@ -1882,25 +1876,28 @@ namespace Model
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
          * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance that is not actively in service; for example, either when the instance
-         * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
-         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * instance when the instance launches (before it is put into service) or as the
+         * instance terminates (before it is fully terminated).</p> <p>This step is a part
+         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
+         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
+         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
          * notifications to the target.</p> </li> <li> <p> <b>Create the lifecycle hook.
          * Specify whether the hook is used when the instances launch or terminate.</b>
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
-         * to keep the instance in a pending state.</p> </li> <li> <p>If you finish before
-         * the timeout period ends, complete the lifecycle action.</p> </li> </ol> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * to keep the instance in a pending state using using
+         * <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you finish before
+         * the timeout period ends, complete the lifecycle action using
+         * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by
-         * default is 50 per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>  
-         * <a
+         * default is 50 per Auto Scaling group, the call fails.</p> <p>You can view the
+         * lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
+         * If you are no longer using a lifecycle hook, you can delete it using
+         * <a>DeleteLifecycleHook</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">AWS
          * API Reference</a></p>
          */
@@ -1909,25 +1906,28 @@ namespace Model
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
          * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance that is not actively in service; for example, either when the instance
-         * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
-         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * instance when the instance launches (before it is put into service) or as the
+         * instance terminates (before it is fully terminated).</p> <p>This step is a part
+         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
+         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
+         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
          * notifications to the target.</p> </li> <li> <p> <b>Create the lifecycle hook.
          * Specify whether the hook is used when the instances launch or terminate.</b>
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
-         * to keep the instance in a pending state.</p> </li> <li> <p>If you finish before
-         * the timeout period ends, complete the lifecycle action.</p> </li> </ol> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * to keep the instance in a pending state using using
+         * <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you finish before
+         * the timeout period ends, complete the lifecycle action using
+         * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by
-         * default is 50 per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>  
-         * <a
+         * default is 50 per Auto Scaling group, the call fails.</p> <p>You can view the
+         * lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
+         * If you are no longer using a lifecycle hook, you can delete it using
+         * <a>DeleteLifecycleHook</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">AWS
          * API Reference</a></p>
          *
@@ -1938,25 +1938,28 @@ namespace Model
         /**
          * <p>Creates or updates a lifecycle hook for the specified Auto Scaling group.</p>
          * <p>A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an
-         * instance that is not actively in service; for example, either when the instance
-         * launches or before the instance terminates.</p> <p>This step is a part of the
-         * procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol> <li>
-         * <p>(Optional) Create a Lambda function and a rule that allows CloudWatch Events
-         * to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
+         * instance when the instance launches (before it is put into service) or as the
+         * instance terminates (before it is fully terminated).</p> <p>This step is a part
+         * of the procedure for adding a lifecycle hook to an Auto Scaling group:</p> <ol>
+         * <li> <p>(Optional) Create a Lambda function and a rule that allows CloudWatch
+         * Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or
          * terminates instances.</p> </li> <li> <p>(Optional) Create a notification target
          * and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS
          * topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle
          * notifications to the target.</p> </li> <li> <p> <b>Create the lifecycle hook.
          * Specify whether the hook is used when the instances launch or terminate.</b>
          * </p> </li> <li> <p>If you need more time, record the lifecycle action heartbeat
-         * to keep the instance in a pending state.</p> </li> <li> <p>If you finish before
-         * the timeout period ends, complete the lifecycle action.</p> </li> </ol> <p>For
-         * more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
+         * to keep the instance in a pending state using using
+         * <a>RecordLifecycleActionHeartbeat</a>.</p> </li> <li> <p>If you finish before
+         * the timeout period ends, complete the lifecycle action using
+         * <a>CompleteLifecycleAction</a>.</p> </li> </ol> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Amazon
          * EC2 Auto Scaling Lifecycle Hooks</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p> <p>If you exceed your maximum limit of lifecycle hooks, which by
-         * default is 50 per Auto Scaling group, the call fails.</p><p><h3>See Also:</h3>  
-         * <a
+         * default is 50 per Auto Scaling group, the call fails.</p> <p>You can view the
+         * lifecycle hooks for an Auto Scaling group using <a>DescribeLifecycleHooks</a>.
+         * If you are no longer using a lifecycle hook, you can delete it using
+         * <a>DeleteLifecycleHook</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutLifecycleHook">AWS
          * API Reference</a></p>
          *
@@ -1969,7 +1972,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
          * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
@@ -1982,7 +1985,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
          * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
@@ -1997,7 +2000,7 @@ namespace Model
          * take place. Subscribers to the specified topic can have messages delivered to an
          * endpoint such as a web server or an email address.</p> <p>This configuration
          * overwrites any existing configuration.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ASGettingNotifications.html">Getting
          * Amazon SNS Notifications When Your Auto Scaling Group Scales</a> in the
          * <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutNotificationConfiguration">AWS
@@ -2045,7 +2048,7 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
          * you leave a parameter unspecified when updating a scheduled scaling action, the
          * corresponding value remains unchanged.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
@@ -2057,7 +2060,7 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
          * you leave a parameter unspecified when updating a scheduled scaling action, the
          * corresponding value remains unchanged.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
@@ -2071,7 +2074,7 @@ namespace Model
          * <p>Creates or updates a scheduled scaling action for an Auto Scaling group. If
          * you leave a parameter unspecified when updating a scheduled scaling action, the
          * corresponding value remains unchanged.</p> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/schedule_time.html">Scheduled
          * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScheduledUpdateGroupAction">AWS
@@ -2096,7 +2099,7 @@ namespace Model
          * record the lifecycle action heartbeat to keep the instance in a pending
          * state.</b> </p> </li> <li> <p>If you finish before the timeout period ends,
          * complete the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
@@ -2119,7 +2122,7 @@ namespace Model
          * record the lifecycle action heartbeat to keep the instance in a pending
          * state.</b> </p> </li> <li> <p>If you finish before the timeout period ends,
          * complete the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
@@ -2144,7 +2147,7 @@ namespace Model
          * record the lifecycle action heartbeat to keep the instance in a pending
          * state.</b> </p> </li> <li> <p>If you finish before the timeout period ends,
          * complete the lifecycle action.</p> </li> </ol> <p>For more information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
          * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/RecordLifecycleActionHeartbeat">AWS
@@ -2158,7 +2161,7 @@ namespace Model
          * <p>Resumes the specified suspended automatic scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">AWS
@@ -2170,7 +2173,7 @@ namespace Model
          * <p>Resumes the specified suspended automatic scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">AWS
@@ -2184,7 +2187,7 @@ namespace Model
          * <p>Resumes the specified suspended automatic scaling processes, or all suspended
          * process, for the specified Auto Scaling group.</p> <p>For more information, see
          * <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ResumeProcesses">AWS
@@ -2197,7 +2200,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
          * Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">AWS
@@ -2208,7 +2211,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
          * Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">AWS
@@ -2221,7 +2224,7 @@ namespace Model
         /**
          * <p>Sets the size of the specified Auto Scaling group.</p> <p>For more
          * information about desired capacity, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html">What
          * Is Amazon EC2 Auto Scaling?</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetDesiredCapacity">AWS
@@ -2234,9 +2237,9 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-         * Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+         * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">AWS
          * API Reference</a></p>
          */
@@ -2245,9 +2248,9 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-         * Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+         * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">AWS
          * API Reference</a></p>
          *
@@ -2258,9 +2261,9 @@ namespace Model
         /**
          * <p>Sets the health status of the specified instance.</p> <p>For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
-         * Checks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+         * Checks for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceHealth">AWS
          * API Reference</a></p>
          *
@@ -2272,7 +2275,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
@@ -2284,7 +2287,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
@@ -2298,7 +2301,7 @@ namespace Model
          * <p>Updates the instance protection settings of the specified instances.</p>
          * <p>For more information about preventing instances that are part of an Auto
          * Scaling group from terminating on scale in, see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
          * Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SetInstanceProtection">AWS
@@ -2315,7 +2318,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">AWS
@@ -2330,7 +2333,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">AWS
@@ -2347,7 +2350,7 @@ namespace Model
          * other process types from functioning properly.</p> <p>To resume processes that
          * have been suspended, use <a>ResumeProcesses</a>.</p> <p>For more information,
          * see <a
-         * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
          * and Resuming Scaling Processes</a> in the <i>Amazon EC2 Auto Scaling User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/SuspendProcesses">AWS

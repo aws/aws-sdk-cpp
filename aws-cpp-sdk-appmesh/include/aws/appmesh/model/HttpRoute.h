@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>An object representing the HTTP routing specification for a
    * route.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HttpRoute">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/HttpRoute">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API HttpRoute

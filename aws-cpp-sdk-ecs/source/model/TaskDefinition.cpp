@@ -50,7 +50,8 @@ TaskDefinition::TaskDefinition() :
     m_pidMode(PidMode::NOT_SET),
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false)
+    m_ipcModeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -76,7 +77,8 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_pidMode(PidMode::NOT_SET),
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
-    m_ipcModeHasBeenSet(false)
+    m_ipcModeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +222,13 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_ipcModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("proxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -353,6 +362,12 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_ipcModeHasBeenSet)
   {
    payload.WithString("ipcMode", IpcModeMapper::GetNameForIpcMode(m_ipcMode));
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+
   }
 
   return payload;

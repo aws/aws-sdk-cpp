@@ -86,7 +86,9 @@ DBCluster::DBCluster() :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false)
+    m_httpEndpointEnabledHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false)
 {
 }
 
@@ -146,7 +148,9 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false)
+    m_httpEndpointEnabledHasBeenSet(false),
+    m_copyTagsToSnapshot(false),
+    m_copyTagsToSnapshotHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -475,6 +479,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_httpEndpointEnabled = StringUtils::ConvertToBool(StringUtils::Trim(httpEndpointEnabledNode.GetText().c_str()).c_str());
       m_httpEndpointEnabledHasBeenSet = true;
     }
+    XmlNode copyTagsToSnapshotNode = resultNode.FirstChild("CopyTagsToSnapshot");
+    if(!copyTagsToSnapshotNode.IsNull())
+    {
+      m_copyTagsToSnapshot = StringUtils::ConvertToBool(StringUtils::Trim(copyTagsToSnapshotNode.GetText().c_str()).c_str());
+      m_copyTagsToSnapshotHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -749,6 +759,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
   }
 
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -974,6 +989,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_httpEndpointEnabledHasBeenSet)
   {
       oStream << location << ".HttpEndpointEnabled=" << std::boolalpha << m_httpEndpointEnabled << "&";
+  }
+  if(m_copyTagsToSnapshotHasBeenSet)
+  {
+      oStream << location << ".CopyTagsToSnapshot=" << std::boolalpha << m_copyTagsToSnapshot << "&";
   }
 }
 

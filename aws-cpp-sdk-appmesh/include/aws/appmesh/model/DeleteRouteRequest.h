@@ -28,7 +28,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/DeleteRouteInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRouteInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API DeleteRouteRequest : public AppMeshRequest
@@ -46,37 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to delete the route.</p>
+     * <p>The name of the service mesh to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 
@@ -118,37 +118,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the virtual router in which to delete the route.</p>
+     * <p>The name of the virtual router to delete the route in.</p>
      */
     inline DeleteRouteRequest& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
 

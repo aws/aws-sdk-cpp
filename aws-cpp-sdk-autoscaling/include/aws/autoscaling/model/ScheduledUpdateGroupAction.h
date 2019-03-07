@@ -186,73 +186,68 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the action is scheduled to begin. This date and time
-     * can be up to one month in the future.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p>
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. This date and time
-     * can be up to one month in the future.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p>
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. This date and time
-     * can be up to one month in the future.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p>
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to begin. This date and time
-     * can be up to one month in the future.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p>
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline ScheduledUpdateGroupAction& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to begin. This date and time
-     * can be up to one month in the future.</p> <p>When <code>StartTime</code> and
-     * <code>EndTime</code> are specified with <code>Recurrence</code>, they form the
-     * boundaries of when the recurring action starts and stops.</p>
+     * <p>The date and time that the action is scheduled to begin. </p> <p>When
+     * <code>StartTime</code> and <code>EndTime</code> are specified with
+     * <code>Recurrence</code>, they form the boundaries of when the recurring action
+     * starts and stops.</p>
      */
     inline ScheduledUpdateGroupAction& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the action is scheduled to end. This date and time can
-     * be up to one month in the future.</p>
+     * <p>The date and time that the action is scheduled to end. </p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The date and time that the action is scheduled to end. This date and time can
-     * be up to one month in the future.</p>
+     * <p>The date and time that the action is scheduled to end. </p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The date and time that the action is scheduled to end. This date and time can
-     * be up to one month in the future.</p>
+     * <p>The date and time that the action is scheduled to end. </p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The date and time that the action is scheduled to end. This date and time can
-     * be up to one month in the future.</p>
+     * <p>The date and time that the action is scheduled to end. </p>
      */
     inline ScheduledUpdateGroupAction& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The date and time that the action is scheduled to end. This date and time can
-     * be up to one month in the future.</p>
+     * <p>The date and time that the action is scheduled to end. </p>
      */
     inline ScheduledUpdateGroupAction& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

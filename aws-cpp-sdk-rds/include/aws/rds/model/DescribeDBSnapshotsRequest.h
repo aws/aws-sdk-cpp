@@ -186,15 +186,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -209,15 +214,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -232,15 +242,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -255,15 +270,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -278,15 +298,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -301,15 +326,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when
@@ -324,15 +354,20 @@ namespace Model
      * <p> <code>manual</code> - Return all DB snapshots that have been taken by my AWS
      * account.</p> </li> <li> <p> <code>shared</code> - Return all manual DB snapshots
      * that have been shared to my AWS account.</p> </li> <li> <p> <code>public</code>
-     * - Return all DB snapshots that have been marked as public.</p> </li> </ul> <p>If
-     * you don't specify a <code>SnapshotType</code> value, then both automated and
-     * manual snapshots are returned. Shared and public DB snapshots are not included
-     * in the returned results by default. You can include shared snapshots with these
-     * results by setting the <code>IncludeShared</code> parameter to
-     * <code>true</code>. You can include public snapshots with these results by
-     * setting the <code>IncludePublic</code> parameter to <code>true</code>.</p>
-     * <p>The <code>IncludeShared</code> and <code>IncludePublic</code> parameters
-     * don't apply for <code>SnapshotType</code> values of <code>manual</code> or
+     * - Return all DB snapshots that have been marked as public.</p> </li> <li> <p>
+     * <code>awsbackup</code> - Return the DB snapshots managed by the AWS Backup
+     * service.</p> <p>For information about AWS Backup, see the <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html">
+     * <i>AWS Backup Developer Guide.</i> </a> </p> <p>The <code>awsbackup</code> type
+     * does not apply to Aurora.</p> </li> </ul> <p>If you don't specify a
+     * <code>SnapshotType</code> value, then both automated and manual snapshots are
+     * returned. Shared and public DB snapshots are not included in the returned
+     * results by default. You can include shared snapshots with these results by
+     * setting the <code>IncludeShared</code> parameter to <code>true</code>. You can
+     * include public snapshots with these results by setting the
+     * <code>IncludePublic</code> parameter to <code>true</code>.</p> <p>The
+     * <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
+     * for <code>SnapshotType</code> values of <code>manual</code> or
      * <code>automated</code>. The <code>IncludePublic</code> parameter doesn't apply
      * when <code>SnapshotType</code> is set to <code>shared</code>. The
      * <code>IncludeShared</code> parameter doesn't apply when

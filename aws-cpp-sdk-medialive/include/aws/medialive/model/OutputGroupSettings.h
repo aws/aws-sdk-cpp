@@ -18,6 +18,7 @@
 #include <aws/medialive/model/ArchiveGroupSettings.h>
 #include <aws/medialive/model/FrameCaptureGroupSettings.h>
 #include <aws/medialive/model/HlsGroupSettings.h>
+#include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MsSmoothGroupSettings.h>
 #include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/medialive/model/UdpGroupSettings.h>
@@ -101,6 +102,22 @@ namespace Model
 
 
     
+    inline const MediaPackageGroupSettings& GetMediaPackageGroupSettings() const{ return m_mediaPackageGroupSettings; }
+
+    
+    inline void SetMediaPackageGroupSettings(const MediaPackageGroupSettings& value) { m_mediaPackageGroupSettingsHasBeenSet = true; m_mediaPackageGroupSettings = value; }
+
+    
+    inline void SetMediaPackageGroupSettings(MediaPackageGroupSettings&& value) { m_mediaPackageGroupSettingsHasBeenSet = true; m_mediaPackageGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithMediaPackageGroupSettings(const MediaPackageGroupSettings& value) { SetMediaPackageGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithMediaPackageGroupSettings(MediaPackageGroupSettings&& value) { SetMediaPackageGroupSettings(std::move(value)); return *this;}
+
+
+    
     inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const{ return m_msSmoothGroupSettings; }
 
     
@@ -157,6 +174,9 @@ namespace Model
 
     HlsGroupSettings m_hlsGroupSettings;
     bool m_hlsGroupSettingsHasBeenSet;
+
+    MediaPackageGroupSettings m_mediaPackageGroupSettings;
+    bool m_mediaPackageGroupSettingsHasBeenSet;
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
     bool m_msSmoothGroupSettingsHasBeenSet;

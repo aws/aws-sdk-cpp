@@ -29,23 +29,23 @@ namespace Model
 {
 
 DnsServiceDiscovery::DnsServiceDiscovery() : 
-    m_serviceNameHasBeenSet(false)
+    m_hostnameHasBeenSet(false)
 {
 }
 
 DnsServiceDiscovery::DnsServiceDiscovery(JsonView jsonValue) : 
-    m_serviceNameHasBeenSet(false)
+    m_hostnameHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DnsServiceDiscovery& DnsServiceDiscovery::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("serviceName"))
+  if(jsonValue.ValueExists("hostname"))
   {
-    m_serviceName = jsonValue.GetString("serviceName");
+    m_hostname = jsonValue.GetString("hostname");
 
-    m_serviceNameHasBeenSet = true;
+    m_hostnameHasBeenSet = true;
   }
 
   return *this;
@@ -55,9 +55,9 @@ JsonValue DnsServiceDiscovery::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_serviceNameHasBeenSet)
+  if(m_hostnameHasBeenSet)
   {
-   payload.WithString("serviceName", m_serviceName);
+   payload.WithString("hostname", m_hostname);
 
   }
 

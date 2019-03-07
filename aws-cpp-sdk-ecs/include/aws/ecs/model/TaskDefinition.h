@@ -21,6 +21,7 @@
 #include <aws/ecs/model/TaskDefinitionStatus.h>
 #include <aws/ecs/model/PidMode.h>
 #include <aws/ecs/model/IpcMode.h>
+#include <aws/ecs/model/ProxyConfiguration.h>
 #include <aws/ecs/model/ContainerDefinition.h>
 #include <aws/ecs/model/Volume.h>
 #include <aws/ecs/model/Attribute.h>
@@ -1328,6 +1329,32 @@ namespace Model
      */
     inline TaskDefinition& WithIpcMode(IpcMode&& value) { SetIpcMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const ProxyConfiguration& GetProxyConfiguration() const{ return m_proxyConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline void SetProxyConfiguration(const ProxyConfiguration& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetProxyConfiguration(ProxyConfiguration&& value) { m_proxyConfigurationHasBeenSet = true; m_proxyConfiguration = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline TaskDefinition& WithProxyConfiguration(const ProxyConfiguration& value) { SetProxyConfiguration(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline TaskDefinition& WithProxyConfiguration(ProxyConfiguration&& value) { SetProxyConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_taskDefinitionArn;
@@ -1380,6 +1407,9 @@ namespace Model
 
     IpcMode m_ipcMode;
     bool m_ipcModeHasBeenSet;
+
+    ProxyConfiguration m_proxyConfiguration;
+    bool m_proxyConfigurationHasBeenSet;
   };
 
 } // namespace Model

@@ -38,7 +38,7 @@ namespace Model
 {
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodesOutput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodesOutput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API ListVirtualNodesResult
@@ -54,8 +54,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -67,8 +67,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -80,8 +80,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -93,8 +93,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -106,8 +106,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -119,8 +119,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>
@@ -132,8 +132,8 @@ namespace Model
      * <code>ListVirtualNodes</code>
          request. When the results of a
      * <code>ListVirtualNodes</code> request exceed
-         <code>limit</code>, this
-     * value can be used to retrieve the next page of
+         <code>limit</code>, you
+     * can use this value to retrieve the next page of
          results. This value is
      * <code>null</code> when there are no more results to
          return.</p>

@@ -49,6 +49,11 @@ ContainerDefinition::ContainerDefinition() :
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_secretsHasBeenSet(false),
+    m_dependsOnHasBeenSet(false),
+    m_startTimeout(0),
+    m_startTimeoutHasBeenSet(false),
+    m_stopTimeout(0),
+    m_stopTimeoutHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -96,6 +101,11 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_secretsHasBeenSet(false),
+    m_dependsOnHasBeenSet(false),
+    m_startTimeout(0),
+    m_startTimeoutHasBeenSet(false),
+    m_stopTimeout(0),
+    m_stopTimeoutHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -259,6 +269,30 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
       m_secrets.push_back(secretsJsonList[secretsIndex].AsObject());
     }
     m_secretsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("dependsOn"))
+  {
+    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
+    {
+      m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
+    }
+    m_dependsOnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTimeout"))
+  {
+    m_startTimeout = jsonValue.GetInteger("startTimeout");
+
+    m_startTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stopTimeout"))
+  {
+    m_stopTimeout = jsonValue.GetInteger("stopTimeout");
+
+    m_stopTimeoutHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("hostname"))
@@ -551,6 +585,29 @@ JsonValue ContainerDefinition::Jsonize() const
      secretsJsonList[secretsIndex].AsObject(m_secrets[secretsIndex].Jsonize());
    }
    payload.WithArray("secrets", std::move(secretsJsonList));
+
+  }
+
+  if(m_dependsOnHasBeenSet)
+  {
+   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
+   {
+     dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
+   }
+   payload.WithArray("dependsOn", std::move(dependsOnJsonList));
+
+  }
+
+  if(m_startTimeoutHasBeenSet)
+  {
+   payload.WithInteger("startTimeout", m_startTimeout);
+
+  }
+
+  if(m_stopTimeoutHasBeenSet)
+  {
+   payload.WithInteger("stopTimeout", m_stopTimeout);
 
   }
 

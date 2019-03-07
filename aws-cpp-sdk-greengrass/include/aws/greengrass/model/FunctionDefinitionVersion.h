@@ -50,32 +50,32 @@ namespace Model
 
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function
-     * definition version
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
      */
     inline const FunctionDefaultConfig& GetDefaultConfig() const{ return m_defaultConfig; }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function
-     * definition version
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
      */
     inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function
-     * definition version
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
      */
     inline void SetDefaultConfig(FunctionDefaultConfig&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function
-     * definition version
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
      */
     inline FunctionDefinitionVersion& WithDefaultConfig(const FunctionDefaultConfig& value) { SetDefaultConfig(value); return *this;}
 
     /**
-     * Default configuration that will apply to all Lambda functions in this function
-     * definition version
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
      */
     inline FunctionDefinitionVersion& WithDefaultConfig(FunctionDefaultConfig&& value) { SetDefaultConfig(std::move(value)); return *this;}
 

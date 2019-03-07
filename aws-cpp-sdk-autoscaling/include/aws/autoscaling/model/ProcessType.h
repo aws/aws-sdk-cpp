@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Describes a process type.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
+   * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html#process-types">Scaling
    * Processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ProcessType">AWS

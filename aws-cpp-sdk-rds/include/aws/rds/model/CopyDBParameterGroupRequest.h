@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p> The identifier or ARN for the source DB parameter group. For information
      * about creating an ARN, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing">
      * Constructing an ARN for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>. </p>
      * <p>Constraints:</p> <ul> <li> <p>Must specify a valid DB parameter group.</p>
      * </li> <li> <p>Must specify a valid DB parameter group identifier, for example

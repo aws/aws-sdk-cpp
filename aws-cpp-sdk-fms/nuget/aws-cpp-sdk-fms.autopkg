@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-FMS;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20180101.64;
+        version : 1.7.20180101.65;
 
         // Display name for package.
         title: AWS SDK for C++ (Firewall Management Service);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.64
+            AWSSDKCPP-Core/1.7.65
        }
     }
 

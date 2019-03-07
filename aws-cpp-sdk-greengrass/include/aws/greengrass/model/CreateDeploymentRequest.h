@@ -118,31 +118,31 @@ namespace Model
 
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only
+     * The type of deployment. When used for ''CreateDeployment'', only
      * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline const DeploymentType& GetDeploymentType() const{ return m_deploymentType; }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only
+     * The type of deployment. When used for ''CreateDeployment'', only
      * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only
+     * The type of deployment. When used for ''CreateDeployment'', only
      * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline void SetDeploymentType(DeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only
+     * The type of deployment. When used for ''CreateDeployment'', only
      * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline CreateDeploymentRequest& WithDeploymentType(const DeploymentType& value) { SetDeploymentType(value); return *this;}
 
     /**
-     * The type of deployment. When used in ''CreateDeployment'', only
+     * The type of deployment. When used for ''CreateDeployment'', only
      * ''NewDeployment'' and ''Redeployment'' are valid.
      */
     inline CreateDeploymentRequest& WithDeploymentType(DeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}

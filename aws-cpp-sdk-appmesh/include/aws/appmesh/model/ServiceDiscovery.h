@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>An object representing the service discovery information for a virtual
    * node.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ServiceDiscovery">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ServiceDiscovery">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API ServiceDiscovery
@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Specifies the DNS service name for the virtual node.</p>
+     * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline const DnsServiceDiscovery& GetDns() const{ return m_dns; }
 
     /**
-     * <p>Specifies the DNS service name for the virtual node.</p>
+     * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline void SetDns(const DnsServiceDiscovery& value) { m_dnsHasBeenSet = true; m_dns = value; }
 
     /**
-     * <p>Specifies the DNS service name for the virtual node.</p>
+     * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline void SetDns(DnsServiceDiscovery&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
 
     /**
-     * <p>Specifies the DNS service name for the virtual node.</p>
+     * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline ServiceDiscovery& WithDns(const DnsServiceDiscovery& value) { SetDns(value); return *this;}
 
     /**
-     * <p>Specifies the DNS service name for the virtual node.</p>
+     * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline ServiceDiscovery& WithDns(DnsServiceDiscovery&& value) { SetDns(std::move(value)); return *this;}
 

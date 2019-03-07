@@ -32,7 +32,7 @@ namespace Model
 
   /**
    * <p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/ListVirtualNodesInput">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodesInput">AWS
    * API Reference</a></p>
    */
   class AWS_APPMESH_API ListVirtualNodesRequest : public AppMeshRequest
@@ -52,98 +52,98 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListVirtualNodes</code>
-     * in
-         paginated output. When this parameter is used,
-     * <code>ListVirtualNodes</code> only returns
-         <code>limit</code> results
-     * in a single page along with a <code>nextToken</code>
-         response element.
-     * The remaining results of the initial request can be seen by sending
+     * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualNodes</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * another <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code>
-         value. This value can be between 1 and 100. If
-     * this
-         parameter is not used, then <code>ListVirtualNodes</code> returns
-     * up to
-         100 results and a <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request by sending
+     * another
+            <code>ListVirtualNodes</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter,
+         <code>ListVirtualNodes</code> returns up
+     * to 100 results and a
+            <code>nextToken</code> value if applicable.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListVirtualNodes</code>
-     * in
-         paginated output. When this parameter is used,
-     * <code>ListVirtualNodes</code> only returns
-         <code>limit</code> results
-     * in a single page along with a <code>nextToken</code>
-         response element.
-     * The remaining results of the initial request can be seen by sending
+     * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualNodes</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * another <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code>
-         value. This value can be between 1 and 100. If
-     * this
-         parameter is not used, then <code>ListVirtualNodes</code> returns
-     * up to
-         100 results and a <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request by sending
+     * another
+            <code>ListVirtualNodes</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter,
+         <code>ListVirtualNodes</code> returns up
+     * to 100 results and a
+            <code>nextToken</code> value if applicable.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of mesh results returned by <code>ListVirtualNodes</code>
-     * in
-         paginated output. When this parameter is used,
-     * <code>ListVirtualNodes</code> only returns
-         <code>limit</code> results
-     * in a single page along with a <code>nextToken</code>
-         response element.
-     * The remaining results of the initial request can be seen by sending
+     * <p>The maximum number of results returned by <code>ListVirtualNodes</code> in
+     * paginated
+         output. When you use this parameter,
+     * <code>ListVirtualNodes</code> returns only
+            <code>limit</code>
+     * results in a single page along with a <code>nextToken</code> response
         
-     * another <code>ListVirtualNodes</code> request with the returned
-     * <code>nextToken</code>
-         value. This value can be between 1 and 100. If
-     * this
-         parameter is not used, then <code>ListVirtualNodes</code> returns
-     * up to
-         100 results and a <code>nextToken</code> value if applicable.</p>
+     * element. You can see the remaining results of the initial request by sending
+     * another
+            <code>ListVirtualNodes</code> request with the returned
+     * <code>nextToken</code> value.
+         This value can be between 1 and 100. If
+     * you don't use this parameter,
+         <code>ListVirtualNodes</code> returns up
+     * to 100 results and a
+            <code>nextToken</code> value if applicable.</p>
      */
     inline ListVirtualNodesRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline const Aws::String& GetMeshName() const{ return m_meshName; }
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline ListVirtualNodesRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline ListVirtualNodesRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the service mesh in which to list virtual nodes.</p>
+     * <p>The name of the service mesh to list virtual nodes in.</p>
      */
     inline ListVirtualNodesRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
 

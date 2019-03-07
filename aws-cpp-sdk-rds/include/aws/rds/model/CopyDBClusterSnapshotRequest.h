@@ -60,7 +60,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -75,7 +75,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -90,7 +90,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -105,7 +105,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -120,7 +120,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -135,7 +135,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -150,7 +150,7 @@ namespace Model
      * snapshot identifier.</p> </li> <li> <p>If the source snapshot is in a different
      * AWS Region than the copy, specify a valid DB cluster snapshot ARN. For more
      * information, go to <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_CopySnapshot.html#USER_CopySnapshot.AcrossRegions">
      * Copying Snapshots Across AWS Regions</a> in the <i>Amazon Aurora User Guide.</i>
      * </p> </li> </ul> <p>Example: <code>my-cluster-snapshot1</code> </p>
      */
@@ -393,10 +393,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
@@ -425,10 +425,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
@@ -457,10 +457,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::move(value); }
@@ -489,10 +489,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline void SetPreSignedUrl(const char* value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl.assign(value); }
@@ -521,10 +521,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
@@ -553,10 +553,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
@@ -585,10 +585,10 @@ namespace Model
      * <code>arn:aws:rds:us-west-2:123456789012:cluster-snapshot:aurora-cluster1-snapshot-20161115</code>.</p>
      * </li> </ul> <p>To learn how to generate a Signature Version 4 signed request,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">
      * Authenticating Requests: Using Query Parameters (AWS Signature Version 4)</a>
      * and <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
+     * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">
      * Signature Version 4 Signing Process</a>.</p>
      */
     inline CopyDBClusterSnapshotRequest& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
