@@ -38,12 +38,12 @@ namespace Model
 
   /**
    * <p>Specifies the training algorithm to use in a <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a>
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateTrainingJob.html">CreateTrainingJob</a>
    * request.</p> <p>For more information about algorithms provided by Amazon
    * SageMaker, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
    * For information about using your own algorithms, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
    * Your Own Algorithms with Amazon SageMaker</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AlgorithmSpecification">AWS
    * API Reference</a></p>
@@ -60,56 +60,91 @@ namespace Model
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline const Aws::String& GetTrainingImage() const{ return m_trainingImage; }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetTrainingImage(const Aws::String& value) { m_trainingImageHasBeenSet = true; m_trainingImage = value; }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetTrainingImage(Aws::String&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::move(value); }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetTrainingImage(const char* value) { m_trainingImageHasBeenSet = true; m_trainingImage.assign(value); }
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(const Aws::String& value) { SetTrainingImage(value); return *this;}
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(Aws::String&& value) { SetTrainingImage(std::move(value)); return *this;}
 
     /**
      * <p>The registry path of the Docker image that contains the training algorithm.
      * For information about docker registry paths for built-in algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
-     * Provided by Amazon SageMaker: Common Parameters</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Algorithms
+     * Provided by Amazon SageMaker: Common Parameters</a>. Amazon SageMaker supports
+     * both <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline AlgorithmSpecification& WithTrainingImage(const char* value) { SetTrainingImage(value); return *this;}
 
@@ -174,7 +209,7 @@ namespace Model
     /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
      * downloads the training data from S3 to the provisioned ML storage Volume, and
      * mounts the directory to docker volume for training container. If an algorithm
@@ -196,7 +231,7 @@ namespace Model
     /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
      * downloads the training data from S3 to the provisioned ML storage Volume, and
      * mounts the directory to docker volume for training container. If an algorithm
@@ -218,7 +253,7 @@ namespace Model
     /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
      * downloads the training data from S3 to the provisioned ML storage Volume, and
      * mounts the directory to docker volume for training container. If an algorithm
@@ -240,7 +275,7 @@ namespace Model
     /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
      * downloads the training data from S3 to the provisioned ML storage Volume, and
      * mounts the directory to docker volume for training container. If an algorithm
@@ -262,7 +297,7 @@ namespace Model
     /**
      * <p>The input mode that the algorithm supports. For the input modes that Amazon
      * SageMaker algorithms support, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * If an algorithm supports the <code>File</code> input mode, Amazon SageMaker
      * downloads the training data from S3 to the provisioned ML storage Volume, and
      * mounts the directory to docker volume for training container. If an algorithm

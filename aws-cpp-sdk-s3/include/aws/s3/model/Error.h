@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Error">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Error
   {
   public:
@@ -42,91 +47,147 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithKey(const char* value) { SetKey(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetCode() const{ return m_code; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithCode(const char* value) { SetCode(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Error& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:

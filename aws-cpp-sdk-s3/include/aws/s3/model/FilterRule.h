@@ -54,7 +54,7 @@ namespace Model
      * the filtering rule applies. The maximum prefix length is 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -65,7 +65,7 @@ namespace Model
      * the filtering rule applies. The maximum prefix length is 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -76,7 +76,7 @@ namespace Model
      * the filtering rule applies. The maximum prefix length is 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -87,7 +87,7 @@ namespace Model
      * the filtering rule applies. The maximum prefix length is 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
@@ -98,32 +98,46 @@ namespace Model
      * the filtering rule applies. The maximum prefix length is 1,024 characters.
      * Overlapping prefixes and suffixes are not supported. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
      * Event Notifications</a> in the <i>Amazon Simple Storage Service Developer
      * Guide</i>.</p>
      */
     inline FilterRule& WithName(FilterRuleName&& value) { SetName(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetValue() const{ return m_value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline FilterRule& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline FilterRule& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline FilterRule& WithValue(const char* value) { SetValue(value); return *this;}
 
   private:

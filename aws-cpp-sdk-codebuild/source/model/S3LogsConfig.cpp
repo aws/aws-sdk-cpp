@@ -31,14 +31,18 @@ namespace Model
 S3LogsConfig::S3LogsConfig() : 
     m_status(LogsConfigStatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false)
 {
 }
 
 S3LogsConfig::S3LogsConfig(JsonView jsonValue) : 
     m_status(LogsConfigStatusType::NOT_SET),
     m_statusHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_encryptionDisabled(false),
+    m_encryptionDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +63,13 @@ S3LogsConfig& S3LogsConfig::operator =(JsonView jsonValue)
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("encryptionDisabled"))
+  {
+    m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
+
+    m_encryptionDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +85,12 @@ JsonValue S3LogsConfig::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("location", m_location);
+
+  }
+
+  if(m_encryptionDisabledHasBeenSet)
+  {
+   payload.WithBool("encryptionDisabled", m_encryptionDisabled);
 
   }
 

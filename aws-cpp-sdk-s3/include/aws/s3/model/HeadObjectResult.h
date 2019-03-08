@@ -69,25 +69,39 @@ namespace Model
     inline HeadObjectResult& WithDeleteMarker(bool value) { SetDeleteMarker(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
 
 
@@ -842,19 +856,29 @@ namespace Model
     inline HeadObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStorageClass(const StorageClass& value) { m_storageClass = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetStorageClass(StorageClass&& value) { m_storageClass = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
@@ -874,19 +898,29 @@ namespace Model
     inline HeadObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationStatus(const ReplicationStatus& value) { m_replicationStatus = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithReplicationStatus(const ReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}
 
 

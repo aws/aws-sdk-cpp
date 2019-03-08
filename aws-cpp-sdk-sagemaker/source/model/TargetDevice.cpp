@@ -40,6 +40,8 @@ namespace Aws
         static const int jetson_tx2_HASH = HashingUtils::HashString("jetson_tx2");
         static const int rasp3b_HASH = HashingUtils::HashString("rasp3b");
         static const int deeplens_HASH = HashingUtils::HashString("deeplens");
+        static const int rk3399_HASH = HashingUtils::HashString("rk3399");
+        static const int rk3288_HASH = HashingUtils::HashString("rk3288");
 
 
         TargetDevice GetTargetDeviceForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return TargetDevice::deeplens;
           }
+          else if (hashCode == rk3399_HASH)
+          {
+            return TargetDevice::rk3399;
+          }
+          else if (hashCode == rk3288_HASH)
+          {
+            return TargetDevice::rk3288;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +129,10 @@ namespace Aws
             return "rasp3b";
           case TargetDevice::deeplens:
             return "deeplens";
+          case TargetDevice::rk3399:
+            return "rk3399";
+          case TargetDevice::rk3288:
+            return "rk3288";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

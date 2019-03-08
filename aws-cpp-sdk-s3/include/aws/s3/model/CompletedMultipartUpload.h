@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompletedMultipartUpload">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API CompletedMultipartUpload
   {
   public:
@@ -43,25 +48,39 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<CompletedPart>& GetParts() const{ return m_parts; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetParts(const Aws::Vector<CompletedPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetParts(Aws::Vector<CompletedPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CompletedMultipartUpload& WithParts(const Aws::Vector<CompletedPart>& value) { SetParts(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompletedMultipartUpload& WithParts(Aws::Vector<CompletedPart>&& value) { SetParts(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompletedMultipartUpload& AddParts(const CompletedPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline CompletedMultipartUpload& AddParts(CompletedPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
 
   private:

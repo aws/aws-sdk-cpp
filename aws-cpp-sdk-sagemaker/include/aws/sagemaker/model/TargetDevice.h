@@ -35,7 +35,9 @@ namespace Model
     jetson_tx1,
     jetson_tx2,
     rasp3b,
-    deeplens
+    deeplens,
+    rk3399,
+    rk3288
   };
 
 namespace TargetDeviceMapper

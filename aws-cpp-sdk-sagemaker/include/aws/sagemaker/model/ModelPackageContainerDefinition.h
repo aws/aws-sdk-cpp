@@ -92,7 +92,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
@@ -105,7 +105,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
@@ -118,7 +118,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
@@ -131,7 +131,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
@@ -144,7 +144,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline ModelPackageContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
@@ -157,7 +157,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline ModelPackageContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
@@ -170,7 +170,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>.</p>
      */
     inline ModelPackageContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}

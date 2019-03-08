@@ -40,7 +40,9 @@ UpdateNotebookInstanceRequest::UpdateNotebookInstanceRequest() :
     m_disassociateDefaultCodeRepository(false),
     m_disassociateDefaultCodeRepositoryHasBeenSet(false),
     m_disassociateAdditionalCodeRepositories(false),
-    m_disassociateAdditionalCodeRepositoriesHasBeenSet(false)
+    m_disassociateAdditionalCodeRepositoriesHasBeenSet(false),
+    m_rootAccess(RootAccess::NOT_SET),
+    m_rootAccessHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,11 @@ Aws::String UpdateNotebookInstanceRequest::SerializePayload() const
   {
    payload.WithBool("DisassociateAdditionalCodeRepositories", m_disassociateAdditionalCodeRepositories);
 
+  }
+
+  if(m_rootAccessHasBeenSet)
+  {
+   payload.WithString("RootAccess", RootAccessMapper::GetNameForRootAccess(m_rootAccess));
   }
 
   return payload.View().WriteReadable();

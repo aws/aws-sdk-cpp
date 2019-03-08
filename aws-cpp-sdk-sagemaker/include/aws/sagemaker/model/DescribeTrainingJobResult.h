@@ -741,7 +741,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
      * access to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -749,7 +749,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
      * access to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
@@ -757,7 +757,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
      * access to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
@@ -765,7 +765,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
      * access to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -773,7 +773,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this training job has
      * access to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline DescribeTrainingJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -1083,25 +1083,28 @@ namespace Model
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, specify <code>True</code>. Encryption provides greater security for
-     * distributed training, but training take longer because of the additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
      */
     inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, specify <code>True</code>. Encryption provides greater security for
-     * distributed training, but training take longer because of the additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
      */
     inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryption = value; }
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, specify <code>True</code>. Encryption provides greater security for
-     * distributed training, but training take longer because of the additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
      */
     inline DescribeTrainingJobResult& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 

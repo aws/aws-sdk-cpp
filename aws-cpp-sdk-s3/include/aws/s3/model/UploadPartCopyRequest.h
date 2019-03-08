@@ -53,25 +53,39 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
@@ -254,7 +268,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline const Aws::String& GetCopySourceRange() const{ return m_copySourceRange; }
 
@@ -263,7 +277,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline void SetCopySourceRange(const Aws::String& value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange = value; }
 
@@ -272,7 +286,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline void SetCopySourceRange(Aws::String&& value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange = std::move(value); }
 
@@ -281,7 +295,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline void SetCopySourceRange(const char* value) { m_copySourceRangeHasBeenSet = true; m_copySourceRange.assign(value); }
 
@@ -290,7 +304,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline UploadPartCopyRequest& WithCopySourceRange(const Aws::String& value) { SetCopySourceRange(value); return *this;}
 
@@ -299,7 +313,7 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline UploadPartCopyRequest& WithCopySourceRange(Aws::String&& value) { SetCopySourceRange(std::move(value)); return *this;}
 
@@ -308,30 +322,44 @@ namespace Model
      * the form bytes=first-last, where the first and last are the zero-based byte
      * offsets to copy. For example, bytes=0-9 indicates that you want to copy the
      * first ten bytes of the source. You can copy a range only if the source object is
-     * greater than 5 GB.</p>
+     * greater than 5 MB.</p>
      */
     inline UploadPartCopyRequest& WithCopySourceRange(const char* value) { SetCopySourceRange(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 

@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Tagging">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Tagging
   {
   public:
@@ -43,25 +48,39 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSetHasBeenSet = true; m_tagSet = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTagSet(Aws::Vector<Tag>&& value) { m_tagSetHasBeenSet = true; m_tagSet = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Tagging& WithTagSet(const Aws::Vector<Tag>& value) { SetTagSet(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Tagging& WithTagSet(Aws::Vector<Tag>&& value) { SetTagSet(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Tagging& AddTagSet(const Tag& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline Tagging& AddTagSet(Tag&& value) { m_tagSetHasBeenSet = true; m_tagSet.push_back(std::move(value)); return *this; }
 
   private:

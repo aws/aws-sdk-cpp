@@ -55,6 +55,8 @@ TrainingJob::TrainingJob() :
     m_finalMetricDataListHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -86,6 +88,8 @@ TrainingJob::TrainingJob(JsonView jsonValue) :
     m_finalMetricDataListHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -266,6 +270,13 @@ TrainingJob& TrainingJob::operator =(JsonView jsonValue)
     m_enableNetworkIsolationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
+  {
+    m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
+
+    m_enableInterContainerTrafficEncryptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -432,6 +443,12 @@ JsonValue TrainingJob::Jsonize() const
   if(m_enableNetworkIsolationHasBeenSet)
   {
    payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
+
+  }
+
+  if(m_enableInterContainerTrafficEncryptionHasBeenSet)
+  {
+   payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
 
   }
 

@@ -153,6 +153,25 @@ namespace Model
      */
     inline S3LogsConfig& WithLocation(const char* value) { SetLocation(value); return *this;}
 
+
+    /**
+     * <p> Set to true if you do not want your S3 build log output encrypted. By
+     * default S3 build logs are encrypted. </p>
+     */
+    inline bool GetEncryptionDisabled() const{ return m_encryptionDisabled; }
+
+    /**
+     * <p> Set to true if you do not want your S3 build log output encrypted. By
+     * default S3 build logs are encrypted. </p>
+     */
+    inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
+
+    /**
+     * <p> Set to true if you do not want your S3 build log output encrypted. By
+     * default S3 build logs are encrypted. </p>
+     */
+    inline S3LogsConfig& WithEncryptionDisabled(bool value) { SetEncryptionDisabled(value); return *this;}
+
   private:
 
     LogsConfigStatusType m_status;
@@ -160,6 +179,9 @@ namespace Model
 
     Aws::String m_location;
     bool m_locationHasBeenSet;
+
+    bool m_encryptionDisabled;
+    bool m_encryptionDisabledHasBeenSet;
   };
 
 } // namespace Model

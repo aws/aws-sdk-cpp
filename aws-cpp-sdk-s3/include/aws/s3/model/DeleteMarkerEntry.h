@@ -34,6 +34,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteMarkerEntry">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API DeleteMarkerEntry
   {
   public:
@@ -44,19 +49,29 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Owner& GetOwner() const{ return m_owner; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteMarkerEntry& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteMarkerEntry& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 

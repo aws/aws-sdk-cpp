@@ -34,6 +34,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/QueueConfigurationDeprecated">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API QueueConfigurationDeprecated
   {
   public:
@@ -66,47 +71,75 @@ namespace Model
     inline QueueConfigurationDeprecated& WithId(const char* value) { SetId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetQueue() const{ return m_queue; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetQueue(const Aws::String& value) { m_queueHasBeenSet = true; m_queue = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetQueue(Aws::String&& value) { m_queueHasBeenSet = true; m_queue = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetQueue(const char* value) { m_queueHasBeenSet = true; m_queue.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& WithQueue(const Aws::String& value) { SetQueue(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& WithQueue(Aws::String&& value) { SetQueue(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline QueueConfigurationDeprecated& WithQueue(const char* value) { SetQueue(value); return *this;}
 
   private:

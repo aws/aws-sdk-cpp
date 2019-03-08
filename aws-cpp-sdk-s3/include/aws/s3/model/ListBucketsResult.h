@@ -44,41 +44,65 @@ namespace Model
     ListBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Bucket>& GetBuckets() const{ return m_buckets; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_buckets = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBuckets(Aws::Vector<Bucket>&& value) { m_buckets = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& WithBuckets(const Aws::Vector<Bucket>& value) { SetBuckets(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& WithBuckets(Aws::Vector<Bucket>&& value) { SetBuckets(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& AddBuckets(const Bucket& value) { m_buckets.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& AddBuckets(Bucket&& value) { m_buckets.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Owner& GetOwner() const{ return m_owner; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListBucketsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
   private:

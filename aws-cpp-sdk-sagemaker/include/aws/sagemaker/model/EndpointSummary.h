@@ -180,7 +180,7 @@ namespace Model
      * <code>Updating</code>: <a>UpdateEndpoint</a> or
      * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This mainenance
+     * updated or deleted or re-scaled until it has completed. This maintenance
      * operation does not change any customer-specified values such as VPC config, KMS
      * encryption, model, instance type, or instance count.</p> </li> <li> <p>
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
@@ -208,7 +208,7 @@ namespace Model
      * <code>Updating</code>: <a>UpdateEndpoint</a> or
      * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This mainenance
+     * updated or deleted or re-scaled until it has completed. This maintenance
      * operation does not change any customer-specified values such as VPC config, KMS
      * encryption, model, instance type, or instance count.</p> </li> <li> <p>
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
@@ -236,7 +236,7 @@ namespace Model
      * <code>Updating</code>: <a>UpdateEndpoint</a> or
      * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This mainenance
+     * updated or deleted or re-scaled until it has completed. This maintenance
      * operation does not change any customer-specified values such as VPC config, KMS
      * encryption, model, instance type, or instance count.</p> </li> <li> <p>
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
@@ -264,7 +264,7 @@ namespace Model
      * <code>Updating</code>: <a>UpdateEndpoint</a> or
      * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This mainenance
+     * updated or deleted or re-scaled until it has completed. This maintenance
      * operation does not change any customer-specified values such as VPC config, KMS
      * encryption, model, instance type, or instance count.</p> </li> <li> <p>
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its
@@ -292,7 +292,7 @@ namespace Model
      * <code>Updating</code>: <a>UpdateEndpoint</a> or
      * <a>UpdateEndpointWeightsAndCapacities</a> is executing.</p> </li> <li> <p>
      * <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be
-     * updated or deleted or re-scaled until it has completed. This mainenance
+     * updated or deleted or re-scaled until it has completed. This maintenance
      * operation does not change any customer-specified values such as VPC config, KMS
      * encryption, model, instance type, or instance count.</p> </li> <li> <p>
      * <code>RollingBack</code>: Endpoint fails to scale up or down or change its

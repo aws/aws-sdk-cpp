@@ -43,25 +43,39 @@ namespace Model
     GetBucketCorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCORSRules(const Aws::Vector<CORSRule>& value) { m_cORSRules = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCORSRules(Aws::Vector<CORSRule>&& value) { m_cORSRules = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketCorsResult& WithCORSRules(const Aws::Vector<CORSRule>& value) { SetCORSRules(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketCorsResult& WithCORSRules(Aws::Vector<CORSRule>&& value) { SetCORSRules(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketCorsResult& AddCORSRules(const CORSRule& value) { m_cORSRules.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketCorsResult& AddCORSRules(CORSRule&& value) { m_cORSRules.push_back(std::move(value)); return *this; }
 
   private:

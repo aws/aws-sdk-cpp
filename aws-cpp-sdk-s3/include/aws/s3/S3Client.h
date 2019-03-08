@@ -474,6 +474,9 @@ namespace Aws
     //max expiration for presigned urls in s3 is 7 days.
     static const unsigned MAX_EXPIRATION_SECONDS = 7 * 24 * 60 * 60;
 
+    /**
+     * <p/>
+     */
     class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient
     {
     public:

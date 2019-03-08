@@ -100,7 +100,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -111,7 +111,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -122,7 +122,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -133,7 +133,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -144,7 +144,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -155,7 +155,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -166,7 +166,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -177,7 +177,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -188,7 +188,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -199,7 +199,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -210,7 +210,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -221,7 +221,7 @@ namespace Model
      * <p>Algorithm-specific parameters that influence the quality of the model. You
      * set hyperparameters before you start the learning process. For a list of
      * hyperparameters for each training algorithm provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * </p> <p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is
      * a key-value pair. Each key and value is limited to 256 characters, as specified
      * by the <code>Length Constraint</code>. </p>
@@ -233,9 +233,9 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>. </p>
      */
     inline const AlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
@@ -244,9 +244,9 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>. </p>
      */
     inline void SetAlgorithmSpecification(const AlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
@@ -255,9 +255,9 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>. </p>
      */
     inline void SetAlgorithmSpecification(AlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
@@ -266,9 +266,9 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>. </p>
      */
     inline CreateTrainingJobRequest& WithAlgorithmSpecification(const AlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
@@ -277,9 +277,9 @@ namespace Model
      * <p>The registry path of the Docker image that contains the training algorithm
      * and algorithm-specific metadata, including the input mode. For more information
      * about algorithms provided by Amazon SageMaker, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a>.
      * For information about providing your own algorithms, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a>. </p>
      */
     inline CreateTrainingJobRequest& WithAlgorithmSpecification(AlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
@@ -293,7 +293,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -308,7 +308,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -323,7 +323,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -338,7 +338,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -353,7 +353,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -368,7 +368,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -383,7 +383,7 @@ namespace Model
      * write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch.
      * You grant permissions for all of these tasks to an IAM role. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -588,7 +588,7 @@ namespace Model
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
      * job to connect to. Control access to and from your training container by
      * configuring the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -597,7 +597,7 @@ namespace Model
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
      * job to connect to. Control access to and from your training container by
      * configuring the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -606,7 +606,7 @@ namespace Model
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
      * job to connect to. Control access to and from your training container by
      * configuring the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -615,7 +615,7 @@ namespace Model
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
      * job to connect to. Control access to and from your training container by
      * configuring the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateTrainingJobRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -624,7 +624,7 @@ namespace Model
      * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your training
      * job to connect to. Control access to and from your training container by
      * configuring the VPC. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateTrainingJobRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -693,7 +693,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -701,7 +701,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -709,7 +709,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -717,7 +717,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -725,7 +725,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -733,7 +733,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -741,7 +741,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -784,25 +784,37 @@ namespace Model
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, choose <code>True</code>,. Encryption provides greater security for
-     * distributed training, but training can take longer because of additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect
+     * Communications Between ML Compute Instances in a Distributed Training
+     * Job</a>.</p>
      */
     inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, choose <code>True</code>,. Encryption provides greater security for
-     * distributed training, but training can take longer because of additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect
+     * Communications Between ML Compute Instances in a Distributed Training
+     * Job</a>.</p>
      */
     inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
 
     /**
      * <p>To encrypt all communications between ML compute instances in distributed
-     * training, choose <code>True</code>,. Encryption provides greater security for
-     * distributed training, but training can take longer because of additional
-     * communications between ML compute instances.</p>
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-encrypt.html">Protect
+     * Communications Between ML Compute Instances in a Distributed Training
+     * Job</a>.</p>
      */
     inline CreateTrainingJobRequest& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
 

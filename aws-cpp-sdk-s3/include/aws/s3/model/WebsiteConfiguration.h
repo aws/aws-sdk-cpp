@@ -36,6 +36,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/WebsiteConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API WebsiteConfiguration
   {
   public:
@@ -46,73 +51,117 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetIndexDocument(const IndexDocument& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetIndexDocument(IndexDocument&& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRoutingRules(const Aws::Vector<RoutingRule>& value) { m_routingRulesHasBeenSet = true; m_routingRules = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetRoutingRules(Aws::Vector<RoutingRule>&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& WithRoutingRules(Aws::Vector<RoutingRule>&& value) { SetRoutingRules(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& AddRoutingRules(const RoutingRule& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline WebsiteConfiguration& AddRoutingRules(RoutingRule&& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(std::move(value)); return *this; }
 
   private:

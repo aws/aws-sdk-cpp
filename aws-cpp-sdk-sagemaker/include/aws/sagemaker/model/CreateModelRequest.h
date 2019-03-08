@@ -161,7 +161,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -173,7 +173,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -185,7 +185,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -197,7 +197,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -209,7 +209,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -221,7 +221,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -233,7 +233,7 @@ namespace Model
      * assume to access model artifacts and docker image for deployment on ML compute
      * instances or for batch transform jobs. Deploying on ML compute instances is part
      * of model hosting. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -243,7 +243,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -251,7 +251,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -259,7 +259,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -267,7 +267,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -275,7 +275,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -283,7 +283,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -291,7 +291,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -303,9 +303,9 @@ namespace Model
      * connect to. Control access to and from your model container by configuring the
      * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -315,9 +315,9 @@ namespace Model
      * connect to. Control access to and from your model container by configuring the
      * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -327,9 +327,9 @@ namespace Model
      * connect to. Control access to and from your model container by configuring the
      * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -339,9 +339,9 @@ namespace Model
      * connect to. Control access to and from your model container by configuring the
      * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -351,9 +351,9 @@ namespace Model
      * connect to. Control access to and from your model container by configuring the
      * VPC. <code>VpcConfig</code> is used in hosting services and in batch transform.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}

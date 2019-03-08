@@ -21,6 +21,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
+#include <aws/sagemaker/model/RootAccess.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
 
@@ -522,7 +523,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
@@ -530,7 +531,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigName = value; }
@@ -538,7 +539,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigName = std::move(value); }
@@ -546,7 +547,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigName.assign(value); }
@@ -554,7 +555,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
@@ -562,7 +563,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
@@ -570,7 +571,7 @@ namespace Model
     /**
      * <p>Returns the name of a notebook instance lifecycle configuration.</p> <p>For
      * information about notebook instance lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a> </p>
      */
     inline DescribeNotebookInstanceResult& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
@@ -578,50 +579,50 @@ namespace Model
 
     /**
      * <p>Describes whether Amazon SageMaker provides internet access to the notebook
-     * instance. If this value is set to <i>Disabled, he notebook instance does not
-     * have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * instance. If this value is set to <i>Disabled</i>, the notebook instance does
+     * not have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline const DirectInternetAccess& GetDirectInternetAccess() const{ return m_directInternetAccess; }
 
     /**
      * <p>Describes whether Amazon SageMaker provides internet access to the notebook
-     * instance. If this value is set to <i>Disabled, he notebook instance does not
-     * have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * instance. If this value is set to <i>Disabled</i>, the notebook instance does
+     * not have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline void SetDirectInternetAccess(const DirectInternetAccess& value) { m_directInternetAccess = value; }
 
     /**
      * <p>Describes whether Amazon SageMaker provides internet access to the notebook
-     * instance. If this value is set to <i>Disabled, he notebook instance does not
-     * have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * instance. If this value is set to <i>Disabled</i>, the notebook instance does
+     * not have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline void SetDirectInternetAccess(DirectInternetAccess&& value) { m_directInternetAccess = std::move(value); }
 
     /**
      * <p>Describes whether Amazon SageMaker provides internet access to the notebook
-     * instance. If this value is set to <i>Disabled, he notebook instance does not
-     * have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * instance. If this value is set to <i>Disabled</i>, the notebook instance does
+     * not have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDirectInternetAccess(const DirectInternetAccess& value) { SetDirectInternetAccess(value); return *this;}
 
     /**
      * <p>Describes whether Amazon SageMaker provides internet access to the notebook
-     * instance. If this value is set to <i>Disabled, he notebook instance does not
-     * have internet access, and cannot connect to Amazon SageMaker training and
-     * endpoint services</i>.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * instance. If this value is set to <i>Disabled</i>, the notebook instance does
+     * not have internet access, and cannot connect to Amazon SageMaker training and
+     * endpoint services.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithDirectInternetAccess(DirectInternetAccess&& value) { SetDirectInternetAccess(std::move(value)); return *this;}
@@ -906,6 +907,52 @@ namespace Model
      */
     inline DescribeNotebookInstanceResult& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositories.push_back(value); return *this; }
 
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * set up a notebook instance. Because of this, lifecycle configurations associated
+     * with a notebook instance always run with root access even if you disable root
+     * access for users.</p> </note>
+     */
+    inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * set up a notebook instance. Because of this, lifecycle configurations associated
+     * with a notebook instance always run with root access even if you disable root
+     * access for users.</p> </note>
+     */
+    inline void SetRootAccess(const RootAccess& value) { m_rootAccess = value; }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * set up a notebook instance. Because of this, lifecycle configurations associated
+     * with a notebook instance always run with root access even if you disable root
+     * access for users.</p> </note>
+     */
+    inline void SetRootAccess(RootAccess&& value) { m_rootAccess = std::move(value); }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * set up a notebook instance. Because of this, lifecycle configurations associated
+     * with a notebook instance always run with root access even if you disable root
+     * access for users.</p> </note>
+     */
+    inline DescribeNotebookInstanceResult& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance.</p> <note> <p>Lifecycle configurations need root access to be able to
+     * set up a notebook instance. Because of this, lifecycle configurations associated
+     * with a notebook instance always run with root access even if you disable root
+     * access for users.</p> </note>
+     */
+    inline DescribeNotebookInstanceResult& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceArn;
@@ -945,6 +992,8 @@ namespace Model
     Aws::String m_defaultCodeRepository;
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
+
+    RootAccess m_rootAccess;
   };
 
 } // namespace Model

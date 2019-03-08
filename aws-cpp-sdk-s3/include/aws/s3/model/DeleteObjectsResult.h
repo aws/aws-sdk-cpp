@@ -45,25 +45,39 @@ namespace Model
     DeleteObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<DeletedObject>& GetDeleted() const{ return m_deleted; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleted(const Aws::Vector<DeletedObject>& value) { m_deleted = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleted(Aws::Vector<DeletedObject>&& value) { m_deleted = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& WithDeleted(const Aws::Vector<DeletedObject>& value) { SetDeleted(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& WithDeleted(Aws::Vector<DeletedObject>&& value) { SetDeleted(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& AddDeleted(const DeletedObject& value) { m_deleted.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& AddDeleted(DeletedObject&& value) { m_deleted.push_back(std::move(value)); return *this; }
 
 
@@ -83,25 +97,39 @@ namespace Model
     inline DeleteObjectsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Error>& GetErrors() const{ return m_errors; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetErrors(const Aws::Vector<Error>& value) { m_errors = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetErrors(Aws::Vector<Error>&& value) { m_errors = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& WithErrors(const Aws::Vector<Error>& value) { SetErrors(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& WithErrors(Aws::Vector<Error>&& value) { SetErrors(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& AddErrors(const Error& value) { m_errors.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsResult& AddErrors(Error&& value) { m_errors.push_back(std::move(value)); return *this; }
 
   private:

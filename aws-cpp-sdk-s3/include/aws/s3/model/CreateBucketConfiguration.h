@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucketConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API CreateBucketConfiguration
   {
   public:
@@ -44,31 +49,31 @@ namespace Model
 
     /**
      * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.</p>
+     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
      */
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
 
     /**
      * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.</p>
+     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
      */
     inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
 
     /**
      * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.</p>
+     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
      */
     inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = std::move(value); }
 
     /**
      * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.</p>
+     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
 
     /**
      * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket will be created in US Standard.</p>
+     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 

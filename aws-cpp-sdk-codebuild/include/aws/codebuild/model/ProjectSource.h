@@ -17,6 +17,7 @@
 #include <aws/codebuild/CodeBuild_EXPORTS.h>
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/GitSubmodulesConfig.h>
 #include <aws/codebuild/model/SourceAuth.h>
 #include <utility>
 
@@ -417,19 +418,50 @@ namespace Model
 
 
     /**
-     * <p>Information about the git clone depth for the build project.</p>
+     * <p>Information about the Git clone depth for the build project.</p>
      */
     inline int GetGitCloneDepth() const{ return m_gitCloneDepth; }
 
     /**
-     * <p>Information about the git clone depth for the build project.</p>
+     * <p>Information about the Git clone depth for the build project.</p>
      */
     inline void SetGitCloneDepth(int value) { m_gitCloneDepthHasBeenSet = true; m_gitCloneDepth = value; }
 
     /**
-     * <p>Information about the git clone depth for the build project.</p>
+     * <p>Information about the Git clone depth for the build project.</p>
      */
     inline ProjectSource& WithGitCloneDepth(int value) { SetGitCloneDepth(value); return *this;}
+
+
+    /**
+     * <p> Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    inline const GitSubmodulesConfig& GetGitSubmodulesConfig() const{ return m_gitSubmodulesConfig; }
+
+    /**
+     * <p> Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    inline void SetGitSubmodulesConfig(const GitSubmodulesConfig& value) { m_gitSubmodulesConfigHasBeenSet = true; m_gitSubmodulesConfig = value; }
+
+    /**
+     * <p> Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    inline void SetGitSubmodulesConfig(GitSubmodulesConfig&& value) { m_gitSubmodulesConfigHasBeenSet = true; m_gitSubmodulesConfig = std::move(value); }
+
+    /**
+     * <p> Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    inline ProjectSource& WithGitSubmodulesConfig(const GitSubmodulesConfig& value) { SetGitSubmodulesConfig(value); return *this;}
+
+    /**
+     * <p> Information about the Git submodules configuration for the build project.
+     * </p>
+     */
+    inline ProjectSource& WithGitSubmodulesConfig(GitSubmodulesConfig&& value) { SetGitSubmodulesConfig(std::move(value)); return *this;}
 
 
     /**
@@ -612,6 +644,9 @@ namespace Model
 
     int m_gitCloneDepth;
     bool m_gitCloneDepthHasBeenSet;
+
+    GitSubmodulesConfig m_gitSubmodulesConfig;
+    bool m_gitSubmodulesConfigHasBeenSet;
 
     Aws::String m_buildspec;
     bool m_buildspecHasBeenSet;

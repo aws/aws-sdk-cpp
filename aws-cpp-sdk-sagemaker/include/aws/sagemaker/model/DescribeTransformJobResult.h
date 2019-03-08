@@ -153,37 +153,65 @@ namespace Model
 
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -260,103 +288,120 @@ namespace Model
 
 
     /**
-     * <p> If you want to include only one record in a batch, specify
-     * <code>SingleRecord</code>.. If you want batches to contain a maximum of the
-     * number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     * specify <code>MultiRecord</code>.S</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
     /**
-     * <p> If you want to include only one record in a batch, specify
-     * <code>SingleRecord</code>.. If you want batches to contain a maximum of the
-     * number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     * specify <code>MultiRecord</code>.S</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategy = value; }
 
     /**
-     * <p> If you want to include only one record in a batch, specify
-     * <code>SingleRecord</code>.. If you want batches to contain a maximum of the
-     * number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     * specify <code>MultiRecord</code>.S</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategy = std::move(value); }
 
     /**
-     * <p> If you want to include only one record in a batch, specify
-     * <code>SingleRecord</code>.. If you want batches to contain a maximum of the
-     * number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     * specify <code>MultiRecord</code>.S</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
     /**
-     * <p> If you want to include only one record in a batch, specify
-     * <code>SingleRecord</code>.. If you want batches to contain a maximum of the
-     * number of records specified in the <code>MaxPayloadInMB</code> parameter,
-     * specify <code>MultiRecord</code>.S</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environment = value; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environment = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environment.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environment.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const char* key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, const char* value) { m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
 

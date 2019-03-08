@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/InstanceType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/DirectInternetAccess.h>
+#include <aws/sagemaker/model/RootAccess.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <aws/sagemaker/model/NotebookInstanceAcceleratorType.h>
 #include <utility>
@@ -210,7 +211,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -224,7 +225,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -238,7 +239,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -252,7 +253,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -266,7 +267,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -280,7 +281,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -294,7 +295,7 @@ namespace Model
      * tasks. The policy must allow the Amazon SageMaker service principal
      * (sagemaker.amazonaws.com) permissions to assume this role. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
      * SageMaker Roles</a>. </p> <note> <p>To be able to pass this role to Amazon
      * SageMaker, the caller of this API must have the <code>iam:PassRole</code>
      * permission.</p> </note>
@@ -419,7 +420,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline const Aws::String& GetLifecycleConfigName() const{ return m_lifecycleConfigName; }
@@ -427,7 +428,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const Aws::String& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = value; }
@@ -435,7 +436,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(Aws::String&& value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName = std::move(value); }
@@ -443,7 +444,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline void SetLifecycleConfigName(const char* value) { m_lifecycleConfigNameHasBeenSet = true; m_lifecycleConfigName.assign(value); }
@@ -451,7 +452,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const Aws::String& value) { SetLifecycleConfigName(value); return *this;}
@@ -459,7 +460,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(Aws::String&& value) { SetLifecycleConfigName(std::move(value)); return *this;}
@@ -467,7 +468,7 @@ namespace Model
     /**
      * <p>The name of a lifecycle configuration to associate with the notebook
      * instance. For information about lifestyle configurations, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
      * 2.1: (Optional) Customize a Notebook Instance</a>.</p>
      */
     inline CreateNotebookInstanceRequest& WithLifecycleConfigName(const char* value) { SetLifecycleConfigName(value); return *this;}
@@ -479,7 +480,7 @@ namespace Model
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
@@ -492,7 +493,7 @@ namespace Model
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
@@ -505,7 +506,7 @@ namespace Model
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
@@ -518,7 +519,7 @@ namespace Model
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
@@ -531,7 +532,7 @@ namespace Model
      * be able to access resources only in your VPC, and will not be able to connect to
      * Amazon SageMaker training and endpoint services unless your configure a NAT
      * Gateway in your VPC.</p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
      * Instances Are Internet-Enabled by Default</a>. You can set the value of this
      * parameter to <code>Disabled</code> only if you set a value for the
      * <code>SubnetId</code> parameter.</p>
@@ -818,6 +819,57 @@ namespace Model
      */
     inline CreateNotebookInstanceRequest& AddAdditionalCodeRepositories(const char* value) { m_additionalCodeRepositoriesHasBeenSet = true; m_additionalCodeRepositories.push_back(value); return *this; }
 
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * configurations need root access to be able to set up a notebook instance.
+     * Because of this, lifecycle configurations associated with a notebook instance
+     * always run with root access even if you disable root access for users.</p>
+     * </note>
+     */
+    inline const RootAccess& GetRootAccess() const{ return m_rootAccess; }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * configurations need root access to be able to set up a notebook instance.
+     * Because of this, lifecycle configurations associated with a notebook instance
+     * always run with root access even if you disable root access for users.</p>
+     * </note>
+     */
+    inline void SetRootAccess(const RootAccess& value) { m_rootAccessHasBeenSet = true; m_rootAccess = value; }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * configurations need root access to be able to set up a notebook instance.
+     * Because of this, lifecycle configurations associated with a notebook instance
+     * always run with root access even if you disable root access for users.</p>
+     * </note>
+     */
+    inline void SetRootAccess(RootAccess&& value) { m_rootAccessHasBeenSet = true; m_rootAccess = std::move(value); }
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * configurations need root access to be able to set up a notebook instance.
+     * Because of this, lifecycle configurations associated with a notebook instance
+     * always run with root access even if you disable root access for users.</p>
+     * </note>
+     */
+    inline CreateNotebookInstanceRequest& WithRootAccess(const RootAccess& value) { SetRootAccess(value); return *this;}
+
+    /**
+     * <p>Whether root access is enabled or disabled for users of the notebook
+     * instance. The default value is <code>Enabled</code>.</p> <note> <p>Lifecycle
+     * configurations need root access to be able to set up a notebook instance.
+     * Because of this, lifecycle configurations associated with a notebook instance
+     * always run with root access even if you disable root access for users.</p>
+     * </note>
+     */
+    inline CreateNotebookInstanceRequest& WithRootAccess(RootAccess&& value) { SetRootAccess(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_notebookInstanceName;
@@ -858,6 +910,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_additionalCodeRepositories;
     bool m_additionalCodeRepositoriesHasBeenSet;
+
+    RootAccess m_rootAccess;
+    bool m_rootAccessHasBeenSet;
   };
 
 } // namespace Model

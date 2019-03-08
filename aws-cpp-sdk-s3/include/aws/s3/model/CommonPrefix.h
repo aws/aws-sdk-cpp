@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CommonPrefix">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API CommonPrefix
   {
   public:
@@ -42,25 +47,39 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CommonPrefix& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
   private:

@@ -38,6 +38,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Rule">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Rule
   {
   public:
@@ -48,19 +53,29 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
 
 
@@ -174,19 +189,29 @@ namespace Model
     inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Transition& GetTransition() const{ return m_transition; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
 
 

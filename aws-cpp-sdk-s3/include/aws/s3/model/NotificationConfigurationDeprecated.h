@@ -44,51 +44,81 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const TopicConfigurationDeprecated& GetTopicConfiguration() const{ return m_topicConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTopicConfiguration(const TopicConfigurationDeprecated& value) { m_topicConfigurationHasBeenSet = true; m_topicConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTopicConfiguration(TopicConfigurationDeprecated&& value) { m_topicConfigurationHasBeenSet = true; m_topicConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithTopicConfiguration(const TopicConfigurationDeprecated& value) { SetTopicConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithTopicConfiguration(TopicConfigurationDeprecated&& value) { SetTopicConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const QueueConfigurationDeprecated& GetQueueConfiguration() const{ return m_queueConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetQueueConfiguration(const QueueConfigurationDeprecated& value) { m_queueConfigurationHasBeenSet = true; m_queueConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetQueueConfiguration(QueueConfigurationDeprecated&& value) { m_queueConfigurationHasBeenSet = true; m_queueConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithQueueConfiguration(const QueueConfigurationDeprecated& value) { SetQueueConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithQueueConfiguration(QueueConfigurationDeprecated&& value) { SetQueueConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const CloudFunctionConfiguration& GetCloudFunctionConfiguration() const{ return m_cloudFunctionConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCloudFunctionConfiguration(const CloudFunctionConfiguration& value) { m_cloudFunctionConfigurationHasBeenSet = true; m_cloudFunctionConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCloudFunctionConfiguration(CloudFunctionConfiguration&& value) { m_cloudFunctionConfigurationHasBeenSet = true; m_cloudFunctionConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithCloudFunctionConfiguration(const CloudFunctionConfiguration& value) { SetCloudFunctionConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline NotificationConfigurationDeprecated& WithCloudFunctionConfiguration(CloudFunctionConfiguration&& value) { SetCloudFunctionConfiguration(std::move(value)); return *this;}
 
   private:

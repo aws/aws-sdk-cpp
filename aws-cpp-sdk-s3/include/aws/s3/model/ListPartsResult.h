@@ -301,25 +301,39 @@ namespace Model
     inline ListPartsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Part>& GetParts() const{ return m_parts; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetParts(const Aws::Vector<Part>& value) { m_parts = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetParts(Aws::Vector<Part>&& value) { m_parts = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& AddParts(const Part& value) { m_parts.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(std::move(value)); return *this; }
 
 
@@ -349,19 +363,29 @@ namespace Model
     inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Owner& GetOwner() const{ return m_owner; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 

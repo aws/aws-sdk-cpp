@@ -44,69 +44,111 @@ namespace Model
     CompleteMultipartUploadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_key = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const char* value) { m_key.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CompleteMultipartUploadResult& WithKey(const char* value) { SetKey(value); return *this;}
 
 

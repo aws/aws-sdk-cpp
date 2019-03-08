@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the results of a transform job output.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Describes the results of a transform job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformOutput">AWS
    * API Reference</a></p>
    */
@@ -53,13 +52,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
 
@@ -67,13 +72,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
 
@@ -81,13 +92,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
 
@@ -95,13 +112,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
 
@@ -109,13 +132,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline TransformOutput& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
 
@@ -123,13 +152,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline TransformOutput& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
 
@@ -137,13 +172,19 @@ namespace Model
      * <p>The Amazon S3 path where you want Amazon SageMaker to store the results of
      * the transform job. For example,
      * <code>s3://bucket-name/key-name-prefix</code>.</p> <p>For every S3 object used
-     * as input for the transform job, the transformed data is stored in a
-     * corresponding subfolder in the location under the output prefix. For example,
-     * for the input data
-     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code> the
-     * transformed data is stored at
-     * <code>s3://bucket-name/key-name-prefix/dataset01/</code>. This is based on the
-     * original name, as a series of .part files (.part0001, part0002, etc.).</p>
+     * as input for the transform job, batch transform stores the transformed data with
+     * an .<code>out</code> suffix in a corresponding subfolder in the location in the
+     * output prefix. For example, for the input data stored at
+     * <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>, batch
+     * transform stores the transformed data at
+     * <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+     * Batch transform doesn't upload partially processed objects. For an input S3
+     * object that contains multiple records, it creates an .<code>out</code> file only
+     * if the transform job succeeds on the entire file. When the input contains
+     * multiple S3 objects, the batch transform job processes the listed S3 objects and
+     * uploads only the output for successfully processed objects. If any object fails
+     * in the transform job batch transform marks the job as failed to prompt
+     * investigation.</p>
      */
     inline TransformOutput& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
 

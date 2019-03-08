@@ -88,25 +88,39 @@ namespace Model
     inline CopyObjectResult& WithExpiration(const char* value) { SetExpiration(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetCopySourceVersionId() const{ return m_copySourceVersionId; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopySourceVersionId(const Aws::String& value) { m_copySourceVersionId = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopySourceVersionId(Aws::String&& value) { m_copySourceVersionId = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopySourceVersionId(const char* value) { m_copySourceVersionId.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CopyObjectResult& WithCopySourceVersionId(const Aws::String& value) { SetCopySourceVersionId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CopyObjectResult& WithCopySourceVersionId(Aws::String&& value) { SetCopySourceVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CopyObjectResult& WithCopySourceVersionId(const char* value) { SetCopySourceVersionId(value); return *this;}
 
 
@@ -336,19 +350,29 @@ namespace Model
     inline CopyObjectResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const CopyObjectResultDetails& GetCopyObjectResultDetails() const{ return m_copyObjectResultDetails; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopyObjectResultDetails(const CopyObjectResultDetails& value) { m_copyObjectResultDetails = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopyObjectResultDetails(CopyObjectResultDetails&& value) { m_copyObjectResultDetails = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline CopyObjectResult& WithCopyObjectResultDetails(const CopyObjectResultDetails& value) { SetCopyObjectResultDetails(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline CopyObjectResult& WithCopyObjectResultDetails(CopyObjectResultDetails&& value) { SetCopyObjectResultDetails(std::move(value)); return *this;}
 
   private:

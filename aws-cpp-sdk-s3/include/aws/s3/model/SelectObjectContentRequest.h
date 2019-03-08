@@ -44,7 +44,7 @@ namespace Model
    * object. Amazon S3 uses this to parse object data into records. It returns only
    * records that match the specified SQL expression. You must also specify the data
    * serialization format for the response. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select
    * API Documentation</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContentRequest">AWS
    * API Reference</a></p>
@@ -161,49 +161,49 @@ namespace Model
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
      * <p>The SSE Algorithm used to encrypt the object. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
@@ -211,49 +211,49 @@ namespace Model
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>The SSE Customer Key. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
@@ -261,49 +261,49 @@ namespace Model
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>The SSE Customer Key MD5. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">
      * Server-Side Encryption (Using Customer-Provided Encryption Keys</a>. </p>
      */
     inline SelectObjectContentRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}

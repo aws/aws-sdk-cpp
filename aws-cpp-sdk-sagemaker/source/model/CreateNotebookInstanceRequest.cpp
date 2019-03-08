@@ -38,7 +38,9 @@ CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() :
     m_volumeSizeInGBHasBeenSet(false),
     m_acceleratorTypesHasBeenSet(false),
     m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false)
+    m_additionalCodeRepositoriesHasBeenSet(false),
+    m_rootAccess(RootAccess::NOT_SET),
+    m_rootAccessHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,11 @@ Aws::String CreateNotebookInstanceRequest::SerializePayload() const
    }
    payload.WithArray("AdditionalCodeRepositories", std::move(additionalCodeRepositoriesJsonList));
 
+  }
+
+  if(m_rootAccessHasBeenSet)
+  {
+   payload.WithString("RootAccess", RootAccessMapper::GetNameForRootAccess(m_rootAccess));
   }
 
   return payload.View().WriteReadable();

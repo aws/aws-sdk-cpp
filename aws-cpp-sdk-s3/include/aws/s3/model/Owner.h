@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Owner">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Owner
   {
   public:
@@ -42,47 +47,75 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetID() const{ return m_iD; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetID(Aws::String&& value) { m_iDHasBeenSet = true; m_iD = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetID(const char* value) { m_iDHasBeenSet = true; m_iD.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithID(const Aws::String& value) { SetID(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithID(Aws::String&& value) { SetID(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Owner& WithID(const char* value) { SetID(value); return *this;}
 
   private:

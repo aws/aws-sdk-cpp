@@ -36,6 +36,7 @@ StartBuildRequest::StartBuildRequest() :
     m_sourceAuthOverrideHasBeenSet(false),
     m_gitCloneDepthOverride(0),
     m_gitCloneDepthOverrideHasBeenSet(false),
+    m_gitSubmodulesConfigOverrideHasBeenSet(false),
     m_buildspecOverrideHasBeenSet(false),
     m_insecureSslOverride(false),
     m_insecureSslOverrideHasBeenSet(false),
@@ -149,6 +150,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_gitCloneDepthOverrideHasBeenSet)
   {
    payload.WithInteger("gitCloneDepthOverride", m_gitCloneDepthOverride);
+
+  }
+
+  if(m_gitSubmodulesConfigOverrideHasBeenSet)
+  {
+   payload.WithObject("gitSubmodulesConfigOverride", m_gitSubmodulesConfigOverride.Jsonize());
 
   }
 

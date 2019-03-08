@@ -63,8 +63,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -74,8 +74,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -85,8 +85,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -96,8 +96,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -107,8 +107,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -118,8 +118,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */
@@ -129,8 +129,8 @@ namespace Model
      * <p>An array of hyperparameter tuning jobs that are used as the starting point
      * for the new hyperparameter tuning job. For more information about warm starting
      * a hyperparameter tuning job, see <a
-     * href="http://docs.aws.amazon.com/automatic-model-tuning-incremental">Using a
-     * Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-warm-start.html">Using
+     * a Previous Hyperparameter Tuning Job as a Starting Point</a>.</p>
      * <p>Hyperparameter tuning jobs created before October 1, 2018 cannot be used as
      * parent jobs for warm start tuning jobs.</p>
      */

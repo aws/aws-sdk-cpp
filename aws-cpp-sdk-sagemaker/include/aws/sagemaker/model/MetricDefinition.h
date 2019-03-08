@@ -91,7 +91,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
@@ -100,7 +100,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
@@ -109,7 +109,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
@@ -118,7 +118,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
@@ -127,7 +127,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
@@ -136,7 +136,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
@@ -145,7 +145,7 @@ namespace Model
      * <p>A regular expression that searches the output of a training job and gets the
      * value of the metric. For more information about using regular expressions to
      * define metrics, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics.html">Defining
      * Objective Metrics</a>.</p>
      */
     inline MetricDefinition& WithRegex(const char* value) { SetRegex(value); return *this;}

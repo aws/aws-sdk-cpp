@@ -30,7 +30,8 @@ DescribeNotebookInstanceResult::DescribeNotebookInstanceResult() :
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
     m_instanceType(InstanceType::NOT_SET),
     m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_volumeSizeInGB(0)
+    m_volumeSizeInGB(0),
+    m_rootAccess(RootAccess::NOT_SET)
 {
 }
 
@@ -38,7 +39,8 @@ DescribeNotebookInstanceResult::DescribeNotebookInstanceResult(const Aws::Amazon
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
     m_instanceType(InstanceType::NOT_SET),
     m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_volumeSizeInGB(0)
+    m_volumeSizeInGB(0),
+    m_rootAccess(RootAccess::NOT_SET)
 {
   *this = result;
 }
@@ -167,6 +169,12 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
     {
       m_additionalCodeRepositories.push_back(additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("RootAccess"))
+  {
+    m_rootAccess = RootAccessMapper::GetRootAccessForName(jsonValue.GetString("RootAccess"));
+
   }
 
 

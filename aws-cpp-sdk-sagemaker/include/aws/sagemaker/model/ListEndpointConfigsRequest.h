@@ -74,27 +74,27 @@ namespace Model
 
 
     /**
-     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
     inline const OrderKey& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const OrderKey& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(OrderKey&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
     inline ListEndpointConfigsRequest& WithSortOrder(const OrderKey& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order for results. The default is <code>Ascending</code>.</p>
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
     inline ListEndpointConfigsRequest& WithSortOrder(OrderKey&& value) { SetSortOrder(std::move(value)); return *this;}
 

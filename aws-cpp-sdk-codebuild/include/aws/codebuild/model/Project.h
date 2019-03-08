@@ -435,57 +435,71 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Project& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Project& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used
-     * for encrypting the build output artifacts.</p> <p>This is expressed either as
-     * the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     * (using the format <code>alias/<i>alias-name</i> </code>).</p>
+     * for encrypting the build output artifacts.</p> <note> <p> You can use a
+     * cross-account KMS key to encrypt the build output artifacts if your service role
+     * has permission to that key. </p> </note> <p>You can specify either the Amazon
+     * Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).</p>
      */
     inline Project& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
 

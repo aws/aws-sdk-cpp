@@ -111,25 +111,39 @@ namespace Model
     inline ListObjectVersionsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarker = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarker = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionIdMarker(const char* value) { m_versionIdMarker.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
 
 
@@ -219,145 +233,235 @@ namespace Model
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<ObjectVersion>& GetVersions() const{ return m_versions; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersions(const Aws::Vector<ObjectVersion>& value) { m_versions = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersions(Aws::Vector<ObjectVersion>&& value) { m_versions = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithVersions(const Aws::Vector<ObjectVersion>& value) { SetVersions(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithVersions(Aws::Vector<ObjectVersion>&& value) { SetVersions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddVersions(const ObjectVersion& value) { m_versions.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddVersions(ObjectVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<DeleteMarkerEntry>& GetDeleteMarkers() const{ return m_deleteMarkers; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { m_deleteMarkers = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { m_deleteMarkers = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithDeleteMarkers(const Aws::Vector<DeleteMarkerEntry>& value) { SetDeleteMarkers(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithDeleteMarkers(Aws::Vector<DeleteMarkerEntry>&& value) { SetDeleteMarkers(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddDeleteMarkers(const DeleteMarkerEntry& value) { m_deleteMarkers.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddDeleteMarkers(DeleteMarkerEntry&& value) { m_deleteMarkers.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const char* value) { m_name.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectVersionsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
 

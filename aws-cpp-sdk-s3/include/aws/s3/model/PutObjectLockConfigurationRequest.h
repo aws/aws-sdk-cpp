@@ -138,25 +138,39 @@ namespace Model
     inline PutObjectLockConfigurationRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline const Aws::String& GetToken() const{ return m_token; }
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline PutObjectLockConfigurationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline PutObjectLockConfigurationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
+     */
     inline PutObjectLockConfigurationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 
 

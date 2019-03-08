@@ -21,6 +21,7 @@
 #include <aws/codebuild/model/ProjectArtifacts.h>
 #include <aws/codebuild/model/SourceType.h>
 #include <aws/codebuild/model/SourceAuth.h>
+#include <aws/codebuild/model/GitSubmodulesConfig.h>
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ProjectCache.h>
@@ -546,6 +547,37 @@ namespace Model
      * project.</p>
      */
     inline StartBuildRequest& WithGitCloneDepthOverride(int value) { SetGitCloneDepthOverride(value); return *this;}
+
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline const GitSubmodulesConfig& GetGitSubmodulesConfigOverride() const{ return m_gitSubmodulesConfigOverride; }
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline void SetGitSubmodulesConfigOverride(const GitSubmodulesConfig& value) { m_gitSubmodulesConfigOverrideHasBeenSet = true; m_gitSubmodulesConfigOverride = value; }
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline void SetGitSubmodulesConfigOverride(GitSubmodulesConfig&& value) { m_gitSubmodulesConfigOverrideHasBeenSet = true; m_gitSubmodulesConfigOverride = std::move(value); }
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline StartBuildRequest& WithGitSubmodulesConfigOverride(const GitSubmodulesConfig& value) { SetGitSubmodulesConfigOverride(value); return *this;}
+
+    /**
+     * <p> Information about the Git submodules configuration for this build of an AWS
+     * CodeBuild build project. </p>
+     */
+    inline StartBuildRequest& WithGitSubmodulesConfigOverride(GitSubmodulesConfig&& value) { SetGitSubmodulesConfigOverride(std::move(value)); return *this;}
 
 
     /**
@@ -1125,6 +1157,9 @@ namespace Model
 
     int m_gitCloneDepthOverride;
     bool m_gitCloneDepthOverrideHasBeenSet;
+
+    GitSubmodulesConfig m_gitSubmodulesConfigOverride;
+    bool m_gitSubmodulesConfigOverrideHasBeenSet;
 
     Aws::String m_buildspecOverride;
     bool m_buildspecOverrideHasBeenSet;
