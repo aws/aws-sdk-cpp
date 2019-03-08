@@ -27,6 +27,9 @@ if(POLICY CMP0056)
     cmake_policy(SET CMP0056 NEW)
 endif()
 
+# build the sdk targets
+project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
+
 # 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
 # Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
 if(CMAKE_MAJOR_VERSION LESS 3)
@@ -165,6 +168,9 @@ if (BUILD_DEPS)
             -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
             -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
             -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
+            -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}
+            -DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS} 
+            -DCMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}
             ${CMAKE_CURRENT_SOURCE_DIR}/third-party
             WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
             RESULT_VARIABLE BUILD_3P_EXIT_CODE)
@@ -182,9 +188,6 @@ if (BUILD_DEPS)
     message(STATUS "Third-party dependencies are installed at: ${AWS_DEPS_INSTALL_DIR}")
     list(APPEND CMAKE_PREFIX_PATH "${AWS_DEPS_INSTALL_DIR}")
 endif()
-
-# build the sdk targets
-project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib
 include(external_dependencies)
