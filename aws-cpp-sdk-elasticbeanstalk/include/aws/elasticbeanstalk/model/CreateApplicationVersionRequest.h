@@ -20,6 +20,8 @@
 #include <aws/elasticbeanstalk/model/SourceBuildInformation.h>
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/elasticbeanstalk/model/BuildConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticbeanstalk/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -369,6 +371,56 @@ namespace Model
      */
     inline CreateApplicationVersionRequest& WithProcess(bool value) { SetProcess(value); return *this;}
 
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline CreateApplicationVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline CreateApplicationVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline CreateApplicationVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags applied to the application version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the application version. Environments that
+     * use the application version don't inherit the tags.</p>
+     */
+    inline CreateApplicationVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_applicationName;
@@ -394,6 +446,9 @@ namespace Model
 
     bool m_process;
     bool m_processHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

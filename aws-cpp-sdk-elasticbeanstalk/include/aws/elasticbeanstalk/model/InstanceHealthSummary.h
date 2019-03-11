@@ -34,7 +34,7 @@ namespace Model
   /**
    * <p>Represents summary information about the health of an instance. For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
    * Colors and Statuses</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/InstanceHealthSummary">AWS
    * API Reference</a></p>

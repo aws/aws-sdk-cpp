@@ -34,7 +34,8 @@ CreateDevEndpointRequest::CreateDevEndpointRequest() :
     m_extraPythonLibsS3PathHasBeenSet(false),
     m_extraJarsS3PathHasBeenSet(false),
     m_securityConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
 }
 
@@ -120,6 +121,17 @@ Aws::String CreateDevEndpointRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("Tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_argumentsHasBeenSet)
+  {
+   JsonValue argumentsJsonMap;
+   for(auto& argumentsItem : m_arguments)
+   {
+     argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
+   }
+   payload.WithObject("Arguments", std::move(argumentsJsonMap));
 
   }
 

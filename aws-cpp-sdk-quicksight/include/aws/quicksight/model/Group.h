@@ -157,6 +157,42 @@ namespace Model
      */
     inline Group& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline Group& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline Group& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal ID of the group.</p>
+     */
+    inline Group& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -167,6 +203,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet;
   };
 
 } // namespace Model

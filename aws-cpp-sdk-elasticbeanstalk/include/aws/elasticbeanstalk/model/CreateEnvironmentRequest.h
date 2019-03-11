@@ -193,7 +193,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
@@ -202,7 +202,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -211,7 +211,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
@@ -220,7 +220,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
@@ -229,7 +229,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
@@ -238,7 +238,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
@@ -247,7 +247,7 @@ namespace Model
      * <p>The name of the group to which the target environment belongs. Specify a
      * group name only if the environment's name is specified in an environment
      * manifest and not with the environment name parameter. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline CreateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
@@ -366,37 +366,37 @@ namespace Model
 
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>This specifies the tags applied to resources in the environment.</p>
+     * <p>Specifies the tags applied to resources in the environment.</p>
      */
     inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -520,7 +520,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
@@ -530,7 +530,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
@@ -540,7 +540,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
@@ -550,7 +550,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
@@ -560,7 +560,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
@@ -570,7 +570,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
@@ -580,7 +580,7 @@ namespace Model
      * Elastic Beanstalk sets the configuration values to the default values associated
      * with the specified solution stack.</p> <p>For a list of current solution stacks,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Elastic
      * Beanstalk Supported Platforms</a>.</p>
      */
     inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}

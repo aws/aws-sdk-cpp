@@ -614,6 +614,67 @@ namespace Model
      */
     inline CreateDevEndpointRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p>
+     */
+    inline CreateDevEndpointRequest& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -648,6 +709,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_arguments;
+    bool m_argumentsHasBeenSet;
   };
 
 } // namespace Model

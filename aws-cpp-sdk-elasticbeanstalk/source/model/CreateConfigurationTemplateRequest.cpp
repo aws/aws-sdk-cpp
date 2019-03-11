@@ -28,7 +28,8 @@ CreateConfigurationTemplateRequest::CreateConfigurationTemplateRequest() :
     m_sourceConfigurationHasBeenSet(false),
     m_environmentIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_optionSettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,16 @@ Aws::String CreateConfigurationTemplateRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
       optionSettingsCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

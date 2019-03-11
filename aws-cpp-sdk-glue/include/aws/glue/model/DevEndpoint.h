@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -897,6 +898,91 @@ namespace Model
      */
     inline DevEndpoint& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
 
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -961,6 +1047,9 @@ namespace Model
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_arguments;
+    bool m_argumentsHasBeenSet;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p> A specification identifying an individual configuration option along with
    * its current value. For a list of possible option values, go to <a
-   * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
    * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionSetting">AWS

@@ -661,7 +661,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline const EnvironmentHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
@@ -669,7 +669,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const EnvironmentHealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
@@ -677,7 +677,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(EnvironmentHealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
@@ -685,7 +685,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline EnvironmentDescription& WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
@@ -693,7 +693,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline EnvironmentDescription& WithHealthStatus(EnvironmentHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}

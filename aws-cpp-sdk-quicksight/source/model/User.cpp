@@ -37,7 +37,8 @@ User::User() :
     m_identityType(IdentityType::NOT_SET),
     m_identityTypeHasBeenSet(false),
     m_active(false),
-    m_activeHasBeenSet(false)
+    m_activeHasBeenSet(false),
+    m_principalIdHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ User::User(JsonView jsonValue) :
     m_identityType(IdentityType::NOT_SET),
     m_identityTypeHasBeenSet(false),
     m_active(false),
-    m_activeHasBeenSet(false)
+    m_activeHasBeenSet(false),
+    m_principalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,13 @@ User& User::operator =(JsonView jsonValue)
     m_activeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrincipalId"))
+  {
+    m_principalId = jsonValue.GetString("PrincipalId");
+
+    m_principalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +146,12 @@ JsonValue User::Jsonize() const
   if(m_activeHasBeenSet)
   {
    payload.WithBool("Active", m_active);
+
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("PrincipalId", m_principalId);
 
   }
 

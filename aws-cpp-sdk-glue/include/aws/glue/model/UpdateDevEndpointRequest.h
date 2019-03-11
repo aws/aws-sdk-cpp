@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DevEndpointCustomLibraries.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -244,6 +245,128 @@ namespace Model
      */
     inline UpdateDevEndpointRequest& WithUpdateEtlLibraries(bool value) { SetUpdateEtlLibraries(value); return *this;}
 
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDeleteArguments() const{ return m_deleteArguments; }
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline void SetDeleteArguments(const Aws::Vector<Aws::String>& value) { m_deleteArgumentsHasBeenSet = true; m_deleteArguments = value; }
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline void SetDeleteArguments(Aws::Vector<Aws::String>&& value) { m_deleteArgumentsHasBeenSet = true; m_deleteArguments = std::move(value); }
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithDeleteArguments(const Aws::Vector<Aws::String>& value) { SetDeleteArguments(value); return *this;}
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithDeleteArguments(Aws::Vector<Aws::String>&& value) { SetDeleteArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeleteArguments(const Aws::String& value) { m_deleteArgumentsHasBeenSet = true; m_deleteArguments.push_back(value); return *this; }
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeleteArguments(Aws::String&& value) { m_deleteArgumentsHasBeenSet = true; m_deleteArguments.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of argument keys to be deleted from the map of arguments used to
+     * configure the DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddDeleteArguments(const char* value) { m_deleteArgumentsHasBeenSet = true; m_deleteArguments.push_back(value); return *this; }
+
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAddArguments() const{ return m_addArguments; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline void SetAddArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_addArgumentsHasBeenSet = true; m_addArguments = value; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline void SetAddArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_addArgumentsHasBeenSet = true; m_addArguments = std::move(value); }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithAddArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetAddArguments(value); return *this;}
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& WithAddArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetAddArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(const Aws::String& key, const Aws::String& value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(Aws::String&& key, const Aws::String& value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(const Aws::String& key, Aws::String&& value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(Aws::String&& key, Aws::String&& value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(const char* key, Aws::String&& value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(Aws::String&& key, const char* value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The map of arguments to add the map of arguments used to configure the
+     * DevEndpoint.</p>
+     */
+    inline UpdateDevEndpointRequest& AddAddArguments(const char* key, const char* value) { m_addArgumentsHasBeenSet = true; m_addArguments.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -263,6 +386,12 @@ namespace Model
 
     bool m_updateEtlLibraries;
     bool m_updateEtlLibrariesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_deleteArguments;
+    bool m_deleteArgumentsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_addArguments;
+    bool m_addArgumentsHasBeenSet;
   };
 
 } // namespace Model

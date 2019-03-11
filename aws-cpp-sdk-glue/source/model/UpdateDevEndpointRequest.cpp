@@ -29,7 +29,9 @@ UpdateDevEndpointRequest::UpdateDevEndpointRequest() :
     m_deletePublicKeysHasBeenSet(false),
     m_customLibrariesHasBeenSet(false),
     m_updateEtlLibraries(false),
-    m_updateEtlLibrariesHasBeenSet(false)
+    m_updateEtlLibrariesHasBeenSet(false),
+    m_deleteArgumentsHasBeenSet(false),
+    m_addArgumentsHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,28 @@ Aws::String UpdateDevEndpointRequest::SerializePayload() const
   if(m_updateEtlLibrariesHasBeenSet)
   {
    payload.WithBool("UpdateEtlLibraries", m_updateEtlLibraries);
+
+  }
+
+  if(m_deleteArgumentsHasBeenSet)
+  {
+   Array<JsonValue> deleteArgumentsJsonList(m_deleteArguments.size());
+   for(unsigned deleteArgumentsIndex = 0; deleteArgumentsIndex < deleteArgumentsJsonList.GetLength(); ++deleteArgumentsIndex)
+   {
+     deleteArgumentsJsonList[deleteArgumentsIndex].AsString(m_deleteArguments[deleteArgumentsIndex]);
+   }
+   payload.WithArray("DeleteArguments", std::move(deleteArgumentsJsonList));
+
+  }
+
+  if(m_addArgumentsHasBeenSet)
+  {
+   JsonValue addArgumentsJsonMap;
+   for(auto& addArgumentsItem : m_addArguments)
+   {
+     addArgumentsJsonMap.WithString(addArgumentsItem.first, addArgumentsItem.second);
+   }
+   payload.WithObject("AddArguments", std::move(addArgumentsJsonMap));
 
   }
 

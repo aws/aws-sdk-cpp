@@ -35,6 +35,7 @@
 #include <aws/quicksight/model/DeleteGroupRequest.h>
 #include <aws/quicksight/model/DeleteGroupMembershipRequest.h>
 #include <aws/quicksight/model/DeleteUserRequest.h>
+#include <aws/quicksight/model/DeleteUserByPrincipalIdRequest.h>
 #include <aws/quicksight/model/DescribeGroupRequest.h>
 #include <aws/quicksight/model/DescribeUserRequest.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlRequest.h>
@@ -318,6 +319,46 @@ void QuickSightClient::DeleteUserAsync(const DeleteUserRequest& request, const D
 void QuickSightClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteUser(request), context);
+}
+
+DeleteUserByPrincipalIdOutcome QuickSightClient::DeleteUserByPrincipalId(const DeleteUserByPrincipalIdRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAwsAccountId();
+  ss << "/namespaces/";
+  ss << request.GetNamespace();
+  ss << "/user-principals/";
+  ss << request.GetPrincipalId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteUserByPrincipalIdOutcome(DeleteUserByPrincipalIdResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteUserByPrincipalIdOutcome(outcome.GetError());
+  }
+}
+
+DeleteUserByPrincipalIdOutcomeCallable QuickSightClient::DeleteUserByPrincipalIdCallable(const DeleteUserByPrincipalIdRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteUserByPrincipalIdOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteUserByPrincipalId(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void QuickSightClient::DeleteUserByPrincipalIdAsync(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteUserByPrincipalIdAsyncHelper( request, handler, context ); } );
+}
+
+void QuickSightClient::DeleteUserByPrincipalIdAsyncHelper(const DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteUserByPrincipalId(request), context);
 }
 
 DescribeGroupOutcome QuickSightClient::DescribeGroup(const DescribeGroupRequest& request) const

@@ -92,49 +92,49 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatus = value; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatus = std::move(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatus.assign(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * status</a> of the environment. For example, <code>Ok</code>.</p>
      */
     inline DescribeEnvironmentHealthResult& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
@@ -178,49 +178,49 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline const Aws::String& GetColor() const{ return m_color; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline void SetColor(const Aws::String& value) { m_color = value; }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline void SetColor(Aws::String&& value) { m_color = std::move(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline void SetColor(const char* value) { m_color.assign(value); }
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(const Aws::String& value) { SetColor(value); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">health
      * color</a> of the environment.</p>
      */
     inline DescribeEnvironmentHealthResult& WithColor(const char* value) { SetColor(value); return *this;}

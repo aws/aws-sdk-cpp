@@ -26,6 +26,7 @@
 #include <aws/quicksight/model/DeleteGroupResult.h>
 #include <aws/quicksight/model/DeleteGroupMembershipResult.h>
 #include <aws/quicksight/model/DeleteUserResult.h>
+#include <aws/quicksight/model/DeleteUserByPrincipalIdResult.h>
 #include <aws/quicksight/model/DescribeGroupResult.h>
 #include <aws/quicksight/model/DescribeUserResult.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
@@ -81,6 +82,7 @@ namespace Model
         class DeleteGroupRequest;
         class DeleteGroupMembershipRequest;
         class DeleteUserRequest;
+        class DeleteUserByPrincipalIdRequest;
         class DescribeGroupRequest;
         class DescribeUserRequest;
         class GetDashboardEmbedUrlRequest;
@@ -97,6 +99,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<QuickSightErrors>> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, Aws::Client::AWSError<QuickSightErrors>> DeleteGroupMembershipOutcome;
         typedef Aws::Utils::Outcome<DeleteUserResult, Aws::Client::AWSError<QuickSightErrors>> DeleteUserOutcome;
+        typedef Aws::Utils::Outcome<DeleteUserByPrincipalIdResult, Aws::Client::AWSError<QuickSightErrors>> DeleteUserByPrincipalIdOutcome;
         typedef Aws::Utils::Outcome<DescribeGroupResult, Aws::Client::AWSError<QuickSightErrors>> DescribeGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUserResult, Aws::Client::AWSError<QuickSightErrors>> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<GetDashboardEmbedUrlResult, Aws::Client::AWSError<QuickSightErrors>> GetDashboardEmbedUrlOutcome;
@@ -113,6 +116,7 @@ namespace Model
         typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCallable;
         typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+        typedef std::future<DeleteUserByPrincipalIdOutcome> DeleteUserByPrincipalIdOutcomeCallable;
         typedef std::future<DescribeGroupOutcome> DescribeGroupOutcomeCallable;
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<GetDashboardEmbedUrlOutcome> GetDashboardEmbedUrlOutcomeCallable;
@@ -132,6 +136,7 @@ namespace Model
     typedef std::function<void(const QuickSightClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteGroupMembershipRequest&, const Model::DeleteGroupMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteUserByPrincipalIdRequest&, const Model::DeleteUserByPrincipalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserByPrincipalIdResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeGroupRequest&, const Model::DescribeGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGroupResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GetDashboardEmbedUrlRequest&, const Model::GetDashboardEmbedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardEmbedUrlResponseReceivedHandler;
@@ -396,6 +401,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a user after locating the user by its principal ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserByPrincipalIdOutcome DeleteUserByPrincipalId(const Model::DeleteUserByPrincipalIdRequest& request) const;
+
+        /**
+         * <p>Deletes a user after locating the user by its principal ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserByPrincipalIdOutcomeCallable DeleteUserByPrincipalIdCallable(const Model::DeleteUserByPrincipalIdRequest& request) const;
+
+        /**
+         * <p>Deletes a user after locating the user by its principal ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteUserByPrincipalId">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserByPrincipalIdAsync(const Model::DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns an Amazon QuickSight group's description and Amazon Resource Name
@@ -891,6 +924,7 @@ namespace Model
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupMembershipAsyncHelper(const Model::DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserByPrincipalIdAsyncHelper(const Model::DeleteUserByPrincipalIdRequest& request, const DeleteUserByPrincipalIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGroupAsyncHelper(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDashboardEmbedUrlAsyncHelper(const Model::GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -31,14 +31,16 @@ namespace Model
 Group::Group() : 
     m_arnHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_principalIdHasBeenSet(false)
 {
 }
 
 Group::Group(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
     m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_principalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ Group& Group::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrincipalId"))
+  {
+    m_principalId = jsonValue.GetString("PrincipalId");
+
+    m_principalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue Group::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
+
+  }
+
+  if(m_principalIdHasBeenSet)
+  {
+   payload.WithString("PrincipalId", m_principalId);
 
   }
 

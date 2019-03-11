@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline const Aws::Vector<double>& GetLoadAverage() const{ return m_loadAverage; }
@@ -88,7 +88,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline void SetLoadAverage(const Aws::Vector<double>& value) { m_loadAverageHasBeenSet = true; m_loadAverage = value; }
@@ -96,7 +96,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline void SetLoadAverage(Aws::Vector<double>&& value) { m_loadAverageHasBeenSet = true; m_loadAverage = std::move(value); }
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline SystemStatus& WithLoadAverage(const Aws::Vector<double>& value) { SetLoadAverage(value); return *this;}
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline SystemStatus& WithLoadAverage(Aws::Vector<double>&& value) { SetLoadAverage(std::move(value)); return *this;}
@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>Load average in the last 1-minute, 5-minute, and 15-minute periods. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-metrics.html#health-enhanced-metrics-os">Operating
      * System Metrics</a>.</p>
      */
     inline SystemStatus& AddLoadAverage(double value) { m_loadAverageHasBeenSet = true; m_loadAverage.push_back(value); return *this; }

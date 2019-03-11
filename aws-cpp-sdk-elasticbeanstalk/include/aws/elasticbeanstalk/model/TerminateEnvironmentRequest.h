@@ -156,7 +156,7 @@ namespace Model
      * and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS
      * Elastic Beanstalk resource management is removed from the environment, but the
      * AWS resources continue to operate.</p> </li> </ul> <p> For more information, see
-     * the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     * the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
      * Valid Values: <code>true</code> | <code>false</code> </p>
      */
@@ -169,7 +169,7 @@ namespace Model
      * and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS
      * Elastic Beanstalk resource management is removed from the environment, but the
      * AWS resources continue to operate.</p> </li> </ul> <p> For more information, see
-     * the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     * the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
      * Valid Values: <code>true</code> | <code>false</code> </p>
      */
@@ -182,7 +182,7 @@ namespace Model
      * and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS
      * Elastic Beanstalk resource management is removed from the environment, but the
      * AWS resources continue to operate.</p> </li> </ul> <p> For more information, see
-     * the <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
+     * the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS
      * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
      * Valid Values: <code>true</code> | <code>false</code> </p>
      */

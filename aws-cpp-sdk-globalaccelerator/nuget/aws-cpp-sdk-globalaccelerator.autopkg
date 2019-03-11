@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-GlobalAccelerator;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20180808.66;
+        version : 1.7.20180808.67;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Global Accelerator);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.66
+            AWSSDKCPP-Core/1.7.67
        }
     }
 

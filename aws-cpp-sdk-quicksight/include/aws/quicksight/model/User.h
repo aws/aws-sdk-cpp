@@ -231,6 +231,42 @@ namespace Model
      */
     inline User& WithActive(bool value) { SetActive(value); return *this;}
 
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline User& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline User& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The principal ID of the user.</p>
+     */
+    inline User& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -250,6 +286,9 @@ namespace Model
 
     bool m_active;
     bool m_activeHasBeenSet;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet;
   };
 
 } // namespace Model

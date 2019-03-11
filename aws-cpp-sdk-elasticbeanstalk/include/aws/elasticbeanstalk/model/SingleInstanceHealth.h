@@ -94,7 +94,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
@@ -142,7 +142,7 @@ namespace Model
     /**
      * <p>Returns the health status of the specified instance. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
@@ -151,7 +151,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline const Aws::String& GetColor() const{ return m_color; }
@@ -159,7 +159,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
@@ -167,7 +167,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithColor(const Aws::String& value) { SetColor(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
@@ -199,7 +199,7 @@ namespace Model
     /**
      * <p>Represents the color indicator that gives you information about the health of
      * the EC2 instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline SingleInstanceHealth& WithColor(const char* value) { SetColor(value); return *this;}

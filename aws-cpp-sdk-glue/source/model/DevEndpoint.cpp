@@ -51,7 +51,8 @@ DevEndpoint::DevEndpoint() :
     m_lastModifiedTimestampHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
     m_publicKeysHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ DevEndpoint::DevEndpoint(JsonView jsonValue) :
     m_lastModifiedTimestampHasBeenSet(false),
     m_publicKeyHasBeenSet(false),
     m_publicKeysHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false)
+    m_securityConfigurationHasBeenSet(false),
+    m_argumentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -238,6 +240,16 @@ DevEndpoint& DevEndpoint::operator =(JsonView jsonValue)
     m_securityConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Arguments"))
+  {
+    Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
+    for(auto& argumentsItem : argumentsJsonMap)
+    {
+      m_arguments[argumentsItem.first] = argumentsItem.second.AsString();
+    }
+    m_argumentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -376,6 +388,17 @@ JsonValue DevEndpoint::Jsonize() const
   if(m_securityConfigurationHasBeenSet)
   {
    payload.WithString("SecurityConfiguration", m_securityConfiguration);
+
+  }
+
+  if(m_argumentsHasBeenSet)
+  {
+   JsonValue argumentsJsonMap;
+   for(auto& argumentsItem : m_arguments)
+   {
+     argumentsJsonMap.WithString(argumentsItem.first, argumentsItem.second);
+   }
+   payload.WithObject("Arguments", std::move(argumentsJsonMap));
 
   }
 

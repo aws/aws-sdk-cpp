@@ -135,6 +135,15 @@ CreateDevEndpointResult& CreateDevEndpointResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("Arguments"))
+  {
+    Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
+    for(auto& argumentsItem : argumentsJsonMap)
+    {
+      m_arguments[argumentsItem.first] = argumentsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;
