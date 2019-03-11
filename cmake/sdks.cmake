@@ -18,6 +18,9 @@ endif()
 
 
 if(BUILD_ONLY)
+    # Sanitize input client list, for example removing empty elements
+    # that may be introduced by trailing semicolons
+    set(BUILD_ONLY ${BUILD_ONLY})
     set(SDK_BUILD_LIST ${BUILD_ONLY})
     foreach(TARGET IN LISTS BUILD_ONLY)
         message(STATUS "Considering ${TARGET}")
