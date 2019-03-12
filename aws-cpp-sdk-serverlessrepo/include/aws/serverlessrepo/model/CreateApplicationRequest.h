@@ -130,50 +130,43 @@ namespace Model
 
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline const Aws::String& GetHomePageUrl() const{ return m_homePageUrl; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = value; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(Aws::String&& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = std::move(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const char* value) { m_homePageUrlHasBeenSet = true; m_homePageUrl.assign(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(const Aws::String& value) { SetHomePageUrl(value); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(Aws::String&& value) { SetHomePageUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(const char* value) { SetHomePageUrl(value); return *this;}
@@ -572,37 +565,87 @@ namespace Model
 
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const Aws::String& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = value; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(Aws::String&& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = std::move(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const char* value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl.assign(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(const Aws::String& value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(Aws::String&& value) { SetSourceCodeArchiveUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(const char* value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 
@@ -787,6 +830,9 @@ namespace Model
 
     Aws::String m_semanticVersion;
     bool m_semanticVersionHasBeenSet;
+
+    Aws::String m_sourceCodeArchiveUrl;
+    bool m_sourceCodeArchiveUrlHasBeenSet;
 
     Aws::String m_sourceCodeUrl;
     bool m_sourceCodeUrlHasBeenSet;

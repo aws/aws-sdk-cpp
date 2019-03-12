@@ -177,37 +177,44 @@ namespace Model
 
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline VersionSummary& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline VersionSummary& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline VersionSummary& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 

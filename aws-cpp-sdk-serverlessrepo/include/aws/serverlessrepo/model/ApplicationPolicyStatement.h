@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An AWS account ID, or * to make the application public.</p>
+     * <p>An array of AWS account IDs, or * to make the application public.</p>
      */
     inline ApplicationPolicyStatement& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 

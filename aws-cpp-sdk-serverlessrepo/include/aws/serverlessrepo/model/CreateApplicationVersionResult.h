@@ -164,9 +164,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -202,15 +202,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline const Aws::Vector<Capability>& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
 
@@ -225,9 +225,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -263,15 +263,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline void SetRequiredCapabilities(const Aws::Vector<Capability>& value) { m_requiredCapabilities = value; }
 
@@ -286,9 +286,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -324,15 +324,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline void SetRequiredCapabilities(Aws::Vector<Capability>&& value) { m_requiredCapabilities = std::move(value); }
 
@@ -347,9 +347,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -385,15 +385,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline CreateApplicationVersionResult& WithRequiredCapabilities(const Aws::Vector<Capability>& value) { SetRequiredCapabilities(value); return *this;}
 
@@ -408,9 +408,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -446,15 +446,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline CreateApplicationVersionResult& WithRequiredCapabilities(Aws::Vector<Capability>&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
 
@@ -469,9 +469,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -507,15 +507,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline CreateApplicationVersionResult& AddRequiredCapabilities(const Capability& value) { m_requiredCapabilities.push_back(value); return *this; }
 
@@ -530,9 +530,9 @@ namespace Model
      * acknowledge their capabilities by
  specifying this parameter.</p><p>The only
      * valid values are CAPABILITY_IAM, CAPABILITY_NAMED_IAM,
- and
-     * CAPABILITY_RESOURCE_POLICY.</p><p>The following resources require you to specify
-     * CAPABILITY_IAM or
+
+     * CAPABILITY_RESOURCE_POLICY, and CAPABILITY_AUTO_EXPAND.</p><p>The following
+     * resources require you to specify CAPABILITY_IAM or
  CAPABILITY_NAMED_IAM:
  <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
@@ -568,15 +568,15 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html">AWS::SQS::QueuePolicy</a>,
      * and
  <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>If
-     * your application template contains any of the above resources, we recommend that
-     * you review
- all permissions associated with the application before deploying. If
-     * you don't specify
- this parameter for an application that requires capabilities,
-     * the call will fail.</p><p>Valid values: CAPABILITY_IAM | CAPABILITY_NAMED_IAM |
-     * CAPABILITY_RESOURCE_POLICY
- </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html">AWS::SNS::TopicPolicy</a>.</p><p>Applications
+     * that contain one or more nested applications require you to specify
+
+     * CAPABILITY_AUTO_EXPAND.</p><p>If your application template contains any of the
+     * above resources, we recommend that you review
+ all permissions associated with
+     * the application before deploying. If you don't specify
+ this parameter for an
+     * application that requires capabilities, the call will fail.</p>
      */
     inline CreateApplicationVersionResult& AddRequiredCapabilities(Capability&& value) { m_requiredCapabilities.push_back(std::move(value)); return *this; }
 
@@ -661,37 +661,87 @@ namespace Model
 
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const Aws::String& value) { m_sourceCodeArchiveUrl = value; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(Aws::String&& value) { m_sourceCodeArchiveUrl = std::move(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const char* value) { m_sourceCodeArchiveUrl.assign(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionResult& WithSourceCodeArchiveUrl(const Aws::String& value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionResult& WithSourceCodeArchiveUrl(Aws::String&& value) { SetSourceCodeArchiveUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionResult& WithSourceCodeArchiveUrl(const char* value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrl = value; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrl = std::move(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrl.assign(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionResult& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 
@@ -744,6 +794,8 @@ namespace Model
     bool m_resourcesSupported;
 
     Aws::String m_semanticVersion;
+
+    Aws::String m_sourceCodeArchiveUrl;
 
     Aws::String m_sourceCodeUrl;
 

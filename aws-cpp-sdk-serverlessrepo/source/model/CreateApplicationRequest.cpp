@@ -33,6 +33,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_readmeBodyHasBeenSet(false),
     m_readmeUrlHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
+    m_sourceCodeArchiveUrlHasBeenSet(false),
     m_sourceCodeUrlHasBeenSet(false),
     m_spdxLicenseIdHasBeenSet(false),
     m_templateBodyHasBeenSet(false),
@@ -106,6 +107,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_semanticVersionHasBeenSet)
   {
    payload.WithString("semanticVersion", m_semanticVersion);
+
+  }
+
+  if(m_sourceCodeArchiveUrlHasBeenSet)
+  {
+   payload.WithString("sourceCodeArchiveUrl", m_sourceCodeArchiveUrl);
 
   }
 

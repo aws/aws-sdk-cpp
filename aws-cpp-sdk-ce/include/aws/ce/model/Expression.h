@@ -154,12 +154,12 @@ namespace Model
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not[0] = value; }
+    inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = value; }
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(Expression&& value) { m_notHasBeenSet = true; m_not[0] = std::move(value); }
+    inline void SetNot(Expression&& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = std::move(value); }
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>

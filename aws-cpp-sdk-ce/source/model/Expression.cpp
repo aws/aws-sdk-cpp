@@ -31,7 +31,6 @@ namespace Model
 Expression::Expression() : 
     m_orHasBeenSet(false),
     m_andHasBeenSet(false),
-    m_not(1),
     m_notHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -41,7 +40,6 @@ Expression::Expression() :
 Expression::Expression(JsonView jsonValue) : 
     m_orHasBeenSet(false),
     m_andHasBeenSet(false),
-    m_not(1),
     m_notHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -73,6 +71,7 @@ Expression& Expression::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Not"))
   {
+    m_not.resize(1);
     m_not[0] = jsonValue.GetObject("Not");
 
     m_notHasBeenSet = true;
