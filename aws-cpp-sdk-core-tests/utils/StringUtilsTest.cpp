@@ -243,6 +243,25 @@ TEST(StringUtilsTest, TestURLEncodeAndDecode)
     ASSERT_STREQ("IShouldNotChange", shouldBeTheSameAsEncoded.c_str());
 }
 
+TEST(StringUtilsTest, TestURLDecodeEdgeCases)
+{
+    ASSERT_STREQ("me@ama%zon.com", StringUtils::URLDecode( "me%40ama%zon.com").c_str());
+    ASSERT_STREQ("me@am%azon.com", StringUtils::URLDecode( "me%40am%azon.com").c_str());
+    ASSERT_STREQ("", StringUtils::URLDecode("").c_str());
+    ASSERT_STREQ("%", StringUtils::URLDecode("%").c_str());
+    ASSERT_STREQ("%%", StringUtils::URLDecode("%%").c_str());
+    ASSERT_STREQ("%ZERO", StringUtils::URLDecode("%ZERO").c_str());
+    ASSERT_STREQ("%DO", StringUtils::URLDecode("%DO").c_str());
+}
+
+TEST(StringUtilsTest, TestURLWithEncodedSpace)
+{
+    //Some services(e.g. S3) use + for spaces in URL encoding.
+    const Aws::String encoded = "Test+Path%20Space";
+    Aws::String decoded = StringUtils::URLDecode(encoded.c_str());
+    ASSERT_STREQ("Test Path Space", decoded.c_str());
+}
+
 TEST(StringUtilsTest, TestInt64Conversion)
 {
     long long bigIntValue = LLONG_MAX - 1;
