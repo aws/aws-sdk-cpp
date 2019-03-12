@@ -3,11 +3,6 @@
 #set($moveValueType = '')
 #set($keyMoveType = '')
 #set($keyValueType = '')
-#if($member.value.shape.getName() == $shape.getName())
-#set($singleElementVector = '[0]')
-#else
-#set($singleElementVector = '')
-#end
 #if(!((($shape.payload && ($shape.payload == $member.key && !$member.value.shape.structure && !$member.value.shape.list)) || $member.value.streaming) && $shape.request))
 #set($memberDocumentation = '')
 #if($member.value.documentation)
@@ -29,6 +24,13 @@
 #end
 #set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
+#if($member.value.shape.getName() == $shape.getName())
+#set($singleElementVector = "[0]")
+#set($resizeSingleElementVector = ".resize(1); ${memberVariableName}[0]")
+#else
+#set($singleElementVector = "")
+#set($resizeSingleElementVector = "")
+#end
 #if($isStream)
     $memberDocumentation
     inline Aws::IOStream& Get${memberKeyWithFirstLetterCapitalized}() { return ${memberVariableName}.GetUnderlyingStream(); }
@@ -51,11 +53,11 @@
 #set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
 #end
     $memberDocumentation
-    inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName}${singleElementVector} = value; }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName}${resizeSingleElementVector} = value; }
 
 #if(!$subShape.primitive)
     $memberDocumentation
-    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName}${singleElementVector} = std::move(value); }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName}${resizeSingleElementVector} = std::move(value); }
 
 #end
 #if($member.value.shape.string)
