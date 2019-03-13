@@ -54,6 +54,7 @@ static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNext
 static const int RESOURCE_NOT_DISCOVERED_HASH = HashingUtils::HashString("ResourceNotDiscoveredException");
 static const int INSUFFICIENT_PERMISSIONS_HASH = HashingUtils::HashString("InsufficientPermissionsException");
 static const int INSUFFICIENT_DELIVERY_POLICY_HASH = HashingUtils::HashString("InsufficientDeliveryPolicyException");
+static const int NO_SUCH_REMEDIATION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRemediationConfigurationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int MAX_NUMBER_OF_RETENTION_CONFIGURATIONS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfRetentionConfigurationsExceededException");
 static const int NO_AVAILABLE_DELIVERY_CHANNEL_HASH = HashingUtils::HashString("NoAvailableDeliveryChannelException");
@@ -170,6 +171,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INSUFFICIENT_DELIVERY_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::INSUFFICIENT_DELIVERY_POLICY), false);
+  }
+  else if (hashCode == NO_SUCH_REMEDIATION_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_SUCH_REMEDIATION_CONFIGURATION), false);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {

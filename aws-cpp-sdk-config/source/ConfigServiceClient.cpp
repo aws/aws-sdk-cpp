@@ -39,6 +39,7 @@
 #include <aws/config/model/DeleteDeliveryChannelRequest.h>
 #include <aws/config/model/DeleteEvaluationResultsRequest.h>
 #include <aws/config/model/DeletePendingAggregationRequestRequest.h>
+#include <aws/config/model/DeleteRemediationConfigurationRequest.h>
 #include <aws/config/model/DeleteRetentionConfigurationRequest.h>
 #include <aws/config/model/DeliverConfigSnapshotRequest.h>
 #include <aws/config/model/DescribeAggregateComplianceByConfigRulesRequest.h>
@@ -54,6 +55,8 @@
 #include <aws/config/model/DescribeDeliveryChannelStatusRequest.h>
 #include <aws/config/model/DescribeDeliveryChannelsRequest.h>
 #include <aws/config/model/DescribePendingAggregationRequestsRequest.h>
+#include <aws/config/model/DescribeRemediationConfigurationsRequest.h>
+#include <aws/config/model/DescribeRemediationExecutionStatusRequest.h>
 #include <aws/config/model/DescribeRetentionConfigurationsRequest.h>
 #include <aws/config/model/GetAggregateComplianceDetailsByConfigRuleRequest.h>
 #include <aws/config/model/GetAggregateConfigRuleComplianceSummaryRequest.h>
@@ -72,9 +75,11 @@
 #include <aws/config/model/PutConfigurationRecorderRequest.h>
 #include <aws/config/model/PutDeliveryChannelRequest.h>
 #include <aws/config/model/PutEvaluationsRequest.h>
+#include <aws/config/model/PutRemediationConfigurationsRequest.h>
 #include <aws/config/model/PutRetentionConfigurationRequest.h>
 #include <aws/config/model/StartConfigRulesEvaluationRequest.h>
 #include <aws/config/model/StartConfigurationRecorderRequest.h>
+#include <aws/config/model/StartRemediationExecutionRequest.h>
 #include <aws/config/model/StopConfigurationRecorderRequest.h>
 
 using namespace Aws;
@@ -461,6 +466,41 @@ void ConfigServiceClient::DeletePendingAggregationRequestAsync(const DeletePendi
 void ConfigServiceClient::DeletePendingAggregationRequestAsyncHelper(const DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeletePendingAggregationRequest(request), context);
+}
+
+DeleteRemediationConfigurationOutcome ConfigServiceClient::DeleteRemediationConfiguration(const DeleteRemediationConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRemediationConfigurationOutcome(DeleteRemediationConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteRemediationConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteRemediationConfigurationOutcomeCallable ConfigServiceClient::DeleteRemediationConfigurationCallable(const DeleteRemediationConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRemediationConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRemediationConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DeleteRemediationConfigurationAsync(const DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRemediationConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DeleteRemediationConfigurationAsyncHelper(const DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRemediationConfiguration(request), context);
 }
 
 DeleteRetentionConfigurationOutcome ConfigServiceClient::DeleteRetentionConfiguration(const DeleteRetentionConfigurationRequest& request) const
@@ -986,6 +1026,76 @@ void ConfigServiceClient::DescribePendingAggregationRequestsAsync(const Describe
 void ConfigServiceClient::DescribePendingAggregationRequestsAsyncHelper(const DescribePendingAggregationRequestsRequest& request, const DescribePendingAggregationRequestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePendingAggregationRequests(request), context);
+}
+
+DescribeRemediationConfigurationsOutcome ConfigServiceClient::DescribeRemediationConfigurations(const DescribeRemediationConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRemediationConfigurationsOutcome(DescribeRemediationConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRemediationConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeRemediationConfigurationsOutcomeCallable ConfigServiceClient::DescribeRemediationConfigurationsCallable(const DescribeRemediationConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRemediationConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRemediationConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeRemediationConfigurationsAsync(const DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRemediationConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeRemediationConfigurationsAsyncHelper(const DescribeRemediationConfigurationsRequest& request, const DescribeRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRemediationConfigurations(request), context);
+}
+
+DescribeRemediationExecutionStatusOutcome ConfigServiceClient::DescribeRemediationExecutionStatus(const DescribeRemediationExecutionStatusRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeRemediationExecutionStatusOutcome(DescribeRemediationExecutionStatusResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeRemediationExecutionStatusOutcome(outcome.GetError());
+  }
+}
+
+DescribeRemediationExecutionStatusOutcomeCallable ConfigServiceClient::DescribeRemediationExecutionStatusCallable(const DescribeRemediationExecutionStatusRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeRemediationExecutionStatusOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeRemediationExecutionStatus(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::DescribeRemediationExecutionStatusAsync(const DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeRemediationExecutionStatusAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::DescribeRemediationExecutionStatusAsyncHelper(const DescribeRemediationExecutionStatusRequest& request, const DescribeRemediationExecutionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeRemediationExecutionStatus(request), context);
 }
 
 DescribeRetentionConfigurationsOutcome ConfigServiceClient::DescribeRetentionConfigurations(const DescribeRetentionConfigurationsRequest& request) const
@@ -1651,6 +1761,41 @@ void ConfigServiceClient::PutEvaluationsAsyncHelper(const PutEvaluationsRequest&
   handler(this, request, PutEvaluations(request), context);
 }
 
+PutRemediationConfigurationsOutcome ConfigServiceClient::PutRemediationConfigurations(const PutRemediationConfigurationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutRemediationConfigurationsOutcome(PutRemediationConfigurationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutRemediationConfigurationsOutcome(outcome.GetError());
+  }
+}
+
+PutRemediationConfigurationsOutcomeCallable ConfigServiceClient::PutRemediationConfigurationsCallable(const PutRemediationConfigurationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutRemediationConfigurationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutRemediationConfigurations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::PutRemediationConfigurationsAsync(const PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutRemediationConfigurationsAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::PutRemediationConfigurationsAsyncHelper(const PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutRemediationConfigurations(request), context);
+}
+
 PutRetentionConfigurationOutcome ConfigServiceClient::PutRetentionConfiguration(const PutRetentionConfigurationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1754,6 +1899,41 @@ void ConfigServiceClient::StartConfigurationRecorderAsync(const StartConfigurati
 void ConfigServiceClient::StartConfigurationRecorderAsyncHelper(const StartConfigurationRecorderRequest& request, const StartConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartConfigurationRecorder(request), context);
+}
+
+StartRemediationExecutionOutcome ConfigServiceClient::StartRemediationExecution(const StartRemediationExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartRemediationExecutionOutcome(StartRemediationExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartRemediationExecutionOutcome(outcome.GetError());
+  }
+}
+
+StartRemediationExecutionOutcomeCallable ConfigServiceClient::StartRemediationExecutionCallable(const StartRemediationExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartRemediationExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartRemediationExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ConfigServiceClient::StartRemediationExecutionAsync(const StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartRemediationExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void ConfigServiceClient::StartRemediationExecutionAsyncHelper(const StartRemediationExecutionRequest& request, const StartRemediationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartRemediationExecution(request), context);
 }
 
 StopConfigurationRecorderOutcome ConfigServiceClient::StopConfigurationRecorder(const StopConfigurationRecorderRequest& request) const

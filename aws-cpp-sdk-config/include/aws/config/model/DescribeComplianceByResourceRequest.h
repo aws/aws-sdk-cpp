@@ -158,43 +158,50 @@ namespace Model
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline const Aws::Vector<ComplianceType>& GetComplianceTypes() const{ return m_complianceTypes; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetComplianceTypes(const Aws::Vector<ComplianceType>& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::move(value); }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithComplianceTypes(const Aws::Vector<ComplianceType>& value) { SetComplianceTypes(value); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& AddComplianceTypes(const ComplianceType& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
 
     /**
      * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>INSUFFICIENT_DATA</code>.</p>
      */
     inline DescribeComplianceByResourceRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
 

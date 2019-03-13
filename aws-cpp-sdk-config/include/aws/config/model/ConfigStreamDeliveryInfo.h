@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
-     * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
-     * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
-     * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
-     * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p> <p> <b>Note</b> Providing an SNS
      * topic on a <a
-     * href="http://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
+     * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeliveryChannel.html">DeliveryChannel</a>
      * for AWS Config is optional. If the SNS delivery is turned off, the last status
      * will be <b>Not_Applicable</b>.</p>
      */

@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-S3-Encryption;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.68;
+        version : 1.7.69;
 
         // Display name for package.
         title: AWS SDK for C++ (S3 Encryption Client);
@@ -48,9 +48,9 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.68,
-            AWSSDKCPP-S3/1.7.20060301.68,
-            AWSSDKCPP-KMS/1.7.20141101.68
+            AWSSDKCPP-Core/1.7.69,
+            AWSSDKCPP-S3/1.7.20060301.69,
+            AWSSDKCPP-KMS/1.7.20141101.69
        }
     }
 

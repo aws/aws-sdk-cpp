@@ -81,38 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The beginning of the time range to query. Specified as epoch time, the number
-     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. The range is inclusive, so the
+     * specified start time is included in the query. Specified as epoch time, the
+     * number of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The beginning of the time range to query. Specified as epoch time, the number
-     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. The range is inclusive, so the
+     * specified start time is included in the query. Specified as epoch time, the
+     * number of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The beginning of the time range to query. Specified as epoch time, the number
-     * of seconds since January 1, 1970, 00:00:00 UTC.</p>
+     * <p>The beginning of the time range to query. The range is inclusive, so the
+     * specified start time is included in the query. Specified as epoch time, the
+     * number of seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline StartQueryRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
 
 
     /**
-     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * <p>The end of the time range to query. The range is inclusive, so the specified
+     * end time is included in the query. Specified as epoch time, the number of
      * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * <p>The end of the time range to query. The range is inclusive, so the specified
+     * end time is included in the query. Specified as epoch time, the number of
      * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time range to query. Specified as epoch time, the number of
+     * <p>The end of the time range to query. The range is inclusive, so the specified
+     * end time is included in the query. Specified as epoch time, the number of
      * seconds since January 1, 1970, 00:00:00 UTC.</p>
      */
     inline StartQueryRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -120,49 +126,49 @@ namespace Model
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline StartQueryRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline StartQueryRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
      * <p>The query string to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch
      * Logs Insights Query Syntax</a>.</p>
      */
     inline StartQueryRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}

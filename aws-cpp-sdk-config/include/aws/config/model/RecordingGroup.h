@@ -56,9 +56,9 @@ namespace Model
    * specify which types of resources it will record with the
    * <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource
    * types, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+   * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * Resource Types</a>.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+   * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
    * Which Resources AWS Config Records</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup">AWS
    * API Reference</a></p>
@@ -154,7 +154,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
@@ -170,7 +170,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
@@ -186,7 +186,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
@@ -202,7 +202,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
@@ -218,7 +218,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
@@ -234,7 +234,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
@@ -250,7 +250,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }

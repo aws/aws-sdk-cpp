@@ -263,49 +263,49 @@ namespace Model
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
