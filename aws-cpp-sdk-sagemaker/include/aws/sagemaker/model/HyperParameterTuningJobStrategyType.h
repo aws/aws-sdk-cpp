@@ -26,7 +26,8 @@ namespace Model
   enum class HyperParameterTuningJobStrategyType
   {
     NOT_SET,
-    Bayesian
+    Bayesian,
+    Random
   };
 
 namespace HyperParameterTuningJobStrategyTypeMapper

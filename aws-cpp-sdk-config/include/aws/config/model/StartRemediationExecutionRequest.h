@@ -90,37 +90,44 @@ namespace Model
 
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline const Aws::Vector<ResourceKey>& GetResourceKeys() const{ return m_resourceKeys; }
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline void SetResourceKeys(const Aws::Vector<ResourceKey>& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = value; }
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline void SetResourceKeys(Aws::Vector<ResourceKey>&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys = std::move(value); }
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline StartRemediationExecutionRequest& WithResourceKeys(const Aws::Vector<ResourceKey>& value) { SetResourceKeys(value); return *this;}
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline StartRemediationExecutionRequest& WithResourceKeys(Aws::Vector<ResourceKey>&& value) { SetResourceKeys(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline StartRemediationExecutionRequest& AddResourceKeys(const ResourceKey& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource key object.</p>
+     * <p>A list of resource keys to be processed with the current request. Each
+     * element in the list consists of the resource type and resource ID. </p>
      */
     inline StartRemediationExecutionRequest& AddResourceKeys(ResourceKey&& value) { m_resourceKeysHasBeenSet = true; m_resourceKeys.push_back(std::move(value)); return *this; }
 

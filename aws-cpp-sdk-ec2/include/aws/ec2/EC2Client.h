@@ -13290,7 +13290,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified network interface attribute. You can specify only one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time. You can use this action to attach and detach security
+         * groups from an existing EC2 instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">AWS
          * API Reference</a></p>
          */
@@ -13298,7 +13299,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified network interface attribute. You can specify only one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time. You can use this action to attach and detach security
+         * groups from an existing EC2 instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">AWS
          * API Reference</a></p>
          *
@@ -13308,7 +13310,8 @@ namespace Model
 
         /**
          * <p>Modifies the specified network interface attribute. You can specify only one
-         * attribute at a time.</p><p><h3>See Also:</h3>   <a
+         * attribute at a time. You can use this action to attach and detach security
+         * groups from an existing EC2 instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyNetworkInterfaceAttribute">AWS
          * API Reference</a></p>
          *

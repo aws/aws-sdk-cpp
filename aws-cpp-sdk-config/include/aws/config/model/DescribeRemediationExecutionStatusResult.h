@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline const Aws::Vector<RemediationExecutionStatus>& GetRemediationExecutionStatuses() const{ return m_remediationExecutionStatuses; }
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline void SetRemediationExecutionStatuses(const Aws::Vector<RemediationExecutionStatus>& value) { m_remediationExecutionStatuses = value; }
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline void SetRemediationExecutionStatuses(Aws::Vector<RemediationExecutionStatus>&& value) { m_remediationExecutionStatuses = std::move(value); }
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline DescribeRemediationExecutionStatusResult& WithRemediationExecutionStatuses(const Aws::Vector<RemediationExecutionStatus>& value) { SetRemediationExecutionStatuses(value); return *this;}
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline DescribeRemediationExecutionStatusResult& WithRemediationExecutionStatuses(Aws::Vector<RemediationExecutionStatus>&& value) { SetRemediationExecutionStatuses(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline DescribeRemediationExecutionStatusResult& AddRemediationExecutionStatuses(const RemediationExecutionStatus& value) { m_remediationExecutionStatuses.push_back(value); return *this; }
 
     /**
-     * <p>Returns a list of remediation execution statuses object.</p>
+     * <p>Returns a list of remediation execution statuses objects.</p>
      */
     inline DescribeRemediationExecutionStatusResult& AddRemediationExecutionStatuses(RemediationExecutionStatus&& value) { m_remediationExecutionStatuses.push_back(std::move(value)); return *this; }
 

@@ -32,7 +32,9 @@
 #include <aws/acm-pca/ACMPCAErrorMarshaller.h>
 #include <aws/acm-pca/model/CreateCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/CreateCertificateAuthorityAuditReportRequest.h>
+#include <aws/acm-pca/model/CreatePermissionRequest.h>
 #include <aws/acm-pca/model/DeleteCertificateAuthorityRequest.h>
+#include <aws/acm-pca/model/DeletePermissionRequest.h>
 #include <aws/acm-pca/model/DescribeCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/DescribeCertificateAuthorityAuditReportRequest.h>
 #include <aws/acm-pca/model/GetCertificateRequest.h>
@@ -41,6 +43,7 @@
 #include <aws/acm-pca/model/ImportCertificateAuthorityCertificateRequest.h>
 #include <aws/acm-pca/model/IssueCertificateRequest.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesRequest.h>
+#include <aws/acm-pca/model/ListPermissionsRequest.h>
 #include <aws/acm-pca/model/ListTagsRequest.h>
 #include <aws/acm-pca/model/RestoreCertificateAuthorityRequest.h>
 #include <aws/acm-pca/model/RevokeCertificateRequest.h>
@@ -189,6 +192,41 @@ void ACMPCAClient::CreateCertificateAuthorityAuditReportAsyncHelper(const Create
   handler(this, request, CreateCertificateAuthorityAuditReport(request), context);
 }
 
+CreatePermissionOutcome ACMPCAClient::CreatePermission(const CreatePermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePermissionOutcome(NoResult());
+  }
+  else
+  {
+    return CreatePermissionOutcome(outcome.GetError());
+  }
+}
+
+CreatePermissionOutcomeCallable ACMPCAClient::CreatePermissionCallable(const CreatePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::CreatePermissionAsync(const CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::CreatePermissionAsyncHelper(const CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePermission(request), context);
+}
+
 DeleteCertificateAuthorityOutcome ACMPCAClient::DeleteCertificateAuthority(const DeleteCertificateAuthorityRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -222,6 +260,41 @@ void ACMPCAClient::DeleteCertificateAuthorityAsync(const DeleteCertificateAuthor
 void ACMPCAClient::DeleteCertificateAuthorityAsyncHelper(const DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCertificateAuthority(request), context);
+}
+
+DeletePermissionOutcome ACMPCAClient::DeletePermission(const DeletePermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePermissionOutcome(NoResult());
+  }
+  else
+  {
+    return DeletePermissionOutcome(outcome.GetError());
+  }
+}
+
+DeletePermissionOutcomeCallable ACMPCAClient::DeletePermissionCallable(const DeletePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::DeletePermissionAsync(const DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::DeletePermissionAsyncHelper(const DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePermission(request), context);
 }
 
 DescribeCertificateAuthorityOutcome ACMPCAClient::DescribeCertificateAuthority(const DescribeCertificateAuthorityRequest& request) const
@@ -502,6 +575,41 @@ void ACMPCAClient::ListCertificateAuthoritiesAsync(const ListCertificateAuthorit
 void ACMPCAClient::ListCertificateAuthoritiesAsyncHelper(const ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListCertificateAuthorities(request), context);
+}
+
+ListPermissionsOutcome ACMPCAClient::ListPermissions(const ListPermissionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPermissionsOutcome(ListPermissionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPermissionsOutcome(outcome.GetError());
+  }
+}
+
+ListPermissionsOutcomeCallable ACMPCAClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMPCAClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void ACMPCAClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPermissions(request), context);
 }
 
 ListTagsOutcome ACMPCAClient::ListTags(const ListTagsRequest& request) const

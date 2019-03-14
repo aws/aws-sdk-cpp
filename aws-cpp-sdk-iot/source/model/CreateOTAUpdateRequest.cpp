@@ -31,7 +31,8 @@ CreateOTAUpdateRequest::CreateOTAUpdateRequest() :
     m_awsJobExecutionsRolloutConfigHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_additionalParametersHasBeenSet(false)
+    m_additionalParametersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,17 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
      additionalParametersJsonMap.WithString(additionalParametersItem.first, additionalParametersItem.second);
    }
    payload.WithObject("additionalParameters", std::move(additionalParametersJsonMap));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

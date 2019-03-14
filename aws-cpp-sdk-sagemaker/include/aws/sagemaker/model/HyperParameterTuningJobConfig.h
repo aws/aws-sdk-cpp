@@ -52,32 +52,52 @@ namespace Model
 
 
     /**
-     * <p>Specifies the search strategy for hyperparameters. Currently, the only valid
-     * value is <code>Bayesian</code>.</p>
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline const HyperParameterTuningJobStrategyType& GetStrategy() const{ return m_strategy; }
 
     /**
-     * <p>Specifies the search strategy for hyperparameters. Currently, the only valid
-     * value is <code>Bayesian</code>.</p>
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetStrategy(const HyperParameterTuningJobStrategyType& value) { m_strategyHasBeenSet = true; m_strategy = value; }
 
     /**
-     * <p>Specifies the search strategy for hyperparameters. Currently, the only valid
-     * value is <code>Bayesian</code>.</p>
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetStrategy(HyperParameterTuningJobStrategyType&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
 
     /**
-     * <p>Specifies the search strategy for hyperparameters. Currently, the only valid
-     * value is <code>Bayesian</code>.</p>
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline HyperParameterTuningJobConfig& WithStrategy(const HyperParameterTuningJobStrategyType& value) { SetStrategy(value); return *this;}
 
     /**
-     * <p>Specifies the search strategy for hyperparameters. Currently, the only valid
-     * value is <code>Bayesian</code>.</p>
+     * <p>Specifies how hyperparameter tuning chooses the combinations of
+     * hyperparameter values to use for the training job it launches. To use the
+     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * set it to <code>Random</code>. For information about search strategies, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
+     * Hyperparameter Tuning Works</a>.</p>
      */
     inline HyperParameterTuningJobConfig& WithStrategy(HyperParameterTuningJobStrategyType&& value) { SetStrategy(std::move(value)); return *this;}
 

@@ -33,6 +33,7 @@ namespace Model
     elastic_ip,
     fleet,
     fpga_image,
+    host_reservation,
     image,
     instance,
     internet_gateway,

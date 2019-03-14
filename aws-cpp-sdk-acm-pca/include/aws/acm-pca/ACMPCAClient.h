@@ -30,6 +30,7 @@
 #include <aws/acm-pca/model/GetCertificateAuthorityCsrResult.h>
 #include <aws/acm-pca/model/IssueCertificateResult.h>
 #include <aws/acm-pca/model/ListCertificateAuthoritiesResult.h>
+#include <aws/acm-pca/model/ListPermissionsResult.h>
 #include <aws/acm-pca/model/ListTagsResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -74,7 +75,9 @@ namespace Model
 {
         class CreateCertificateAuthorityRequest;
         class CreateCertificateAuthorityAuditReportRequest;
+        class CreatePermissionRequest;
         class DeleteCertificateAuthorityRequest;
+        class DeletePermissionRequest;
         class DescribeCertificateAuthorityRequest;
         class DescribeCertificateAuthorityAuditReportRequest;
         class GetCertificateRequest;
@@ -83,6 +86,7 @@ namespace Model
         class ImportCertificateAuthorityCertificateRequest;
         class IssueCertificateRequest;
         class ListCertificateAuthoritiesRequest;
+        class ListPermissionsRequest;
         class ListTagsRequest;
         class RestoreCertificateAuthorityRequest;
         class RevokeCertificateRequest;
@@ -92,7 +96,9 @@ namespace Model
 
         typedef Aws::Utils::Outcome<CreateCertificateAuthorityResult, Aws::Client::AWSError<ACMPCAErrors>> CreateCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<CreateCertificateAuthorityAuditReportResult, Aws::Client::AWSError<ACMPCAErrors>> CreateCertificateAuthorityAuditReportOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> CreatePermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> DeleteCertificateAuthorityOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> DeletePermissionOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateAuthorityResult, Aws::Client::AWSError<ACMPCAErrors>> DescribeCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<DescribeCertificateAuthorityAuditReportResult, Aws::Client::AWSError<ACMPCAErrors>> DescribeCertificateAuthorityAuditReportOutcome;
         typedef Aws::Utils::Outcome<GetCertificateResult, Aws::Client::AWSError<ACMPCAErrors>> GetCertificateOutcome;
@@ -101,6 +107,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> ImportCertificateAuthorityCertificateOutcome;
         typedef Aws::Utils::Outcome<IssueCertificateResult, Aws::Client::AWSError<ACMPCAErrors>> IssueCertificateOutcome;
         typedef Aws::Utils::Outcome<ListCertificateAuthoritiesResult, Aws::Client::AWSError<ACMPCAErrors>> ListCertificateAuthoritiesOutcome;
+        typedef Aws::Utils::Outcome<ListPermissionsResult, Aws::Client::AWSError<ACMPCAErrors>> ListPermissionsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<ACMPCAErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> RestoreCertificateAuthorityOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ACMPCAErrors>> RevokeCertificateOutcome;
@@ -110,7 +117,9 @@ namespace Model
 
         typedef std::future<CreateCertificateAuthorityOutcome> CreateCertificateAuthorityOutcomeCallable;
         typedef std::future<CreateCertificateAuthorityAuditReportOutcome> CreateCertificateAuthorityAuditReportOutcomeCallable;
+        typedef std::future<CreatePermissionOutcome> CreatePermissionOutcomeCallable;
         typedef std::future<DeleteCertificateAuthorityOutcome> DeleteCertificateAuthorityOutcomeCallable;
+        typedef std::future<DeletePermissionOutcome> DeletePermissionOutcomeCallable;
         typedef std::future<DescribeCertificateAuthorityOutcome> DescribeCertificateAuthorityOutcomeCallable;
         typedef std::future<DescribeCertificateAuthorityAuditReportOutcome> DescribeCertificateAuthorityAuditReportOutcomeCallable;
         typedef std::future<GetCertificateOutcome> GetCertificateOutcomeCallable;
@@ -119,6 +128,7 @@ namespace Model
         typedef std::future<ImportCertificateAuthorityCertificateOutcome> ImportCertificateAuthorityCertificateOutcomeCallable;
         typedef std::future<IssueCertificateOutcome> IssueCertificateOutcomeCallable;
         typedef std::future<ListCertificateAuthoritiesOutcome> ListCertificateAuthoritiesOutcomeCallable;
+        typedef std::future<ListPermissionsOutcome> ListPermissionsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<RestoreCertificateAuthorityOutcome> RestoreCertificateAuthorityOutcomeCallable;
         typedef std::future<RevokeCertificateOutcome> RevokeCertificateOutcomeCallable;
@@ -131,7 +141,9 @@ namespace Model
 
     typedef std::function<void(const ACMPCAClient*, const Model::CreateCertificateAuthorityRequest&, const Model::CreateCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::CreateCertificateAuthorityAuditReportRequest&, const Model::CreateCertificateAuthorityAuditReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateAuthorityAuditReportResponseReceivedHandler;
+    typedef std::function<void(const ACMPCAClient*, const Model::CreatePermissionRequest&, const Model::CreatePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePermissionResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::DeleteCertificateAuthorityRequest&, const Model::DeleteCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateAuthorityResponseReceivedHandler;
+    typedef std::function<void(const ACMPCAClient*, const Model::DeletePermissionRequest&, const Model::DeletePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePermissionResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::DescribeCertificateAuthorityRequest&, const Model::DescribeCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::DescribeCertificateAuthorityAuditReportRequest&, const Model::DescribeCertificateAuthorityAuditReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateAuthorityAuditReportResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::GetCertificateRequest&, const Model::GetCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCertificateResponseReceivedHandler;
@@ -140,6 +152,7 @@ namespace Model
     typedef std::function<void(const ACMPCAClient*, const Model::ImportCertificateAuthorityCertificateRequest&, const Model::ImportCertificateAuthorityCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportCertificateAuthorityCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::IssueCertificateRequest&, const Model::IssueCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IssueCertificateResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::ListCertificateAuthoritiesRequest&, const Model::ListCertificateAuthoritiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificateAuthoritiesResponseReceivedHandler;
+    typedef std::function<void(const ACMPCAClient*, const Model::ListPermissionsRequest&, const Model::ListPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPermissionsResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::RestoreCertificateAuthorityRequest&, const Model::RestoreCertificateAuthorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreCertificateAuthorityResponseReceivedHandler;
     typedef std::function<void(const ACMPCAClient*, const Model::RevokeCertificateRequest&, const Model::RevokeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeCertificateResponseReceivedHandler;
@@ -173,8 +186,8 @@ namespace Model
    * from the CA.</p> <note> <p>Each ACM PCA API operation has a throttling limit
    * which determines the number of times the operation can be called per second. For
    * more information, see <a
-   * href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in
-   * ACM PCA</a> in the ACM PCA user guide.</p> </note>
+   * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API
+   * Rate Limits in ACM PCA</a> in the ACM PCA user guide.</p> </note>
    */
   class AWS_ACMPCA_API ACMPCAClient : public Aws::Client::AWSJsonClient
   {
@@ -258,7 +271,7 @@ namespace Model
         virtual void CreateCertificateAuthorityAsync(const Model::CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an audit report that lists every time that the your CA private key is
+         * <p>Creates an audit report that lists every time that your CA private key is
          * used. The report is saved in the Amazon S3 bucket that you specify on input. The
          * <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the private
          * key. You can generate a new report every 30 minutes.</p><p><h3>See Also:</h3>  
@@ -269,7 +282,7 @@ namespace Model
         virtual Model::CreateCertificateAuthorityAuditReportOutcome CreateCertificateAuthorityAuditReport(const Model::CreateCertificateAuthorityAuditReportRequest& request) const;
 
         /**
-         * <p>Creates an audit report that lists every time that the your CA private key is
+         * <p>Creates an audit report that lists every time that your CA private key is
          * used. The report is saved in the Amazon S3 bucket that you specify on input. The
          * <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the private
          * key. You can generate a new report every 30 minutes.</p><p><h3>See Also:</h3>  
@@ -282,7 +295,7 @@ namespace Model
         virtual Model::CreateCertificateAuthorityAuditReportOutcomeCallable CreateCertificateAuthorityAuditReportCallable(const Model::CreateCertificateAuthorityAuditReportRequest& request) const;
 
         /**
-         * <p>Creates an audit report that lists every time that the your CA private key is
+         * <p>Creates an audit report that lists every time that your CA private key is
          * used. The report is saved in the Amazon S3 bucket that you specify on input. The
          * <a>IssueCertificate</a> and <a>RevokeCertificate</a> operations use the private
          * key. You can generate a new report every 30 minutes.</p><p><h3>See Also:</h3>  
@@ -295,6 +308,55 @@ namespace Model
         virtual void CreateCertificateAuthorityAuditReportAsync(const Model::CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Assigns permissions from a private CA to a designated AWS service. Services
+         * are specified by their service principals and can be given permission to create
+         * and retrieve certificates on a private CA. Services can also be given permission
+         * to list the active permissions that the private CA has granted. For ACM to
+         * automatically renew your private CA's certificates, you must assign all possible
+         * permissions from the CA to the ACM service principal.</p> <p>At this time, you
+         * can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions
+         * can be revoked with the <a>DeletePermission</a> operation and listed with the
+         * <a>ListPermissions</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePermissionOutcome CreatePermission(const Model::CreatePermissionRequest& request) const;
+
+        /**
+         * <p>Assigns permissions from a private CA to a designated AWS service. Services
+         * are specified by their service principals and can be given permission to create
+         * and retrieve certificates on a private CA. Services can also be given permission
+         * to list the active permissions that the private CA has granted. For ACM to
+         * automatically renew your private CA's certificates, you must assign all possible
+         * permissions from the CA to the ACM service principal.</p> <p>At this time, you
+         * can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions
+         * can be revoked with the <a>DeletePermission</a> operation and listed with the
+         * <a>ListPermissions</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePermissionOutcomeCallable CreatePermissionCallable(const Model::CreatePermissionRequest& request) const;
+
+        /**
+         * <p>Assigns permissions from a private CA to a designated AWS service. Services
+         * are specified by their service principals and can be given permission to create
+         * and retrieve certificates on a private CA. Services can also be given permission
+         * to list the active permissions that the private CA has granted. For ACM to
+         * automatically renew your private CA's certificates, you must assign all possible
+         * permissions from the CA to the ACM service principal.</p> <p>At this time, you
+         * can only assign permissions to ACM (<code>acm.amazonaws.com</code>). Permissions
+         * can be revoked with the <a>DeletePermission</a> operation and listed with the
+         * <a>ListPermissions</a> operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreatePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePermissionAsync(const Model::CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a private certificate authority (CA). You must provide the ARN
          * (Amazon Resource Name) of the private CA that you want to delete. You can find
          * the ARN by calling the <a>ListCertificateAuthorities</a> operation. Before you
@@ -305,15 +367,15 @@ namespace Model
          * <a>CertificateAuthority</a> is <code>CREATING</code>). You can also delete it if
          * the CA has been created but you haven't yet imported the signed certificate (the
          * <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA. </p> <p>If the
-         * CA is in one of the aforementioned states and you call
+         * CA is in one of the previously mentioned states and you call
          * <a>DeleteCertificateAuthority</a>, the CA's status changes to
-         * <code>DELETED</code>. However, the CA won't be permentantly deleted until the
+         * <code>DELETED</code>. However, the CA won't be permanently deleted until the
          * restoration period has passed. By default, if you do not set the
          * <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable
          * for 30 days. You can set the parameter from 7 to 30 days. The
          * <a>DescribeCertificateAuthority</a> operation returns the time remaining in the
          * restoration window of a Private CA in the <code>DELETED</code> state. To restore
-         * an eligable CA, call the <a>RestoreCertificateAuthority</a>
+         * an eligible CA, call the <a>RestoreCertificateAuthority</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority">AWS
          * API Reference</a></p>
@@ -331,15 +393,15 @@ namespace Model
          * <a>CertificateAuthority</a> is <code>CREATING</code>). You can also delete it if
          * the CA has been created but you haven't yet imported the signed certificate (the
          * <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA. </p> <p>If the
-         * CA is in one of the aforementioned states and you call
+         * CA is in one of the previously mentioned states and you call
          * <a>DeleteCertificateAuthority</a>, the CA's status changes to
-         * <code>DELETED</code>. However, the CA won't be permentantly deleted until the
+         * <code>DELETED</code>. However, the CA won't be permanently deleted until the
          * restoration period has passed. By default, if you do not set the
          * <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable
          * for 30 days. You can set the parameter from 7 to 30 days. The
          * <a>DescribeCertificateAuthority</a> operation returns the time remaining in the
          * restoration window of a Private CA in the <code>DELETED</code> state. To restore
-         * an eligable CA, call the <a>RestoreCertificateAuthority</a>
+         * an eligible CA, call the <a>RestoreCertificateAuthority</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority">AWS
          * API Reference</a></p>
@@ -359,15 +421,15 @@ namespace Model
          * <a>CertificateAuthority</a> is <code>CREATING</code>). You can also delete it if
          * the CA has been created but you haven't yet imported the signed certificate (the
          * <b>Status</b> is <code>PENDING_CERTIFICATE</code>) into ACM PCA. </p> <p>If the
-         * CA is in one of the aforementioned states and you call
+         * CA is in one of the previously mentioned states and you call
          * <a>DeleteCertificateAuthority</a>, the CA's status changes to
-         * <code>DELETED</code>. However, the CA won't be permentantly deleted until the
+         * <code>DELETED</code>. However, the CA won't be permanently deleted until the
          * restoration period has passed. By default, if you do not set the
          * <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable
          * for 30 days. You can set the parameter from 7 to 30 days. The
          * <a>DescribeCertificateAuthority</a> operation returns the time remaining in the
          * restoration window of a Private CA in the <code>DELETED</code> state. To restore
-         * an eligable CA, call the <a>RestoreCertificateAuthority</a>
+         * an eligible CA, call the <a>RestoreCertificateAuthority</a>
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority">AWS
          * API Reference</a></p>
@@ -375,6 +437,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCertificateAuthorityAsync(const Model::DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Revokes permissions that a private CA assigned to a designated AWS service.
+         * Permissions can be created with the <a>CreatePermission</a> operation and listed
+         * with the <a>ListPermissions</a> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePermissionOutcome DeletePermission(const Model::DeletePermissionRequest& request) const;
+
+        /**
+         * <p>Revokes permissions that a private CA assigned to a designated AWS service.
+         * Permissions can be created with the <a>CreatePermission</a> operation and listed
+         * with the <a>ListPermissions</a> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePermissionOutcomeCallable DeletePermissionCallable(const Model::DeletePermissionRequest& request) const;
+
+        /**
+         * <p>Revokes permissions that a private CA assigned to a designated AWS service.
+         * Permissions can be created with the <a>CreatePermission</a> operation and listed
+         * with the <a>ListPermissions</a> operation. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeletePermission">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePermissionAsync(const Model::DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists information about your private certificate authority (CA). You specify
@@ -745,6 +838,40 @@ namespace Model
         virtual void ListCertificateAuthoritiesAsync(const Model::ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all the permissions, if any, that have been assigned by a private CA.
+         * Permissions can be granted with the <a>CreatePermission</a> operation and
+         * revoked with the <a>DeletePermission</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPermissionsOutcome ListPermissions(const Model::ListPermissionsRequest& request) const;
+
+        /**
+         * <p>Lists all the permissions, if any, that have been assigned by a private CA.
+         * Permissions can be granted with the <a>CreatePermission</a> operation and
+         * revoked with the <a>DeletePermission</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPermissionsOutcomeCallable ListPermissionsCallable(const Model::ListPermissionsRequest& request) const;
+
+        /**
+         * <p>Lists all the permissions, if any, that have been assigned by a private CA.
+         * Permissions can be granted with the <a>CreatePermission</a> operation and
+         * revoked with the <a>DeletePermission</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListPermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPermissionsAsync(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the tags, if any, that are associated with your private CA. Tags are
          * labels that you can use to identify and organize your CAs. Each tag consists of
          * a key and an optional value. Call the <a>TagCertificateAuthority</a> operation
@@ -1033,7 +1160,9 @@ namespace Model
         /**Async helpers**/
         void CreateCertificateAuthorityAsyncHelper(const Model::CreateCertificateAuthorityRequest& request, const CreateCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCertificateAuthorityAuditReportAsyncHelper(const Model::CreateCertificateAuthorityAuditReportRequest& request, const CreateCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePermissionAsyncHelper(const Model::CreatePermissionRequest& request, const CreatePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCertificateAuthorityAsyncHelper(const Model::DeleteCertificateAuthorityRequest& request, const DeleteCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePermissionAsyncHelper(const Model::DeletePermissionRequest& request, const DeletePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAuthorityAsyncHelper(const Model::DescribeCertificateAuthorityRequest& request, const DescribeCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCertificateAuthorityAuditReportAsyncHelper(const Model::DescribeCertificateAuthorityAuditReportRequest& request, const DescribeCertificateAuthorityAuditReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCertificateAsyncHelper(const Model::GetCertificateRequest& request, const GetCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1042,6 +1171,7 @@ namespace Model
         void ImportCertificateAuthorityCertificateAsyncHelper(const Model::ImportCertificateAuthorityCertificateRequest& request, const ImportCertificateAuthorityCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void IssueCertificateAsyncHelper(const Model::IssueCertificateRequest& request, const IssueCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCertificateAuthoritiesAsyncHelper(const Model::ListCertificateAuthoritiesRequest& request, const ListCertificateAuthoritiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPermissionsAsyncHelper(const Model::ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreCertificateAuthorityAsyncHelper(const Model::RestoreCertificateAuthorityRequest& request, const RestoreCertificateAuthorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeCertificateAsyncHelper(const Model::RevokeCertificateRequest& request, const RevokeCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

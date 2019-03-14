@@ -45,79 +45,86 @@ namespace Model
 
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline StartRemediationExecutionResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline StartRemediationExecutionResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline StartRemediationExecutionResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline const Aws::Vector<ResourceKey>& GetFailedItems() const{ return m_failedItems; }
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline void SetFailedItems(const Aws::Vector<ResourceKey>& value) { m_failedItems = value; }
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline void SetFailedItems(Aws::Vector<ResourceKey>&& value) { m_failedItems = std::move(value); }
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline StartRemediationExecutionResult& WithFailedItems(const Aws::Vector<ResourceKey>& value) { SetFailedItems(value); return *this;}
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline StartRemediationExecutionResult& WithFailedItems(Aws::Vector<ResourceKey>&& value) { SetFailedItems(std::move(value)); return *this;}
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline StartRemediationExecutionResult& AddFailedItems(const ResourceKey& value) { m_failedItems.push_back(value); return *this; }
 
     /**
-     * <p>For resources that have failed to start execuition the API returns a resource
+     * <p>For resources that have failed to start execution, the API returns a resource
      * key object.</p>
      */
     inline StartRemediationExecutionResult& AddFailedItems(ResourceKey&& value) { m_failedItems.push_back(std::move(value)); return *this; }

@@ -1029,9 +1029,8 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. Each dimension
-         * consists of a Name and Value pair. For more information about specifying
-         * dimensions, see <a
+         * per metric to further clarify what data the metric collects. For more
+         * information about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
@@ -1068,9 +1067,8 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. Each dimension
-         * consists of a Name and Value pair. For more information about specifying
-         * dimensions, see <a
+         * per metric to further clarify what data the metric collects. For more
+         * information about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become
@@ -1109,9 +1107,8 @@ namespace Model
          * too large. Values must be in the range of 8.515920e-109 to 1.174271e+108 (Base
          * 10) or 2e-360 to 2e360 (Base 2). In addition, special values (for example, NaN,
          * +Infinity, -Infinity) are not supported.</p> <p>You can use up to 10 dimensions
-         * per metric to further clarify what data the metric collects. Each dimension
-         * consists of a Name and Value pair. For more information about specifying
-         * dimensions, see <a
+         * per metric to further clarify what data the metric collects. For more
+         * information about specifying dimensions, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
          * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Data points with
          * time stamps from 24 hours ago or longer can take at least 48 hours to become

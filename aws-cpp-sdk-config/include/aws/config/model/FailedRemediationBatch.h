@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>List of each of the failed remediation with specific reasons.</p><p><h3>See
+   * <p>List of each of the failed remediations with specific reasons.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/FailedRemediationBatch">AWS
    * API Reference</a></p>
@@ -51,37 +51,44 @@ namespace Model
 
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline FailedRemediationBatch& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline FailedRemediationBatch& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Returns a failure message. For example, the resource is compliant.</p>
+     * <p>Returns a failure message. For example, the resource is already
+     * compliant.</p>
      */
     inline FailedRemediationBatch& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 

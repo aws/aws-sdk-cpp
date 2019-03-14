@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/monitoring/model/ResponseMetadata.h>
 #include <aws/monitoring/model/MetricDataResult.h>
+#include <aws/monitoring/model/MessageData.h>
 #include <utility>
 
 namespace Aws
@@ -124,6 +125,70 @@ namespace Model
     inline GetMetricDataResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline const Aws::Vector<MessageData>& GetMessages() const{ return m_messages; }
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline void SetMessages(const Aws::Vector<MessageData>& value) { m_messages = value; }
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline void SetMessages(Aws::Vector<MessageData>&& value) { m_messages = std::move(value); }
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline GetMetricDataResult& WithMessages(const Aws::Vector<MessageData>& value) { SetMessages(value); return *this;}
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline GetMetricDataResult& WithMessages(Aws::Vector<MessageData>&& value) { SetMessages(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline GetMetricDataResult& AddMessages(const MessageData& value) { m_messages.push_back(value); return *this; }
+
+    /**
+     * <p>Contains a message about the operation or the results, if the operation
+     * results in such a message. Examples of messages that may be returned include
+     * <code>Maximum number of allowed metrics exceeded</code> and <code>You are not
+     * authorized to search one or more metrics</code>. If there is a message, as much
+     * of the operation as possible is still executed.</p>
+     */
+    inline GetMetricDataResult& AddMessages(MessageData&& value) { m_messages.push_back(std::move(value)); return *this; }
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -144,6 +209,8 @@ namespace Model
     Aws::Vector<MetricDataResult> m_metricDataResults;
 
     Aws::String m_nextToken;
+
+    Aws::Vector<MessageData> m_messages;
 
     ResponseMetadata m_responseMetadata;
   };

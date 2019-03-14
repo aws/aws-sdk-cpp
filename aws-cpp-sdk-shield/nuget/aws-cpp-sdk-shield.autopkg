@@ -13,7 +13,7 @@ nuget {
         id = AWSSDKCPP-Shield;
 
         // Version number. Follows NuGet standards. (currently SemVer 1.0)
-        version : 1.7.20160602.69;
+        version : 1.7.20160602.70;
 
         // Display name for package.
         title: AWS SDK for C++ (AWS Shield);
@@ -48,7 +48,7 @@ nuget {
 
     dependencies {
        packages: {
-            AWSSDKCPP-Core/1.7.69
+            AWSSDKCPP-Core/1.7.70
        }
     }
 

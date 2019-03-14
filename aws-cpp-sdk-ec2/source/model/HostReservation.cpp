@@ -48,7 +48,8 @@ HostReservation::HostReservation() :
     m_startHasBeenSet(false),
     m_state(ReservationState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false)
+    m_upfrontPriceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ HostReservation::HostReservation(const XmlNode& xmlNode) :
     m_startHasBeenSet(false),
     m_state(ReservationState::NOT_SET),
     m_stateHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false)
+    m_upfrontPriceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -165,6 +167,18 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
       m_upfrontPrice = StringUtils::Trim(upfrontPriceNode.GetText().c_str());
       m_upfrontPriceHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -241,6 +255,17 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".UpfrontPrice=" << StringUtils::URLEncode(m_upfrontPrice.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -300,6 +325,16 @@ void HostReservation::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_upfrontPriceHasBeenSet)
   {
       oStream << location << ".UpfrontPrice=" << StringUtils::URLEncode(m_upfrontPrice.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

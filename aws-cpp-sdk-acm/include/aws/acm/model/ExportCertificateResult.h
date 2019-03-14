@@ -122,44 +122,44 @@ namespace Model
 
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKey = value; }
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKey = std::move(value); }
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline void SetPrivateKey(const char* value) { m_privateKey.assign(value); }
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline ExportCertificateResult& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline ExportCertificateResult& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
-     * <p>The PEM-encoded private key associated with the public key in the
-     * certificate.</p>
+     * <p>The encrypted private key associated with the public key in the certificate.
+     * The key is output in PKCS #8 format and is base64 PEM-encoded. </p>
      */
     inline ExportCertificateResult& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 

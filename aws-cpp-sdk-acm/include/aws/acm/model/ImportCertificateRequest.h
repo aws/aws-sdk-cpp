@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -55,7 +55,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -71,7 +71,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -87,7 +87,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -95,7 +95,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
