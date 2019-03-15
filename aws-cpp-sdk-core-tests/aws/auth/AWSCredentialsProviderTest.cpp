@@ -105,6 +105,7 @@ public:
     void SetUp()
     {
         SaveVariable("AWS_SHARED_CREDENTIALS_FILE");  
+        SaveVariable("AWS_CONFIG_FILE");
         SaveVariable("AWS_DEFAULT_PROFILE");
         SaveVariable("AWS_PROFILE");
         SaveVariable("AWS_ACCESS_KEY_ID");
@@ -454,4 +455,115 @@ TEST(TaskRoleCredentialsProviderTest, TestECSCredentialsClientReturnsBadData)
     TaskRoleCredentialsProvider provider(mockClient, 1000 * 60 * 15);
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSAccessKeyId());
     ASSERT_EQ("", provider.GetAWSCredentials().GetAWSSecretKey());
+}
+
+static Aws::String WrapEchoStringWithSingleQuoteForUnixShell(Aws::String str)
+{
+#ifndef _WIN32
+    str.insert(0, 1, '\'');
+    str.append(1, '\'');
+#endif
+    return str;
+}
+
+TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderExpiredThenRefreshed)
+{
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey123\", \"SecretAccessKey\": \"SecretKey321\", \"Expiration\": \"1970-01-01T00:00:01Z\"}") << std::endl;
+
+    configFile.flush();
+    configFile.close();
+
+    ProcessCredentialsProvider provider;
+    Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
+    EXPECT_TRUE(credsOne.IsEmpty());
+
+    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileNew << "[default]" << std::endl;
+    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
+
+    configFileNew.flush();
+    configFileNew.close();
+
+    Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
+    EXPECT_NE(credsOne, credsTwo);
+    EXPECT_FALSE(credsTwo.IsEmpty());
+    EXPECT_STREQ("AccessKey321", credsTwo.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("SecretKey123", credsTwo.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderNonSupportedVersion)
+{
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+
+    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileNew << "[default]" << std::endl;
+    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 2, \"AccessKeyId\": \"AccessKey321\", \"SecretAccessKey\": \"SecretKey123\"}") << std::endl;
+
+    configFileNew.flush();
+    configFileNew.close();
+    
+    ProcessCredentialsProvider provider;
+    EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderDoNotRefresh)
+{
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename() + "_blah";
+    Aws::Environment::SetEnv("AWS_CONFIG_FILE", configFileName.c_str(), 1);
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey456\", \"SecretAccessKey\": \"SecretKey654\"}") << std::endl;
+
+    configFile.flush();
+    configFile.close();
+
+    ProcessCredentialsProvider provider;
+    Aws::Auth::AWSCredentials credsOne = provider.GetAWSCredentials();
+    EXPECT_STREQ("AccessKey456", credsOne.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("SecretKey654", credsOne.GetAWSSecretKey().c_str());
+
+    Aws::OFStream configFileNew(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+    configFileNew << "[default]" << std::endl;
+    configFileNew << "credential_process = echo " << WrapEchoStringWithSingleQuoteForUnixShell("{\"Version\": 1, \"AccessKeyId\": \"AccessKey789\", \"SecretAccessKey\": \"SecretKey987\"}") << std::endl;
+
+    configFileNew.flush();
+    configFileNew.close();
+    Aws::Auth::AWSCredentials credsTwo = provider.GetAWSCredentials();
+    EXPECT_EQ(credsOne, credsTwo);
+    EXPECT_FALSE(credsTwo.IsEmpty());
+    EXPECT_STREQ("AccessKey456", credsTwo.GetAWSAccessKeyId().c_str());
+    EXPECT_STREQ("SecretKey654", credsTwo.GetAWSSecretKey().c_str());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
+}
+
+TEST(ProcessCredentialsProviderTest, TestProcessCredentialsProviderCaptureInvalidOutput)
+{
+    Aws::String configFileName = Aws::Auth::GetConfigProfileFilename();
+    Aws::OFStream configFile(configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+
+    configFile << "[default]" << std::endl;
+    configFile << "credential_process = echo 'Error: Failed to retrieve credentials'" << std::endl;
+    configFile << std::endl;
+
+    configFile.flush();
+    configFile.close();
+
+    ProcessCredentialsProvider provider;
+    EXPECT_TRUE(provider.GetAWSCredentials().IsEmpty());
+
+    Aws::FileSystem::RemoveFileIfExists(configFileName.c_str());
 }

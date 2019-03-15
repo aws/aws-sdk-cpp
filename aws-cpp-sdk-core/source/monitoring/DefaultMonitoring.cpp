@@ -281,7 +281,7 @@ namespace Aws
             bool enable = DEFAULT_MONITORING_ENABLE; //default to false;
 
             //check profile_config
-            Aws::String defaultConfigFile = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetConfigProfileFilename();
+            Aws::String defaultConfigFile = Aws::Auth::GetConfigProfileFilename();
             Aws::Config::AWSConfigFileProfileConfigLoader configLoader(defaultConfigFile, true/*use profile prefix for config file*/);
 
             if (configLoader.Load())
