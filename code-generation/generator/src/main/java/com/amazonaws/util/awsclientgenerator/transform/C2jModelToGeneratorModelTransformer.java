@@ -269,6 +269,7 @@ public class C2jModelToGeneratorModelTransformer {
     ShapeMember convertMember(C2jShapeMember c2jShapeMember, Shape shape, boolean required) {
         ShapeMember shapeMember = new ShapeMember();
         shapeMember.setRequired(required);
+        shapeMember.setValidationNeeded(required);
         shapeMember.setDocumentation(formatDocumentation(c2jShapeMember.getDocumentation(), 5));
         shapeMember.setFlattened(c2jShapeMember.isFlattened());
         Shape referencedShape = shapes.get(CppViewHelper.convertToUpperCamel(c2jShapeMember.getShape()));
@@ -285,6 +286,7 @@ public class C2jModelToGeneratorModelTransformer {
         shapeMember.setEndpointDiscoveryId(c2jShapeMember.isEndpointdiscoveryid());
         if(shapeMember.isStreaming()) {
             shapeMember.setRequired(true);
+            shapeMember.setValidationNeeded(true);
         }
 
         if(shapeMember.isUsedForHeader()) {

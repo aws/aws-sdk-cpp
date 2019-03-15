@@ -35,6 +35,7 @@ static const char* ALLOCATION_TAG = "${className}";
 #foreach($operation in $serviceModel.operations)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #if($operation.name == "CreateQueue" || $operation.name == "ListQueues" || $operation.name == "GetQueueUrl")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;

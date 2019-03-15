@@ -51,6 +51,9 @@
 #set ($required = '')
 #if(!$member.value.required && $useRequiredField)
 #set ($required = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
+    $memberDocumentation
+    inline bool ${memberKeyWithFirstLetterCapitalized}HasBeenSet() const { return ${CppViewHelper.computeVariableHasBeenSetName($member.key)}; }
+
 #end
     $memberDocumentation
     inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName}${resizeSingleElementVector} = value; }

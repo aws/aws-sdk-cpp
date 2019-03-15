@@ -555,6 +555,20 @@ namespace
         ASSERT_FALSE(getOutcome.IsSuccess());        
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestBucketOperationsErrorWithMissingRequiredFields)
+    {
+        Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());
+        HeadBucketRequest headBucketRequest;
+        HeadBucketOutcome headBucketOutcome = Client->HeadBucket(headBucketRequest);
+        ASSERT_FALSE(headBucketOutcome.IsSuccess());
+        ASSERT_EQ(headBucketOutcome.GetError().GetErrorType(), Aws::S3::S3Errors::MISSING_PARAMETER);
+
+        CreateBucketRequest createBucketRequest;
+        CreateBucketOutcome createBucketOutcome = Client->CreateBucket(createBucketRequest);
+        ASSERT_FALSE(createBucketOutcome.IsSuccess());
+        ASSERT_EQ(createBucketOutcome.GetError().GetErrorType(), Aws::S3::S3Errors::MISSING_PARAMETER);
+    }
+
     TEST_F(BucketAndObjectOperationTest, TestBucketCreationAndListing)
     {
         Aws::String fullBucketName = CalculateBucketName(BASE_CREATE_BUCKET_TEST_NAME.c_str());

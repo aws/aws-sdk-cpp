@@ -2,6 +2,7 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;
 #set($uriParts = $operation.http.requestUriParts)

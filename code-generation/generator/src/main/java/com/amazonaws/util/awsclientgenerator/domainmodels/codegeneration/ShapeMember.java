@@ -21,7 +21,12 @@ import lombok.Data;
 public class ShapeMember {
     Shape shape;
     boolean idempotencyToken;
-    boolean isRequired;
+    //This field has be set to false for all shape members for serialization purposes to do HasBeenSet.
+    //Right now we need the real value of this field to do parameter validation before sending out the request.
+    //It's prefered to use this value but it appears in multiple places. Change current value 'false' to it's 'real value' is risky.
+    //It's safer to copy it's value to another varaible (now isValidationNeeded) and validate based on that.
+    boolean isRequired; 
+    boolean isValidationNeeded;
     boolean streaming;
     String documentation;
     String location;

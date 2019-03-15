@@ -55,6 +55,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         ShapeMember responseMetadataMember = new ShapeMember();
         responseMetadataMember.setShape(shape);
         responseMetadataMember.setRequired(true);
+        responseMetadataMember.setValidationNeeded(true);
 
         for(Shape resultShape : serviceModel.getShapes().values()) {
             if(resultShape.isResult()) {
